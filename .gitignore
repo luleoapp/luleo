@@ -1,3 +1,6 @@
+# Ignore the daily_data folder
+daily_data/
+
 # -----------------------------------
 # Python
 # -----------------------------------
@@ -29,11 +32,10 @@ var/
 # Virtual environments
 # Ignore any .venv directory anywhere in the repository
 **/.venv/
-# Alternatively, if your virtual environments are only in a specific folder, specify the path:
-# /path/to/.venv/
 
-# Poetry lock file (optional, if you prefer not to track it)
-**/.replit
+
+# Poetry lock file
+**/poetry.lock
 
 # -----------------------------------
 # Environment Variables
@@ -52,20 +54,13 @@ secrets/
 # -----------------------------------
 # IDEs and Editors
 # -----------------------------------
-# VSCode
 .vscode/
-# PyCharm
 .idea/
-# Emacs
 *~
-# Sublime Text
-*.sublime-project
-*.sublime-workspace
 
 # -----------------------------------
 # Operating System Files
 # -----------------------------------
-# macOS
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -88,8 +83,5 @@ Desktop.ini
 # -----------------------------------
 # Replit Files
 # -----------------------------------
-# Ignore .replit files in all subdirectories
 **/.replit
-# Ignore .replit.nix files in all subdirectories
 **/.replit.nix
-# Ignore .replit.nix files in all subdirectories
