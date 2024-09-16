@@ -1,0 +1,95 @@
+# -----------------------------------
+# Python
+# -----------------------------------
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+# Ignore any .venv directory anywhere in the repository
+**/.venv/
+# Alternatively, if your virtual environments are only in a specific folder, specify the path:
+# /path/to/.venv/
+
+# Poetry lock file (optional, if you prefer not to track it)
+**/.replit
+
+# -----------------------------------
+# Environment Variables
+# -----------------------------------
+# .env files
+.env
+.env.*
+
+# -----------------------------------
+# Secrets
+# -----------------------------------
+# Secrets directory (adjust the path if necessary)
+secrets/
+**/secrets/
+
+# -----------------------------------
+# IDEs and Editors
+# -----------------------------------
+# VSCode
+.vscode/
+# PyCharm
+.idea/
+# Emacs
+*~
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# -----------------------------------
+# Operating System Files
+# -----------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# -----------------------------------
+# Logs and Databases
+# -----------------------------------
+*.log
+*.sql
+*.sqlite
+
+# -----------------------------------
+# Replit Files
+# -----------------------------------
+# Ignore .replit files in all subdirectories
+**/.replit
+# Ignore .replit.nix files in all subdirectories
+**/.replit.nix
+# Ignore .replit.nix files in all subdirectories
