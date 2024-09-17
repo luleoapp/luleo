@@ -7,7 +7,6 @@ load_dotenv()
 
 app = Flask(__name__)
 
-print(f"Secret Key: {os.getenv('FIREBASE_APP_NAME')}")
 
 @app.route("/")
 def index():
@@ -22,4 +21,4 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5001, debug=True)
+    app.run(host="0.0.0.0", port=8080, debug=True)
