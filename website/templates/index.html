@@ -34,7 +34,7 @@
 											<!-- <p>A free and fully responsive site template</p>
 											--> 
 										</header>
-										<div class="description">
+										<div class="image-description">
 											<p>{{ image_description }}</p>
 										</div>
 										<div class="spotify-embed">
@@ -42,9 +42,12 @@
 										</div>
 										
 									</div>
-									<span class="image object">
+									<div class="image-container">
 										<img src="{{ image_url }}" alt="AI-generated image">
-									</span>
+										<div class="image-overlay">
+											<p>{{ image_description }}</p>
+										</div>
+									</div>
 								</section>
 
 						</div>
