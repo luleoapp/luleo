@@ -1,0 +1,15 @@
+.spotify-embed {
+    .spotify-playlist {
+      width: 60%;
+      height: 380px;
+    }
+  
+    @include breakpoint('<=small') {
+      width: 100%;
+  
+      .spotify-playlist {
+        width: 100% !important;
+        height: 80px !important;
+      }
+    }
+  }

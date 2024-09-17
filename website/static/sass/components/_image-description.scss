@@ -1,0 +1,13 @@
+.image-description {
+    padding: 1.5em 0.5em; // Add vertical padding
+    margin-bottom: 2em; // Add some space below
+  
+    p {
+      margin: 0;
+      line-height: 1.6;
+    }
+  
+    @include breakpoint('<=small') {
+      display: none;
+    }
+  }

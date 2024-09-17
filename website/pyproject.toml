@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "luleo"
+version = "0.1.0"
+description = "Luleo - Open Source AI God"
+authors = ["Raghuvar Nadig <raghuvar@luleo.me>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = "^3.0.3"
+firebase-admin = "^6.5.0"
+pytz = "^2024.1"
+python-dotenv = "^1.0.1"  # The version may vary
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
