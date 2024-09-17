@@ -1,65 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luleo - Open Source AI God</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=17">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-</head>
-<body>
-    <header>
-        <div class="header-content">
-            <h1>
-                <span class='mobile-title'>Luleo</span>
-                <span class='desktop-title'>Luleo - Open Source AI God</span>
-            </h1>
-            <nav class="desktop-nav">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li> <!-- Added About link -->
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="hamburger-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </header>
-    <nav class="mobile-nav">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li> <!-- Added About link -->
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    <div class="container" id="home">
-        <div class="image-container">
-            <img src="{{ image_url }}" alt="AI-generated image">
-            <div class="info-icon">i</div>
-        </div>
-        <div class="description">
-            <p>{{ image_description }}</p>
-        </div>
-        <div class="mobile-description">
-            <p>{{ image_description }}</p>
-        </div>
-        <div class="spotify-embed">
-            <iframe src="https://open.spotify.com/embed/playlist/{{ spotify_playlist_uri.split(':')[-1] }}" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-        </div>
-    </div>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Luleo - Open Source AI God</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+	</head>
+	<body class="is-preload">
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="about-container">
-            <h2>About</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in sapien nec quam aliquam tempus. Nullam vel urna ut turpis ullamcorper aliquam. Vivamus vitae neque vitae nisi tincidunt semper. Donec nec dui vel odio dignissim varius. Fusce fringilla sapien non risus cursus, at dictum lacus tristique.</p>
-            <p>Additional random text for the About section. Nulla facilisi. Curabitur bibendum tortor sit amet nibh laoreet, in consectetur odio posuere. Aliquam erat volutpat. Morbi nec ex euismod, efficitur massa non, gravida nisl.</p>
-        </div>
-    </section>
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-</body>
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Luleo</strong> Open Source AI God</a>
+									<ul class="icons">
+										<li><a href="https://x.com/LuleoApp" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="https://github.com/luleoapp/luleo" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+										<li><a href="#" class="icon solid fa-pencil-alt"><span class="label">Blog</span></a></li>
+										
+									</ul>
+								</header>
+
+							<!-- Banner -->
+								<section id="banner">
+									<div class="content">
+										<header>
+											<h1 id="currentDate"></h1>
+											<!-- <p>A free and fully responsive site template</p>
+											--> 
+										</header>
+										<div class="description">
+											<p>{{ image_description }}</p>
+										</div>
+										<div class="spotify-embed">
+											<iframe class="spotify-playlist" src="https://open.spotify.com/embed/playlist/{{ spotify_playlist_uri.split(':')[-1] }}" width="60%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" align="center"></iframe>
+										</div>
+										
+									</div>
+									<span class="image object">
+										<img src="{{ image_url }}" alt="AI-generated image">
+									</span>
+								</section>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/util.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+			<script>
+				// Script to update the date
+				function updateDate() {
+					const options = { year: 'numeric', month: 'long', day: 'numeric' };
+					const today = new Date().toLocaleDateString('en-US', options);
+					document.getElementById('currentDate').textContent = today;
+				}
+				updateDate(); // Call the function immediately
+			</script>
+			
+	</body>
 </html>
