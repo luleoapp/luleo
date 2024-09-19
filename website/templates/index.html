@@ -5,7 +5,28 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+		<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
 	</head>
+	<!-- SVG Filter for Ripple Effect -->
+	<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+		<filter id="ripple">
+		<feTurbulence type="fractalNoise" baseFrequency="0.01 0.03" numOctaves="3" result="warp" id="turbulence">
+			<animate
+			attributeName="baseFrequency"
+			dur="10s"
+			values="0.01 0.03;0.03 0.01;0.01 0.03"
+			repeatCount="indefinite"
+			/>
+		</feTurbulence>
+		<feDisplacementMap
+			in="SourceGraphic"
+			in2="warp"
+			scale="5"
+			xChannelSelector="R"
+			yChannelSelector="G"
+		/>
+		</filter>
+	</svg>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -17,7 +38,7 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="index.html" class="logo"><strong>Luleo</strong> Open Source AI God</a>
+									<a href="#" class="logo"><strong>Luleo</strong> Open Source AI God</a>
 									<ul class="icons">
 										<li><a href="https://x.com/LuleoApp" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 										<li><a href="https://github.com/luleoapp/luleo" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
@@ -31,11 +52,9 @@
 									<div class="content">
 										<header>
 											<h1 id="currentDate"></h1>
-											<!-- <p>A free and fully responsive site template</p>
-											--> 
 										</header>
-										<div class="image-description">
-											<p>{{ image_description }}</p>
+										<div class="image-description-container">
+											<div id="typewriter" class="typewriter" data-description="{{ image_description }}"></div>
 										</div>
 										<div class="spotify-embed">
 											<iframe class="spotify-playlist" src="https://open.spotify.com/embed/playlist/{{ spotify_playlist_uri.split(':')[-1] }}" width="60%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" align="center"></iframe>
@@ -43,7 +62,7 @@
 										
 									</div>
 									<div class="image-container">
-										<img src="{{ image_url }}" alt="AI-generated image">
+										<img id="ai-image" src="{{ image_url }}" alt="AI-generated image">
 										<div class="image-overlay">
 											<p>{{ image_description }}</p>
 										</div>
@@ -61,6 +80,7 @@
 			<script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
 			<script src="{{ url_for('static', filename='js/util.js') }}"></script>
 			<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/typewriter.js') }}"></script>
 			<script>
 				// Script to update the date
 				function updateDate() {
@@ -70,6 +90,7 @@
 				}
 				updateDate(); // Call the function immediately
 			</script>
+			
 			
 	</body>
 </html>

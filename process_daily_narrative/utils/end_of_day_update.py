@@ -1,5 +1,4 @@
 # end_of_day_update.py
-
 import json
 import os
 from openai import OpenAI
