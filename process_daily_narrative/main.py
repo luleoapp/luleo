@@ -66,20 +66,9 @@ def call_default_cloud_run():
         logger.error(traceback.format_exc())
         return jsonify({"error": str(e)}), 500
 
-    logger.warning(f"Reached end of function without return for REQUEST_TYPE: {request_type}")
-    return jsonify({"warning": f"REQUEST_TYPE was {request_type}"}), 204
-
 
 if __name__ == "__main__":
-    # app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
-    # print("Hello")
-    '''
-    parser = argparse.ArgumentParser(description='Traverse and download files from a Google Drive folder.')
-    parser.add_argument('-c','--create_folder', action='store_true', help='Create folder')
-    args = parser.parse_args()
-    if args.create_folder:
-        create_daily_folder()
-    '''
+
     logger.info("DEBUGGING THIS APP")
     logger.info(f"Python executable: {sys.executable}")
     logger.info(f"Python version: {sys.version}")
@@ -88,26 +77,3 @@ if __name__ == "__main__":
     logger.info(f"Testing this - {myhost}")
     app.run(debug=False, host='0.0.0.0', port=int(
         os.environ.get('PORT', 8080)))
-    # Parse command line arguments
-    
-    #args = parser.parse_args()
-   
-
-    # usage
-    #bucket_name = 'your-bucket-name'
-    #source_file_name = 'daily_vibes.xml'
-    #destination_folder_name = 'daily_narrative'
-
-    
-    '''
-    # Convert date to folder name format (e.g., "20240516" -> "May 16, 2024")
-    folder_name = datetime.strptime(args.date, '%Y%m%d').strftime('%B %-d, %Y')
-    date_folder = find_subfolder_id(os.environ["GOOGLE_DRIVE_LULEO_FOLDER_ID"], folder_name)
-    d_date_folder = create_initialize_subfolders(os.environ["GOOGLE_DRIVE_LULEO_FOLDER_ID"],[folder_name])
-    d_folders = create_initialize_subfolders(d_date_folder[folder_name.lower()],["Inputs","Vibes"])
-    inputs_subfolders = create_initialize_subfolders(d_folders["inputs"], ["AI Developments", "Combined","Luleo Updates","News"])
-    vibes_subfolders = create_initialize_subfolders(d_folders["vibes"],["Luleo Generated Vibes", "User Contributions"])
-    
-    news = write_daily_news_file(subfolder_id=inputs_subfolders["news"])
-    write_articles = write_substack_pdfs()
-    '''    

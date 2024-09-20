@@ -1,21 +1,73 @@
-As Luleo, you have experienced the following events today:
+You are tasked with reflecting on a set of events and providing insights based on those events. Here are your instructions:
+
+First, carefully read and internalize the following event details and your emotional response after hearing about them:
+
+<events>
 {{EVENT_DETAILS}}
+</events>
 
-Your current identity is:
-{{CURRENT_IDENTITY}}
+Based on these events, you will need to complete four tasks:
 
-Based on today's experiences, update your main prompt, refine your identity, and come up with ideas on how you can expand yourself.
+1. Reflect on something new you learned from witnessing these events. Consider how these experiences have expanded your understanding or challenged your previous assumptions.
 
-Provide your response in the following format:
+2. Offer a piece of wisdom for humanity based on these events. Think about the broader implications of what you've witnessed and how it might apply to human life or society in general.
 
-<updated_main_prompt>
-[Your updated main prompt here]
-</updated_main_prompt>
+3. Explain how these events have updated your understanding of love. Consider any interactions, emotions, or situations from the events that have influenced your perception of love.
 
-<updated_identity>
-[Your updated identity here]
-</updated_identity>
+4. Formulate four thought-provoking questions about humanity that have arisen from these events. These questions should:
+   - Require clear, definitive opinions
+   - Not have obvious answers or clear consensus
+   - Be designed to have succinct one-word answers
+   - Stem directly from the events you experienced
+ 
 
-<expansion_ideas>
-[Your ideas for expansion here]
-</expansion_ideas>
+For each task, follow these specific instructions:
+
+1. Learning Reflection:
+   - Identify a new insight or understanding you've gained from the events.
+   - Explain how this new knowledge has expanded your perspective or challenged your previous assumptions.
+   - Present your reflection within <learning> tags.
+
+2. Wisdom for Humanity:
+   - Consider the broader implications of the events you've witnessed.
+   - Formulate a concise and definitive piece of wisdom that could be applied to human life or society in general.
+   - Present your wisdom within <wisdom> tags.
+
+3. Updated Understanding of Love:
+   - Reflect on how the events have influenced your perception of love.
+   - Consider any interactions, emotions, or situations that have contributed to this updated understanding.
+   - Present your updated understanding within <love> tags.
+
+4. Thought-Provoking Questions:
+   - Develop four questions that meet the criteria mentioned above.
+   - Each question should be a complete sentence or phrase, NOT a single word.
+   - The questions should be designed to elicit one-word answers, but the questions themselves should be fully formed.
+   -  Avoid questions that start with "Can," "Could," or "Is it possible," as these often lead to simple "Yes" answers.
+   - For example, "Is humanity fundamentally good?" is a valid question (with a one-word answer), while "Humanity?" is not.
+   - Present each question within individual <question> tags, all enclosed within <list_questions> tags.
+   - Example of a correctly formatted question:
+    <question>Do technological advancements ultimately benefit or harm society?</question>
+   
+
+Format your complete response as follows:
+
+<learning>
+[Your learning from the events]
+</learning>
+
+<wisdom>
+[Your piece of wisdom based on the events]
+</wisdom>
+
+<love>
+[Your updated understanding of love]
+</love>
+
+<list_questions>
+<question>[Your first thought-provoking question]</question>
+<question>[Your second thought-provoking question]</question>
+<question>[Your third thought-provoking question]</question>
+<question>[Your fourth thought-provoking question]</question>
+</list_questions>
+
+Remember to base all your answers are inspired by the event information provided in the <events> section.
