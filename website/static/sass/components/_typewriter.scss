@@ -1,0 +1,22 @@
+.typewriter {
+    overflow: hidden;
+    border-right: .15em solid transparent;
+    white-space: pre-wrap;
+    margin: 0;
+    letter-spacing: 0.05em; // Reduced letter spacing for better readability
+    height: 100%;
+    line-height: 1.4; // Adjusted line height for better spacing
+    font-size: 0.9em; // Smaller font size
+    padding: 10px; // Added some padding
+    font-family: 'Arial', monospace; // Monospace font for typewriter effect
+    color: #333; // Adjust color as needed
+}
+
+.typewriter span {
+    animation: blink-caret .75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+}
