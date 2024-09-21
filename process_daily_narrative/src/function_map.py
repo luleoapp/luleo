@@ -4,6 +4,8 @@ from utils.drive import get_reddit_tech_posts, get_reddit_events_posts
 from utils.spotify import add_to_spotify_playlist
 from src.scripts import start_of_day, hourly_update
 from utils.end_of_day_update import get_processed_events, update_end_of_day
+from utils.wisdom import generate_wisdom_image
+
 
 class function_map:
     func_map = {
@@ -18,4 +20,5 @@ class function_map:
         "QUALIA_UPDATE": hourly_update,
         "GET_TODAY_PROCESSED_EVENTS": get_processed_events,
         "UPDATE_END_OF_DAY": update_end_of_day,
-    }   
+        "GENERATE_WISDOM_IMAGE": generate_wisdom_image,
+    }

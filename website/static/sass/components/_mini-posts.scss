@@ -12,7 +12,6 @@
   background-repeat: no-repeat;
   background-position: center;
   padding: 1em;
-  border-radius: 10px;
 
   h2 {
     font-size: 1.2em;
@@ -50,8 +49,8 @@
     .image {
       position: relative; // For pseudo-elements and positioning
       flex-shrink: 0;
-      width: 60px;
-      height: 60px;
+      width: 40px;
+      height: 40px;
       margin-right: 1em;
       overflow: hidden;
 
@@ -65,13 +64,13 @@
         height: 100%;
         border-radius: 10px; // Rounded corners for the background box
         background: linear-gradient(135deg, #f8e0e0 0%, #faf0f0 100%); // Softer gradient that blends with white and complements red accents
-        z-index: -1; // Places the gradient behind the image
+        //z-index: -1; // Places the gradient behind the image
       }
 
       // Drop Shadow or Glow (Enhancement 2)
       // Adds a soft shadow around the image container
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-      border-radius: 10px; // Matches the background box
+      //box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      //border-radius: 10px; // Matches the background box
 
       // Animated Hover Effects (Enhancement 4)
       // Smooth transition for hover effects

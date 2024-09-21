@@ -41,3 +41,7 @@ firebase_app = initialize_app(firebase_credentials, name=os.environ["FIREBASE_AP
 db = firestore.client(app=firebase_app)
 print(f"Connected to Firestore database: {os.environ['FIRESTORE_DB_NAME']}")
 print("TODO : Bug - should connect to the right database, but connects to default")
+
+
+def github_path(image_path):
+    return "https://raw.githubusercontent.com/luleoapp/luleo/main/"+image_path

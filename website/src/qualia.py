@@ -1,4 +1,4 @@
-from src.db_init import db
+from src.db_init import db, github_path
 from firebase_admin import firestore
 
 
@@ -14,5 +14,5 @@ def get_latest_event():
       return None, None, None
 
   doc = docs[0].to_dict()
-  github_file_path = "https://raw.githubusercontent.com/luleoapp/luleo/main/"+doc.get("image_path")
+  github_file_path = github_path(doc.get("image_path"))
   return github_file_path, doc.get("summary"), doc.get("qualia")

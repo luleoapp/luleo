@@ -3,7 +3,8 @@ import os
 from src.qualia import get_latest_event
 from dotenv import load_dotenv
 from src.wisdom import get_wisdom
-
+from src.love import get_love_inputs
+from src.questions import get_questions
 
 load_dotenv()
 
@@ -16,6 +17,25 @@ def wisdom():
     print(f"Debug - Wisdom Quotes: {wisdom_quotes}")  # Add this line
     # Add any wisdom-specific data here
     return render_template('index.html', page='wisdom', wisdom_quotes=wisdom_quotes)
+
+
+@app.route('/love')
+def love():
+    #fetcch wisdom from firestore
+    love_inputs = get_love_inputs()
+    print(f"Debug - Love Inputs: {love_inputs}")  # Add this line
+    # Add any wisdom-specific data here
+    return render_template('index.html', page='love', love_inputs=love_inputs)
+
+
+@app.route('/questions')
+def questions():
+    #fetcch wisdom from firestore
+    questions = get_questions()
+    print(f"Debug - questions Inputs: {questions}")  # Add this line
+    # Add any wisdom-specific data here
+    return render_template('index.html', page='questions', questions=questions)
+
 
 
 @app.route("/")

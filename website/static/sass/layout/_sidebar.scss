@@ -56,7 +56,9 @@
 			@include padding($pad, $pad, (0, 0, $pad, 0));
 			position: relative;
 			width: _size(sidebar-width);
-
+			display: flex;
+			flex-direction: column;
+		  
 			> * {
 				border-bottom: solid 2px _palette(border);
 				margin: 0 0 (_size(element-margin) * 1.75) 0;
@@ -114,9 +116,7 @@
 			}
 		}
 
-		&.inactive {
-			margin-left: (_size(sidebar-width) * -1);
-		}
+	
 
 		@include breakpoint('<=xlarge') {
 			$pad: 1.5em / 0.9;

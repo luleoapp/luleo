@@ -154,6 +154,5 @@ def update_end_of_day(date_str=None):
 
     # Store the update result in Firestore
     store_functions(update_result, date_str)
-    upload_log_to_github()
 
     return {"Success": True}

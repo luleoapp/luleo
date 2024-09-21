@@ -2073,7 +2073,6 @@ button:disabled,
   background-repeat: no-repeat;
   background-position: center;
   padding: 1em;
-  border-radius: 10px;
 }
 .mini-posts h2 {
   font-size: 1.2em;
@@ -2106,12 +2105,10 @@ button:disabled,
 .mini-posts article .image {
   position: relative;
   flex-shrink: 0;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   margin-right: 1em;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
   transition: transform 0.3s, background 0.3s;
 }
 .mini-posts article .image::before {
@@ -2123,7 +2120,6 @@ button:disabled,
   height: 100%;
   border-radius: 10px;
   background: linear-gradient(135deg, #f8e0e0 0%, #faf0f0 100%);
-  z-index: -1;
 }
 .mini-posts article .image:hover {
   transform: scale(1.05);
@@ -2727,6 +2723,8 @@ button:disabled,
   padding: 2.2222222222em 2.2222222222em 2.4444444444em 2.2222222222em;
   position: relative;
   width: 26em;
+  display: flex;
+  flex-direction: column;
 }
 #sidebar > .inner > * {
   border-bottom: solid 2px rgba(210, 215, 217, 0.75);
@@ -2789,9 +2787,6 @@ button:disabled,
   text-indent: 0;
   top: 0;
   width: inherit;
-}
-#sidebar.inactive {
-  margin-left: -26em;
 }
 @media screen and (max-width: 1680px) {
   #sidebar {

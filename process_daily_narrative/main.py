@@ -6,7 +6,7 @@ from src.function_map import function_map
 from utils.logger_config import logger
 import traceback
 import sys
-
+from utils.logger_config import upload_log_to_github
 
 app = Flask(__name__)
 # By default, a route only answers to GET requests.
@@ -57,11 +57,14 @@ def call_default_cloud_run():
         else:
             logger.warning(f"Function returned None for REQUEST_TYPE: {request_type}")
             return jsonify({"warning": f"No return value for REQUEST_TYPE: {request_type}"}), 204
-
+ 
     except Exception as e:
         logger.error(f"Error in {request_type} {request_params}")
         logger.error(traceback.format_exc())
         return jsonify({"error": str(e)}), 500
+
+    finally:
+        upload_log_to_github()
 
 
 if __name__ == "__main__":

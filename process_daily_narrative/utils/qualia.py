@@ -209,11 +209,11 @@ def update_processed_event(event, d_ret):
         'processed_at': firestore.SERVER_TIMESTAMP  # Add this line
     })
 
-def generate_image(image_prompt, event_id, qualia_doc_id):
+def generate_image_from_prompt(image_prompt):
     try:
         replicate = Client(api_token=os.environ['REPLICATE_API_TOKEN'])
 
-        logger.info(f"Generating image for event {event_id} with prompt: {image_prompt}")
+        logger.info(f"Generating image with prompt: {image_prompt}")
         
         output = replicate.run(
             "black-forest-labs/flux-pro",
@@ -221,7 +221,7 @@ def generate_image(image_prompt, event_id, qualia_doc_id):
         )
         
         if not output:
-            logger.error(f"Failed to generate image for event {event_id}: Empty output from Replicate API")
+            logger.error("Failed to generate image: Empty output from Replicate API")
             return None
 
         image_url = output
@@ -230,50 +230,60 @@ def generate_image(image_prompt, event_id, qualia_doc_id):
         logger.info(f"Downloading image from URL: {image_url}")
         response = requests.get(image_url)
         if response.status_code != 200:
-            logger.error(f"Failed to download image for event {event_id}: HTTP status code {response.status_code}")
+            logger.error(f"Failed to download image: HTTP status code {response.status_code}")
             return None
 
-        curr_dt = datetime.now(PROJECT_TIMEZONE).strftime("%Y-%m-%d")
-        current_time = datetime.now(PROJECT_TIMEZONE).strftime("%H%M")
-        filename = f"event_id_{event_id}_{current_time}.webp"
-        file_path = f"daily_data/{curr_dt}/outputs/{filename}"
-        logger.info(f"Generated file path: {file_path}")
-
-        # Create a temporary file
-        with tempfile.NamedTemporaryFile(delete=False, suffix='.webp') as temp_file:
-            temp_file.write(response.content)
-            temp_file_path = temp_file.name
-
-        try:
-            # Upload to GitHub using the function from drive.py
-            logger.info(f"Uploading image to GitHub: {file_path}")
-            upload_result = upload_file_to_github(temp_file_path, file_path)
-
-            if 'message' in upload_result:
-                github_url = file_path  # or construct the full GitHub URL if needed
-                logger.info(f"Image uploaded successfully. URL: {github_url}")
-
-                # Update the qualia_updates document with the image path
-                logger.info(f"Updating qualia_updates document {qualia_doc_id} with image path")
-                db.collection('qualia_updates').document(qualia_doc_id).update({
-                    'image_path': github_url
-                })
-
-                return github_url
-            else:
-                logger.error(f"Failed to upload image to GitHub for event {event_id}: {upload_result.get('error', 'Unknown error')}")
-                return None
-        finally:
-            # Clean up the temporary file
-            os.unlink(temp_file_path)
+        return response.content
 
     except requests.exceptions.RequestException as e:
-        logger.error(f"Network error while downloading image for event {event_id}: {str(e)}")
+        logger.error(f"Network error while downloading image: {str(e)}")
     except Exception as e:
-        logger.error(f"Unexpected error generating or uploading image for event {event_id}: {str(e)}")
+        logger.error(f"Unexpected error generating image: {str(e)}")
     
     return None
 
+
+
+def process_and_upload_image(image_prompt, event_id, qualia_doc_id):
+    image_content = generate_image_from_prompt(image_prompt)
+    if image_content is None:
+        return None
+
+    curr_dt = datetime.now(PROJECT_TIMEZONE).strftime("%Y-%m-%d")
+    current_time = datetime.now(PROJECT_TIMEZONE).strftime("%H%M")
+    filename = f"event_id_{event_id}_{current_time}.webp"
+    file_path = f"daily_data/{curr_dt}/outputs/{filename}"
+    logger.info(f"Generated file path: {file_path}")
+
+    # Create a temporary file
+    with tempfile.NamedTemporaryFile(delete=False, suffix='.webp') as temp_file:
+        temp_file.write(image_content)
+        temp_file_path = temp_file.name
+
+    try:
+        # Upload to GitHub using the function from drive.py
+        logger.info(f"Uploading image to GitHub: {file_path}")
+        upload_result = upload_file_to_github(temp_file_path, file_path)
+
+        if 'message' in upload_result:
+            github_url = file_path  # or construct the full GitHub URL if needed
+            logger.info(f"Image uploaded successfully. URL: {github_url}")
+
+            # Update the qualia_updates document with the image path
+            logger.info(f"Updating qualia_updates document {qualia_doc_id} with image path")
+            db.collection('qualia_updates').document(qualia_doc_id).update({
+                'image_path': github_url
+            })
+
+            return github_url
+        else:
+            logger.error(f"Failed to upload image to GitHub for event {event_id}: {upload_result.get('error', 'Unknown error')}")
+            return None
+    finally:
+        # Clean up the temporary file
+        os.unlink(temp_file_path)
+
+    return None
 def update_qualia():
     events_to_process = get_events_to_process()
     shuffle(events_to_process)
@@ -337,7 +347,7 @@ def update_qualia():
         qualia_doc_id = doc_ref[1].id
 
         # Generate and upload the image
-        image_path = generate_image(max_significance_event[1]['image_prompt'], max_significance_event[0]['event_id'], qualia_doc_id)
+        image_path = process_and_upload_image(max_significance_event[1]['image_prompt'], max_significance_event[0]['event_id'], qualia_doc_id)
         
         if image_path:
             logger.info(f"Image generated and uploaded successfully: {image_path}")

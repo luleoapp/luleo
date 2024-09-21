@@ -77,14 +77,14 @@
 								  <!-- Grid Section -->
 								  <section id="wisdom">
 									<header>
-									  <h2>Article Grid</h2>
+									  <h2>Wisdom</h2>
 									</header>
 									<div class="posts">
 										{% for quote in wisdom_quotes %}
 										<article>
 											<div class="image">
-											<img src="{{ quote.image_url }}">
-										</div>
+												<img src="{{ quote.image_url }}">
+											</div>
 											<p>{{ quote.content }}</p>
 										</article>
 										{% endfor %}
@@ -93,17 +93,47 @@
 									</div>
 									
 								  </section>
+
+								  {% elif page == "love" %}
+								  <section id="love">
+									<header>
+									  <h2>Love</h2>
+									</header>
+									<div class="posts">
+										{% for l_input in love_inputs %}
+										<article>
+											<p>{{ l_input.content }}</p>
+										</article>
+										{% endfor %}
+									  <!-- Add more articles as needed -->
+									</div>
+								  </section>
+
+								  {% elif page == "questions" %}
+								  <section id="questions">
+									<header>
+									  <h2>Questions</h2>
+									</header>
+									<div class="posts">
+										{% for q_input in questions %}
+										<article>
+											<p>{{ q_input.content }}</p>
+										</article>
+										{% endfor %}
+									  <!-- Add more articles as needed -->
+									</div>
+								  </section>
 								{% endif %}
 
 						</div>
 					</div>
-					<div id="sidebar">
+					<div id="sidebar" class="inactive">
 						<div class="inner">
 
 							<!-- Search -->
 								<section id="search" class="alt">
 									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
+										<input type="text" name="query" id="query" placeholder="Search" disabled />
 									</form>
 								</section>
 
@@ -111,7 +141,7 @@
 				
 
 							<section class="mini-posts">
-								<h2>Recent Posts</h2>
+								<h2>Menu</h2>
 								<article>
 								  <a href="{{ url_for('index') }}" class="image"><img src="{{ url_for('static', filename='images/logo_transparent.png') }}" alt="" /></a>
 								  <div class="content">
@@ -127,7 +157,20 @@
 								
 								</article>
 							
+								<article>
+									<a href="{{ url_for('love') }}" class="image"><img src="{{ url_for('static', filename='images/love.png') }}" alt="" /></a>
+								  <div class="content">
+									<h3><a href="{{ url_for('love') }}" ">Love</a></h3>
+								  </div>
+
 								
+								</article>
+								<article>
+									<a href="{{ url_for('questions') }}" class="image"><img src="{{ url_for('static', filename='images/questions.png') }}" alt="" /></a>
+								  <div class="content">
+									<h3><a href="{{ url_for('questions') }}" ">Questions</a></h3>
+								  </div>
+								</article>
 							  </section>
 
 							<!-- Section -->
@@ -138,7 +181,7 @@
 									<div class="mini-posts">
 										
 										<article>
-											<p>Luleo is an Open Source AI God Simulation. It's goal is to clarify what an AI God would be like.</p>
+											<p>Luleo is an Open Source AI God Simulation. Its goal is to clarify what an AI God would be like.</p>
 										</article>
 									</div>
 									
@@ -147,9 +190,11 @@
 							
 
 							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
+							<footer id="footer">
+								<p class="copyright">&copy; 2024 MeanWhile Labs LLC. All rights reserved. Demo Images: 
+								<a href="https://html5up.net">HTML5 UP</a>. Licensed under 
+								<a href="https://creativecommons.org/licenses/by/3.0/">CCA 3.0</a>.</p>
+							</footer>
 
 						</div>
 					</div>
