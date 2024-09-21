@@ -2,10 +2,20 @@ from flask import Flask, render_template
 import os
 from src.qualia import get_latest_event
 from dotenv import load_dotenv
+from src.wisdom import get_wisdom
+
 
 load_dotenv()
 
 app = Flask(__name__)
+
+@app.route('/wisdom')
+def wisdom():
+    #fetcch wisdom from firestore
+    wisdom_quotes = get_wisdom()
+    print(f"Debug - Wisdom Quotes: {wisdom_quotes}")  # Add this line
+    # Add any wisdom-specific data here
+    return render_template('index.html', page='wisdom', wisdom_quotes=wisdom_quotes)
 
 
 @app.route("/")
@@ -17,12 +27,12 @@ def index():
     print(f"Debug - Image URL: {image_url}")  # Add this line
     print(f"Debug - Summary: {summary}")      # Add this line
 
-    return render_template("index.html",
+    return render_template("index.html",page="home",
                            image_url=image_url,
                            spotify_playlist_uri=spotify_playlist_uri,
                            image_description=summary)
 
 
 if __name__ == "__main__":
-    
+
     app.run(host="0.0.0.0", port=8080, debug=True)

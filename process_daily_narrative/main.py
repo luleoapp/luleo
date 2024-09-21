@@ -18,9 +18,6 @@ def parse_request(type, params):
     func_to_apply = function_map.func_map.get(type, logger.info)
     return func_to_apply(**params)
 
-    #return {"test" : True}
-
-
 @app.route('/', methods=['GET', 'POST'])
 def call_default_cloud_run():
     logger.info("Received request")

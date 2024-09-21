@@ -5,27 +5,174 @@
 ///
 
 /* Mini Posts */
+.mini-posts {
+  // Textured Background (Enhancement 5)
+  // Adds a textured background to the mini-posts section
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 1em;
+  border-radius: 10px;
 
-	.mini-posts {
-		article {
-			border-top: solid 1px _palette(border);
-			margin-top: _size(element-margin);
-			padding-top: _size(element-margin);
+  h2 {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    color: _palette(fg-bold);
+    position: relative;
+    padding-bottom: 0.5em;
 
-			.image {
-				display: block;
-				margin: 0 0 (_size(element-margin) * 0.75) 0;
+    // Minimalistic Color Accents (Enhancement 7)
+    // Adds a small red line under the heading
+    &::after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      background: red;
+      left: 0;
+      bottom: 0;
+    }
+  }
 
-				img {
-					display: block;
-					width: 100%;
-				}
-			}
+  article {
+    border-top: solid 1px _palette(border);
+    margin-top: 1.5em;
+    padding-top: 1.5em;
+    display: flex;
+    align-items: center;
 
-			&:first-child {
-				border-top: 0;
-				margin-top: 0;
-				padding-top: 0;
-			}
-		}
-	}
+    &:first-of-type {
+      border-top: 0;
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    .image {
+      position: relative; // For pseudo-elements and positioning
+      flex-shrink: 0;
+      width: 60px;
+      height: 60px;
+      margin-right: 1em;
+      overflow: hidden;
+
+      // Background Box with Gradient (Enhancement 1)
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px; // Rounded corners for the background box
+        background: linear-gradient(135deg, #f8e0e0 0%, #faf0f0 100%); // Softer gradient that blends with white and complements red accents
+        z-index: -1; // Places the gradient behind the image
+      }
+
+      // Drop Shadow or Glow (Enhancement 2)
+      // Adds a soft shadow around the image container
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      border-radius: 10px; // Matches the background box
+
+      // Animated Hover Effects (Enhancement 4)
+      // Smooth transition for hover effects
+      transition: transform 0.3s, background 0.3s;
+
+      &:hover {
+        transform: scale(1.05); // Slightly enlarges the image on hover
+
+        &::before {
+          // Changes the gradient direction and colors on hover
+          background: linear-gradient(135deg, #f8e0e0 0%, #faf0f0 100%);
+        }
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 5px; // Changed from 50% to 5px to make images square with slightly rounded corners
+
+        // Accent Colors (Enhancement 3)
+        // Adds a thin red outline around the image
+        border: 2px solid whit;
+
+        // Minimalistic Color Accents (Enhancement 7)
+        // Adds a small red dot inside the image (optional)
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 5px;
+          right: 5px;
+          width: 8px;
+          height: 8px;
+          background: red;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; // Centers the text vertically
+
+      h3 {
+        font-size: 0.9em;
+        margin: 0 0 0.25em 0;
+        line-height: 1.3;
+        font-family: 'Roboto', sans-serif; // Typography Pairing (Enhancement 6)
+        font-weight: bold;
+        text-transform: uppercase; // Capitalizes the text
+
+        a {
+          color: _palette(fg-bold);
+          text-decoration: none;
+
+          &:hover {
+            color: _palette(accent); // Changes color on hover
+          }
+        }
+      }
+
+      time {
+        font-size: 0.8em;
+        color: _palette(fg-light);
+      }
+    }
+  }
+
+  .button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 1.5em;
+    padding: 0.5em;
+    background-color: _palette(accent);
+    color: _palette(bg);
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: lighten(_palette(accent), 10%);
+    }
+  }
+}
+
+/* Media Query for Smaller Screens */
+@media screen and (max-width: 736px) {
+  .mini-posts {
+    article {
+      .image {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+}

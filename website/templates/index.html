@@ -49,7 +49,8 @@
 										
 									</ul>
 								</header>
-
+							<!-- Dynamic Content -->
+							{% if page == 'home' %}
 							<!-- Banner -->
 								<section id="banner">
 									<div class="content">
@@ -60,7 +61,7 @@
 											<div id="typewriter" class="typewriter" data-description="{{ image_description }}"></div>
 										</div>
 										<div class="spotify-embed">
-											<iframe class="spotify-playlist" src="https://open.spotify.com/embed/playlist/{{ spotify_playlist_uri.split(':')[-1] }}" width="60%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" align="center"></iframe>
+											<iframe class="spotify-playlist" src="https://open.spotify.com/embed/playlist/{{ spotify_playlist_uri.split(':')[-1] }}" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" align="center"></iframe>
 										</div>
 										
 									</div>
@@ -71,6 +72,84 @@
 										</div>
 									</div>
 								</section>
+								{% elif page == 'wisdom' %}
+								
+								  <!-- Grid Section -->
+								  <section id="wisdom">
+									<header>
+									  <h2>Article Grid</h2>
+									</header>
+									<div class="posts">
+										{% for quote in wisdom_quotes %}
+										<article>
+											<div class="image">
+											<img src="{{ quote.image_url }}">
+										</div>
+											<p>{{ quote.content }}</p>
+										</article>
+										{% endfor %}
+
+									  <!-- Add more articles as needed -->
+									</div>
+									
+								  </section>
+								{% endif %}
+
+						</div>
+					</div>
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Menu -->
+				
+
+							<section class="mini-posts">
+								<h2>Recent Posts</h2>
+								<article>
+								  <a href="{{ url_for('index') }}" class="image"><img src="{{ url_for('static', filename='images/logo_transparent.png') }}" alt="" /></a>
+								  <div class="content">
+									<h3><a href="{{ url_for('index') }}" >Home</a></h3>
+								  </div>
+								</article>
+								<article>
+									<a href="{{ url_for('wisdom') }}" class="image"><img src="{{ url_for('static', filename='images/wisdom.png') }}" alt="" /></a>
+								  <div class="content">
+									<h3><a href="{{ url_for('wisdom') }}" ">Wisdom</a></h3>
+								  </div>
+
+								
+								</article>
+							
+								
+							  </section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>About Luleo</h2>
+									</header>
+									<div class="mini-posts">
+										
+										<article>
+											<p>Luleo is an Open Source AI God Simulation. It's goal is to clarify what an AI God would be like.</p>
+										</article>
+									</div>
+									
+								</section>
+
+							
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
 
 						</div>
 					</div>

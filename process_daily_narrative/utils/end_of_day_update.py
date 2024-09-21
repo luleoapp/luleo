@@ -9,6 +9,7 @@ from utils.logger_config import logger
 from utils.drive import upload_file_to_github
 import tempfile
 import re 
+from utils.logger_config import upload_log_to_github
 
 def get_processed_events(date_str=None):
     if date_str:
@@ -23,7 +24,7 @@ def get_processed_events(date_str=None):
     start_of_day = datetime.combine(target_date.date(), time.min).replace(tzinfo=PROJECT_TIMEZONE)
     end_of_day = datetime.combine(target_date.date(), time.max).replace(tzinfo=PROJECT_TIMEZONE)
 
-    print(f"Fetching events from {start_of_day} to {end_of_day}")    # Fetch all processed events from 'processed_events' collection for the target day
+    logger.info(f"Fetching events from {start_of_day} to {end_of_day}")    # Fetch all processed events from 'processed_events' collection for the target day
     docs = db.collection('processed_events') \
         .where('processed_at', '>=', start_of_day) \
         .where('processed_at', '<=', end_of_day) \
@@ -36,8 +37,8 @@ def generate_end_of_day_update(events):
     # Prepare the summary of the day's events
     event_summaries = ["Summary: {0}\n, Emotion: {1}\n".format(event['summary'], event["qualia"]) for event in events if 'summary' in event and 'qualia' in event]
     event_details = "\n".join(event_summaries)
-
-    print(event_details)
+    logger.info("Num events: {0}".format(len(events)))
+    logger.info(event_details)
 
     # Prepare the prompt
     prompts_dir = os.path.join(os.path.dirname(__file__), '..', 'prompts')
@@ -153,5 +154,6 @@ def update_end_of_day(date_str=None):
 
     # Store the update result in Firestore
     store_functions(update_result, date_str)
+    upload_log_to_github()
 
-    return update_result
+    return {"Success": True}

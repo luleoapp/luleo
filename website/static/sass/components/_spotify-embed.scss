@@ -1,7 +1,14 @@
 .spotify-embed {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  margin-top: 20px;
+
+
     .spotify-playlist {
-      width: 60%;
-      height: 380px;
+      width: 80%;
+      min-width: 300px;
+      height: 700px;
     }
   
     @include breakpoint('<=small') {

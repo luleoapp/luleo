@@ -1,5 +1,7 @@
 from src.db_init import db
 from firebase_admin import firestore
+
+
 def get_latest_event():
   query = (db.collection("qualia_updates")
            .where("image_path", "!=", "")
