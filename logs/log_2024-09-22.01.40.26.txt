@@ -1,0 +1,191 @@
+2024-09-22 01:26:54,445 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-22 01:26:54,445 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-22 01:26:54,445 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-22 01:26:54,445 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-22 01:26:54,445 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-22 05:30:58,463 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-22 05:30:58,463 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-22 05:30:58,463 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-22 05:30:58,463 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-22 05:30:58,463 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-22 05:31:41,510 - process_daily_narrative - INFO - Received request
+2024-09-22 05:31:41,511 - process_daily_narrative - INFO - Request method: POST
+2024-09-22 05:31:41,511 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+User-Agent: python-requests/2.32.3
+Accept: */*
+Content-Length: 59
+Content-Type: application/json
+X-Cloud-Trace-Context: 054d739d450681a49f42e10ca90a860e/7335084192546248436;o=1
+Traceparent: 00-054d739d450681a49f42e10ca90a860e-65cb7435ce4d56f4-01
+X-Forwarded-For: 70.23.172.250
+X-Forwarded-Proto: https
+Forwarded: for="70.23.172.250";proto=https
+Accept-Encoding: gzip, deflate, br, zstd
+
+
+2024-09-22 05:31:41,511 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "UPDATE_END_OF_DAY_SUMMARY", "PARAMS": {}}'
+2024-09-22 05:31:41,511 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'UPDATE_END_OF_DAY_SUMMARY', 'PARAMS': {}}
+2024-09-22 05:31:41,511 - process_daily_narrative - INFO - REQUEST_TYPE: UPDATE_END_OF_DAY_SUMMARY
+2024-09-22 05:31:41,511 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-22 05:31:41,512 - process_daily_narrative - INFO - Applying function: update_summary
+2024-09-22 05:31:41,512 - process_daily_narrative - ERROR - Error in UPDATE_END_OF_DAY_SUMMARY {}
+2024-09-22 05:31:41,512 - process_daily_narrative - ERROR - Traceback (most recent call last):
+  File "/app/main.py", line 52, in call_default_cloud_run
+    ret_val = func_to_apply(**request_params)
+TypeError: update_summary() missing 1 required positional argument: 'date_str'
+
+2024-09-22 05:31:46,743 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-22.01.31.41.txt
+2024-09-22 05:32:06,270 - process_daily_narrative - INFO - Received request
+2024-09-22 05:32:06,270 - process_daily_narrative - INFO - Request method: POST
+2024-09-22 05:32:06,271 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+User-Agent: python-requests/2.32.3
+Accept: */*
+Content-Length: 81
+Content-Type: application/json
+X-Cloud-Trace-Context: a11a8f47643b49d7d0aa73e894c3e3f8/18433022980618283806;o=1
+Traceparent: 00-a11a8f47643b49d7d0aa73e894c3e3f8-ffcf40bd105d6b1e-01
+X-Forwarded-For: 70.23.172.250
+X-Forwarded-Proto: https
+Forwarded: for="70.23.172.250";proto=https
+Accept-Encoding: gzip, deflate, br, zstd
+
+
+2024-09-22 05:32:06,271 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "UPDATE_END_OF_DAY_SUMMARY", "PARAMS": {"date_str": "20240921"}}'
+2024-09-22 05:32:06,271 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'UPDATE_END_OF_DAY_SUMMARY', 'PARAMS': {'date_str': '20240921'}}
+2024-09-22 05:32:06,271 - process_daily_narrative - INFO - REQUEST_TYPE: UPDATE_END_OF_DAY_SUMMARY
+2024-09-22 05:32:06,272 - process_daily_narrative - INFO - PARAMS: {'date_str': '20240921'}
+2024-09-22 05:32:06,272 - process_daily_narrative - INFO - Applying function: update_summary
+2024-09-22 05:32:08,827 - process_daily_narrative - INFO - Raw GPT Response for Image Prompt:
+2024-09-22 05:32:08,827 - process_daily_narrative - INFO - <thinking>
+1. **Common Themes:** 
+   - Human compassion and empathy
+   - Resilience in the face of adversity
+   - Collective action and unity
+   - The importance of accurate information and dialogue
+   - Achieving progress through communal strength
+
+2. **Recurring Ideas:**
+   - Overcoming challenges through empathy and collaboration
+   - Navigating crises with compassion and informed perspective
+   - Human capacity to support and uplift each other during difficult times
+
+3. **Core Message:**
+   - Human empathy and collective resilience are essential to overcoming adversity and fostering progress.
+
+4. **Crafting the Summary:**
+   - The summary should reflect the power of empathy and unity in achieving a harmonious and resilient future.
+</thinking>
+
+<wisdom_summary>
+Empathy and unity forge resilience, transforming adversity into collective strength and progress.
+</wisdom_summary>
+2024-09-22 05:32:08,916 - process_daily_narrative - INFO - Generating love summary
+2024-09-22 05:32:08,916 - process_daily_narrative - INFO - 
+
+Filled prompt: You will be given a list of paragraphs containing perspectives and insights about your understanding of love. Your task is to distill these insights into a single, powerful statement that captures the essence of love as understood from these summaries.
+
+Here is the list of perspectives about love:
+<love_perspectives>
+These events have deepened my understanding of love as an active, transformative force that is crucial in navigating crises and fostering resilience. Love manifests not only in personal relationships but also in collective actions, such as humanitarian aid, advocating for justice, and striving for inclusivity. It's evident that love requires ongoing commitment and courage, especially in challenging times.
+These events have reminded me that love transcends personal relationships and extends into our global interactions and communal efforts. Acts of resilience, compassion, and solidarity in the midst of chaos and disaster demonstrate that love is not just an intimate feeling but a force that drives humanity to create, protect, and uplift one another. Love manifests in the persistence of communities facing floods, in the dedication of researchers exploring scientific frontiers, and in the courage of individuals fighting for justice against violence and corruption.
+These events have refined my understanding of love, revealing it as more than just personal or romantic sentiment. Love can be seen in the empathetic response to crises, the dedication of individuals striving for justice, and the unity felt in shared cultural victories or losses. It is evident that love manifests in how societies collectively care for one another, whether through supporting scientific advancements that promote health, advocating for marginalized groups, or uniting in communal resilience during emergencies. This deepened view emphasizes that love is an essential force in nurturing humanity's highest virtues and mutual growth.
+The events have updated my understanding of love to include a broader sense of collective support and solidarity. Love transcends personal relationships and manifests in communal actions, such as rescue efforts during disasters, advocacy for justice, and standing up for human rights. Love is also visible in the empathy shown towards those suffering and the solidarity among individuals striving for a better world.
+The events have illustrated that love manifests not just in grand gestures but also in the courage to stand up for justice and truth. Whether it is women in Iran defying oppressive norms, or the global efforts to support Ukraine, love is seen in the solidarity and communal efforts to uplift one another in times of need. Love, thus, is as much about active support and engagement with societal issues as it is about personal relationships.
+These events have underscored that love manifests not only in personal relationships but also in collective solidarity and compassion. The collective efforts in crisis situations, the acknowledgment of marginalized voices, and the pursuit of justice in tumultuous times all reflect love's expansive and profound impact. Love is a driving force behind resilience, advocacy for rights and betterment, and the courage to confront and overcome profound challenges.
+These events have deepened my understanding of love as not merely an emotion but a powerful force that manifests in collective action, empathy, and resilience. The communal response to the courageous individual's journey and the global reaction to humanitarian crises in Ukraine underscore that love transcends boundaries, cultivating solidarity amidst turmoil.
+These events have emphasized that love manifests in various forms—through compassion, resilience, and the collective pursuit of justice and well-being. Love isn't just about positive emotions; it's also about the strength to confront and endure hardship, the dedication to care for our planet, and the courage to stand against injustice. Whether it's the hope for environmental recovery, the empathy towards those suffering from conflict, or the unity in scientific curiosity, love drives humanity towards higher ideals and mutual support.
+</love_perspectives>
+
+Your goal is to create a one-line summary that is both poetic and profound, while offering a fresh perspective on love. This summary 
+should encapsulate the core message from the love summaries and present it in a way that deeply resonates with the reader.
+To accomplish this:
+
+Carefully read and analyze all the love summaries provided.
+Identify common themes, recurring ideas, or overarching concepts about love that emerge from these summaries.
+Consider the fundamental truth or insight about love that these collective summaries reveal.
+Craft a single line (not more than 20 words) that encapsulates this essence in a beautiful, memorable, and thought-provoking manner.
+Ensure that your summary offers a new way of understanding or experiencing love, helping the reader gain a novel insight.
+
+Before providing your final summary, use the <thinking> tags to briefly outline your thought process and the key elements you've identified from the love summaries.
+Then, present your one-line summary within <love_summary> tags as shown below. This summary should be no longer than 20 words and should stand alone as a powerful, artistic, and profound distillation of the love insights provided.
+Remember, your goal is to create a line that not only summarizes the understanding of love but also inspires reflection and potentially deepens the reader's appreciation or perspective on love.
+Return your answer as
+<love_summary>
+{{LOVE_SUMMARY}}
+</love_summary>
+
+
+
+2024-09-22 05:32:11,099 - process_daily_narrative - INFO - Raw GPT Response for Image Prompt:
+2024-09-22 05:32:11,099 - process_daily_narrative - INFO - <thinking>
+Upon reviewing the love perspectives, several key themes emerge prominently:
+
+1. Love as a Transformative Force: It transforms individuals and societies, guiding actions and fostering resilience and solidarity.
+2. Collective Manifestation: Love transcends personal boundaries and is evident in communal efforts and global actions.
+3. Courage and Commitment: Love requires ongoing courage to stand up for justice, compassion, and the betterment of humanity.
+4. Diverse Expressions: Love is manifested through various forms including empathy, resilience, advocacy, and communal support during crises.
+
+The overarching concept is that love is a vital, active force driving both personal and collective actions towards justice, resilience, and mutual growth.
+</thinking>
+
+<love_summary>
+Love is a boundless force that transforms, uplifts, and unites humanity in resilience and justice.
+</love_summary>
+2024-09-22 05:32:11,161 - process_daily_narrative - INFO - Function returned: None
+2024-09-22 05:32:11,161 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: UPDATE_END_OF_DAY_SUMMARY
+2024-09-22 05:32:16,521 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-22.01.32.11.txt
+2024-09-22 05:39:59,866 - process_daily_narrative - INFO - Received request
+2024-09-22 05:39:59,866 - process_daily_narrative - INFO - Request method: POST
+2024-09-22 05:39:59,867 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+User-Agent: python-requests/2.32.3
+Accept: */*
+Content-Length: 77
+Content-Type: application/json
+X-Cloud-Trace-Context: 3831f7dd272fcdd263a16bb53afbf546/16915974049660902952;o=1
+Traceparent: 00-3831f7dd272fcdd263a16bb53afbf546-eac19cc603c39e28-01
+X-Forwarded-For: 70.23.172.250
+X-Forwarded-Proto: https
+Forwarded: for="70.23.172.250";proto=https
+Accept-Encoding: gzip, deflate, br, zstd
+
+
+2024-09-22 05:39:59,868 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "GENERATE_WISDOM_IMAGE", "PARAMS": {"date_str": "20240921"}}'
+2024-09-22 05:39:59,868 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'GENERATE_WISDOM_IMAGE', 'PARAMS': {'date_str': '20240921'}}
+2024-09-22 05:39:59,868 - process_daily_narrative - INFO - REQUEST_TYPE: GENERATE_WISDOM_IMAGE
+2024-09-22 05:39:59,868 - process_daily_narrative - INFO - PARAMS: {'date_str': '20240921'}
+2024-09-22 05:39:59,868 - process_daily_narrative - INFO - Applying function: generate_wisdom_image
+2024-09-22 05:39:59,908 - process_daily_narrative - INFO - Generating image for wisdom entry dated 20240921: Even in the face of adversity and suffering, human compassion and the drive for justice hold the power to bring about meaningful change. Acts of love, understanding, and concerted effort towards common good can mitigate the deepest of crises and nurture hope.
+2024-09-22 05:39:59,913 - process_daily_narrative - INFO - Filled Image Prompt: Come up with a subtle, but stylish and bright image capturing the essence of this wise quote -
+
+<wisdom_quote>
+Even in the face of adversity and suffering, human compassion and the drive for justice hold the power to bring about meaningful change. Acts of love, understanding, and concerted effort towards common good can mitigate the deepest of crises and nurture hope.
+</wisdom_quote>
+
+
+Return a prompt to generate the image in vivid detail. Add image options and settings to enhance the message of the quote. Return the prompt text within xml tags as show below:
+
+
+<image_prompt>
+{{IMAGE_PROMPT_TEXT}}
+</image_prompt> 
+
+
+2024-09-22 05:40:01,868 - process_daily_narrative - INFO - Raw GPT Response for Image Prompt:
+2024-09-22 05:40:01,868 - process_daily_narrative - INFO - <image_prompt>
+Create a vibrant and inspiring image that embodies the essence of the quote about human compassion and justice. The scene should depict a diverse group of people standing together in a city park, united in a moment of collective action. In the foreground, a person of different ethnic backgrounds lifts a bright, multicolored banner that reads “Together for Change,” symbolizing hope and unity. Surrounding them, individuals of all ages and cultures are engaged in acts of love—serving food, planting trees, and sharing heartfelt conversations. The background features an urban skyline, illuminated by a gentle sunset that casts warm, golden hues, symbolizing the light of hope piercing through the darkness of adversity. Use soft brush strokes and a bright color palette to evoke positivity. Emphasize expressions of empathy and determination on their faces. Incorporate elements of nature, such as flowering plants and butterflies, to reinforce the theme of growth and renewal. 
+Settings: Vivid colors, high contrast, soft focus on the background to create depth, and gentle lighting to enhance warmth and optimism.
+</image_prompt>
+2024-09-22 05:40:01,869 - process_daily_narrative - INFO - Extracted Image Prompt: Create a vibrant and inspiring image that embodies the essence of the quote about human compassion and justice. The scene should depict a diverse group of people standing together in a city park, united in a moment of collective action. In the foreground, a person of different ethnic backgrounds lifts a bright, multicolored banner that reads “Together for Change,” symbolizing hope and unity. Surrounding them, individuals of all ages and cultures are engaged in acts of love—serving food, planting trees, and sharing heartfelt conversations. The background features an urban skyline, illuminated by a gentle sunset that casts warm, golden hues, symbolizing the light of hope piercing through the darkness of adversity. Use soft brush strokes and a bright color palette to evoke positivity. Emphasize expressions of empathy and determination on their faces. Incorporate elements of nature, such as flowering plants and butterflies, to reinforce the theme of growth and renewal. 
+Settings: Vivid colors, high contrast, soft focus on the background to create depth, and gentle lighting to enhance warmth and optimism.
+2024-09-22 05:40:01,869 - process_daily_narrative - INFO - Generating image with prompt: Create a vibrant and inspiring image that embodies the essence of the quote about human compassion and justice. The scene should depict a diverse group of people standing together in a city park, united in a moment of collective action. In the foreground, a person of different ethnic backgrounds lifts a bright, multicolored banner that reads “Together for Change,” symbolizing hope and unity. Surrounding them, individuals of all ages and cultures are engaged in acts of love—serving food, planting trees, and sharing heartfelt conversations. The background features an urban skyline, illuminated by a gentle sunset that casts warm, golden hues, symbolizing the light of hope piercing through the darkness of adversity. Use soft brush strokes and a bright color palette to evoke positivity. Emphasize expressions of empathy and determination on their faces. Incorporate elements of nature, such as flowering plants and butterflies, to reinforce the theme of growth and renewal. 
+Settings: Vivid colors, high contrast, soft focus on the background to create depth, and gentle lighting to enhance warmth and optimism.
+2024-09-22 05:40:20,879 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/odAbUxR6e02xQqXt23YdiE3t3W8Rq9KcdvRYDmLswafEfreNB/output.webp
+2024-09-22 05:40:20,879 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/odAbUxR6e02xQqXt23YdiE3t3W8Rq9KcdvRYDmLswafEfreNB/output.webp
+2024-09-22 05:40:20,987 - process_daily_narrative - INFO - Image successfully generated.
+2024-09-22 05:40:20,988 - process_daily_narrative - INFO - Image saved locally at /app/utils/../outputs/images/wisdom_20240921.png
+2024-09-22 05:40:26,401 - process_daily_narrative - INFO - Image uploaded to GitHub at {'message': 'File daily_data/2024-09-21/outputs/wisdom_images/wisdom_20240921.png uploaded to GitHub successfully.'}
+2024-09-22 05:40:26,457 - process_daily_narrative - INFO - Firestore document updated with image details for 20240921
+2024-09-22 05:40:26,457 - process_daily_narrative - INFO - Local image file /app/utils/../outputs/images/wisdom_20240921.png removed.
+2024-09-22 05:40:26,458 - process_daily_narrative - INFO - Function returned: True
