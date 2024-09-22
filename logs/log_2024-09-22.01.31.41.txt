@@ -1,0 +1,38 @@
+2024-09-22 01:26:54,445 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-22 01:26:54,445 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-22 01:26:54,445 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-22 01:26:54,445 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-22 01:26:54,445 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-22 05:30:58,463 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-22 05:30:58,463 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-22 05:30:58,463 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-22 05:30:58,463 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-22 05:30:58,463 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-22 05:31:41,510 - process_daily_narrative - INFO - Received request
+2024-09-22 05:31:41,511 - process_daily_narrative - INFO - Request method: POST
+2024-09-22 05:31:41,511 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+User-Agent: python-requests/2.32.3
+Accept: */*
+Content-Length: 59
+Content-Type: application/json
+X-Cloud-Trace-Context: 054d739d450681a49f42e10ca90a860e/7335084192546248436;o=1
+Traceparent: 00-054d739d450681a49f42e10ca90a860e-65cb7435ce4d56f4-01
+X-Forwarded-For: 70.23.172.250
+X-Forwarded-Proto: https
+Forwarded: for="70.23.172.250";proto=https
+Accept-Encoding: gzip, deflate, br, zstd
+
+
+2024-09-22 05:31:41,511 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "UPDATE_END_OF_DAY_SUMMARY", "PARAMS": {}}'
+2024-09-22 05:31:41,511 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'UPDATE_END_OF_DAY_SUMMARY', 'PARAMS': {}}
+2024-09-22 05:31:41,511 - process_daily_narrative - INFO - REQUEST_TYPE: UPDATE_END_OF_DAY_SUMMARY
+2024-09-22 05:31:41,511 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-22 05:31:41,512 - process_daily_narrative - INFO - Applying function: update_summary
+2024-09-22 05:31:41,512 - process_daily_narrative - ERROR - Error in UPDATE_END_OF_DAY_SUMMARY {}
+2024-09-22 05:31:41,512 - process_daily_narrative - ERROR - Traceback (most recent call last):
+  File "/app/main.py", line 52, in call_default_cloud_run
+    ret_val = func_to_apply(**request_params)
+TypeError: update_summary() missing 1 required positional argument: 'date_str'
+
