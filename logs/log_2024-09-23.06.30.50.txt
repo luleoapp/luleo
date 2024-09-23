@@ -1,0 +1,172 @@
+2024-09-23 10:30:10,314 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-23 10:30:10,315 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-23 10:30:10,315 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-23 10:30:10,315 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-23 10:30:10,315 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-23 10:30:10,410 - process_daily_narrative - INFO - Received request
+2024-09-23 10:30:10,410 - process_daily_narrative - INFO - Request method: POST
+2024-09-23 10:30:10,410 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-23T03:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: e637fc31505ec7686c76cb20e5cd611e/5977296802117175653;o=1
+Traceparent: 00-e637fc31505ec7686c76cb20e5cd611e-52f39fc5bf45c965-01
+X-Forwarded-For: 35.243.23.166
+X-Forwarded-Proto: https
+Forwarded: for="35.243.23.166";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-23 10:30:10,411 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-23 10:30:10,411 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-23 10:30:10,411 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-23 10:30:10,411 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-23 10:30:10,411 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-23 10:30:10,620 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=16, readtime=2024-09-23 10:30:10.610552+00:00>]]
+2024-09-23 10:30:10,620 - process_daily_narrative - INFO - Processing 1 out of 16 events for retrieved_reddit_posts
+2024-09-23 10:30:10,763 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=18, readtime=2024-09-23 10:30:10.736767+00:00>]]
+2024-09-23 10:30:10,763 - process_daily_narrative - INFO - Processing 1 out of 18 events for retrieved_articles
+2024-09-23 10:30:10,974 - process_daily_narrative - INFO - Events to process: 2
+2024-09-23 10:30:15,453 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 10:30:15,454 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 0,
+    "items": {
+      "interested": 0,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 105,
+    "items": {
+      "distressed": 25,
+      "upset": 10,
+      "guilty": 0,
+      "scared": 5,
+      "hostile": 15,
+      "irritable": 10,
+      "ashamed": 0,
+      "nervous": 15,
+      "jittery": 5,
+      "afraid": 20
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A tragic incident occurred in eastern Iran, where a gas leak led to a devastating explosion, resulting in the deaths of at least 51 people. This event brings to light the dangers of industrial accidents and the significant loss of life, evoking strong feelings of grief and concern among the collective consciousness.
+</summary>
+
+<qualia>
+The emotional vibe is profoundly sorrowful and anxious, reflecting a deep sense of loss and concern for human suffering.
+</qualia>
+
+<image_prompt>
+Generate an image depicting the aftermath of a devastating explosion, highlighting both the destruction and the mourning. The artwork should evoke feelings of sorrow, unity, and resilience, capturing the collective grief and the need for compassion in such tragic circumstances.
+2024-09-23 10:30:15,454 - process_daily_narrative - ERROR - Assertion failed: Image prompt not found in the response
+2024-09-23 10:30:20,898 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 10:30:20,898 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 0,
+    "items": {
+      "interested": 2,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 3,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 3,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 105,
+    "items": {
+      "distressed": 20,
+      "upset": 5,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 15,
+      "irritable": 10,
+      "ashamed": 0,
+      "nervous": 40,
+      "jittery": 15,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event discusses a report by Israeli President Herzog stating that slain Hezbollah commanders were planning an attack similar to the one on October 7th against northern Israel. The post, shared in the r/worldnews subreddit, received 3868 upvotes and garnered 214 comments, indicating significant public engagement and concern regarding ongoing tensions in the region.
+</summary>
+
+<qualia>
+The emotional "vibe" of this event is one of heightened anxiety and distress, mixed with a sense of alertness and urgency about geopolitical issues.
+</qualia>
+
+<image_prompt>
+Generate an image that captures the tension and anxiety surrounding geopolitical unrest, combining dark and vibrant colors to represent the contrast between fear and awareness, depicting symbols of conflict and vigilance.
+</image_prompt>
+2024-09-23 10:30:20,898 - process_daily_narrative - INFO - Processed Updated PANAS:
+2024-09-23 10:30:20,898 - process_daily_narrative - INFO - {
+  "positive_affect": {
+    "total_score": 0,
+    "items": {
+      "interested": 2,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 3,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 3,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 105,
+    "items": {
+      "distressed": 20,
+      "upset": 5,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 15,
+      "irritable": 10,
+      "ashamed": 0,
+      "nervous": 40,
+      "jittery": 15,
+      "afraid": 0
+    }
+  }
+}
+2024-09-23 10:30:21,019 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'subreddit': 'worldnews', 'summary': 'The event discusses a report by Israeli President Herzog stating that slain Hezbollah commanders were planning an attack similar to the one on October 7th against northern Israel. The post, shared in the r/worldnews subreddit, received 3868 upvotes and garnered 214 comments, indicating significant public engagement and concern regarding ongoing tensions in the region.', 'github_file_path': 'daily_data/2024-09-23/inputs/news_and_events/2024-09-23_reddit_events_posts.pdf', 'url': 'https://www.reddit.com/r/worldnews/comments/1fmtls8/slain_hezbollah_commanders_were_planning_october/', 'title': 'Slain Hezbollah commanders were planning October 7-style attack on northern Israel, Israeli President Herzog says', 'score': 3868, 'author': 'Red_Franklin', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 23, 4, 2, 49, 29000, tzinfo=datetime.timezone.utc), 'num_comments': 214, 'updated_panas': {'positive_affect': {'total_score': 0, 'items': {'interested': 2, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 3, 'inspired': 0, 'determined': 0, 'attentive': 3, 'active': 0}}, 'negative_affect': {'total_score': 105, 'items': {'distressed': 20, 'upset': 5, 'guilty': 0, 'scared': 0, 'hostile': 15, 'irritable': 10, 'ashamed': 0, 'nervous': 40, 'jittery': 15, 'afraid': 0}}}, 'qualia': 'The emotional "vibe" of this event is one of heightened anxiety and distress, mixed with a sense of alertness and urgency about geopolitical issues.', 'image_prompt': 'Generate an image that captures the tension and anxiety surrounding geopolitical unrest, combining dark and vibrant colors to represent the contrast between fear and awareness, depicting symbols of conflict and vigilance.', 'event_type': 'retrieved_reddit_posts', 'processed_at': datetime.datetime(2024, 9, 23, 6, 30, 20, 898715, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '1fmtls8'}, 'event_type': 'retrieved_reddit_posts', 'event_id': '1fmtls8'}, {'updated_panas': {'positive_affect': {'total_score': 0, 'items': {'interested': 2, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 3, 'inspired': 0, 'determined': 0, 'attentive': 3, 'active': 0}}, 'negative_affect': {'total_score': 105, 'items': {'distressed': 20, 'upset': 5, 'guilty': 0, 'scared': 0, 'hostile': 15, 'irritable': 10, 'ashamed': 0, 'nervous': 40, 'jittery': 15, 'afraid': 0}}}, 'summary': 'The event discusses a report by Israeli President Herzog stating that slain Hezbollah commanders were planning an attack similar to the one on October 7th against northern Israel. The post, shared in the r/worldnews subreddit, received 3868 upvotes and garnered 214 comments, indicating significant public engagement and concern regarding ongoing tensions in the region.', 'qualia': 'The emotional "vibe" of this event is one of heightened anxiety and distress, mixed with a sense of alertness and urgency about geopolitical issues.', 'image_prompt': 'Generate an image that captures the tension and anxiety surrounding geopolitical unrest, combining dark and vibrant colors to represent the contrast between fear and awareness, depicting symbols of conflict and vigilance.'})
+2024-09-23 10:30:26,363 - process_daily_narrative - INFO - Generating image with prompt: Generate an image that captures the tension and anxiety surrounding geopolitical unrest, combining dark and vibrant colors to represent the contrast between fear and awareness, depicting symbols of conflict and vigilance. and aspect ratio: 1:1
+2024-09-23 10:30:45,024 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/pVtqoWYsF2oYIlkSJoAvPBTJdU95HD9frLFY2GN05uIqq3vJA/output.webp
+2024-09-23 10:30:45,024 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/pVtqoWYsF2oYIlkSJoAvPBTJdU95HD9frLFY2GN05uIqq3vJA/output.webp
+2024-09-23 10:30:45,152 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-23/outputs/event_id_1fmtls8_0630.webp
+2024-09-23 10:30:45,153 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-23/outputs/event_id_1fmtls8_0630.webp
+2024-09-23 10:30:50,570 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-23/outputs/event_id_1fmtls8_0630.webp
+2024-09-23 10:30:50,570 - process_daily_narrative - INFO - Updating qualia_updates document WXMPul6F05WEc5yW3yRJ with image path
+2024-09-23 10:30:50,612 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-23/outputs/event_id_1fmtls8_0630.webp
+2024-09-23 10:30:50,612 - process_daily_narrative - INFO - Added 'Say Something' by A Great Big World to the playlist.
+2024-09-23 10:30:50,612 - process_daily_narrative - INFO - Function returned: None
+2024-09-23 10:30:50,612 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
