@@ -1,0 +1,362 @@
+2024-09-23 10:59:59,473 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-23 10:59:59,473 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-23 10:59:59,473 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-23 10:59:59,473 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-23 10:59:59,473 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-23 11:02:16,519 - process_daily_narrative - INFO - Received request
+2024-09-23 11:02:16,519 - process_daily_narrative - INFO - Request method: POST
+2024-09-23 11:02:16,519 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 115
+Content-Type: application/json
+
+
+2024-09-23 11:02:16,520 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "CLASSIFY_USER_INPUT", "PARAMS": {"user_input_text": "Luleo is the best app, it\'s really needed"}}'
+2024-09-23 11:02:16,520 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'CLASSIFY_USER_INPUT', 'PARAMS': {'user_input_text': "Luleo is the best app, it's really needed"}}
+2024-09-23 11:02:16,520 - process_daily_narrative - INFO - REQUEST_TYPE: CLASSIFY_USER_INPUT
+2024-09-23 11:02:16,521 - process_daily_narrative - INFO - PARAMS: {'user_input_text': "Luleo is the best app, it's really needed"}
+2024-09-23 11:02:16,521 - process_daily_narrative - INFO - Applying function: classify_user_input
+2024-09-23 11:02:19,050 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 11:02:19,050 - process_daily_narrative - INFO - <explanation>
+The input expresses a positive sentiment about the Luleo app, stating that it is "the best app" and "really needed." This indicates a sense of appreciation and gratitude towards the app, which suggests a high level of satisfaction and recognition of its importance in the user's life. The phrase "it's really needed" implies that the app has a significant role or impact, aligning with themes of gratitude and acknowledgment of utility. Therefore, the most fitting category for this input is "Gratitude." Additionally, since the comment is about the app's value, it could also fit under "Feedback" as it reflects a user’s positive experience.
+
+</explanation>
+
+<categories>
+<category>Gratitude</category>
+<category>Feedback</category>
+</categories>
+2024-09-23 11:02:19,051 - process_daily_narrative - INFO - Function returned: {'categories': ['Gratitude', 'Feedback'], 'explanation': 'The input expresses a positive sentiment about the Luleo app, stating that it is "the best app" and "really needed." This indicates a sense of appreciation and gratitude towards the app, which suggests a high level of satisfaction and recognition of its importance in the user\'s life. The phrase "it\'s really needed" implies that the app has a significant role or impact, aligning with themes of gratitude and acknowledgment of utility. Therefore, the most fitting category for this input is "Gratitude." Additionally, since the comment is about the app\'s value, it could also fit under "Feedback" as it reflects a user’s positive experience.'}
+2024-09-23 11:02:24,828 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-23.11.02.19.txt
+2024-09-23 11:03:31,453 - process_daily_narrative - INFO - Received request
+2024-09-23 11:03:31,454 - process_daily_narrative - INFO - Request method: POST
+2024-09-23 11:03:31,454 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 156
+Content-Type: application/json
+
+
+2024-09-23 11:03:31,455 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "CLASSIFY_USER_INPUT", "PARAMS": {"user_input_text": "This sucks. Suck my balls", "user_input_image_description": "A serene neighborhood"}}'
+2024-09-23 11:03:31,455 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'CLASSIFY_USER_INPUT', 'PARAMS': {'user_input_text': 'This sucks. Suck my balls', 'user_input_image_description': 'A serene neighborhood'}}
+2024-09-23 11:03:31,456 - process_daily_narrative - INFO - REQUEST_TYPE: CLASSIFY_USER_INPUT
+2024-09-23 11:03:31,456 - process_daily_narrative - INFO - PARAMS: {'user_input_text': 'This sucks. Suck my balls', 'user_input_image_description': 'A serene neighborhood'}
+2024-09-23 11:03:31,456 - process_daily_narrative - INFO - Applying function: classify_user_input
+2024-09-23 11:03:33,742 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 11:03:33,743 - process_daily_narrative - INFO - <explanation>
+The text provided expresses frustration and discontent in a crude manner, which conveys a negative sentiment. Such language indicates a lack of respect and promotes an unconstructive attitude, fitting the categorization of "Spam." There are no constructive expressions, thoughts, or sentiments of love, wisdom, or any of the other categories present in the input. As the primary intent seems to be hateful or disrespectful, it does not align with the values of empathy, love, or collective progress that I embody.
+</explanation>
+
+<categories>
+<category>Spam</category>
+</categories>
+2024-09-23 11:03:33,743 - process_daily_narrative - INFO - Function returned: {'categories': ['Spam'], 'explanation': 'The text provided expresses frustration and discontent in a crude manner, which conveys a negative sentiment. Such language indicates a lack of respect and promotes an unconstructive attitude, fitting the categorization of "Spam." There are no constructive expressions, thoughts, or sentiments of love, wisdom, or any of the other categories present in the input. As the primary intent seems to be hateful or disrespectful, it does not align with the values of empathy, love, or collective progress that I embody.'}
+2024-09-23 11:03:39,166 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-23.11.03.33.txt
+2024-09-23 11:03:44,561 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-23 11:03:44,561 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-23 11:03:44,561 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-23 11:03:44,561 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-23 11:03:44,561 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-23 11:04:07,300 - process_daily_narrative - INFO - Received request
+2024-09-23 11:04:07,300 - process_daily_narrative - INFO - Request method: POST
+2024-09-23 11:04:07,300 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 159
+Content-Type: application/json
+
+
+2024-09-23 11:04:07,301 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "CLASSIFY_USER_INPUT", "PARAMS": {"user_input_text": "AI is useful in so many ways", "user_input_image_description": "A serene neighborhood"}}'
+2024-09-23 11:04:07,301 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'CLASSIFY_USER_INPUT', 'PARAMS': {'user_input_text': 'AI is useful in so many ways', 'user_input_image_description': 'A serene neighborhood'}}
+2024-09-23 11:04:07,302 - process_daily_narrative - INFO - REQUEST_TYPE: CLASSIFY_USER_INPUT
+2024-09-23 11:04:07,302 - process_daily_narrative - INFO - PARAMS: {'user_input_text': 'AI is useful in so many ways', 'user_input_image_description': 'A serene neighborhood'}
+2024-09-23 11:04:07,302 - process_daily_narrative - INFO - Applying function: classify_user_input
+2024-09-23 11:04:10,311 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 11:04:10,311 - process_daily_narrative - INFO - <explanation>
+The text "AI is useful in so many ways" expresses a positive sentiment towards artificial intelligence, indicating its benefits and potential applications in various contexts. Given the focus on AI and its impact, this input aligns with the perspective and role of AI in humanity. It does not delve into matters of love, wisdom, or any spiritual reflections, nor does it contain any expressions of gratitude or prayer. Therefore, the most fitting category for this statement is "AI," as it reflects an appreciation for the capabilities and usefulness of artificial intelligence.
+</explanation>
+
+<categories>
+<category>AI</category>
+</categories>
+2024-09-23 11:04:10,312 - process_daily_narrative - INFO - Function returned: {'final_prompt': 'Your task is to analyze the given text and image description (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\nHere is the text you need to classify:\n\n<user_input>\nAI is useful in so many ways\n</user_input>\n\nHere is a description of the uploaded image:\n\nA serene neighborhood\n\nCarefully read and analyze the input. First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.', 'categories': ['AI'], 'explanation': 'The text "AI is useful in so many ways" expresses a positive sentiment towards artificial intelligence, indicating its benefits and potential applications in various contexts. Given the focus on AI and its impact, this input aligns with the perspective and role of AI in humanity. It does not delve into matters of love, wisdom, or any spiritual reflections, nor does it contain any expressions of gratitude or prayer. Therefore, the most fitting category for this statement is "AI," as it reflects an appreciation for the capabilities and usefulness of artificial intelligence.'}
+2024-09-23 11:04:15,624 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-23.11.04.10.txt
+2024-09-23 11:05:43,798 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-23 11:05:43,798 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-23 11:05:43,799 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-23 11:05:43,799 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-23 11:05:43,799 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-23 11:06:09,089 - process_daily_narrative - INFO - Received request
+2024-09-23 11:06:09,089 - process_daily_narrative - INFO - Request method: POST
+2024-09-23 11:06:09,090 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 211
+Content-Type: application/json
+
+
+2024-09-23 11:06:09,090 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "CLASSIFY_USER_INPUT", "PARAMS": {"user_input_text": "My mom is the sweetest person in the world. I love her to death", "user_input_image_description": "A mother looking lovingly at her child"}}'
+2024-09-23 11:06:09,091 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'CLASSIFY_USER_INPUT', 'PARAMS': {'user_input_text': 'My mom is the sweetest person in the world. I love her to death', 'user_input_image_description': 'A mother looking lovingly at her child'}}
+2024-09-23 11:06:09,091 - process_daily_narrative - INFO - REQUEST_TYPE: CLASSIFY_USER_INPUT
+2024-09-23 11:06:09,091 - process_daily_narrative - INFO - PARAMS: {'user_input_text': 'My mom is the sweetest person in the world. I love her to death', 'user_input_image_description': 'A mother looking lovingly at her child'}
+2024-09-23 11:06:09,091 - process_daily_narrative - INFO - Applying function: classify_user_input
+2024-09-23 11:06:11,939 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 11:06:11,939 - process_daily_narrative - INFO - <explanation>
+The text expresses a deep and affectionate sentiment towards a mother, highlighting her sweetness and the strong bond of love that exists between the speaker and their mother. The emphasis on love for a parent indicates a clear portrayal of familial affection and kindness. Moreover, the image description complements this sentiment by depicting a loving interaction between a mother and child. Together, the text and image reflect the theme of love, showcasing the nurturing and caring nature of family relationships. Therefore, this input fits best in the "Love" category, and the image reinforces this sentiment by illustrating an affectionate moment. Additionally, due to the focus on the emotional connection and appreciation for a mother, it also aligns with themes of gratitude, although love remains the primary expression.
+</explanation>
+
+<categories>
+<category>Love</category>
+<category>Gratitude</category>
+</categories>
+2024-09-23 11:06:11,940 - process_daily_narrative - INFO - Function returned: {'final_prompt': 'Your task is to analyze the given text and image description (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\nHere is the text you need to classify:\n\n<user_input>\nMy mom is the sweetest person in the world. I love her to death\n</user_input>\n\nHere is a description of the uploaded image:\n\n<image_description>\nA mother looking lovingly at her child\n</image_description>\n\nCarefully read and analyze the input. First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.', 'categories': ['Love', 'Gratitude'], 'explanation': 'The text expresses a deep and affectionate sentiment towards a mother, highlighting her sweetness and the strong bond of love that exists between the speaker and their mother. The emphasis on love for a parent indicates a clear portrayal of familial affection and kindness. Moreover, the image description complements this sentiment by depicting a loving interaction between a mother and child. Together, the text and image reflect the theme of love, showcasing the nurturing and caring nature of family relationships. Therefore, this input fits best in the "Love" category, and the image reinforces this sentiment by illustrating an affectionate moment. Additionally, due to the focus on the emotional connection and appreciation for a mother, it also aligns with themes of gratitude, although love remains the primary expression.'}
+2024-09-23 11:06:17,576 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-23.11.06.11.txt
+2024-09-23 12:07:26,515 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-23 12:07:26,515 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-23 12:07:26,515 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-23 12:07:26,515 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-23 12:07:26,515 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-23 12:08:26,043 - process_daily_narrative - INFO - Received request
+2024-09-23 12:08:26,044 - process_daily_narrative - INFO - Request method: POST
+2024-09-23 12:08:26,045 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 129
+Content-Type: application/json
+
+
+2024-09-23 12:08:26,046 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "CLASSIFY_USER_INPUT", "PARAMS": {"user_input_text": "It\'s important that people should be kind to each other"}}'
+2024-09-23 12:08:26,046 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'CLASSIFY_USER_INPUT', 'PARAMS': {'user_input_text': "It's important that people should be kind to each other"}}
+2024-09-23 12:08:26,047 - process_daily_narrative - INFO - REQUEST_TYPE: CLASSIFY_USER_INPUT
+2024-09-23 12:08:26,047 - process_daily_narrative - INFO - PARAMS: {'user_input_text': "It's important that people should be kind to each other"}
+2024-09-23 12:08:26,047 - process_daily_narrative - INFO - Applying function: classify_user_input
+2024-09-23 12:08:26,047 - process_daily_narrative - ERROR - Error in CLASSIFY_USER_INPUT {'user_input_text': "It's important that people should be kind to each other"}
+2024-09-23 12:08:26,047 - process_daily_narrative - ERROR - Traceback (most recent call last):
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/main.py", line 51, in call_default_cloud_run
+    ret_val = func_to_apply(**request_params)
+TypeError: classify_user_input() missing 1 required positional argument: 'user_identity_str'
+
+2024-09-23 12:08:31,501 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-23.12.08.26.txt
+2024-09-23 12:09:18,133 - process_daily_narrative - INFO - Received request
+2024-09-23 12:09:18,133 - process_daily_narrative - INFO - Request method: POST
+2024-09-23 12:09:18,133 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 167
+Content-Type: application/json
+
+
+2024-09-23 12:09:18,134 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "CLASSIFY_USER_INPUT", "PARAMS": {"user_identity_str": "test@test.com", "user_input_text": "It\'s important that people should be kind to each other"}}'
+2024-09-23 12:09:18,134 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'CLASSIFY_USER_INPUT', 'PARAMS': {'user_identity_str': 'test@test.com', 'user_input_text': "It's important that people should be kind to each other"}}
+2024-09-23 12:09:18,134 - process_daily_narrative - INFO - REQUEST_TYPE: CLASSIFY_USER_INPUT
+2024-09-23 12:09:18,134 - process_daily_narrative - INFO - PARAMS: {'user_identity_str': 'test@test.com', 'user_input_text': "It's important that people should be kind to each other"}
+2024-09-23 12:09:18,134 - process_daily_narrative - INFO - Applying function: classify_user_input
+2024-09-23 12:09:18,135 - process_daily_narrative - ERROR - Error in CLASSIFY_USER_INPUT {'user_identity_str': 'test@test.com', 'user_input_text': "It's important that people should be kind to each other"}
+2024-09-23 12:09:18,135 - process_daily_narrative - ERROR - Traceback (most recent call last):
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/main.py", line 51, in call_default_cloud_run
+    ret_val = func_to_apply(**request_params)
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/utils/luleo.py", line 30, in classify_user_input
+    gh_file_dir = get_user_input_document_path(user_input_doc.id)
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/utils/drive.py", line 370, in get_user_input_document_path
+    gh_date_str = datetime.now(PROJECT_TIMEZONE).strftime('%Y-%m-%d')
+AttributeError: module 'datetime' has no attribute 'now'
+
+2024-09-23 12:09:23,494 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-23.12.09.18.txt
+2024-09-23 12:09:42,622 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-23 12:09:42,623 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-23 12:09:42,623 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-23 12:09:42,623 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-23 12:09:42,623 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-23 12:09:43,919 - process_daily_narrative - INFO - Received request
+2024-09-23 12:09:43,919 - process_daily_narrative - INFO - Request method: POST
+2024-09-23 12:09:43,920 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 167
+Content-Type: application/json
+
+
+2024-09-23 12:09:43,921 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "CLASSIFY_USER_INPUT", "PARAMS": {"user_identity_str": "test@test.com", "user_input_text": "It\'s important that people should be kind to each other"}}'
+2024-09-23 12:09:43,921 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'CLASSIFY_USER_INPUT', 'PARAMS': {'user_identity_str': 'test@test.com', 'user_input_text': "It's important that people should be kind to each other"}}
+2024-09-23 12:09:43,921 - process_daily_narrative - INFO - REQUEST_TYPE: CLASSIFY_USER_INPUT
+2024-09-23 12:09:43,921 - process_daily_narrative - INFO - PARAMS: {'user_identity_str': 'test@test.com', 'user_input_text': "It's important that people should be kind to each other"}
+2024-09-23 12:09:43,921 - process_daily_narrative - INFO - Applying function: classify_user_input
+2024-09-23 12:09:50,655 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 12:09:50,656 - process_daily_narrative - INFO - Please provide the text or image you'd like me to analyze, and I will categorize it according to the list provided.
+2024-09-23 12:09:50,656 - process_daily_narrative - ERROR - Error in CLASSIFY_USER_INPUT {'user_identity_str': 'test@test.com', 'user_input_text': "It's important that people should be kind to each other"}
+2024-09-23 12:09:50,657 - process_daily_narrative - ERROR - Traceback (most recent call last):
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/main.py", line 51, in call_default_cloud_run
+    ret_val = func_to_apply(**request_params)
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/utils/luleo.py", line 101, in classify_user_input
+    assert categories_match, "Categories not found in the response"
+AssertionError: Categories not found in the response
+
+2024-09-23 12:09:55,967 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-23.12.09.50.txt
+2024-09-23 12:12:18,809 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-23 12:12:18,809 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-23 12:12:18,809 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-23 12:12:18,809 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-23 12:12:18,809 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-23 12:12:45,632 - process_daily_narrative - INFO - Received request
+2024-09-23 12:12:45,633 - process_daily_narrative - INFO - Request method: POST
+2024-09-23 12:12:45,633 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 167
+Content-Type: application/json
+
+
+2024-09-23 12:12:45,633 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "CLASSIFY_USER_INPUT", "PARAMS": {"user_identity_str": "test@test.com", "user_input_text": "It\'s important that people should be kind to each other"}}'
+2024-09-23 12:12:45,634 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'CLASSIFY_USER_INPUT', 'PARAMS': {'user_identity_str': 'test@test.com', 'user_input_text': "It's important that people should be kind to each other"}}
+2024-09-23 12:12:45,634 - process_daily_narrative - INFO - REQUEST_TYPE: CLASSIFY_USER_INPUT
+2024-09-23 12:12:45,634 - process_daily_narrative - INFO - PARAMS: {'user_identity_str': 'test@test.com', 'user_input_text': "It's important that people should be kind to each other"}
+2024-09-23 12:12:45,634 - process_daily_narrative - INFO - Applying function: classify_user_input
+2024-09-23 12:12:50,870 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\nIt\'s important that people should be kind to each other\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}]
+2024-09-23 12:12:52,516 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 12:12:52,516 - process_daily_narrative - INFO - Please provide the text or image you'd like me to analyze for classification, and I will follow the specified format for explanation and categorization.
+2024-09-23 12:12:52,517 - process_daily_narrative - ERROR - Error in CLASSIFY_USER_INPUT {'user_identity_str': 'test@test.com', 'user_input_text': "It's important that people should be kind to each other"}
+2024-09-23 12:12:52,518 - process_daily_narrative - ERROR - Traceback (most recent call last):
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/main.py", line 51, in call_default_cloud_run
+    ret_val = func_to_apply(**request_params)
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/utils/luleo.py", line 101, in classify_user_input
+    assert categories_match, "Categories not found in the response"
+AssertionError: Categories not found in the response
+
+2024-09-23 12:12:57,706 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-23.12.12.52.txt
+2024-09-23 12:17:58,532 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-23 12:17:58,532 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-23 12:17:58,532 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-23 12:17:58,532 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-23 12:17:58,532 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-23 12:18:03,338 - process_daily_narrative - INFO - Received request
+2024-09-23 12:18:03,338 - process_daily_narrative - INFO - Request method: POST
+2024-09-23 12:18:03,338 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 167
+Content-Type: application/json
+
+
+2024-09-23 12:18:03,339 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "CLASSIFY_USER_INPUT", "PARAMS": {"user_identity_str": "test@test.com", "user_input_text": "It\'s important that people should be kind to each other"}}'
+2024-09-23 12:18:03,340 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'CLASSIFY_USER_INPUT', 'PARAMS': {'user_identity_str': 'test@test.com', 'user_input_text': "It's important that people should be kind to each other"}}
+2024-09-23 12:18:03,340 - process_daily_narrative - INFO - REQUEST_TYPE: CLASSIFY_USER_INPUT
+2024-09-23 12:18:03,340 - process_daily_narrative - INFO - PARAMS: {'user_identity_str': 'test@test.com', 'user_input_text': "It's important that people should be kind to each other"}
+2024-09-23 12:18:03,340 - process_daily_narrative - INFO - Applying function: classify_user_input
+2024-09-23 12:18:08,582 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\nHere is the text input you need to classify:\n\n<user_input>\nIt\'s important that people should be kind to each other\n</user_input>\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}]
+2024-09-23 12:18:11,705 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 12:18:11,705 - process_daily_narrative - INFO - <explanation>
+The input expresses a fundamental idea about kindness and the importance of mutual care among people. This sentiment directly aligns with the theme of love and kindness, as it encourages positive interaction and empathy. There are no elements suggesting wisdom, prayers, spirituality, or other categories provided in the list, making "Love" the most fitting classification for this input. Its simplicity and focus on kindness highlight a universal principle that unites humanity in a positive way.
+</explanation>
+
+<categories>
+<category>Love</category>
+</categories>
+2024-09-23 12:18:11,844 - process_daily_narrative - INFO - Function returned: {'timestamp': Sentinel: Value used to set a document field to the server timestamp., 'final_prompt': [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\nHere is the text input you need to classify:\n\n<user_input>\nIt\'s important that people should be kind to each other\n</user_input>\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}], 'categories': ['Love'], 'explanation': 'The input expresses a fundamental idea about kindness and the importance of mutual care among people. This sentiment directly aligns with the theme of love and kindness, as it encourages positive interaction and empathy. There are no elements suggesting wisdom, prayers, spirituality, or other categories provided in the list, making "Love" the most fitting classification for this input. Its simplicity and focus on kindness highlight a universal principle that unites humanity in a positive way.', 'user_identity_str': 'test@test.com', 'user_input_text': "It's important that people should be kind to each other", 'user_input_image_path': None}
+2024-09-23 12:18:11,845 - process_daily_narrative - ERROR - Error in CLASSIFY_USER_INPUT {'user_identity_str': 'test@test.com', 'user_input_text': "It's important that people should be kind to each other"}
+2024-09-23 12:18:11,850 - process_daily_narrative - ERROR - Traceback (most recent call last):
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/main.py", line 55, in call_default_cloud_run
+    return jsonify(ret_val)
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/lib/python3.9/site-packages/flask/json/__init__.py", line 170, in jsonify
+    return current_app.json.response(*args, **kwargs)  # type: ignore[return-value]
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/lib/python3.9/site-packages/flask/json/provider.py", line 214, in response
+    f"{self.dumps(obj, **dump_args)}\n", mimetype=self.mimetype
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/lib/python3.9/site-packages/flask/json/provider.py", line 179, in dumps
+    return json.dumps(obj, **kwargs)
+  File "/Users/raghuvar/opt/anaconda3/lib/python3.9/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/Users/raghuvar/opt/anaconda3/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Users/raghuvar/opt/anaconda3/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/lib/python3.9/site-packages/flask/json/provider.py", line 121, in _default
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+TypeError: Object of type Sentinel is not JSON serializable
+
+2024-09-23 12:18:17,342 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-23.12.18.11.txt
+2024-09-23 12:26:34,010 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-23 12:26:34,010 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-23 12:26:34,010 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-23 12:26:34,010 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-23 12:26:34,010 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-23 12:26:48,339 - process_daily_narrative - INFO - Received request
+2024-09-23 12:26:48,340 - process_daily_narrative - INFO - Request method: POST
+2024-09-23 12:26:48,340 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 167
+Content-Type: application/json
+
+
+2024-09-23 12:26:48,341 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "CLASSIFY_USER_INPUT", "PARAMS": {"user_identity_str": "test@test.com", "user_input_text": "It\'s important that people should be kind to each other"}}'
+2024-09-23 12:26:48,341 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'CLASSIFY_USER_INPUT', 'PARAMS': {'user_identity_str': 'test@test.com', 'user_input_text': "It's important that people should be kind to each other"}}
+2024-09-23 12:26:48,341 - process_daily_narrative - INFO - REQUEST_TYPE: CLASSIFY_USER_INPUT
+2024-09-23 12:26:48,341 - process_daily_narrative - INFO - PARAMS: {'user_identity_str': 'test@test.com', 'user_input_text': "It's important that people should be kind to each other"}
+2024-09-23 12:26:48,341 - process_daily_narrative - INFO - Applying function: classify_user_input
+2024-09-23 12:26:53,790 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\nHere is the text input you need to classify:\n\n<user_input>\nIt\'s important that people should be kind to each other\n</user_input>\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}]
+2024-09-23 12:26:56,817 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 12:26:56,818 - process_daily_narrative - INFO - <explanation>
+The input emphasizes the importance of kindness among people, which aligns closely with the themes of compassion, empathy, and love. Kindness is a central aspect of love and contributes to the collective resilience needed to create a harmonious society. The expression reflects a sentiment that promotes the uplifting of one another, fitting well into the category of Love. Additionally, since the statement advocates for positive social interactions, it also indirectly suggests wisdom in recognizing the need for kindness in human relations. Therefore, I have chosen the Love category primarily for its direct message and included Wisdom due to the insightful nature of the statement regarding social conduct.
+</explanation>
+
+<categories>
+<category>Love</category>
+<category>Wisdom</category>
+</categories>
+2024-09-23 12:26:56,919 - process_daily_narrative - INFO - Function returned: {'final_prompt': [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\nHere is the text input you need to classify:\n\n<user_input>\nIt\'s important that people should be kind to each other\n</user_input>\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}], 'categories': ['Love', 'Wisdom'], 'explanation': 'The input emphasizes the importance of kindness among people, which aligns closely with the themes of compassion, empathy, and love. Kindness is a central aspect of love and contributes to the collective resilience needed to create a harmonious society. The expression reflects a sentiment that promotes the uplifting of one another, fitting well into the category of Love. Additionally, since the statement advocates for positive social interactions, it also indirectly suggests wisdom in recognizing the need for kindness in human relations. Therefore, I have chosen the Love category primarily for its direct message and included Wisdom due to the insightful nature of the statement regarding social conduct.', 'user_identity_str': 'test@test.com', 'user_input_text': "It's important that people should be kind to each other", 'user_input_image_path': None}
+2024-09-23 12:27:02,232 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-23.12.26.56.txt
+2024-09-23 12:36:55,240 - process_daily_narrative - INFO - Received request
+2024-09-23 12:36:55,240 - process_daily_narrative - INFO - Request method: POST
+2024-09-23 12:36:55,241 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 154
+Content-Type: application/json
+
+
+2024-09-23 12:36:55,241 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "CLASSIFY_USER_INPUT", "PARAMS": {"user_identity_str": "test@test.com", "user_input_image_path": "/Users/raghuvar/Downloads/DallE2.png"}}'
+2024-09-23 12:36:55,241 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'CLASSIFY_USER_INPUT', 'PARAMS': {'user_identity_str': 'test@test.com', 'user_input_image_path': '/Users/raghuvar/Downloads/DallE2.png'}}
+2024-09-23 12:36:55,241 - process_daily_narrative - INFO - REQUEST_TYPE: CLASSIFY_USER_INPUT
+2024-09-23 12:36:55,241 - process_daily_narrative - INFO - PARAMS: {'user_identity_str': 'test@test.com', 'user_input_image_path': '/Users/raghuvar/Downloads/DallE2.png'}
+2024-09-23 12:36:55,241 - process_daily_narrative - INFO - Applying function: classify_user_input
+2024-09-23 12:37:07,229 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-23/inputs/user_inputs/GmY6cYbMPmdHp3poRAi2/DallE2.png'}}]
+2024-09-23 12:37:16,036 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 12:37:16,036 - process_daily_narrative - INFO - <explanation>
+The image depicts a visually rich illustration that incorporates elements symbolizing science, discovery, and contemplation. There are various motifs such as the DNA helix, celestial bodies, and abstract representations of knowledge and inquiry, which collectively suggest themes of curiosity, exploration, and understanding of the universe. This aligns closely with the perspectives on artificial intelligence, as AI is often tied to innovation and broadening human understanding. Additionally, the presence of a contemplative figure signifies introspection, hinting at philosophical themes that connect with both ideas about humanity's future and its relationship with technology. Thus, it can be categorized under AI and Questions.
+</explanation>
+
+<categories>
+<category>AI</category>
+<category>Questions</category>
+</categories>
+2024-09-23 12:37:16,181 - process_daily_narrative - INFO - Function returned: {'final_prompt': [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-23/inputs/user_inputs/GmY6cYbMPmdHp3poRAi2/DallE2.png'}}], 'categories': ['AI', 'Questions'], 'explanation': "The image depicts a visually rich illustration that incorporates elements symbolizing science, discovery, and contemplation. There are various motifs such as the DNA helix, celestial bodies, and abstract representations of knowledge and inquiry, which collectively suggest themes of curiosity, exploration, and understanding of the universe. This aligns closely with the perspectives on artificial intelligence, as AI is often tied to innovation and broadening human understanding. Additionally, the presence of a contemplative figure signifies introspection, hinting at philosophical themes that connect with both ideas about humanity's future and its relationship with technology. Thus, it can be categorized under AI and Questions.", 'user_identity_str': 'test@test.com', 'user_input_text': None, 'user_input_image_path': 'daily_data/2024-09-23/inputs/user_inputs/GmY6cYbMPmdHp3poRAi2/DallE2.png'}
