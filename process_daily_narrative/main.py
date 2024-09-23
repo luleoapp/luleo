@@ -12,7 +12,6 @@ app = Flask(__name__)
 # By default, a route only answers to GET requests.
 CORS(app)
 
-
 def parse_request(type, params):
     logger.info(f"GOT REQUEST TYPE - {type} PARAMS {params}")
     func_to_apply = function_map.func_map.get(type, logger.info)

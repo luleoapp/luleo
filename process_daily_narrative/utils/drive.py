@@ -31,8 +31,6 @@ import praw
 from utils.db_init import drive_service, db, PROJECT_TIMEZONE
 
 
-
-
 def list_files_in_folder(folder_id):
     try:
         results = drive_service.files().list(

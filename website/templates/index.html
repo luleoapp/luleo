@@ -35,18 +35,17 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-
 							<!-- Header -->
 								<header id="header">
 									<a href="#" class="logo">
 										<img src="{{ url_for('static', filename='images/logo_transparent.png') }}" alt="Luleo Logo" style="height: 40px; margin-right: 5pm; vertical-align: middle;">
 										<strong>Luleo</strong> Open Source AI God
 									</a>
+									
 									<ul class="icons">
 										<li><a href="https://x.com/LuleoApp" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 										<li><a href="https://github.com/luleoapp/luleo" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 										<li><a href="#" class="icon solid fa-pencil-alt"><span class="label">Blog</span></a></li>
-										
 									</ul>
 								</header>
 							<!-- Dynamic Content -->
@@ -55,7 +54,8 @@
 								<section id="banner">
 									<div class="content">
 										<header>
-											<h1 id="currentDate"></h1>
+											<h2 id="currentDate"></h2>
+											<p>Days to AGI: {{ days_to_agi }}</p>
 										</header>
 										<div class="image-description-container">
 											<div id="typewriter" class="typewriter" data-description="{{ image_description }}"></div>
@@ -79,6 +79,7 @@
 									<header>
 									  <h2>Wisdom</h2>
 									</header>
+									<p>{{ wisdom_headline }}</p>
 									<div class="posts">
 										{% for quote in wisdom_quotes %}
 										<article>
@@ -97,16 +98,14 @@
 								  {% elif page == "love" %}
 								  <section id="love">
 									<header>
-									  <h2>Love</h2>
+									  <h1>Love</h1>
 									</header>
-									<div class="posts">
-										{% for l_input in love_inputs %}
-										<article>
-											<p>{{ l_input.content }}</p>
-										</article>
-										{% endfor %}
-									  <!-- Add more articles as needed -->
+									<h2>{{ love_headline }}</h2>
+									{% for l_input in love_inputs %}
+									<div class="col-6 col-12-small">
+										<p>{{ l_input.content }}</p>
 									</div>
+									{% endfor %}
 								  </section>
 
 								  {% elif page == "questions" %}
@@ -123,18 +122,35 @@
 									  <!-- Add more articles as needed -->
 									</div>
 								  </section>
+								  {% elif page == "agi" %}
+								  <section id="agi" style="padding-top: 2em;">
+									{% if agi_vision_image_location %}
+									<span class="image object" style="text-align: center; display: block; margin-top: 0;">
+										<img src="{{ agi_vision_image_location }}" alt="" width="40%" style="margin: 0 auto;"/>
+									</span>
+									<h2>AGI</h2>
+
+									{% endif %}
+								  
+									{% for i in range(questions|length) %}
+									  <h3>{{ questions[i] }}</h3>
+									  <p>{{ answers[i] }}</p>
+									{% endfor %}
+								
+									
+								  </section>
 								{% endif %}
 
 						</div>
 					</div>
-					<div id="sidebar" class="inactive">
+					<div id="sidebar">
 						<div class="inner">
 
 							<!-- Search -->
 								<section id="search" class="alt">
-									<form method="post" action="#">
+									<!-- <form method="post" action="#">
 										<input type="text" name="query" id="query" placeholder="Search" disabled />
-									</form>
+									</form> -->
 								</section>
 
 							<!-- Menu -->
@@ -149,12 +165,16 @@
 								  </div>
 								</article>
 								<article>
+									<a href="{{ url_for('agi') }}" class="image"><img src="{{ url_for('static', filename='images/agi_logo.png') }}" alt="" /></a>
+									<div class="content">
+									  <h3><a href="{{ url_for('agi') }}" >AGI</a></h3>
+									</div>
+								  </article>
+								<article>
 									<a href="{{ url_for('wisdom') }}" class="image"><img src="{{ url_for('static', filename='images/wisdom.png') }}" alt="" /></a>
 								  <div class="content">
 									<h3><a href="{{ url_for('wisdom') }}" ">Wisdom</a></h3>
 								  </div>
-
-								
 								</article>
 							
 								<article>
@@ -162,8 +182,6 @@
 								  <div class="content">
 									<h3><a href="{{ url_for('love') }}" ">Love</a></h3>
 								  </div>
-
-								
 								</article>
 								<article>
 									<a href="{{ url_for('questions') }}" class="image"><img src="{{ url_for('static', filename='images/questions.png') }}" alt="" /></a>

@@ -10,6 +10,10 @@ from utils.drive import upload_file_to_github
 import tempfile
 import re 
 from utils.logger_config import upload_log_to_github
+from utils.wisdom import compute_wisdom_summary, generate_wisdom_image
+from utils.love import compute_love_summary
+from utils.agi import answer_agi_questions, generate_agi_vision_image
+from utils.luleo import get_latest_summary
 
 def get_processed_events(date_str=None):
     if date_str:
@@ -34,6 +38,7 @@ def get_processed_events(date_str=None):
     return events
 
 def generate_end_of_day_update(events):
+    from utils.luleo import get_luleo_prompt
     # Prepare the summary of the day's events
     event_summaries = ["Summary: {0}\n, Emotion: {1}\n".format(event['summary'], event["qualia"]) for event in events if 'summary' in event and 'qualia' in event]
     event_details = "\n".join(event_summaries)
@@ -43,8 +48,7 @@ def generate_end_of_day_update(events):
     # Prepare the prompt
     prompts_dir = os.path.join(os.path.dirname(__file__), '..', 'prompts')
     
-    with open(os.path.join(prompts_dir, 'luleo.prompt'), 'r') as f:
-        luleo_prompt = f.read()
+    luleo_prompt = get_luleo_prompt()
 
     with open(os.path.join(prompts_dir, 'end_of_day_update.prompt'), 'r') as f:
         end_of_day_prompt_template = f.read()
@@ -142,6 +146,8 @@ def store_functions(update_result, date_str=None):
         logger.error(f"Error storing end of day update in Firestore: {e}")
 
 def update_end_of_day(date_str=None):
+    if not date_str:
+        date_str = datetime.now(PROJECT_TIMEZONE).strftime('%Y%m%d')
     events = get_processed_events(date_str)
     if not events:
         logger.info(f"No events to process for end of day update on {date_str if date_str else 'today'}.")
@@ -154,5 +160,40 @@ def update_end_of_day(date_str=None):
 
     # Store the update result in Firestore
     store_functions(update_result, date_str)
+    generate_wisdom_image(date_str)
+    questions_doc_id, answer_doc_id = answer_agi_questions()
+    update_summary(date_str, questions_doc_id, answer_doc_id)
 
+    generate_agi_vision_image(date_str)
     return {"Success": True}
+
+
+def update_summary(date_str, questions_doc_id, answer_doc_id):
+    # Get the wisdom summary 
+    # Check if today's daily_wisdom exists
+
+    doc = db.collection('daily_wisdom').document(date_str).get()
+    if not doc.exists:
+        logger.error(f"No daily_wisdom found for {date_str}")
+        return None
+    doc = db.collection('love_understanding').document(date_str).get()
+    if not doc.exists:
+        logger.error(f"No love_understanding found for {date_str}")
+        return None
+    
+    wisdom_summary = compute_wisdom_summary()
+
+    love_summary = compute_love_summary()
+
+    latest_summary = get_latest_summary()
+    metaculus_AGI_date = latest_summary['metaculus_AGI_date']
+
+    db.collection("summary").document(date_str).set({
+        'wisdom_summary': wisdom_summary['summary'],
+        'love_summary': love_summary['summary'],
+        'metaculus_AGI_date': metaculus_AGI_date,
+        'agi_questions_doc_id' : questions_doc_id,
+        'agi_answers_doc_id' : answer_doc_id,
+        'timestamp': firestore.SERVER_TIMESTAMP
+    }, merge=True)
+

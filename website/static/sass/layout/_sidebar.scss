@@ -31,6 +31,7 @@
 			input[type="text"] {
 				padding-right: _size(element-height);
 			}
+
 		}
 	}
 
@@ -114,9 +115,13 @@
 				top: 0;
 				width: inherit;
 			}
+
+			@include breakpoint('>xlarge') {
+				display: none;
+			}
+
 		}
 
-	
 
 		@include breakpoint('<=xlarge') {
 			$pad: 1.5em / 0.9;

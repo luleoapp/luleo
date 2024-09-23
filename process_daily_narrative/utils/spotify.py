@@ -98,8 +98,8 @@ def add_song_to_playlist(mood, access_token, playlist_id, repeat_song_time=timed
         article = file.read()
 
     #Load the luleo prompt
-    with open('prompts/luleo.prompt', 'r') as file:
-        luleo_prompt = file.read()
+    from utils.luleo import get_luleo_prompt
+    luleo_prompt = get_luleo_prompt()
 
     # Substitute variables into the prompt
     prompt = prompt_template.replace('{{MOOD}}', str(mood))

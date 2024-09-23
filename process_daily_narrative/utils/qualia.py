@@ -62,8 +62,8 @@ def get_emotional_response(event_type, event_details, current_panas=None):
     with open(os.path.join(prompts_dir, 'get_qualia.prompt'), 'r') as f:
         get_qualia_prompt = f.read()
     
-    with open(os.path.join(prompts_dir, 'luleo.prompt'), 'r') as f:
-        luleo_prompt = f.read()
+    from utils.luleo import get_luleo_prompt
+    luleo_prompt = get_luleo_prompt()
     
     filled_prompt = get_qualia_prompt.replace('{{CURRENT_PANAS}}', current_panas_str).replace('{{EVENT_TYPE}}', event_type).replace('{{EVENT_DETAILS}}', event_details)
     
@@ -209,15 +209,17 @@ def update_processed_event(event, d_ret):
         'processed_at': firestore.SERVER_TIMESTAMP  # Add this line
     })
 
-def generate_image_from_prompt(image_prompt):
+def generate_image_from_prompt(image_prompt, aspect_ratio=None):
     try:
         replicate = Client(api_token=os.environ['REPLICATE_API_TOKEN'])
 
-        logger.info(f"Generating image with prompt: {image_prompt}")
-        
+        logger.info(f"Generating image with prompt: {image_prompt} and aspect ratio: {aspect_ratio if aspect_ratio is not None else '1:1'}")
+        input_dict = {"prompt": image_prompt}
+        if aspect_ratio is not None:
+            input_dict["aspect_ratio"] = aspect_ratio
         output = replicate.run(
             "black-forest-labs/flux-pro",
-            input={"prompt": image_prompt}
+            input=input_dict,
         )
         
         if not output:

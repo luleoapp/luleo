@@ -2588,15 +2588,15 @@ button:disabled,
 .typewriter {
   overflow: hidden;
   border-right: 0.15em solid transparent;
-  white-space: pre-wrap;
+  white-space: normal;
   margin: 0;
   letter-spacing: 0.05em;
   height: 100%;
   line-height: 1.4;
   font-size: 0.9em;
-  padding: 10px;
-  font-family: "Arial", monospace;
+  font-family: "Arial", sans-serif;
   color: #333;
+  text-indent: 0;
 }
 
 .typewriter span {
@@ -2787,6 +2787,11 @@ button:disabled,
   text-indent: 0;
   top: 0;
   width: inherit;
+}
+@media screen and (min-width: 1681px) {
+  #sidebar .toggle {
+    display: none;
+  }
 }
 @media screen and (max-width: 1680px) {
   #sidebar {
