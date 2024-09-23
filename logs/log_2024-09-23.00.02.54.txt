@@ -1,0 +1,30 @@
+2024-09-23 04:01:08,734 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-23 04:01:08,734 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-23 04:01:08,734 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-23 04:01:08,734 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-23 04:01:08,734 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-23 04:01:08,786 - process_daily_narrative - INFO - Received request
+2024-09-23 04:01:08,786 - process_daily_narrative - INFO - Request method: POST
+2024-09-23 04:01:08,786 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-22T21:01:00-07:00
+X-Cloudscheduler-Jobname: run-daily-script
+Content-Length: 68
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 4a15340e6c73c2f542ad24f7159a5cc6/4409315678989009700;o=1
+Traceparent: 00-4a15340e6c73c2f542ad24f7159a5cc6-3d31093f9cb34324-01
+X-Forwarded-For: 34.98.143.138
+X-Forwarded-Proto: https
+Forwarded: for="34.98.143.138";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-23 04:01:08,786 - process_daily_narrative - INFO - Request data: b'{\n        "REQUEST_TYPE": "START_OF_DAY",\n        "PARAMS": {}\n    }'
+2024-09-23 04:01:08,786 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'START_OF_DAY', 'PARAMS': {}}
+2024-09-23 04:01:08,786 - process_daily_narrative - INFO - REQUEST_TYPE: START_OF_DAY
+2024-09-23 04:01:08,786 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-23 04:01:08,787 - process_daily_narrative - INFO - Applying function: start_of_day
+2024-09-23 04:02:54,737 - process_daily_narrative - INFO - Function returned: None
+2024-09-23 04:02:54,737 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: START_OF_DAY
