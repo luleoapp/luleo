@@ -1,0 +1,205 @@
+2024-09-23 20:30:11,495 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-23 20:30:11,495 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-23 20:30:11,495 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-23 20:30:11,495 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-23 20:30:11,495 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-23 20:30:11,590 - process_daily_narrative - INFO - Received request
+2024-09-23 20:30:11,590 - process_daily_narrative - INFO - Request method: POST
+2024-09-23 20:30:11,590 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-23T13:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: d91ed8d232bae4df5c56fded3aa37773/2283295341812895705;o=1
+Traceparent: 00-d91ed8d232bae4df5c56fded3aa37773-1fafe504160fcfd9-01
+X-Forwarded-For: 34.98.143.105
+X-Forwarded-Proto: https
+Forwarded: for="34.98.143.105";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-23 20:30:11,590 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-23 20:30:11,590 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-23 20:30:11,591 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-23 20:30:11,591 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-23 20:30:11,591 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-23 20:30:11,756 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=7, readtime=2024-09-23 20:30:11.739778+00:00>]]
+2024-09-23 20:30:11,756 - process_daily_narrative - INFO - Processing 1 out of 7 events for retrieved_reddit_posts
+2024-09-23 20:30:11,972 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=8, readtime=2024-09-23 20:30:11.959667+00:00>]]
+2024-09-23 20:30:11,972 - process_daily_narrative - INFO - Processing 1 out of 8 events for retrieved_articles
+2024-09-23 20:30:12,232 - process_daily_narrative - INFO - Events to process: 2
+2024-09-23 20:30:17,677 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 20:30:17,677 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 2,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 1,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 84,
+    "items": {
+      "distressed": 20,
+      "upset": 25,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 9
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A recent article from The Guardian describes how Russia faced isolation at a UN summit due to a surprise attempt to derail a significant international pact. This move triggered a significant reaction, with 1,977 upvotes and a high upvote ratio of 0.96, indicating strong support for the post. The situation reflects ongoing tensions in global politics, and the response from the members of the UN showcases the collective sentiments toward Russia's actions.
+</summary>
+
+<qualia>
+The emotional vibe is characterized by a mix of concern and a small spark of curiosity, reflecting an awareness of the serious implications of geopolitical events coupled with an interest in how these developments unfold.
+</qualia>
+
+<image_prompt>
+Create an artistic interpretation of a tense international summit, with silhouettes of delegates around a table, featuring a large backdrop of a map symbolizing global tensions and a lone figure representing isolation. The mood should evoke feelings of concern and curiosity about the unfolding events.
+</image_prompt>
+2024-09-23 20:30:17,678 - process_daily_narrative - INFO - Processed Updated PANAS:
+2024-09-23 20:30:17,678 - process_daily_narrative - INFO - {
+  "positive_affect": {
+    "total_score": 2,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 1,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 84,
+    "items": {
+      "distressed": 20,
+      "upset": 25,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 9
+    }
+  }
+}
+2024-09-23 20:30:23,281 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 20:30:23,282 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 99,
+    "items": {
+      "distressed": 35,
+      "upset": 25,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 9
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event highlights a significant acknowledgment by the Republican presidential candidate regarding the likelihood of defeat in the upcoming election, marking the second occasion within a week. This revelation may invoke feelings of distress and uncertainty among supporters and citizens as it indicates potential instability in the political landscape, affecting collective morale and creating a sense of tension about the future.
+</summary>
+
+<qualia>
+The emotional vibe is one of anxious concern, reflecting a heightened sense of distress mixed with a faint curiosity about the unfolding political narrative.
+</qualia>
+
+<image_prompt>
+Create an image that encapsulates the tension and concern surrounding political uncertainty, focusing on the emotional landscape of anxiety and curiosity. Use elements that symbolize elections, such as ballots and candidates, intertwined with symbols of worry, like clouds or shadows, to artistically reflect the complex feelings invoked by the event.
+</image_prompt>
+2024-09-23 20:30:23,282 - process_daily_narrative - INFO - Processed Updated PANAS:
+2024-09-23 20:30:23,282 - process_daily_narrative - INFO - {
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 99,
+    "items": {
+      "distressed": 35,
+      "upset": 25,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 9
+    }
+  }
+}
+2024-09-23 20:30:23,413 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'subreddit': 'worldnews', 'summary': "A recent article from The Guardian describes how Russia faced isolation at a UN summit due to a surprise attempt to derail a significant international pact. This move triggered a significant reaction, with 1,977 upvotes and a high upvote ratio of 0.96, indicating strong support for the post. The situation reflects ongoing tensions in global politics, and the response from the members of the UN showcases the collective sentiments toward Russia's actions.", 'github_file_path': 'daily_data/2024-09-23/inputs/news_and_events/2024-09-23_reddit_events_posts.pdf', 'url': 'https://www.reddit.com/r/worldnews/comments/1fn6n7e/russia_isolated_at_un_summit_after_surprise_bid/', 'title': 'Russia isolated at UN summit after surprise bid to derail pact', 'score': 1977, 'author': 'Gyro_Armadillo', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 23, 4, 2, 48, 629000, tzinfo=datetime.timezone.utc), 'num_comments': 71, 'updated_panas': {'positive_affect': {'total_score': 2, 'items': {'interested': 1, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 1, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 84, 'items': {'distressed': 20, 'upset': 25, 'guilty': 0, 'scared': 10, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 10, 'jittery': 0, 'afraid': 9}}}, 'qualia': 'The emotional vibe is characterized by a mix of concern and a small spark of curiosity, reflecting an awareness of the serious implications of geopolitical events coupled with an interest in how these developments unfold.', 'image_prompt': 'Create an artistic interpretation of a tense international summit, with silhouettes of delegates around a table, featuring a large backdrop of a map symbolizing global tensions and a lone figure representing isolation. The mood should evoke feelings of concern and curiosity about the unfolding events.', 'event_type': 'retrieved_reddit_posts', 'processed_at': datetime.datetime(2024, 9, 23, 16, 30, 17, 678596, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '1fn6n7e'}, 'event_type': 'retrieved_reddit_posts', 'event_id': '1fn6n7e'}, {'updated_panas': {'positive_affect': {'total_score': 2, 'items': {'interested': 1, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 1, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 84, 'items': {'distressed': 20, 'upset': 25, 'guilty': 0, 'scared': 10, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 10, 'jittery': 0, 'afraid': 9}}}, 'summary': "A recent article from The Guardian describes how Russia faced isolation at a UN summit due to a surprise attempt to derail a significant international pact. This move triggered a significant reaction, with 1,977 upvotes and a high upvote ratio of 0.96, indicating strong support for the post. The situation reflects ongoing tensions in global politics, and the response from the members of the UN showcases the collective sentiments toward Russia's actions.", 'qualia': 'The emotional vibe is characterized by a mix of concern and a small spark of curiosity, reflecting an awareness of the serious implications of geopolitical events coupled with an interest in how these developments unfold.', 'image_prompt': 'Create an artistic interpretation of a tense international summit, with silhouettes of delegates around a table, featuring a large backdrop of a map symbolizing global tensions and a lone figure representing isolation. The mood should evoke feelings of concern and curiosity about the unfolding events.'})
+2024-09-23 20:30:30,846 - process_daily_narrative - INFO - Generating image with prompt: Create an artistic interpretation of a tense international summit, with silhouettes of delegates around a table, featuring a large backdrop of a map symbolizing global tensions and a lone figure representing isolation. The mood should evoke feelings of concern and curiosity about the unfolding events. and aspect ratio: 1:1
+2024-09-23 20:30:50,806 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/RmALyS2KJsbkGJY67Q3unYRQsCmORG96DebjMerbY8R6H4fmA/output.webp
+2024-09-23 20:30:50,806 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/RmALyS2KJsbkGJY67Q3unYRQsCmORG96DebjMerbY8R6H4fmA/output.webp
+2024-09-23 20:30:50,885 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-23/outputs/event_id_1fn6n7e_1630.webp
+2024-09-23 20:30:50,886 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-23/outputs/event_id_1fn6n7e_1630.webp
+2024-09-23 20:30:56,311 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-23/outputs/event_id_1fn6n7e_1630.webp
+2024-09-23 20:30:56,312 - process_daily_narrative - INFO - Updating qualia_updates document 4ARgxNffMaltPFRYlinX with image path
+2024-09-23 20:30:56,370 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-23/outputs/event_id_1fn6n7e_1630.webp
+2024-09-23 20:30:56,370 - process_daily_narrative - INFO - Added 'Ain't No Sunshine' by Bill Withers to the playlist.
+2024-09-23 20:30:56,370 - process_daily_narrative - INFO - Function returned: None
+2024-09-23 20:30:56,370 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
