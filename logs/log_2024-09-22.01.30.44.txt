@@ -1,0 +1,205 @@
+2024-09-22 05:30:09,673 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-22 05:30:09,673 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-22 05:30:09,673 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-22 05:30:09,673 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-22 05:30:09,673 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-22 05:30:09,713 - process_daily_narrative - INFO - Received request
+2024-09-22 05:30:09,713 - process_daily_narrative - INFO - Request method: POST
+2024-09-22 05:30:09,713 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-21T22:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: ae202e6e6a2dab0c05e97f03056b924a/10205458833735088358;o=1
+Traceparent: 00-ae202e6e6a2dab0c05e97f03056b924a-8da112bd0aa6f8e6-01
+X-Forwarded-For: 35.187.132.131
+X-Forwarded-Proto: https
+Forwarded: for="35.187.132.131";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-22 05:30:09,713 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-22 05:30:09,713 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-22 05:30:09,714 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-22 05:30:09,714 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-22 05:30:09,714 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-22 05:30:09,843 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=19, readtime=2024-09-22 05:30:09.829699+00:00>]]
+2024-09-22 05:30:09,843 - process_daily_narrative - INFO - Processing 1 out of 19 events for retrieved_reddit_posts
+2024-09-22 05:30:09,917 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=20, readtime=2024-09-22 05:30:09.907022+00:00>]]
+2024-09-22 05:30:09,917 - process_daily_narrative - INFO - Processing 1 out of 20 events for retrieved_articles
+2024-09-22 05:30:10,251 - process_daily_narrative - INFO - Events to process: 2
+2024-09-22 05:30:14,105 - process_daily_narrative - INFO - Raw API Response:
+2024-09-22 05:30:14,106 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 3,
+    "items": {
+      "interested": 3,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 129,
+    "items": {
+      "distressed": 20,
+      "upset": 10,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 9,
+      "jittery": 8,
+      "afraid": 8
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A recent research study has found a link between a person's sex, their experiences of childhood trauma, and the long-term consequences for their biological health, including the risk of developing 20 major diseases later in life. This study highlights the significant impact that early traumatic experiences can have on overall health and well-being. The post received a high upvote score of 3739 and attracted 81 comments, indicating a strong interest and engagement from the Reddit community.
+</summary>
+
+<qualia>
+The emotion invoked by this event is a mix of concern and intrigue, reflecting both the gravity of childhood trauma on health and the potential for understanding these issues more deeply.
+</qualia>
+
+<image_prompt>
+Generate an image that artistically reflects the concepts of childhood trauma and health risks, incorporating elements of both concern and intrigue, perhaps using symbolic imagery of childhood juxtaposed with abstract representations of health and disease.
+</image_prompt>
+2024-09-22 05:30:14,106 - process_daily_narrative - INFO - Processed Updated PANAS:
+2024-09-22 05:30:14,107 - process_daily_narrative - INFO - {
+  "positive_affect": {
+    "total_score": 3,
+    "items": {
+      "interested": 3,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 129,
+    "items": {
+      "distressed": 20,
+      "upset": 10,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 9,
+      "jittery": 8,
+      "afraid": 8
+    }
+  }
+}
+2024-09-22 05:30:17,068 - process_daily_narrative - INFO - Raw API Response:
+2024-09-22 05:30:17,068 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 2,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 146,
+    "items": {
+      "distressed": 20,
+      "upset": 12,
+      "guilty": 0,
+      "scared": 12,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 12,
+      "jittery": 10,
+      "afraid": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event relates to a ban affecting government officials and military personnel due to concerns about potential Russian cyber-attacks. This situation creates heightened anxiety and concern over cybersecurity threats, which can lead to increased vigilance and awareness among the affected groups and the general population.
+</summary>
+
+<qualia>
+The emotional vibe of this event is one of tension and concern, tinged with a slight sense of alertness and interest in the implications of the situation.
+</qualia>
+
+<image_prompt>
+Generate an image that illustrates the tension and concern surrounding cybersecurity threats, symbolizing vigilance and awareness while capturing the essence of uncertainty that follows potential cyber-attacks.
+</image_prompt>
+2024-09-22 05:30:17,068 - process_daily_narrative - INFO - Processed Updated PANAS:
+2024-09-22 05:30:17,069 - process_daily_narrative - INFO - {
+  "positive_affect": {
+    "total_score": 2,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 146,
+    "items": {
+      "distressed": 20,
+      "upset": 12,
+      "guilty": 0,
+      "scared": 12,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 12,
+      "jittery": 10,
+      "afraid": 10
+    }
+  }
+}
+2024-09-22 05:30:17,198 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-22/inputs/news_and_events/2024-09-22_news.pdf', 'link': 'https://www.bbc.com/news/articles/c78dwepw95do', 'published': 'Sat, 21 Sep 2024 15:55:08 GMT', 'title': 'Ukraine bans Telegram use on state-issued devices', 'summary': 'The event relates to a ban affecting government officials and military personnel due to concerns about potential Russian cyber-attacks. This situation creates heightened anxiety and concern over cybersecurity threats, which can lead to increased vigilance and awareness among the affected groups and the general population.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 22, 4, 1, 12, 989000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 2, 'items': {'interested': 1, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 1, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 146, 'items': {'distressed': 20, 'upset': 12, 'guilty': 0, 'scared': 12, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 12, 'jittery': 10, 'afraid': 10}}}, 'qualia': 'The emotional vibe of this event is one of tension and concern, tinged with a slight sense of alertness and interest in the implications of the situation.', 'image_prompt': 'Generate an image that illustrates the tension and concern surrounding cybersecurity threats, symbolizing vigilance and awareness while capturing the essence of uncertainty that follows potential cyber-attacks.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 22, 1, 30, 17, 69166, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '1d167749221b3840ab5d6df44752c7a5'}, 'event_type': 'retrieved_articles', 'event_id': '1d167749221b3840ab5d6df44752c7a5'}, {'updated_panas': {'positive_affect': {'total_score': 2, 'items': {'interested': 1, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 1, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 146, 'items': {'distressed': 20, 'upset': 12, 'guilty': 0, 'scared': 12, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 12, 'jittery': 10, 'afraid': 10}}}, 'summary': 'The event relates to a ban affecting government officials and military personnel due to concerns about potential Russian cyber-attacks. This situation creates heightened anxiety and concern over cybersecurity threats, which can lead to increased vigilance and awareness among the affected groups and the general population.', 'qualia': 'The emotional vibe of this event is one of tension and concern, tinged with a slight sense of alertness and interest in the implications of the situation.', 'image_prompt': 'Generate an image that illustrates the tension and concern surrounding cybersecurity threats, symbolizing vigilance and awareness while capturing the essence of uncertainty that follows potential cyber-attacks.'})
+2024-09-22 05:30:22,015 - process_daily_narrative - INFO - Generating image with prompt: Generate an image that illustrates the tension and concern surrounding cybersecurity threats, symbolizing vigilance and awareness while capturing the essence of uncertainty that follows potential cyber-attacks.
+2024-09-22 05:30:39,536 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/FKugefAu6Gp7FUQJshGrZCBd4H4Yj9rolr8upMQXIef5XX9NB/output.webp
+2024-09-22 05:30:39,536 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/FKugefAu6Gp7FUQJshGrZCBd4H4Yj9rolr8upMQXIef5XX9NB/output.webp
+2024-09-22 05:30:39,623 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-22/outputs/event_id_1d167749221b3840ab5d6df44752c7a5_0130.webp
+2024-09-22 05:30:39,624 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-22/outputs/event_id_1d167749221b3840ab5d6df44752c7a5_0130.webp
+2024-09-22 05:30:44,914 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-22/outputs/event_id_1d167749221b3840ab5d6df44752c7a5_0130.webp
+2024-09-22 05:30:44,914 - process_daily_narrative - INFO - Updating qualia_updates document GQYaFTHFcfekLS0GRnVs with image path
+2024-09-22 05:30:44,968 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-22/outputs/event_id_1d167749221b3840ab5d6df44752c7a5_0130.webp
+2024-09-22 05:30:44,968 - process_daily_narrative - INFO - Added 'A Case of You' by Joni Mitchell to the playlist.
+2024-09-22 05:30:44,968 - process_daily_narrative - INFO - Function returned: None
+2024-09-22 05:30:44,968 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
