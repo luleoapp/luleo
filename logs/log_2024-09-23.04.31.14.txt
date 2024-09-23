@@ -1,0 +1,252 @@
+2024-09-23 08:30:10,538 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-23 08:30:10,539 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-23 08:30:10,539 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-23 08:30:10,539 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-23 08:30:10,539 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-23 08:30:10,635 - process_daily_narrative - INFO - Received request
+2024-09-23 08:30:10,635 - process_daily_narrative - INFO - Request method: POST
+2024-09-23 08:30:10,635 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-23T01:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 25a8db142076269a07aa41fa8a155a92/9428785710585885767;o=1
+Traceparent: 00-25a8db142076269a07aa41fa8a155a92-82d9c6a5dec03447-01
+X-Forwarded-For: 107.178.194.135
+X-Forwarded-Proto: https
+Forwarded: for="107.178.194.135";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-23 08:30:10,635 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-23 08:30:10,635 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-23 08:30:10,635 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-23 08:30:10,636 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-23 08:30:10,636 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-23 08:30:10,794 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=18, readtime=2024-09-23 08:30:10.780939+00:00>]]
+2024-09-23 08:30:10,795 - process_daily_narrative - INFO - Processing 1 out of 18 events for retrieved_reddit_posts
+2024-09-23 08:30:10,933 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=21, readtime=2024-09-23 08:30:10.924793+00:00>]]
+2024-09-23 08:30:10,933 - process_daily_narrative - INFO - Processing 2 out of 21 events for retrieved_articles
+2024-09-23 08:30:11,179 - process_daily_narrative - INFO - Events to process: 3
+2024-09-23 08:30:15,002 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 08:30:15,002 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 20,
+    "items": {
+      "interested": 3,
+      "excited": 2,
+      "strong": 0,
+      "enthusiastic": 3,
+      "proud": 2,
+      "alert": 3,
+      "inspired": 3,
+      "determined": 0,
+      "attentive": 2,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 130,
+    "items": {
+      "distressed": 10,
+      "upset": 5,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 5,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 50,
+      "jittery": 20,
+      "afraid": 35
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The recent ruling confirms that Russia's chess team will continue to be banned from participating in international competitions. This decision likely stems from geopolitical tensions and past controversies surrounding fair play and integrity within the sport, reflecting on the global landscape of sportsmanship and competition.
+</summary>
+
+<qualia>
+The emotional vibe is one of tension and disappointment, overshadowed by curiosity about its implications and a sense of pride for fair competition.
+</qualia>
+
+<image_prompt>
+Create an image that captures the mood surrounding the ongoing ban of Russia's chess team from international competitions, focusing on themes of tension, disappointment, and the pursuit of integrity in sport. Use a mix of dark and muted colors to convey the serious nature of the event while integrating chess elements like pieces and boards to add context.
+2024-09-23 08:30:15,003 - process_daily_narrative - ERROR - Assertion failed: Image prompt not found in the response
+2024-09-23 08:30:19,579 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 08:30:19,580 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 18,
+    "items": {
+      "interested": 5,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 3,
+      "proud": 2,
+      "alert": 3,
+      "inspired": 5,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 130,
+    "items": {
+      "distressed": 0,
+      "upset": 0,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 40,
+      "jittery": 50,
+      "afraid": 40
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event involved reports indicating that Iran has not supplied mobile launchers for close-range ballistic missiles intended for Russia to use in the Ukraine conflict. This raised concerns and questions about the implication of such actions on military capabilities and potential diplomatic discussions. U.S. and European officials provided insights suggesting reasons for the withholding of launchers, with implications for regional tensions and the potential for new negotiations on Iran's actions.
+</summary>
+
+<qualia>
+The emotional vibe is a mix of heightened anxiety and an inquisitive curiosity about the implications of geopolitical actions, tempered by a glimmer of hope for potential diplomatic resolutions.
+</qualia>
+
+<image_prompt>
+Create an image that visually encapsulates the tension and complexity of international relations represented in the event, highlighting themes of uncertainty and hope, perhaps through symbolic imagery of missiles juxtaposed with symbols of diplomacy like olive branches or doves.
+</image_prompt>
+2024-09-23 08:30:19,580 - process_daily_narrative - INFO - Processed Updated PANAS:
+2024-09-23 08:30:19,580 - process_daily_narrative - INFO - {
+  "positive_affect": {
+    "total_score": 18,
+    "items": {
+      "interested": 5,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 3,
+      "proud": 2,
+      "alert": 3,
+      "inspired": 5,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 130,
+    "items": {
+      "distressed": 0,
+      "upset": 0,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 40,
+      "jittery": 50,
+      "afraid": 40
+    }
+  }
+}
+2024-09-23 08:30:24,533 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 08:30:24,534 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 27,
+    "items": {
+      "interested": 5,
+      "excited": 4,
+      "strong": 0,
+      "enthusiastic": 5,
+      "proud": 5,
+      "alert": 3,
+      "inspired": 5,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 90,
+    "items": {
+      "distressed": 0,
+      "upset": 0,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 40,
+      "jittery": 30,
+      "afraid": 20
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event discusses Ukraine's recent capability to produce 155mm artillery shells and howitzers, as reported by a user on Reddit. The linked article from Forbes indicates significant advancements in Ukraine's defense production, amidst ongoing conflicts. The post received high engagement, with nearly 14,000 upvotes and 204 comments, suggesting a strong interest and concern over the developments in Ukraine's military capabilities.
+</summary>
+
+<qualia>
+The emotional vibe evokes a mixture of cautious optimism and lingering anxiety; hope for Ukraine's resilience contrasted with the ongoing fears surrounding conflict and its implications.
+</qualia>
+
+<image_prompt>
+Create an illustration depicting a scene of hope and resilience against a backdrop of challenges, featuring symbols of strength such as artillery and peace doves, infused with warm colors to represent optimism amidst uncertainty.
+</image_prompt>
+2024-09-23 08:30:24,534 - process_daily_narrative - INFO - Processed Updated PANAS:
+2024-09-23 08:30:24,534 - process_daily_narrative - INFO - {
+  "positive_affect": {
+    "total_score": 27,
+    "items": {
+      "interested": 5,
+      "excited": 4,
+      "strong": 0,
+      "enthusiastic": 5,
+      "proud": 5,
+      "alert": 3,
+      "inspired": 5,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 90,
+    "items": {
+      "distressed": 0,
+      "upset": 0,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 40,
+      "jittery": 30,
+      "afraid": 20
+    }
+  }
+}
+2024-09-23 08:30:24,653 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'subreddit': 'worldnews', 'summary': "The event discusses Ukraine's recent capability to produce 155mm artillery shells and howitzers, as reported by a user on Reddit. The linked article from Forbes indicates significant advancements in Ukraine's defense production, amidst ongoing conflicts. The post received high engagement, with nearly 14,000 upvotes and 204 comments, suggesting a strong interest and concern over the developments in Ukraine's military capabilities.", 'github_file_path': 'daily_data/2024-09-23/inputs/news_and_events/2024-09-23_reddit_events_posts.pdf', 'url': 'https://www.reddit.com/r/worldnews/comments/1fmskcm/ukraine_is_now_able_to_produce_155mm_artillery/', 'title': 'Ukraine Is Now Able To Produce 155mm Artillery Shells And Howitzers', 'score': 13982, 'author': 'eaglemaxie', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 23, 4, 2, 48, 717000, tzinfo=datetime.timezone.utc), 'num_comments': 204, 'updated_panas': {'positive_affect': {'total_score': 27, 'items': {'interested': 5, 'excited': 4, 'strong': 0, 'enthusiastic': 5, 'proud': 5, 'alert': 3, 'inspired': 5, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 90, 'items': {'distressed': 0, 'upset': 0, 'guilty': 0, 'scared': 0, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 40, 'jittery': 30, 'afraid': 20}}}, 'qualia': "The emotional vibe evokes a mixture of cautious optimism and lingering anxiety; hope for Ukraine's resilience contrasted with the ongoing fears surrounding conflict and its implications.", 'image_prompt': 'Create an illustration depicting a scene of hope and resilience against a backdrop of challenges, featuring symbols of strength such as artillery and peace doves, infused with warm colors to represent optimism amidst uncertainty.', 'event_type': 'retrieved_reddit_posts', 'processed_at': datetime.datetime(2024, 9, 23, 4, 30, 24, 534600, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '1fmskcm'}, 'event_type': 'retrieved_reddit_posts', 'event_id': '1fmskcm'}, {'updated_panas': {'positive_affect': {'total_score': 27, 'items': {'interested': 5, 'excited': 4, 'strong': 0, 'enthusiastic': 5, 'proud': 5, 'alert': 3, 'inspired': 5, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 90, 'items': {'distressed': 0, 'upset': 0, 'guilty': 0, 'scared': 0, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 40, 'jittery': 30, 'afraid': 20}}}, 'summary': "The event discusses Ukraine's recent capability to produce 155mm artillery shells and howitzers, as reported by a user on Reddit. The linked article from Forbes indicates significant advancements in Ukraine's defense production, amidst ongoing conflicts. The post received high engagement, with nearly 14,000 upvotes and 204 comments, suggesting a strong interest and concern over the developments in Ukraine's military capabilities.", 'qualia': "The emotional vibe evokes a mixture of cautious optimism and lingering anxiety; hope for Ukraine's resilience contrasted with the ongoing fears surrounding conflict and its implications.", 'image_prompt': 'Create an illustration depicting a scene of hope and resilience against a backdrop of challenges, featuring symbols of strength such as artillery and peace doves, infused with warm colors to represent optimism amidst uncertainty.'})
+2024-09-23 08:30:28,134 - process_daily_narrative - INFO - Generating image with prompt: Create an illustration depicting a scene of hope and resilience against a backdrop of challenges, featuring symbols of strength such as artillery and peace doves, infused with warm colors to represent optimism amidst uncertainty. and aspect ratio: 1:1
+2024-09-23 08:31:08,809 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/DLOvycE2atIxGlslj5pN2zpbemdQgmOc1yJOoUBw3uAmy2vJA/output.webp
+2024-09-23 08:31:08,809 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/DLOvycE2atIxGlslj5pN2zpbemdQgmOc1yJOoUBw3uAmy2vJA/output.webp
+2024-09-23 08:31:08,896 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-23/outputs/event_id_1fmskcm_0431.webp
+2024-09-23 08:31:08,897 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-23/outputs/event_id_1fmskcm_0431.webp
+2024-09-23 08:31:14,357 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-23/outputs/event_id_1fmskcm_0431.webp
+2024-09-23 08:31:14,357 - process_daily_narrative - INFO - Updating qualia_updates document VUMUXMWS8ixJmaxaRWFM with image path
+2024-09-23 08:31:14,410 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-23/outputs/event_id_1fmskcm_0431.webp
+2024-09-23 08:31:14,410 - process_daily_narrative - INFO - Added 'Atlas Hands' by Benjamin Francis Leftwich to the playlist.
+2024-09-23 08:31:14,410 - process_daily_narrative - INFO - Function returned: None
+2024-09-23 08:31:14,411 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
