@@ -1,0 +1,175 @@
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Received request
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "036Gp9qAAWctFeteFLid"}}'
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': '036Gp9qAAWctFeteFLid'}}
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - PARAMS: {'upload_id': '036Gp9qAAWctFeteFLid'}
+2024-09-24 00:04:21,003 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 00:04:21,474 - process_daily_narrative - INFO - Image downloaded successfully to /var/folders/st/dv53zgjd1zq71gl_yyg_924w0000gn/T/tmpi2roi7ep.png
+2024-09-24 00:04:31,944 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}]
+2024-09-24 00:04:35,627 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 00:04:35,628 - process_daily_narrative - INFO - <explanation>
+The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.
+</explanation>
+
+<categories>
+<category>Ideas</category>
+<category>Miscellaneous</category>
+</categories>
+2024-09-24 00:04:35,729 - process_daily_narrative - INFO - Function returned: {'final_prompt': [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}], 'categories': ['Ideas', 'Miscellaneous'], 'explanation': 'The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.', 'github_image_path': 'daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}
+2024-09-24 00:04:41,054 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.00.04.35.txt
+2024-09-24 07:30:11,472 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 07:30:11,472 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-24 07:30:11,473 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-24 07:30:11,473 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-24 07:30:11,473 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-24 07:30:11,524 - process_daily_narrative - INFO - Received request
+2024-09-24 07:30:11,524 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 07:30:11,524 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-24T00:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: e7300ee71b5c58d4babf26e2ac60c8d0/1958947174409065840;o=1
+Traceparent: 00-e7300ee71b5c58d4babf26e2ac60c8d0-1b2f941380685570-01
+X-Forwarded-For: 107.178.194.194
+X-Forwarded-Proto: https
+Forwarded: for="107.178.194.194";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-24 07:30:11,525 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-24 07:30:11,525 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-24 07:30:11,525 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-24 07:30:11,525 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-24 07:30:11,525 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-24 07:30:11,525 - process_daily_narrative - INFO - Updating hourly...
+2024-09-24 07:30:11,744 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=17, readtime=2024-09-24 07:30:11.731541+00:00>]]
+2024-09-24 07:30:11,745 - process_daily_narrative - INFO - Processing 1 out of 17 events for retrieved_reddit_posts
+2024-09-24 07:30:11,877 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=21, readtime=2024-09-24 07:30:11.864888+00:00>]]
+2024-09-24 07:30:11,877 - process_daily_narrative - INFO - Processing 1 out of 21 events for retrieved_articles
+2024-09-24 07:30:12,140 - process_daily_narrative - INFO - Events to process: 2
+2024-09-24 07:30:15,985 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 07:30:15,985 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 16,
+    "items": {
+      "active": 0,
+      "inspired": 4,
+      "strong": 0,
+      "interested": 3,
+      "excited": 0,
+      "attentive": 2,
+      "determined": 1,
+      "alert": 3,
+      "enthusiastic": 0,
+      "proud": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 190,
+    "items": {
+      "upset": 50,
+      "afraid": 20,
+      "distressed": 60,
+      "jittery": 0,
+      "guilty": 0,
+      "irritable": 0,
+      "nervous": 30,
+      "ashamed": 0,
+      "scared": 50,
+      "hostile": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Ten people are reported missing after severe flooding affected the cities of Wajima and Suzu over the weekend. This tragic event has caused distress and concern among the community, highlighting the devastating impact of natural disasters and the urgency of rescue efforts.
+</summary>
+
+<qualia>
+The emotional vibe is one of deep sorrow and anxiety amidst a backdrop of compassion and urgency for those affected.
+</qualia>
+
+<image_prompt>
+Create an image illustrating the scene of flooding in Wajima and Suzu, focusing on the melancholy of the missing individuals and the resilience of the community coming together in response to this crisis, using blues and grays to evoke a sense of urgency and empathy.
+</image_prompt>
+2024-09-24 07:30:21,073 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 07:30:21,073 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 23,
+    "items": {
+      "active": 2,
+      "inspired": 5,
+      "strong": 1,
+      "interested": 5,
+      "excited": 3,
+      "attentive": 3,
+      "determined": 2,
+      "alert": 2,
+      "enthusiastic": 0,
+      "proud": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 150,
+    "items": {
+      "upset": 30,
+      "afraid": 10,
+      "distressed": 30,
+      "jittery": 0,
+      "guilty": 0,
+      "irritable": 0,
+      "nervous": 20,
+      "ashamed": 0,
+      "scared": 30,
+      "hostile": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event revolves around a statement made by the Danish Prime Minister, Mette Frederiksen, urging allies to refrain from discussing "red lines" and to allow Ukraine to carry out strikes against Russia. The post gained significant attention on Reddit, with a high upvote score and numerous comments reflecting a mix of support and apprehension about the ongoing conflict between Ukraine and Russia.
+</summary>
+
+<qualia>
+A complex blend of cautious optimism, empathy for the conflict's toll, and unease about the implications of military actions.
+</qualia>
+
+<image_prompt>
+Create an image depicting the Danish Prime Minister speaking forcefully to allies, with a backdrop symbolizing solidarity with Ukraine. The scene should exude a mix of hopefulness and tension, capturing the resolute yet cautious spirit of the event.
+</image_prompt>
+2024-09-24 07:30:21,204 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'subreddit': 'worldnews', 'summary': 'The event revolves around a statement made by the Danish Prime Minister, Mette Frederiksen, urging allies to refrain from discussing "red lines" and to allow Ukraine to carry out strikes against Russia. The post gained significant attention on Reddit, with a high upvote score and numerous comments reflecting a mix of support and apprehension about the ongoing conflict between Ukraine and Russia.', 'github_file_path': 'daily_data/2024-09-24/inputs/news_and_events/2024-09-24_reddit_events_posts.pdf', 'url': 'https://www.reddit.com/r/worldnews/comments/1fnkv7v/danish_pm_to_allies_stop_talking_about_red_lines/', 'title': 'Danish PM to allies: Stop talking about ‘red lines’ and let Ukraine strike Russia', 'score': 9047, 'author': 'legendsking', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 24, 4, 2, 48, 804000, tzinfo=datetime.timezone.utc), 'num_comments': 221, 'updated_panas': {'positive_affect': {'total_score': 23, 'items': {'active': 2, 'inspired': 5, 'strong': 1, 'interested': 5, 'excited': 3, 'attentive': 3, 'determined': 2, 'alert': 2, 'enthusiastic': 0, 'proud': 0}}, 'negative_affect': {'total_score': 150, 'items': {'upset': 30, 'afraid': 10, 'distressed': 30, 'jittery': 0, 'guilty': 0, 'irritable': 0, 'nervous': 20, 'ashamed': 0, 'scared': 30, 'hostile': 10}}}, 'qualia': "A complex blend of cautious optimism, empathy for the conflict's toll, and unease about the implications of military actions.", 'image_prompt': 'Create an image depicting the Danish Prime Minister speaking forcefully to allies, with a backdrop symbolizing solidarity with Ukraine. The scene should exude a mix of hopefulness and tension, capturing the resolute yet cautious spirit of the event.', 'event_type': 'retrieved_reddit_posts', 'processed_at': datetime.datetime(2024, 9, 24, 3, 30, 21, 74041, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '1fnkv7v'}, 'event_type': 'retrieved_reddit_posts', 'event_id': '1fnkv7v'}, {'updated_panas': {'positive_affect': {'total_score': 23, 'items': {'active': 2, 'inspired': 5, 'strong': 1, 'interested': 5, 'excited': 3, 'attentive': 3, 'determined': 2, 'alert': 2, 'enthusiastic': 0, 'proud': 0}}, 'negative_affect': {'total_score': 150, 'items': {'upset': 30, 'afraid': 10, 'distressed': 30, 'jittery': 0, 'guilty': 0, 'irritable': 0, 'nervous': 20, 'ashamed': 0, 'scared': 30, 'hostile': 10}}}, 'summary': 'The event revolves around a statement made by the Danish Prime Minister, Mette Frederiksen, urging allies to refrain from discussing "red lines" and to allow Ukraine to carry out strikes against Russia. The post gained significant attention on Reddit, with a high upvote score and numerous comments reflecting a mix of support and apprehension about the ongoing conflict between Ukraine and Russia.', 'qualia': "A complex blend of cautious optimism, empathy for the conflict's toll, and unease about the implications of military actions.", 'image_prompt': 'Create an image depicting the Danish Prime Minister speaking forcefully to allies, with a backdrop symbolizing solidarity with Ukraine. The scene should exude a mix of hopefulness and tension, capturing the resolute yet cautious spirit of the event.'})
+2024-09-24 07:30:24,467 - process_daily_narrative - INFO - Generating image with prompt: Create an image depicting the Danish Prime Minister speaking forcefully to allies, with a backdrop symbolizing solidarity with Ukraine. The scene should exude a mix of hopefulness and tension, capturing the resolute yet cautious spirit of the event. and aspect ratio: 1:1
+2024-09-24 07:30:47,317 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/5zHfPq4UsgyDBSQr9Z3FE1Nff1K4SLVK1peHUMVJiXvZKHAOB/output.webp
+2024-09-24 07:30:47,317 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/5zHfPq4UsgyDBSQr9Z3FE1Nff1K4SLVK1peHUMVJiXvZKHAOB/output.webp
+2024-09-24 07:30:47,391 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-24/outputs/event_id_1fnkv7v_0330.webp
+2024-09-24 07:30:47,392 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-24/outputs/event_id_1fnkv7v_0330.webp
+2024-09-24 07:30:52,780 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-24/outputs/event_id_1fnkv7v_0330.webp
+2024-09-24 07:30:52,780 - process_daily_narrative - INFO - Updating qualia_updates document OihwUsZxHEDSVhdJaLdX with image path
+2024-09-24 07:30:52,846 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-24/outputs/event_id_1fnkv7v_0330.webp
+2024-09-24 07:30:52,846 - process_daily_narrative - INFO - Added 'Bloodstream' by Stateless to the playlist.
+2024-09-24 07:30:52,846 - process_daily_narrative - INFO - Function returned: None
+2024-09-24 07:30:52,846 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
