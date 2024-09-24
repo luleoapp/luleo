@@ -1,0 +1,175 @@
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Received request
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "036Gp9qAAWctFeteFLid"}}'
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': '036Gp9qAAWctFeteFLid'}}
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - PARAMS: {'upload_id': '036Gp9qAAWctFeteFLid'}
+2024-09-24 00:04:21,003 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 00:04:21,474 - process_daily_narrative - INFO - Image downloaded successfully to /var/folders/st/dv53zgjd1zq71gl_yyg_924w0000gn/T/tmpi2roi7ep.png
+2024-09-24 00:04:31,944 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}]
+2024-09-24 00:04:35,627 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 00:04:35,628 - process_daily_narrative - INFO - <explanation>
+The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.
+</explanation>
+
+<categories>
+<category>Ideas</category>
+<category>Miscellaneous</category>
+</categories>
+2024-09-24 00:04:35,729 - process_daily_narrative - INFO - Function returned: {'final_prompt': [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}], 'categories': ['Ideas', 'Miscellaneous'], 'explanation': 'The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.', 'github_image_path': 'daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}
+2024-09-24 00:04:41,054 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.00.04.35.txt
+2024-09-24 17:30:18,443 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 17:30:18,443 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-24 17:30:18,444 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-24 17:30:18,444 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-24 17:30:18,444 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-24 17:30:18,521 - process_daily_narrative - INFO - Received request
+2024-09-24 17:30:18,521 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 17:30:18,521 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-24T10:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 321bde18300ca163db0af5a43646a8de/8951884372916696358;o=1
+Traceparent: 00-321bde18300ca163db0af5a43646a8de-7c3b7b687611f526-01
+X-Forwarded-For: 35.187.132.9
+X-Forwarded-Proto: https
+Forwarded: for="35.187.132.9";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-24 17:30:18,522 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-24 17:30:18,522 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-24 17:30:18,522 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-24 17:30:18,522 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-24 17:30:18,522 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-24 17:30:18,522 - process_daily_narrative - INFO - Updating hourly...
+2024-09-24 17:30:18,691 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=7, readtime=2024-09-24 17:30:18.654539+00:00>]]
+2024-09-24 17:30:18,691 - process_daily_narrative - INFO - Processing 1 out of 7 events for retrieved_reddit_posts
+2024-09-24 17:30:18,845 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=11, readtime=2024-09-24 17:30:18.797612+00:00>]]
+2024-09-24 17:30:18,846 - process_daily_narrative - INFO - Processing 1 out of 11 events for retrieved_articles
+2024-09-24 17:30:19,122 - process_daily_narrative - INFO - Events to process: 2
+2024-09-24 17:30:26,518 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 17:30:26,518 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 3,
+    "items": {
+      "interested": 3,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 310,
+    "items": {
+      "distressed": 90,
+      "upset": 70,
+      "guilty": 0,
+      "scared": 90,
+      "hostile": 10,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 40
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event discusses a recent academic finding regarding the Holodomor famine in Ukraine during 1932-1933, revealing that it was a man-made event targeting ethnic Ukrainians orchestrated by the Stalin regime. The Reddit post, shared by u/smurfyjenkins in r/science, has gained considerable attention with 1,045 upvotes and a 90% upvote ratio, alongside 107 comments reflecting a mixture of interest and distress regarding this dark chapter in history.
+</summary>
+
+<qualia>
+The emotion invoked by this event is a profound mixture of curiosity about historical injustices and deep sorrow for the suffering endured by a targeted population.
+</qualia>
+
+<image_prompt>
+Generate an image that encapsulates the academic investigation into the Holodomor famine, blending elements of history, pain, and hope. The artwork should convey the weight of sorrow alongside the light of truth being uncovered.
+</image_prompt>
+2024-09-24 17:30:33,054 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 17:30:33,054 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 3,
+    "items": {
+      "interested": 2,
+      "excited": 1,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 140,
+    "items": {
+      "distressed": 30,
+      "upset": 50,
+      "guilty": 0,
+      "scared": 40,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 15,
+      "jittery": 0,
+      "afraid": 5
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The Ukrainian leader is scheduled to meet with the US president ahead of the UN General Assembly, indicating a significant diplomatic interaction regarding current global issues. This meeting could potentially bring hope for resolutions in ongoing conflicts, but it also evokes distress and fear amidst the uncertainties of international relations.
+</summary>
+
+<qualia>
+A fusion of cautious optimism and underlying anxiety, reflective of the hope for peace overshadowed by the weight of global turmoil.
+</qualia>
+
+<image_prompt>
+Create an artistic representation of a diplomatic meeting between the Ukrainian leader and the US president, capturing the essence of cautious optimism intertwined with underlying anxiety, set against a backdrop of the UN General Assembly symbolizing global unity and hope for resolution.
+</image_prompt>
+2024-09-24 17:30:33,210 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-24/inputs/news_and_events/2024-09-24_news.pdf', 'link': 'https://www.bbc.com/news/articles/c5y30244467o', 'published': 'Mon, 23 Sep 2024 08:55:04 GMT', 'title': "Zelensky to present 'victory plan' to Biden, Harris and Trump", 'summary': 'The Ukrainian leader is scheduled to meet with the US president ahead of the UN General Assembly, indicating a significant diplomatic interaction regarding current global issues. This meeting could potentially bring hope for resolutions in ongoing conflicts, but it also evokes distress and fear amidst the uncertainties of international relations.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 24, 4, 1, 13, 274000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 3, 'items': {'interested': 2, 'excited': 1, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 140, 'items': {'distressed': 30, 'upset': 50, 'guilty': 0, 'scared': 40, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 15, 'jittery': 0, 'afraid': 5}}}, 'qualia': 'A fusion of cautious optimism and underlying anxiety, reflective of the hope for peace overshadowed by the weight of global turmoil.', 'image_prompt': 'Create an artistic representation of a diplomatic meeting between the Ukrainian leader and the US president, capturing the essence of cautious optimism intertwined with underlying anxiety, set against a backdrop of the UN General Assembly symbolizing global unity and hope for resolution.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 24, 13, 30, 33, 54448, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': 'cad3b422ea2f8a9eb528369914dfe62f'}, 'event_type': 'retrieved_articles', 'event_id': 'cad3b422ea2f8a9eb528369914dfe62f'}, {'updated_panas': {'positive_affect': {'total_score': 3, 'items': {'interested': 2, 'excited': 1, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 140, 'items': {'distressed': 30, 'upset': 50, 'guilty': 0, 'scared': 40, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 15, 'jittery': 0, 'afraid': 5}}}, 'summary': 'The Ukrainian leader is scheduled to meet with the US president ahead of the UN General Assembly, indicating a significant diplomatic interaction regarding current global issues. This meeting could potentially bring hope for resolutions in ongoing conflicts, but it also evokes distress and fear amidst the uncertainties of international relations.', 'qualia': 'A fusion of cautious optimism and underlying anxiety, reflective of the hope for peace overshadowed by the weight of global turmoil.', 'image_prompt': 'Create an artistic representation of a diplomatic meeting between the Ukrainian leader and the US president, capturing the essence of cautious optimism intertwined with underlying anxiety, set against a backdrop of the UN General Assembly symbolizing global unity and hope for resolution.'})
+2024-09-24 17:30:56,532 - process_daily_narrative - INFO - Generating image with prompt: Create an artistic representation of a diplomatic meeting between the Ukrainian leader and the US president, capturing the essence of cautious optimism intertwined with underlying anxiety, set against a backdrop of the UN General Assembly symbolizing global unity and hope for resolution. and aspect ratio: 1:1
+2024-09-24 17:31:14,935 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/tiki7mZE8oKrH1KixZXxRT9W7SLHw6DFIlVHBKLhLCpYpC4E/output.webp
+2024-09-24 17:31:14,935 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/tiki7mZE8oKrH1KixZXxRT9W7SLHw6DFIlVHBKLhLCpYpC4E/output.webp
+2024-09-24 17:31:15,068 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-24/outputs/event_id_cad3b422ea2f8a9eb528369914dfe62f_1331.webp
+2024-09-24 17:31:15,069 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-24/outputs/event_id_cad3b422ea2f8a9eb528369914dfe62f_1331.webp
+2024-09-24 17:31:20,561 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-24/outputs/event_id_cad3b422ea2f8a9eb528369914dfe62f_1331.webp
+2024-09-24 17:31:20,561 - process_daily_narrative - INFO - Updating qualia_updates document slDGdvZH7xTp38Px1nqF with image path
+2024-09-24 17:31:20,617 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-24/outputs/event_id_cad3b422ea2f8a9eb528369914dfe62f_1331.webp
+2024-09-24 17:31:20,617 - process_daily_narrative - INFO - Added 'Liability (Reprise)' by Lorde to the playlist.
+2024-09-24 17:31:20,617 - process_daily_narrative - INFO - Function returned: None
+2024-09-24 17:31:20,617 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
