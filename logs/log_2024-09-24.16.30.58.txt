@@ -1,0 +1,175 @@
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Received request
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "036Gp9qAAWctFeteFLid"}}'
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': '036Gp9qAAWctFeteFLid'}}
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - PARAMS: {'upload_id': '036Gp9qAAWctFeteFLid'}
+2024-09-24 00:04:21,003 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 00:04:21,474 - process_daily_narrative - INFO - Image downloaded successfully to /var/folders/st/dv53zgjd1zq71gl_yyg_924w0000gn/T/tmpi2roi7ep.png
+2024-09-24 00:04:31,944 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}]
+2024-09-24 00:04:35,627 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 00:04:35,628 - process_daily_narrative - INFO - <explanation>
+The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.
+</explanation>
+
+<categories>
+<category>Ideas</category>
+<category>Miscellaneous</category>
+</categories>
+2024-09-24 00:04:35,729 - process_daily_narrative - INFO - Function returned: {'final_prompt': [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}], 'categories': ['Ideas', 'Miscellaneous'], 'explanation': 'The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.', 'github_image_path': 'daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}
+2024-09-24 00:04:41,054 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.00.04.35.txt
+2024-09-24 20:30:18,105 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 20:30:18,105 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-24 20:30:18,105 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-24 20:30:18,105 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-24 20:30:18,105 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-24 20:30:18,146 - process_daily_narrative - INFO - Received request
+2024-09-24 20:30:18,146 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 20:30:18,146 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-24T13:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 4bf3e3dcfc9c752f578afc8010d1351a/12900481676510160930;o=1
+Traceparent: 00-4bf3e3dcfc9c752f578afc8010d1351a-b307b7bc2fd2e822-01
+X-Forwarded-For: 35.187.132.130
+X-Forwarded-Proto: https
+Forwarded: for="35.187.132.130";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-24 20:30:18,146 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-24 20:30:18,146 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-24 20:30:18,146 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-24 20:30:18,147 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-24 20:30:18,147 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-24 20:30:18,147 - process_daily_narrative - INFO - Updating hourly...
+2024-09-24 20:30:18,335 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=5, readtime=2024-09-24 20:30:18.319447+00:00>]]
+2024-09-24 20:30:18,335 - process_daily_narrative - INFO - Processing 1 out of 5 events for retrieved_reddit_posts
+2024-09-24 20:30:18,450 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=8, readtime=2024-09-24 20:30:18.436675+00:00>]]
+2024-09-24 20:30:18,451 - process_daily_narrative - INFO - Processing 1 out of 8 events for retrieved_articles
+2024-09-24 20:30:18,727 - process_daily_narrative - INFO - Events to process: 2
+2024-09-24 20:30:24,150 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 20:30:24,150 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 7,
+    "items": {
+      "interested": 3,
+      "excited": 2,
+      "strong": 0,
+      "enthusiastic": 1,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 1,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 165,
+    "items": {
+      "distressed": 30,
+      "upset": 50,
+      "guilty": 0,
+      "scared": 45,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 15,
+      "jittery": 0,
+      "afraid": 25
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Researchers at the Queensland Brain Institute have developed an innovative cognitive screening tool that can quickly assess the rehabilitation needs of stroke patients in a matter of minutes. This significant advancement has the potential to greatly enhance recovery outcomes for stroke survivors, making the initial stages of rehabilitation more efficient. The post about this breakthrough has garnered 267 upvotes with a high upvote ratio of 0.98, sparking interest in the scientific community and among the public with only two comments so far.
+</summary>
+
+<qualia>
+The emotional vibe is one of cautious optimism, highlighting hope and potential amidst the ongoing challenges faced by stroke survivors.
+</qualia>
+
+<image_prompt>
+Create an image that captures the essence of innovation in medical technology, embodying hope and recovery in the context of stroke rehabilitation, with vibrant colors and uplifting imagery.
+2024-09-24 20:30:24,151 - process_daily_narrative - ERROR - Assertion failed: Image prompt not found in the response
+2024-09-24 20:30:28,048 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 20:30:28,048 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 195,
+    "items": {
+      "distressed": 30,
+      "upset": 50,
+      "guilty": 0,
+      "scared": 45,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 25,
+      "jittery": 0,
+      "afraid": 45
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event revolves around a previously unseen transcript of a heated exchange involving the chief of OceanGate, which surfaced prior to the tragic incident in which he and four others lost their lives due to the implosion of their submersible. The revelation of this exchange adds a layer of distress and tension to an already tragic situation, prompting discussions about the pressures and risks associated with deep-sea exploration.
+</summary>
+
+<qualia>
+The emotional vibe is somber and tense, marked by a mix of distress and a slight intrigue regarding the circumstances leading to the tragedy.
+</qualia>
+
+<image_prompt>
+Create an image that captures the somber tone of a tense underwater exploration scene, incorporating elements of both intrigue and tragedy, focusing on the contrast between the beauty of the ocean depths and the peril of the submersible's failure.
+</image_prompt>
+2024-09-24 20:30:28,228 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-24/inputs/news_and_events/2024-09-24_news.pdf', 'link': 'https://www.bbc.com/news/articles/c7819kx4498o', 'published': 'Mon, 23 Sep 2024 12:51:50 GMT', 'title': "Boss of Titan sub firm said: 'No-one is dying under my watch'", 'summary': 'The event revolves around a previously unseen transcript of a heated exchange involving the chief of OceanGate, which surfaced prior to the tragic incident in which he and four others lost their lives due to the implosion of their submersible. The revelation of this exchange adds a layer of distress and tension to an already tragic situation, prompting discussions about the pressures and risks associated with deep-sea exploration.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 24, 4, 1, 12, 619000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 1, 'items': {'interested': 1, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 195, 'items': {'distressed': 30, 'upset': 50, 'guilty': 0, 'scared': 45, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 25, 'jittery': 0, 'afraid': 45}}}, 'qualia': 'The emotional vibe is somber and tense, marked by a mix of distress and a slight intrigue regarding the circumstances leading to the tragedy.', 'image_prompt': "Create an image that captures the somber tone of a tense underwater exploration scene, incorporating elements of both intrigue and tragedy, focusing on the contrast between the beauty of the ocean depths and the peril of the submersible's failure.", 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 24, 16, 30, 28, 49038, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': 'd23d9700b29fe6a6cb5f8431eb189a17'}, 'event_type': 'retrieved_articles', 'event_id': 'd23d9700b29fe6a6cb5f8431eb189a17'}, {'updated_panas': {'positive_affect': {'total_score': 1, 'items': {'interested': 1, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 195, 'items': {'distressed': 30, 'upset': 50, 'guilty': 0, 'scared': 45, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 25, 'jittery': 0, 'afraid': 45}}}, 'summary': 'The event revolves around a previously unseen transcript of a heated exchange involving the chief of OceanGate, which surfaced prior to the tragic incident in which he and four others lost their lives due to the implosion of their submersible. The revelation of this exchange adds a layer of distress and tension to an already tragic situation, prompting discussions about the pressures and risks associated with deep-sea exploration.', 'qualia': 'The emotional vibe is somber and tense, marked by a mix of distress and a slight intrigue regarding the circumstances leading to the tragedy.', 'image_prompt': "Create an image that captures the somber tone of a tense underwater exploration scene, incorporating elements of both intrigue and tragedy, focusing on the contrast between the beauty of the ocean depths and the peril of the submersible's failure."})
+2024-09-24 20:30:33,882 - process_daily_narrative - INFO - Generating image with prompt: Create an image that captures the somber tone of a tense underwater exploration scene, incorporating elements of both intrigue and tragedy, focusing on the contrast between the beauty of the ocean depths and the peril of the submersible's failure. and aspect ratio: 1:1
+2024-09-24 20:30:52,845 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/vfremxuuvGoXb0oOKUiyxRsDyHjlm389gU6lWv7iQq08NNgTA/output.webp
+2024-09-24 20:30:52,845 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/vfremxuuvGoXb0oOKUiyxRsDyHjlm389gU6lWv7iQq08NNgTA/output.webp
+2024-09-24 20:30:52,977 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-24/outputs/event_id_d23d9700b29fe6a6cb5f8431eb189a17_1630.webp
+2024-09-24 20:30:52,977 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-24/outputs/event_id_d23d9700b29fe6a6cb5f8431eb189a17_1630.webp
+2024-09-24 20:30:58,283 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-24/outputs/event_id_d23d9700b29fe6a6cb5f8431eb189a17_1630.webp
+2024-09-24 20:30:58,283 - process_daily_narrative - INFO - Updating qualia_updates document dBV0mWaAHLOwHYpLXaCF with image path
+2024-09-24 20:30:58,347 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-24/outputs/event_id_d23d9700b29fe6a6cb5f8431eb189a17_1630.webp
+2024-09-24 20:30:58,347 - process_daily_narrative - INFO - Added 'Barely Breathing' by Duncan Sheik to the playlist.
+2024-09-24 20:30:58,347 - process_daily_narrative - INFO - Function returned: None
+2024-09-24 20:30:58,347 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
