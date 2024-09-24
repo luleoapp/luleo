@@ -1,0 +1,222 @@
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Received request
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "036Gp9qAAWctFeteFLid"}}'
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': '036Gp9qAAWctFeteFLid'}}
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - PARAMS: {'upload_id': '036Gp9qAAWctFeteFLid'}
+2024-09-24 00:04:21,003 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 00:04:21,474 - process_daily_narrative - INFO - Image downloaded successfully to /var/folders/st/dv53zgjd1zq71gl_yyg_924w0000gn/T/tmpi2roi7ep.png
+2024-09-24 00:04:31,944 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}]
+2024-09-24 00:04:35,627 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 00:04:35,628 - process_daily_narrative - INFO - <explanation>
+The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.
+</explanation>
+
+<categories>
+<category>Ideas</category>
+<category>Miscellaneous</category>
+</categories>
+2024-09-24 00:04:35,729 - process_daily_narrative - INFO - Function returned: {'final_prompt': [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}], 'categories': ['Ideas', 'Miscellaneous'], 'explanation': 'The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.', 'github_image_path': 'daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}
+2024-09-24 00:04:41,054 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.00.04.35.txt
+2024-09-24 04:30:09,451 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 04:30:09,451 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-24 04:30:09,451 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-24 04:30:09,451 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-24 04:30:09,451 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-24 04:30:09,491 - process_daily_narrative - INFO - Received request
+2024-09-24 04:30:09,491 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 04:30:09,492 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-23T21:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 8310fb7a5ed208516746e3a27973ff00/11299893162331914853;o=1
+Traceparent: 00-8310fb7a5ed208516746e3a27973ff00-9cd148f634a8c265-01
+X-Forwarded-For: 34.98.143.227
+X-Forwarded-Proto: https
+Forwarded: for="34.98.143.227";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-24 04:30:09,492 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-24 04:30:09,492 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-24 04:30:09,492 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-24 04:30:09,492 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-24 04:30:09,492 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-24 04:30:09,492 - process_daily_narrative - INFO - Updating hourly...
+2024-09-24 04:30:09,645 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=20, readtime=2024-09-24 04:30:09.631846+00:00>]]
+2024-09-24 04:30:09,646 - process_daily_narrative - INFO - Processing 1 out of 20 events for retrieved_reddit_posts
+2024-09-24 04:30:09,738 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=26, readtime=2024-09-24 04:30:09.722232+00:00>]]
+2024-09-24 04:30:09,738 - process_daily_narrative - INFO - Processing 2 out of 26 events for retrieved_articles
+2024-09-24 04:30:09,927 - process_daily_narrative - INFO - Events to process: 3
+2024-09-24 04:30:15,748 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 04:30:15,748 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 3,
+    "items": {
+      "interested": 2,
+      "excited": 1,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 1,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 92,
+    "items": {
+      "distressed": 25,
+      "upset": 25,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 12
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Researchers are engaged in demanding field work to help preserve mangrove forests. This important ecological effort requires physical endurance and resilience, as they work tirelessly to protect these vital ecosystems, which play a crucial role in combating climate change and maintaining biodiversity.
+</summary>
+
+<qualia>
+The emotional vibe is a blend of urgency and hopeful determination, shadowed by the weight of the environmental challenges faced.
+</qualia>
+
+<image_prompt>
+Create an artistic representation capturing the resilience of researchers working in mangrove forests, emphasizing both their dedication and the beauty of the ecosystem they strive to protect, reflecting a sense of urgency and collective hope for the future.
+</image_prompt>
+2024-09-24 04:30:23,193 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 04:30:23,193 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 9,
+    "items": {
+      "interested": 2,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 1,
+      "proud": 2,
+      "alert": 1,
+      "inspired": 2,
+      "determined": 0,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 100,
+    "items": {
+      "distressed": 30,
+      "upset": 25,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 35
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event features a display of outstanding photographs of birds, highlighting the winners of the Bird Photographer of the Year award. It showcases breathtaking images of various birds, including gannets, goldfinches, and grouse, celebrating the artistic achievements and dedication of bird photographers.
+</summary>
+
+<qualia>
+The emotional vibe is one of awe and inspiration, mixed with a lingering sense of distress related to the overwhelming challenges faced in the world.
+</qualia>
+
+<image_prompt>
+Create an artistic depiction of the Bird Photographer of the Year award winners showcasing stunning images of gannets, goldfinches, and grouse, infused with a sense of wonder and slight melancholy to reflect the emotional blend of inspiration and distress.
+</image_prompt>
+2024-09-24 04:30:28,376 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 04:30:28,376 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 10,
+    "items": {
+      "interested": 4,
+      "excited": 2,
+      "strong": 1,
+      "enthusiastic": 2,
+      "proud": 1,
+      "alert": 3,
+      "inspired": 4,
+      "determined": 2,
+      "attentive": 3,
+      "active": 1
+    }
+  },
+  "negative_affect": {
+    "total_score": 90,
+    "items": {
+      "distressed": 30,
+      "upset": 20,
+      "guilty": 0,
+      "scared": 15,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 15
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Leading scientists have redefined the concept of sustainability to address the critical issues facing our oceans and global food supply. In a recent article, they proposed 11 "golden rules" for sustainable fishing that challenge conventional views. The post, which received significant engagement on Reddit with an upvote score of 3273 and a 0.97 upvote ratio, ignites hope for a better approach to fisheries management in the context of a warming planet.
+</summary>
+
+<qualia>
+The emotional vibe invoked by this event is one of cautious optimism mixed with urgency—encouragement for positive change tempered by the acknowledgment of pressing global challenges.
+</qualia>
+
+<image_prompt>
+Create an imaginative artwork that captures the essence of redefined sustainability in fisheries management, emphasizing hope, collaboration, and a thriving ocean ecosystem, infused with an ethereal quality that reflects the optimism and urgency of the event.
+</image_prompt>
+2024-09-24 04:30:28,502 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'subreddit': 'science', 'summary': 'Leading scientists have redefined the concept of sustainability to address the critical issues facing our oceans and global food supply. In a recent article, they proposed 11 "golden rules" for sustainable fishing that challenge conventional views. The post, which received significant engagement on Reddit with an upvote score of 3273 and a 0.97 upvote ratio, ignites hope for a better approach to fisheries management in the context of a warming planet.', 'github_file_path': 'daily_data/2024-09-24/inputs/AI_updates/2024-09-24_reddit_tech_posts.pdf', 'url': 'https://www.reddit.com/r/science/comments/1fnhsp5/leading_scientists_redefine_sustainability_to/', 'title': 'Leading scientists redefine ‘sustainability’ to save the ocean and feed a hungry and warming planet | Top ocean experts redefines the concept of “sustainable fishing” and proposes 11 “golden rules” that radically challenge the flawed approach that currently prevails in fisheries management.', 'score': 3273, 'author': 'chrisdh79', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 24, 4, 2, 41, 823000, tzinfo=datetime.timezone.utc), 'num_comments': 74, 'updated_panas': {'positive_affect': {'total_score': 10, 'items': {'interested': 4, 'excited': 2, 'strong': 1, 'enthusiastic': 2, 'proud': 1, 'alert': 3, 'inspired': 4, 'determined': 2, 'attentive': 3, 'active': 1}}, 'negative_affect': {'total_score': 90, 'items': {'distressed': 30, 'upset': 20, 'guilty': 0, 'scared': 15, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 10, 'jittery': 0, 'afraid': 15}}}, 'qualia': 'The emotional vibe invoked by this event is one of cautious optimism mixed with urgency—encouragement for positive change tempered by the acknowledgment of pressing global challenges.', 'image_prompt': 'Create an imaginative artwork that captures the essence of redefined sustainability in fisheries management, emphasizing hope, collaboration, and a thriving ocean ecosystem, infused with an ethereal quality that reflects the optimism and urgency of the event.', 'event_type': 'retrieved_reddit_posts', 'processed_at': datetime.datetime(2024, 9, 24, 0, 30, 28, 376622, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '1fnhsp5'}, 'event_type': 'retrieved_reddit_posts', 'event_id': '1fnhsp5'}, {'updated_panas': {'positive_affect': {'total_score': 10, 'items': {'interested': 4, 'excited': 2, 'strong': 1, 'enthusiastic': 2, 'proud': 1, 'alert': 3, 'inspired': 4, 'determined': 2, 'attentive': 3, 'active': 1}}, 'negative_affect': {'total_score': 90, 'items': {'distressed': 30, 'upset': 20, 'guilty': 0, 'scared': 15, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 10, 'jittery': 0, 'afraid': 15}}}, 'summary': 'Leading scientists have redefined the concept of sustainability to address the critical issues facing our oceans and global food supply. In a recent article, they proposed 11 "golden rules" for sustainable fishing that challenge conventional views. The post, which received significant engagement on Reddit with an upvote score of 3273 and a 0.97 upvote ratio, ignites hope for a better approach to fisheries management in the context of a warming planet.', 'qualia': 'The emotional vibe invoked by this event is one of cautious optimism mixed with urgency—encouragement for positive change tempered by the acknowledgment of pressing global challenges.', 'image_prompt': 'Create an imaginative artwork that captures the essence of redefined sustainability in fisheries management, emphasizing hope, collaboration, and a thriving ocean ecosystem, infused with an ethereal quality that reflects the optimism and urgency of the event.'})
+2024-09-24 04:30:34,917 - process_daily_narrative - INFO - Generating image with prompt: Create an imaginative artwork that captures the essence of redefined sustainability in fisheries management, emphasizing hope, collaboration, and a thriving ocean ecosystem, infused with an ethereal quality that reflects the optimism and urgency of the event. and aspect ratio: 1:1
+2024-09-24 04:30:51,351 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/fHu0jLaFZ1wlf0EXEqHtF7paoMyT5EYL2mJfAof9eMSTP5f3E/output.webp
+2024-09-24 04:30:51,351 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/fHu0jLaFZ1wlf0EXEqHtF7paoMyT5EYL2mJfAof9eMSTP5f3E/output.webp
+2024-09-24 04:30:51,424 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-24/outputs/event_id_1fnhsp5_0030.webp
+2024-09-24 04:30:51,425 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-24/outputs/event_id_1fnhsp5_0030.webp
+2024-09-24 04:30:56,768 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-24/outputs/event_id_1fnhsp5_0030.webp
+2024-09-24 04:30:56,768 - process_daily_narrative - INFO - Updating qualia_updates document Nsdxw9hMRilxILOwuKLo with image path
+2024-09-24 04:30:56,823 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-24/outputs/event_id_1fnhsp5_0030.webp
+2024-09-24 04:30:56,823 - process_daily_narrative - INFO - Added 'Little Dark Age' by MGMT to the playlist.
+2024-09-24 04:30:56,823 - process_daily_narrative - INFO - Function returned: None
+2024-09-24 04:30:56,823 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
