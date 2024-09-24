@@ -1,0 +1,205 @@
+2024-09-24 00:30:11,370 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 00:30:11,370 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-24 00:30:11,370 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-24 00:30:11,371 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-24 00:30:11,371 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-24 00:30:11,420 - process_daily_narrative - INFO - Received request
+2024-09-24 00:30:11,420 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 00:30:11,420 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-23T17:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 58bc20b030eeb53561e71ef27f3144d9/15656405470400556702;o=1
+Traceparent: 00-58bc20b030eeb53561e71ef27f3144d9-d946b9d2fab52e9e-01
+X-Forwarded-For: 107.178.194.104
+X-Forwarded-Proto: https
+Forwarded: for="107.178.194.104";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-24 00:30:11,420 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-24 00:30:11,421 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-24 00:30:11,421 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-24 00:30:11,421 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-24 00:30:11,421 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-24 00:30:11,605 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=3, readtime=2024-09-24 00:30:11.592887+00:00>]]
+2024-09-24 00:30:11,606 - process_daily_narrative - INFO - Processing 1 out of 3 events for retrieved_reddit_posts
+2024-09-24 00:30:11,759 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=4, readtime=2024-09-24 00:30:11.744242+00:00>]]
+2024-09-24 00:30:11,759 - process_daily_narrative - INFO - Processing 1 out of 4 events for retrieved_articles
+2024-09-24 00:30:12,104 - process_daily_narrative - INFO - Events to process: 2
+2024-09-24 00:30:18,510 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 00:30:18,511 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 24,
+    "items": {
+      "interested": 4,
+      "excited": 3,
+      "strong": 2,
+      "enthusiastic": 2,
+      "proud": 3,
+      "alert": 2,
+      "inspired": 2,
+      "determined": 1,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 61,
+    "items": {
+      "distressed": 20,
+      "upset": 10,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 11,
+      "jittery": 0,
+      "afraid": 20
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event involved a Reddit post shared by u/LabcoatAnn in the r/science community, titled "Food allergies begin with the disruption of microbially imprinted immune cells and antigen presenting cells of the neonatal immune system." The post discusses the importance of understanding how cellular and microbial circuits interlink to help establish long-term tolerance for food allergens. It received a considerable upvote score of 86 with a high upvote ratio of 0.97, indicating that it resonated positively with many users, even though there were only four comments.
+</summary>
+
+<qualia>
+The emotional vibe is a blend of curiosity and concern, driven by the intriguing yet unsettling nature of food allergies and their impact on health.
+</qualia>
+
+<image_prompt>
+Generate an image depicting the complex interplay between cellular circuits and food allergies, combining elements of scientific research with a sense of both hope and caution, illustrating the emotional journey of understanding and resilience.
+</image_prompt>
+2024-09-24 00:30:18,511 - process_daily_narrative - INFO - Processed Updated PANAS:
+2024-09-24 00:30:18,512 - process_daily_narrative - INFO - {
+  "positive_affect": {
+    "total_score": 24,
+    "items": {
+      "interested": 4,
+      "excited": 3,
+      "strong": 2,
+      "enthusiastic": 2,
+      "proud": 3,
+      "alert": 2,
+      "inspired": 2,
+      "determined": 1,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 61,
+    "items": {
+      "distressed": 20,
+      "upset": 10,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 11,
+      "jittery": 0,
+      "afraid": 20
+    }
+  }
+}
+2024-09-24 00:30:24,101 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 00:30:24,101 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 8,
+    "items": {
+      "interested": 3,
+      "excited": 1,
+      "strong": 1,
+      "enthusiastic": 0,
+      "proud": 1,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 77,
+    "items": {
+      "distressed": 25,
+      "upset": 15,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 12,
+      "jittery": 0,
+      "afraid": 25
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The cost of living crisis has significantly affected grocery chains, leading to public scrutiny and concern as prices rise and affordability decreases. This situation evokes feelings of distress, fear, and nerves due to the impact on daily lives and economic stability, while also stirring a degree of interest regarding the responses to and implications of these changes.
+</summary>
+
+<qualia>
+A heightened sense of anxiety and discomfort mixed with curiosity about the unfolding social dynamics.
+</qualia>
+
+<image_prompt>
+Create a visual representation of the cost of living crisis impacting grocery chains, blending elements of concern and scrutiny with hints of interest in societal response. The image should evoke emotions of distress and exploration, capturing the essence of a world navigating challenges together.
+</image_prompt>
+2024-09-24 00:30:24,102 - process_daily_narrative - INFO - Processed Updated PANAS:
+2024-09-24 00:30:24,102 - process_daily_narrative - INFO - {
+  "positive_affect": {
+    "total_score": 8,
+    "items": {
+      "interested": 3,
+      "excited": 1,
+      "strong": 1,
+      "enthusiastic": 0,
+      "proud": 1,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 77,
+    "items": {
+      "distressed": 25,
+      "upset": 15,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 12,
+      "jittery": 0,
+      "afraid": 25
+    }
+  }
+}
+2024-09-24 00:30:24,247 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-23/inputs/news_and_events/2024-09-23_news.pdf', 'link': 'https://www.bbc.com/news/articles/cd982y85wg1o', 'published': 'Mon, 23 Sep 2024 03:20:45 GMT', 'title': 'Australia supermarkets sued over fake discount claims', 'summary': 'The cost of living crisis has significantly affected grocery chains, leading to public scrutiny and concern as prices rise and affordability decreases. This situation evokes feelings of distress, fear, and nerves due to the impact on daily lives and economic stability, while also stirring a degree of interest regarding the responses to and implications of these changes.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 23, 4, 1, 11, 724000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 8, 'items': {'interested': 3, 'excited': 1, 'strong': 1, 'enthusiastic': 0, 'proud': 1, 'alert': 1, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 77, 'items': {'distressed': 25, 'upset': 15, 'guilty': 0, 'scared': 0, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 12, 'jittery': 0, 'afraid': 25}}}, 'qualia': 'A heightened sense of anxiety and discomfort mixed with curiosity about the unfolding social dynamics.', 'image_prompt': 'Create a visual representation of the cost of living crisis impacting grocery chains, blending elements of concern and scrutiny with hints of interest in societal response. The image should evoke emotions of distress and exploration, capturing the essence of a world navigating challenges together.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 23, 20, 30, 24, 102561, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': 'e5d115371b3d420a7e38f9c4bcf74449'}, 'event_type': 'retrieved_articles', 'event_id': 'e5d115371b3d420a7e38f9c4bcf74449'}, {'updated_panas': {'positive_affect': {'total_score': 8, 'items': {'interested': 3, 'excited': 1, 'strong': 1, 'enthusiastic': 0, 'proud': 1, 'alert': 1, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 77, 'items': {'distressed': 25, 'upset': 15, 'guilty': 0, 'scared': 0, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 12, 'jittery': 0, 'afraid': 25}}}, 'summary': 'The cost of living crisis has significantly affected grocery chains, leading to public scrutiny and concern as prices rise and affordability decreases. This situation evokes feelings of distress, fear, and nerves due to the impact on daily lives and economic stability, while also stirring a degree of interest regarding the responses to and implications of these changes.', 'qualia': 'A heightened sense of anxiety and discomfort mixed with curiosity about the unfolding social dynamics.', 'image_prompt': 'Create a visual representation of the cost of living crisis impacting grocery chains, blending elements of concern and scrutiny with hints of interest in societal response. The image should evoke emotions of distress and exploration, capturing the essence of a world navigating challenges together.'})
+2024-09-24 00:30:30,231 - process_daily_narrative - INFO - Generating image with prompt: Create a visual representation of the cost of living crisis impacting grocery chains, blending elements of concern and scrutiny with hints of interest in societal response. The image should evoke emotions of distress and exploration, capturing the essence of a world navigating challenges together. and aspect ratio: 1:1
+2024-09-24 00:30:46,374 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/eE40dkIf7kpMEUDIa5OxPePlhmEXxqeSnHaiJTEfL0MwGdf3E/output.webp
+2024-09-24 00:30:46,374 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/eE40dkIf7kpMEUDIa5OxPePlhmEXxqeSnHaiJTEfL0MwGdf3E/output.webp
+2024-09-24 00:30:46,471 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-23/outputs/event_id_e5d115371b3d420a7e38f9c4bcf74449_2030.webp
+2024-09-24 00:30:46,471 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-23/outputs/event_id_e5d115371b3d420a7e38f9c4bcf74449_2030.webp
+2024-09-24 00:30:51,871 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-23/outputs/event_id_e5d115371b3d420a7e38f9c4bcf74449_2030.webp
+2024-09-24 00:30:51,871 - process_daily_narrative - INFO - Updating qualia_updates document 6eNLtv1gHcZLfonTAl8i with image path
+2024-09-24 00:30:51,930 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-23/outputs/event_id_e5d115371b3d420a7e38f9c4bcf74449_2030.webp
+2024-09-24 00:30:51,930 - process_daily_narrative - INFO - Added 'I Wish You Would' by Taylor Swift to the playlist.
+2024-09-24 00:30:51,930 - process_daily_narrative - INFO - Function returned: None
+2024-09-24 00:30:51,931 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
