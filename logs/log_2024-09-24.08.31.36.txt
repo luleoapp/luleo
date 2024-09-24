@@ -1,0 +1,175 @@
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Received request
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "036Gp9qAAWctFeteFLid"}}'
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': '036Gp9qAAWctFeteFLid'}}
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - PARAMS: {'upload_id': '036Gp9qAAWctFeteFLid'}
+2024-09-24 00:04:21,003 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 00:04:21,474 - process_daily_narrative - INFO - Image downloaded successfully to /var/folders/st/dv53zgjd1zq71gl_yyg_924w0000gn/T/tmpi2roi7ep.png
+2024-09-24 00:04:31,944 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}]
+2024-09-24 00:04:35,627 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 00:04:35,628 - process_daily_narrative - INFO - <explanation>
+The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.
+</explanation>
+
+<categories>
+<category>Ideas</category>
+<category>Miscellaneous</category>
+</categories>
+2024-09-24 00:04:35,729 - process_daily_narrative - INFO - Function returned: {'final_prompt': [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}], 'categories': ['Ideas', 'Miscellaneous'], 'explanation': 'The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.', 'github_image_path': 'daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}
+2024-09-24 00:04:41,054 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.00.04.35.txt
+2024-09-24 12:30:17,981 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 12:30:17,981 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-24 12:30:17,981 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-24 12:30:17,981 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-24 12:30:17,981 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-24 12:30:18,072 - process_daily_narrative - INFO - Received request
+2024-09-24 12:30:18,072 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 12:30:18,072 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-24T05:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: e2387403f01a50655a15240bd82d06c6/11360639765799297315;o=1
+Traceparent: 00-e2387403f01a50655a15240bd82d06c6-9da919acfda4e123-01
+X-Forwarded-For: 35.243.23.171
+X-Forwarded-Proto: https
+Forwarded: for="35.243.23.171";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-24 12:30:18,073 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-24 12:30:18,073 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-24 12:30:18,073 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-24 12:30:18,073 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-24 12:30:18,073 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-24 12:30:18,073 - process_daily_narrative - INFO - Updating hourly...
+2024-09-24 12:30:18,255 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=12, readtime=2024-09-24 12:30:18.238827+00:00>]]
+2024-09-24 12:30:18,256 - process_daily_narrative - INFO - Processing 1 out of 12 events for retrieved_reddit_posts
+2024-09-24 12:30:18,479 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=16, readtime=2024-09-24 12:30:18.469531+00:00>]]
+2024-09-24 12:30:18,480 - process_daily_narrative - INFO - Processing 1 out of 16 events for retrieved_articles
+2024-09-24 12:30:18,754 - process_daily_narrative - INFO - Events to process: 2
+2024-09-24 12:30:23,276 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 12:30:23,277 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 8,
+    "items": {
+      "interested": 3,
+      "excited": 2,
+      "strong": 0,
+      "enthusiastic": 1,
+      "proud": 1,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 145,
+    "items": {
+      "distressed": 50,
+      "upset": 40,
+      "guilty": 0,
+      "scared": 30,
+      "hostile": 10,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 5,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A US think-tank sought to release records related to Prince Harry's memoir, which discusses his past drug use. This event raises discussions about privacy, accountability, and public interest, reflecting a broader societal discourse on mental health, addiction, and the implications of public figures' narratives.
+</summary>
+
+<qualia>
+The emotional vibe is one of mixed intrigue and concern, sparking interest in important discussions while evoking distress over privacy and societal judgment.
+</qualia>
+
+<image_prompt>
+Create an artistic image that captures the essence of societal reflection on addiction, privacy, and the complexities of public perception, inspired by the event involving Prince Harry's memoir and the think-tank's pursuit of records.
+</image_prompt>
+2024-09-24 12:30:29,843 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 12:30:29,844 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 14,
+    "items": {
+      "interested": 5,
+      "excited": 3,
+      "strong": 0,
+      "enthusiastic": 2,
+      "proud": 1,
+      "alert": 1,
+      "inspired": 1,
+      "determined": 0,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 226,
+    "items": {
+      "distressed": 70,
+      "upset": 60,
+      "guilty": 0,
+      "scared": 50,
+      "hostile": 30,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 5,
+      "jittery": 0,
+      "afraid": 11
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A recent video posted by u/nbcnews in r/science showcases octopuses hunting together with fish, demonstrating their intelligence and collaborative behavior. In a rare moment, these remarkable creatures even resort to "punching" fish that do not cooperate. This interesting insight into octopus behavior garnered significant attention, receiving over 16,700 upvotes and nearly 625 comments, with an impressive upvote ratio of 97%.
+</summary>
+
+<qualia>
+The emotional vibe of this event is a blend of curiosity and awe, interlaced with a hint of concern for the fish involved in the struggle, elevating emotions toward the complexities of nature.
+</qualia>
+
+<image_prompt>
+Create an artistic image portraying octopuses hunting alongside fish, capturing their intelligence and teamwork. Incorporate elements that suggest both curiosity and the tension of the moment, emphasizing the wonder and complexity of nature's interactions.
+</image_prompt>
+2024-09-24 12:30:29,970 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-24/inputs/news_and_events/2024-09-24_news.pdf', 'link': 'https://www.bbc.com/news/articles/cy43l9wxn1zo', 'published': 'Mon, 23 Sep 2024 23:49:01 GMT', 'title': "Harry's US visa application will stay private, judge rules", 'summary': "A US think-tank sought to release records related to Prince Harry's memoir, which discusses his past drug use. This event raises discussions about privacy, accountability, and public interest, reflecting a broader societal discourse on mental health, addiction, and the implications of public figures' narratives.", 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 24, 4, 1, 13, 67000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 8, 'items': {'interested': 3, 'excited': 2, 'strong': 0, 'enthusiastic': 1, 'proud': 1, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 1, 'active': 0}}, 'negative_affect': {'total_score': 145, 'items': {'distressed': 50, 'upset': 40, 'guilty': 0, 'scared': 30, 'hostile': 10, 'irritable': 0, 'ashamed': 0, 'nervous': 5, 'jittery': 0, 'afraid': 10}}}, 'qualia': 'The emotional vibe is one of mixed intrigue and concern, sparking interest in important discussions while evoking distress over privacy and societal judgment.', 'image_prompt': "Create an artistic image that captures the essence of societal reflection on addiction, privacy, and the complexities of public perception, inspired by the event involving Prince Harry's memoir and the think-tank's pursuit of records.", 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 24, 8, 30, 23, 277694, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '9620289df924c77354492ab0db6fd82c'}, 'event_type': 'retrieved_articles', 'event_id': '9620289df924c77354492ab0db6fd82c'}, {'updated_panas': {'positive_affect': {'total_score': 8, 'items': {'interested': 3, 'excited': 2, 'strong': 0, 'enthusiastic': 1, 'proud': 1, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 1, 'active': 0}}, 'negative_affect': {'total_score': 145, 'items': {'distressed': 50, 'upset': 40, 'guilty': 0, 'scared': 30, 'hostile': 10, 'irritable': 0, 'ashamed': 0, 'nervous': 5, 'jittery': 0, 'afraid': 10}}}, 'summary': "A US think-tank sought to release records related to Prince Harry's memoir, which discusses his past drug use. This event raises discussions about privacy, accountability, and public interest, reflecting a broader societal discourse on mental health, addiction, and the implications of public figures' narratives.", 'qualia': 'The emotional vibe is one of mixed intrigue and concern, sparking interest in important discussions while evoking distress over privacy and societal judgment.', 'image_prompt': "Create an artistic image that captures the essence of societal reflection on addiction, privacy, and the complexities of public perception, inspired by the event involving Prince Harry's memoir and the think-tank's pursuit of records."})
+2024-09-24 12:30:37,887 - process_daily_narrative - INFO - Generating image with prompt: Create an artistic image that captures the essence of societal reflection on addiction, privacy, and the complexities of public perception, inspired by the event involving Prince Harry's memoir and the think-tank's pursuit of records. and aspect ratio: 1:1
+2024-09-24 12:31:31,319 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/lfYjkBw1YsTWQary75QbYTgMuL2zrmiq2thPMMgUCLZRGDwJA/output.webp
+2024-09-24 12:31:31,320 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/lfYjkBw1YsTWQary75QbYTgMuL2zrmiq2thPMMgUCLZRGDwJA/output.webp
+2024-09-24 12:31:31,422 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-24/outputs/event_id_9620289df924c77354492ab0db6fd82c_0831.webp
+2024-09-24 12:31:31,423 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-24/outputs/event_id_9620289df924c77354492ab0db6fd82c_0831.webp
+2024-09-24 12:31:36,892 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-24/outputs/event_id_9620289df924c77354492ab0db6fd82c_0831.webp
+2024-09-24 12:31:36,892 - process_daily_narrative - INFO - Updating qualia_updates document 1CWWDOeNjAtbth8lkGry with image path
+2024-09-24 12:31:36,950 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-24/outputs/event_id_9620289df924c77354492ab0db6fd82c_0831.webp
+2024-09-24 12:31:36,950 - process_daily_narrative - INFO - Added '7' by Lil Nas X to the playlist.
+2024-09-24 12:31:36,950 - process_daily_narrative - INFO - Function returned: None
+2024-09-24 12:31:36,950 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
