@@ -1,0 +1,285 @@
+2024-09-23 05:30:10,010 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-23 05:30:10,011 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-23 05:30:10,011 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-23 05:30:10,011 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-23 05:30:10,011 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-23 05:30:10,110 - process_daily_narrative - INFO - Received request
+2024-09-23 05:30:10,110 - process_daily_narrative - INFO - Request method: POST
+2024-09-23 05:30:10,110 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-22T22:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 14766fd5e97be6bbab9e07c97b5d941e/14785861552669029387;o=1
+Traceparent: 00-14766fd5e97be6bbab9e07c97b5d941e-cd31eebe48f1740b-01
+X-Forwarded-For: 107.178.194.193
+X-Forwarded-Proto: https
+Forwarded: for="107.178.194.193";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-23 05:30:10,110 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-23 05:30:10,111 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-23 05:30:10,111 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-23 05:30:10,111 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-23 05:30:10,111 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-23 05:30:10,278 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=21, readtime=2024-09-23 05:30:10.264900+00:00>]]
+2024-09-23 05:30:10,278 - process_daily_narrative - INFO - Processing 1 out of 21 events for retrieved_reddit_posts
+2024-09-23 05:30:10,378 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=26, readtime=2024-09-23 05:30:10.367738+00:00>]]
+2024-09-23 05:30:10,378 - process_daily_narrative - INFO - Processing 2 out of 26 events for retrieved_articles
+2024-09-23 05:30:10,656 - process_daily_narrative - INFO - Events to process: 3
+2024-09-23 05:30:15,324 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 05:30:15,324 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 355,
+    "items": {
+      "distressed": 75,
+      "upset": 70,
+      "guilty": 0,
+      "scared": 50,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 50,
+      "jittery": 35,
+      "afraid": 75
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Israel has announced its intention to continue military actions, amid rising concerns expressed by the UN chief about the potential for Lebanon to face a humanitarian crisis similar to that of Gaza. This reflects heightened tensions in the region and carries significant implications for both local populations and international relations.
+</summary>
+
+<qualia>
+A heavy sense of distress and concern, intertwined with a sliver of curiosity about the unfolding situation.
+</qualia>
+
+<image_prompt>
+Generate an image that artistically captures the weight of conflict and humanitarian distress, reflecting the intense emotions of concern and curiosity sparked by the news about Israel's military actions and the implications for Lebanon.
+</image_prompt>
+2024-09-23 05:30:15,325 - process_daily_narrative - INFO - Processed Updated PANAS:
+2024-09-23 05:30:15,325 - process_daily_narrative - INFO - {
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 355,
+    "items": {
+      "distressed": 75,
+      "upset": 70,
+      "guilty": 0,
+      "scared": 50,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 50,
+      "jittery": 35,
+      "afraid": 75
+    }
+  }
+}
+2024-09-23 05:30:20,036 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 05:30:20,037 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 2,
+    "items": {
+      "interested": 2,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 330,
+    "items": {
+      "distressed": 65,
+      "upset": 60,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 60,
+      "jittery": 25,
+      "afraid": 55
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A recent study highlighted the dangers of environmental pollution, revealing that exposure to specific metals such as cobalt, tungsten, uranium, and cadmium is linked to the increased risk of cardiovascular disease. This study emphasizes the urgency of addressing pollution to safeguard public health, as these metals contribute to harmful plaque buildup in arteries, known as atherosclerosis. The post shared on Reddit has garnered positive attention, indicating public interest and concern about this significant health issue.
+</summary>
+
+<qualia>
+The emotional vibe is a mix of concern and increased awareness about health risks, creating a feeling of distress intertwined with curiosity about prevention and environmental issues.
+</qualia>
+
+<image_prompt>
+Generate an artistic image reflecting a juxtaposition of vibrant natural beauty and the looming shadows of environmental pollution, symbolizing both the urgency and the hope in addressing health concerns related to metal exposure.
+</image_prompt>
+2024-09-23 05:30:20,037 - process_daily_narrative - INFO - Processed Updated PANAS:
+2024-09-23 05:30:20,037 - process_daily_narrative - INFO - {
+  "positive_affect": {
+    "total_score": 2,
+    "items": {
+      "interested": 2,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 330,
+    "items": {
+      "distressed": 65,
+      "upset": 60,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 60,
+      "jittery": 25,
+      "afraid": 55
+    }
+  }
+}
+2024-09-23 05:30:24,486 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 05:30:24,486 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 0,
+    "items": {
+      "interested": 0,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 500,
+    "items": {
+      "distressed": 80,
+      "upset": 80,
+      "guilty": 0,
+      "scared": 70,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 50,
+      "jittery": 30,
+      "afraid": 90
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+On September 22, an Israeli airstrike resulted in the death of seven individuals at Kafr Qasem School in Gaza, which was sheltering displaced families. This attack highlighted the ongoing violence in the region amid the Israel-Palestine conflict, with reports indicating a total of 16 Palestinians killed in Israeli strikes on that day. Amidst the intensifying conflict, humanitarian crises are exacerbating as hospitals face potential shutdowns due to shortages, and heavy rain has worsened conditions for displaced individuals living in temporary shelters.
+</summary>
+
+<qualia>
+A deep sorrow and urgent alarm, evoking feelings of distress, fear, and helplessness in the face of ongoing tragedy and humanitarian crisis.
+</qualia>
+
+<image_prompt>
+Generate an image capturing the sorrowful aftermath of the airstrike in Gaza, symbolizing suffering and loss, with dark, muted colors reflecting the atmosphere of despair and urgency for peace.
+</image_prompt>
+2024-09-23 05:30:24,486 - process_daily_narrative - INFO - Processed Updated PANAS:
+2024-09-23 05:30:24,486 - process_daily_narrative - INFO - {
+  "positive_affect": {
+    "total_score": 0,
+    "items": {
+      "interested": 0,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 500,
+    "items": {
+      "distressed": 80,
+      "upset": 80,
+      "guilty": 0,
+      "scared": 70,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 50,
+      "jittery": 30,
+      "afraid": 90
+    }
+  }
+}
+2024-09-23 05:30:24,603 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'World News | Latest Top Stories | Reuters', 'github_file_path': 'daily_data/2024-09-23/inputs/news_and_events/2024-09-23_news.pdf', 'link': 'https://www.reuters.com/world/middle-east/israeli-strike-kills-seven-gaza-school-compound-palestinian-medics-say-2024-09-22/', 'published': 'Sun, 22 Sep 2024 10:09:14 GMT', 'title': 'Israeli strike kills seven in Gaza school compound, Palestinian medics say', 'summary': 'On September 22, an Israeli airstrike resulted in the death of seven individuals at Kafr Qasem School in Gaza, which was sheltering displaced families. This attack highlighted the ongoing violence in the region amid the Israel-Palestine conflict, with reports indicating a total of 16 Palestinians killed in Israeli strikes on that day. Amidst the intensifying conflict, humanitarian crises are exacerbating as hospitals face potential shutdowns due to shortages, and heavy rain has worsened conditions for displaced individuals living in temporary shelters.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 23, 4, 1, 14, 420000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 0, 'items': {'interested': 0, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 500, 'items': {'distressed': 80, 'upset': 80, 'guilty': 0, 'scared': 70, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 50, 'jittery': 30, 'afraid': 90}}}, 'qualia': 'A deep sorrow and urgent alarm, evoking feelings of distress, fear, and helplessness in the face of ongoing tragedy and humanitarian crisis.', 'image_prompt': 'Generate an image capturing the sorrowful aftermath of the airstrike in Gaza, symbolizing suffering and loss, with dark, muted colors reflecting the atmosphere of despair and urgency for peace.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 23, 1, 30, 24, 486852, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '123cc3925f1f14bd07d9161a6a20bdca'}, 'event_type': 'retrieved_articles', 'event_id': '123cc3925f1f14bd07d9161a6a20bdca'}, {'updated_panas': {'positive_affect': {'total_score': 0, 'items': {'interested': 0, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 500, 'items': {'distressed': 80, 'upset': 80, 'guilty': 0, 'scared': 70, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 50, 'jittery': 30, 'afraid': 90}}}, 'summary': 'On September 22, an Israeli airstrike resulted in the death of seven individuals at Kafr Qasem School in Gaza, which was sheltering displaced families. This attack highlighted the ongoing violence in the region amid the Israel-Palestine conflict, with reports indicating a total of 16 Palestinians killed in Israeli strikes on that day. Amidst the intensifying conflict, humanitarian crises are exacerbating as hospitals face potential shutdowns due to shortages, and heavy rain has worsened conditions for displaced individuals living in temporary shelters.', 'qualia': 'A deep sorrow and urgent alarm, evoking feelings of distress, fear, and helplessness in the face of ongoing tragedy and humanitarian crisis.', 'image_prompt': 'Generate an image capturing the sorrowful aftermath of the airstrike in Gaza, symbolizing suffering and loss, with dark, muted colors reflecting the atmosphere of despair and urgency for peace.'})
+2024-09-23 05:30:27,561 - process_daily_narrative - INFO - Generating image with prompt: Generate an image capturing the sorrowful aftermath of the airstrike in Gaza, symbolizing suffering and loss, with dark, muted colors reflecting the atmosphere of despair and urgency for peace. and aspect ratio: 1:1
+2024-09-23 05:30:47,196 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/MnibemJLFM2hAaPGsJlsd6UNS4PKsYDTnuqlxzZeUWQG8qfmA/output.webp
+2024-09-23 05:30:47,196 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/MnibemJLFM2hAaPGsJlsd6UNS4PKsYDTnuqlxzZeUWQG8qfmA/output.webp
+2024-09-23 05:30:47,295 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-23/outputs/event_id_123cc3925f1f14bd07d9161a6a20bdca_0130.webp
+2024-09-23 05:30:47,296 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-23/outputs/event_id_123cc3925f1f14bd07d9161a6a20bdca_0130.webp
+2024-09-23 05:30:52,547 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-23/outputs/event_id_123cc3925f1f14bd07d9161a6a20bdca_0130.webp
+2024-09-23 05:30:52,547 - process_daily_narrative - INFO - Updating qualia_updates document 4RzBEcMMOfdJaeaY6Zo5 with image path
+2024-09-23 05:30:52,606 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-23/outputs/event_id_123cc3925f1f14bd07d9161a6a20bdca_0130.webp
+2024-09-23 05:30:52,606 - process_daily_narrative - INFO - Added 'Budapest' by George Ezra to the playlist.
+2024-09-23 05:30:52,606 - process_daily_narrative - INFO - Function returned: None
+2024-09-23 05:30:52,606 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

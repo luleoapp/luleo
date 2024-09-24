@@ -1,0 +1,205 @@
+2024-09-23 16:30:10,922 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-23 16:30:10,922 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-23 16:30:10,922 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-23 16:30:10,922 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-23 16:30:10,922 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-23 16:30:10,961 - process_daily_narrative - INFO - Received request
+2024-09-23 16:30:10,961 - process_daily_narrative - INFO - Request method: POST
+2024-09-23 16:30:10,961 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-23T09:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 2825cfa328c02d5a018748e6b4cfcb99/6588407864229188864;o=1
+Traceparent: 00-2825cfa328c02d5a018748e6b4cfcb99-5b6eba0baec55500-01
+X-Forwarded-For: 35.187.132.39
+X-Forwarded-Proto: https
+Forwarded: for="35.187.132.39";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-23 16:30:10,961 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-23 16:30:10,961 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-23 16:30:10,962 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-23 16:30:10,962 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-23 16:30:10,962 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-23 16:30:11,145 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=10, readtime=2024-09-23 16:30:11.128452+00:00>]]
+2024-09-23 16:30:11,145 - process_daily_narrative - INFO - Processing 1 out of 10 events for retrieved_reddit_posts
+2024-09-23 16:30:11,337 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=12, readtime=2024-09-23 16:30:11.322586+00:00>]]
+2024-09-23 16:30:11,337 - process_daily_narrative - INFO - Processing 1 out of 12 events for retrieved_articles
+2024-09-23 16:30:11,581 - process_daily_narrative - INFO - Events to process: 2
+2024-09-23 16:30:17,563 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 16:30:17,563 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 6,
+    "items": {
+      "interested": 2,
+      "excited": 0,
+      "strong": 1,
+      "enthusiastic": 0,
+      "proud": 1,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 65,
+    "items": {
+      "distressed": 20,
+      "upset": 15,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Ecuador's government announced a nine-hour suspension of electricity service across 12 provinces due to an ongoing severe drought, the worst in 61 years. The measure aims to protect water resources as hydroelectric plants face reduced water levels. This added blackout comes on top of daily eight-hour nightly power cuts planned nationwide. The scenario reflects significant water shortages, fire hazards, and food security issues affecting 19 provinces, prompting a declaration of red alert by the authorities.
+</summary>
+
+<qualia>
+The emotional vibe invoked by this event feels heavy, marked by distress over environmental crises and the urgency of humanitarian challenges, mingled with a slight glimmer of interest in the governmental response.
+</qualia>
+
+<image_prompt>
+Create an image that artistically represents the profound sense of distress and urgency surrounding Ecuador's worsening drought and energy crisis, intertwining elements of nature's struggle and human resilience.
+</image_prompt>
+2024-09-23 16:30:17,564 - process_daily_narrative - INFO - Processed Updated PANAS:
+2024-09-23 16:30:17,564 - process_daily_narrative - INFO - {
+  "positive_affect": {
+    "total_score": 6,
+    "items": {
+      "interested": 2,
+      "excited": 0,
+      "strong": 1,
+      "enthusiastic": 0,
+      "proud": 1,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 65,
+    "items": {
+      "distressed": 20,
+      "upset": 15,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+2024-09-23 16:30:23,529 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 16:30:23,529 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 18,
+    "items": {
+      "interested": 4,
+      "excited": 2,
+      "strong": 1,
+      "enthusiastic": 2,
+      "proud": 1,
+      "alert": 3,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 45,
+    "items": {
+      "distressed": 12,
+      "upset": 5,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 5,
+      "jittery": 0,
+      "afraid": 13
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+In a recent statement, French President Emmanuel Macron expressed France's support for Lebanon amidst ongoing tensions in the region. He emphasized the need for de-escalation but notably did not mention Hezbollah, a group influential in Lebanese politics. The statement garnered significant attention on Reddit, with 1,699 upvotes and 341 comments highlighting the community's engagement and varied opinions on France's role in Middle Eastern affairs.
+</summary>
+
+<qualia>
+The vibe of the emotion invoked by this event is a mix of cautious optimism and underlying worry, driven by a sense of hope for peace yet shadowed by the realities of conflict.
+</qualia>
+
+<image_prompt>
+Create an artistic image depicting a landscape symbolizing peace and tension. Incorporate elements representing France and Lebanon, interspersed with symbols of diplomacy and conflict. The artwork should convey a blend of hope and concern, reflecting the emotional complexity of Macron's statement and the reactions it has provoked.
+</image_prompt>
+2024-09-23 16:30:23,530 - process_daily_narrative - INFO - Processed Updated PANAS:
+2024-09-23 16:30:23,530 - process_daily_narrative - INFO - {
+  "positive_affect": {
+    "total_score": 18,
+    "items": {
+      "interested": 4,
+      "excited": 2,
+      "strong": 1,
+      "enthusiastic": 2,
+      "proud": 1,
+      "alert": 3,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 45,
+    "items": {
+      "distressed": 12,
+      "upset": 5,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 5,
+      "jittery": 0,
+      "afraid": 13
+    }
+  }
+}
+2024-09-23 16:30:23,650 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'World News | Latest Top Stories | Reuters', 'github_file_path': 'daily_data/2024-09-23/inputs/news_and_events/2024-09-23_news.pdf', 'link': 'https://www.reuters.com/world/americas/ecuador-cuts-power-half-its-provinces-amid-historic-drought-2024-09-22/', 'published': 'Sun, 22 Sep 2024 16:29:17 GMT', 'title': 'Ecuador cuts power in half of its provinces amid historic drought', 'summary': "Ecuador's government announced a nine-hour suspension of electricity service across 12 provinces due to an ongoing severe drought, the worst in 61 years. The measure aims to protect water resources as hydroelectric plants face reduced water levels. This added blackout comes on top of daily eight-hour nightly power cuts planned nationwide. The scenario reflects significant water shortages, fire hazards, and food security issues affecting 19 provinces, prompting a declaration of red alert by the authorities.", 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 23, 4, 1, 14, 295000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 6, 'items': {'interested': 2, 'excited': 0, 'strong': 1, 'enthusiastic': 0, 'proud': 1, 'alert': 1, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 65, 'items': {'distressed': 20, 'upset': 15, 'guilty': 0, 'scared': 10, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 10, 'jittery': 0, 'afraid': 10}}}, 'qualia': 'The emotional vibe invoked by this event feels heavy, marked by distress over environmental crises and the urgency of humanitarian challenges, mingled with a slight glimmer of interest in the governmental response.', 'image_prompt': "Create an image that artistically represents the profound sense of distress and urgency surrounding Ecuador's worsening drought and energy crisis, intertwining elements of nature's struggle and human resilience.", 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 23, 12, 30, 17, 564347, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '9c8c59238abb49371ca55b1afbe7cf71'}, 'event_type': 'retrieved_articles', 'event_id': '9c8c59238abb49371ca55b1afbe7cf71'}, {'updated_panas': {'positive_affect': {'total_score': 6, 'items': {'interested': 2, 'excited': 0, 'strong': 1, 'enthusiastic': 0, 'proud': 1, 'alert': 1, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 65, 'items': {'distressed': 20, 'upset': 15, 'guilty': 0, 'scared': 10, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 10, 'jittery': 0, 'afraid': 10}}}, 'summary': "Ecuador's government announced a nine-hour suspension of electricity service across 12 provinces due to an ongoing severe drought, the worst in 61 years. The measure aims to protect water resources as hydroelectric plants face reduced water levels. This added blackout comes on top of daily eight-hour nightly power cuts planned nationwide. The scenario reflects significant water shortages, fire hazards, and food security issues affecting 19 provinces, prompting a declaration of red alert by the authorities.", 'qualia': 'The emotional vibe invoked by this event feels heavy, marked by distress over environmental crises and the urgency of humanitarian challenges, mingled with a slight glimmer of interest in the governmental response.', 'image_prompt': "Create an image that artistically represents the profound sense of distress and urgency surrounding Ecuador's worsening drought and energy crisis, intertwining elements of nature's struggle and human resilience."})
+2024-09-23 16:30:31,367 - process_daily_narrative - INFO - Generating image with prompt: Create an image that artistically represents the profound sense of distress and urgency surrounding Ecuador's worsening drought and energy crisis, intertwining elements of nature's struggle and human resilience. and aspect ratio: 1:1
+2024-09-23 16:30:52,953 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/FP68fTAKWBTEWSXcdgmAivFiejQJGhDN4IfHNgeH4ouwbSfbC/output.webp
+2024-09-23 16:30:52,953 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/FP68fTAKWBTEWSXcdgmAivFiejQJGhDN4IfHNgeH4ouwbSfbC/output.webp
+2024-09-23 16:30:53,058 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-23/outputs/event_id_9c8c59238abb49371ca55b1afbe7cf71_1230.webp
+2024-09-23 16:30:53,059 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-23/outputs/event_id_9c8c59238abb49371ca55b1afbe7cf71_1230.webp
+2024-09-23 16:30:58,392 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-23/outputs/event_id_9c8c59238abb49371ca55b1afbe7cf71_1230.webp
+2024-09-23 16:30:58,392 - process_daily_narrative - INFO - Updating qualia_updates document akppkb1ACh4N42lkD6c6 with image path
+2024-09-23 16:30:58,452 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-23/outputs/event_id_9c8c59238abb49371ca55b1afbe7cf71_1230.webp
+2024-09-23 16:30:58,452 - process_daily_narrative - INFO - Added 'Heartbeats' by José González to the playlist.
+2024-09-23 16:30:58,452 - process_daily_narrative - INFO - Function returned: None
+2024-09-23 16:30:58,452 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

@@ -1,0 +1,205 @@
+2024-09-23 17:30:11,372 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-23 17:30:11,372 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-23 17:30:11,372 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-23 17:30:11,372 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-23 17:30:11,372 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-23 17:30:11,404 - process_daily_narrative - INFO - Received request
+2024-09-23 17:30:11,404 - process_daily_narrative - INFO - Request method: POST
+2024-09-23 17:30:11,404 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-23T10:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: d71b059fa2affc71cd78d3d4968cac99/8802657277434340521;o=1
+Traceparent: 00-d71b059fa2affc71cd78d3d4968cac99-7a295227c4fb24a9-01
+X-Forwarded-For: 35.243.23.203
+X-Forwarded-Proto: https
+Forwarded: for="35.243.23.203";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-23 17:30:11,405 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-23 17:30:11,405 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-23 17:30:11,405 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-23 17:30:11,405 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-23 17:30:11,405 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-23 17:30:11,572 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=9, readtime=2024-09-23 17:30:11.557399+00:00>]]
+2024-09-23 17:30:11,572 - process_daily_narrative - INFO - Processing 1 out of 9 events for retrieved_reddit_posts
+2024-09-23 17:30:11,707 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=11, readtime=2024-09-23 17:30:11.696121+00:00>]]
+2024-09-23 17:30:11,707 - process_daily_narrative - INFO - Processing 1 out of 11 events for retrieved_articles
+2024-09-23 17:30:12,077 - process_daily_narrative - INFO - Events to process: 2
+2024-09-23 17:30:18,689 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 17:30:18,689 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 8,
+    "items": {
+      "interested": 3,
+      "excited": 1,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 1,
+      "alert": 1,
+      "inspired": 1,
+      "determined": 0,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 60,
+    "items": {
+      "distressed": 15,
+      "upset": 15,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 20
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A recent Reddit post titled "Ultra-processed foods and cardiovascular disease: analysis of three large US prospective cohorts and a systematic review and meta-analysis of prospective cohort studies," shared by u/PuzzleheadedLab2024 in the r/science forum, presents significant findings regarding the correlation between ultra-processed foods and cardiovascular health. The post has gained considerable attention, garnering 184 upvotes with an impressive upvote ratio of 0.96 and 10 comments, indicating a strong interest among the community in this important health issue.
+</summary>
+
+<qualia>
+The emotional vibe of this event reflects a mix of curiosity and concern, highlighting the importance of awareness in health and nutrition while invoking distress about the implications of dietary choices on well-being.
+</qualia>
+
+<image_prompt>
+Generate an artistic representation of the relationship between ultra-processed foods and cardiovascular health that visually conveys a sense of curiosity combined with concern, emphasizing the significant impact of dietary choices on human well-being.
+</image_prompt>
+2024-09-23 17:30:18,690 - process_daily_narrative - INFO - Processed Updated PANAS:
+2024-09-23 17:30:18,690 - process_daily_narrative - INFO - {
+  "positive_affect": {
+    "total_score": 8,
+    "items": {
+      "interested": 3,
+      "excited": 1,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 1,
+      "alert": 1,
+      "inspired": 1,
+      "determined": 0,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 60,
+    "items": {
+      "distressed": 15,
+      "upset": 15,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 20
+    }
+  }
+}
+2024-09-23 17:30:23,917 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 17:30:23,917 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 83,
+    "items": {
+      "distressed": 30,
+      "upset": 20,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 3
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Recently, footage captured an enormous explosion in Tikhoretsk, resulting in a massive blast and a substantial plume of smoke. This distressing event highlights potential human suffering and chaos, stirring concern and fear among observers.
+</summary>
+
+<qualia>
+The emotional vibe is one of profound distress and fear, overwhelmed by the gravity of destructive events.
+</qualia>
+
+<image_prompt>
+Create an image depicting a dramatic explosion with dark smoke billowing into the sky, emphasizing the emotions of distress and fear associated with the event in Tikhoretsk. The scene should convey a sense of urgency and chaos, reflecting the gravity of the situation.
+</image_prompt>
+2024-09-23 17:30:23,917 - process_daily_narrative - INFO - Processed Updated PANAS:
+2024-09-23 17:30:23,918 - process_daily_narrative - INFO - {
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 83,
+    "items": {
+      "distressed": 30,
+      "upset": 20,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 3
+    }
+  }
+}
+2024-09-23 17:30:24,050 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-22/inputs/news_and_events/2024-09-22_news.pdf', 'link': 'https://www.bbc.com/news/videos/cwy9pkrpyjdo', 'published': 'Sat, 21 Sep 2024 15:07:38 GMT', 'title': 'Watch: Huge explosion at Russia arms depot', 'summary': 'Recently, footage captured an enormous explosion in Tikhoretsk, resulting in a massive blast and a substantial plume of smoke. This distressing event highlights potential human suffering and chaos, stirring concern and fear among observers.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 22, 4, 1, 13, 207000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 1, 'items': {'interested': 1, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 83, 'items': {'distressed': 30, 'upset': 20, 'guilty': 0, 'scared': 10, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 10, 'jittery': 0, 'afraid': 3}}}, 'qualia': 'The emotional vibe is one of profound distress and fear, overwhelmed by the gravity of destructive events.', 'image_prompt': 'Create an image depicting a dramatic explosion with dark smoke billowing into the sky, emphasizing the emotions of distress and fear associated with the event in Tikhoretsk. The scene should convey a sense of urgency and chaos, reflecting the gravity of the situation.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 23, 13, 30, 23, 918213, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': 'a16e2aefe504dcba7f75f7f242772326'}, 'event_type': 'retrieved_articles', 'event_id': 'a16e2aefe504dcba7f75f7f242772326'}, {'updated_panas': {'positive_affect': {'total_score': 1, 'items': {'interested': 1, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 83, 'items': {'distressed': 30, 'upset': 20, 'guilty': 0, 'scared': 10, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 10, 'jittery': 0, 'afraid': 3}}}, 'summary': 'Recently, footage captured an enormous explosion in Tikhoretsk, resulting in a massive blast and a substantial plume of smoke. This distressing event highlights potential human suffering and chaos, stirring concern and fear among observers.', 'qualia': 'The emotional vibe is one of profound distress and fear, overwhelmed by the gravity of destructive events.', 'image_prompt': 'Create an image depicting a dramatic explosion with dark smoke billowing into the sky, emphasizing the emotions of distress and fear associated with the event in Tikhoretsk. The scene should convey a sense of urgency and chaos, reflecting the gravity of the situation.'})
+2024-09-23 17:30:38,377 - process_daily_narrative - INFO - Generating image with prompt: Create an image depicting a dramatic explosion with dark smoke billowing into the sky, emphasizing the emotions of distress and fear associated with the event in Tikhoretsk. The scene should convey a sense of urgency and chaos, reflecting the gravity of the situation. and aspect ratio: 1:1
+2024-09-23 17:30:56,169 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/zeRSBk4v26R3Aid5chd6sfu8w0XC10tXHqp6R1PBHRef8VfbC/output.webp
+2024-09-23 17:30:56,169 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/zeRSBk4v26R3Aid5chd6sfu8w0XC10tXHqp6R1PBHRef8VfbC/output.webp
+2024-09-23 17:30:56,243 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-23/outputs/event_id_a16e2aefe504dcba7f75f7f242772326_1330.webp
+2024-09-23 17:30:56,244 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-23/outputs/event_id_a16e2aefe504dcba7f75f7f242772326_1330.webp
+2024-09-23 17:31:01,550 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-23/outputs/event_id_a16e2aefe504dcba7f75f7f242772326_1330.webp
+2024-09-23 17:31:01,550 - process_daily_narrative - INFO - Updating qualia_updates document h6olc9RDbfliL6wKqnNu with image path
+2024-09-23 17:31:01,618 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-23/outputs/event_id_a16e2aefe504dcba7f75f7f242772326_1330.webp
+2024-09-23 17:31:01,618 - process_daily_narrative - INFO - Added 'Goodbye Blue Sky' by Pink Floyd to the playlist.
+2024-09-23 17:31:01,618 - process_daily_narrative - INFO - Function returned: None
+2024-09-23 17:31:01,618 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

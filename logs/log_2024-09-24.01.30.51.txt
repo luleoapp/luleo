@@ -1,0 +1,222 @@
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Received request
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "036Gp9qAAWctFeteFLid"}}'
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': '036Gp9qAAWctFeteFLid'}}
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - PARAMS: {'upload_id': '036Gp9qAAWctFeteFLid'}
+2024-09-24 00:04:21,003 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 00:04:21,474 - process_daily_narrative - INFO - Image downloaded successfully to /var/folders/st/dv53zgjd1zq71gl_yyg_924w0000gn/T/tmpi2roi7ep.png
+2024-09-24 00:04:31,944 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}]
+2024-09-24 00:04:35,627 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 00:04:35,628 - process_daily_narrative - INFO - <explanation>
+The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.
+</explanation>
+
+<categories>
+<category>Ideas</category>
+<category>Miscellaneous</category>
+</categories>
+2024-09-24 00:04:35,729 - process_daily_narrative - INFO - Function returned: {'final_prompt': [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}], 'categories': ['Ideas', 'Miscellaneous'], 'explanation': 'The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.', 'github_image_path': 'daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}
+2024-09-24 00:04:41,054 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.00.04.35.txt
+2024-09-24 05:30:09,915 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 05:30:09,915 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-24 05:30:09,915 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-24 05:30:09,916 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-24 05:30:09,916 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-24 05:30:09,958 - process_daily_narrative - INFO - Received request
+2024-09-24 05:30:09,958 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 05:30:09,958 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-23T22:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: a2c8be1f14e8a65cf791f007f0c8fcfd/11206434027545835941;o=1
+Traceparent: 00-a2c8be1f14e8a65cf791f007f0c8fcfd-9b85405fb2b839a5-01
+X-Forwarded-For: 35.243.23.230
+X-Forwarded-Proto: https
+Forwarded: for="35.243.23.230";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-24 05:30:09,958 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-24 05:30:09,958 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-24 05:30:09,959 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-24 05:30:09,959 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-24 05:30:09,959 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-24 05:30:09,959 - process_daily_narrative - INFO - Updating hourly...
+2024-09-24 05:30:10,186 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=19, readtime=2024-09-24 05:30:10.146810+00:00>]]
+2024-09-24 05:30:10,186 - process_daily_narrative - INFO - Processing 1 out of 19 events for retrieved_reddit_posts
+2024-09-24 05:30:10,292 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=24, readtime=2024-09-24 05:30:10.281468+00:00>]]
+2024-09-24 05:30:10,292 - process_daily_narrative - INFO - Processing 2 out of 24 events for retrieved_articles
+2024-09-24 05:30:10,555 - process_daily_narrative - INFO - Events to process: 3
+2024-09-24 05:30:15,309 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 05:30:15,309 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 16,
+    "items": {
+      "interested": 5,
+      "excited": 1,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 3,
+      "inspired": 4,
+      "determined": 1,
+      "attentive": 2,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 120,
+    "items": {
+      "distressed": 40,
+      "upset": 30,
+      "guilty": 0,
+      "scared": 20,
+      "hostile": 10,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event refers to a report on Israel's military strategy against Hezbollah, suggesting a high level of risk. This situation raises concerns about the capabilities of Hezbollah in responding to the campaign. The discussion around military action often brings about heightened emotions and anxiety about the impacts on both human lives and regional stability.
+</summary>
+
+<qualia>
+The emotional vibe invoked by this event is one of intense concern and agitation, coupled with a keen awareness and curiosity about the geopolitical implications.
+</qualia>
+
+<image_prompt>
+Create an artistic representation depicting the tension and concern surrounding geopolitical conflicts, with elements symbolizing conflict and the powerful emotions tied to them, such as compassion, fear, and resilience. Use a color palette that conveys urgency and reflection.
+</image_prompt>
+2024-09-24 05:30:19,246 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 05:30:19,247 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 12,
+    "items": {
+      "interested": 3,
+      "excited": 1,
+      "strong": 0,
+      "enthusiastic": 1,
+      "proud": 0,
+      "alert": 2,
+      "inspired": 4,
+      "determined": 0,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 105,
+    "items": {
+      "distressed": 35,
+      "upset": 25,
+      "guilty": 0,
+      "scared": 20,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 15,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Recent events in southern Lebanon have prompted thousands of individuals to flee their homes, with some leaving the capital, Beirut. This mass displacement reflects a moment of significant distress and uncertainty for many, evoking feelings of fear and concern about the humanitarian consequences of the ongoing situation.
+</summary>
+
+<qualia>
+The emotional vibe is one of heavy distress and concern, intermingled with a slight spark of hope and humanity in the face of adversity.
+</qualia>
+
+<image_prompt>
+Create an image that artistically captures the emotional weight of the recent crisis in southern Lebanon, emphasizing themes of distress, movement, and the resilience of the human spirit amidst adversity.
+</image_prompt>
+2024-09-24 05:30:23,943 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 05:30:23,943 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 20,
+    "items": {
+      "interested": 4,
+      "excited": 2,
+      "strong": 0,
+      "enthusiastic": 1,
+      "proud": 0,
+      "alert": 3,
+      "inspired": 5,
+      "determined": 0,
+      "attentive": 2,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 85,
+    "items": {
+      "distressed": 30,
+      "upset": 15,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event revolves around new research that explores the hormonal imbalances linked to Post-Traumatic Stress Disorder (PTSD). It reveals that individuals with PTSD have reduced levels of oxytocin, a hormone associated with bonding and social interactions, and elevated levels of vasopressin, which is linked to stress responses. The research has garnered significant attention, receiving 2039 upvotes and a high upvote ratio of 0.98, indicating a positive reception within the scientific community and the public.
+</summary>
+
+<qualia>
+The emotional vibe of this event is a mix of intrigued hopefulness tempered by a lingering concern about the struggles faced by those with PTSD.
+</qualia>
+
+<image_prompt>
+Create an artistic representation that captures the balance between hope and concern in the context of PTSD research, illustrating the duality of emotions involved in understanding mental health and resilience.
+</image_prompt>
+2024-09-24 05:30:24,071 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-24/inputs/news_and_events/2024-09-24_news.pdf', 'link': 'https://www.bbc.com/news/articles/c5y8mlp9jyvo', 'published': 'Mon, 23 Sep 2024 17:28:30 GMT', 'title': 'Cold military logic takes over in Israel-Hezbollah conflict', 'summary': "The event refers to a report on Israel's military strategy against Hezbollah, suggesting a high level of risk. This situation raises concerns about the capabilities of Hezbollah in responding to the campaign. The discussion around military action often brings about heightened emotions and anxiety about the impacts on both human lives and regional stability.", 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 24, 4, 1, 14, 842000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 16, 'items': {'interested': 5, 'excited': 1, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 3, 'inspired': 4, 'determined': 1, 'attentive': 2, 'active': 0}}, 'negative_affect': {'total_score': 120, 'items': {'distressed': 40, 'upset': 30, 'guilty': 0, 'scared': 20, 'hostile': 10, 'irritable': 0, 'ashamed': 0, 'nervous': 10, 'jittery': 0, 'afraid': 10}}}, 'qualia': 'The emotional vibe invoked by this event is one of intense concern and agitation, coupled with a keen awareness and curiosity about the geopolitical implications.', 'image_prompt': 'Create an artistic representation depicting the tension and concern surrounding geopolitical conflicts, with elements symbolizing conflict and the powerful emotions tied to them, such as compassion, fear, and resilience. Use a color palette that conveys urgency and reflection.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 24, 1, 30, 15, 310486, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '2ddf5ecc35d54802594fc23d43d248ae'}, 'event_type': 'retrieved_articles', 'event_id': '2ddf5ecc35d54802594fc23d43d248ae'}, {'updated_panas': {'positive_affect': {'total_score': 16, 'items': {'interested': 5, 'excited': 1, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 3, 'inspired': 4, 'determined': 1, 'attentive': 2, 'active': 0}}, 'negative_affect': {'total_score': 120, 'items': {'distressed': 40, 'upset': 30, 'guilty': 0, 'scared': 20, 'hostile': 10, 'irritable': 0, 'ashamed': 0, 'nervous': 10, 'jittery': 0, 'afraid': 10}}}, 'summary': "The event refers to a report on Israel's military strategy against Hezbollah, suggesting a high level of risk. This situation raises concerns about the capabilities of Hezbollah in responding to the campaign. The discussion around military action often brings about heightened emotions and anxiety about the impacts on both human lives and regional stability.", 'qualia': 'The emotional vibe invoked by this event is one of intense concern and agitation, coupled with a keen awareness and curiosity about the geopolitical implications.', 'image_prompt': 'Create an artistic representation depicting the tension and concern surrounding geopolitical conflicts, with elements symbolizing conflict and the powerful emotions tied to them, such as compassion, fear, and resilience. Use a color palette that conveys urgency and reflection.'})
+2024-09-24 05:30:27,345 - process_daily_narrative - INFO - Generating image with prompt: Create an artistic representation depicting the tension and concern surrounding geopolitical conflicts, with elements symbolizing conflict and the powerful emotions tied to them, such as compassion, fear, and resilience. Use a color palette that conveys urgency and reflection. and aspect ratio: 1:1
+2024-09-24 05:30:46,457 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/lhf9pUIhd0S3Za0daOo8ZAbB2WuKt9sHmZzNmW0lpGbDBAwJA/output.webp
+2024-09-24 05:30:46,457 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/lhf9pUIhd0S3Za0daOo8ZAbB2WuKt9sHmZzNmW0lpGbDBAwJA/output.webp
+2024-09-24 05:30:46,530 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-24/outputs/event_id_2ddf5ecc35d54802594fc23d43d248ae_0130.webp
+2024-09-24 05:30:46,531 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-24/outputs/event_id_2ddf5ecc35d54802594fc23d43d248ae_0130.webp
+2024-09-24 05:30:51,865 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-24/outputs/event_id_2ddf5ecc35d54802594fc23d43d248ae_0130.webp
+2024-09-24 05:30:51,865 - process_daily_narrative - INFO - Updating qualia_updates document NzN9JQsl13IRF11Xinkj with image path
+2024-09-24 05:30:51,931 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-24/outputs/event_id_2ddf5ecc35d54802594fc23d43d248ae_0130.webp
+2024-09-24 05:30:51,931 - process_daily_narrative - INFO - Added 'Recovery' by James Arthur to the playlist.
+2024-09-24 05:30:51,931 - process_daily_narrative - INFO - Function returned: None
+2024-09-24 05:30:51,931 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

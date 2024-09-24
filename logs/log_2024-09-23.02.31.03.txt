@@ -1,0 +1,252 @@
+2024-09-23 06:30:10,406 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-23 06:30:10,406 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-23 06:30:10,406 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-23 06:30:10,406 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-23 06:30:10,406 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-23 06:30:10,436 - process_daily_narrative - INFO - Received request
+2024-09-23 06:30:10,436 - process_daily_narrative - INFO - Request method: POST
+2024-09-23 06:30:10,436 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-22T23:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: ee83b86bc1982b23331965cdc632b7c6/3453023372596301611;o=1
+Traceparent: 00-ee83b86bc1982b23331965cdc632b7c6-2feb9a7664b94f2b-01
+X-Forwarded-For: 35.243.23.107
+X-Forwarded-Proto: https
+Forwarded: for="35.243.23.107";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-23 06:30:10,437 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-23 06:30:10,437 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-23 06:30:10,437 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-23 06:30:10,437 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-23 06:30:10,437 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-23 06:30:10,605 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=20, readtime=2024-09-23 06:30:10.593831+00:00>]]
+2024-09-23 06:30:10,605 - process_daily_narrative - INFO - Processing 1 out of 20 events for retrieved_reddit_posts
+2024-09-23 06:30:10,722 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=24, readtime=2024-09-23 06:30:10.713763+00:00>]]
+2024-09-23 06:30:10,722 - process_daily_narrative - INFO - Processing 2 out of 24 events for retrieved_articles
+2024-09-23 06:30:10,979 - process_daily_narrative - INFO - Events to process: 3
+2024-09-23 06:30:16,794 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 06:30:16,794 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 15,
+    "items": {
+      "interested": 3,
+      "excited": 4,
+      "strong": 0,
+      "enthusiastic": 5,
+      "proud": 3,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 270,
+    "items": {
+      "distressed": 0,
+      "upset": 40,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 20,
+      "jittery": 0,
+      "afraid": 210
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The wedding, a joyful occasion, was held in Copenhagen, surrounded by the love of close friends and family. The event is marked by happiness and celebration, yet there is a sense of nervous energy and, for some, fear regarding the future, which can invoke mixed emotions.
+</summary>
+
+<qualia>
+Joyful yet anxious celebration of love and commitment.
+</qualia>
+
+<image_prompt>
+Generate an image that artistically depicts a wedding in Copenhagen, capturing the joy of the union along with an underlying sense of nervousness. Use vibrant colors to represent love and unity, while incorporating elements that suggest a journey ahead, reflecting both celebration and uncertainty.
+2024-09-23 06:30:16,795 - process_daily_narrative - ERROR - Assertion failed: Image prompt not found in the response
+2024-09-23 06:30:22,433 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 06:30:22,433 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 18,
+    "items": {
+      "interested": 5,
+      "excited": 4,
+      "strong": 0,
+      "enthusiastic": 2,
+      "proud": 0,
+      "alert": 3,
+      "inspired": 4,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 450,
+    "items": {
+      "distressed": 50,
+      "upset": 60,
+      "guilty": 0,
+      "scared": 50,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 40,
+      "jittery": 30,
+      "afraid": 30
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A recent Reddit post titled "New therapy that destroys tau tangles shows promise for Alzheimer’s" highlights an important breakthrough in Alzheimer's research. The therapy showed promise in selectively removing aggregated tau proteins in mice, leading to improved symptoms of neurodegeneration. The post has garnered significant attention with 1,307 upvotes and a 99% upvote ratio, demonstrating a strong interest in advancements in medical research, particularly related to diseases like Alzheimer's.
+</summary>
+
+<qualia>
+A mix of hope and concern, where optimism for potential breakthroughs battles the weight of distress for those affected by neurodegeneration.
+</qualia>
+
+<image_prompt>
+Create an image that captures the duality of hope and concern in Alzheimer's research, embodying the breakthroughs and the emotional impact on individuals and families affected by the disease. Focus on elements that depict scientific advancement alongside the human experience of fear and hope.
+</image_prompt>
+2024-09-23 06:30:22,433 - process_daily_narrative - INFO - Processed Updated PANAS:
+2024-09-23 06:30:22,433 - process_daily_narrative - INFO - {
+  "positive_affect": {
+    "total_score": 18,
+    "items": {
+      "interested": 5,
+      "excited": 4,
+      "strong": 0,
+      "enthusiastic": 2,
+      "proud": 0,
+      "alert": 3,
+      "inspired": 4,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 450,
+    "items": {
+      "distressed": 50,
+      "upset": 60,
+      "guilty": 0,
+      "scared": 50,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 40,
+      "jittery": 30,
+      "afraid": 30
+    }
+  }
+}
+2024-09-23 06:30:27,316 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 06:30:27,317 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 550,
+    "items": {
+      "distressed": 100,
+      "upset": 100,
+      "guilty": 0,
+      "scared": 90,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 80,
+      "jittery": 30,
+      "afraid": 150
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Police authorities have reported that a recent shooting incident may be linked to a murder-for-hire plot. This event led to the tragic death of one individual, stirring fear and distress within the community regarding safety and the prevalence of such violent crimes.
+</summary>
+
+<qualia>
+The emotional vibe is one of deep distress, fear, and concern for safety amidst tragedy.
+</qualia>
+
+<image_prompt>
+Create an image depicting the tragic aftermath of a shooting scene with a somber and reflective atmosphere, illustrating emotions of fear and distress. The artwork should convey the gravity of violence and its impact on community safety.
+</image_prompt>
+2024-09-23 06:30:27,317 - process_daily_narrative - INFO - Processed Updated PANAS:
+2024-09-23 06:30:27,317 - process_daily_narrative - INFO - {
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 550,
+    "items": {
+      "distressed": 100,
+      "upset": 100,
+      "guilty": 0,
+      "scared": 90,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 80,
+      "jittery": 30,
+      "afraid": 150
+    }
+  }
+}
+2024-09-23 06:30:27,446 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'subreddit': 'science', 'summary': 'A recent Reddit post titled "New therapy that destroys tau tangles shows promise for Alzheimer’s" highlights an important breakthrough in Alzheimer\'s research. The therapy showed promise in selectively removing aggregated tau proteins in mice, leading to improved symptoms of neurodegeneration. The post has garnered significant attention with 1,307 upvotes and a 99% upvote ratio, demonstrating a strong interest in advancements in medical research, particularly related to diseases like Alzheimer\'s.', 'github_file_path': 'daily_data/2024-09-23/inputs/AI_updates/2024-09-23_reddit_tech_posts.pdf', 'url': 'https://www.reddit.com/r/science/comments/1fmpsnj/new_therapy_that_destroys_tau_tangles_shows/', 'title': 'New therapy that destroys tau tangles shows promise for Alzheimer’s. It selectively remove aggregated tau proteins and improve symptoms of neurodegeneration in mice. The progression of their neurodegeneration symptoms slowed and they showed significantly better motor function.', 'score': 1307, 'author': 'mvea', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 23, 4, 2, 42, 38000, tzinfo=datetime.timezone.utc), 'num_comments': 13, 'updated_panas': {'positive_affect': {'total_score': 18, 'items': {'interested': 5, 'excited': 4, 'strong': 0, 'enthusiastic': 2, 'proud': 0, 'alert': 3, 'inspired': 4, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 450, 'items': {'distressed': 50, 'upset': 60, 'guilty': 0, 'scared': 50, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 40, 'jittery': 30, 'afraid': 30}}}, 'qualia': 'A mix of hope and concern, where optimism for potential breakthroughs battles the weight of distress for those affected by neurodegeneration.', 'image_prompt': "Create an image that captures the duality of hope and concern in Alzheimer's research, embodying the breakthroughs and the emotional impact on individuals and families affected by the disease. Focus on elements that depict scientific advancement alongside the human experience of fear and hope.", 'event_type': 'retrieved_reddit_posts', 'processed_at': datetime.datetime(2024, 9, 23, 2, 30, 22, 433740, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '1fmpsnj'}, 'event_type': 'retrieved_reddit_posts', 'event_id': '1fmpsnj'}, {'updated_panas': {'positive_affect': {'total_score': 18, 'items': {'interested': 5, 'excited': 4, 'strong': 0, 'enthusiastic': 2, 'proud': 0, 'alert': 3, 'inspired': 4, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 450, 'items': {'distressed': 50, 'upset': 60, 'guilty': 0, 'scared': 50, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 40, 'jittery': 30, 'afraid': 30}}}, 'summary': 'A recent Reddit post titled "New therapy that destroys tau tangles shows promise for Alzheimer’s" highlights an important breakthrough in Alzheimer\'s research. The therapy showed promise in selectively removing aggregated tau proteins in mice, leading to improved symptoms of neurodegeneration. The post has garnered significant attention with 1,307 upvotes and a 99% upvote ratio, demonstrating a strong interest in advancements in medical research, particularly related to diseases like Alzheimer\'s.', 'qualia': 'A mix of hope and concern, where optimism for potential breakthroughs battles the weight of distress for those affected by neurodegeneration.', 'image_prompt': "Create an image that captures the duality of hope and concern in Alzheimer's research, embodying the breakthroughs and the emotional impact on individuals and families affected by the disease. Focus on elements that depict scientific advancement alongside the human experience of fear and hope."})
+2024-09-23 06:30:37,637 - process_daily_narrative - INFO - Generating image with prompt: Create an image that captures the duality of hope and concern in Alzheimer's research, embodying the breakthroughs and the emotional impact on individuals and families affected by the disease. Focus on elements that depict scientific advancement alongside the human experience of fear and hope. and aspect ratio: 1:1
+2024-09-23 06:30:57,289 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/Yy3nFYssAl4pBVWvJjOoHdsQLwFPwE6ecBFH4VHfHkCh0rfmA/output.webp
+2024-09-23 06:30:57,289 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/Yy3nFYssAl4pBVWvJjOoHdsQLwFPwE6ecBFH4VHfHkCh0rfmA/output.webp
+2024-09-23 06:30:57,383 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-23/outputs/event_id_1fmpsnj_0230.webp
+2024-09-23 06:30:57,384 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-23/outputs/event_id_1fmpsnj_0230.webp
+2024-09-23 06:31:02,947 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-23/outputs/event_id_1fmpsnj_0230.webp
+2024-09-23 06:31:02,947 - process_daily_narrative - INFO - Updating qualia_updates document Gqa2GWMcTMkgheZ6Y6BI with image path
+2024-09-23 06:31:03,013 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-23/outputs/event_id_1fmpsnj_0230.webp
+2024-09-23 06:31:03,013 - process_daily_narrative - INFO - Added 'Gravity' by John Mayer to the playlist.
+2024-09-23 06:31:03,014 - process_daily_narrative - INFO - Function returned: None
+2024-09-23 06:31:03,014 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

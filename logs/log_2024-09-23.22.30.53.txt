@@ -1,0 +1,205 @@
+2024-09-24 02:30:08,823 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 02:30:08,823 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-24 02:30:08,823 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-24 02:30:08,823 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-24 02:30:08,823 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-24 02:30:08,882 - process_daily_narrative - INFO - Received request
+2024-09-24 02:30:08,882 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 02:30:08,882 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-23T19:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 3f4566d3dff869ddb9ebff5cbe277168/839905218241310848;o=1
+Traceparent: 00-3f4566d3dff869ddb9ebff5cbe277168-0ba7f15892453080-01
+X-Forwarded-For: 35.243.23.131
+X-Forwarded-Proto: https
+Forwarded: for="35.243.23.131";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-24 02:30:08,882 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-24 02:30:08,882 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-24 02:30:08,882 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-24 02:30:08,882 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-24 02:30:08,883 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-24 02:30:09,020 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=1, readtime=2024-09-24 02:30:09.006201+00:00>]]
+2024-09-24 02:30:09,020 - process_daily_narrative - INFO - Processing 1 out of 1 events for retrieved_reddit_posts
+2024-09-24 02:30:09,130 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=2, readtime=2024-09-24 02:30:09.114448+00:00>]]
+2024-09-24 02:30:09,130 - process_daily_narrative - INFO - Processing 1 out of 2 events for retrieved_articles
+2024-09-24 02:30:09,371 - process_daily_narrative - INFO - Events to process: 2
+2024-09-24 02:30:14,726 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 02:30:14,726 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 2,
+    "items": {
+      "interested": 3,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 99,
+    "items": {
+      "distressed": 45,
+      "upset": 22,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 5,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 12,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event is a live thread on Reddit regarding the ongoing Russian invasion of Ukraine, marking Day 942 of the conflict. The post was created by u/WorldNewsMods in the r/worldnews subreddit, and it currently has an upvote score of 1 with an upvote ratio of 1.00, meaning it was well received by those who viewed it. However, there have been no comments made on the thread, which could indicate a quiet response from the community or ongoing tension surrounding the topic.
+</summary>
+
+<qualia>
+The emotional vibe is one of profound concern and empathy, juxtaposed with a sense of quiet engagement in a somber reality.
+</qualia>
+
+<image_prompt>
+Generate an image depicting the somber atmosphere surrounding the ongoing Russian invasion of Ukraine, reflecting a mixture of concern, empathy, and the weight of collective consciousness regarding global conflict. The style should evoke a feeling of both awareness and deep emotional connection to the humanity affected by the situation.
+</image_prompt>
+2024-09-24 02:30:14,727 - process_daily_narrative - INFO - Processed Updated PANAS:
+2024-09-24 02:30:14,727 - process_daily_narrative - INFO - {
+  "positive_affect": {
+    "total_score": 2,
+    "items": {
+      "interested": 3,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 99,
+    "items": {
+      "distressed": 45,
+      "upset": 22,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 5,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 12,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+2024-09-24 02:30:19,450 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 02:30:19,450 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 105,
+    "items": {
+      "distressed": 35,
+      "upset": 30,
+      "guilty": 0,
+      "scared": 15,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 15
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event revolves around the tragic news that, according to Lebanon's health minister, women and children have lost their lives as rescuers continue to search through the rubble. This heart-wrenching situation highlights the suffering caused by conflicts, natural disasters, or other crises, evoking deep emotional reactions from those who hear about it.
+</summary>
+
+<qualia>
+The emotional "vibe" of this event is heavy and sorrowful, filled with distress and a sense of helplessness in the face of tragedy.
+</qualia>
+
+<image_prompt>
+Generate an image depicting the aftermath of a disaster, capturing the sorrow and struggle of rescuers searching through debris, with a poignant portrayal of women and children affected by the event to reflect the deep empathy and sadness invoked by this news.
+</image_prompt>
+2024-09-24 02:30:19,450 - process_daily_narrative - INFO - Processed Updated PANAS:
+2024-09-24 02:30:19,451 - process_daily_narrative - INFO - {
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 105,
+    "items": {
+      "distressed": 35,
+      "upset": 30,
+      "guilty": 0,
+      "scared": 15,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 15
+    }
+  }
+}
+2024-09-24 02:30:19,668 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-22/inputs/news_and_events/2024-09-22_news.pdf', 'link': 'https://www.bbc.com/news/articles/crl8kelkxepo', 'published': 'Sat, 21 Sep 2024 16:23:43 GMT', 'title': "Death toll from Israeli strike on Beirut rises to 37, Lebanon's health ministry says", 'summary': "The event revolves around the tragic news that, according to Lebanon's health minister, women and children have lost their lives as rescuers continue to search through the rubble. This heart-wrenching situation highlights the suffering caused by conflicts, natural disasters, or other crises, evoking deep emotional reactions from those who hear about it.", 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 22, 4, 1, 12, 640000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 1, 'items': {'interested': 1, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 105, 'items': {'distressed': 35, 'upset': 30, 'guilty': 0, 'scared': 15, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 10, 'jittery': 0, 'afraid': 15}}}, 'qualia': 'The emotional "vibe" of this event is heavy and sorrowful, filled with distress and a sense of helplessness in the face of tragedy.', 'image_prompt': 'Generate an image depicting the aftermath of a disaster, capturing the sorrow and struggle of rescuers searching through debris, with a poignant portrayal of women and children affected by the event to reflect the deep empathy and sadness invoked by this news.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 23, 22, 30, 19, 451715, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': 'f021a5e1c09b6ef990e22d6dfa7dd82c'}, 'event_type': 'retrieved_articles', 'event_id': 'f021a5e1c09b6ef990e22d6dfa7dd82c'}, {'updated_panas': {'positive_affect': {'total_score': 1, 'items': {'interested': 1, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 105, 'items': {'distressed': 35, 'upset': 30, 'guilty': 0, 'scared': 15, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 10, 'jittery': 0, 'afraid': 15}}}, 'summary': "The event revolves around the tragic news that, according to Lebanon's health minister, women and children have lost their lives as rescuers continue to search through the rubble. This heart-wrenching situation highlights the suffering caused by conflicts, natural disasters, or other crises, evoking deep emotional reactions from those who hear about it.", 'qualia': 'The emotional "vibe" of this event is heavy and sorrowful, filled with distress and a sense of helplessness in the face of tragedy.', 'image_prompt': 'Generate an image depicting the aftermath of a disaster, capturing the sorrow and struggle of rescuers searching through debris, with a poignant portrayal of women and children affected by the event to reflect the deep empathy and sadness invoked by this news.'})
+2024-09-24 02:30:26,679 - process_daily_narrative - INFO - Generating image with prompt: Generate an image depicting the aftermath of a disaster, capturing the sorrow and struggle of rescuers searching through debris, with a poignant portrayal of women and children affected by the event to reflect the deep empathy and sadness invoked by this news. and aspect ratio: 1:1
+2024-09-24 02:30:47,665 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/RY2CbehUYfvZ6EdJS3DfrohljCIOc3Dm6A36daucuCuvy6fNB/output.webp
+2024-09-24 02:30:47,665 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/RY2CbehUYfvZ6EdJS3DfrohljCIOc3Dm6A36daucuCuvy6fNB/output.webp
+2024-09-24 02:30:47,886 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-23/outputs/event_id_f021a5e1c09b6ef990e22d6dfa7dd82c_2230.webp
+2024-09-24 02:30:47,887 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-23/outputs/event_id_f021a5e1c09b6ef990e22d6dfa7dd82c_2230.webp
+2024-09-24 02:30:53,206 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-23/outputs/event_id_f021a5e1c09b6ef990e22d6dfa7dd82c_2230.webp
+2024-09-24 02:30:53,207 - process_daily_narrative - INFO - Updating qualia_updates document 2FnsoH0WVbMAs3kBfRo8 with image path
+2024-09-24 02:30:53,268 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-23/outputs/event_id_f021a5e1c09b6ef990e22d6dfa7dd82c_2230.webp
+2024-09-24 02:30:53,268 - process_daily_narrative - INFO - Added 'With You' by Kina Grannis to the playlist.
+2024-09-24 02:30:53,268 - process_daily_narrative - INFO - Function returned: None
+2024-09-24 02:30:53,269 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

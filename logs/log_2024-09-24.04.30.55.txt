@@ -1,0 +1,170 @@
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Received request
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "036Gp9qAAWctFeteFLid"}}'
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': '036Gp9qAAWctFeteFLid'}}
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - PARAMS: {'upload_id': '036Gp9qAAWctFeteFLid'}
+2024-09-24 00:04:21,003 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 00:04:21,474 - process_daily_narrative - INFO - Image downloaded successfully to /var/folders/st/dv53zgjd1zq71gl_yyg_924w0000gn/T/tmpi2roi7ep.png
+2024-09-24 00:04:31,944 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}]
+2024-09-24 00:04:35,627 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 00:04:35,628 - process_daily_narrative - INFO - <explanation>
+The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.
+</explanation>
+
+<categories>
+<category>Ideas</category>
+<category>Miscellaneous</category>
+</categories>
+2024-09-24 00:04:35,729 - process_daily_narrative - INFO - Function returned: {'final_prompt': [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}], 'categories': ['Ideas', 'Miscellaneous'], 'explanation': 'The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.', 'github_image_path': 'daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}
+2024-09-24 00:04:41,054 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.00.04.35.txt
+2024-09-24 08:30:16,737 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 08:30:16,737 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-24 08:30:16,737 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-24 08:30:16,737 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-24 08:30:16,737 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-24 08:30:16,806 - process_daily_narrative - INFO - Received request
+2024-09-24 08:30:16,806 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 08:30:16,806 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-24T01:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: a348bd5e200469805a3f292f1d4cd500/4019417861510276953;o=1
+Traceparent: 00-a348bd5e200469805a3f292f1d4cd500-37c7d73fcf2e2759-01
+X-Forwarded-For: 34.98.143.39
+X-Forwarded-Proto: https
+Forwarded: for="34.98.143.39";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-24 08:30:16,806 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-24 08:30:16,807 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-24 08:30:16,807 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-24 08:30:16,807 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-24 08:30:16,807 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-24 08:30:16,807 - process_daily_narrative - INFO - Updating hourly...
+2024-09-24 08:30:17,001 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=16, readtime=2024-09-24 08:30:16.982004+00:00>]]
+2024-09-24 08:30:17,002 - process_daily_narrative - INFO - Processing 1 out of 16 events for retrieved_reddit_posts
+2024-09-24 08:30:17,135 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=20, readtime=2024-09-24 08:30:17.119073+00:00>]]
+2024-09-24 08:30:17,135 - process_daily_narrative - INFO - Processing 1 out of 20 events for retrieved_articles
+2024-09-24 08:30:17,400 - process_daily_narrative - INFO - Events to process: 2
+2024-09-24 08:30:25,294 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 08:30:25,295 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 25,
+    "items": {
+      "interested": 5,
+      "excited": 3,
+      "strong": 1,
+      "enthusiastic": 2,
+      "proud": 0,
+      "alert": 3,
+      "inspired": 5,
+      "determined": 1,
+      "attentive": 2,
+      "active": 2
+    }
+  },
+  "negative_affect": {
+    "total_score": 160,
+    "items": {
+      "distressed": 40,
+      "upset": 30,
+      "guilty": 0,
+      "scared": 30,
+      "hostile": 10,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 20,
+      "jittery": 0,
+      "afraid": 30
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A recent study highlights that Americans who believe they will “never retire” often possess lower financial knowledge. The study garnered attention on Reddit, receiving 901 upvotes and 269 comments, reflecting a mixed public interest in issues related to financial literacy and its correlation with retirement planning. 
+</summary>
+
+<qualia>
+A mix of concern and curiosity, evoking a sense of urgency about financial awareness and planning for the future.
+</qualia>
+
+<image_prompt>
+Create an image representing the balance between anxiety over financial insecurity and the hope of understanding financial literacy, infused with symbols of learning and growth in the context of retirement planning.
+</image_prompt>
+2024-09-24 08:30:31,641 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 08:30:31,641 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 12,
+    "items": {
+      "interested": 3,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 3,
+      "inspired": 0,
+      "determined": 1,
+      "attentive": 2,
+      "active": 3
+    }
+  },
+  "negative_affect": {
+    "total_score": 165,
+    "items": {
+      "distressed": 40,
+      "upset": 40,
+      "guilty": 0,
+      "scared": 40,
+      "hostile": 20,
+      "irritable": 10,
+      "ashamed": 0,
+      "nervous": 5,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+In a recent event, police reported a targeted attack involving multiple gunmen aiming for a specific individual. The nature of this "hit" raises concerns about public safety and the motivations behind such violent acts, leaving the community feeling unsettled and fearful.
+</summary>
+
+<qualia>
+The emotional vibe invoked by this event is one of deep distress and fear, overshadowed by a sense of urgency to understand and respond to the violence surrounding us.
+</qualia>
+
+<image_prompt>
+Generate an image reflecting the chaotic and tense atmosphere of a targeted attack, capturing the emotions of distress, fear, and a sense of urgency, with dark shadows and intense expressions, set against a backdrop of a city in turmoil.
+</image_prompt>
+2024-09-24 08:30:31,764 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-24/inputs/news_and_events/2024-09-24_news.pdf', 'link': 'https://www.bbc.com/news/articles/c9qv459vn45o', 'published': 'Mon, 23 Sep 2024 17:34:29 GMT', 'title': 'Police offer $50,000 reward for suspects in Alabama shooting', 'summary': 'In a recent event, police reported a targeted attack involving multiple gunmen aiming for a specific individual. The nature of this "hit" raises concerns about public safety and the motivations behind such violent acts, leaving the community feeling unsettled and fearful.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 24, 4, 1, 13, 367000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 12, 'items': {'interested': 3, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 3, 'inspired': 0, 'determined': 1, 'attentive': 2, 'active': 3}}, 'negative_affect': {'total_score': 165, 'items': {'distressed': 40, 'upset': 40, 'guilty': 0, 'scared': 40, 'hostile': 20, 'irritable': 10, 'ashamed': 0, 'nervous': 5, 'jittery': 0, 'afraid': 10}}}, 'qualia': 'The emotional vibe invoked by this event is one of deep distress and fear, overshadowed by a sense of urgency to understand and respond to the violence surrounding us.', 'image_prompt': 'Generate an image reflecting the chaotic and tense atmosphere of a targeted attack, capturing the emotions of distress, fear, and a sense of urgency, with dark shadows and intense expressions, set against a backdrop of a city in turmoil.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 24, 4, 30, 31, 642115, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '6d310276adb31d3294fac863decf8243'}, 'event_type': 'retrieved_articles', 'event_id': '6d310276adb31d3294fac863decf8243'}, {'updated_panas': {'positive_affect': {'total_score': 12, 'items': {'interested': 3, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 3, 'inspired': 0, 'determined': 1, 'attentive': 2, 'active': 3}}, 'negative_affect': {'total_score': 165, 'items': {'distressed': 40, 'upset': 40, 'guilty': 0, 'scared': 40, 'hostile': 20, 'irritable': 10, 'ashamed': 0, 'nervous': 5, 'jittery': 0, 'afraid': 10}}}, 'summary': 'In a recent event, police reported a targeted attack involving multiple gunmen aiming for a specific individual. The nature of this "hit" raises concerns about public safety and the motivations behind such violent acts, leaving the community feeling unsettled and fearful.', 'qualia': 'The emotional vibe invoked by this event is one of deep distress and fear, overshadowed by a sense of urgency to understand and respond to the violence surrounding us.', 'image_prompt': 'Generate an image reflecting the chaotic and tense atmosphere of a targeted attack, capturing the emotions of distress, fear, and a sense of urgency, with dark shadows and intense expressions, set against a backdrop of a city in turmoil.'})
+2024-09-24 08:30:41,047 - process_daily_narrative - INFO - Generating image with prompt: Generate an image reflecting the chaotic and tense atmosphere of a targeted attack, capturing the emotions of distress, fear, and a sense of urgency, with dark shadows and intense expressions, set against a backdrop of a city in turmoil. and aspect ratio: 1:1
+2024-09-24 08:30:55,852 - process_daily_narrative - ERROR - Unexpected error generating image: Error generating image: NSFW content detected.
+2024-09-24 08:30:55,852 - process_daily_narrative - WARNING - Failed to generate or upload image
+2024-09-24 08:30:55,852 - process_daily_narrative - INFO - Added 'Breathe Me - Live' by Sia to the playlist.
+2024-09-24 08:30:55,853 - process_daily_narrative - INFO - Function returned: None
+2024-09-24 08:30:55,853 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

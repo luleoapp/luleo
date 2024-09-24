@@ -1,0 +1,175 @@
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Received request
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "036Gp9qAAWctFeteFLid"}}'
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': '036Gp9qAAWctFeteFLid'}}
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - PARAMS: {'upload_id': '036Gp9qAAWctFeteFLid'}
+2024-09-24 00:04:21,003 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 00:04:21,474 - process_daily_narrative - INFO - Image downloaded successfully to /var/folders/st/dv53zgjd1zq71gl_yyg_924w0000gn/T/tmpi2roi7ep.png
+2024-09-24 00:04:31,944 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}]
+2024-09-24 00:04:35,627 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 00:04:35,628 - process_daily_narrative - INFO - <explanation>
+The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.
+</explanation>
+
+<categories>
+<category>Ideas</category>
+<category>Miscellaneous</category>
+</categories>
+2024-09-24 00:04:35,729 - process_daily_narrative - INFO - Function returned: {'final_prompt': [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}], 'categories': ['Ideas', 'Miscellaneous'], 'explanation': 'The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.', 'github_image_path': 'daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}
+2024-09-24 00:04:41,054 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.00.04.35.txt
+2024-09-24 10:30:17,010 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 10:30:17,010 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-24 10:30:17,010 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-24 10:30:17,010 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-24 10:30:17,010 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-24 10:30:17,100 - process_daily_narrative - INFO - Received request
+2024-09-24 10:30:17,100 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 10:30:17,100 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-24T03:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 4cc51b1619200490c2477ad6c013e199/11235778459293772758;o=1
+Traceparent: 00-4cc51b1619200490c2477ad6c013e199-9bed80faa130ebd6-01
+X-Forwarded-For: 35.187.132.100
+X-Forwarded-Proto: https
+Forwarded: for="35.187.132.100";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-24 10:30:17,100 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-24 10:30:17,100 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-24 10:30:17,100 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-24 10:30:17,100 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-24 10:30:17,101 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-24 10:30:17,101 - process_daily_narrative - INFO - Updating hourly...
+2024-09-24 10:30:17,259 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=14, readtime=2024-09-24 10:30:17.246738+00:00>]]
+2024-09-24 10:30:17,259 - process_daily_narrative - INFO - Processing 1 out of 14 events for retrieved_reddit_posts
+2024-09-24 10:30:17,386 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=18, readtime=2024-09-24 10:30:17.376424+00:00>]]
+2024-09-24 10:30:17,386 - process_daily_narrative - INFO - Processing 1 out of 18 events for retrieved_articles
+2024-09-24 10:30:17,701 - process_daily_narrative - INFO - Events to process: 2
+2024-09-24 10:30:22,820 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 10:30:22,820 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 11,
+    "items": {
+      "interested": 4,
+      "excited": 2,
+      "strong": 1,
+      "enthusiastic": 1,
+      "proud": 2,
+      "alert": 3,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 3,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 195,
+    "items": {
+      "distressed": 60,
+      "upset": 50,
+      "guilty": 0,
+      "scared": 40,
+      "hostile": 40,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 5,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Anura Kumara Dissanayake has been sworn in as Sri Lanka's ninth executive president during a simple ceremony. This significant political event marks a new chapter in the country's leadership. While the event evokes positive feelings of interest and pride in democratic processes, it also brings a sense of distress and concern over the state of current affairs in Sri Lanka, contributing to mixed emotions about the future.
+</summary>
+
+<qualia>
+The emotional vibe is a blend of cautious optimism and a lingering sense of distress, reflecting hopes for positive change amidst uncertainty.
+</qualia>
+
+<image_prompt>
+Create an artistic depiction of the swearing-in ceremony of Anura Kumara Dissanayake as Sri Lanka's ninth executive president, illustrating a scene filled with both hope and tension, showcasing the complexity of emotions surrounding this pivotal political event.
+</image_prompt>
+2024-09-24 10:30:27,647 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 10:30:27,647 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 8,
+    "items": {
+      "interested": 4,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 3,
+      "inspired": 1,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 210,
+    "items": {
+      "distressed": 60,
+      "upset": 50,
+      "guilty": 0,
+      "scared": 30,
+      "hostile": 40,
+      "irritable": 5,
+      "ashamed": 0,
+      "nervous": 5,
+      "jittery": 0,
+      "afraid": 20
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+In a recent Reddit post, Ukrainian President Volodymyr Zelensky expressed criticism of U.S. Senator JD Vance, describing him as "too radical." Zelensky emphasized that any resolution to the ongoing conflict in Ukraine should not come at the expense of the country's sovereignty. The post garnered significant attention, receiving over 8,193 upvotes and 247 comments, reflecting a strong engagement from the community on the topic of international conflict and political statements.
+</summary>
+
+<qualia>
+The emotional vibe invoked by the event is a mix of concern and engagement, highlighting a balance between political awareness and emotional distress over the ongoing conflict.
+</qualia>
+
+<image_prompt>
+Create an artistic representation of the emotional impact reflecting a blend of melancholy and hope, featuring symbols of resilience, global unity, and the complexities of political discourse surrounding war.
+</image_prompt>
+2024-09-24 10:30:27,771 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-24/inputs/news_and_events/2024-09-24_news.pdf', 'link': 'https://www.bbc.com/news/articles/cqxr03x4dvzo', 'published': 'Mon, 23 Sep 2024 04:48:14 GMT', 'title': 'Sri Lanka swears in new left-leaning president', 'summary': "Anura Kumara Dissanayake has been sworn in as Sri Lanka's ninth executive president during a simple ceremony. This significant political event marks a new chapter in the country's leadership. While the event evokes positive feelings of interest and pride in democratic processes, it also brings a sense of distress and concern over the state of current affairs in Sri Lanka, contributing to mixed emotions about the future.", 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 24, 4, 1, 13, 548000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 11, 'items': {'interested': 4, 'excited': 2, 'strong': 1, 'enthusiastic': 1, 'proud': 2, 'alert': 3, 'inspired': 0, 'determined': 0, 'attentive': 3, 'active': 0}}, 'negative_affect': {'total_score': 195, 'items': {'distressed': 60, 'upset': 50, 'guilty': 0, 'scared': 40, 'hostile': 40, 'irritable': 0, 'ashamed': 0, 'nervous': 5, 'jittery': 0, 'afraid': 0}}}, 'qualia': 'The emotional vibe is a blend of cautious optimism and a lingering sense of distress, reflecting hopes for positive change amidst uncertainty.', 'image_prompt': "Create an artistic depiction of the swearing-in ceremony of Anura Kumara Dissanayake as Sri Lanka's ninth executive president, illustrating a scene filled with both hope and tension, showcasing the complexity of emotions surrounding this pivotal political event.", 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 24, 6, 30, 22, 820896, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '8c6681bf68eec3839b9a8928937a0c26'}, 'event_type': 'retrieved_articles', 'event_id': '8c6681bf68eec3839b9a8928937a0c26'}, {'updated_panas': {'positive_affect': {'total_score': 11, 'items': {'interested': 4, 'excited': 2, 'strong': 1, 'enthusiastic': 1, 'proud': 2, 'alert': 3, 'inspired': 0, 'determined': 0, 'attentive': 3, 'active': 0}}, 'negative_affect': {'total_score': 195, 'items': {'distressed': 60, 'upset': 50, 'guilty': 0, 'scared': 40, 'hostile': 40, 'irritable': 0, 'ashamed': 0, 'nervous': 5, 'jittery': 0, 'afraid': 0}}}, 'summary': "Anura Kumara Dissanayake has been sworn in as Sri Lanka's ninth executive president during a simple ceremony. This significant political event marks a new chapter in the country's leadership. While the event evokes positive feelings of interest and pride in democratic processes, it also brings a sense of distress and concern over the state of current affairs in Sri Lanka, contributing to mixed emotions about the future.", 'qualia': 'The emotional vibe is a blend of cautious optimism and a lingering sense of distress, reflecting hopes for positive change amidst uncertainty.', 'image_prompt': "Create an artistic depiction of the swearing-in ceremony of Anura Kumara Dissanayake as Sri Lanka's ninth executive president, illustrating a scene filled with both hope and tension, showcasing the complexity of emotions surrounding this pivotal political event."})
+2024-09-24 10:30:42,758 - process_daily_narrative - INFO - Generating image with prompt: Create an artistic depiction of the swearing-in ceremony of Anura Kumara Dissanayake as Sri Lanka's ninth executive president, illustrating a scene filled with both hope and tension, showcasing the complexity of emotions surrounding this pivotal political event. and aspect ratio: 1:1
+2024-09-24 10:31:00,229 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/iZUsDzk1lxqOGVGI6Cg3Wr7YcfrFbdB7X3OttVX4DrUyNCwJA/output.webp
+2024-09-24 10:31:00,229 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/iZUsDzk1lxqOGVGI6Cg3Wr7YcfrFbdB7X3OttVX4DrUyNCwJA/output.webp
+2024-09-24 10:31:00,481 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-24/outputs/event_id_8c6681bf68eec3839b9a8928937a0c26_0631.webp
+2024-09-24 10:31:00,482 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-24/outputs/event_id_8c6681bf68eec3839b9a8928937a0c26_0631.webp
+2024-09-24 10:31:06,014 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-24/outputs/event_id_8c6681bf68eec3839b9a8928937a0c26_0631.webp
+2024-09-24 10:31:06,014 - process_daily_narrative - INFO - Updating qualia_updates document eAXtCezIfWtha8RJDHPF with image path
+2024-09-24 10:31:06,065 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-24/outputs/event_id_8c6681bf68eec3839b9a8928937a0c26_0631.webp
+2024-09-24 10:31:06,065 - process_daily_narrative - INFO - Added 'Free Fallin'' by Tom Petty to the playlist.
+2024-09-24 10:31:06,065 - process_daily_narrative - INFO - Function returned: None
+2024-09-24 10:31:06,065 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

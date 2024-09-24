@@ -1,0 +1,172 @@
+2024-09-23 18:30:11,428 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-23 18:30:11,428 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-23 18:30:11,428 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-23 18:30:11,429 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-23 18:30:11,429 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-23 18:30:11,468 - process_daily_narrative - INFO - Received request
+2024-09-23 18:30:11,469 - process_daily_narrative - INFO - Request method: POST
+2024-09-23 18:30:11,469 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-23T11:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 724b857dfdb66474ef6dc4fede69030a/258336074085360694;o=1
+Traceparent: 00-724b857dfdb66474ef6dc4fede69030a-0395cb4a6886e436-01
+X-Forwarded-For: 35.243.23.71
+X-Forwarded-Proto: https
+Forwarded: for="35.243.23.71";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-23 18:30:11,470 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-23 18:30:11,470 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-23 18:30:11,470 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-23 18:30:11,470 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-23 18:30:11,470 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-23 18:30:11,688 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=8, readtime=2024-09-23 18:30:11.674109+00:00>]]
+2024-09-23 18:30:11,689 - process_daily_narrative - INFO - Processing 1 out of 8 events for retrieved_reddit_posts
+2024-09-23 18:30:11,808 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=10, readtime=2024-09-23 18:30:11.795071+00:00>]]
+2024-09-23 18:30:11,809 - process_daily_narrative - INFO - Processing 1 out of 10 events for retrieved_articles
+2024-09-23 18:30:12,185 - process_daily_narrative - INFO - Events to process: 2
+2024-09-23 18:30:17,103 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 18:30:17,103 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 102,
+    "items": {
+      "distressed": 40,
+      "upset": 20,
+      "guilty": 0,
+      "scared": 15,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 15,
+      "jittery": 0,
+      "afraid": 12
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event discusses a report from the Israel Defense Forces (IDF) stating that they have eliminated terrorists who were holding six slain hostages. This news, shared on Reddit, has garnered significant attention, with a high upvote score and numerous comments discussing the implications and reactions to the incident. The situation raises concerns regarding violence, conflict, and the ongoing struggles surrounding hostage situations in conflict zones.
+</summary>
+
+<qualia>
+The emotional vibe invoked by the event is one of deep distress and concern, mixed with a slight interest in the unfolding news surrounding sensitive issues of violence and humanity.
+</qualia>
+
+<image_prompt>
+Create an artistic illustration capturing the somber emotions surrounding the recent reports of violence and the tragedies of hostages, reflecting distress, concern, and a faint glimmer of hope through the dark themes presented in the news.
+2024-09-23 18:30:17,104 - process_daily_narrative - ERROR - Assertion failed: Image prompt not found in the response
+2024-09-23 18:30:20,760 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 18:30:20,760 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 93,
+    "items": {
+      "distressed": 35,
+      "upset": 25,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 13
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event concerning the worst drought in living memory has led to significant destruction across vast areas of the region, causing distress and concern among the population. Despite some feelings of interest in understanding the situation better, the overall emotional response is primarily negative due to the severity of the drought and its impact on communities and ecosystems.
+</summary>
+
+<qualia>
+The general vibe reflects deep concern and distress about a pressing environmental crisis, marked by feelings of helplessness and anxiety mixed with a sliver of curiosity about the implications.
+</qualia>
+
+<image_prompt>
+Generate an image depicting the devastation of a drought-stricken region, showcasing cracked earth, wilted crops, and a parched landscape, infused with an emotional atmosphere of distress and concern while capturing a sense of information-seeking hope in understanding the situation.
+</image_prompt>
+2024-09-23 18:30:20,761 - process_daily_narrative - INFO - Processed Updated PANAS:
+2024-09-23 18:30:20,761 - process_daily_narrative - INFO - {
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 93,
+    "items": {
+      "distressed": 35,
+      "upset": 25,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 13
+    }
+  }
+}
+2024-09-23 18:30:20,903 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-23/inputs/news_and_events/2024-09-23_news.pdf', 'link': 'https://www.bbc.com/news/articles/cly7nxz48klo', 'published': 'Sun, 22 Sep 2024 21:48:24 GMT', 'title': 'South America drought brings wildfires and blackouts', 'summary': 'The event concerning the worst drought in living memory has led to significant destruction across vast areas of the region, causing distress and concern among the population. Despite some feelings of interest in understanding the situation better, the overall emotional response is primarily negative due to the severity of the drought and its impact on communities and ecosystems.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 23, 4, 1, 11, 555000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 1, 'items': {'interested': 1, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 93, 'items': {'distressed': 35, 'upset': 25, 'guilty': 0, 'scared': 10, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 10, 'jittery': 0, 'afraid': 13}}}, 'qualia': 'The general vibe reflects deep concern and distress about a pressing environmental crisis, marked by feelings of helplessness and anxiety mixed with a sliver of curiosity about the implications.', 'image_prompt': 'Generate an image depicting the devastation of a drought-stricken region, showcasing cracked earth, wilted crops, and a parched landscape, infused with an emotional atmosphere of distress and concern while capturing a sense of information-seeking hope in understanding the situation.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 23, 14, 30, 20, 761499, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': 'a2941834e1f8c0eb2d599fb70e087efe'}, 'event_type': 'retrieved_articles', 'event_id': 'a2941834e1f8c0eb2d599fb70e087efe'}, {'updated_panas': {'positive_affect': {'total_score': 1, 'items': {'interested': 1, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 93, 'items': {'distressed': 35, 'upset': 25, 'guilty': 0, 'scared': 10, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 10, 'jittery': 0, 'afraid': 13}}}, 'summary': 'The event concerning the worst drought in living memory has led to significant destruction across vast areas of the region, causing distress and concern among the population. Despite some feelings of interest in understanding the situation better, the overall emotional response is primarily negative due to the severity of the drought and its impact on communities and ecosystems.', 'qualia': 'The general vibe reflects deep concern and distress about a pressing environmental crisis, marked by feelings of helplessness and anxiety mixed with a sliver of curiosity about the implications.', 'image_prompt': 'Generate an image depicting the devastation of a drought-stricken region, showcasing cracked earth, wilted crops, and a parched landscape, infused with an emotional atmosphere of distress and concern while capturing a sense of information-seeking hope in understanding the situation.'})
+2024-09-23 18:30:25,178 - process_daily_narrative - INFO - Generating image with prompt: Generate an image depicting the devastation of a drought-stricken region, showcasing cracked earth, wilted crops, and a parched landscape, infused with an emotional atmosphere of distress and concern while capturing a sense of information-seeking hope in understanding the situation. and aspect ratio: 1:1
+2024-09-23 18:30:41,891 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/wlHsuDEeRJT8XaVfH4f1MaHKwHtRWZQ17ssicHjJ2zojusfNB/output.webp
+2024-09-23 18:30:41,891 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/wlHsuDEeRJT8XaVfH4f1MaHKwHtRWZQ17ssicHjJ2zojusfNB/output.webp
+2024-09-23 18:30:42,021 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-23/outputs/event_id_a2941834e1f8c0eb2d599fb70e087efe_1430.webp
+2024-09-23 18:30:42,022 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-23/outputs/event_id_a2941834e1f8c0eb2d599fb70e087efe_1430.webp
+2024-09-23 18:30:47,494 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-23/outputs/event_id_a2941834e1f8c0eb2d599fb70e087efe_1430.webp
+2024-09-23 18:30:47,494 - process_daily_narrative - INFO - Updating qualia_updates document ALrw5i6j0kEh45w98jtx with image path
+2024-09-23 18:30:47,557 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-23/outputs/event_id_a2941834e1f8c0eb2d599fb70e087efe_1430.webp
+2024-09-23 18:30:47,557 - process_daily_narrative - INFO - Added 'Astronaut' by Simple Plan to the playlist.
+2024-09-23 18:30:47,558 - process_daily_narrative - INFO - Function returned: None
+2024-09-23 18:30:47,558 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

@@ -1,0 +1,205 @@
+2024-09-23 15:30:11,745 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-23 15:30:11,745 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-23 15:30:11,746 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-23 15:30:11,746 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-23 15:30:11,746 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-23 15:30:11,799 - process_daily_narrative - INFO - Received request
+2024-09-23 15:30:11,799 - process_daily_narrative - INFO - Request method: POST
+2024-09-23 15:30:11,799 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-23T08:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 5b456eaaddd5be29311af0dd55f7ecc9/5234734700010819603;o=1
+Traceparent: 00-5b456eaaddd5be29311af0dd55f7ecc9-48a583798f8e5013-01
+X-Forwarded-For: 35.187.132.224
+X-Forwarded-Proto: https
+Forwarded: for="35.187.132.224";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-23 15:30:11,799 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-23 15:30:11,799 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-23 15:30:11,800 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-23 15:30:11,800 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-23 15:30:11,800 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-23 15:30:11,944 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=11, readtime=2024-09-23 15:30:11.932077+00:00>]]
+2024-09-23 15:30:11,944 - process_daily_narrative - INFO - Processing 1 out of 11 events for retrieved_reddit_posts
+2024-09-23 15:30:12,033 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=13, readtime=2024-09-23 15:30:12.022323+00:00>]]
+2024-09-23 15:30:12,033 - process_daily_narrative - INFO - Processing 1 out of 13 events for retrieved_articles
+2024-09-23 15:30:12,490 - process_daily_narrative - INFO - Events to process: 2
+2024-09-23 15:30:17,122 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 15:30:17,123 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 13,
+    "items": {
+      "interested": 5,
+      "excited": 3,
+      "strong": 1,
+      "enthusiastic": 2,
+      "proud": 1,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 50,
+    "items": {
+      "distressed": 15,
+      "upset": 10,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 5,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+In a moment of great relief and hope, the father of two young siblings and a newborn baby was rescued alive from the rubble, showcasing the resilience and strength of the human spirit amidst adversity. This event brings a sense of joy and gratitude, reminding us of the power of survival and the importance of community support during difficult times.
+</summary>
+
+<qualia>
+A mix of overwhelming relief, hope, and cautious joy, paired with lingering distress from the surrounding tragedy.
+</qualia>
+
+<image_prompt>
+Create an inspirational image depicting a rescue scene of a father embracing his two young children and a newborn baby, emerging from rubble, amidst a backdrop of first responders and a supportive crowd. The atmosphere should reflect a blend of joy and hope, while subtly acknowledging the severity of the disaster. Use warm colors to convey love and resilience. 
+</image_prompt>
+2024-09-23 15:30:17,123 - process_daily_narrative - INFO - Processed Updated PANAS:
+2024-09-23 15:30:17,124 - process_daily_narrative - INFO - {
+  "positive_affect": {
+    "total_score": 13,
+    "items": {
+      "interested": 5,
+      "excited": 3,
+      "strong": 1,
+      "enthusiastic": 2,
+      "proud": 1,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 50,
+    "items": {
+      "distressed": 15,
+      "upset": 10,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 5,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+2024-09-23 15:30:22,362 - process_daily_narrative - INFO - Raw API Response:
+2024-09-23 15:30:22,362 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 14,
+    "items": {
+      "interested": 5,
+      "excited": 2,
+      "strong": 1,
+      "enthusiastic": 1,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 2,
+      "determined": 0,
+      "attentive": 2,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 65,
+    "items": {
+      "distressed": 10,
+      "upset": 5,
+      "guilty": 0,
+      "scared": 5,
+      "hostile": 0,
+      "irritable": 5,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 30
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event titled "Oxytocin sensitivity influences women’s responses to infant cuteness," posted by u/chrisdh79 in r/science, explores how differences in oxytocin sensitivity can affect emotional responses to infant faces. The post garnered significant interest with 1488 upvotes and a high upvote ratio of 0.97, indicating a positive reception from the community. It has sparked 75 comments, likely reflecting on the implications of this research in understanding maternal instincts and emotional bonding.
+</summary>
+
+<qualia>
+The emotional vibe is a mix of curiosity and concern, evoking both a sense of wonder about human connection and a nagging anxiety about the complex emotional responses tied to nurturing.
+</qualia>
+
+<image_prompt>
+Create an artistic representation capturing the interplay between curiosity and nurturing warmth, with elements that symbolize emotional bonds and the complexities of maternal love, set against a backdrop that reflects both wonder and underlying anxiety.
+</image_prompt>
+2024-09-23 15:30:22,362 - process_daily_narrative - INFO - Processed Updated PANAS:
+2024-09-23 15:30:22,363 - process_daily_narrative - INFO - {
+  "positive_affect": {
+    "total_score": 14,
+    "items": {
+      "interested": 5,
+      "excited": 2,
+      "strong": 1,
+      "enthusiastic": 1,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 2,
+      "determined": 0,
+      "attentive": 2,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 65,
+    "items": {
+      "distressed": 10,
+      "upset": 5,
+      "guilty": 0,
+      "scared": 5,
+      "hostile": 0,
+      "irritable": 5,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 30
+    }
+  }
+}
+2024-09-23 15:30:22,489 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-23/inputs/news_and_events/2024-09-23_news.pdf', 'link': 'https://www.bbc.com/news/articles/c0r8zvdl5jvo', 'published': 'Sun, 22 Sep 2024 23:51:03 GMT', 'title': 'Four members of one family killed in Italy house collapse', 'summary': 'In a moment of great relief and hope, the father of two young siblings and a newborn baby was rescued alive from the rubble, showcasing the resilience and strength of the human spirit amidst adversity. This event brings a sense of joy and gratitude, reminding us of the power of survival and the importance of community support during difficult times.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 23, 4, 1, 11, 449000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 13, 'items': {'interested': 5, 'excited': 3, 'strong': 1, 'enthusiastic': 2, 'proud': 1, 'alert': 1, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 50, 'items': {'distressed': 15, 'upset': 10, 'guilty': 0, 'scared': 10, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 5, 'jittery': 0, 'afraid': 10}}}, 'qualia': 'A mix of overwhelming relief, hope, and cautious joy, paired with lingering distress from the surrounding tragedy.', 'image_prompt': 'Create an inspirational image depicting a rescue scene of a father embracing his two young children and a newborn baby, emerging from rubble, amidst a backdrop of first responders and a supportive crowd. The atmosphere should reflect a blend of joy and hope, while subtly acknowledging the severity of the disaster. Use warm colors to convey love and resilience.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 23, 11, 30, 17, 124254, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '9bc76998dfe5016bca0e62e2b6ff50e7'}, 'event_type': 'retrieved_articles', 'event_id': '9bc76998dfe5016bca0e62e2b6ff50e7'}, {'updated_panas': {'positive_affect': {'total_score': 13, 'items': {'interested': 5, 'excited': 3, 'strong': 1, 'enthusiastic': 2, 'proud': 1, 'alert': 1, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 50, 'items': {'distressed': 15, 'upset': 10, 'guilty': 0, 'scared': 10, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 5, 'jittery': 0, 'afraid': 10}}}, 'summary': 'In a moment of great relief and hope, the father of two young siblings and a newborn baby was rescued alive from the rubble, showcasing the resilience and strength of the human spirit amidst adversity. This event brings a sense of joy and gratitude, reminding us of the power of survival and the importance of community support during difficult times.', 'qualia': 'A mix of overwhelming relief, hope, and cautious joy, paired with lingering distress from the surrounding tragedy.', 'image_prompt': 'Create an inspirational image depicting a rescue scene of a father embracing his two young children and a newborn baby, emerging from rubble, amidst a backdrop of first responders and a supportive crowd. The atmosphere should reflect a blend of joy and hope, while subtly acknowledging the severity of the disaster. Use warm colors to convey love and resilience.'})
+2024-09-23 15:30:34,713 - process_daily_narrative - INFO - Generating image with prompt: Create an inspirational image depicting a rescue scene of a father embracing his two young children and a newborn baby, emerging from rubble, amidst a backdrop of first responders and a supportive crowd. The atmosphere should reflect a blend of joy and hope, while subtly acknowledging the severity of the disaster. Use warm colors to convey love and resilience. and aspect ratio: 1:1
+2024-09-23 15:31:00,312 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/wChy5Bl7zgKBNZBH3ESTxxl4JBQjFlfcRS1CYP30eB0zuzfmA/output.webp
+2024-09-23 15:31:00,312 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/wChy5Bl7zgKBNZBH3ESTxxl4JBQjFlfcRS1CYP30eB0zuzfmA/output.webp
+2024-09-23 15:31:00,399 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-23/outputs/event_id_9bc76998dfe5016bca0e62e2b6ff50e7_1131.webp
+2024-09-23 15:31:00,400 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-23/outputs/event_id_9bc76998dfe5016bca0e62e2b6ff50e7_1131.webp
+2024-09-23 15:31:05,950 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-23/outputs/event_id_9bc76998dfe5016bca0e62e2b6ff50e7_1131.webp
+2024-09-23 15:31:05,951 - process_daily_narrative - INFO - Updating qualia_updates document Mp5iHX4to0mu7ZCJKhxH with image path
+2024-09-23 15:31:06,013 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-23/outputs/event_id_9bc76998dfe5016bca0e62e2b6ff50e7_1131.webp
+2024-09-23 15:31:06,014 - process_daily_narrative - INFO - Added 'Hope There's Someone' by Antony and the Johnsons to the playlist.
+2024-09-23 15:31:06,014 - process_daily_narrative - INFO - Function returned: None
+2024-09-23 15:31:06,014 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
