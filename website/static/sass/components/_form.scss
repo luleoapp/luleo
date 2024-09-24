@@ -109,7 +109,8 @@
 			position: relative;
 
 			&:before {
-				background: _palette(bg);
+				//background: _palette(bg);
+				background: _palette(accent); // Bright red background
 				border-radius: _size(border-radius);
 				border: solid 1px _palette(border);
 				content: '';
@@ -177,3 +178,4 @@
 		color: _palette(fg-light) !important;
 		opacity: 1.0;
 	}
+

@@ -9,13 +9,6 @@ import os
 from github import Github, GithubException
 from datetime import datetime
 
-
-def process_audio_video(content, file_name):
-    # Convert the content to an AudioSegment object
-
-    # Throw an unimplemented error
-    raise NotImplementedError("Processing audio/video files is not yet implemented")
-
 def process_text_pdf(content, file_name):
     try:
         if file_name.endswith('.pdf'):
@@ -36,26 +29,6 @@ def process_image(content, file_name):
     if d_vals["is_inappropriate"]:
         return None 
     return d_vals["description"]
-
-def process_file_content(file_name, content):
-    mime_type = file_name.split('.')[-1]
-    try: 
-        if mime_type in ['mp4', 'mp3', 'wav']:
-            transcription, summary = process_audio_video(content, file_name)
-            return None
-        elif mime_type in ['txt', 'pdf']:
-            full_text, summary = process_text_pdf(content, file_name)
-            text_content = full_text if len(full_text.split()) < 500 else summary
-            pdf_file = save_as_pdf(file_name, text_content)
-            return pdf_file
-        elif mime_type in ['jpg', 'jpeg', 'png']:
-            description = process_image(content, file_name)
-            pdf_file = save_as_pdf(file_name, content)
-            return pdf_file 
-    except Exception as e:
-        print(f'Error processing file {file_name}: {e}')
-    print(f'ERROR - DID NOT GET PDF')
-    return None
 
 
 # Create GitHub folder with nested subfolders

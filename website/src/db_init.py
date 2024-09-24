@@ -1,5 +1,5 @@
 import os
-from firebase_admin import firestore, initialize_app, credentials
+from firebase_admin import firestore, initialize_app, credentials, storage
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 import pytz
@@ -36,9 +36,10 @@ drive_service = build('drive', 'v3', credentials=service_account_credentials)
 
 
 firebase_credentials = credentials.Certificate(get_cred_dict())
-firebase_app = initialize_app(firebase_credentials, name=os.environ["FIREBASE_APP_NAME"])
+firebase_app = initialize_app(firebase_credentials, name=os.environ["FIREBASE_APP_NAME"], options={"storageBucket": os.environ["FIREBASE_STORAGE_BUCKET"]})
 
 db = firestore.client(app=firebase_app)
+bucket = storage.bucket(app=firebase_app)# Specify bucket name here
 print(f"Connected to Firestore database: {os.environ['FIRESTORE_DB_NAME']}")
 print("TODO : Bug - should connect to the right database, but connects to default")
 

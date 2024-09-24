@@ -105,8 +105,8 @@ def get_emotional_response(event_type, event_details, current_panas=None):
         
         try:
             updated_panas = json.loads(panas_json_str)
-            logger.info("Processed Updated PANAS:")
-            logger.info(json.dumps(updated_panas, indent=2))
+            #logger.info("Processed Updated PANAS:")
+            #logger.info(json.dumps(updated_panas, indent=2))
             
             return {
                 "updated_panas": updated_panas,

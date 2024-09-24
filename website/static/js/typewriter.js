@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var typewriterElement = document.getElementById("typewriter");
     if (typewriterElement) {
         // Set the font to be consistent with the rest of the site
-        typewriterElement.style.fontFamily = 'inherit';
-        typewriterElement.style.fontSize = 'inherit';
-        typewriterElement.style.fontWeight = 'inherit';
-        typewriterElement.style.lineHeight = 'inherit';
+        //typewriterElement.style.fontFamily = 'inherit';
+        //typewriterElement.style.fontSize = 'inherit';
+       // typewriterElement.style.fontWeight = 'inherit';
+        //typewriterElement.style.lineHeight = 'inherit';
 
         var text = typewriterElement.getAttribute('data-description');
         typeWriter(typewriterElement, text, 0, function() {

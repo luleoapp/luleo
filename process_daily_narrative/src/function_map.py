@@ -8,6 +8,7 @@ from utils.wisdom import generate_wisdom_image, compute_wisdom_summary
 from utils.love import compute_love_summary
 from utils.luleo import get_luleo_prompt
 from utils.agi import scrape_metaculus_prediction_date, answer_agi_questions, generate_agi_vision_image
+from utils.luleo import classify_user_input, process_user_upload
 
 class function_map:
     func_map = {
@@ -30,4 +31,6 @@ class function_map:
         "SCRAPE_METACULUS_PREDICTION_DATE": scrape_metaculus_prediction_date,
         "ANSWER_AGI_QUESTIONS": answer_agi_questions,
         "GENERATE_AGI_VISION_IMAGE": generate_agi_vision_image,
+        "CLASSIFY_USER_INPUT": classify_user_input,
+        "PROCESS_USER_UPLOAD": process_user_upload,
     }

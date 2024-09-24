@@ -1,9 +1,5 @@
 import io
-from googleapiclient.http import MediaIoBaseDownload
-from utils.file_processing import process_file_content
 import os 
-from utils.pdf_generator import download_file, combine_pdfs, save_as_pdf
-import tempfile 
 from googleapiclient.http import MediaFileUpload
 import datetime
 import feedparser
@@ -15,12 +11,7 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 from reportlab.lib.enums import TA_CENTER, TA_LEFT, TA_JUSTIFY
 import textwrap
 from github import Github 
-from github import Auth
 import base64
-import json
-from reportlab.lib.utils import ImageReader
-import requests
-from io import BytesIO
 from bs4 import BeautifulSoup
 from utils.openai_api import get_article_summary
 from firebase_admin import firestore
@@ -29,103 +20,6 @@ from github.InputGitTreeElement import InputGitTreeElement  # Add this import
 import random
 import praw
 from utils.db_init import drive_service, db, PROJECT_TIMEZONE
-
-
-def list_files_in_folder(folder_id):
-    try:
-        results = drive_service.files().list(
-            q=f"'{folder_id}' in parents",
-            pageSize=1000,
-            fields="files(id, name, mimeType)").execute()
-        items = results.get('files', [])
-        if not items:
-            print('No files found.')
-        else:
-            for item in items:
-                print(f'{item["name"]} ({item["id"]}) - {item["mimeType"]}')
-        return items
-    except Exception as e:
-        print(f'Error listing files in folder: {e}')
-        return []
-
-def download_and_process_file(file_id, file_name, mime_type, parent_path):
-    try:
-        if mime_type.startswith('application/vnd.google-apps.'):
-            if mime_type == 'application/vnd.google-apps.document':
-                request = drive_service.files().export_media(fileId=file_id, mimeType='text/plain')
-            elif mime_type == 'application/vnd.google-apps.spreadsheet':
-                request = drive_service.files().export_media(fileId=file_id, mimeType='text/csv')
-            elif mime_type == 'application/vnd.google-apps.presentation':
-                request = drive_service.files().export_media(fileId=file_id, mimeType='application/pdf')
-            else:
-                print(f'Cannot export file type: {mime_type}')
-                return None, None
-        else:
-            request = drive_service.files().get_media(fileId=file_id)
-        
-        content = download_file(request)
-        pdf_file = process_file_content(file_name, content)
-        return pdf_file
-    except Exception as e:
-        print(f'Error downloading or processing file {file_name}: {e}')
-        return None
-
-def traverse_and_download(folder_id, parent_path, contents):
-    files = list_files_in_folder(folder_id)
-    lst_pdf_files = []
-    for file in files:
-        file_id = file['id']
-        file_name = file['name']
-        mime_type = file['mimeType']
-        print(f'Processing {file_name} ({file_id})...')
-        
-        if mime_type == 'application/vnd.google-apps.folder':
-            # Create local directory
-            subfolder_path = os.path.join(parent_path, file_name)
-            os.makedirs(subfolder_path, exist_ok=True)
-            # Recursively traverse the subfolder
-            traverse_and_download(file_id, subfolder_path, contents)
-        else:
-            tmp_pdf_file = download_and_process_file(file_id, file_name, mime_type, parent_path)
-            if tmp_pdf_file:
-                contents.append(tmp_pdf_file)
-                print("PDF ",tmp_pdf_file)
-    output_pdf = combine_pdfs([k[0] for k in contents])
-
-
-def find_subfolder_id(root_folder_id, subfolder_name):
-    files = list_files_in_folder(root_folder_id)
-    for file in files:
-        if file['name'] == subfolder_name and file['mimeType'] == 'application/vnd.google-apps.folder':
-            return file['id']
-    return None
-
-
-def create_folder(folder_name, parent_id):
-    curr_folder_id = find_subfolder_id(parent_id, folder_name)
-    if curr_folder_id:
-        print(f'Error : {folder_name} already exists under {parent_id} : {curr_folder_id}')
-        return curr_folder_id
-    file_metadata = {
-        'name': folder_name,
-        'mimeType': 'application/vnd.google-apps.folder',
-        'parents': [parent_id] if parent_id else []
-
-    }
-    folder = drive_service.files().create(body=file_metadata, fields='id').execute()
-    return folder.get("id")
-
-def create_initialize_subfolders(folder_id, lst_subfolders):
-    if not folder_id:
-        print("ERROR - Folder ID not found")
-        return 
-    #AI/ Luleo/ News/ Art/
-    d_folders = {}
-    for folder_name in lst_subfolders:
-        d_folders[folder_name.lower()] = create_folder(folder_name, folder_id)
-    
-    return d_folders
-
 
 def format_news_json_for_pdf(news_json):
     styles = getSampleStyleSheet()
@@ -363,6 +257,14 @@ def upload_file(file_path, parent_id, upload_file_name=None):
     file = drive_service.files().create(body=file_metadata, media_body=media, fields='id').execute()
     return file.get('id')
 
+def full_github_resource_path(image_path):
+    return "https://raw.githubusercontent.com/luleoapp/luleo/main/"+image_path
+
+def get_user_input_document_path(user_input_id):
+    gh_date_str = datetime.datetime.now(PROJECT_TIMEZONE).strftime('%Y-%m-%d')
+    return f"daily_data/{gh_date_str}/inputs/user_inputs/{user_input_id}"
+
+
 def upload_file_to_github(file_path, github_file_path):
     try:
         # Read the file in binary mode
@@ -413,7 +315,6 @@ def upload_file_to_github(file_path, github_file_path):
     except Exception as e:
         error_message = f"Error uploading file to GitHub: {str(e)}"
         print(error_message)
-        print(f"GitHub Token (first 10 chars): {github_token[:10] if github_token else 'Not set'}")
         print(f"Repo Name: {repo_name}")
         print(f"GitHub File Path: {github_file_path}")
         return {"error": error_message}
