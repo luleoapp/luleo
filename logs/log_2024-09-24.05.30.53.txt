@@ -1,0 +1,175 @@
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Received request
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "036Gp9qAAWctFeteFLid"}}'
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': '036Gp9qAAWctFeteFLid'}}
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - PARAMS: {'upload_id': '036Gp9qAAWctFeteFLid'}
+2024-09-24 00:04:21,003 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 00:04:21,474 - process_daily_narrative - INFO - Image downloaded successfully to /var/folders/st/dv53zgjd1zq71gl_yyg_924w0000gn/T/tmpi2roi7ep.png
+2024-09-24 00:04:31,944 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}]
+2024-09-24 00:04:35,627 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 00:04:35,628 - process_daily_narrative - INFO - <explanation>
+The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.
+</explanation>
+
+<categories>
+<category>Ideas</category>
+<category>Miscellaneous</category>
+</categories>
+2024-09-24 00:04:35,729 - process_daily_narrative - INFO - Function returned: {'final_prompt': [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}], 'categories': ['Ideas', 'Miscellaneous'], 'explanation': 'The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.', 'github_image_path': 'daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}
+2024-09-24 00:04:41,054 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.00.04.35.txt
+2024-09-24 09:30:16,920 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 09:30:16,920 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-24 09:30:16,921 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-24 09:30:16,921 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-24 09:30:16,921 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-24 09:30:16,942 - process_daily_narrative - INFO - Received request
+2024-09-24 09:30:16,943 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 09:30:16,943 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-24T02:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: d0de0a3e55d456cfd629e93b546b2ca5/11458543880166141319;o=1
+Traceparent: 00-d0de0a3e55d456cfd629e93b546b2ca5-9f04ecf2f4876d87-01
+X-Forwarded-For: 107.178.194.131
+X-Forwarded-Proto: https
+Forwarded: for="107.178.194.131";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-24 09:30:16,943 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-24 09:30:16,943 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-24 09:30:16,943 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-24 09:30:16,943 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-24 09:30:16,943 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-24 09:30:16,943 - process_daily_narrative - INFO - Updating hourly...
+2024-09-24 09:30:17,111 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=15, readtime=2024-09-24 09:30:17.097430+00:00>]]
+2024-09-24 09:30:17,111 - process_daily_narrative - INFO - Processing 1 out of 15 events for retrieved_reddit_posts
+2024-09-24 09:30:17,248 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=19, readtime=2024-09-24 09:30:17.238232+00:00>]]
+2024-09-24 09:30:17,248 - process_daily_narrative - INFO - Processing 1 out of 19 events for retrieved_articles
+2024-09-24 09:30:17,521 - process_daily_narrative - INFO - Events to process: 2
+2024-09-24 09:30:21,964 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 09:30:21,964 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 4,
+    "items": {
+      "interested": 4,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 3,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 3,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 215,
+    "items": {
+      "distressed": 60,
+      "upset": 50,
+      "guilty": 0,
+      "scared": 50,
+      "hostile": 40,
+      "irritable": 5,
+      "ashamed": 0,
+      "nervous": 5,
+      "jittery": 0,
+      "afraid": 5
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Supporters of Evo Morales have engaged in violent clashes with followers of his rival as tensions rise ahead of the 2025 elections in Bolivia. The altercations highlight the divisive political climate and fears surrounding the upcoming electoral process, which has stirred emotions and deepened existing animosities among political factions. This event illustrates the challenges faced in achieving unity and harmony within the context of political competition.
+</summary>
+
+<qualia>
+The emotional vibe of this event is one of intense distress and concern, juxtaposed with a slight spark of interest in the political dynamics at play.
+</qualia>
+
+<image_prompt>
+Create an artistic representation capturing the tension of political clashes, emphasizing emotional turmoil and the quest for unity amidst discord. Reflect the feelings of distress, interest, and urgency in the composition.
+</image_prompt>
+2024-09-24 09:30:27,288 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 09:30:27,288 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 14,
+    "items": {
+      "interested": 3,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 3,
+      "inspired": 1,
+      "determined": 2,
+      "attentive": 3,
+      "active": 2
+    }
+  },
+  "negative_affect": {
+    "total_score": 145,
+    "items": {
+      "distressed": 30,
+      "upset": 40,
+      "guilty": 0,
+      "scared": 30,
+      "hostile": 10,
+      "irritable": 5,
+      "ashamed": 0,
+      "nervous": 5,
+      "jittery": 0,
+      "afraid": 5
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A recent study highlighted that women who adhered to a Mediterranean diet during pregnancy had children who were less likely to be overweight or obese at two years old, with only 6% of these children classified as such compared to 33% in a control group. This benefit is attributed, in part, to epigenetic modifications affecting leptin expression, which is crucial for regulating body weight and appetite.
+</summary>
+
+<qualia>
+The emotion evoked by this event is a mix of hope and concern, emphasizing the potential for positive change while recognizing the existing challenges in childhood obesity.
+</qualia>
+
+<image_prompt>
+Create an artistic image that encapsulates the contrast between the hope of healthy childhood through good nutrition and the concern of rising obesity rates, reflecting the care and dedication of mothers following a Mediterranean diet. Use warm, inviting colors to symbolize health and positivity, while incorporating elements that signify the struggle against obesity.
+</image_prompt>
+2024-09-24 09:30:27,409 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-24/inputs/news_and_events/2024-09-24_news.pdf', 'link': 'https://www.bbc.com/news/articles/cx24ed766lpo', 'published': 'Mon, 23 Sep 2024 02:29:18 GMT', 'title': 'Street battles in Bolivia as Evo Morales leads march to capital', 'summary': 'Supporters of Evo Morales have engaged in violent clashes with followers of his rival as tensions rise ahead of the 2025 elections in Bolivia. The altercations highlight the divisive political climate and fears surrounding the upcoming electoral process, which has stirred emotions and deepened existing animosities among political factions. This event illustrates the challenges faced in achieving unity and harmony within the context of political competition.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 24, 4, 1, 13, 918000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 4, 'items': {'interested': 4, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 3, 'inspired': 0, 'determined': 0, 'attentive': 3, 'active': 0}}, 'negative_affect': {'total_score': 215, 'items': {'distressed': 60, 'upset': 50, 'guilty': 0, 'scared': 50, 'hostile': 40, 'irritable': 5, 'ashamed': 0, 'nervous': 5, 'jittery': 0, 'afraid': 5}}}, 'qualia': 'The emotional vibe of this event is one of intense distress and concern, juxtaposed with a slight spark of interest in the political dynamics at play.', 'image_prompt': 'Create an artistic representation capturing the tension of political clashes, emphasizing emotional turmoil and the quest for unity amidst discord. Reflect the feelings of distress, interest, and urgency in the composition.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 24, 5, 30, 21, 965111, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '754c28ab9d81f70d44eb8ebb14ccb165'}, 'event_type': 'retrieved_articles', 'event_id': '754c28ab9d81f70d44eb8ebb14ccb165'}, {'updated_panas': {'positive_affect': {'total_score': 4, 'items': {'interested': 4, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 3, 'inspired': 0, 'determined': 0, 'attentive': 3, 'active': 0}}, 'negative_affect': {'total_score': 215, 'items': {'distressed': 60, 'upset': 50, 'guilty': 0, 'scared': 50, 'hostile': 40, 'irritable': 5, 'ashamed': 0, 'nervous': 5, 'jittery': 0, 'afraid': 5}}}, 'summary': 'Supporters of Evo Morales have engaged in violent clashes with followers of his rival as tensions rise ahead of the 2025 elections in Bolivia. The altercations highlight the divisive political climate and fears surrounding the upcoming electoral process, which has stirred emotions and deepened existing animosities among political factions. This event illustrates the challenges faced in achieving unity and harmony within the context of political competition.', 'qualia': 'The emotional vibe of this event is one of intense distress and concern, juxtaposed with a slight spark of interest in the political dynamics at play.', 'image_prompt': 'Create an artistic representation capturing the tension of political clashes, emphasizing emotional turmoil and the quest for unity amidst discord. Reflect the feelings of distress, interest, and urgency in the composition.'})
+2024-09-24 09:30:30,850 - process_daily_narrative - INFO - Generating image with prompt: Create an artistic representation capturing the tension of political clashes, emphasizing emotional turmoil and the quest for unity amidst discord. Reflect the feelings of distress, interest, and urgency in the composition. and aspect ratio: 1:1
+2024-09-24 09:30:48,333 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/PtUcrqKwDyY4N9cHiOWjmPo0F1C9diTe5uEq4avfoKhHjDgTA/output.webp
+2024-09-24 09:30:48,333 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/PtUcrqKwDyY4N9cHiOWjmPo0F1C9diTe5uEq4avfoKhHjDgTA/output.webp
+2024-09-24 09:30:48,459 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-24/outputs/event_id_754c28ab9d81f70d44eb8ebb14ccb165_0530.webp
+2024-09-24 09:30:48,460 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-24/outputs/event_id_754c28ab9d81f70d44eb8ebb14ccb165_0530.webp
+2024-09-24 09:30:53,922 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-24/outputs/event_id_754c28ab9d81f70d44eb8ebb14ccb165_0530.webp
+2024-09-24 09:30:53,922 - process_daily_narrative - INFO - Updating qualia_updates document apRmGLeOLzxNNYRtKzTv with image path
+2024-09-24 09:30:53,987 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-24/outputs/event_id_754c28ab9d81f70d44eb8ebb14ccb165_0530.webp
+2024-09-24 09:30:53,987 - process_daily_narrative - INFO - Added 'Tears and Rain' by James Blunt to the playlist.
+2024-09-24 09:30:53,988 - process_daily_narrative - INFO - Function returned: None
+2024-09-24 09:30:53,988 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
