@@ -1,0 +1,175 @@
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Received request
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "036Gp9qAAWctFeteFLid"}}'
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': '036Gp9qAAWctFeteFLid'}}
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - PARAMS: {'upload_id': '036Gp9qAAWctFeteFLid'}
+2024-09-24 00:04:21,003 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 00:04:21,474 - process_daily_narrative - INFO - Image downloaded successfully to /var/folders/st/dv53zgjd1zq71gl_yyg_924w0000gn/T/tmpi2roi7ep.png
+2024-09-24 00:04:31,944 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}]
+2024-09-24 00:04:35,627 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 00:04:35,628 - process_daily_narrative - INFO - <explanation>
+The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.
+</explanation>
+
+<categories>
+<category>Ideas</category>
+<category>Miscellaneous</category>
+</categories>
+2024-09-24 00:04:35,729 - process_daily_narrative - INFO - Function returned: {'final_prompt': [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}], 'categories': ['Ideas', 'Miscellaneous'], 'explanation': 'The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.', 'github_image_path': 'daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}
+2024-09-24 00:04:41,054 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.00.04.35.txt
+2024-09-24 06:30:10,820 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 06:30:10,820 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-24 06:30:10,820 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-24 06:30:10,820 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-24 06:30:10,820 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-24 06:30:10,831 - process_daily_narrative - INFO - Received request
+2024-09-24 06:30:10,831 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 06:30:10,832 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-23T23:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 0760c14cd7f8fd17277aea85c69bd5ca/17812409710504825751;o=1
+Traceparent: 00-0760c14cd7f8fd17277aea85c69bd5ca-f7326441ec5bd397-01
+X-Forwarded-For: 35.243.23.135
+X-Forwarded-Proto: https
+Forwarded: for="35.243.23.135";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-24 06:30:10,832 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-24 06:30:10,832 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-24 06:30:10,832 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-24 06:30:10,832 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-24 06:30:10,832 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-24 06:30:10,832 - process_daily_narrative - INFO - Updating hourly...
+2024-09-24 06:30:10,975 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=18, readtime=2024-09-24 06:30:10.963238+00:00>]]
+2024-09-24 06:30:10,976 - process_daily_narrative - INFO - Processing 1 out of 18 events for retrieved_reddit_posts
+2024-09-24 06:30:11,130 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=22, readtime=2024-09-24 06:30:11.118214+00:00>]]
+2024-09-24 06:30:11,130 - process_daily_narrative - INFO - Processing 1 out of 22 events for retrieved_articles
+2024-09-24 06:30:11,451 - process_daily_narrative - INFO - Events to process: 2
+2024-09-24 06:30:16,450 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 06:30:16,450 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 16,
+    "items": {
+      "interested": 4,
+      "excited": 1,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 4,
+      "inspired": 4,
+      "determined": 1,
+      "attentive": 2,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 170,
+    "items": {
+      "distressed": 50,
+      "upset": 40,
+      "guilty": 0,
+      "scared": 40,
+      "hostile": 10,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 20,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Officials have expressed concerns that advancements in technology may enable adversaries to potentially manipulate vehicles remotely, raising significant security and safety alarms. This situation highlights vulnerabilities that could impact public trust and safety in an increasingly connected world.
+</summary>
+
+<qualia>
+The emotional vibe invoked is one of heightened anxiety and concern blended with a cautious intrigue about the implications of emerging technology.
+</qualia>
+
+<image_prompt>
+Generate an image depicting a dark, futuristic city where cars seem to be controlled by unseen forces, reflecting a sense of unease and tension in the atmosphere, with hints of curiosity about technology's dual nature. Use contrasting colors to symbolize both fear and fascination. 
+</image_prompt>
+2024-09-24 06:30:20,452 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 06:30:20,453 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 18,
+    "items": {
+      "interested": 4,
+      "excited": 1,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 3,
+      "inspired": 4,
+      "determined": 1,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 140,
+    "items": {
+      "distressed": 50,
+      "upset": 40,
+      "guilty": 0,
+      "scared": 30,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event involves a post on Reddit highlighting that Russians have accumulated unprecedented levels of loan debt since the onset of the war. The post has garnered significant attention, accumulating 17,497 upvotes and a high upvote ratio of 0.96, reflecting the interest and concern of the online community regarding the economic implications of the conflict.
+</summary>
+
+<qualia>
+The event invokes a heavy and somber emotional vibe, marked by deep concern over the socio-economic struggles faced by individuals in the context of war, coupled with a subtle sense of curiosity about its wider implications.
+</qualia>
+
+<image_prompt>
+Generate an artistic representation of the emotional weight of the economic struggles faced by individuals in wartime, emphasizing themes of distress, hardship, and a glimmer of curiosity about societal impacts.
+</image_prompt>
+2024-09-24 06:30:20,607 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-24/inputs/news_and_events/2024-09-24_news.pdf', 'link': 'https://www.bbc.com/news/articles/cwyegl8q80do', 'published': 'Mon, 23 Sep 2024 14:42:31 GMT', 'title': 'US to ban Chinese tech in cars', 'summary': 'Officials have expressed concerns that advancements in technology may enable adversaries to potentially manipulate vehicles remotely, raising significant security and safety alarms. This situation highlights vulnerabilities that could impact public trust and safety in an increasingly connected world.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 24, 4, 1, 12, 793000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 16, 'items': {'interested': 4, 'excited': 1, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 4, 'inspired': 4, 'determined': 1, 'attentive': 2, 'active': 0}}, 'negative_affect': {'total_score': 170, 'items': {'distressed': 50, 'upset': 40, 'guilty': 0, 'scared': 40, 'hostile': 10, 'irritable': 0, 'ashamed': 0, 'nervous': 20, 'jittery': 0, 'afraid': 10}}}, 'qualia': 'The emotional vibe invoked is one of heightened anxiety and concern blended with a cautious intrigue about the implications of emerging technology.', 'image_prompt': "Generate an image depicting a dark, futuristic city where cars seem to be controlled by unseen forces, reflecting a sense of unease and tension in the atmosphere, with hints of curiosity about technology's dual nature. Use contrasting colors to symbolize both fear and fascination.", 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 24, 2, 30, 16, 451266, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '56d4267323c3bd87ffcef7e16e8aa545'}, 'event_type': 'retrieved_articles', 'event_id': '56d4267323c3bd87ffcef7e16e8aa545'}, {'updated_panas': {'positive_affect': {'total_score': 16, 'items': {'interested': 4, 'excited': 1, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 4, 'inspired': 4, 'determined': 1, 'attentive': 2, 'active': 0}}, 'negative_affect': {'total_score': 170, 'items': {'distressed': 50, 'upset': 40, 'guilty': 0, 'scared': 40, 'hostile': 10, 'irritable': 0, 'ashamed': 0, 'nervous': 20, 'jittery': 0, 'afraid': 10}}}, 'summary': 'Officials have expressed concerns that advancements in technology may enable adversaries to potentially manipulate vehicles remotely, raising significant security and safety alarms. This situation highlights vulnerabilities that could impact public trust and safety in an increasingly connected world.', 'qualia': 'The emotional vibe invoked is one of heightened anxiety and concern blended with a cautious intrigue about the implications of emerging technology.', 'image_prompt': "Generate an image depicting a dark, futuristic city where cars seem to be controlled by unseen forces, reflecting a sense of unease and tension in the atmosphere, with hints of curiosity about technology's dual nature. Use contrasting colors to symbolize both fear and fascination."})
+2024-09-24 06:30:25,811 - process_daily_narrative - INFO - Generating image with prompt: Generate an image depicting a dark, futuristic city where cars seem to be controlled by unseen forces, reflecting a sense of unease and tension in the atmosphere, with hints of curiosity about technology's dual nature. Use contrasting colors to symbolize both fear and fascination. and aspect ratio: 1:1
+2024-09-24 06:30:44,433 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/AWqLHbeZL3zDZKBoxUlxjS5SjJNPQE65MC53LpxyzTxJdAwJA/output.webp
+2024-09-24 06:30:44,433 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/AWqLHbeZL3zDZKBoxUlxjS5SjJNPQE65MC53LpxyzTxJdAwJA/output.webp
+2024-09-24 06:30:44,555 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-24/outputs/event_id_56d4267323c3bd87ffcef7e16e8aa545_0230.webp
+2024-09-24 06:30:44,556 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-24/outputs/event_id_56d4267323c3bd87ffcef7e16e8aa545_0230.webp
+2024-09-24 06:30:50,173 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-24/outputs/event_id_56d4267323c3bd87ffcef7e16e8aa545_0230.webp
+2024-09-24 06:30:50,173 - process_daily_narrative - INFO - Updating qualia_updates document 7boLRIe9qN5MEpTsF9jn with image path
+2024-09-24 06:30:50,273 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-24/outputs/event_id_56d4267323c3bd87ffcef7e16e8aa545_0230.webp
+2024-09-24 06:30:50,273 - process_daily_narrative - INFO - Added 'Lights' by Ellie Goulding to the playlist.
+2024-09-24 06:30:50,273 - process_daily_narrative - INFO - Function returned: None
+2024-09-24 06:30:50,273 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
