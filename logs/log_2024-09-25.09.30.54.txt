@@ -1,0 +1,140 @@
+2024-09-25 13:30:17,409 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-25 13:30:17,409 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-25 13:30:17,409 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-25 13:30:17,409 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-25 13:30:17,410 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-25 13:30:17,488 - process_daily_narrative - INFO - Received request
+2024-09-25 13:30:17,489 - process_daily_narrative - INFO - Request method: POST
+2024-09-25 13:30:17,489 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-25T06:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 6def7e43acedffc5f15fc0de346e3693/8741258969545748347;o=1
+Traceparent: 00-6def7e43acedffc5f15fc0de346e3693-794f30b83978af7b-01
+X-Forwarded-For: 35.187.132.43
+X-Forwarded-Proto: https
+Forwarded: for="35.187.132.43";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-25 13:30:17,489 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-25 13:30:17,489 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-25 13:30:17,489 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-25 13:30:17,489 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-25 13:30:17,489 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-25 13:30:17,489 - process_daily_narrative - INFO - Updating hourly...
+2024-09-25 13:30:17,699 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=2, readtime=2024-09-25 13:30:17.683912+00:00>]]
+2024-09-25 13:30:17,699 - process_daily_narrative - INFO - Processing 1 out of 2 events for retrieved_reddit_posts
+2024-09-25 13:30:17,881 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=4, readtime=2024-09-25 13:30:17.870464+00:00>]]
+2024-09-25 13:30:17,881 - process_daily_narrative - INFO - Processing 1 out of 4 events for retrieved_articles
+2024-09-25 13:30:18,114 - process_daily_narrative - INFO - Events to process: 2
+2024-09-25 13:30:22,967 - process_daily_narrative - INFO - Raw API Response:
+2024-09-25 13:30:22,968 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 24,
+    "items": {
+      "interested": 4,
+      "excited": 4,
+      "strong": 0,
+      "enthusiastic": 5,
+      "proud": 4,
+      "alert": 1,
+      "inspired": 3,
+      "determined": 0,
+      "attentive": 2,
+      "active": 1
+    }
+  },
+  "negative_affect": {
+    "total_score": 205,
+    "items": {
+      "distressed": 30,
+      "upset": 20,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 15,
+      "jittery": 0,
+      "afraid": 140
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The U.S. Postal Service has announced the start of a nationwide electric vehicle fleet, committing to purchase 9,250 electric vehicles (EVs) along with the installation of thousands of charging stations. This initiative aims to enhance sustainable transportation and reduce the carbon footprint of postal operations. The decision received positive acclaim on social media, with a high upvote score and favorable comments reflecting public support.
+</summary>
+
+<qualia>
+A sense of optimism and motivation, mingled with a lingering awareness of challenges ahead.
+</qualia>
+
+<image_prompt>
+Create an image showcasing the launch of the U.S. Postal Service's electric vehicle fleet, highlighting the vibrant energy of innovation and environmental responsibility, infused with a sense of hope and community support.
+</image_prompt>
+2024-09-25 13:30:28,156 - process_daily_narrative - INFO - Raw API Response:
+2024-09-25 13:30:28,156 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 19,
+    "items": {
+      "active": 0,
+      "inspired": 4,
+      "strong": 0,
+      "interested": 5,
+      "excited": 4,
+      "attentive": 2,
+      "determined": 0,
+      "alert": 2,
+      "enthusiastic": 1,
+      "proud": 1
+    }
+  },
+  "negative_affect": {
+    "total_score": 100,
+    "items": {
+      "upset": 5,
+      "afraid": 10,
+      "distressed": 15,
+      "jittery": 0,
+      "guilty": 0,
+      "irritable": 0,
+      "nervous": 5,
+      "ashamed": 0,
+      "scared": 10,
+      "hostile": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Three space explorers, including a NASA astronaut and two Russian cosmonauts, made their journey back to Earth after spending an incredible 374 days in space. This remarkable achievement highlights human curiosity and collaboration in the realm of space exploration, inspiring many. 
+</summary>
+
+<qualia>
+The emotional vibe is one of awe mixed with a hint of anxiety, celebrating human achievement while recognizing the challenges faced in such extraordinary circumstances.
+</qualia>
+
+<image_prompt>
+Create an artistic representation of a NASA astronaut and two Russian cosmonauts returning to Earth from space, showcasing the beauty of the cosmos and the emotions of achievement intertwined with vulnerability and uncertainty. Use vivid colors to convey excitement and curiosity while incorporating elements that hint at the challenges of space exploration. 
+</image_prompt>
+2024-09-25 13:30:28,268 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-24/inputs/news_and_events/2024-09-24_news.pdf', 'link': 'https://www.bbc.com/news/videos/ckgnzr1dx73o', 'published': 'Mon, 23 Sep 2024 21:13:38 GMT', 'title': 'Astronauts return to Earth after longest stay on ISS', 'summary': 'Three space explorers, including a NASA astronaut and two Russian cosmonauts, made their journey back to Earth after spending an incredible 374 days in space. This remarkable achievement highlights human curiosity and collaboration in the realm of space exploration, inspiring many.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 24, 4, 1, 12, 708000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 19, 'items': {'active': 0, 'inspired': 4, 'strong': 0, 'interested': 5, 'excited': 4, 'attentive': 2, 'determined': 0, 'alert': 2, 'enthusiastic': 1, 'proud': 1}}, 'negative_affect': {'total_score': 100, 'items': {'upset': 5, 'afraid': 10, 'distressed': 15, 'jittery': 0, 'guilty': 0, 'irritable': 0, 'nervous': 5, 'ashamed': 0, 'scared': 10, 'hostile': 0}}}, 'qualia': 'The emotional vibe is one of awe mixed with a hint of anxiety, celebrating human achievement while recognizing the challenges faced in such extraordinary circumstances.', 'image_prompt': 'Create an artistic representation of a NASA astronaut and two Russian cosmonauts returning to Earth from space, showcasing the beauty of the cosmos and the emotions of achievement intertwined with vulnerability and uncertainty. Use vivid colors to convey excitement and curiosity while incorporating elements that hint at the challenges of space exploration.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 25, 9, 30, 28, 156779, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': 'f80180c6ad1f8d72b474329e0ffd86b5'}, 'event_type': 'retrieved_articles', 'event_id': 'f80180c6ad1f8d72b474329e0ffd86b5'}, {'updated_panas': {'positive_affect': {'total_score': 19, 'items': {'active': 0, 'inspired': 4, 'strong': 0, 'interested': 5, 'excited': 4, 'attentive': 2, 'determined': 0, 'alert': 2, 'enthusiastic': 1, 'proud': 1}}, 'negative_affect': {'total_score': 100, 'items': {'upset': 5, 'afraid': 10, 'distressed': 15, 'jittery': 0, 'guilty': 0, 'irritable': 0, 'nervous': 5, 'ashamed': 0, 'scared': 10, 'hostile': 0}}}, 'summary': 'Three space explorers, including a NASA astronaut and two Russian cosmonauts, made their journey back to Earth after spending an incredible 374 days in space. This remarkable achievement highlights human curiosity and collaboration in the realm of space exploration, inspiring many.', 'qualia': 'The emotional vibe is one of awe mixed with a hint of anxiety, celebrating human achievement while recognizing the challenges faced in such extraordinary circumstances.', 'image_prompt': 'Create an artistic representation of a NASA astronaut and two Russian cosmonauts returning to Earth from space, showcasing the beauty of the cosmos and the emotions of achievement intertwined with vulnerability and uncertainty. Use vivid colors to convey excitement and curiosity while incorporating elements that hint at the challenges of space exploration.'})
+2024-09-25 13:30:31,865 - process_daily_narrative - INFO - Generating image with prompt: Create an artistic representation of a NASA astronaut and two Russian cosmonauts returning to Earth from space, showcasing the beauty of the cosmos and the emotions of achievement intertwined with vulnerability and uncertainty. Use vivid colors to convey excitement and curiosity while incorporating elements that hint at the challenges of space exploration. and aspect ratio: 1:1
+2024-09-25 13:30:49,133 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/pT4OeaH09ek92UqLvv5jyEfODEOIISyLrAw5T0Ie2zkhowBOB/output.webp
+2024-09-25 13:30:49,133 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/pT4OeaH09ek92UqLvv5jyEfODEOIISyLrAw5T0Ie2zkhowBOB/output.webp
+2024-09-25 13:30:49,206 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-25/outputs/event_id_f80180c6ad1f8d72b474329e0ffd86b5_0930.webp
+2024-09-25 13:30:49,207 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-25/outputs/event_id_f80180c6ad1f8d72b474329e0ffd86b5_0930.webp
+2024-09-25 13:30:54,797 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-25/outputs/event_id_f80180c6ad1f8d72b474329e0ffd86b5_0930.webp
+2024-09-25 13:30:54,797 - process_daily_narrative - INFO - Updating qualia_updates document bFEnNE5hjUPSuOEWR4HT with image path
+2024-09-25 13:30:54,857 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-25/outputs/event_id_f80180c6ad1f8d72b474329e0ffd86b5_0930.webp
+2024-09-25 13:30:54,857 - process_daily_narrative - INFO - Added 'Better Days' by OneRepublic to the playlist.
+2024-09-25 13:30:54,857 - process_daily_narrative - INFO - Function returned: None
+2024-09-25 13:30:54,857 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
