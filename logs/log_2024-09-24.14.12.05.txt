@@ -1,0 +1,169 @@
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Received request
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "036Gp9qAAWctFeteFLid"}}'
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': '036Gp9qAAWctFeteFLid'}}
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - PARAMS: {'upload_id': '036Gp9qAAWctFeteFLid'}
+2024-09-24 00:04:21,003 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 00:04:21,474 - process_daily_narrative - INFO - Image downloaded successfully to /var/folders/st/dv53zgjd1zq71gl_yyg_924w0000gn/T/tmpi2roi7ep.png
+2024-09-24 00:04:31,944 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}]
+2024-09-24 00:04:35,627 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 00:04:35,628 - process_daily_narrative - INFO - <explanation>
+The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.
+</explanation>
+
+<categories>
+<category>Ideas</category>
+<category>Miscellaneous</category>
+</categories>
+2024-09-24 00:04:35,729 - process_daily_narrative - INFO - Function returned: {'final_prompt': [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}], 'categories': ['Ideas', 'Miscellaneous'], 'explanation': 'The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.', 'github_image_path': 'daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}
+2024-09-24 00:04:41,054 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.00.04.35.txt
+2024-09-24 14:09:37,846 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 14:09:37,846 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 14:09:37,846 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 14:09:37,846 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 14:09:37,846 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 14:09:43,278 - process_daily_narrative - INFO - Received request
+2024-09-24 14:09:43,278 - process_daily_narrative - INFO - Request method: GET
+2024-09-24 14:09:43,279 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+Connection: keep-alive
+Sec-Ch-Ua: "Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "macOS"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36
+Sec-Purpose: prefetch;prerender
+Purpose: prefetch
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2024-09-24 14:09:43,279 - process_daily_narrative - INFO - Request data: b''
+2024-09-24 14:09:43,280 - process_daily_narrative - ERROR - Error parsing JSON: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2024-09-24 14:09:43,388 - process_daily_narrative - INFO - Received request
+2024-09-24 14:09:43,388 - process_daily_narrative - INFO - Request method: GET
+2024-09-24 14:09:43,389 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+Connection: keep-alive
+Sec-Ch-Ua: "Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "macOS"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2024-09-24 14:09:43,390 - process_daily_narrative - INFO - Request data: b''
+2024-09-24 14:09:43,390 - process_daily_narrative - ERROR - Error parsing JSON: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2024-09-24 14:10:07,549 - process_daily_narrative - INFO - Received request
+2024-09-24 14:10:07,550 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 14:10:07,550 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 14:10:07,551 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "flykeieBiiKoCWfaPUtO"}}'
+2024-09-24 14:10:07,551 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': 'flykeieBiiKoCWfaPUtO'}}
+2024-09-24 14:10:07,551 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:10:07,552 - process_daily_narrative - INFO - PARAMS: {'upload_id': 'flykeieBiiKoCWfaPUtO'}
+2024-09-24 14:10:07,552 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 14:10:08,046 - process_daily_narrative - INFO - Image downloaded successfully to /var/folders/st/dv53zgjd1zq71gl_yyg_924w0000gn/T/tmp79xco5pc.png
+2024-09-24 14:10:18,900 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n5. Divine - Inputs related to prayers, worship and reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n8. Questions - Philosophical or existential inquiries.\n9. Art - Artistic expressions that reflect love or unity.\n10. Idea - Ideas to make the world a better place.\n11. Feedback - Suggestions and positive or negative thoughts about Luleo.\n12. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n13. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a summary of the input. Then, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<input_summary>\n[Summarize the input provided]\n</input_summary>\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/flykeieBiiKoCWfaPUtO/tmp79xco5pc.png'}}]
+2024-09-24 14:10:26,381 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:10:26,381 - process_daily_narrative - INFO - <input_summary>
+The provided text is a tweet from a user expressing frustration over the societal discourse surrounding personal value and sexual history, specifically highlighting that such inquiries are not a part of genuine human interaction. The user emphasizes that this discourse seems to originate from an online culture that is detached from real-life communication.
+</input_summary>
+
+<explanation>
+This tweet reflects criticisms of contemporary social interactions and the unrealistic standards that can arise from digital platforms. It highlights a perceived disconnect between online discourse and authentic human relationships. Given its focus on societal norms and personal values, this input could be categorized as "Wisdom" for its reflective nature on communication and relationships. Additionally, it touches on the theme of disconnect between digital interactions and reality, which could relate to perceptions of AI and modern technology's role in shaping human discourse, thus fitting into the "AI" category as well.
+
+However, the primary theme is a critique of social interactions, making "Wisdom" the most appropriate primary category. The "AI" category is included because the tweet indirectly addresses the influence of online and digital culture on human conversation.
+</explanation>
+
+<categories>
+<category>Wisdom</category>
+<category>AI</category>
+</categories>
+2024-09-24 14:10:26,481 - process_daily_narrative - ERROR - Error in PROCESS_USER_UPLOAD {'upload_id': 'flykeieBiiKoCWfaPUtO'}
+2024-09-24 14:10:26,483 - process_daily_narrative - ERROR - Traceback (most recent call last):
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/main.py", line 51, in call_default_cloud_run
+    ret_val = func_to_apply(**request_params)
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/utils/luleo.py", line 73, in process_user_upload
+    return classify_user_input(upload_id, user_identity_str, user_input_text, user_input_image_path)
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/utils/luleo.py", line 174, in classify_user_input
+    analysis_json = get_analysis_from_category(upload_id,category, {
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/utils/luleo.py", line 194, in get_analysis_from_category
+    collection_path = get_collection_path_to_category()[category]
+KeyError: 'Wisdom'
+
+2024-09-24 14:10:32,252 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.14.10.26.txt
+2024-09-24 14:11:45,736 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 14:11:45,736 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 14:11:45,736 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 14:11:45,736 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 14:11:45,736 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 14:11:49,389 - process_daily_narrative - INFO - Received request
+2024-09-24 14:11:49,389 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 14:11:49,390 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 14:11:49,391 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "flykeieBiiKoCWfaPUtO"}}'
+2024-09-24 14:11:49,391 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': 'flykeieBiiKoCWfaPUtO'}}
+2024-09-24 14:11:49,391 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:11:49,391 - process_daily_narrative - INFO - PARAMS: {'upload_id': 'flykeieBiiKoCWfaPUtO'}
+2024-09-24 14:11:49,391 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 14:11:49,659 - process_daily_narrative - INFO - Image downloaded successfully to /var/folders/st/dv53zgjd1zq71gl_yyg_924w0000gn/T/tmpdfnhd1dl.png
+2024-09-24 14:12:00,174 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. wisdom - Quotes, articles, or insightful thoughts.\n2. love - Expressions or stories of love and kindness.\n3. ai - Perspectives and information about AI and its role in humanity.\n5. divine - Inputs related to prayers, worship and reflections on the spiritual or numinous.\n6. app - Submission of apps, tools, or GitHub repositories.\n8. questions - Philosophical or existential inquiries.\n9. art - Artistic expressions that reflect love or unity.\n10. idea - Ideas to make the world a better place.\n11. feedback - Suggestions and positive or negative thoughts about Luleo.\n12. miscellaneous - Anything else that doesn\'t fit elsewhere.\n13. spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a summary of the input. Then, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<input_summary>\n[Summarize the input provided]\n</input_summary>\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/flykeieBiiKoCWfaPUtO/tmpdfnhd1dl.png'}}]
+2024-09-24 14:12:05,314 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:12:05,314 - process_daily_narrative - INFO - <input_summary>
+The text is a tweet from a user expressing frustration over societal norms and discourse surrounding personal relationships. The author indicates disbelief that such questions as "what I bring to the table" and "what my 'body count' is" are being asked, labeling them as inauthentic and reflective of negativity prevalent in online interactions rather than genuine human connection.
+</input_summary>
+
+<explanation>
+This tweet addresses societal expectations and the nature of discourse in personal relationships, particularly as it pertains to gender dynamics. The tone is critical and points out a disconnect between real-life communication and what is often discussed online. Given the overarching theme of critique and societal reflection, this input does not neatly fit into categories emphasizing positivity or love. Instead, it conveys a need for more genuine and less superficial interaction among individuals. While it addresses important themes, it does not align closely with the overarching virtues of love or wisdom, focusing more on the frustration of modern discourse.
+
+Therefore, the most fitting category appears to be "miscellaneous," as it discusses social issues without making a clear philosophical or existential inquiry.
+</explanation>
+
+<categories>
+<category>miscellaneous</category>
+</categories>
+2024-09-24 14:12:05,676 - process_daily_narrative - INFO - Function returned: None
+2024-09-24 14:12:05,676 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: PROCESS_USER_UPLOAD

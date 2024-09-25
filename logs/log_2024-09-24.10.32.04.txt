@@ -1,0 +1,222 @@
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Received request
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "036Gp9qAAWctFeteFLid"}}'
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': '036Gp9qAAWctFeteFLid'}}
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - PARAMS: {'upload_id': '036Gp9qAAWctFeteFLid'}
+2024-09-24 00:04:21,003 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 00:04:21,474 - process_daily_narrative - INFO - Image downloaded successfully to /var/folders/st/dv53zgjd1zq71gl_yyg_924w0000gn/T/tmpi2roi7ep.png
+2024-09-24 00:04:31,944 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}]
+2024-09-24 00:04:35,627 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 00:04:35,628 - process_daily_narrative - INFO - <explanation>
+The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.
+</explanation>
+
+<categories>
+<category>Ideas</category>
+<category>Miscellaneous</category>
+</categories>
+2024-09-24 00:04:35,729 - process_daily_narrative - INFO - Function returned: {'final_prompt': [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}], 'categories': ['Ideas', 'Miscellaneous'], 'explanation': 'The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.', 'github_image_path': 'daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}
+2024-09-24 00:04:41,054 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.00.04.35.txt
+2024-09-24 14:30:18,036 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 14:30:18,036 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-24 14:30:18,036 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-24 14:30:18,036 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-24 14:30:18,036 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-24 14:30:18,118 - process_daily_narrative - INFO - Received request
+2024-09-24 14:30:18,118 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 14:30:18,118 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-24T07:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 6a8a59daa97bfb31800d51fae82214b8/12285379312958438895;o=1
+Traceparent: 00-6a8a59daa97bfb31800d51fae82214b8-aa7e6f64f7d1fdef-01
+X-Forwarded-For: 35.243.23.237
+X-Forwarded-Proto: https
+Forwarded: for="35.243.23.237";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-24 14:30:18,119 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-24 14:30:18,119 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-24 14:30:18,119 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-24 14:30:18,119 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-24 14:30:18,119 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-24 14:30:18,119 - process_daily_narrative - INFO - Updating hourly...
+2024-09-24 14:30:18,267 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=10, readtime=2024-09-24 14:30:18.253501+00:00>]]
+2024-09-24 14:30:18,267 - process_daily_narrative - INFO - Processing 1 out of 10 events for retrieved_reddit_posts
+2024-09-24 14:30:18,501 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=15, readtime=2024-09-24 14:30:18.463395+00:00>]]
+2024-09-24 14:30:18,502 - process_daily_narrative - INFO - Processing 2 out of 15 events for retrieved_articles
+2024-09-24 14:30:18,755 - process_daily_narrative - INFO - Events to process: 3
+2024-09-24 14:30:27,904 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:30:27,904 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 3,
+    "items": {
+      "interested": 3,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 175,
+    "items": {
+      "distressed": 60,
+      "upset": 50,
+      "guilty": 0,
+      "scared": 40,
+      "hostile": 10,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 5,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A recent Reddit post highlighted a remarkable finding: Tardigrades, often dubbed "water bears," do not ingest microplastics, unlike other similarly sized invertebrates studied along the Brazilian coast. The post, shared by user u/godsenfrik in the r/science subreddit, garnered immense attention with 2,898 upvotes and a 98% upvote ratio, alongside 77 comments. The discovery not only provides insights into the effects of microplastics on marine life but also sparks curiosity about the resilience of these unique organisms.
+</summary>
+
+<qualia>
+Curiosity and cautious optimism envelop the emotional landscape, stemming from the extraordinary resilience of Tardigrades contrasted with the troubling reality of microplastics in nature.
+</qualia>
+
+<image_prompt>
+Create an artistic illustration that captures the essence of Tardigrades thriving in a microplastic-polluted environment, showcasing their resilience and the beauty of nature juxtaposed with pollution. Use colors that evoke curiosity and cautious optimism, reflecting the mixed emotions stirred by this finding.
+</image_prompt>
+2024-09-24 14:30:33,414 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:30:33,414 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 2,
+    "items": {
+      "interested": 2,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 185,
+    "items": {
+      "distressed": 70,
+      "upset": 60,
+      "guilty": 0,
+      "scared": 50,
+      "hostile": 10,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 5,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A video of a woman detailing her alleged abuse by police has gone viral, sparking significant public outcry in India. The video has raised awareness of police brutality and its impact on individuals, resonating deeply with those who have experienced or witnessed similar injustices.
+</summary>
+
+<qualia>
+A heavy sense of collective grief and outrage, coupled with a spark of awareness and the potential for change.
+</qualia>
+
+<image_prompt>
+Create an evocative image that illustrates the emotions of distress and empathy surrounding the woman's experience, featuring elements that symbolize collective action, such as protest signs, people standing together, and an ambiance of hope despite adversity.
+</image_prompt>
+2024-09-24 14:30:41,018 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:30:41,019 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 3,
+    "items": {
+      "interested": 3,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 185,
+    "items": {
+      "distressed": 70,
+      "upset": 50,
+      "guilty": 0,
+      "scared": 40,
+      "hostile": 10,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 5,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event discussed the Democratic presidential nominee facing misinformation campaigns that mischaracterize her as a communist. Such deception can cause increased distress and concern for the truth in political narratives, leading to emotional responses reflecting both a sense of curiosity about the situation and a heavy feeling of distress regarding the misinformation and its potential impact on public perception.
+</summary>
+
+<qualia>
+The emotional vibe is a mix of urgent concern and introspective curiosity, highlighting the tension between misinformation and the quest for truth.
+</qualia>
+
+<image_prompt>
+Generate an image that artistically represents the struggle against misinformation in politics, showcasing a blend of intrigue and distress, incorporating symbols of truth and deception in a compelling visual narrative.
+</image_prompt>
+2024-09-24 14:30:41,128 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-24/inputs/news_and_events/2024-09-24_news.pdf', 'link': 'https://www.bbc.com/news/articles/cx2k96ne33po', 'published': 'Mon, 23 Sep 2024 21:36:49 GMT', 'title': 'India anger over alleged sexual assault on woman inside police station', 'summary': 'A video of a woman detailing her alleged abuse by police has gone viral, sparking significant public outcry in India. The video has raised awareness of police brutality and its impact on individuals, resonating deeply with those who have experienced or witnessed similar injustices.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 24, 4, 1, 12, 973000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 2, 'items': {'interested': 2, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 185, 'items': {'distressed': 70, 'upset': 60, 'guilty': 0, 'scared': 50, 'hostile': 10, 'irritable': 0, 'ashamed': 0, 'nervous': 5, 'jittery': 0, 'afraid': 0}}}, 'qualia': 'A heavy sense of collective grief and outrage, coupled with a spark of awareness and the potential for change.', 'image_prompt': "Create an evocative image that illustrates the emotions of distress and empathy surrounding the woman's experience, featuring elements that symbolize collective action, such as protest signs, people standing together, and an ambiance of hope despite adversity.", 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 24, 10, 30, 33, 414435, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '98503d384c84483dc88427851d6205f6'}, 'event_type': 'retrieved_articles', 'event_id': '98503d384c84483dc88427851d6205f6'}, {'updated_panas': {'positive_affect': {'total_score': 2, 'items': {'interested': 2, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 185, 'items': {'distressed': 70, 'upset': 60, 'guilty': 0, 'scared': 50, 'hostile': 10, 'irritable': 0, 'ashamed': 0, 'nervous': 5, 'jittery': 0, 'afraid': 0}}}, 'summary': 'A video of a woman detailing her alleged abuse by police has gone viral, sparking significant public outcry in India. The video has raised awareness of police brutality and its impact on individuals, resonating deeply with those who have experienced or witnessed similar injustices.', 'qualia': 'A heavy sense of collective grief and outrage, coupled with a spark of awareness and the potential for change.', 'image_prompt': "Create an evocative image that illustrates the emotions of distress and empathy surrounding the woman's experience, featuring elements that symbolize collective action, such as protest signs, people standing together, and an ambiance of hope despite adversity."})
+2024-09-24 14:31:20,067 - process_daily_narrative - INFO - Generating image with prompt: Create an evocative image that illustrates the emotions of distress and empathy surrounding the woman's experience, featuring elements that symbolize collective action, such as protest signs, people standing together, and an ambiance of hope despite adversity. and aspect ratio: 1:1
+2024-09-24 14:31:58,844 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/3zxb4m8Gtq7cPx0w6tVxTxtfAqd5MyvYgQMy5a3EIee86PAnA/output.webp
+2024-09-24 14:31:58,844 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/3zxb4m8Gtq7cPx0w6tVxTxtfAqd5MyvYgQMy5a3EIee86PAnA/output.webp
+2024-09-24 14:31:58,940 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-24/outputs/event_id_98503d384c84483dc88427851d6205f6_1031.webp
+2024-09-24 14:31:58,941 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-24/outputs/event_id_98503d384c84483dc88427851d6205f6_1031.webp
+2024-09-24 14:32:04,486 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-24/outputs/event_id_98503d384c84483dc88427851d6205f6_1031.webp
+2024-09-24 14:32:04,487 - process_daily_narrative - INFO - Updating qualia_updates document 0ho4f9AiJI7OUiigOF2m with image path
+2024-09-24 14:32:04,634 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-24/outputs/event_id_98503d384c84483dc88427851d6205f6_1031.webp
+2024-09-24 14:32:04,634 - process_daily_narrative - INFO - Added 'Someone Like You' by Van Morrison to the playlist.
+2024-09-24 14:32:04,634 - process_daily_narrative - INFO - Function returned: None
+2024-09-24 14:32:04,634 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

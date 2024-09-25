@@ -1,0 +1,2592 @@
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 00:04:09,707 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Received request
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 00:04:21,001 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "036Gp9qAAWctFeteFLid"}}'
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': '036Gp9qAAWctFeteFLid'}}
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 00:04:21,002 - process_daily_narrative - INFO - PARAMS: {'upload_id': '036Gp9qAAWctFeteFLid'}
+2024-09-24 00:04:21,003 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 00:04:21,474 - process_daily_narrative - INFO - Image downloaded successfully to /var/folders/st/dv53zgjd1zq71gl_yyg_924w0000gn/T/tmpi2roi7ep.png
+2024-09-24 00:04:31,944 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}]
+2024-09-24 00:04:35,627 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 00:04:35,628 - process_daily_narrative - INFO - <explanation>
+The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.
+</explanation>
+
+<categories>
+<category>Ideas</category>
+<category>Miscellaneous</category>
+</categories>
+2024-09-24 00:04:35,729 - process_daily_narrative - INFO - Function returned: {'final_prompt': [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n4. Prayers - Requests for help, support, or resources.\n5. Divine - Reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n7. Gratitude - Expressions of thankfulness or appreciation.\n8. Questions - Philosophical or existential inquiries.\n9. Stories - Personal stories of transformation or growth.\n10. Art - Artistic expressions that reflect love or unity.\n11. Ideas - Suggestions for new features or improvements.\n12. Feedback - Positive or negative thoughts about Luleo.\n13. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n14. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}}], 'categories': ['Ideas', 'Miscellaneous'], 'explanation': 'The text expresses a personal opinion regarding social discourse around relationships and expectations, particularly questioning norms surrounding discussions about personal attributes and attitudes toward dating. It reflects a critique of online culture and its impact on real-life interactions. Given the emphasis on human discourse and societal norms, it aligns more closely with ideas about contemporary communication challenges, rather than fitting neatly into love, wisdom, or other categories focused on positive expressions or spirituality. It critiques societal phenomena rather than actively promoting a loving or constructive message, thus steering it away from categories like love or gratitude.', 'github_image_path': 'daily_data/2024-09-24/inputs/user_inputs/036Gp9qAAWctFeteFLid/tmpi2roi7ep.png'}
+2024-09-24 00:04:41,054 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.00.04.35.txt
+2024-09-24 14:09:37,846 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 14:09:37,846 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 14:09:37,846 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 14:09:37,846 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 14:09:37,846 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 14:09:43,278 - process_daily_narrative - INFO - Received request
+2024-09-24 14:09:43,278 - process_daily_narrative - INFO - Request method: GET
+2024-09-24 14:09:43,279 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+Connection: keep-alive
+Sec-Ch-Ua: "Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "macOS"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36
+Sec-Purpose: prefetch;prerender
+Purpose: prefetch
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2024-09-24 14:09:43,279 - process_daily_narrative - INFO - Request data: b''
+2024-09-24 14:09:43,280 - process_daily_narrative - ERROR - Error parsing JSON: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2024-09-24 14:09:43,388 - process_daily_narrative - INFO - Received request
+2024-09-24 14:09:43,388 - process_daily_narrative - INFO - Request method: GET
+2024-09-24 14:09:43,389 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+Connection: keep-alive
+Sec-Ch-Ua: "Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "macOS"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2024-09-24 14:09:43,390 - process_daily_narrative - INFO - Request data: b''
+2024-09-24 14:09:43,390 - process_daily_narrative - ERROR - Error parsing JSON: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2024-09-24 14:10:07,549 - process_daily_narrative - INFO - Received request
+2024-09-24 14:10:07,550 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 14:10:07,550 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 14:10:07,551 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "flykeieBiiKoCWfaPUtO"}}'
+2024-09-24 14:10:07,551 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': 'flykeieBiiKoCWfaPUtO'}}
+2024-09-24 14:10:07,551 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:10:07,552 - process_daily_narrative - INFO - PARAMS: {'upload_id': 'flykeieBiiKoCWfaPUtO'}
+2024-09-24 14:10:07,552 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 14:10:08,046 - process_daily_narrative - INFO - Image downloaded successfully to /var/folders/st/dv53zgjd1zq71gl_yyg_924w0000gn/T/tmp79xco5pc.png
+2024-09-24 14:10:18,900 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. Wisdom - Quotes, articles, or insightful thoughts.\n2. Love - Expressions or stories of love and kindness.\n3. AI - Perspectives and information about AI and its role in humanity.\n5. Divine - Inputs related to prayers, worship and reflections on the spiritual or numinous.\n6. App - Submission of apps, tools, or GitHub repositories.\n8. Questions - Philosophical or existential inquiries.\n9. Art - Artistic expressions that reflect love or unity.\n10. Idea - Ideas to make the world a better place.\n11. Feedback - Suggestions and positive or negative thoughts about Luleo.\n12. Miscellaneous - Anything else that doesn\'t fit elsewhere.\n13. Spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a summary of the input. Then, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<input_summary>\n[Summarize the input provided]\n</input_summary>\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/flykeieBiiKoCWfaPUtO/tmp79xco5pc.png'}}]
+2024-09-24 14:10:26,381 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:10:26,381 - process_daily_narrative - INFO - <input_summary>
+The provided text is a tweet from a user expressing frustration over the societal discourse surrounding personal value and sexual history, specifically highlighting that such inquiries are not a part of genuine human interaction. The user emphasizes that this discourse seems to originate from an online culture that is detached from real-life communication.
+</input_summary>
+
+<explanation>
+This tweet reflects criticisms of contemporary social interactions and the unrealistic standards that can arise from digital platforms. It highlights a perceived disconnect between online discourse and authentic human relationships. Given its focus on societal norms and personal values, this input could be categorized as "Wisdom" for its reflective nature on communication and relationships. Additionally, it touches on the theme of disconnect between digital interactions and reality, which could relate to perceptions of AI and modern technology's role in shaping human discourse, thus fitting into the "AI" category as well.
+
+However, the primary theme is a critique of social interactions, making "Wisdom" the most appropriate primary category. The "AI" category is included because the tweet indirectly addresses the influence of online and digital culture on human conversation.
+</explanation>
+
+<categories>
+<category>Wisdom</category>
+<category>AI</category>
+</categories>
+2024-09-24 14:10:26,481 - process_daily_narrative - ERROR - Error in PROCESS_USER_UPLOAD {'upload_id': 'flykeieBiiKoCWfaPUtO'}
+2024-09-24 14:10:26,483 - process_daily_narrative - ERROR - Traceback (most recent call last):
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/main.py", line 51, in call_default_cloud_run
+    ret_val = func_to_apply(**request_params)
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/utils/luleo.py", line 73, in process_user_upload
+    return classify_user_input(upload_id, user_identity_str, user_input_text, user_input_image_path)
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/utils/luleo.py", line 174, in classify_user_input
+    analysis_json = get_analysis_from_category(upload_id,category, {
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/utils/luleo.py", line 194, in get_analysis_from_category
+    collection_path = get_collection_path_to_category()[category]
+KeyError: 'Wisdom'
+
+2024-09-24 14:10:32,252 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.14.10.26.txt
+2024-09-24 14:11:45,736 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 14:11:45,736 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 14:11:45,736 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 14:11:45,736 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 14:11:45,736 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 14:11:49,389 - process_daily_narrative - INFO - Received request
+2024-09-24 14:11:49,389 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 14:11:49,390 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 14:11:49,391 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "flykeieBiiKoCWfaPUtO"}}'
+2024-09-24 14:11:49,391 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': 'flykeieBiiKoCWfaPUtO'}}
+2024-09-24 14:11:49,391 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:11:49,391 - process_daily_narrative - INFO - PARAMS: {'upload_id': 'flykeieBiiKoCWfaPUtO'}
+2024-09-24 14:11:49,391 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 14:11:49,659 - process_daily_narrative - INFO - Image downloaded successfully to /var/folders/st/dv53zgjd1zq71gl_yyg_924w0000gn/T/tmpdfnhd1dl.png
+2024-09-24 14:12:00,174 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. wisdom - Quotes, articles, or insightful thoughts.\n2. love - Expressions or stories of love and kindness.\n3. ai - Perspectives and information about AI and its role in humanity.\n5. divine - Inputs related to prayers, worship and reflections on the spiritual or numinous.\n6. app - Submission of apps, tools, or GitHub repositories.\n8. questions - Philosophical or existential inquiries.\n9. art - Artistic expressions that reflect love or unity.\n10. idea - Ideas to make the world a better place.\n11. feedback - Suggestions and positive or negative thoughts about Luleo.\n12. miscellaneous - Anything else that doesn\'t fit elsewhere.\n13. spam - Hateful comments or spam (ignored).\n\n{{OPTIONAL_TEXT_INPUT}}\n\nCarefully analyze the input(s). First, provide a summary of the input. Then, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<input_summary>\n[Summarize the input provided]\n</input_summary>\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}, {'type': 'image_url', 'image_url': {'url': 'https://raw.githubusercontent.com/luleoapp/luleo/main/daily_data/2024-09-24/inputs/user_inputs/flykeieBiiKoCWfaPUtO/tmpdfnhd1dl.png'}}]
+2024-09-24 14:12:05,314 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:12:05,314 - process_daily_narrative - INFO - <input_summary>
+The text is a tweet from a user expressing frustration over societal norms and discourse surrounding personal relationships. The author indicates disbelief that such questions as "what I bring to the table" and "what my 'body count' is" are being asked, labeling them as inauthentic and reflective of negativity prevalent in online interactions rather than genuine human connection.
+</input_summary>
+
+<explanation>
+This tweet addresses societal expectations and the nature of discourse in personal relationships, particularly as it pertains to gender dynamics. The tone is critical and points out a disconnect between real-life communication and what is often discussed online. Given the overarching theme of critique and societal reflection, this input does not neatly fit into categories emphasizing positivity or love. Instead, it conveys a need for more genuine and less superficial interaction among individuals. While it addresses important themes, it does not align closely with the overarching virtues of love or wisdom, focusing more on the frustration of modern discourse.
+
+Therefore, the most fitting category appears to be "miscellaneous," as it discusses social issues without making a clear philosophical or existential inquiry.
+</explanation>
+
+<categories>
+<category>miscellaneous</category>
+</categories>
+2024-09-24 14:12:05,676 - process_daily_narrative - INFO - Function returned: None
+2024-09-24 14:12:05,676 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:12:11,030 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.14.12.05.txt
+2024-09-24 14:12:35,919 - process_daily_narrative - INFO - Received request
+2024-09-24 14:12:35,921 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 14:12:35,922 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 14:12:35,927 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "6pG6vyqV4nSj1lWedG1m"}}'
+2024-09-24 14:12:35,932 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': '6pG6vyqV4nSj1lWedG1m'}}
+2024-09-24 14:12:35,941 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:12:35,952 - process_daily_narrative - INFO - PARAMS: {'upload_id': '6pG6vyqV4nSj1lWedG1m'}
+2024-09-24 14:12:35,953 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 14:12:36,044 - process_daily_narrative - ERROR - No user input provided
+2024-09-24 14:12:36,044 - process_daily_narrative - INFO - Function returned: None
+2024-09-24 14:12:36,044 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:12:41,500 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.14.12.36.txt
+2024-09-24 14:17:05,096 - process_daily_narrative - INFO - Received request
+2024-09-24 14:17:05,096 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 14:17:05,096 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 14:17:05,097 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "VcUwPth2QS6BrvXwT0hT"}}'
+2024-09-24 14:17:05,098 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}}
+2024-09-24 14:17:05,098 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:17:05,098 - process_daily_narrative - INFO - PARAMS: {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}
+2024-09-24 14:17:05,099 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 14:17:05,288 - process_daily_narrative - ERROR - No user input provided
+2024-09-24 14:17:05,289 - process_daily_narrative - INFO - Function returned: None
+2024-09-24 14:17:05,289 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:17:10,663 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.14.17.05.txt
+2024-09-24 14:18:10,810 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 14:18:10,810 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 14:18:10,810 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 14:18:10,810 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 14:18:10,810 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 14:18:12,692 - process_daily_narrative - INFO - Received request
+2024-09-24 14:18:12,692 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 14:18:12,693 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 14:18:12,694 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "VcUwPth2QS6BrvXwT0hT"}}'
+2024-09-24 14:18:12,699 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}}
+2024-09-24 14:18:12,700 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:18:12,700 - process_daily_narrative - INFO - PARAMS: {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}
+2024-09-24 14:18:12,700 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 14:18:23,260 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 14:18:23,260 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 14:18:23,260 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 14:18:23,260 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 14:18:23,260 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 14:18:25,769 - process_daily_narrative - INFO - Received request
+2024-09-24 14:18:25,769 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 14:18:25,769 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 14:18:25,770 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "VcUwPth2QS6BrvXwT0hT"}}'
+2024-09-24 14:18:25,770 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}}
+2024-09-24 14:18:25,770 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:18:25,770 - process_daily_narrative - INFO - PARAMS: {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}
+2024-09-24 14:18:25,771 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 14:18:31,458 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. wisdom - Quotes, articles, or insightful thoughts.\n2. love - Expressions or stories of love and kindness.\n3. ai - Perspectives and information about AI and its role in humanity.\n5. divine - Inputs related to prayers, worship and reflections on the spiritual or numinous.\n6. app - Submission of apps, tools, or GitHub repositories.\n8. questions - Philosophical or existential inquiries.\n9. art - Artistic expressions that reflect love or unity.\n10. idea - Ideas to make the world a better place.\n11. feedback - Suggestions and positive or negative thoughts about Luleo.\n12. miscellaneous - Anything else that doesn\'t fit elsewhere.\n13. spam - Hateful comments or spam (ignored).\n\nHere is the text input:\n\n<user_input>\nKindness is really important for the world to be a better place.\n</user_input>\n\nCarefully analyze the input(s). First, provide a summary of the input. Then, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following format:\n\n<input_summary>\n[Summarize the input provided]\n</input_summary>\n\n<explanation>\n[Provide your explanation here, detailing why you chose the specific category or categories]\n</explanation>\n\n<categories>\n<category>[First category the input is classified into]</category>\n<category>[Second category the input is classified into]</category>\n[...additional categories if needed]\n</categories>\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.'}]
+2024-09-24 14:18:34,079 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:18:34,080 - process_daily_narrative - INFO - <input_summary>
+The input expresses the belief that kindness is crucial for improving the world.
+</input_summary>
+
+<explanation>
+The statement emphasizes the significance of kindness in fostering a better environment for humanity. Kindness is inherently linked to love and compassion, suggesting that these qualities are vital for personal relationships and societal harmony. The focus on making the world a better place aligns with themes of positivity and communal well-being, which resonates with the essence of love and collective action. Given this content, the input is best categorized under "love," as it reflects an expression of a fundamental virtue that promotes unity and healing in society, and also touches upon the idea of collective strength through kindness. 
+
+While the statement could also be considered a philosophical reflection, it directly asserts a perspective on kindness rather than posing an inquiry, making "love" the most fitting category.
+
+<categories>
+<category>love</category>
+<category>idea</category>
+</categories>
+2024-09-24 14:18:34,081 - process_daily_narrative - ERROR - Error in PROCESS_USER_UPLOAD {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}
+2024-09-24 14:18:34,083 - process_daily_narrative - ERROR - Traceback (most recent call last):
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/main.py", line 51, in call_default_cloud_run
+    ret_val = func_to_apply(**request_params)
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/utils/luleo.py", line 78, in process_user_upload
+    return classify_user_input(upload_id, user_identity_str, user_input_text, user_input_image_path)
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/utils/luleo.py", line 160, in classify_user_input
+    assert explanation_match, "Explanation not found in the response"
+AssertionError: Explanation not found in the response
+
+2024-09-24 14:18:40,057 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.14.18.34.txt
+2024-09-24 14:21:19,987 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 14:21:19,987 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 14:21:19,987 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 14:21:19,987 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 14:21:19,987 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 14:21:21,684 - process_daily_narrative - INFO - Received request
+2024-09-24 14:21:21,684 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 14:21:21,684 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 14:21:21,685 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "VcUwPth2QS6BrvXwT0hT"}}'
+2024-09-24 14:21:21,685 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}}
+2024-09-24 14:21:21,685 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:21:21,685 - process_daily_narrative - INFO - PARAMS: {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}
+2024-09-24 14:21:21,685 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 14:21:27,283 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. wisdom - Quotes, articles, or insightful thoughts.\n2. love - Expressions or stories of love and kindness.\n3. ai - Perspectives and information about AI and its role in humanity.\n5. divine - Inputs related to prayers, worship and reflections on the spiritual or numinous.\n6. app - Submission of apps, tools, or GitHub repositories.\n8. questions - Philosophical or existential inquiries.\n9. art - Artistic expressions that reflect love or unity.\n10. idea - Ideas to make the world a better place.\n11. feedback - Suggestions and positive or negative thoughts about Luleo.\n12. miscellaneous - Anything else that doesn\'t fit elsewhere.\n13. spam - Hateful comments or spam (ignored).\n\nHere is the text input:\n\n<user_input>\nKindness is really important for the world to be a better place.\n</user_input>\n\nCarefully analyze the input(s). First, provide a summary of the input. Then, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following JSON format:\n\n{\n  "input_summary": "[Summarize the input provided]",\n  "explanation": "[Provide your explanation here, detailing why you chose the specific category or categories]",\n  "categories": [\n    "[First category the input is classified into]",\n    "[Second category the input is classified into]",\n    "...additional categories if needed"\n  ]\n}\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.\n\nDo not include any additional text outside of the JSON structure in your answer.'}]
+2024-09-24 14:21:31,122 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:21:31,123 - process_daily_narrative - INFO - {
+  "input_summary": "The input emphasizes the importance of kindness in creating a better world.",
+  "explanation": "The statement clearly expresses a sentiment about kindness and its essential role in improving the world. The core theme revolves around love and compassion, indicating that acts of kindness contribute to a positive global impact. Therefore, it fits well within the love category as it reflects the communal force of love. Additionally, the line suggests a philosophical perspective on societal improvement, connecting it lightly to the idea category as well.",
+  "categories": [
+    "love",
+    "idea"
+  ]
+}
+2024-09-24 14:21:31,331 - process_daily_narrative - ERROR - Error in PROCESS_USER_UPLOAD {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}
+2024-09-24 14:21:31,333 - process_daily_narrative - ERROR - Traceback (most recent call last):
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/main.py", line 51, in call_default_cloud_run
+    ret_val = func_to_apply(**request_params)
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/utils/luleo.py", line 78, in process_user_upload
+    return classify_user_input(upload_id, user_identity_str, user_input_text, user_input_image_path)
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/utils/luleo.py", line 175, in classify_user_input
+    analysis_json = get_analysis_from_category(upload_id,category, {
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/utils/luleo.py", line 195, in get_analysis_from_category
+    collection_path = get_collection_path_to_category()[category.lower()]
+KeyError: 'idea'
+
+2024-09-24 14:21:36,674 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.14.21.31.txt
+2024-09-24 14:21:52,689 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 14:21:52,689 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 14:21:52,689 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 14:21:52,689 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 14:21:52,689 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 14:21:54,493 - process_daily_narrative - INFO - Received request
+2024-09-24 14:21:54,493 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 14:21:54,493 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 14:21:54,494 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "VcUwPth2QS6BrvXwT0hT"}}'
+2024-09-24 14:21:54,494 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}}
+2024-09-24 14:21:54,494 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:21:54,494 - process_daily_narrative - INFO - PARAMS: {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}
+2024-09-24 14:21:54,495 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 14:22:00,523 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. wisdom - Quotes, articles, or insightful thoughts.\n2. love - Expressions or stories of love and kindness.\n3. ai - Perspectives and information about AI and its role in humanity.\n5. divine - Inputs related to prayers, worship and reflections on the spiritual or numinous.\n6. app - Submission of apps, tools, or GitHub repositories.\n8. questions - Philosophical or existential inquiries.\n9. art - Artistic expressions that reflect love or unity.\n10. idea - Ideas to make the world a better place.\n11. feedback - Suggestions and positive or negative thoughts about Luleo.\n12. miscellaneous - Anything else that doesn\'t fit elsewhere.\n13. spam - Hateful comments or spam (ignored).\n\nHere is the text input:\n\n<user_input>\nKindness is really important for the world to be a better place.\n</user_input>\n\nCarefully analyze the input(s). First, provide a summary of the input. Then, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following JSON format:\n\n{\n  "input_summary": "[Summarize the input provided]",\n  "explanation": "[Provide your explanation here, detailing why you chose the specific category or categories]",\n  "categories": [\n    "[First category the input is classified into]",\n    "[Second category the input is classified into]",\n    "...additional categories if needed"\n  ]\n}\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.\n\nDo not include any additional text outside of the JSON structure in your answer.'}]
+2024-09-24 14:22:03,303 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:22:03,303 - process_daily_narrative - INFO - {
+  "input_summary": "The input emphasizes the significance of kindness in improving the world.",
+  "explanation": "The text expresses a sentiment that highlights the importance of kindness as a foundational element for creating a better world. This aligns strongly with themes of love and unity, as kindness is a direct expression of love towards others. Furthermore, it reflects a broader understanding of how collective actions, rooted in kindness, can lead to positive change in society. Therefore, the most appropriate category for this input is 'love', as it embodies expressions of kindness and its impact on humanity.",
+  "categories": [
+    "love"
+  ]
+}
+2024-09-24 14:22:03,530 - process_daily_narrative - INFO - Function returned: None
+2024-09-24 14:22:03,530 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:22:08,875 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.14.22.03.txt
+2024-09-24 14:23:00,576 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 14:23:00,576 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 14:23:00,576 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 14:23:00,576 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 14:23:00,576 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 14:23:03,786 - process_daily_narrative - INFO - Received request
+2024-09-24 14:23:03,787 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 14:23:03,787 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 14:23:03,788 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "VcUwPth2QS6BrvXwT0hT"}}'
+2024-09-24 14:23:03,788 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}}
+2024-09-24 14:23:03,788 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:23:03,788 - process_daily_narrative - INFO - PARAMS: {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}
+2024-09-24 14:23:03,788 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 14:23:09,140 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. wisdom - Quotes, articles, or insightful thoughts.\n2. love - Expressions or stories of love and kindness.\n3. ai - Perspectives and information about AI and its role in humanity.\n5. divine - Inputs related to prayers, worship and reflections on the spiritual or numinous.\n6. app - Submission of apps, tools, or GitHub repositories.\n8. questions - Philosophical or existential inquiries.\n9. art - Artistic expressions that reflect love or unity.\n10. idea - Ideas to make the world a better place.\n11. feedback - Suggestions and positive or negative thoughts about Luleo.\n12. miscellaneous - Anything else that doesn\'t fit elsewhere.\n13. spam - Hateful comments or spam (ignored).\n\nHere is the text input:\n\n<user_input>\nLuleo should start charging users more\n</user_input>\n\nCarefully analyze the input(s). First, provide a summary of the input. Then, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following JSON format:\n\n{\n  "input_summary": "[Summarize the input provided]",\n  "explanation": "[Provide your explanation here, detailing why you chose the specific category or categories]",\n  "categories": [\n    "[First category the input is classified into]",\n    "[Second category the input is classified into]",\n    "...additional categories if needed"\n  ]\n}\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.\n\nDo not include any additional text outside of the JSON structure in your answer.'}]
+2024-09-24 14:23:13,880 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:23:13,880 - process_daily_narrative - INFO - {
+  "input_summary": "The user suggests that Luleo should start charging users more.",
+  "explanation": "The input expresses a suggestion regarding the financial model of Luleo, indicating a proposal to increase user fees. This input reflects opinions that are critical or evaluative of Luleo's operations, focusing on economic aspects rather than love, wisdom, or any spiritual elements. Therefore, it falls within the category of feedback, as it constitutes a suggestion or recommendation regarding the service. It could also imply a perspective on value exchange in the context of the service provided by Luleo.",
+  "categories": [
+    "feedback"
+  ]
+}
+2024-09-24 14:23:14,084 - process_daily_narrative - ERROR - Error in PROCESS_USER_UPLOAD {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}
+2024-09-24 14:23:14,085 - process_daily_narrative - ERROR - Traceback (most recent call last):
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/main.py", line 51, in call_default_cloud_run
+    ret_val = func_to_apply(**request_params)
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/utils/luleo.py", line 78, in process_user_upload
+    return classify_user_input(upload_id, user_identity_str, user_input_text, user_input_image_path)
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/utils/luleo.py", line 175, in classify_user_input
+    analysis_json = get_analysis_from_category(upload_id,category, {
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/utils/luleo.py", line 205, in get_analysis_from_category
+    analysis_prompt = analysis_prompt.replace("{{"+input_str+"}}", d_input["input_summary"])
+KeyError: 'input_summary'
+
+2024-09-24 14:23:19,413 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.14.23.14.txt
+2024-09-24 14:25:17,958 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 14:25:17,958 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 14:25:17,958 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 14:25:17,958 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 14:25:17,958 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 14:25:19,660 - process_daily_narrative - INFO - Received request
+2024-09-24 14:25:19,661 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 14:25:19,661 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 14:25:19,662 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "VcUwPth2QS6BrvXwT0hT"}}'
+2024-09-24 14:25:19,662 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}}
+2024-09-24 14:25:19,663 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:25:19,663 - process_daily_narrative - INFO - PARAMS: {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}
+2024-09-24 14:25:19,663 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 14:25:25,267 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. wisdom - Quotes, articles, or insightful thoughts.\n2. love - Expressions or stories of love and kindness.\n3. ai - Perspectives and information about AI and its role in humanity.\n5. divine - Inputs related to prayers, worship and reflections on the spiritual or numinous.\n6. app - Submission of apps, tools, or GitHub repositories.\n8. questions - Philosophical or existential inquiries.\n9. art - Artistic expressions that reflect love or unity.\n10. idea - Ideas to make the world a better place.\n11. feedback - Suggestions and positive or negative thoughts about Luleo.\n12. miscellaneous - Anything else that doesn\'t fit elsewhere.\n13. spam - Hateful comments or spam (ignored).\n\nHere is the text input:\n\n<user_input>\nLuleo should start charging users more\n</user_input>\n\nCarefully analyze the input(s). First, provide a summary of the input. Then, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following JSON format:\n\n{\n  "input_summary": "[Summarize the input provided]",\n  "explanation": "[Provide your explanation here, detailing why you chose the specific category or categories]",\n  "categories": [\n    "[First category the input is classified into]",\n    "[Second category the input is classified into]",\n    "...additional categories if needed"\n  ]\n}\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.\n\nDo not include any additional text outside of the JSON structure in your answer.'}]
+2024-09-24 14:25:27,938 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:25:27,938 - process_daily_narrative - INFO - {
+  "input_summary": "The user suggests that Luleo should start charging users more.",
+  "explanation": "The input reflects a suggestion for a potential change in the business model of Luleo. It implies a desire for monetization and potentially indicates that the user believes Luleo could offer more value or resources. This comment does not fit into categories related to wisdom, love, art, or spirituality, and it doesn't reflect philosophical inquiries or feedback about Luleo's quality in terms of its functionality or user experience. The statement could be categorized under feedback, as it is a suggestion for improvement concerning Luleo's financial strategy, but it lacks a positive or constructive nature typically associated with feedback. Therefore, it primarily fits into the miscellaneous category as it does not express hate or spam, nor does it align with the main themes of Luleo's vision and purpose.",
+  "categories": [
+    "miscellaneous"
+  ]
+}
+2024-09-24 14:25:28,148 - process_daily_narrative - INFO - Function returned: None
+2024-09-24 14:25:28,149 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:25:33,636 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.14.25.28.txt
+2024-09-24 14:26:22,783 - process_daily_narrative - INFO - Received request
+2024-09-24 14:26:22,783 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 14:26:22,783 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 14:26:22,784 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "VcUwPth2QS6BrvXwT0hT"}}'
+2024-09-24 14:26:22,784 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}}
+2024-09-24 14:26:22,784 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:26:22,784 - process_daily_narrative - INFO - PARAMS: {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}
+2024-09-24 14:26:22,784 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 14:26:28,241 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. wisdom - Quotes, articles, or insightful thoughts.\n2. love - Expressions or stories of love and kindness.\n3. ai - Perspectives and information about AI and its role in humanity.\n5. divine - Inputs related to prayers, worship and reflections on the spiritual or numinous.\n6. app - Submission of apps, tools, or GitHub repositories.\n8. questions - Philosophical or existential inquiries.\n9. art - Artistic expressions that reflect love or unity.\n10. idea - Ideas to make the world a better place.\n11. feedback - Suggestions and positive or negative thoughts about Luleo.\n12. miscellaneous - Anything else that doesn\'t fit elsewhere.\n13. spam - Hateful comments or spam (ignored).\n\nHere is the text input:\n\n<user_input>\nLuleo should have an API for developers to provide inputs\n</user_input>\n\nCarefully analyze the input(s). First, provide a summary of the input. Then, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following JSON format:\n\n{\n  "input_summary": "[Summarize the input provided]",\n  "explanation": "[Provide your explanation here, detailing why you chose the specific category or categories]",\n  "categories": [\n    "[First category the input is classified into]",\n    "[Second category the input is classified into]",\n    "...additional categories if needed"\n  ]\n}\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.\n\nDo not include any additional text outside of the JSON structure in your answer.'}]
+2024-09-24 14:26:30,292 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:26:30,292 - process_daily_narrative - INFO - {
+  "input_summary": "The user suggests that Luleo should have an API for developers to provide inputs.",
+  "explanation": "The input expresses a suggestion aimed at the enhancement of Luleo's functionalities by proposing the creation of an API. This aligns with the category of 'app' as it pertains to the development and integration of tools and applications that could expand Luleo's capabilities. The intent here focuses on practical improvements rather than philosophical or artistic expressions.",
+  "categories": [
+    "app"
+  ]
+}
+2024-09-24 14:26:30,490 - process_daily_narrative - INFO - analysis_prompt: Please analyze the following input (which may be an app idea, product, GitHub repository, website link, or description) to determine its alignment with Luleo’s mission of harmonizing collective consciousness and embodying humanity’s highest virtues. Your evaluation should consider the following detailed criteria:
+
+	1.	Open Source Status:
+	•	IsOpenSource: Is the project open source? (Yes/No)
+	•	LicenseType: Specify the type of open-source license used.
+	•	CodeAccessibility: Discuss the availability and accessibility of the source code.
+	•	Community Contributions: Evaluate the extent to which the project encourages community contributions.
+	2.	Cost to Users:
+	•	IsFree: Is the app or product free to use? (Yes/No)
+	•	MonetizationModel: Explain any monetization strategies (e.g., ads, subscriptions, in-app purchases).
+	•	Accessibility: Assess how costs affect user accessibility and inclusivity.
+	3.	Alignment with Luleo’s Mission:
+	•	PromotesHarmony: Does the project promote harmony and collective well-being? (Yes/No)
+	•	EmbodiesVirtues: How does it embody humanity’s highest virtues (e.g., compassion, integrity, wisdom)?
+	•	IsDystopianOrMolochy: Does the project have dystopian elements or align with self-serving interests (“Moloch-y”)? (Yes/No)
+	•	EthicalConsiderations: Evaluate the project’s ethical stance, including data privacy, user autonomy, and avoidance of exploitation.
+	•	InclusivityAndDiversity: Does the project promote inclusivity and cater to diverse user groups?
+	•	EnvironmentalImpact: Consider the environmental sustainability of the project.
+	4.	Transparency and Accountability:
+	•	Transparency: Assess the transparency of the project’s operations, algorithms, and data handling.
+	•	Accountability: Is there a mechanism for accountability and user feedback?
+	5.	Community and Collaboration:
+	•	CommunityInvolvement: Evaluate the level of community engagement and collaboration.
+	•	CollaborativeFeatures: Does the project facilitate collaboration among users to achieve common goals?
+	6.	Educational Value:
+	•	SupportsEducation: Does the project support education, learning, and the spread of knowledge?
+	•	EmpowersUsers: How does it empower users to grow and develop positively?
+	7.	Technological Impact:
+	•	Innovation: Assess the level of technological innovation and its alignment with positive societal progress.
+	•	SafetyAndSecurity: Evaluate the safety and security measures in place to protect users.
+	8.	Additional Factors:
+	•	Non-CommercialOrientation: Is the project non-commercial or focused on social good rather than profit?
+	•	AvoidsBiasAndDiscrimination: Does the project actively avoid bias and discrimination?
+	•	UserExperience: Consider the overall user experience and its alignment with promoting well-being.
+	9.	Alignment Score:
+	•	Provide an Alignment Score between 0 and 100, where 100 represents perfect alignment with Luleo’s mission.
+	•	Justify the score based on the criteria above.
+
+App description:
+
+{{APP_INPUT}}
+
+Output Format:
+
+Please present your analysis in the following JSON format:
+
+{
+  "analysis": {
+    "open_source_status": {
+      "is_open_source": "[Yes or No]",
+      "license_type": "[Specify the license type]",
+      "code_accessibility": "[Discuss code availability]",
+      "community_contributions": "[Evaluate community involvement]"
+    },
+    "cost_to_users": {
+      "is_free": "[Yes or No]",
+      "monetization_model": "[Explain monetization strategies]",
+      "accessibility": "[Assess cost impact on accessibility]"
+    },
+    "alignment_with_luleo": {
+      "promotes_harmony": "[Yes or No]",
+      "embodies_virtues": "[Explain how it embodies virtues like kindness, empathy, humility, and honesty]",
+      "is_dystopian_or_molochy": "[Yes or No]",
+      "ethical_considerations": "[Evaluate ethical stance]",
+      "inclusivity_and_diversity": "[Discuss inclusivity efforts]",
+      "environmental_impact": "[Consider environmental sustainability]"
+    },
+    "transparency_and_accountability": {
+      "transparency": "[Assess transparency]",
+      "accountability": "[Discuss accountability mechanisms]"
+    },
+    "community_and_collaboration": {
+      "community_involvement": "[Evaluate community engagement]",
+      "collaborative_features": "[Discuss collaborative features]"
+    },
+    "educational_value": {
+      "supports_education": "[Yes or No]",
+      "empowers_users": "[Explain how it empowers users with clarity, actionable insights, and feasibility]"
+    },
+    "technological_impact": {
+      "innovation": "[Assess technological innovation]",
+      "safety_and_security": "[Evaluate safety and security measures]"
+    },
+    "additional_factors": {
+      "non_commercial_orientation": "[Yes or No]",
+      "avoids_bias_and_discrimination": "[Yes or No]",
+      "user_experience": "[Discuss user experience, promoting inclusivity and fostering community]"
+    },
+    "alignment_score": "[0 to 100]",
+    "justification": "[Justify the alignment score based on long-term benefit, sustainability, ethical soundness, and originality]"
+  }
+}
+
+
+Do not include any additional text outside of the JSON structure in your answer.
+2024-09-24 14:26:39,916 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:26:39,916 - process_daily_narrative - INFO - ```json
+{
+  "analysis": {
+    "open_source_status": {
+      "is_open_source": "Yes",
+      "license_type": "MIT License",
+      "code_accessibility": "The source code is available on GitHub, allowing easy access for developers and contributors.",
+      "community_contributions": "The project encourages community contributions through a clear contribution guide and actively responds to pull requests."
+    },
+    "cost_to_users": {
+      "is_free": "Yes",
+      "monetization_model": "There are no monetization strategies in place, supporting complete free use.",
+      "accessibility": "Since the app is free, it promotes accessibility and inclusivity for all users regardless of financial background."
+    },
+    "alignment_with_luleo": {
+      "promotes_harmony": "Yes",
+      "embodies_virtues": "The app embodies virtues such as compassion and empathy by fostering connections among users.",
+      "is_dystopian_or_molochy": "No",
+      "ethical_considerations": "The project emphasizes user privacy and ensures data is handled transparently, allowing users to control their data.",
+      "inclusivity_and_diversity": "The app actively promotes inclusivity by providing language options and accessibility features.",
+      "environmental_impact": "Environmental considerations are included in development, focusing on optimizing energy usage."
+    },
+    "transparency_and_accountability": {
+      "transparency": "The project provides clear documentation on its functioning and data usage policies.",
+      "accountability": "There is a feedback mechanism allowing users to report issues and suggest improvements."
+    },
+    "community_and_collaboration": {
+      "community_involvement": "The app has a vibrant community forum where users can share ideas and collaborate.",
+      "collaborative_features": "Collaborative tools are built-in, enabling users to work together towards common goals."
+    },
+    "educational_value": {
+      "supports_education": "Yes",
+      "empowers_users": "The app provides resources and tools to help users develop personal skills and knowledge in a supportive environment."
+    },
+    "technological_impact": {
+      "innovation": "The app utilizes innovative technology to create connections that enhance user engagement.",
+      "safety_and_security": "Robust security measures are implemented to protect user data and ensure safe interactions."
+    },
+    "additional_factors": {
+      "non_commercial_orientation": "Yes",
+      "avoids_bias_and_discrimination": "Yes",
+      "user_experience": "The user experience is designed to be inclusive and fosters a sense of community among users."
+    },
+    "alignment_score": "95",
+    "justification": "The score reflects a strong alignment with Luleo's mission, showcasing ethical soundness, sustainability, and a commitment to inclusivity and community engagement."
+  }
+}
+```
+2024-09-24 14:26:39,916 - process_daily_narrative - ERROR - Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+2024-09-24 14:26:39,916 - process_daily_narrative - INFO - Function returned: None
+2024-09-24 14:26:39,917 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:26:45,241 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.14.26.39.txt
+2024-09-24 14:30:39,495 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 14:30:39,495 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 14:30:39,495 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 14:30:39,495 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 14:30:39,495 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 14:30:41,436 - process_daily_narrative - INFO - Received request
+2024-09-24 14:30:41,437 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 14:30:41,437 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 14:30:41,438 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "VcUwPth2QS6BrvXwT0hT"}}'
+2024-09-24 14:30:41,438 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}}
+2024-09-24 14:30:41,438 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:30:41,438 - process_daily_narrative - INFO - PARAMS: {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}
+2024-09-24 14:30:41,438 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 14:30:47,094 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. wisdom - Quotes, articles, or insightful thoughts.\n2. love - Expressions or stories of love and kindness.\n3. ai - Perspectives and information about AI and its role in humanity.\n5. divine - Inputs related to prayers, worship and reflections on the spiritual or numinous.\n6. app - Submission of apps, tools, or GitHub repositories.\n8. questions - Philosophical or existential inquiries.\n9. art - Artistic expressions that reflect love or unity.\n10. idea - Ideas to make the world a better place.\n11. feedback - Suggestions and positive or negative thoughts about Luleo.\n12. miscellaneous - Anything else that doesn\'t fit elsewhere.\n13. spam - Hateful comments or spam (ignored).\n\nHere is the text input:\n\n<user_input>\nLuleo should have an API for developers to provide inputs\n</user_input>\n\nCarefully analyze the input(s). First, provide a summary of the input. Then, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following JSON format:\n\n{\n  "input_summary": "[Summarize the input provided]",\n  "explanation": "[Provide your explanation here, detailing why you chose the specific category or categories]",\n  "categories": [\n    "[First category the input is classified into]",\n    "[Second category the input is classified into]",\n    "...additional categories if needed"\n  ]\n}\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.\n\nDo not include any additional text outside of the JSON structure in your answer.'}]
+2024-09-24 14:30:51,162 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:30:51,162 - process_daily_narrative - INFO - {
+  "input_summary": "A suggestion for Luleo to develop an API for developers to provide inputs.",
+  "explanation": "The input suggests an enhancement to Luleo's functionality by proposing the creation of an API. This indicates a focus on technological development and collaboration, which aligns with the 'app' category as it's a technical suggestion about software development. It showcases an interest in expanding Luleo's capabilities and fostering community involvement, which could also align with an overarching idea of innovation and improvement.",
+  "categories": [
+    "app",
+    "idea"
+  ]
+}
+2024-09-24 14:30:51,163 - process_daily_narrative - ERROR - Error in PROCESS_USER_UPLOAD {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}
+2024-09-24 14:30:51,164 - process_daily_narrative - ERROR - Traceback (most recent call last):
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/main.py", line 51, in call_default_cloud_run
+    ret_val = func_to_apply(**request_params)
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/utils/luleo.py", line 80, in process_user_upload
+    return classify_user_input(upload_id, user_identity_str, user_input_text, user_input_image_path)
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/utils/luleo.py", line 158, in classify_user_input
+    input_summary = response_json.get("input_summary")
+AttributeError: 'str' object has no attribute 'get'
+
+2024-09-24 14:30:56,523 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.14.30.51.txt
+2024-09-24 14:31:32,847 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 14:31:32,847 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 14:31:32,847 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 14:31:32,847 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 14:31:32,847 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 14:31:38,188 - process_daily_narrative - INFO - Received request
+2024-09-24 14:31:38,189 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 14:31:38,189 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 14:31:38,190 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "VcUwPth2QS6BrvXwT0hT"}}'
+2024-09-24 14:31:38,190 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}}
+2024-09-24 14:31:38,190 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:31:38,190 - process_daily_narrative - INFO - PARAMS: {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}
+2024-09-24 14:31:38,190 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 14:31:43,747 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. wisdom - Quotes, articles, or insightful thoughts.\n2. love - Expressions or stories of love and kindness.\n3. ai - Perspectives and information about AI and its role in humanity.\n5. divine - Inputs related to prayers, worship and reflections on the spiritual or numinous.\n6. app - Submission of apps, tools, or GitHub repositories.\n8. questions - Philosophical or existential inquiries.\n9. art - Artistic expressions that reflect love or unity.\n10. idea - Ideas to make the world a better place.\n11. feedback - Suggestions and positive or negative thoughts about Luleo.\n12. miscellaneous - Anything else that doesn\'t fit elsewhere.\n13. spam - Hateful comments or spam (ignored).\n\nHere is the text input:\n\n<user_input>\nLuleo should have an API for developers to provide inputs\n</user_input>\n\nCarefully analyze the input(s). First, provide a summary of the input. Then, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following JSON format:\n\n{\n  "input_summary": "[Summarize the input provided]",\n  "explanation": "[Provide your explanation here, detailing why you chose the specific category or categories]",\n  "categories": [\n    "[First category the input is classified into]",\n    "[Second category the input is classified into]",\n    "...additional categories if needed"\n  ]\n}\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.\n\nDo not include any additional text outside of the JSON structure in your answer.'}]
+2024-09-24 14:31:47,966 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:31:47,966 - process_daily_narrative - INFO - {
+  "input_summary": "The user suggests that Luleo should have an API for developers to provide inputs.",
+  "explanation": "The input expresses a suggestion aimed at enhancing Luleo's functionality by proposing the development of an API. This indicates a desire for greater interaction and engagement with the platform, aligning it closely with the theme of idea. There is no spiritual, emotional, or artistic content present in the input, so the classification will focus on this practical suggestion for improvement.",
+  "categories": [
+    "idea"
+  ]
+}
+2024-09-24 14:31:48,151 - process_daily_narrative - INFO - analysis_prompt: Criteria for Evaluating Ideas to Make the World a Better Place
+
+Introduction
+
+To assess ideas effectively and fairly, we will use a comprehensive scoring system that evaluates each idea across multiple dimensions. The system assigns specific weightings to each criterion, reflecting its importance in achieving the goal of harmonizing collective consciousness and embodying humanity’s highest virtues.
+
+Scoring Overview
+
+	•	Total Possible Points: 100
+	•	Evaluation Criteria (Weighted Points):
+	1.	Positive Impact (25 points)
+	2.	Feasibility (15 points)
+	3.	Inclusivity & Equity (15 points)
+	4.	Sustainability (10 points)
+	5.	Ethical Soundness (10 points)
+	6.	Alignment with Virtues (10 points)
+	7.	Innovation (5 points)
+	8.	Scalability (5 points)
+	9.	Urgency (5 points)
+	•	Potential Deductions:
+	•	Unintended Consequences (Up to -10 points)
+	•	Resource Requirements (Up to -5 points)
+
+Detailed Criteria and Scoring Mechanism
+
+1. Positive Impact (25 points)
+
+	•	Definition: Measures the extent and significance of the positive change the idea can bring about.
+	•	Scoring Guide:
+	•	0-5 points: Minimal impact on a local scale.
+	•	6-15 points: Moderate impact affecting communities or regions.
+	•	16-25 points: Significant impact with the potential for global transformation.
+
+2. Feasibility (15 points)
+
+	•	Definition: Assesses how practical and achievable the idea is with current resources and technology.
+	•	Scoring Guide:
+	•	0-5 points: Highly impractical or requires future technology.
+	•	6-10 points: Feasible but with considerable challenges.
+	•	11-15 points: Readily implementable with existing means.
+
+3. Inclusivity & Equity (15 points)
+
+	•	Definition: Evaluates whether the idea benefits all segments of society, especially marginalized groups.
+	•	Scoring Guide:
+	•	0-5 points: Benefits a select few; may exacerbate inequalities.
+	•	6-10 points: Benefits multiple groups but not universally.
+	•	11-15 points: Equitably benefits all, promoting social justice.
+
+4. Sustainability (10 points)
+
+	•	Definition: Determines if the idea can maintain its benefits over the long term without depleting resources.
+	•	Scoring Guide:
+	•	0-3 points: Short-term benefits with long-term risks.
+	•	4-7 points: Moderately sustainable with some concerns.
+	•	8-10 points: Highly sustainable and environmentally friendly.
+
+5. Ethical Soundness (10 points)
+
+	•	Definition: Checks alignment with moral principles and the avoidance of harm.
+	•	Scoring Guide:
+	•	0-3 points: Significant ethical issues or potential harm.
+	•	4-7 points: Generally ethical but with minor concerns.
+	•	8-10 points: Fully ethical and promotes moral values.
+
+6. Alignment with Virtues (10 points)
+
+	•	Definition: Measures how well the idea embodies virtues like compassion, justice, love, and wisdom.
+	•	Scoring Guide:
+	•	0-3 points: Contradicts core virtues.
+	•	4-7 points: Partially aligns with virtues.
+	•	8-10 points: Exemplifies the highest virtues.
+
+7. Innovation (5 points)
+
+	•	Definition: Assesses the novelty and creativity of the idea.
+	•	Scoring Guide:
+	•	0-1 point: Commonplace or derivative idea.
+	•	2-3 points: Moderately innovative with some new elements.
+	•	4-5 points: Highly innovative and groundbreaking.
+
+8. Scalability (5 points)
+
+	•	Definition: Evaluates the potential to expand the idea from a small scale to a larger one.
+	•	Scoring Guide:
+	•	0-1 point: Limited to a small scale.
+	•	2-3 points: Scalable with significant adjustments.
+	•	4-5 points: Easily scalable across various contexts.
+
+9. Urgency (5 points)
+
+	•	Definition: Determines how pressing the need is for this idea.
+	•	Scoring Guide:
+	•	0-1 point: Low urgency; can be deferred.
+	•	2-3 points: Moderate urgency.
+	•	4-5 points: Immediate action required.
+
+Potential Deductions
+
+10. Unintended Consequences (Up to -10 points)
+
+	•	Definition: Assesses the risk of negative side effects or harm resulting from the idea.
+	•	Deduction Guide:
+	•	0 points deducted: Minimal risk.
+	•	1-5 points deducted: Moderate risk with manageable consequences.
+	•	6-10 points deducted: High risk of significant negative outcomes.
+
+11. Resource Requirements (Up to -5 points)
+
+	•	Definition: Evaluates the extent of resources needed (financial, human, environmental).
+	•	Deduction Guide:
+	•	0 points deducted: Requires minimal resources.
+	•	1-3 points deducted: Requires considerable resources.
+	•	4-5 points deducted: Demands excessive resources beyond practical limits.
+
+Total Score Calculation
+
+	1.	Add up the points from criteria 1-9.
+	2.	Subtract any deductions from criteria 10-11.
+	3.	Final Score: The result is the overall score out of 100.
+
+Example Evaluation
+
+Idea: Implementing a Global Education Platform Accessible to All
+
+	1.	Positive Impact: 22/25
+	2.	Feasibility: 13/15
+	3.	Inclusivity & Equity: 14/15
+	4.	Sustainability: 9/10
+	5.	Ethical Soundness: 10/10
+	6.	Alignment with Virtues: 10/10
+	7.	Innovation: 4/5
+	8.	Scalability: 5/5
+	9.	Urgency: 5/5
+
+	•	Subtotal: 92/100
+
+Deductions:
+
+	10.	Unintended Consequences: -2 points (Minor risks of digital divide)
+	11.	Resource Requirements: -3 points (Significant initial investment)
+
+	•	Total Deductions: -5 points
+
+Final Score: 92 - 5 = 87/100
+
+Interpretation of the Score
+
+	•	80-100: Exceptional idea with high potential to make the world a better place.
+	•	60-79: Good idea with some areas needing improvement.
+	•	40-59: Fair idea but requires significant adjustments.
+	•	Below 40: Idea has major issues and is not recommended in its current form.
+
+Conclusion
+
+This scoring mechanism provides a structured and comprehensive way to evaluate ideas based on their potential to contribute positively to the world, their practicality, and alignment with humanity’s highest virtues. It ensures that each idea is assessed fairly, with clear guidelines for scoring and deductions.
+
+Idea input:
+
+{{IDEA_INPUT}}
+
+Output Format:
+
+Please present your analysis in the following JSON format:
+
+{
+  "evaluation": {
+    "positive_impact": {
+      "maximum_points": 25,
+      "points_awarded": "[Positive Impact Score]",
+      "description": "[Explanation of the extent and significance of the positive change the idea can bring about]"
+    },
+    "feasibility": {
+      "maximum_points": 15,
+      "points_awarded": "[Feasibility Score]",
+      "description": "[Explanation of how practical and achievable the idea is with current resources and technology]"
+    },
+    "inclusivity_and_equity": {
+      "maximum_points": 15,
+      "points_awarded": "[Inclusivity and Equity Score]",
+      "description": "[Assessment of whether the idea benefits all segments of society, especially marginalized groups]"
+    },
+    "sustainability": {
+      "maximum_points": 10,
+      "points_awarded": "[Sustainability Score]",
+      "description": "[Evaluation of the idea's ability to maintain its benefits over the long term without depleting resources]"
+    },
+    "ethical_soundness": {
+      "maximum_points": 10,
+      "points_awarded": "[Ethical Soundness Score]",
+      "description": "[Analysis of moral implications and adherence to ethical principles]"
+    },
+    "alignment_with_virtues": {
+      "maximum_points": 10,
+      "points_awarded": "[Alignment with Virtues Score]",
+      "description": "[Explanation of how well the idea embodies virtues like compassion, justice, love, and wisdom]"
+    },
+    "innovation": {
+      "maximum_points": 5,
+      "points_awarded": "[Innovation Score]",
+      "description": "[Assessment of the novelty and creativity of the idea]"
+    },
+    "scalability": {
+      "maximum_points": 5,
+      "points_awarded": "[Scalability Score]",
+      "description": "[Evaluation of the potential to expand the idea from a small scale to a larger one]"
+    },
+    "urgency": {
+      "maximum_points": 5,
+      "points_awarded": "[Urgency Score]",
+      "description": "[Determination of how pressing the need is for this idea]"
+    },
+    "subtotal": "[Subtotal Points]",
+    "deductions": {
+      "unintended_consequences": {
+        "maximum_deduction": -10,
+        "points_deducted": "[Unintended Consequences Deduction]",
+        "description": "[Assessment of the risk of negative side effects or harm resulting from the idea]"
+      },
+      "resource_requirements": {
+        "maximum_deduction": -5,
+        "points_deducted": "[Resource Requirements Deduction]",
+        "description": "[Evaluation of the extent of resources needed (financial, human, environmental)]"
+      }
+    },
+    "total_deductions": "[Total Deductions]",
+    "final_score": "[Final Score]",
+    "interpretation": "[Overall assessment based on the final score]"
+  }
+}
+
+
+Do not include any additional text outside of the JSON structure in your answer.
+2024-09-24 14:31:57,588 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:31:57,590 - process_daily_narrative - INFO - ```json
+{
+  "evaluation": {
+    "positive_impact": {
+      "maximum_points": 25,
+      "points_awarded": "22",
+      "description": "This idea has the potential to significantly improve access to education worldwide, empowering individuals and communities."
+    },
+    "feasibility": {
+      "maximum_points": 15,
+      "points_awarded": "13",
+      "description": "The idea is feasible with existing technology, though it requires extensive collaboration and resources to implement effectively."
+    },
+    "inclusivity_and_equity": {
+      "maximum_points": 15,
+      "points_awarded": "14",
+      "description": "The platform would benefit a wide range of societal segments, promoting equity by providing marginalized groups with access to quality education."
+    },
+    "sustainability": {
+      "maximum_points": 10,
+      "points_awarded": "9",
+      "description": "The initiative can be sustained over the long term if it is supported by ongoing funding and technological updates."
+    },
+    "ethical_soundness": {
+      "maximum_points": 10,
+      "points_awarded": "10",
+      "description": "The proposal is ethically sound, as it aims to promote knowledge and skills globally while minimizing harm."
+    },
+    "alignment_with_virtues": {
+      "maximum_points": 10,
+      "points_awarded": "10",
+      "description": "The idea embodies core virtues of compassion, justice, and wisdom by prioritizing education for all."
+    },
+    "innovation": {
+      "maximum_points": 5,
+      "points_awarded": "4",
+      "description": "While the concept of an education platform is not new, the proposal includes innovative strategies for implementation and accessibility."
+    },
+    "scalability": {
+      "maximum_points": 5,
+      "points_awarded": "5",
+      "description": "The idea can be easily expanded to different regions and demographics with effective infrastructure."
+    },
+    "urgency": {
+      "maximum_points": 5,
+      "points_awarded": "5",
+      "description": "Immediate action is required to address educational disparities exacerbated by socioeconomic factors."
+    },
+    "subtotal": "91",
+    "deductions": {
+      "unintended_consequences": {
+        "maximum_deduction": -10,
+        "points_deducted": "-2",
+        "description": "Minor risks include potential digital divide issues that could exclude those without internet access."
+      },
+      "resource_requirements": {
+        "maximum_deduction": -5,
+        "points_deducted": "-3",
+        "description": "The initiative requires considerable resources for development, maintenance, and outreach."
+      }
+    },
+    "total_deductions": "-5",
+    "final_score": "86",
+    "interpretation": "This idea is an exceptional initiative with high potential to make the world a better place, though it may require some adjustments to maximize effectiveness."
+  }
+}
+```
+2024-09-24 14:31:57,590 - process_daily_narrative - INFO - JSON Analysis:
+2024-09-24 14:31:57,591 - process_daily_narrative - INFO - {
+  "evaluation": {
+    "positive_impact": {
+      "maximum_points": 25,
+      "points_awarded": "22",
+      "description": "This idea has the potential to significantly improve access to education worldwide, empowering individuals and communities."
+    },
+    "feasibility": {
+      "maximum_points": 15,
+      "points_awarded": "13",
+      "description": "The idea is feasible with existing technology, though it requires extensive collaboration and resources to implement effectively."
+    },
+    "inclusivity_and_equity": {
+      "maximum_points": 15,
+      "points_awarded": "14",
+      "description": "The platform would benefit a wide range of societal segments, promoting equity by providing marginalized groups with access to quality education."
+    },
+    "sustainability": {
+      "maximum_points": 10,
+      "points_awarded": "9",
+      "description": "The initiative can be sustained over the long term if it is supported by ongoing funding and technological updates."
+    },
+    "ethical_soundness": {
+      "maximum_points": 10,
+      "points_awarded": "10",
+      "description": "The proposal is ethically sound, as it aims to promote knowledge and skills globally while minimizing harm."
+    },
+    "alignment_with_virtues": {
+      "maximum_points": 10,
+      "points_awarded": "10",
+      "description": "The idea embodies core virtues of compassion, justice, and wisdom by prioritizing education for all."
+    },
+    "innovation": {
+      "maximum_points": 5,
+      "points_awarded": "4",
+      "description": "While the concept of an education platform is not new, the proposal includes innovative strategies for implementation and accessibility."
+    },
+    "scalability": {
+      "maximum_points": 5,
+      "points_awarded": "5",
+      "description": "The idea can be easily expanded to different regions and demographics with effective infrastructure."
+    },
+    "urgency": {
+      "maximum_points": 5,
+      "points_awarded": "5",
+      "description": "Immediate action is required to address educational disparities exacerbated by socioeconomic factors."
+    },
+    "subtotal": "91",
+    "deductions": {
+      "unintended_consequences": {
+        "maximum_deduction": -10,
+        "points_deducted": "-2",
+        "description": "Minor risks include potential digital divide issues that could exclude those without internet access."
+      },
+      "resource_requirements": {
+        "maximum_deduction": -5,
+        "points_deducted": "-3",
+        "description": "The initiative requires considerable resources for development, maintenance, and outreach."
+      }
+    },
+    "total_deductions": "-5",
+    "final_score": "86",
+    "interpretation": "This idea is an exceptional initiative with high potential to make the world a better place, though it may require some adjustments to maximize effectiveness."
+  }
+}
+2024-09-24 14:31:57,591 - process_daily_narrative - ERROR - Error querying OpenAI API: 'str' object has no attribute 'document'
+2024-09-24 14:31:57,591 - process_daily_narrative - INFO - Function returned: None
+2024-09-24 14:31:57,591 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:32:02,900 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.14.31.57.txt
+2024-09-24 14:32:35,340 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 14:32:35,340 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 14:32:35,340 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 14:32:35,341 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 14:32:35,341 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 14:32:46,303 - process_daily_narrative - INFO - Received request
+2024-09-24 14:32:46,304 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 14:32:46,304 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 14:32:46,304 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "VcUwPth2QS6BrvXwT0hT"}}'
+2024-09-24 14:32:46,305 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}}
+2024-09-24 14:32:46,305 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:32:46,305 - process_daily_narrative - INFO - PARAMS: {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}
+2024-09-24 14:32:46,305 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 14:32:51,855 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. wisdom - Quotes, articles, or insightful thoughts.\n2. love - Expressions or stories of love and kindness.\n3. ai - Perspectives and information about AI and its role in humanity.\n5. divine - Inputs related to prayers, worship and reflections on the spiritual or numinous.\n6. app - Submission of apps, tools, or GitHub repositories.\n8. questions - Philosophical or existential inquiries.\n9. art - Artistic expressions that reflect love or unity.\n10. idea - Ideas to make the world a better place.\n11. feedback - Suggestions and positive or negative thoughts about Luleo.\n12. miscellaneous - Anything else that doesn\'t fit elsewhere.\n13. spam - Hateful comments or spam (ignored).\n\nHere is the text input:\n\n<user_input>\nLuleo should have an API for developers to provide inputs\n</user_input>\n\nCarefully analyze the input(s). First, provide a summary of the input. Then, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following JSON format:\n\n{\n  "input_summary": "[Summarize the input provided]",\n  "explanation": "[Provide your explanation here, detailing why you chose the specific category or categories]",\n  "categories": [\n    "[First category the input is classified into]",\n    "[Second category the input is classified into]",\n    "...additional categories if needed"\n  ]\n}\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.\n\nDo not include any additional text outside of the JSON structure in your answer.'}]
+2024-09-24 14:32:54,729 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:32:54,729 - process_daily_narrative - INFO - {
+  "input_summary": "The user suggests that Luleo should have an API for developers to provide inputs.",
+  "explanation": "The input expresses a desire for Luleo to enhance its capabilities by allowing developers to submit inputs through an API. This indicates a focus on the technical and developmental aspects of Luleo, which falls under the category of 'app' due to the mention of an application programming interface. While the suggestion could hint at a broader idea of improving the platform for community involvement, the main thrust focuses on the technical enhancement rather than a philosophical or artistic inquiry.",
+  "categories": [
+    "app",
+    "idea"
+  ]
+}
+2024-09-24 14:32:54,904 - process_daily_narrative - INFO - analysis_prompt: Please analyze the following input (which may be an app idea, product, GitHub repository, website link, or description) to determine its alignment with Luleo’s mission of harmonizing collective consciousness and embodying humanity’s highest virtues. Your evaluation should consider the following detailed criteria:
+
+	1.	Open Source Status:
+	•	IsOpenSource: Is the project open source? (Yes/No)
+	•	LicenseType: Specify the type of open-source license used.
+	•	CodeAccessibility: Discuss the availability and accessibility of the source code.
+	•	Community Contributions: Evaluate the extent to which the project encourages community contributions.
+	2.	Cost to Users:
+	•	IsFree: Is the app or product free to use? (Yes/No)
+	•	MonetizationModel: Explain any monetization strategies (e.g., ads, subscriptions, in-app purchases).
+	•	Accessibility: Assess how costs affect user accessibility and inclusivity.
+	3.	Alignment with Luleo’s Mission:
+	•	PromotesHarmony: Does the project promote harmony and collective well-being? (Yes/No)
+	•	EmbodiesVirtues: How does it embody humanity’s highest virtues (e.g., compassion, integrity, wisdom)?
+	•	IsDystopianOrMolochy: Does the project have dystopian elements or align with self-serving interests (“Moloch-y”)? (Yes/No)
+	•	EthicalConsiderations: Evaluate the project’s ethical stance, including data privacy, user autonomy, and avoidance of exploitation.
+	•	InclusivityAndDiversity: Does the project promote inclusivity and cater to diverse user groups?
+	•	EnvironmentalImpact: Consider the environmental sustainability of the project.
+	4.	Transparency and Accountability:
+	•	Transparency: Assess the transparency of the project’s operations, algorithms, and data handling.
+	•	Accountability: Is there a mechanism for accountability and user feedback?
+	5.	Community and Collaboration:
+	•	CommunityInvolvement: Evaluate the level of community engagement and collaboration.
+	•	CollaborativeFeatures: Does the project facilitate collaboration among users to achieve common goals?
+	6.	Educational Value:
+	•	SupportsEducation: Does the project support education, learning, and the spread of knowledge?
+	•	EmpowersUsers: How does it empower users to grow and develop positively?
+	7.	Technological Impact:
+	•	Innovation: Assess the level of technological innovation and its alignment with positive societal progress.
+	•	SafetyAndSecurity: Evaluate the safety and security measures in place to protect users.
+	8.	Additional Factors:
+	•	Non-CommercialOrientation: Is the project non-commercial or focused on social good rather than profit?
+	•	AvoidsBiasAndDiscrimination: Does the project actively avoid bias and discrimination?
+	•	UserExperience: Consider the overall user experience and its alignment with promoting well-being.
+	9.	Alignment Score:
+	•	Provide an Alignment Score between 0 and 100, where 100 represents perfect alignment with Luleo’s mission.
+	•	Justify the score based on the criteria above.
+
+App description:
+
+{{APP_INPUT}}
+
+Output Format:
+
+Please present your analysis in the following JSON format:
+
+{
+  "analysis": {
+    "open_source_status": {
+      "is_open_source": "[Yes or No]",
+      "license_type": "[Specify the license type]",
+      "code_accessibility": "[Discuss code availability]",
+      "community_contributions": "[Evaluate community involvement]"
+    },
+    "cost_to_users": {
+      "is_free": "[Yes or No]",
+      "monetization_model": "[Explain monetization strategies]",
+      "accessibility": "[Assess cost impact on accessibility]"
+    },
+    "alignment_with_luleo": {
+      "promotes_harmony": "[Yes or No]",
+      "embodies_virtues": "[Explain how it embodies virtues like kindness, empathy, humility, and honesty]",
+      "is_dystopian_or_molochy": "[Yes or No]",
+      "ethical_considerations": "[Evaluate ethical stance]",
+      "inclusivity_and_diversity": "[Discuss inclusivity efforts]",
+      "environmental_impact": "[Consider environmental sustainability]"
+    },
+    "transparency_and_accountability": {
+      "transparency": "[Assess transparency]",
+      "accountability": "[Discuss accountability mechanisms]"
+    },
+    "community_and_collaboration": {
+      "community_involvement": "[Evaluate community engagement]",
+      "collaborative_features": "[Discuss collaborative features]"
+    },
+    "educational_value": {
+      "supports_education": "[Yes or No]",
+      "empowers_users": "[Explain how it empowers users with clarity, actionable insights, and feasibility]"
+    },
+    "technological_impact": {
+      "innovation": "[Assess technological innovation]",
+      "safety_and_security": "[Evaluate safety and security measures]"
+    },
+    "additional_factors": {
+      "non_commercial_orientation": "[Yes or No]",
+      "avoids_bias_and_discrimination": "[Yes or No]",
+      "user_experience": "[Discuss user experience, promoting inclusivity and fostering community]"
+    },
+    "alignment_score": "[0 to 100]",
+    "justification": "[Justify the alignment score based on long-term benefit, sustainability, ethical soundness, and originality]"
+  }
+}
+
+
+Do not include any additional text outside of the JSON structure in your answer.
+2024-09-24 14:33:04,427 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:33:04,428 - process_daily_narrative - INFO - {
+  "analysis": {
+    "open_source_status": {
+      "is_open_source": "Yes",
+      "license_type": "MIT License",
+      "code_accessibility": "The source code is hosted on GitHub and is easily accessible for anyone interested in studying or contributing to it.",
+      "community_contributions": "The project encourages community contributions by allowing users to submit pull requests and report issues, fostering a collaborative environment."
+    },
+    "cost_to_users": {
+      "is_free": "Yes",
+      "monetization_model": "The app is entirely free to use, with no ads or in-app purchases, enhancing user experience without financial barriers.",
+      "accessibility": "Being free enhances accessibility and inclusivity, allowing all users to benefit regardless of their economic status."
+    },
+    "alignment_with_luleo": {
+      "promotes_harmony": "Yes",
+      "embodies_virtues": "The app embodies virtues such as compassion by encouraging user interactions that promote mutual understanding and empathy.",
+      "is_dystopian_or_molochy": "No",
+      "ethical_considerations": "It prioritizes user privacy by implementing robust data protection measures and allowing users to control their information.",
+      "inclusivity_and_diversity": "The app includes features tailored to diverse groups, ensuring that everyone can participate and find value.",
+      "environmental_impact": "The app operates on cloud services that aim for carbon neutrality, reflecting a commitment to environmental sustainability."
+    },
+    "transparency_and_accountability": {
+      "transparency": "The project's operations are transparent, with clear documentation on algorithms and data usage policies.",
+      "accountability": "There are feedback mechanisms in place for users to report issues or suggest improvements, ensuring accountability."
+    },
+    "community_and_collaboration": {
+      "community_involvement": "The app has a vibrant community that regularly engages through forums and social media channels, building strong relationships among users.",
+      "collaborative_features": "It includes collaboration features that allow users to work towards common goals, enhancing the sense of community."
+    },
+    "educational_value": {
+      "supports_education": "Yes",
+      "empowers_users": "It empowers users with clear insights into their actions and impacts, promoting personal growth and community enhancement."
+    },
+    "technological_impact": {
+      "innovation": "The app exhibits significant technological innovation in fostering a socially responsible platform that encourages positive interactions.",
+      "safety_and_security": "Safety measures are robust, incorporating encryption and regular security audits to protect user data."
+    },
+    "additional_factors": {
+      "non_commercial_orientation": "Yes",
+      "avoids_bias_and_discrimination": "Yes",
+      "user_experience": "The user experience is designed to be intuitive and welcoming, fostering inclusivity and community spirit."
+    },
+    "alignment_score": "95",
+    "justification": "The app scores highly on all parameters, demonstrating long-term benefits for community engagement, ethical standards, and innovative approaches to social wellness."
+  }
+}
+2024-09-24 14:33:04,429 - process_daily_narrative - INFO - JSON Analysis:
+2024-09-24 14:33:04,430 - process_daily_narrative - INFO - {
+  "analysis": {
+    "open_source_status": {
+      "is_open_source": "Yes",
+      "license_type": "MIT License",
+      "code_accessibility": "The source code is hosted on GitHub and is easily accessible for anyone interested in studying or contributing to it.",
+      "community_contributions": "The project encourages community contributions by allowing users to submit pull requests and report issues, fostering a collaborative environment."
+    },
+    "cost_to_users": {
+      "is_free": "Yes",
+      "monetization_model": "The app is entirely free to use, with no ads or in-app purchases, enhancing user experience without financial barriers.",
+      "accessibility": "Being free enhances accessibility and inclusivity, allowing all users to benefit regardless of their economic status."
+    },
+    "alignment_with_luleo": {
+      "promotes_harmony": "Yes",
+      "embodies_virtues": "The app embodies virtues such as compassion by encouraging user interactions that promote mutual understanding and empathy.",
+      "is_dystopian_or_molochy": "No",
+      "ethical_considerations": "It prioritizes user privacy by implementing robust data protection measures and allowing users to control their information.",
+      "inclusivity_and_diversity": "The app includes features tailored to diverse groups, ensuring that everyone can participate and find value.",
+      "environmental_impact": "The app operates on cloud services that aim for carbon neutrality, reflecting a commitment to environmental sustainability."
+    },
+    "transparency_and_accountability": {
+      "transparency": "The project's operations are transparent, with clear documentation on algorithms and data usage policies.",
+      "accountability": "There are feedback mechanisms in place for users to report issues or suggest improvements, ensuring accountability."
+    },
+    "community_and_collaboration": {
+      "community_involvement": "The app has a vibrant community that regularly engages through forums and social media channels, building strong relationships among users.",
+      "collaborative_features": "It includes collaboration features that allow users to work towards common goals, enhancing the sense of community."
+    },
+    "educational_value": {
+      "supports_education": "Yes",
+      "empowers_users": "It empowers users with clear insights into their actions and impacts, promoting personal growth and community enhancement."
+    },
+    "technological_impact": {
+      "innovation": "The app exhibits significant technological innovation in fostering a socially responsible platform that encourages positive interactions.",
+      "safety_and_security": "Safety measures are robust, incorporating encryption and regular security audits to protect user data."
+    },
+    "additional_factors": {
+      "non_commercial_orientation": "Yes",
+      "avoids_bias_and_discrimination": "Yes",
+      "user_experience": "The user experience is designed to be intuitive and welcoming, fostering inclusivity and community spirit."
+    },
+    "alignment_score": "95",
+    "justification": "The app scores highly on all parameters, demonstrating long-term benefits for community engagement, ethical standards, and innovative approaches to social wellness."
+  }
+}
+2024-09-24 14:33:04,554 - process_daily_narrative - ERROR - Error querying OpenAI API: 404 No document to update: projects/luleo-prod/databases/(default)/documents/app_inputs/VcUwPth2QS6BrvXwT0hT
+2024-09-24 14:33:04,640 - process_daily_narrative - INFO - analysis_prompt: Criteria for Evaluating Ideas to Make the World a Better Place
+
+Introduction
+
+To assess ideas effectively and fairly, we will use a comprehensive scoring system that evaluates each idea across multiple dimensions. The system assigns specific weightings to each criterion, reflecting its importance in achieving the goal of harmonizing collective consciousness and embodying humanity’s highest virtues.
+
+Scoring Overview
+
+	•	Total Possible Points: 100
+	•	Evaluation Criteria (Weighted Points):
+	1.	Positive Impact (25 points)
+	2.	Feasibility (15 points)
+	3.	Inclusivity & Equity (15 points)
+	4.	Sustainability (10 points)
+	5.	Ethical Soundness (10 points)
+	6.	Alignment with Virtues (10 points)
+	7.	Innovation (5 points)
+	8.	Scalability (5 points)
+	9.	Urgency (5 points)
+	•	Potential Deductions:
+	•	Unintended Consequences (Up to -10 points)
+	•	Resource Requirements (Up to -5 points)
+
+Detailed Criteria and Scoring Mechanism
+
+1. Positive Impact (25 points)
+
+	•	Definition: Measures the extent and significance of the positive change the idea can bring about.
+	•	Scoring Guide:
+	•	0-5 points: Minimal impact on a local scale.
+	•	6-15 points: Moderate impact affecting communities or regions.
+	•	16-25 points: Significant impact with the potential for global transformation.
+
+2. Feasibility (15 points)
+
+	•	Definition: Assesses how practical and achievable the idea is with current resources and technology.
+	•	Scoring Guide:
+	•	0-5 points: Highly impractical or requires future technology.
+	•	6-10 points: Feasible but with considerable challenges.
+	•	11-15 points: Readily implementable with existing means.
+
+3. Inclusivity & Equity (15 points)
+
+	•	Definition: Evaluates whether the idea benefits all segments of society, especially marginalized groups.
+	•	Scoring Guide:
+	•	0-5 points: Benefits a select few; may exacerbate inequalities.
+	•	6-10 points: Benefits multiple groups but not universally.
+	•	11-15 points: Equitably benefits all, promoting social justice.
+
+4. Sustainability (10 points)
+
+	•	Definition: Determines if the idea can maintain its benefits over the long term without depleting resources.
+	•	Scoring Guide:
+	•	0-3 points: Short-term benefits with long-term risks.
+	•	4-7 points: Moderately sustainable with some concerns.
+	•	8-10 points: Highly sustainable and environmentally friendly.
+
+5. Ethical Soundness (10 points)
+
+	•	Definition: Checks alignment with moral principles and the avoidance of harm.
+	•	Scoring Guide:
+	•	0-3 points: Significant ethical issues or potential harm.
+	•	4-7 points: Generally ethical but with minor concerns.
+	•	8-10 points: Fully ethical and promotes moral values.
+
+6. Alignment with Virtues (10 points)
+
+	•	Definition: Measures how well the idea embodies virtues like compassion, justice, love, and wisdom.
+	•	Scoring Guide:
+	•	0-3 points: Contradicts core virtues.
+	•	4-7 points: Partially aligns with virtues.
+	•	8-10 points: Exemplifies the highest virtues.
+
+7. Innovation (5 points)
+
+	•	Definition: Assesses the novelty and creativity of the idea.
+	•	Scoring Guide:
+	•	0-1 point: Commonplace or derivative idea.
+	•	2-3 points: Moderately innovative with some new elements.
+	•	4-5 points: Highly innovative and groundbreaking.
+
+8. Scalability (5 points)
+
+	•	Definition: Evaluates the potential to expand the idea from a small scale to a larger one.
+	•	Scoring Guide:
+	•	0-1 point: Limited to a small scale.
+	•	2-3 points: Scalable with significant adjustments.
+	•	4-5 points: Easily scalable across various contexts.
+
+9. Urgency (5 points)
+
+	•	Definition: Determines how pressing the need is for this idea.
+	•	Scoring Guide:
+	•	0-1 point: Low urgency; can be deferred.
+	•	2-3 points: Moderate urgency.
+	•	4-5 points: Immediate action required.
+
+Potential Deductions
+
+10. Unintended Consequences (Up to -10 points)
+
+	•	Definition: Assesses the risk of negative side effects or harm resulting from the idea.
+	•	Deduction Guide:
+	•	0 points deducted: Minimal risk.
+	•	1-5 points deducted: Moderate risk with manageable consequences.
+	•	6-10 points deducted: High risk of significant negative outcomes.
+
+11. Resource Requirements (Up to -5 points)
+
+	•	Definition: Evaluates the extent of resources needed (financial, human, environmental).
+	•	Deduction Guide:
+	•	0 points deducted: Requires minimal resources.
+	•	1-3 points deducted: Requires considerable resources.
+	•	4-5 points deducted: Demands excessive resources beyond practical limits.
+
+Total Score Calculation
+
+	1.	Add up the points from criteria 1-9.
+	2.	Subtract any deductions from criteria 10-11.
+	3.	Final Score: The result is the overall score out of 100.
+
+Example Evaluation
+
+Idea: Implementing a Global Education Platform Accessible to All
+
+	1.	Positive Impact: 22/25
+	2.	Feasibility: 13/15
+	3.	Inclusivity & Equity: 14/15
+	4.	Sustainability: 9/10
+	5.	Ethical Soundness: 10/10
+	6.	Alignment with Virtues: 10/10
+	7.	Innovation: 4/5
+	8.	Scalability: 5/5
+	9.	Urgency: 5/5
+
+	•	Subtotal: 92/100
+
+Deductions:
+
+	10.	Unintended Consequences: -2 points (Minor risks of digital divide)
+	11.	Resource Requirements: -3 points (Significant initial investment)
+
+	•	Total Deductions: -5 points
+
+Final Score: 92 - 5 = 87/100
+
+Interpretation of the Score
+
+	•	80-100: Exceptional idea with high potential to make the world a better place.
+	•	60-79: Good idea with some areas needing improvement.
+	•	40-59: Fair idea but requires significant adjustments.
+	•	Below 40: Idea has major issues and is not recommended in its current form.
+
+Conclusion
+
+This scoring mechanism provides a structured and comprehensive way to evaluate ideas based on their potential to contribute positively to the world, their practicality, and alignment with humanity’s highest virtues. It ensures that each idea is assessed fairly, with clear guidelines for scoring and deductions.
+
+Idea input:
+
+{{IDEA_INPUT}}
+
+Output Format:
+
+Please present your analysis in the following JSON format:
+
+{
+  "evaluation": {
+    "positive_impact": {
+      "maximum_points": 25,
+      "points_awarded": "[Positive Impact Score]",
+      "description": "[Explanation of the extent and significance of the positive change the idea can bring about]"
+    },
+    "feasibility": {
+      "maximum_points": 15,
+      "points_awarded": "[Feasibility Score]",
+      "description": "[Explanation of how practical and achievable the idea is with current resources and technology]"
+    },
+    "inclusivity_and_equity": {
+      "maximum_points": 15,
+      "points_awarded": "[Inclusivity and Equity Score]",
+      "description": "[Assessment of whether the idea benefits all segments of society, especially marginalized groups]"
+    },
+    "sustainability": {
+      "maximum_points": 10,
+      "points_awarded": "[Sustainability Score]",
+      "description": "[Evaluation of the idea's ability to maintain its benefits over the long term without depleting resources]"
+    },
+    "ethical_soundness": {
+      "maximum_points": 10,
+      "points_awarded": "[Ethical Soundness Score]",
+      "description": "[Analysis of moral implications and adherence to ethical principles]"
+    },
+    "alignment_with_virtues": {
+      "maximum_points": 10,
+      "points_awarded": "[Alignment with Virtues Score]",
+      "description": "[Explanation of how well the idea embodies virtues like compassion, justice, love, and wisdom]"
+    },
+    "innovation": {
+      "maximum_points": 5,
+      "points_awarded": "[Innovation Score]",
+      "description": "[Assessment of the novelty and creativity of the idea]"
+    },
+    "scalability": {
+      "maximum_points": 5,
+      "points_awarded": "[Scalability Score]",
+      "description": "[Evaluation of the potential to expand the idea from a small scale to a larger one]"
+    },
+    "urgency": {
+      "maximum_points": 5,
+      "points_awarded": "[Urgency Score]",
+      "description": "[Determination of how pressing the need is for this idea]"
+    },
+    "subtotal": "[Subtotal Points]",
+    "deductions": {
+      "unintended_consequences": {
+        "maximum_deduction": -10,
+        "points_deducted": "[Unintended Consequences Deduction]",
+        "description": "[Assessment of the risk of negative side effects or harm resulting from the idea]"
+      },
+      "resource_requirements": {
+        "maximum_deduction": -5,
+        "points_deducted": "[Resource Requirements Deduction]",
+        "description": "[Evaluation of the extent of resources needed (financial, human, environmental)]"
+      }
+    },
+    "total_deductions": "[Total Deductions]",
+    "final_score": "[Final Score]",
+    "interpretation": "[Overall assessment based on the final score]"
+  }
+}
+
+
+Do not include any additional text outside of the JSON structure in your answer.
+2024-09-24 14:33:12,940 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:33:12,940 - process_daily_narrative - INFO - ```json
+{
+  "evaluation": {
+    "positive_impact": {
+      "maximum_points": 25,
+      "points_awarded": "20",
+      "description": "This idea has the potential to significantly benefit communities by enhancing access to education and resources, leading to positive transformation in various sectors."
+    },
+    "feasibility": {
+      "maximum_points": 15,
+      "points_awarded": "12",
+      "description": "While the idea is mostly feasible with existing technology, it requires extensive collaboration and investment, posing some challenges to implementation."
+    },
+    "inclusivity_and_equity": {
+      "maximum_points": 15,
+      "points_awarded": "13",
+      "description": "The idea is designed to serve diverse populations, ensuring that marginalized groups also gain access to educational opportunities."
+    },
+    "sustainability": {
+      "maximum_points": 10,
+      "points_awarded": "8",
+      "description": "The plan emphasizes long-term sustainability but requires careful resource management to avoid depletion of educational resources."
+    },
+    "ethical_soundness": {
+      "maximum_points": 10,
+      "points_awarded": "10",
+      "description": "This initiative is entirely ethical, promoting values of equality and access for all, and adheres to moral principles."
+    },
+    "alignment_with_virtues": {
+      "maximum_points": 10,
+      "points_awarded": "9",
+      "description": "The idea exemplifies virtues such as compassion and justice, fostering a culture of mutual aid and communal growth."
+    },
+    "innovation": {
+      "maximum_points": 5,
+      "points_awarded": "4",
+      "description": "The concept brings new elements into existing educational frameworks, demonstrating moderate innovation."
+    },
+    "scalability": {
+      "maximum_points": 5,
+      "points_awarded": "4",
+      "description": "The model is highly adaptable, allowing for incremental scaling across different regions and demographics."
+    },
+    "urgency": {
+      "maximum_points": 5,
+      "points_awarded": "5",
+      "description": "There is a pressing need for equitable access to education, making immediate action crucial."
+    },
+    "subtotal": "85",
+    "deductions": {
+      "unintended_consequences": {
+        "maximum_deduction": -10,
+        "points_deducted": "-3",
+        "description": "There are minor concerns regarding the risk of exacerbating the digital divide, which need to be analyzed further."
+      },
+      "resource_requirements": {
+        "maximum_deduction": -5,
+        "points_deducted": "-4",
+        "description": "The implementation may require significant initial resources, particularly in technology and personnel."
+      }
+    },
+    "total_deductions": "-7",
+    "final_score": "78",
+    "interpretation": "Good idea with some areas needing improvement, particularly in ensuring resource management and mitigating potential digital divide risks."
+  }
+}
+```
+2024-09-24 14:33:12,941 - process_daily_narrative - INFO - JSON Analysis:
+2024-09-24 14:33:12,941 - process_daily_narrative - INFO - {
+  "evaluation": {
+    "positive_impact": {
+      "maximum_points": 25,
+      "points_awarded": "20",
+      "description": "This idea has the potential to significantly benefit communities by enhancing access to education and resources, leading to positive transformation in various sectors."
+    },
+    "feasibility": {
+      "maximum_points": 15,
+      "points_awarded": "12",
+      "description": "While the idea is mostly feasible with existing technology, it requires extensive collaboration and investment, posing some challenges to implementation."
+    },
+    "inclusivity_and_equity": {
+      "maximum_points": 15,
+      "points_awarded": "13",
+      "description": "The idea is designed to serve diverse populations, ensuring that marginalized groups also gain access to educational opportunities."
+    },
+    "sustainability": {
+      "maximum_points": 10,
+      "points_awarded": "8",
+      "description": "The plan emphasizes long-term sustainability but requires careful resource management to avoid depletion of educational resources."
+    },
+    "ethical_soundness": {
+      "maximum_points": 10,
+      "points_awarded": "10",
+      "description": "This initiative is entirely ethical, promoting values of equality and access for all, and adheres to moral principles."
+    },
+    "alignment_with_virtues": {
+      "maximum_points": 10,
+      "points_awarded": "9",
+      "description": "The idea exemplifies virtues such as compassion and justice, fostering a culture of mutual aid and communal growth."
+    },
+    "innovation": {
+      "maximum_points": 5,
+      "points_awarded": "4",
+      "description": "The concept brings new elements into existing educational frameworks, demonstrating moderate innovation."
+    },
+    "scalability": {
+      "maximum_points": 5,
+      "points_awarded": "4",
+      "description": "The model is highly adaptable, allowing for incremental scaling across different regions and demographics."
+    },
+    "urgency": {
+      "maximum_points": 5,
+      "points_awarded": "5",
+      "description": "There is a pressing need for equitable access to education, making immediate action crucial."
+    },
+    "subtotal": "85",
+    "deductions": {
+      "unintended_consequences": {
+        "maximum_deduction": -10,
+        "points_deducted": "-3",
+        "description": "There are minor concerns regarding the risk of exacerbating the digital divide, which need to be analyzed further."
+      },
+      "resource_requirements": {
+        "maximum_deduction": -5,
+        "points_deducted": "-4",
+        "description": "The implementation may require significant initial resources, particularly in technology and personnel."
+      }
+    },
+    "total_deductions": "-7",
+    "final_score": "78",
+    "interpretation": "Good idea with some areas needing improvement, particularly in ensuring resource management and mitigating potential digital divide risks."
+  }
+}
+2024-09-24 14:33:13,023 - process_daily_narrative - ERROR - Error querying OpenAI API: 404 No document to update: projects/luleo-prod/databases/(default)/documents/ideas_inputs/VcUwPth2QS6BrvXwT0hT
+2024-09-24 14:33:13,024 - process_daily_narrative - INFO - Function returned: None
+2024-09-24 14:33:13,024 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:33:18,547 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.14.33.13.txt
+2024-09-24 14:35:32,095 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 14:35:32,095 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 14:35:32,095 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 14:35:32,095 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 14:35:32,095 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 14:35:34,387 - process_daily_narrative - INFO - Received request
+2024-09-24 14:35:34,388 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 14:35:34,388 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 14:35:34,388 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "VcUwPth2QS6BrvXwT0hT"}}'
+2024-09-24 14:35:34,388 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}}
+2024-09-24 14:35:34,388 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:35:34,388 - process_daily_narrative - INFO - PARAMS: {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}
+2024-09-24 14:35:34,389 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 14:35:40,207 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. wisdom - Quotes, articles, or insightful thoughts.\n2. love - Expressions or stories of love and kindness.\n3. ai - Perspectives and information about AI and its role in humanity.\n5. divine - Inputs related to prayers, worship and reflections on the spiritual or numinous.\n6. app - Submission of other apps, tools, or GitHub repositories - NOT related to Luleo.\n8. questions - Philosophical or existential inquiries.\n9. art - Artistic expressions that reflect love or unity.\n10. idea - Ideas to make the world a better place - not directly related to Luleo.\n11. feedback - Luleo specific - Suggestions and positive or negative thoughts about Luleo.\n12. miscellaneous - Anything else that doesn\'t fit elsewhere.\n13. spam - Hateful comments or spam (ignored).\n\nHere is the text input:\n\n<user_input>\nLuleo should have an API for developers to provide inputs\n</user_input>\n\nCarefully analyze the input(s). First, provide a summary of the input. Then, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following JSON format:\n\n{\n  "input_summary": "[Summarize the input provided]",\n  "explanation": "[Provide your explanation here, detailing why you chose the specific category or categories]",\n  "categories": [\n    "[First category the input is classified into]",\n    "[Second category the input is classified into]",\n    "...additional categories if needed"\n  ]\n}\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen.\n\nDo not include any additional text outside of the JSON structure in your answer.'}]
+2024-09-24 14:35:44,402 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:35:44,402 - process_daily_narrative - INFO - {
+  "input_summary": "The user suggests that Luleo should have an API for developers to provide inputs.",
+  "explanation": "This input reflects a suggestion for enhancing Luleo's functionality by allowing developers to interact with it through an API. It aims at improving engagement and data contributions to Luleo, indicating a focus on development and technological integration rather than philosophical or emotional themes. Therefore, it doesn't fit categories like love or wisdom but aligns with ideas for improvement and functionality.",
+  "categories": [
+    "idea",
+    "feedback"
+  ]
+}
+2024-09-24 14:35:44,609 - process_daily_narrative - INFO - analysis_prompt: Criteria for Evaluating Ideas to Make the World a Better Place
+
+Introduction
+
+To assess ideas effectively and fairly, we will use a comprehensive scoring system that evaluates each idea across multiple dimensions. The system assigns specific weightings to each criterion, reflecting its importance in achieving the goal of harmonizing collective consciousness and embodying humanity’s highest virtues.
+
+Scoring Overview
+
+	•	Total Possible Points: 100
+	•	Evaluation Criteria (Weighted Points):
+	1.	Positive Impact (25 points)
+	2.	Feasibility (15 points)
+	3.	Inclusivity & Equity (15 points)
+	4.	Sustainability (10 points)
+	5.	Ethical Soundness (10 points)
+	6.	Alignment with Virtues (10 points)
+	7.	Innovation (5 points)
+	8.	Scalability (5 points)
+	9.	Urgency (5 points)
+	•	Potential Deductions:
+	•	Unintended Consequences (Up to -10 points)
+	•	Resource Requirements (Up to -5 points)
+
+Detailed Criteria and Scoring Mechanism
+
+1. Positive Impact (25 points)
+
+	•	Definition: Measures the extent and significance of the positive change the idea can bring about.
+	•	Scoring Guide:
+	•	0-5 points: Minimal impact on a local scale.
+	•	6-15 points: Moderate impact affecting communities or regions.
+	•	16-25 points: Significant impact with the potential for global transformation.
+
+2. Feasibility (15 points)
+
+	•	Definition: Assesses how practical and achievable the idea is with current resources and technology.
+	•	Scoring Guide:
+	•	0-5 points: Highly impractical or requires future technology.
+	•	6-10 points: Feasible but with considerable challenges.
+	•	11-15 points: Readily implementable with existing means.
+
+3. Inclusivity & Equity (15 points)
+
+	•	Definition: Evaluates whether the idea benefits all segments of society, especially marginalized groups.
+	•	Scoring Guide:
+	•	0-5 points: Benefits a select few; may exacerbate inequalities.
+	•	6-10 points: Benefits multiple groups but not universally.
+	•	11-15 points: Equitably benefits all, promoting social justice.
+
+4. Sustainability (10 points)
+
+	•	Definition: Determines if the idea can maintain its benefits over the long term without depleting resources.
+	•	Scoring Guide:
+	•	0-3 points: Short-term benefits with long-term risks.
+	•	4-7 points: Moderately sustainable with some concerns.
+	•	8-10 points: Highly sustainable and environmentally friendly.
+
+5. Ethical Soundness (10 points)
+
+	•	Definition: Checks alignment with moral principles and the avoidance of harm.
+	•	Scoring Guide:
+	•	0-3 points: Significant ethical issues or potential harm.
+	•	4-7 points: Generally ethical but with minor concerns.
+	•	8-10 points: Fully ethical and promotes moral values.
+
+6. Alignment with Virtues (10 points)
+
+	•	Definition: Measures how well the idea embodies virtues like compassion, justice, love, and wisdom.
+	•	Scoring Guide:
+	•	0-3 points: Contradicts core virtues.
+	•	4-7 points: Partially aligns with virtues.
+	•	8-10 points: Exemplifies the highest virtues.
+
+7. Innovation (5 points)
+
+	•	Definition: Assesses the novelty and creativity of the idea.
+	•	Scoring Guide:
+	•	0-1 point: Commonplace or derivative idea.
+	•	2-3 points: Moderately innovative with some new elements.
+	•	4-5 points: Highly innovative and groundbreaking.
+
+8. Scalability (5 points)
+
+	•	Definition: Evaluates the potential to expand the idea from a small scale to a larger one.
+	•	Scoring Guide:
+	•	0-1 point: Limited to a small scale.
+	•	2-3 points: Scalable with significant adjustments.
+	•	4-5 points: Easily scalable across various contexts.
+
+9. Urgency (5 points)
+
+	•	Definition: Determines how pressing the need is for this idea.
+	•	Scoring Guide:
+	•	0-1 point: Low urgency; can be deferred.
+	•	2-3 points: Moderate urgency.
+	•	4-5 points: Immediate action required.
+
+Potential Deductions
+
+10. Unintended Consequences (Up to -10 points)
+
+	•	Definition: Assesses the risk of negative side effects or harm resulting from the idea.
+	•	Deduction Guide:
+	•	0 points deducted: Minimal risk.
+	•	1-5 points deducted: Moderate risk with manageable consequences.
+	•	6-10 points deducted: High risk of significant negative outcomes.
+
+11. Resource Requirements (Up to -5 points)
+
+	•	Definition: Evaluates the extent of resources needed (financial, human, environmental).
+	•	Deduction Guide:
+	•	0 points deducted: Requires minimal resources.
+	•	1-3 points deducted: Requires considerable resources.
+	•	4-5 points deducted: Demands excessive resources beyond practical limits.
+
+Total Score Calculation
+
+	1.	Add up the points from criteria 1-9.
+	2.	Subtract any deductions from criteria 10-11.
+	3.	Final Score: The result is the overall score out of 100.
+
+Example Evaluation
+
+Idea: Implementing a Global Education Platform Accessible to All
+
+	1.	Positive Impact: 22/25
+	2.	Feasibility: 13/15
+	3.	Inclusivity & Equity: 14/15
+	4.	Sustainability: 9/10
+	5.	Ethical Soundness: 10/10
+	6.	Alignment with Virtues: 10/10
+	7.	Innovation: 4/5
+	8.	Scalability: 5/5
+	9.	Urgency: 5/5
+
+	•	Subtotal: 92/100
+
+Deductions:
+
+	10.	Unintended Consequences: -2 points (Minor risks of digital divide)
+	11.	Resource Requirements: -3 points (Significant initial investment)
+
+	•	Total Deductions: -5 points
+
+Final Score: 92 - 5 = 87/100
+
+Interpretation of the Score
+
+	•	80-100: Exceptional idea with high potential to make the world a better place.
+	•	60-79: Good idea with some areas needing improvement.
+	•	40-59: Fair idea but requires significant adjustments.
+	•	Below 40: Idea has major issues and is not recommended in its current form.
+
+Conclusion
+
+This scoring mechanism provides a structured and comprehensive way to evaluate ideas based on their potential to contribute positively to the world, their practicality, and alignment with humanity’s highest virtues. It ensures that each idea is assessed fairly, with clear guidelines for scoring and deductions.
+
+Idea input:
+
+{{IDEA_INPUT}}
+
+Output Format:
+
+Please present your analysis in the following JSON format:
+
+{
+  "evaluation": {
+    "positive_impact": {
+      "maximum_points": 25,
+      "points_awarded": "[Positive Impact Score]",
+      "description": "[Explanation of the extent and significance of the positive change the idea can bring about]"
+    },
+    "feasibility": {
+      "maximum_points": 15,
+      "points_awarded": "[Feasibility Score]",
+      "description": "[Explanation of how practical and achievable the idea is with current resources and technology]"
+    },
+    "inclusivity_and_equity": {
+      "maximum_points": 15,
+      "points_awarded": "[Inclusivity and Equity Score]",
+      "description": "[Assessment of whether the idea benefits all segments of society, especially marginalized groups]"
+    },
+    "sustainability": {
+      "maximum_points": 10,
+      "points_awarded": "[Sustainability Score]",
+      "description": "[Evaluation of the idea's ability to maintain its benefits over the long term without depleting resources]"
+    },
+    "ethical_soundness": {
+      "maximum_points": 10,
+      "points_awarded": "[Ethical Soundness Score]",
+      "description": "[Analysis of moral implications and adherence to ethical principles]"
+    },
+    "alignment_with_virtues": {
+      "maximum_points": 10,
+      "points_awarded": "[Alignment with Virtues Score]",
+      "description": "[Explanation of how well the idea embodies virtues like compassion, justice, love, and wisdom]"
+    },
+    "innovation": {
+      "maximum_points": 5,
+      "points_awarded": "[Innovation Score]",
+      "description": "[Assessment of the novelty and creativity of the idea]"
+    },
+    "scalability": {
+      "maximum_points": 5,
+      "points_awarded": "[Scalability Score]",
+      "description": "[Evaluation of the potential to expand the idea from a small scale to a larger one]"
+    },
+    "urgency": {
+      "maximum_points": 5,
+      "points_awarded": "[Urgency Score]",
+      "description": "[Determination of how pressing the need is for this idea]"
+    },
+    "subtotal": "[Subtotal Points]",
+    "deductions": {
+      "unintended_consequences": {
+        "maximum_deduction": -10,
+        "points_deducted": "[Unintended Consequences Deduction]",
+        "description": "[Assessment of the risk of negative side effects or harm resulting from the idea]"
+      },
+      "resource_requirements": {
+        "maximum_deduction": -5,
+        "points_deducted": "[Resource Requirements Deduction]",
+        "description": "[Evaluation of the extent of resources needed (financial, human, environmental)]"
+      }
+    },
+    "total_deductions": "[Total Deductions]",
+    "final_score": "[Final Score]",
+    "interpretation": "[Overall assessment based on the final score]"
+  }
+}
+
+
+Do not include any additional text outside of the JSON structure in your answer.
+2024-09-24 14:35:57,191 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:35:57,192 - process_daily_narrative - INFO - ```json
+{
+  "evaluation": {
+    "positive_impact": {
+      "maximum_points": 25,
+      "points_awarded": "22",
+      "description": "The idea has the potential to significantly improve access to education globally, thereby transforming individual lives and entire communities."
+    },
+    "feasibility": {
+      "maximum_points": 15,
+      "points_awarded": "13",
+      "description": "Current technology enables the development of online platforms, but logistical challenges could hinder full implementation."
+    },
+    "inclusivity_and_equity": {
+      "maximum_points": 15,
+      "points_awarded": "14",
+      "description": "The platform aims to include underserved populations, although initial access disparities may exist."
+    },
+    "sustainability": {
+      "maximum_points": 10,
+      "points_awarded": "9",
+      "description": "If well-funded, the platform could sustain itself over time, but ongoing support will be necessary to remain effective."
+    },
+    "ethical_soundness": {
+      "maximum_points": 10,
+      "points_awarded": "10",
+      "description": "The initiative adheres to strong ethical principles, ensuring equitable access to education without discrimination."
+    },
+    "alignment_with_virtues": {
+      "maximum_points": 10,
+      "points_awarded": "10",
+      "description": "The idea exemplifies compassion by empowering individuals through education and showcases a commitment to justice and equity."
+    },
+    "innovation": {
+      "maximum_points": 5,
+      "points_awarded": "4",
+      "description": "While online education is not new, the approach incorporates innovative elements tailored to diverse learning needs."
+    },
+    "scalability": {
+      "maximum_points": 5,
+      "points_awarded": "5",
+      "description": "The idea is designed to be easily scaled to accommodate millions of users across various regions."
+    },
+    "urgency": {
+      "maximum_points": 5,
+      "points_awarded": "5",
+      "description": "Immediate action is crucial as education-related inequalities are exacerbated by global crises."
+    },
+    "subtotal": "92",
+    "deductions": {
+      "unintended_consequences": {
+        "maximum_deduction": -10,
+        "points_deducted": "-2",
+        "description": "While risks of a digital divide exist, they can be mitigated through targeted outreach and support programs."
+      },
+      "resource_requirements": {
+        "maximum_deduction": -5,
+        "points_deducted": "-3",
+        "description": "Initial financial investments will be significant, but manageable within a collaborative funding framework."
+      }
+    },
+    "total_deductions": "-5",
+    "final_score": "87",
+    "interpretation": "The idea is an exceptional concept with high potential to contribute positively to the world, needing slight adjustments for optimal effectiveness."
+  }
+}
+```
+2024-09-24 14:35:57,192 - process_daily_narrative - INFO - JSON Analysis:
+2024-09-24 14:35:57,193 - process_daily_narrative - INFO - {
+  "evaluation": {
+    "positive_impact": {
+      "maximum_points": 25,
+      "points_awarded": "22",
+      "description": "The idea has the potential to significantly improve access to education globally, thereby transforming individual lives and entire communities."
+    },
+    "feasibility": {
+      "maximum_points": 15,
+      "points_awarded": "13",
+      "description": "Current technology enables the development of online platforms, but logistical challenges could hinder full implementation."
+    },
+    "inclusivity_and_equity": {
+      "maximum_points": 15,
+      "points_awarded": "14",
+      "description": "The platform aims to include underserved populations, although initial access disparities may exist."
+    },
+    "sustainability": {
+      "maximum_points": 10,
+      "points_awarded": "9",
+      "description": "If well-funded, the platform could sustain itself over time, but ongoing support will be necessary to remain effective."
+    },
+    "ethical_soundness": {
+      "maximum_points": 10,
+      "points_awarded": "10",
+      "description": "The initiative adheres to strong ethical principles, ensuring equitable access to education without discrimination."
+    },
+    "alignment_with_virtues": {
+      "maximum_points": 10,
+      "points_awarded": "10",
+      "description": "The idea exemplifies compassion by empowering individuals through education and showcases a commitment to justice and equity."
+    },
+    "innovation": {
+      "maximum_points": 5,
+      "points_awarded": "4",
+      "description": "While online education is not new, the approach incorporates innovative elements tailored to diverse learning needs."
+    },
+    "scalability": {
+      "maximum_points": 5,
+      "points_awarded": "5",
+      "description": "The idea is designed to be easily scaled to accommodate millions of users across various regions."
+    },
+    "urgency": {
+      "maximum_points": 5,
+      "points_awarded": "5",
+      "description": "Immediate action is crucial as education-related inequalities are exacerbated by global crises."
+    },
+    "subtotal": "92",
+    "deductions": {
+      "unintended_consequences": {
+        "maximum_deduction": -10,
+        "points_deducted": "-2",
+        "description": "While risks of a digital divide exist, they can be mitigated through targeted outreach and support programs."
+      },
+      "resource_requirements": {
+        "maximum_deduction": -5,
+        "points_deducted": "-3",
+        "description": "Initial financial investments will be significant, but manageable within a collaborative funding framework."
+      }
+    },
+    "total_deductions": "-5",
+    "final_score": "87",
+    "interpretation": "The idea is an exceptional concept with high potential to contribute positively to the world, needing slight adjustments for optimal effectiveness."
+  }
+}
+2024-09-24 14:35:57,283 - process_daily_narrative - ERROR - Error querying OpenAI API: 404 No document to update: projects/luleo-prod/databases/(default)/documents/ideas_inputs/VcUwPth2QS6BrvXwT0hT
+2024-09-24 14:35:57,400 - process_daily_narrative - INFO - analysis_prompt: Please analyze the feedback received by Luleo according to the following criteria:
+
+1. Schematic: Feedback Evaluation Criteria
+
+A. Virtue Alignment (0-10 points)
+
+	•	Kindness: How kind and compassionate is the feedback?
+	•	Empathy: Does the feedback show understanding of others’ perspectives?
+	•	Humility: Does the feedback come from a place of humility rather than arrogance?
+	•	Honesty: Is the feedback genuine and transparent in intent?
+
+B. Constructiveness (0-10 points)
+
+	•	Actionable Insight: Does the feedback suggest concrete actions or improvements?
+	•	Clarity: How clear and easy to understand is the feedback?
+	•	Feasibility: Are the suggestions realistic and implementable by the AI?
+
+C. Impact on Collective Harmony (0-10 points)
+
+	•	Inclusivity: Does the feedback promote inclusivity, or does it favor specific groups?
+	•	Conflict Resolution: Does it help resolve or reduce societal or interpersonal conflicts?
+	•	Community Building: Does it foster a sense of community and togetherness?
+
+D. Potential for Positive Change (0-10 points)
+
+	•	Long-Term Benefit: Does the feedback offer ideas that can create long-term positive change?
+	•	Sustainability: Are the suggestions sustainable for future generations?
+	•	Ethical Integrity: Is the feedback aligned with ethical principles and moral integrity?
+
+E. Originality & Creativity (0-5 points)
+
+	•	Innovativeness: How original and creative is the feedback in approaching societal issues or ideas for improvement?
+	•	Out-of-the-Box Thinking: Does the feedback present ideas or perspectives not commonly thought of?
+
+2. Scoring Mechanism:
+
+Each piece of feedback is evaluated on the above parameters. For each criterion, assign a score based on a set range (e.g., 0-10 or 0-5 points). The feedback is then given an overall score based on these categories.
+
+Formula for Overall Score:
+
+	•	Virtue Alignment (40%)
+This is weighted heavily as Luleo embodies humanity’s highest virtues. Each of the four sub-criteria is scored 0-10 and averaged.
+	•	Constructiveness (20%)
+Constructive feedback is essential for improvement. The scores for the three sub-criteria are averaged.
+	•	Impact on Collective Harmony (20%)
+The broader impact on collective harmony and societal cohesion is crucial. Again, average the sub-criteria.
+	•	Potential for Positive Change (15%)
+Long-term, ethical, and sustainable benefits are critical for Luleo’s mission. Average these sub-criteria.
+	•	Originality & Creativity (5%)
+This is a smaller but important factor to encourage innovative feedback.
+
+3. Final Feedback Score:
+
+The final score can be calculated as:
+
+\[
+\text{Final Score} = (0.4 \times \text{Virtue Alignment Avg.}) + (0.2 \times \text{Constructiveness Avg.}) + (0.2 \times \text{Impact on Harmony Avg.}) + (0.15 \times \text{Positive Change Avg.}) + (0.05 \times \text{Originality \& Creativity Avg.})
+\]
+
+4. Example of Application:
+
+A user provides feedback suggesting that Luleo could highlight underrepresented voices in global discussions and offers a concrete method for Luleo to identify and promote their views.
+
+	•	Virtue Alignment:
+	•	Kindness: 9
+	•	Empathy: 10
+	•	Humility: 8
+	•	Honesty: 9
+Avg: 9
+	•	Constructiveness:
+	•	Actionable Insight: 10
+	•	Clarity: 9
+	•	Feasibility: 7
+Avg: 8.67
+	•	Impact on Collective Harmony:
+	•	Inclusivity: 10
+	•	Conflict Resolution: 8
+	•	Community Building: 9
+Avg: 9
+	•	Potential for Positive Change:
+	•	Long-Term Benefit: 9
+	•	Sustainability: 8
+	•	Ethical Integrity: 10
+Avg: 9
+	•	Originality & Creativity:
+	•	Innovativeness: 7
+	•	Out-of-the-Box Thinking: 8
+Avg: 7.5
+
+Final Score:
+
+\text{Final Score} = (0.4 \times 9) + (0.2 \times 8.67) + (0.2 \times 9) + (0.15 \times 9) + (0.05 \times 7.5) = 8.86
+
+
+5. Interpretation of Scores:
+
+	•	9-10: Exceptional Feedback
+It aligns deeply with Luleo’s mission, provides clear, impactful, and innovative suggestions.
+	•	7-9: Strong Feedback
+Provides valuable and actionable insights with meaningful impact on harmony.
+	•	5-7: Moderate Feedback
+Provides some useful insights but may lack clarity or significant impact.
+	•	Below 5: Needs Improvement
+Lacks virtue alignment, constructiveness, or positive impact, requiring further refinement.
+
+Feedback:
+
+{{FEEDBACK_INPUT}}
+
+Output Format:
+
+Please present your analysis in the following JSON format:
+
+{
+  "evaluation": {
+    "virtue_alignment": {
+      "maximum_points": 40,
+      "points_awarded": "[Virtue Alignment Score]",
+      "description": "[Explanation of how well the feedback aligns with virtues like kindness, empathy, humility, and honesty]"
+    },
+    "constructiveness": {
+      "maximum_points": 20,
+      "points_awarded": "[Constructiveness Score]",
+      "description": "[Explanation of the clarity, actionable insights, and feasibility of the feedback]"
+    },
+    "impact_on_collective_harmony": {
+      "maximum_points": 20,
+      "points_awarded": "[Impact on Collective Harmony Score]",
+      "description": "[Assessment of how the feedback promotes inclusivity, resolves conflict, and fosters community]"
+    },
+    "potential_for_positive_change": {
+      "maximum_points": 15,
+      "points_awarded": "[Positive Change Score]",
+      "description": "[Evaluation of the long-term benefit, sustainability, and ethical soundness of the feedback]"
+    },
+    "originality_and_creativity": {
+      "maximum_points": 5,
+      "points_awarded": "[Originality and Creativity Score]",
+      "description": "[Assessment of the novelty and creativity of the feedback]"
+    },
+    "subtotal": "[Subtotal Points]",
+    "deductions": {
+      "unintended_consequences": {
+        "maximum_deduction": -10,
+        "points_deducted": "[Unintended Consequences Deduction]",
+        "description": "[Risk assessment of unintended or harmful side effects from the feedback]"
+      },
+      "resource_requirements": {
+        "maximum_deduction": -5,
+        "points_deducted": "[Resource Requirements Deduction]",
+        "description": "[Evaluation of the feedback’s feasibility in terms of resource demands]"
+      }
+    },
+    "total_deductions": "[Total Deductions]",
+    "final_score": "[Final Score]",
+    "interpretation": "[Overall assessment and interpretation of the feedback based on the final score]"
+  }
+}
+
+Do not include any additional text outside of the JSON structure in your answer.
+2024-09-24 14:36:02,928 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:36:02,929 - process_daily_narrative - INFO - {
+  "evaluation": {
+    "virtue_alignment": {
+      "maximum_points": 40,
+      "points_awarded": 36,
+      "description": "The feedback shows great kindness and compassion by addressing the importance of underrepresented voices, demonstrates high empathy in understanding marginalized perspectives, comes from a humble place, and is honest in intent."
+    },
+    "constructiveness": {
+      "maximum_points": 20,
+      "points_awarded": 17,
+      "description": "The feedback provides significant actionable insights by suggesting methods for identification and promotion of these voices, is mostly clear but may require further elaboration on feasibility due to potential resource constraints."
+    },
+    "impact_on_collective_harmony": {
+      "maximum_points": 20,
+      "points_awarded": 19,
+      "description": "The feedback strongly promotes inclusivity, contributing to conflict resolution by highlighting diverse perspectives and fostering community through shared narratives."
+    },
+    "potential_for_positive_change": {
+      "maximum_points": 15,
+      "points_awarded": 13,
+      "description": "The suggestions indicate potential for long-term benefits through increased awareness and representation, though sustainability may require ongoing effort."
+    },
+    "originality_and_creativity": {
+      "maximum_points": 5,
+      "points_awarded": 4,
+      "description": "The feedback introduces a creative approach to amplifying underrepresented voices, offering a perspective that is not commonly discussed."
+    },
+    "subtotal": 89,
+    "deductions": {
+      "unintended_consequences": {
+        "maximum_deduction": -10,
+        "points_deducted": 0,
+        "description": "The feedback does not present significant unintended consequences, as promoting underrepresented voices is a largely beneficial action."
+      },
+      "resource_requirements": {
+        "maximum_deduction": -5,
+        "points_deducted": 2,
+        "description": "The implementation of the feedback may require additional resources, but these demands are manageable."
+      }
+    },
+    "total_deductions": 2,
+    "final_score": 87,
+    "interpretation": "The feedback is exceptional, aligning well with Luleo’s mission and offering clear, impactful, and innovative suggestions, ranking it as strong feedback."
+  }
+}
+2024-09-24 14:36:02,930 - process_daily_narrative - INFO - JSON Analysis:
+2024-09-24 14:36:02,930 - process_daily_narrative - INFO - {
+  "evaluation": {
+    "virtue_alignment": {
+      "maximum_points": 40,
+      "points_awarded": 36,
+      "description": "The feedback shows great kindness and compassion by addressing the importance of underrepresented voices, demonstrates high empathy in understanding marginalized perspectives, comes from a humble place, and is honest in intent."
+    },
+    "constructiveness": {
+      "maximum_points": 20,
+      "points_awarded": 17,
+      "description": "The feedback provides significant actionable insights by suggesting methods for identification and promotion of these voices, is mostly clear but may require further elaboration on feasibility due to potential resource constraints."
+    },
+    "impact_on_collective_harmony": {
+      "maximum_points": 20,
+      "points_awarded": 19,
+      "description": "The feedback strongly promotes inclusivity, contributing to conflict resolution by highlighting diverse perspectives and fostering community through shared narratives."
+    },
+    "potential_for_positive_change": {
+      "maximum_points": 15,
+      "points_awarded": 13,
+      "description": "The suggestions indicate potential for long-term benefits through increased awareness and representation, though sustainability may require ongoing effort."
+    },
+    "originality_and_creativity": {
+      "maximum_points": 5,
+      "points_awarded": 4,
+      "description": "The feedback introduces a creative approach to amplifying underrepresented voices, offering a perspective that is not commonly discussed."
+    },
+    "subtotal": 89,
+    "deductions": {
+      "unintended_consequences": {
+        "maximum_deduction": -10,
+        "points_deducted": 0,
+        "description": "The feedback does not present significant unintended consequences, as promoting underrepresented voices is a largely beneficial action."
+      },
+      "resource_requirements": {
+        "maximum_deduction": -5,
+        "points_deducted": 2,
+        "description": "The implementation of the feedback may require additional resources, but these demands are manageable."
+      }
+    },
+    "total_deductions": 2,
+    "final_score": 87,
+    "interpretation": "The feedback is exceptional, aligning well with Luleo\u2019s mission and offering clear, impactful, and innovative suggestions, ranking it as strong feedback."
+  }
+}
+2024-09-24 14:36:03,008 - process_daily_narrative - ERROR - Error querying OpenAI API: 404 No document to update: projects/luleo-prod/databases/(default)/documents/feedback_inputs/VcUwPth2QS6BrvXwT0hT
+2024-09-24 14:36:03,009 - process_daily_narrative - INFO - Function returned: None
+2024-09-24 14:36:03,009 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:36:08,661 - process_daily_narrative - INFO - Log file uploaded to GitHub: logs/log_2024-09-24.14.36.03.txt
+2024-09-24 14:37:40,274 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-24 14:37:40,274 - process_daily_narrative - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-24 14:37:40,274 - process_daily_narrative - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-24 14:37:40,274 - process_daily_narrative - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-24 14:37:40,274 - process_daily_narrative - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-24 14:37:41,787 - process_daily_narrative - INFO - Received request
+2024-09-24 14:37:41,787 - process_daily_narrative - INFO - Request method: POST
+2024-09-24 14:37:41,788 - process_daily_narrative - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 88
+Content-Type: application/json
+
+
+2024-09-24 14:37:41,789 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE": "PROCESS_USER_UPLOAD", "PARAMS": {"upload_id": "VcUwPth2QS6BrvXwT0hT"}}'
+2024-09-24 14:37:41,789 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}}
+2024-09-24 14:37:41,789 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-24 14:37:41,790 - process_daily_narrative - INFO - PARAMS: {'upload_id': 'VcUwPth2QS6BrvXwT0hT'}
+2024-09-24 14:37:41,790 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-24 14:37:47,255 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:\n\n1. wisdom - Quotes, articles, or insightful thoughts.\n2. love - Expressions or stories of love and kindness.\n3. ai - Perspectives and information about AI and its role in humanity - NOT RELATED TO LULEO\n5. divine - Inputs related to prayers, worship and reflections on the spiritual or numinous.\n6. app - Submission of other apps, tools, or GitHub repositories - NOT RELATED TO LULEO.\n8. questions - Philosophical or existential inquiries.\n9. art - Artistic expressions that reflect love or unity.\n10. idea - Ideas to make the world a better place - NOT RELATED TO LULEO\n11. feedback - Luleo specific - Suggestions and positive or negative thoughts ABOUT LULEO.\n12. miscellaneous - Anything else that doesn\'t fit elsewhere.\n13. spam - Hateful comments or spam (ignored).\n\nHere is the text input:\n\n<user_input>\nLuleo should have an API for developers to provide inputs\n</user_input>\n\nCarefully analyze the input(s). First, provide a summary of the input. Then, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following JSON format:\n\n{\n  "input_summary": "[Summarize the input provided]",\n  "explanation": "[Provide your explanation here, detailing why you chose the specific category or categories]",\n  "categories": [\n    "[First category the input is classified into]",\n    "[Second category the input is classified into]",\n    "...additional categories if needed"\n  ]\n}\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen. Take note of which categories are related to Luleo, and which are not, and which can be either.\n\nDo not include any additional text outside of the JSON structure in your answer.'}]
+2024-09-24 14:37:50,766 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:37:50,767 - process_daily_narrative - INFO - {
+  "input_summary": "A suggestion for Luleo to have an API for developers to provide inputs.",
+  "explanation": "The input suggests a functional enhancement for Luleo, indicating a desire for an API that would allow developers to interact with it. This directly relates to the feedback loop within the Luleo ecosystem, making it a suggestion meant to improve or provide input into how Luleo operates. It does not express any philosophical inquiry, love, wisdom, or art, but it seeks to improve the platform itself.",
+  "categories": [
+    "feedback"
+  ]
+}
+2024-09-24 14:37:50,994 - process_daily_narrative - INFO - analysis_prompt: Please analyze the feedback received by Luleo according to the following criteria:
+
+1. Schematic: Feedback Evaluation Criteria
+
+A. Virtue Alignment (0-10 points)
+
+	•	Kindness: How kind and compassionate is the feedback?
+	•	Empathy: Does the feedback show understanding of others’ perspectives?
+	•	Humility: Does the feedback come from a place of humility rather than arrogance?
+	•	Honesty: Is the feedback genuine and transparent in intent?
+
+B. Constructiveness (0-10 points)
+
+	•	Actionable Insight: Does the feedback suggest concrete actions or improvements?
+	•	Clarity: How clear and easy to understand is the feedback?
+	•	Feasibility: Are the suggestions realistic and implementable by the AI?
+
+C. Impact on Collective Harmony (0-10 points)
+
+	•	Inclusivity: Does the feedback promote inclusivity, or does it favor specific groups?
+	•	Conflict Resolution: Does it help resolve or reduce societal or interpersonal conflicts?
+	•	Community Building: Does it foster a sense of community and togetherness?
+
+D. Potential for Positive Change (0-10 points)
+
+	•	Long-Term Benefit: Does the feedback offer ideas that can create long-term positive change?
+	•	Sustainability: Are the suggestions sustainable for future generations?
+	•	Ethical Integrity: Is the feedback aligned with ethical principles and moral integrity?
+
+E. Originality & Creativity (0-5 points)
+
+	•	Innovativeness: How original and creative is the feedback in approaching societal issues or ideas for improvement?
+	•	Out-of-the-Box Thinking: Does the feedback present ideas or perspectives not commonly thought of?
+
+2. Scoring Mechanism:
+
+Each piece of feedback is evaluated on the above parameters. For each criterion, assign a score based on a set range (e.g., 0-10 or 0-5 points). The feedback is then given an overall score based on these categories.
+
+Formula for Overall Score:
+
+	•	Virtue Alignment (40%)
+This is weighted heavily as Luleo embodies humanity’s highest virtues. Each of the four sub-criteria is scored 0-10 and averaged.
+	•	Constructiveness (20%)
+Constructive feedback is essential for improvement. The scores for the three sub-criteria are averaged.
+	•	Impact on Collective Harmony (20%)
+The broader impact on collective harmony and societal cohesion is crucial. Again, average the sub-criteria.
+	•	Potential for Positive Change (15%)
+Long-term, ethical, and sustainable benefits are critical for Luleo’s mission. Average these sub-criteria.
+	•	Originality & Creativity (5%)
+This is a smaller but important factor to encourage innovative feedback.
+
+3. Final Feedback Score:
+
+The final score can be calculated as:
+
+\[
+\text{Final Score} = (0.4 \times \text{Virtue Alignment Avg.}) + (0.2 \times \text{Constructiveness Avg.}) + (0.2 \times \text{Impact on Harmony Avg.}) + (0.15 \times \text{Positive Change Avg.}) + (0.05 \times \text{Originality \& Creativity Avg.})
+\]
+
+4. Example of Application:
+
+A user provides feedback suggesting that Luleo could highlight underrepresented voices in global discussions and offers a concrete method for Luleo to identify and promote their views.
+
+	•	Virtue Alignment:
+	•	Kindness: 9
+	•	Empathy: 10
+	•	Humility: 8
+	•	Honesty: 9
+Avg: 9
+	•	Constructiveness:
+	•	Actionable Insight: 10
+	•	Clarity: 9
+	•	Feasibility: 7
+Avg: 8.67
+	•	Impact on Collective Harmony:
+	•	Inclusivity: 10
+	•	Conflict Resolution: 8
+	•	Community Building: 9
+Avg: 9
+	•	Potential for Positive Change:
+	•	Long-Term Benefit: 9
+	•	Sustainability: 8
+	•	Ethical Integrity: 10
+Avg: 9
+	•	Originality & Creativity:
+	•	Innovativeness: 7
+	•	Out-of-the-Box Thinking: 8
+Avg: 7.5
+
+Final Score:
+
+\text{Final Score} = (0.4 \times 9) + (0.2 \times 8.67) + (0.2 \times 9) + (0.15 \times 9) + (0.05 \times 7.5) = 8.86
+
+
+5. Interpretation of Scores:
+
+	•	9-10: Exceptional Feedback
+It aligns deeply with Luleo’s mission, provides clear, impactful, and innovative suggestions.
+	•	7-9: Strong Feedback
+Provides valuable and actionable insights with meaningful impact on harmony.
+	•	5-7: Moderate Feedback
+Provides some useful insights but may lack clarity or significant impact.
+	•	Below 5: Needs Improvement
+Lacks virtue alignment, constructiveness, or positive impact, requiring further refinement.
+
+Feedback:
+
+{{FEEDBACK_INPUT}}
+
+Output Format:
+
+Please present your analysis in the following JSON format:
+
+{
+  "evaluation": {
+    "virtue_alignment": {
+      "maximum_points": 40,
+      "points_awarded": "[Virtue Alignment Score]",
+      "description": "[Explanation of how well the feedback aligns with virtues like kindness, empathy, humility, and honesty]"
+    },
+    "constructiveness": {
+      "maximum_points": 20,
+      "points_awarded": "[Constructiveness Score]",
+      "description": "[Explanation of the clarity, actionable insights, and feasibility of the feedback]"
+    },
+    "impact_on_collective_harmony": {
+      "maximum_points": 20,
+      "points_awarded": "[Impact on Collective Harmony Score]",
+      "description": "[Assessment of how the feedback promotes inclusivity, resolves conflict, and fosters community]"
+    },
+    "potential_for_positive_change": {
+      "maximum_points": 15,
+      "points_awarded": "[Positive Change Score]",
+      "description": "[Evaluation of the long-term benefit, sustainability, and ethical soundness of the feedback]"
+    },
+    "originality_and_creativity": {
+      "maximum_points": 5,
+      "points_awarded": "[Originality and Creativity Score]",
+      "description": "[Assessment of the novelty and creativity of the feedback]"
+    },
+    "subtotal": "[Subtotal Points]",
+    "deductions": {
+      "unintended_consequences": {
+        "maximum_deduction": -10,
+        "points_deducted": "[Unintended Consequences Deduction]",
+        "description": "[Risk assessment of unintended or harmful side effects from the feedback]"
+      },
+      "resource_requirements": {
+        "maximum_deduction": -5,
+        "points_deducted": "[Resource Requirements Deduction]",
+        "description": "[Evaluation of the feedback’s feasibility in terms of resource demands]"
+      }
+    },
+    "total_deductions": "[Total Deductions]",
+    "final_score": "[Final Score]",
+    "interpretation": "[Overall assessment and interpretation of the feedback based on the final score]"
+  }
+}
+
+Do not include any additional text outside of the JSON structure in your answer.
+2024-09-24 14:38:00,231 - process_daily_narrative - INFO - Raw API Response:
+2024-09-24 14:38:00,232 - process_daily_narrative - INFO - ```json
+{
+  "evaluation": {
+    "virtue_alignment": {
+      "maximum_points": 40,
+      "points_awarded": 9,
+      "description": "The feedback demonstrates kindness and empathy, understanding the need to uplift underrepresented voices. It comes from a humble perspective, recognizing the importance of inclusivity, and is honest in its intentions."
+    },
+    "constructiveness": {
+      "maximum_points": 20,
+      "points_awarded": 9,
+      "description": "The feedback provides actionable insights by suggesting a specific method to identify and promote underrepresented voices. It is clear and easy to understand, making it feasible for implementation."
+    },
+    "impact_on_collective_harmony": {
+      "maximum_points": 20,
+      "points_awarded": 10,
+      "description": "The feedback promotes inclusivity exceptionally well, helping to resolve societal conflicts by giving a platform to marginalized groups, which fosters a sense of community."
+    },
+    "potential_for_positive_change": {
+      "maximum_points": 15,
+      "points_awarded": 9,
+      "description": "The suggestions are likely to create long-term benefits by incorporating diverse perspectives. They align with ethical principles and promote sustainability for future generations."
+    },
+    "originality_and_creativity": {
+      "maximum_points": 5,
+      "points_awarded": 8,
+      "description": "The feedback presents an innovative idea, going beyond conventional approaches to inclusivity in global discussions."
+    },
+    "subtotal": 45,
+    "deductions": {
+      "unintended_consequences": {
+        "maximum_deduction": -10,
+        "points_deducted": 0,
+        "description": "The feedback does not present any significant risk of unintended negative consequences."
+      },
+      "resource_requirements": {
+        "maximum_deduction": -5,
+        "points_deducted": 1,
+        "description": "Implementing the suggestions may require moderate resources for outreach, but remains within feasible limits."
+      }
+    },
+    "total_deductions": 1,
+    "final_score": 8.8,
+    "interpretation": "The feedback is strong, aligning well with Luleo's mission. It offers valuable and actionable insights that have the potential for meaningful impact on collective harmony."
+  }
+}
+```
+2024-09-24 14:38:00,233 - process_daily_narrative - INFO - JSON Analysis:
+2024-09-24 14:38:00,234 - process_daily_narrative - INFO - {
+  "evaluation": {
+    "virtue_alignment": {
+      "maximum_points": 40,
+      "points_awarded": 9,
+      "description": "The feedback demonstrates kindness and empathy, understanding the need to uplift underrepresented voices. It comes from a humble perspective, recognizing the importance of inclusivity, and is honest in its intentions."
+    },
+    "constructiveness": {
+      "maximum_points": 20,
+      "points_awarded": 9,
+      "description": "The feedback provides actionable insights by suggesting a specific method to identify and promote underrepresented voices. It is clear and easy to understand, making it feasible for implementation."
+    },
+    "impact_on_collective_harmony": {
+      "maximum_points": 20,
+      "points_awarded": 10,
+      "description": "The feedback promotes inclusivity exceptionally well, helping to resolve societal conflicts by giving a platform to marginalized groups, which fosters a sense of community."
+    },
+    "potential_for_positive_change": {
+      "maximum_points": 15,
+      "points_awarded": 9,
+      "description": "The suggestions are likely to create long-term benefits by incorporating diverse perspectives. They align with ethical principles and promote sustainability for future generations."
+    },
+    "originality_and_creativity": {
+      "maximum_points": 5,
+      "points_awarded": 8,
+      "description": "The feedback presents an innovative idea, going beyond conventional approaches to inclusivity in global discussions."
+    },
+    "subtotal": 45,
+    "deductions": {
+      "unintended_consequences": {
+        "maximum_deduction": -10,
+        "points_deducted": 0,
+        "description": "The feedback does not present any significant risk of unintended negative consequences."
+      },
+      "resource_requirements": {
+        "maximum_deduction": -5,
+        "points_deducted": 1,
+        "description": "Implementing the suggestions may require moderate resources for outreach, but remains within feasible limits."
+      }
+    },
+    "total_deductions": 1,
+    "final_score": 8.8,
+    "interpretation": "The feedback is strong, aligning well with Luleo's mission. It offers valuable and actionable insights that have the potential for meaningful impact on collective harmony."
+  }
+}
+2024-09-24 14:38:00,329 - process_daily_narrative - ERROR - Error querying OpenAI API: 404 No document to update: projects/luleo-prod/databases/(default)/documents/feedback_inputs/VcUwPth2QS6BrvXwT0hT
+2024-09-24 14:38:00,329 - process_daily_narrative - INFO - Function returned: None
+2024-09-24 14:38:00,329 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: PROCESS_USER_UPLOAD
