@@ -1,0 +1,34 @@
+2024-09-25 10:41:39,510 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-25 10:41:39,511 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-25 10:41:39,511 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-25 10:41:39,511 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-25 10:41:39,511 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-25 10:41:39,587 - process_daily_narrative - INFO - Received request
+2024-09-25 10:41:39,587 - process_daily_narrative - INFO - Request method: POST
+2024-09-25 10:41:39,587 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Accept: application/json, text/plain, */*
+Content-Type: application/json
+User-Agent: axios/1.6.7
+Content-Length: 84
+X-Cloud-Trace-Context: ba3c810112efe8a93ff2a4b99f3aebbf/9848718937002861100;o=1
+Traceparent: 00-ba3c810112efe8a93ff2a4b99f3aebbf-88adadb144b7e22c-01
+X-Forwarded-For: 2600:1900:0:2d05::2e00
+X-Forwarded-Proto: https
+Forwarded: for="[2600:1900:0:2d05::2e00]";proto=https
+Accept-Encoding: gzip, compress, deflate, br
+
+
+2024-09-25 10:41:39,588 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE":"PROCESS_USER_UPLOAD","PARAMS":{"upload_id":"WH9v8pWrIK9kFQC4iYkq"}}'
+2024-09-25 10:41:39,588 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': 'WH9v8pWrIK9kFQC4iYkq'}}
+2024-09-25 10:41:39,588 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-25 10:41:39,588 - process_daily_narrative - INFO - PARAMS: {'upload_id': 'WH9v8pWrIK9kFQC4iYkq'}
+2024-09-25 10:41:39,588 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-25 10:41:39,725 - process_daily_narrative - ERROR - Error in PROCESS_USER_UPLOAD {'upload_id': 'WH9v8pWrIK9kFQC4iYkq'}
+2024-09-25 10:41:39,730 - process_daily_narrative - ERROR - Traceback (most recent call last):
+  File "/app/main.py", line 51, in call_default_cloud_run
+    ret_val = func_to_apply(**request_params)
+  File "/app/utils/luleo.py", line 55, in process_user_upload
+    if not user_file_url.endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp', '.tiff', '.pdf')):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+
