@@ -1,13 +1,11 @@
 import io
-from pydub import AudioSegment
+from urllib.parse import urlparse
 from PyPDF2 import PdfFileReader
-from PIL import Image
-from utils.openai_api import call_openai_api, call_openai_image_api
-from utils.pdf_generator import save_as_pdf
-import json
 import os
 from github import Github, GithubException
-from datetime import datetime
+import tempfile
+
+import requests
 
 def process_text_pdf(content, file_name):
     try:
@@ -18,19 +16,24 @@ def process_text_pdf(content, file_name):
                 full_text += reader.getPage(page).extract_text()
         else:
             full_text = content.decode('utf-8')
-        summary = call_openai_api(full_text, 'summary')
-        return full_text, summary
+        return full_text,
     except Exception as e:
         print(f'Error processing text/PDF file {file_name}: {e}')
-        return None, None
+        return None
 
-def process_image(content, file_name):
-    d_vals = call_openai_image_api(content)
-    if d_vals["is_inappropriate"]:
-        return None 
-    return d_vals["description"]
-
-
+def download_to_local_path(url):
+    try:
+        parsed_url = urlparse(url)
+        filename = os.path.basename(parsed_url.path)
+        with tempfile.NamedTemporaryFile(delete=False, suffix=os.path.splitext(filename)[1]) as temp_file:
+            response = requests.get(url)
+            response.raise_for_status()
+            temp_file.write(response.content)
+            return temp_file.name
+    except Exception as e:
+        print(f"Error downloading file: {e}")
+        return None
+    
 # Create GitHub folder with nested subfolders
 def create_daily_folder():
     github_token = os.environ.get('GITHUB_TOKEN')

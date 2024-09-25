@@ -1,0 +1,28 @@
+# Ignore node_modules directory (dependencies installed via npm)
+node_modules/
+
+# Ignore environment variables and sensitive config files
+.env
+
+# Ignore Firebase cache and config artifacts
+.firebase/
+.firebaserc
+firebase.json
+firestore.indexes.json
+firestore.rules
+
+# Ignore lock files (can be optional based on team preferences)
+package-lock.json
+
+# Ignore any local backup files or temporary files
+*.log
+*.tmp
+
+# Ignore compiled JavaScript output (if applicable)
+*.js.map
+
+# Ignore .cloudignore (Firebase specific)
+.gcloudignore
+
+# Ignore eslint config files if not needed in repo
+.eslintrc.js

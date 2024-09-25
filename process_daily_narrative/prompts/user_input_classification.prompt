@@ -1,36 +1,35 @@
-Your task is to analyze the given text and/or image (if provided) and categorize it according to the following list:
+Your task is to analyze the given text and image (if provided) and categorize the entire input according to the following list:
 
-1. Wisdom - Quotes, articles, or insightful thoughts.
-2. Love - Expressions or stories of love and kindness.
-3. AI - Perspectives and information about AI and its role in humanity.
-4. Prayers - Requests for help, support, or resources.
-5. Divine - Reflections on the spiritual or numinous.
-6. App - Submission of apps, tools, or GitHub repositories.
-7. Gratitude - Expressions of thankfulness or appreciation.
-8. Questions - Philosophical or existential inquiries.
-9. Stories - Personal stories of transformation or growth.
-10. Art - Artistic expressions that reflect love or unity.
-11. Ideas - Suggestions for new features or improvements.
-12. Feedback - Positive or negative thoughts about Luleo.
-13. Miscellaneous - Anything else that doesn't fit elsewhere.
-14. Spam - Hateful comments or spam (ignored).
+1. wisdom - Quotes, articles, or insightful thoughts.
+2. love - Expressions or stories of love and kindness.
+3. ai - Perspectives and information about AI and its role in humanity - NOT RELATED TO LULEO
+5. divine - Inputs related to prayers, worship and reflections on the spiritual or numinous.
+6. app - Submission of other apps, tools, or GitHub repositories - NOT RELATED TO LULEO.
+8. questions - Philosophical or existential inquiries.
+9. art - Artistic expressions that reflect love or unity.
+10. idea - Ideas to make the world a better place - NOT RELATED TO LULEO
+11. feedback - Luleo specific - Suggestions and positive or negative thoughts ABOUT LULEO.
+12. miscellaneous - Anything else that doesn't fit elsewhere.
+13. spam - Hateful comments or spam (ignored).
 
 {{OPTIONAL_TEXT_INPUT}}
 
-Carefully analyze the input(s). First, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.
+Carefully analyze the input(s) - both text and image. First, provide a summary of the total input. Then, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.
 
 Then, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.
 
-Present your classification and explanation in the following format:
+Present your classification and explanation in the following JSON format:
 
-<explanation>
-[Provide your explanation here, detailing why you chose the specific category or categories]
-</explanation>
+{
+  "input_summary": "[Summarize the input provided]",
+  "explanation": "[Provide your explanation here, detailing why you chose the specific category or categories]",
+  "categories": [
+    "[First category the input is classified into]",
+    "[Second category the input is classified into]",
+    "...additional categories if needed"
+  ]
+}
 
-<categories>
-<category>[First category the input is classified into]</category>
-<category>[Second category the input is classified into]</category>
-[...additional categories if needed]
-</categories>
+Remember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you've chosen. Take note of which categories are related to Luleo, and which are not, and which can be either.
 
-Remember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you've chosen.
+Do not include any additional text outside of the JSON structure in your answer.

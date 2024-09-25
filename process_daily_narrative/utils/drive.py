@@ -20,6 +20,7 @@ from github.InputGitTreeElement import InputGitTreeElement  # Add this import
 import random
 import praw
 from utils.db_init import drive_service, db, PROJECT_TIMEZONE
+import re, json 
 
 def format_news_json_for_pdf(news_json):
     styles = getSampleStyleSheet()
@@ -630,3 +631,18 @@ def get_reddit_tech_posts(max_posts=10):
 
 def get_reddit_events_posts(max_posts=10):
     return get_reddit_posts('events', max_posts)
+
+
+def clean_and_parse_json(raw_string):
+    # Remove any leading/trailing whitespace
+    raw_string = raw_string.strip()
+    
+    # Remove code block markers if present
+    raw_string = re.sub(r'^```json\s*|\s*```$', '', raw_string, flags=re.MULTILINE)
+    
+    try:
+        # Parse the JSON
+        parsed_json = json.loads(raw_string)
+        return parsed_json
+    except json.JSONDecodeError as e:
+        return f"Error parsing JSON: {str(e)}"

@@ -31,9 +31,9 @@ def contribute():
         name = request.form.get("name")
         email = request.form.get("email")
         message = request.form.get("message")
-        copy = request.form.get("copy") == 'on'
+        analysis = request.form.get("analysis") == 'on'
         human = request.form.get("human") == 'on'
-
+        ai = request.form.get("ai") == 'on'
         # Get the file from the form
         print(f"Debug - File: {request.files}")
         file = request.files.get("file") 
@@ -61,8 +61,9 @@ def contribute():
             "user_identity_str": name,
             "user_contact": email,
             "user_input_text": message,
-            "email_me_the_analysis": copy,
+            "show_me_the_analysis": analysis,
             "human": human,
+            "ai": ai,
             "file_url": file_url,
             "timestamp": firestore.SERVER_TIMESTAMP
         }
@@ -75,7 +76,7 @@ def contribute():
             print(f"Error saving to Firestore: {e}")
             flash("An error occurred while sending your message.", "error")
        
-        return redirect(url_for('contribute', submitted=True))
+        return redirect(url_for('contribute', submitted=True, show_me_the_analysis=analysis))
 
     # Check if the form was submitted successfully
     submitted = request.args.get('submitted', False)

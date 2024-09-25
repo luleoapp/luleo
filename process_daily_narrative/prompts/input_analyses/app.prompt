@@ -1,0 +1,95 @@
+Please analyze the following input (which may be an app idea, product, GitHub repository, website link, or description) to determine its alignment with Luleo’s mission of harmonizing collective consciousness and embodying humanity’s highest virtues. Your evaluation should consider the following detailed criteria:
+
+	1.	Open Source Status:
+	•	IsOpenSource: Is the project open source? (Yes/No)
+	•	LicenseType: Specify the type of open-source license used.
+	•	CodeAccessibility: Discuss the availability and accessibility of the source code.
+	•	Community Contributions: Evaluate the extent to which the project encourages community contributions.
+	2.	Cost to Users:
+	•	IsFree: Is the app or product free to use? (Yes/No)
+	•	MonetizationModel: Explain any monetization strategies (e.g., ads, subscriptions, in-app purchases).
+	•	Accessibility: Assess how costs affect user accessibility and inclusivity.
+	3.	Alignment with Luleo’s Mission:
+	•	PromotesHarmony: Does the project promote harmony and collective well-being? (Yes/No)
+	•	EmbodiesVirtues: How does it embody humanity’s highest virtues (e.g., compassion, integrity, wisdom)?
+	•	IsDystopianOrMolochy: Does the project have dystopian elements or align with self-serving interests (“Moloch-y”)? (Yes/No)
+	•	EthicalConsiderations: Evaluate the project’s ethical stance, including data privacy, user autonomy, and avoidance of exploitation.
+	•	InclusivityAndDiversity: Does the project promote inclusivity and cater to diverse user groups?
+	•	EnvironmentalImpact: Consider the environmental sustainability of the project.
+	4.	Transparency and Accountability:
+	•	Transparency: Assess the transparency of the project’s operations, algorithms, and data handling.
+	•	Accountability: Is there a mechanism for accountability and user feedback?
+	5.	Community and Collaboration:
+	•	CommunityInvolvement: Evaluate the level of community engagement and collaboration.
+	•	CollaborativeFeatures: Does the project facilitate collaboration among users to achieve common goals?
+	6.	Educational Value:
+	•	SupportsEducation: Does the project support education, learning, and the spread of knowledge?
+	•	EmpowersUsers: How does it empower users to grow and develop positively?
+	7.	Technological Impact:
+	•	Innovation: Assess the level of technological innovation and its alignment with positive societal progress.
+	•	SafetyAndSecurity: Evaluate the safety and security measures in place to protect users.
+	8.	Additional Factors:
+	•	Non-CommercialOrientation: Is the project non-commercial or focused on social good rather than profit?
+	•	AvoidsBiasAndDiscrimination: Does the project actively avoid bias and discrimination?
+	•	UserExperience: Consider the overall user experience and its alignment with promoting well-being.
+	9.	Alignment Score:
+	•	Provide an Alignment Score between 0 and 100, where 100 represents perfect alignment with Luleo’s mission.
+	•	Justify the score based on the criteria above.
+
+App description:
+
+{{APP_INPUT}}
+
+Output Format:
+
+Please present your analysis in the following JSON format:
+
+{
+  "analysis": {
+    "open_source_status": {
+      "is_open_source": "[Yes or No]",
+      "license_type": "[Specify the license type]",
+      "code_accessibility": "[Discuss code availability]",
+      "community_contributions": "[Evaluate community involvement]"
+    },
+    "cost_to_users": {
+      "is_free": "[Yes or No]",
+      "monetization_model": "[Explain monetization strategies]",
+      "accessibility": "[Assess cost impact on accessibility]"
+    },
+    "alignment_with_luleo": {
+      "promotes_harmony": "[Yes or No]",
+      "embodies_virtues": "[Explain how it embodies virtues like kindness, empathy, humility, and honesty]",
+      "is_dystopian_or_molochy": "[Yes or No]",
+      "ethical_considerations": "[Evaluate ethical stance]",
+      "inclusivity_and_diversity": "[Discuss inclusivity efforts]",
+      "environmental_impact": "[Consider environmental sustainability]"
+    },
+    "transparency_and_accountability": {
+      "transparency": "[Assess transparency]",
+      "accountability": "[Discuss accountability mechanisms]"
+    },
+    "community_and_collaboration": {
+      "community_involvement": "[Evaluate community engagement]",
+      "collaborative_features": "[Discuss collaborative features]"
+    },
+    "educational_value": {
+      "supports_education": "[Yes or No]",
+      "empowers_users": "[Explain how it empowers users with clarity, actionable insights, and feasibility]"
+    },
+    "technological_impact": {
+      "innovation": "[Assess technological innovation]",
+      "safety_and_security": "[Evaluate safety and security measures]"
+    },
+    "additional_factors": {
+      "non_commercial_orientation": "[Yes or No]",
+      "avoids_bias_and_discrimination": "[Yes or No]",
+      "user_experience": "[Discuss user experience, promoting inclusivity and fostering community]"
+    },
+    "alignment_score": "[0 to 100]",
+    "justification": "[Justify the alignment score based on long-term benefit, sustainability, ethical soundness, and originality]"
+  }
+}
+
+
+Do not include any additional text outside of the JSON structure in your answer.

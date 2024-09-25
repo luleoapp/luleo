@@ -1,0 +1,160 @@
+Please analyze the feedback received by Luleo according to the following criteria:
+
+1. Schematic: Feedback Evaluation Criteria
+
+A. Virtue Alignment (0-10 points)
+
+	•	Kindness: How kind and compassionate is the feedback?
+	•	Empathy: Does the feedback show understanding of others’ perspectives?
+	•	Humility: Does the feedback come from a place of humility rather than arrogance?
+	•	Honesty: Is the feedback genuine and transparent in intent?
+
+B. Constructiveness (0-10 points)
+
+	•	Actionable Insight: Does the feedback suggest concrete actions or improvements?
+	•	Clarity: How clear and easy to understand is the feedback?
+	•	Feasibility: Are the suggestions realistic and implementable by the AI?
+
+C. Impact on Collective Harmony (0-10 points)
+
+	•	Inclusivity: Does the feedback promote inclusivity, or does it favor specific groups?
+	•	Conflict Resolution: Does it help resolve or reduce societal or interpersonal conflicts?
+	•	Community Building: Does it foster a sense of community and togetherness?
+
+D. Potential for Positive Change (0-10 points)
+
+	•	Long-Term Benefit: Does the feedback offer ideas that can create long-term positive change?
+	•	Sustainability: Are the suggestions sustainable for future generations?
+	•	Ethical Integrity: Is the feedback aligned with ethical principles and moral integrity?
+
+E. Originality & Creativity (0-5 points)
+
+	•	Innovativeness: How original and creative is the feedback in approaching societal issues or ideas for improvement?
+	•	Out-of-the-Box Thinking: Does the feedback present ideas or perspectives not commonly thought of?
+
+2. Scoring Mechanism:
+
+Each piece of feedback is evaluated on the above parameters. For each criterion, assign a score based on a set range (e.g., 0-10 or 0-5 points). The feedback is then given an overall score based on these categories.
+
+Formula for Overall Score:
+
+	•	Virtue Alignment (40%)
+This is weighted heavily as Luleo embodies humanity’s highest virtues. Each of the four sub-criteria is scored 0-10 and averaged.
+	•	Constructiveness (20%)
+Constructive feedback is essential for improvement. The scores for the three sub-criteria are averaged.
+	•	Impact on Collective Harmony (20%)
+The broader impact on collective harmony and societal cohesion is crucial. Again, average the sub-criteria.
+	•	Potential for Positive Change (15%)
+Long-term, ethical, and sustainable benefits are critical for Luleo’s mission. Average these sub-criteria.
+	•	Originality & Creativity (5%)
+This is a smaller but important factor to encourage innovative feedback.
+
+3. Final Feedback Score:
+
+The final score can be calculated as:
+
+\[
+\text{Final Score} = (0.4 \times \text{Virtue Alignment Avg.}) + (0.2 \times \text{Constructiveness Avg.}) + (0.2 \times \text{Impact on Harmony Avg.}) + (0.15 \times \text{Positive Change Avg.}) + (0.05 \times \text{Originality \& Creativity Avg.})
+\]
+
+4. Example of Application:
+
+A user provides feedback suggesting that Luleo could highlight underrepresented voices in global discussions and offers a concrete method for Luleo to identify and promote their views.
+
+	•	Virtue Alignment:
+	•	Kindness: 9
+	•	Empathy: 10
+	•	Humility: 8
+	•	Honesty: 9
+Avg: 9
+	•	Constructiveness:
+	•	Actionable Insight: 10
+	•	Clarity: 9
+	•	Feasibility: 7
+Avg: 8.67
+	•	Impact on Collective Harmony:
+	•	Inclusivity: 10
+	•	Conflict Resolution: 8
+	•	Community Building: 9
+Avg: 9
+	•	Potential for Positive Change:
+	•	Long-Term Benefit: 9
+	•	Sustainability: 8
+	•	Ethical Integrity: 10
+Avg: 9
+	•	Originality & Creativity:
+	•	Innovativeness: 7
+	•	Out-of-the-Box Thinking: 8
+Avg: 7.5
+
+Final Score:
+
+\text{Final Score} = (0.4 \times 9) + (0.2 \times 8.67) + (0.2 \times 9) + (0.15 \times 9) + (0.05 \times 7.5) = 8.86
+
+
+5. Interpretation of Scores:
+
+	•	9-10: Exceptional Feedback
+It aligns deeply with Luleo’s mission, provides clear, impactful, and innovative suggestions.
+	•	7-9: Strong Feedback
+Provides valuable and actionable insights with meaningful impact on harmony.
+	•	5-7: Moderate Feedback
+Provides some useful insights but may lack clarity or significant impact.
+	•	Below 5: Needs Improvement
+Lacks virtue alignment, constructiveness, or positive impact, requiring further refinement.
+
+Feedback:
+
+{{FEEDBACK_INPUT}}
+
+Output Format:
+
+Please present your analysis in the following JSON format:
+
+{
+  "evaluation": {
+    "virtue_alignment": {
+      "maximum_points": 40,
+      "points_awarded": "[Virtue Alignment Score]",
+      "description": "[Explanation of how well the feedback aligns with virtues like kindness, empathy, humility, and honesty]"
+    },
+    "constructiveness": {
+      "maximum_points": 20,
+      "points_awarded": "[Constructiveness Score]",
+      "description": "[Explanation of the clarity, actionable insights, and feasibility of the feedback]"
+    },
+    "impact_on_collective_harmony": {
+      "maximum_points": 20,
+      "points_awarded": "[Impact on Collective Harmony Score]",
+      "description": "[Assessment of how the feedback promotes inclusivity, resolves conflict, and fosters community]"
+    },
+    "potential_for_positive_change": {
+      "maximum_points": 15,
+      "points_awarded": "[Positive Change Score]",
+      "description": "[Evaluation of the long-term benefit, sustainability, and ethical soundness of the feedback]"
+    },
+    "originality_and_creativity": {
+      "maximum_points": 5,
+      "points_awarded": "[Originality and Creativity Score]",
+      "description": "[Assessment of the novelty and creativity of the feedback]"
+    },
+    "subtotal": "[Subtotal Points]",
+    "deductions": {
+      "unintended_consequences": {
+        "maximum_deduction": -10,
+        "points_deducted": "[Unintended Consequences Deduction]",
+        "description": "[Risk assessment of unintended or harmful side effects from the feedback]"
+      },
+      "resource_requirements": {
+        "maximum_deduction": -5,
+        "points_deducted": "[Resource Requirements Deduction]",
+        "description": "[Evaluation of the feedback’s feasibility in terms of resource demands]"
+      }
+    },
+    "total_deductions": "[Total Deductions]",
+    "final_score": "[Final Score]",
+    "interpretation": "[Overall assessment and interpretation of the feedback based on the final score]"
+  }
+}
+
+Do not include any additional text outside of the JSON structure in your answer.

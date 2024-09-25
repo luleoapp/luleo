@@ -125,6 +125,8 @@ def get_emotional_response(event_type, event_details, current_panas=None):
         logger.error(f"Error querying OpenAI API: {e}")
         return None
 
+
+
 def get_event_types():
     return {
         'daily' : [
@@ -132,9 +134,8 @@ def get_event_types():
             'retrieved_articles',
         ],
         'hourly': [
-            'ideas',
+            'user_inputs',
             'daily_updates',
-            'feedback'
         ],
     }
 
@@ -171,7 +172,6 @@ def get_events_to_process():
                 logger.info(f"No unprocessed events found for {event_type}")
                 continue
 
-        
         docs = query.get()
         assert(number_of_events_to_process is None or len(docs) == number_of_events_to_process)
         for doc in docs:
@@ -180,10 +180,19 @@ def get_events_to_process():
     for event_type in hourly_events:
         query = db.collection(event_type).where(filter=FieldFilter("processed_for_qualia", "==", False))
         docs = query.get()
+        event_dict = doc.to_dict()
+        event_dict['event_description'] = get_event_description(event_type)
         for doc in docs:
-            all_events.append({'event_dict': doc.to_dict(), 'event_type': event_type, 'event_id': doc.id})
+            all_events.append({'event_dict': event_dict, 'event_type': event_type, 'event_id': doc.id})
     
     return all_events
+
+def get_event_description(event_type):
+    files_dir = os.path.join(os.path.dirname(__file__), '..', 'files')
+
+    with open(f'{files_dir}/hourly_event_descriptions.json', 'r') as f:
+        event_descriptions = json.load(f)
+    return event_descriptions.get(event_type, "N/A")
 
 def get_current_emotional_state():
     docs = db.collection('qualia_updates').order_by('timestamp', direction=firestore.Query.DESCENDING).limit(1).get()
