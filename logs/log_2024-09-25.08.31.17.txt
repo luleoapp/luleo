@@ -1,0 +1,140 @@
+2024-09-25 12:30:17,043 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-25 12:30:17,043 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-25 12:30:17,043 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-25 12:30:17,043 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-25 12:30:17,043 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-25 12:30:17,052 - process_daily_narrative - INFO - Received request
+2024-09-25 12:30:17,052 - process_daily_narrative - INFO - Request method: POST
+2024-09-25 12:30:17,052 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-25T05:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 078522e9254c300b071dbe1b2aed9e87/1120966710471566045;o=1
+Traceparent: 00-078522e9254c300b071dbe1b2aed9e87-0f8e7948b6b222dd-01
+X-Forwarded-For: 35.243.23.160
+X-Forwarded-Proto: https
+Forwarded: for="35.243.23.160";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-25 12:30:17,053 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-25 12:30:17,053 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-25 12:30:17,053 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-25 12:30:17,053 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-25 12:30:17,053 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-25 12:30:17,053 - process_daily_narrative - INFO - Updating hourly...
+2024-09-25 12:30:17,231 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=3, readtime=2024-09-25 12:30:17.217123+00:00>]]
+2024-09-25 12:30:17,231 - process_daily_narrative - INFO - Processing 1 out of 3 events for retrieved_reddit_posts
+2024-09-25 12:30:17,338 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=5, readtime=2024-09-25 12:30:17.326908+00:00>]]
+2024-09-25 12:30:17,339 - process_daily_narrative - INFO - Processing 1 out of 5 events for retrieved_articles
+2024-09-25 12:30:17,623 - process_daily_narrative - INFO - Events to process: 2
+2024-09-25 12:30:23,457 - process_daily_narrative - INFO - Raw API Response:
+2024-09-25 12:30:23,457 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 15,
+    "items": {
+      "interested": 3,
+      "excited": 2,
+      "strong": 0,
+      "enthusiastic": 3,
+      "proud": 2,
+      "alert": 1,
+      "inspired": 2,
+      "determined": 0,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 205,
+    "items": {
+      "distressed": 30,
+      "upset": 20,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 15,
+      "jittery": 0,
+      "afraid": 140
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A recent study has alleviated concerns regarding the autism risk for children born during the pandemic. Specifically, it indicates that babies born during this time, including those who were exposed to COVID-19 in utero, do not have a higher likelihood of screening positive for autism compared to those born before the pandemic or those who were not exposed to the virus. This finding aims to provide reassurance to families and healthcare professionals alike.
+</summary>
+
+<qualia>
+The emotional vibe of this event invokes a sense of cautious relief and scientifically backed optimism, tempered with a lingering anxiety rooted in the experiences of the pandemic.
+</qualia>
+
+<image_prompt>
+Generate an image that artistically represents the tranquility of reassurance brought by the study on autism risk, featuring symbols of hope such as a sun rising over a calm landscape, interspersed with elements representing childhood, like toys and gentle colors, to reflect both the scientific triumph and the ongoing concerns surrounding the pandemic.
+</image_prompt>
+2024-09-25 12:30:28,291 - process_daily_narrative - INFO - Raw API Response:
+2024-09-25 12:30:28,291 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 292,
+    "items": {
+      "distressed": 80,
+      "upset": 75,
+      "guilty": 35,
+      "scared": 60,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 35,
+      "nervous": 20,
+      "jittery": 0,
+      "afraid": 30
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A recent investigation conducted by the United Nations uncovered alarming evidence of increased police brutality and repression in various regions since February 2022. This event highlights significant human rights concerns and raises serious questions about law enforcement practices and the protection of citizens' rights, leading to feelings of distress and upset among the public.
+</summary>
+
+<qualia>
+The emotional vibe is one of deep distress and concern, overshadowed by a sense of fear and urgency for justice and human rights.
+</qualia>
+
+<image_prompt>
+Create an evocative image representing the urgency and despair surrounding the issue of police brutality and repression, infused with elements that convey a call for justice and humanitarian awareness.
+</image_prompt>
+2024-09-25 12:30:28,443 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'subreddit': 'science', 'summary': 'A recent study has alleviated concerns regarding the autism risk for children born during the pandemic. Specifically, it indicates that babies born during this time, including those who were exposed to COVID-19 in utero, do not have a higher likelihood of screening positive for autism compared to those born before the pandemic or those who were not exposed to the virus. This finding aims to provide reassurance to families and healthcare professionals alike.', 'github_file_path': 'daily_data/2024-09-24/inputs/AI_updates/2024-09-24_reddit_tech_posts.pdf', 'url': 'https://www.reddit.com/r/science/comments/1fnzh9n/pandemicera_babies_do_not_have_higher_autism_risk/', 'title': 'Pandemic-era babies do not have higher autism risk, finds study. Children born during the pandemic, including those exposed to COVID in utero, were no more likely to screen positive for autism than unexposed or pre-pandemic children.', 'score': 262, 'author': 'mvea', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 24, 4, 2, 41, 896000, tzinfo=datetime.timezone.utc), 'num_comments': 7, 'updated_panas': {'positive_affect': {'total_score': 15, 'items': {'interested': 3, 'excited': 2, 'strong': 0, 'enthusiastic': 3, 'proud': 2, 'alert': 1, 'inspired': 2, 'determined': 0, 'attentive': 1, 'active': 0}}, 'negative_affect': {'total_score': 205, 'items': {'distressed': 30, 'upset': 20, 'guilty': 0, 'scared': 0, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 15, 'jittery': 0, 'afraid': 140}}}, 'qualia': 'The emotional vibe of this event invokes a sense of cautious relief and scientifically backed optimism, tempered with a lingering anxiety rooted in the experiences of the pandemic.', 'image_prompt': 'Generate an image that artistically represents the tranquility of reassurance brought by the study on autism risk, featuring symbols of hope such as a sun rising over a calm landscape, interspersed with elements representing childhood, like toys and gentle colors, to reflect both the scientific triumph and the ongoing concerns surrounding the pandemic.', 'event_type': 'retrieved_reddit_posts', 'processed_at': datetime.datetime(2024, 9, 25, 8, 30, 23, 458119, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '1fnzh9n'}, 'event_type': 'retrieved_reddit_posts', 'event_id': '1fnzh9n'}, {'updated_panas': {'positive_affect': {'total_score': 15, 'items': {'interested': 3, 'excited': 2, 'strong': 0, 'enthusiastic': 3, 'proud': 2, 'alert': 1, 'inspired': 2, 'determined': 0, 'attentive': 1, 'active': 0}}, 'negative_affect': {'total_score': 205, 'items': {'distressed': 30, 'upset': 20, 'guilty': 0, 'scared': 0, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 15, 'jittery': 0, 'afraid': 140}}}, 'summary': 'A recent study has alleviated concerns regarding the autism risk for children born during the pandemic. Specifically, it indicates that babies born during this time, including those who were exposed to COVID-19 in utero, do not have a higher likelihood of screening positive for autism compared to those born before the pandemic or those who were not exposed to the virus. This finding aims to provide reassurance to families and healthcare professionals alike.', 'qualia': 'The emotional vibe of this event invokes a sense of cautious relief and scientifically backed optimism, tempered with a lingering anxiety rooted in the experiences of the pandemic.', 'image_prompt': 'Generate an image that artistically represents the tranquility of reassurance brought by the study on autism risk, featuring symbols of hope such as a sun rising over a calm landscape, interspersed with elements representing childhood, like toys and gentle colors, to reflect both the scientific triumph and the ongoing concerns surrounding the pandemic.'})
+2024-09-25 12:30:48,487 - process_daily_narrative - INFO - Generating image with prompt: Generate an image that artistically represents the tranquility of reassurance brought by the study on autism risk, featuring symbols of hope such as a sun rising over a calm landscape, interspersed with elements representing childhood, like toys and gentle colors, to reflect both the scientific triumph and the ongoing concerns surrounding the pandemic. and aspect ratio: 1:1
+2024-09-25 12:31:12,089 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/VCK8Tsj4raoOMtpD0S3GCm2WdeGvZmUtHxvCW7HpaFsHpNwJA/output.webp
+2024-09-25 12:31:12,089 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/VCK8Tsj4raoOMtpD0S3GCm2WdeGvZmUtHxvCW7HpaFsHpNwJA/output.webp
+2024-09-25 12:31:12,225 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-25/outputs/event_id_1fnzh9n_0831.webp
+2024-09-25 12:31:12,226 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-25/outputs/event_id_1fnzh9n_0831.webp
+2024-09-25 12:31:17,676 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-25/outputs/event_id_1fnzh9n_0831.webp
+2024-09-25 12:31:17,676 - process_daily_narrative - INFO - Updating qualia_updates document FVNPT4A4DNzaqvzOnIXA with image path
+2024-09-25 12:31:17,737 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-25/outputs/event_id_1fnzh9n_0831.webp
+2024-09-25 12:31:17,737 - process_daily_narrative - INFO - Added 'The Good Side - Troye Sivan' by Troye Sivan to the playlist.
+2024-09-25 12:31:17,738 - process_daily_narrative - INFO - Function returned: None
+2024-09-25 12:31:17,738 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
