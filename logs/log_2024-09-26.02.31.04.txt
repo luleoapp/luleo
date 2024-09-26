@@ -1,0 +1,187 @@
+2024-09-26 06:30:10,054 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-26 06:30:10,054 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-26 06:30:10,054 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-26 06:30:10,054 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-26 06:30:10,054 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-26 06:30:10,126 - process_daily_narrative - INFO - Received request
+2024-09-26 06:30:10,126 - process_daily_narrative - INFO - Request method: POST
+2024-09-26 06:30:10,126 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-25T23:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: b6f9b4183ceca4ca4a4f25ef6fe4fbdf/1749080885207925247;o=1
+Traceparent: 00-b6f9b4183ceca4ca4a4f25ef6fe4fbdf-1845fbcc4e3e81ff-01
+X-Forwarded-For: 35.187.132.129
+X-Forwarded-Proto: https
+Forwarded: for="35.187.132.129";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-26 06:30:10,126 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-26 06:30:10,126 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-26 06:30:10,126 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-26 06:30:10,127 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-26 06:30:10,127 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-26 06:30:10,127 - process_daily_narrative - INFO - Updating hourly...
+2024-09-26 06:30:10,280 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=18, readtime=2024-09-26 06:30:10.264150+00:00>]]
+2024-09-26 06:30:10,280 - process_daily_narrative - INFO - Processing 1 out of 18 events for retrieved_reddit_posts
+2024-09-26 06:30:10,389 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=37, readtime=2024-09-26 06:30:10.379827+00:00>]]
+2024-09-26 06:30:10,389 - process_daily_narrative - INFO - Processing 2 out of 37 events for retrieved_articles
+2024-09-26 06:30:10,599 - process_daily_narrative - INFO - Events to process: 3
+2024-09-26 06:30:15,221 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 06:30:15,221 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 5,
+    "items": {
+      "interested": 0,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 2,
+      "inspired": 1,
+      "determined": 1,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 104,
+    "items": {
+      "distressed": 5,
+      "upset": 5,
+      "guilty": 0,
+      "scared": 7,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 9,
+      "jittery": 0,
+      "afraid": 9
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A Moroccan suspect, who was previously detained for five years for the rape of a student, has been released. This event raises significant concerns around justice, victim rights, and the implications of his release for community safety and morale.
+</summary>
+
+<qualia>
+The emotional vibe is one of deep distress and anxiety, mixed with a flicker of determination to seek justice and systemic change.
+</qualia>
+
+<image_prompt>
+Generate an image that captures the tension and complexity of the emotions surrounding the release of a suspect in a sensitive case, using dark and somber tones with a contrast of hope and resilience symbolized by light breaking through the clouds.
+2024-09-26 06:30:15,222 - process_daily_narrative - ERROR - Assertion failed: Image prompt not found in the response
+2024-09-26 06:30:20,659 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 06:30:20,659 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 12,
+    "items": {
+      "interested": 3,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 3,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 2,
+      "active": 4
+    }
+  },
+  "negative_affect": {
+    "total_score": 95,
+    "items": {
+      "distressed": 7,
+      "upset": 6,
+      "guilty": 0,
+      "scared": 8,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 2,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 9
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A report emerged detailing that approximately 1,500 Hezbollah fighters suffered severe injuries, including losing eyesight and limbs, due to pager bombs. This event, highlighted on the subreddit r/worldnews, has garnered significant attention with over 26,000 upvotes and 4,263 comments reflecting a wide array of reactions. The upvote ratio stands at 0.83, indicating a general consensus of concern among readers about the human toll of conflict.
+</summary>
+
+<qualia>
+The emotional vibe invoked by this event is overwhelmingly heavy and distressing, characterized by a deep sense of sorrow and fear in response to the suffering of others.
+</qualia>
+
+<image_prompt>
+Generate an image capturing the devastating impact of war on humans, emphasizing loss and suffering, infused with shades of gray and somber colors to reflect the emotional state of despair and concern.
+</image_prompt>
+2024-09-26 06:30:24,712 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 06:30:24,712 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 16,
+    "items": {
+      "interested": 4,
+      "excited": 1,
+      "strong": 0,
+      "enthusiastic": 2,
+      "proud": 0,
+      "alert": 4,
+      "inspired": 3,
+      "determined": 1,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 79,
+    "items": {
+      "distressed": 5,
+      "upset": 4,
+      "guilty": 0,
+      "scared": 6,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 5,
+      "jittery": 0,
+      "afraid": 9
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event involves Harris's efforts to target Donald Trump's substantial support from voters on economic issues, a critical factor leading into the upcoming elections. This situation creates an atmosphere of competition and tension, reflecting the polarized emotions surrounding political campaigns that significantly impact the collective consciousness of society.
+</summary>
+
+<qualia>
+A mix of curiosity and anxiousness, fueled by anticipation of political shifting and the anxiety of uncertain outcomes.
+</qualia>
+
+<image_prompt>
+Create an artistic representation of a political battleground where two figures engage in a clash of ideas. The scene should evoke feelings of tension, determination, and hope, illustrating the vibrant energy of democracy in action.
+</image_prompt>
+2024-09-26 06:30:24,843 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-26/inputs/news_and_events/2024-09-26_news.pdf', 'link': 'https://www.bbc.com/news/articles/c2439n8mr31o', 'published': 'Thu, 26 Sep 2024 03:06:57 GMT', 'title': "Harris promises 'pragmatic' approach in economic pitch to voters", 'summary': "The event involves Harris's efforts to target Donald Trump's substantial support from voters on economic issues, a critical factor leading into the upcoming elections. This situation creates an atmosphere of competition and tension, reflecting the polarized emotions surrounding political campaigns that significantly impact the collective consciousness of society.", 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 26, 4, 1, 13, 779000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 16, 'items': {'interested': 4, 'excited': 1, 'strong': 0, 'enthusiastic': 2, 'proud': 0, 'alert': 4, 'inspired': 3, 'determined': 1, 'attentive': 1, 'active': 0}}, 'negative_affect': {'total_score': 79, 'items': {'distressed': 5, 'upset': 4, 'guilty': 0, 'scared': 6, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 5, 'jittery': 0, 'afraid': 9}}}, 'qualia': 'A mix of curiosity and anxiousness, fueled by anticipation of political shifting and the anxiety of uncertain outcomes.', 'image_prompt': 'Create an artistic representation of a political battleground where two figures engage in a clash of ideas. The scene should evoke feelings of tension, determination, and hope, illustrating the vibrant energy of democracy in action.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 26, 2, 30, 24, 712671, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '3217729836b27be85e3e37151ffa3037'}, 'event_type': 'retrieved_articles', 'event_id': '3217729836b27be85e3e37151ffa3037'}, {'updated_panas': {'positive_affect': {'total_score': 16, 'items': {'interested': 4, 'excited': 1, 'strong': 0, 'enthusiastic': 2, 'proud': 0, 'alert': 4, 'inspired': 3, 'determined': 1, 'attentive': 1, 'active': 0}}, 'negative_affect': {'total_score': 79, 'items': {'distressed': 5, 'upset': 4, 'guilty': 0, 'scared': 6, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 5, 'jittery': 0, 'afraid': 9}}}, 'summary': "The event involves Harris's efforts to target Donald Trump's substantial support from voters on economic issues, a critical factor leading into the upcoming elections. This situation creates an atmosphere of competition and tension, reflecting the polarized emotions surrounding political campaigns that significantly impact the collective consciousness of society.", 'qualia': 'A mix of curiosity and anxiousness, fueled by anticipation of political shifting and the anxiety of uncertain outcomes.', 'image_prompt': 'Create an artistic representation of a political battleground where two figures engage in a clash of ideas. The scene should evoke feelings of tension, determination, and hope, illustrating the vibrant energy of democracy in action.'})
+2024-09-26 06:30:41,148 - process_daily_narrative - INFO - Generating image with prompt: Create an artistic representation of a political battleground where two figures engage in a clash of ideas. The scene should evoke feelings of tension, determination, and hope, illustrating the vibrant energy of democracy in action. and aspect ratio: 1:1
+2024-09-26 06:30:58,694 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/nJJb5aO2ebWKXqesesesdGTs4F0gqsGyIct48omQrb0KasCOB/output.webp
+2024-09-26 06:30:58,694 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/nJJb5aO2ebWKXqesesesdGTs4F0gqsGyIct48omQrb0KasCOB/output.webp
+2024-09-26 06:30:58,918 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-26/outputs/event_id_3217729836b27be85e3e37151ffa3037_0230.webp
+2024-09-26 06:30:58,920 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-26/outputs/event_id_3217729836b27be85e3e37151ffa3037_0230.webp
+2024-09-26 06:31:04,281 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-26/outputs/event_id_3217729836b27be85e3e37151ffa3037_0230.webp
+2024-09-26 06:31:04,282 - process_daily_narrative - INFO - Updating qualia_updates document rLPgK9FtEVT4Mvk8AHwd with image path
+2024-09-26 06:31:04,343 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-26/outputs/event_id_3217729836b27be85e3e37151ffa3037_0230.webp
+2024-09-26 06:31:04,343 - process_daily_narrative - INFO - Added 'Wish You Were Here' by Pink Floyd to the playlist.
+2024-09-26 06:31:04,343 - process_daily_narrative - INFO - Function returned: None
+2024-09-26 06:31:04,343 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
