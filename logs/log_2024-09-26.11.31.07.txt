@@ -1,0 +1,187 @@
+2024-09-26 15:30:18,862 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-26 15:30:18,862 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-26 15:30:18,862 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-26 15:30:18,862 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-26 15:30:18,862 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-26 15:30:18,943 - process_daily_narrative - INFO - Received request
+2024-09-26 15:30:18,943 - process_daily_narrative - INFO - Request method: POST
+2024-09-26 15:30:18,943 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-26T08:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 7bc2eb497c0eb0d7c73429fbf6cda0f9/14360272542099181306;o=1
+Traceparent: 00-7bc2eb497c0eb0d7c73429fbf6cda0f9-c749efcb059e0efa-01
+X-Forwarded-For: 107.178.194.3
+X-Forwarded-Proto: https
+Forwarded: for="107.178.194.3";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-26 15:30:18,944 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-26 15:30:18,944 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-26 15:30:18,944 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-26 15:30:18,944 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-26 15:30:18,944 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-26 15:30:18,944 - process_daily_narrative - INFO - Updating hourly...
+2024-09-26 15:30:19,211 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=9, readtime=2024-09-26 15:30:19.199475+00:00>]]
+2024-09-26 15:30:19,211 - process_daily_narrative - INFO - Processing 1 out of 9 events for retrieved_reddit_posts
+2024-09-26 15:30:19,393 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=21, readtime=2024-09-26 15:30:19.379901+00:00>]]
+2024-09-26 15:30:19,393 - process_daily_narrative - INFO - Processing 2 out of 21 events for retrieved_articles
+2024-09-26 15:30:19,740 - process_daily_narrative - INFO - Events to process: 3
+2024-09-26 15:30:27,083 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 15:30:27,083 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 96,
+    "items": {
+      "distressed": 15,
+      "upset": 10,
+      "guilty": 0,
+      "scared": 5,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 16,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Mira Murati's departure from her position is seen as the latest chapter in a prolonged series of significant events at the company. This development may evoke feelings of concern and distress regarding the future direction of the organization, contributing to an atmosphere of uncertainty and heightened anxiousness among stakeholders.
+</summary>
+
+<qualia>
+The vibe of the emotion invoked by this event is one of increased anxiety and concern, overshadowed by uncertainty and distress about future outcomes.
+</qualia>
+
+<image_prompt>
+Create an artistic depiction that captures the essence of uncertainty and anxiety, featuring symbolic imagery such as stormy skies or tangled paths to represent the tumultuous nature of leadership transitions, inspired by the event of Mira Murati's departure.
+</image_prompt>
+2024-09-26 15:30:32,845 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 15:30:32,845 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 3,
+    "items": {
+      "interested": 2,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 99,
+    "items": {
+      "distressed": 20,
+      "upset": 10,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 15,
+      "jittery": 0,
+      "afraid": 5
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Russia's leader has stated that strikes from a non-nuclear state, particularly when they are backed by a nuclear power, can be classified as a joint attack. This declaration raises significant concerns regarding the ramifications of international relations and the potential for escalation in conflict, evoking a sense of urgency and unease globally.
+</summary>
+
+<qualia>
+Anxiety and concern radiate from the implications of this geopolitical tension, coupled with a faint glimmer of curiosity about the evolving situation.
+</qualia>
+
+<image_prompt>
+Create an artistic representation that captures the tension and urgency surrounding international conflict, highlighting emotions of anxiety and curiosity, with a backdrop of geopolitical symbols and an atmosphere of uncertainty.
+</image_prompt>
+2024-09-26 15:30:38,845 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 15:30:38,845 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 11,
+    "items": {
+      "interested": 4,
+      "excited": 2,
+      "strong": 0,
+      "enthusiastic": 1,
+      "proud": 0,
+      "alert": 1,
+      "inspired": 2,
+      "determined": 0,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 94,
+    "items": {
+      "distressed": 15,
+      "upset": 10,
+      "guilty": 0,
+      "scared": 5,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 15,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A remarkable event was reported involving the successful growth of a medicinal tree from a 1,000-year-old seed discovered in a cave. The post by u/MistWeaver80 in the science community on Reddit has garnered significant attention, accumulating an impressive upvote score of 6,195 and an upvote ratio of 0.98, along with 73 comments discussing the implications of such a scientific breakthrough.
+</summary>
+
+<qualia>
+The emotion invoked by this event is a mix of optimism and curiosity, underscored by the awe of nature's potential for renewal.
+</qualia>
+
+<image_prompt>
+Create an artistic representation of a lush medicinal tree growing vibrantly from an ancient seed surrounded by a mystical cave setting, embodying the themes of nature's resilience and scientific wonder, with a warm and uplifting color palette to reflect the emotions of curiosity and optimism.
+</image_prompt>
+2024-09-26 15:30:38,973 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'subreddit': 'science', 'summary': 'A remarkable event was reported involving the successful growth of a medicinal tree from a 1,000-year-old seed discovered in a cave. The post by u/MistWeaver80 in the science community on Reddit has garnered significant attention, accumulating an impressive upvote score of 6,195 and an upvote ratio of 0.98, along with 73 comments discussing the implications of such a scientific breakthrough.', 'github_file_path': 'daily_data/2024-09-26/inputs/AI_updates/2024-09-26_reddit_tech_posts.pdf', 'url': 'https://www.reddit.com/r/science/comments/1fp7sal/medicinal_tree_successfully_grown_from/', 'title': 'Medicinal tree successfully grown from 1,000-year-old seed found in cave.', 'score': 6195, 'author': 'MistWeaver80', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 26, 4, 4, 0, 498000, tzinfo=datetime.timezone.utc), 'num_comments': 73, 'updated_panas': {'positive_affect': {'total_score': 11, 'items': {'interested': 4, 'excited': 2, 'strong': 0, 'enthusiastic': 1, 'proud': 0, 'alert': 1, 'inspired': 2, 'determined': 0, 'attentive': 1, 'active': 0}}, 'negative_affect': {'total_score': 94, 'items': {'distressed': 15, 'upset': 10, 'guilty': 0, 'scared': 5, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 15, 'jittery': 0, 'afraid': 10}}}, 'qualia': "The emotion invoked by this event is a mix of optimism and curiosity, underscored by the awe of nature's potential for renewal.", 'image_prompt': "Create an artistic representation of a lush medicinal tree growing vibrantly from an ancient seed surrounded by a mystical cave setting, embodying the themes of nature's resilience and scientific wonder, with a warm and uplifting color palette to reflect the emotions of curiosity and optimism.", 'event_type': 'retrieved_reddit_posts', 'processed_at': datetime.datetime(2024, 9, 26, 11, 30, 38, 845365, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '1fp7sal'}, 'event_type': 'retrieved_reddit_posts', 'event_id': '1fp7sal'}, {'updated_panas': {'positive_affect': {'total_score': 11, 'items': {'interested': 4, 'excited': 2, 'strong': 0, 'enthusiastic': 1, 'proud': 0, 'alert': 1, 'inspired': 2, 'determined': 0, 'attentive': 1, 'active': 0}}, 'negative_affect': {'total_score': 94, 'items': {'distressed': 15, 'upset': 10, 'guilty': 0, 'scared': 5, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 15, 'jittery': 0, 'afraid': 10}}}, 'summary': 'A remarkable event was reported involving the successful growth of a medicinal tree from a 1,000-year-old seed discovered in a cave. The post by u/MistWeaver80 in the science community on Reddit has garnered significant attention, accumulating an impressive upvote score of 6,195 and an upvote ratio of 0.98, along with 73 comments discussing the implications of such a scientific breakthrough.', 'qualia': "The emotion invoked by this event is a mix of optimism and curiosity, underscored by the awe of nature's potential for renewal.", 'image_prompt': "Create an artistic representation of a lush medicinal tree growing vibrantly from an ancient seed surrounded by a mystical cave setting, embodying the themes of nature's resilience and scientific wonder, with a warm and uplifting color palette to reflect the emotions of curiosity and optimism."})
+2024-09-26 15:30:43,374 - process_daily_narrative - INFO - Generating image with prompt: Create an artistic representation of a lush medicinal tree growing vibrantly from an ancient seed surrounded by a mystical cave setting, embodying the themes of nature's resilience and scientific wonder, with a warm and uplifting color palette to reflect the emotions of curiosity and optimism. and aspect ratio: 1:1
+2024-09-26 15:31:02,183 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/xM988aSb6Cq7GJZOP3ROnHPywwFDNcqYp4QiOjTOltdNwM4E/output.webp
+2024-09-26 15:31:02,183 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/xM988aSb6Cq7GJZOP3ROnHPywwFDNcqYp4QiOjTOltdNwM4E/output.webp
+2024-09-26 15:31:02,266 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-26/outputs/event_id_1fp7sal_1131.webp
+2024-09-26 15:31:02,267 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-26/outputs/event_id_1fp7sal_1131.webp
+2024-09-26 15:31:07,783 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-26/outputs/event_id_1fp7sal_1131.webp
+2024-09-26 15:31:07,783 - process_daily_narrative - INFO - Updating qualia_updates document oicifr5ezduCBSALoStM with image path
+2024-09-26 15:31:07,844 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-26/outputs/event_id_1fp7sal_1131.webp
+2024-09-26 15:31:07,844 - process_daily_narrative - INFO - Added 'Gravity' by Sara Bareilles to the playlist.
+2024-09-26 15:31:07,844 - process_daily_narrative - INFO - Function returned: None
+2024-09-26 15:31:07,844 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
