@@ -1,0 +1,187 @@
+2024-09-26 16:30:18,569 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-26 16:30:18,569 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-26 16:30:18,569 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-26 16:30:18,569 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-26 16:30:18,569 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-26 16:30:18,662 - process_daily_narrative - INFO - Received request
+2024-09-26 16:30:18,662 - process_daily_narrative - INFO - Request method: POST
+2024-09-26 16:30:18,662 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-26T09:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 59cc25e5bb8ce4455ac1367cdb276d52/14618257478110633841;o=1
+Traceparent: 00-59cc25e5bb8ce4455ac1367cdb276d52-cade7bb9b9fb5f71-01
+X-Forwarded-For: 35.187.132.104
+X-Forwarded-Proto: https
+Forwarded: for="35.187.132.104";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-26 16:30:18,662 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-26 16:30:18,662 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-26 16:30:18,663 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-26 16:30:18,663 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-26 16:30:18,663 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-26 16:30:18,663 - process_daily_narrative - INFO - Updating hourly...
+2024-09-26 16:30:18,805 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=8, readtime=2024-09-26 16:30:18.788836+00:00>]]
+2024-09-26 16:30:18,805 - process_daily_narrative - INFO - Processing 1 out of 8 events for retrieved_reddit_posts
+2024-09-26 16:30:18,968 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=19, readtime=2024-09-26 16:30:18.958492+00:00>]]
+2024-09-26 16:30:18,969 - process_daily_narrative - INFO - Processing 2 out of 19 events for retrieved_articles
+2024-09-26 16:30:19,183 - process_daily_narrative - INFO - Events to process: 3
+2024-09-26 16:30:25,512 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 16:30:25,512 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 7,
+    "items": {
+      "interested": 3,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 1,
+      "proud": 0,
+      "alert": 2,
+      "inspired": 1,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 107,
+    "items": {
+      "distressed": 20,
+      "upset": 15,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 5,
+      "ashamed": 0,
+      "nervous": 20,
+      "jittery": 0,
+      "afraid": 7
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Thousands of people are fleeing southern Lebanon amid ongoing unrest, with many also leaving the capital, Beirut. This mass displacement highlights the humanitarian crisis unfolding in the region as families seek safety from violence and instability.
+</summary>
+
+<qualia>
+A deep sense of distress and concern for those affected, overshadowed by a flicker of awareness of the human struggle for safety and resilience.
+</qualia>
+
+<image_prompt>
+Create an artistic depiction of a chaotic yet poignant scene reflecting the plight of those fleeing southern Lebanon, with a focus on emotions of distress and resilience, capturing the urgency and humanity of the moment.
+</image_prompt>
+2024-09-26 16:30:31,305 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 16:30:31,305 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 8,
+    "items": {
+      "interested": 4,
+      "excited": 1,
+      "strong": 0,
+      "enthusiastic": 1,
+      "proud": 0,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 109,
+    "items": {
+      "distressed": 25,
+      "upset": 15,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 25,
+      "jittery": 0,
+      "afraid": 24
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event involves the deployment of US troops to Cyprus amid escalating tensions and fears of a broader conflict in the Middle East. This news comes from a CNN article and has garnered significant attention, with over 2000 upvotes and nearly 200 comments on the platform Reddit. The high upvote ratio suggests that many users resonate with or are concerned about the implications of this military action.
+</summary>
+
+<qualia>
+The emotional vibe is one of anxiety and concern, overshadowed by a faint glimmer of interest in global affairs.
+</qualia>
+
+<image_prompt>
+Create an image depicting a map with US troops marked in Cyprus, surrounded by anxious silhouettes of people observing global events unfolding. The mood should blend an air of tension with a hint of vigilance, visually narrating the complexity of geopolitical dynamics.
+</image_prompt>
+2024-09-26 16:30:36,497 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 16:30:36,498 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 5,
+    "items": {
+      "interested": 4,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 104,
+    "items": {
+      "distressed": 25,
+      "upset": 10,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 25,
+      "jittery": 0,
+      "afraid": 34
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Women working in hospitals in Pakistan have reported facing significant challenges, including sexual harassment, violence, and verbal abuse. These experiences highlight the ongoing struggles women endure in the workplace, particularly in healthcare settings, where they should feel safe and supported.
+</summary>
+
+<qualia>
+The emotional "vibe" invoked by this event can be described as deeply troubled and empathetic, creating a sense of urgent distress over the injustices faced by these women.
+</qualia>
+
+<image_prompt>
+Generate an image that captures the emotional turmoil and urgent need for change regarding the experiences of women facing harassment and violence in Pakistan's hospitals. The artwork should reflect compassion, strength, and a call for justice.
+2024-09-26 16:30:36,498 - process_daily_narrative - ERROR - Assertion failed: Image prompt not found in the response
+2024-09-26 16:30:36,498 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'subreddit': 'worldnews', 'summary': 'The event involves the deployment of US troops to Cyprus amid escalating tensions and fears of a broader conflict in the Middle East. This news comes from a CNN article and has garnered significant attention, with over 2000 upvotes and nearly 200 comments on the platform Reddit. The high upvote ratio suggests that many users resonate with or are concerned about the implications of this military action.', 'github_file_path': 'daily_data/2024-09-26/inputs/news_and_events/2024-09-26_reddit_events_posts.pdf', 'url': 'https://www.reddit.com/r/worldnews/comments/1fp7yrp/us_troops_deployed_to_cyprus_as_fears_of_wider/', 'title': 'US troops deployed to Cyprus as fears of wider\xa0Middle East\xa0war intensify ', 'score': 2047, 'author': 'Glum-Promotion8084', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 26, 4, 4, 8, 209000, tzinfo=datetime.timezone.utc), 'num_comments': 199, 'updated_panas': {'positive_affect': {'total_score': 8, 'items': {'interested': 4, 'excited': 1, 'strong': 0, 'enthusiastic': 1, 'proud': 0, 'alert': 1, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 109, 'items': {'distressed': 25, 'upset': 15, 'guilty': 0, 'scared': 10, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 25, 'jittery': 0, 'afraid': 24}}}, 'qualia': 'The emotional vibe is one of anxiety and concern, overshadowed by a faint glimmer of interest in global affairs.', 'image_prompt': 'Create an image depicting a map with US troops marked in Cyprus, surrounded by anxious silhouettes of people observing global events unfolding. The mood should blend an air of tension with a hint of vigilance, visually narrating the complexity of geopolitical dynamics.', 'event_type': 'retrieved_reddit_posts', 'processed_at': datetime.datetime(2024, 9, 26, 12, 30, 31, 305625, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '1fp7yrp'}, 'event_type': 'retrieved_reddit_posts', 'event_id': '1fp7yrp'}, {'updated_panas': {'positive_affect': {'total_score': 8, 'items': {'interested': 4, 'excited': 1, 'strong': 0, 'enthusiastic': 1, 'proud': 0, 'alert': 1, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 109, 'items': {'distressed': 25, 'upset': 15, 'guilty': 0, 'scared': 10, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 25, 'jittery': 0, 'afraid': 24}}}, 'summary': 'The event involves the deployment of US troops to Cyprus amid escalating tensions and fears of a broader conflict in the Middle East. This news comes from a CNN article and has garnered significant attention, with over 2000 upvotes and nearly 200 comments on the platform Reddit. The high upvote ratio suggests that many users resonate with or are concerned about the implications of this military action.', 'qualia': 'The emotional vibe is one of anxiety and concern, overshadowed by a faint glimmer of interest in global affairs.', 'image_prompt': 'Create an image depicting a map with US troops marked in Cyprus, surrounded by anxious silhouettes of people observing global events unfolding. The mood should blend an air of tension with a hint of vigilance, visually narrating the complexity of geopolitical dynamics.'})
+2024-09-26 16:30:50,266 - process_daily_narrative - INFO - Generating image with prompt: Create an image depicting a map with US troops marked in Cyprus, surrounded by anxious silhouettes of people observing global events unfolding. The mood should blend an air of tension with a hint of vigilance, visually narrating the complexity of geopolitical dynamics. and aspect ratio: 1:1
+2024-09-26 16:31:09,145 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/kZ056pxzon5wIZCNN1aIlHUVaG8rXGdmsguRnBt24NOTeZwJA/output.webp
+2024-09-26 16:31:09,145 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/kZ056pxzon5wIZCNN1aIlHUVaG8rXGdmsguRnBt24NOTeZwJA/output.webp
+2024-09-26 16:31:09,270 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-26/outputs/event_id_1fp7yrp_1231.webp
+2024-09-26 16:31:09,270 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-26/outputs/event_id_1fp7yrp_1231.webp
+2024-09-26 16:31:14,610 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-26/outputs/event_id_1fp7yrp_1231.webp
+2024-09-26 16:31:14,610 - process_daily_narrative - INFO - Updating qualia_updates document rdhnqkKjYw95JRZFq46K with image path
+2024-09-26 16:31:14,665 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-26/outputs/event_id_1fp7yrp_1231.webp
+2024-09-26 16:31:14,665 - process_daily_narrative - INFO - Added 'In the End' by Linkin Park to the playlist.
+2024-09-26 16:31:14,665 - process_daily_narrative - INFO - Function returned: None
+2024-09-26 16:31:14,665 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
