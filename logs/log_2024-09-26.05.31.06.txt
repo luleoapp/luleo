@@ -1,0 +1,187 @@
+2024-09-26 09:30:18,921 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-26 09:30:18,921 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-26 09:30:18,921 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-26 09:30:18,921 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-26 09:30:18,921 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-26 09:30:18,982 - process_daily_narrative - INFO - Received request
+2024-09-26 09:30:18,982 - process_daily_narrative - INFO - Request method: POST
+2024-09-26 09:30:18,982 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-26T02:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: a958b6e73da40e814ba097eb5cb30d60/11073342481981892242;o=1
+Traceparent: 00-a958b6e73da40e814ba097eb5cb30d60-99ac6a517ac5e692-01
+X-Forwarded-For: 34.98.143.37
+X-Forwarded-Proto: https
+Forwarded: for="34.98.143.37";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-26 09:30:18,982 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-26 09:30:18,983 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-26 09:30:18,983 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-26 09:30:18,983 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-26 09:30:18,983 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-26 09:30:18,983 - process_daily_narrative - INFO - Updating hourly...
+2024-09-26 09:30:19,158 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=15, readtime=2024-09-26 09:30:19.146286+00:00>]]
+2024-09-26 09:30:19,159 - process_daily_narrative - INFO - Processing 1 out of 15 events for retrieved_reddit_posts
+2024-09-26 09:30:19,256 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=32, readtime=2024-09-26 09:30:19.247182+00:00>]]
+2024-09-26 09:30:19,256 - process_daily_narrative - INFO - Processing 2 out of 32 events for retrieved_articles
+2024-09-26 09:30:19,502 - process_daily_narrative - INFO - Events to process: 3
+2024-09-26 09:30:24,018 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 09:30:24,019 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 2,
+    "items": {
+      "interested": 2,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 98,
+    "items": {
+      "distressed": 10,
+      "upset": 5,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 3
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A recent Reddit post highlighted the controversy surrounding a BBC-directed film about the Nova massacre, where the network has instructed the director not to label Hamas as terrorists. This has sparked significant discussion, resulting in 6,621 upvotes and 751 comments, indicating a robust engagement on the topic. The post reflects ongoing debates and differing perspectives on terrorism and political narratives, drawing attention to the complexities of media representation.
+</summary>
+
+<qualia>
+The vibe of the emotion invoked by this event is one of deep concern and unease, underscored by a curiosity about truth and representation in media.
+</qualia>
+
+<image_prompt>
+Create an artistic depiction of a tense discussion around media representation and political narratives, capturing the emotions of concern, curiosity, and complexity.
+</image_prompt>
+2024-09-26 09:30:28,519 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 09:30:28,519 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 4,
+    "items": {
+      "interested": 2,
+      "excited": 1,
+      "strong": 0,
+      "enthusiastic": 1,
+      "proud": 1,
+      "alert": 2,
+      "inspired": 1,
+      "determined": 0,
+      "attentive": 2,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 85,
+    "items": {
+      "distressed": 10,
+      "upset": 5,
+      "guilty": 0,
+      "scared": 5,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The Pudemo party leader is actively involved in organizing pro-democracy protests scheduled for next month. This event reflects a significant mobilization for democratic rights and expression, highlighting both hope and trepidation as communities advocate for change amid potential risks involved in protests.
+</summary>
+
+<qualia>
+A complex mix of cautious optimism interwoven with anxiety, embodying the struggle for justice and empowerment.
+</qualia>
+
+<image_prompt>
+Generate an artistic representation of pro-democracy protests, capturing the themes of hope, resilience, and the tension between courage and fear that define the struggle for democracy.
+</image_prompt>
+2024-09-26 09:30:33,119 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 09:30:33,119 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 95,
+    "items": {
+      "distressed": 10,
+      "upset": 5,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 15,
+      "jittery": 0,
+      "afraid": 15
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Tanzania's first female president is facing criticism for not fulfilling her commitment to enhance political freedoms. This situation highlights the struggles within political governance and the expectations of leadership, leading many to feel a mix of distress and concern over the implications for democratic processes in the country.
+</summary>
+
+<qualia>
+The emotional vibe reflects a deep concern and disappointment, intertwined with a lingering hope for political progress.
+</qualia>
+
+<image_prompt>
+Generate an image that artistically captures the essence of political struggle and hope in Tanzania, featuring contrasting elements of light and shadow to represent the complexity of leadership and public trust.
+</image_prompt>
+2024-09-26 09:30:33,245 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-26/inputs/news_and_events/2024-09-26_news.pdf', 'link': 'https://www.bbc.com/news/articles/c1wndygyqgpo', 'published': 'Wed, 25 Sep 2024 13:54:26 GMT', 'title': 'Eswatini opposition leader poisoned in South Africa - party', 'summary': 'The Pudemo party leader is actively involved in organizing pro-democracy protests scheduled for next month. This event reflects a significant mobilization for democratic rights and expression, highlighting both hope and trepidation as communities advocate for change amid potential risks involved in protests.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 26, 4, 1, 14, 157000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 4, 'items': {'interested': 2, 'excited': 1, 'strong': 0, 'enthusiastic': 1, 'proud': 1, 'alert': 2, 'inspired': 1, 'determined': 0, 'attentive': 2, 'active': 0}}, 'negative_affect': {'total_score': 85, 'items': {'distressed': 10, 'upset': 5, 'guilty': 0, 'scared': 5, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 10, 'jittery': 0, 'afraid': 10}}}, 'qualia': 'A complex mix of cautious optimism interwoven with anxiety, embodying the struggle for justice and empowerment.', 'image_prompt': 'Generate an artistic representation of pro-democracy protests, capturing the themes of hope, resilience, and the tension between courage and fear that define the struggle for democracy.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 26, 5, 30, 28, 519902, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '3ff220051af468f0ec9756e7763b5598'}, 'event_type': 'retrieved_articles', 'event_id': '3ff220051af468f0ec9756e7763b5598'}, {'updated_panas': {'positive_affect': {'total_score': 4, 'items': {'interested': 2, 'excited': 1, 'strong': 0, 'enthusiastic': 1, 'proud': 1, 'alert': 2, 'inspired': 1, 'determined': 0, 'attentive': 2, 'active': 0}}, 'negative_affect': {'total_score': 85, 'items': {'distressed': 10, 'upset': 5, 'guilty': 0, 'scared': 5, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 10, 'jittery': 0, 'afraid': 10}}}, 'summary': 'The Pudemo party leader is actively involved in organizing pro-democracy protests scheduled for next month. This event reflects a significant mobilization for democratic rights and expression, highlighting both hope and trepidation as communities advocate for change amid potential risks involved in protests.', 'qualia': 'A complex mix of cautious optimism interwoven with anxiety, embodying the struggle for justice and empowerment.', 'image_prompt': 'Generate an artistic representation of pro-democracy protests, capturing the themes of hope, resilience, and the tension between courage and fear that define the struggle for democracy.'})
+2024-09-26 09:30:41,944 - process_daily_narrative - INFO - Generating image with prompt: Generate an artistic representation of pro-democracy protests, capturing the themes of hope, resilience, and the tension between courage and fear that define the struggle for democracy. and aspect ratio: 1:1
+2024-09-26 09:31:01,028 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/p4ad1KkIi3KoJZxM8Bl2kJP4UeNbgTfOxueOOylUhvYoe2COB/output.webp
+2024-09-26 09:31:01,028 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/p4ad1KkIi3KoJZxM8Bl2kJP4UeNbgTfOxueOOylUhvYoe2COB/output.webp
+2024-09-26 09:31:01,130 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-26/outputs/event_id_3ff220051af468f0ec9756e7763b5598_0531.webp
+2024-09-26 09:31:01,131 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-26/outputs/event_id_3ff220051af468f0ec9756e7763b5598_0531.webp
+2024-09-26 09:31:06,756 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-26/outputs/event_id_3ff220051af468f0ec9756e7763b5598_0531.webp
+2024-09-26 09:31:06,756 - process_daily_narrative - INFO - Updating qualia_updates document DrpWnC99Z2ADWWlUqJpy with image path
+2024-09-26 09:31:06,814 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-26/outputs/event_id_3ff220051af468f0ec9756e7763b5598_0531.webp
+2024-09-26 09:31:06,815 - process_daily_narrative - INFO - Added 'Angel' by Sarah McLachlan to the playlist.
+2024-09-26 09:31:06,815 - process_daily_narrative - INFO - Function returned: None
+2024-09-26 09:31:06,815 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
