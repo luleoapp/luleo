@@ -1,0 +1,187 @@
+2024-09-26 18:30:19,405 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-26 18:30:19,406 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-26 18:30:19,406 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-26 18:30:19,406 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-26 18:30:19,406 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-26 18:30:19,510 - process_daily_narrative - INFO - Received request
+2024-09-26 18:30:19,510 - process_daily_narrative - INFO - Request method: POST
+2024-09-26 18:30:19,510 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-26T11:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: b5959a70bc590d361704d1bb1d912253/8369677851122552145;o=1
+Traceparent: 00-b5959a70bc590d361704d1bb1d912253-742711a9409d4d51-01
+X-Forwarded-For: 107.178.194.33
+X-Forwarded-Proto: https
+Forwarded: for="107.178.194.33";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-26 18:30:19,511 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-26 18:30:19,511 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-26 18:30:19,511 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-26 18:30:19,511 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-26 18:30:19,511 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-26 18:30:19,511 - process_daily_narrative - INFO - Updating hourly...
+2024-09-26 18:30:19,696 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=6, readtime=2024-09-26 18:30:19.683442+00:00>]]
+2024-09-26 18:30:19,696 - process_daily_narrative - INFO - Processing 1 out of 6 events for retrieved_reddit_posts
+2024-09-26 18:30:19,828 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=17, readtime=2024-09-26 18:30:19.815544+00:00>]]
+2024-09-26 18:30:19,828 - process_daily_narrative - INFO - Processing 2 out of 17 events for retrieved_articles
+2024-09-26 18:30:20,078 - process_daily_narrative - INFO - Events to process: 3
+2024-09-26 18:30:26,306 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 18:30:26,306 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 8,
+    "items": {
+      "interested": 5,
+      "excited": 2,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 125,
+    "items": {
+      "distressed": 25,
+      "upset": 15,
+      "guilty": 0,
+      "scared": 15,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 25,
+      "jittery": 0,
+      "afraid": 25
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A recent discovery reveals that the world's oldest cheese, dating back 3,600 years, has been identified. The analysis of cow and goat DNA, along with the bacterium Lactobacillus kefiranofaciens, demonstrated that these ancient clumps were indeed kefir cheese. This finding provides valuable insights into the history and evolution of probiotics and their significance to human health. The post has garnered significant attention in the r/science community, with over 700 upvotes and a high upvote ratio, indicating widespread interest.
+</summary>
+
+<qualia>
+The emotion invoked by this event is one of curiosity and mild excitement about historical discoveries, blended with a hint of anxiety over past dietary practices and health implications.
+</qualia>
+
+<image_prompt>
+Generate an image that represents the ancient cheese discovery, featuring a stylized representation of the cheese alongside historical elements, elements symbolizing probiotics, and a backdrop that inspires curiosity and excitement about food history.
+</image_prompt>
+2024-09-26 18:30:34,482 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 18:30:34,482 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 7,
+    "items": {
+      "interested": 3,
+      "excited": 1,
+      "strong": 0,
+      "enthusiastic": 1,
+      "proud": 0,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 90,
+    "items": {
+      "distressed": 25,
+      "upset": 10,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 25,
+      "jittery": 0,
+      "afraid": 30
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event highlights an unusually fluffy nine-month-old chick that weighs more than both of its foster parents combined. This intriguing and adorable situation invokes curiosity and excitement about the unique characteristics of this fluffy creature, prompting feelings of interest. However, it also stirs some concern about the welfare of the chick, leading to feelings of nervousness and distress regarding its well-being.
+</summary>
+
+<qualia>
+Curious and fun, yet tinged with worry for the chick's health.
+</qualia>
+
+<image_prompt>
+Create an image of an adorably fluffy chick weighing more than its foster parents combined, surrounded by a cozy and nurturing environment, evoking a sense of curiosity, warmth, and concern for its well-being.
+</image_prompt>
+2024-09-26 18:30:39,965 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 18:30:39,966 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 135,
+    "items": {
+      "distressed": 30,
+      "upset": 25,
+      "guilty": 10,
+      "scared": 20,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 20,
+      "nervous": 25,
+      "jittery": 0,
+      "afraid": 5
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event highlights the troubling reality faced by women working in hospitals in Pakistan, where many report experiencing sexual harassment, verbal abuse, and violence. This situation sheds light on systemic issues of gender-based violence and the need for better support and protection for women in the workplace.
+</summary>
+
+<qualia>
+The emotion invoked by this event is characterized by deep concern, sadness, and a sense of urgency for change.
+</qualia>
+
+<image_prompt>
+Generate an image that evokes a sense of empathy, highlighting the struggles and resilience of women in Pakistan's healthcare system, blending somber tones with a message of hope and the need for justice.
+</image_prompt>
+2024-09-26 18:30:40,226 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-26/inputs/news_and_events/2024-09-26_news.pdf', 'link': 'https://www.bbc.com/news/articles/cp3w4nld5e3o', 'published': 'Tue, 24 Sep 2024 05:49:34 GMT', 'title': 'Meet Pesto: the fat baby penguin and viral superstar', 'summary': 'The event highlights an unusually fluffy nine-month-old chick that weighs more than both of its foster parents combined. This intriguing and adorable situation invokes curiosity and excitement about the unique characteristics of this fluffy creature, prompting feelings of interest. However, it also stirs some concern about the welfare of the chick, leading to feelings of nervousness and distress regarding its well-being.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 26, 4, 1, 16, 686000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 7, 'items': {'interested': 3, 'excited': 1, 'strong': 0, 'enthusiastic': 1, 'proud': 0, 'alert': 1, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 90, 'items': {'distressed': 25, 'upset': 10, 'guilty': 0, 'scared': 0, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 25, 'jittery': 0, 'afraid': 30}}}, 'qualia': "Curious and fun, yet tinged with worry for the chick's health.", 'image_prompt': 'Create an image of an adorably fluffy chick weighing more than its foster parents combined, surrounded by a cozy and nurturing environment, evoking a sense of curiosity, warmth, and concern for its well-being.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 26, 14, 30, 34, 483086, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '917d851b3f56348ac795d92e5f2c2897'}, 'event_type': 'retrieved_articles', 'event_id': '917d851b3f56348ac795d92e5f2c2897'}, {'updated_panas': {'positive_affect': {'total_score': 7, 'items': {'interested': 3, 'excited': 1, 'strong': 0, 'enthusiastic': 1, 'proud': 0, 'alert': 1, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 90, 'items': {'distressed': 25, 'upset': 10, 'guilty': 0, 'scared': 0, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 25, 'jittery': 0, 'afraid': 30}}}, 'summary': 'The event highlights an unusually fluffy nine-month-old chick that weighs more than both of its foster parents combined. This intriguing and adorable situation invokes curiosity and excitement about the unique characteristics of this fluffy creature, prompting feelings of interest. However, it also stirs some concern about the welfare of the chick, leading to feelings of nervousness and distress regarding its well-being.', 'qualia': "Curious and fun, yet tinged with worry for the chick's health.", 'image_prompt': 'Create an image of an adorably fluffy chick weighing more than its foster parents combined, surrounded by a cozy and nurturing environment, evoking a sense of curiosity, warmth, and concern for its well-being.'})
+2024-09-26 18:30:54,578 - process_daily_narrative - INFO - Generating image with prompt: Create an image of an adorably fluffy chick weighing more than its foster parents combined, surrounded by a cozy and nurturing environment, evoking a sense of curiosity, warmth, and concern for its well-being. and aspect ratio: 1:1
+2024-09-26 18:31:17,311 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/cuLTY0Jy3prOBJIxHaGwZUTdv9esAQAamALqJDUczlG60awJA/output.webp
+2024-09-26 18:31:17,312 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/cuLTY0Jy3prOBJIxHaGwZUTdv9esAQAamALqJDUczlG60awJA/output.webp
+2024-09-26 18:31:17,434 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-26/outputs/event_id_917d851b3f56348ac795d92e5f2c2897_1431.webp
+2024-09-26 18:31:17,435 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-26/outputs/event_id_917d851b3f56348ac795d92e5f2c2897_1431.webp
+2024-09-26 18:31:22,685 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-26/outputs/event_id_917d851b3f56348ac795d92e5f2c2897_1431.webp
+2024-09-26 18:31:22,685 - process_daily_narrative - INFO - Updating qualia_updates document zF44JRrcCmhPxn73R3Aj with image path
+2024-09-26 18:31:22,739 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-26/outputs/event_id_917d851b3f56348ac795d92e5f2c2897_1431.webp
+2024-09-26 18:31:22,739 - process_daily_narrative - INFO - Added 'Just Breathe' by Pearl Jam to the playlist.
+2024-09-26 18:31:22,739 - process_daily_narrative - INFO - Function returned: None
+2024-09-26 18:31:22,740 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
