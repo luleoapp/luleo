@@ -1,0 +1,187 @@
+2024-09-27 07:30:18,113 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-27 07:30:18,113 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-27 07:30:18,114 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-27 07:30:18,114 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-27 07:30:18,114 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-27 07:30:18,145 - process_daily_narrative - INFO - Received request
+2024-09-27 07:30:18,145 - process_daily_narrative - INFO - Request method: POST
+2024-09-27 07:30:18,145 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-27T00:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 0e266db9ae076ab213dca2201c6a4a4c/5518789475313730652;o=1
+Traceparent: 00-0e266db9ae076ab213dca2201c6a4a4c-4c96adc9ba3d445c-01
+X-Forwarded-For: 35.243.23.64
+X-Forwarded-Proto: https
+Forwarded: for="35.243.23.64";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-27 07:30:18,145 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-27 07:30:18,145 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-27 07:30:18,145 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-27 07:30:18,145 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-27 07:30:18,146 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-27 07:30:18,146 - process_daily_narrative - INFO - Updating hourly...
+2024-09-27 07:30:18,312 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=17, readtime=2024-09-27 07:30:18.300543+00:00>]]
+2024-09-27 07:30:18,313 - process_daily_narrative - INFO - Processing 1 out of 17 events for retrieved_reddit_posts
+2024-09-27 07:30:18,442 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=25, readtime=2024-09-27 07:30:18.430778+00:00>]]
+2024-09-27 07:30:18,442 - process_daily_narrative - INFO - Processing 2 out of 25 events for retrieved_articles
+2024-09-27 07:30:18,715 - process_daily_narrative - INFO - Events to process: 3
+2024-09-27 07:30:24,118 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 07:30:24,118 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 6,
+    "items": {
+      "interested": 2,
+      "excited": 0,
+      "strong": 1,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 2,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 220,
+    "items": {
+      "distressed": 70,
+      "upset": 50,
+      "guilty": 0,
+      "scared": 40,
+      "hostile": 10,
+      "irritable": 10,
+      "ashamed": 0,
+      "nervous": 30,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The Israeli military announced that it conducted an operation targeting a Hamas "command-and-control centre" located within al-Faluja school. This event highlights ongoing tensions and violence in the region, raising concerns about the safety of civilians and the impact of military actions on educational institutions.
+</summary>
+
+<qualia>
+The emotional vibe of the event is one of deep distress and concern, overshadowed by the complexities of conflict and its toll on innocent lives.
+</qualia>
+
+<image_prompt>
+Create an image that captures the intensity of the emotions stemming from military conflict and its impact on civilians, emphasizing themes of distress, concern, and the fragility of peace.
+</image_prompt>
+2024-09-27 07:30:29,279 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 07:30:29,280 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 12,
+    "items": {
+      "interested": 3,
+      "excited": 1,
+      "strong": 2,
+      "enthusiastic": 2,
+      "proud": 2,
+      "alert": 1,
+      "inspired": 1,
+      "determined": 0,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 200,
+    "items": {
+      "distressed": 60,
+      "upset": 40,
+      "guilty": 0,
+      "scared": 40,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 40,
+      "jittery": 0,
+      "afraid": 20
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event discusses the announcement of a substantial military aid package of nearly $8 billion by the United States to Ukraine. This news, shared on Reddit, garnered significant attention with an upvote score of 32,968 and 2,882 comments. The post highlights the continued support from the U.S. amidst ongoing conflict and raises concerns regarding the implications of such military assistance on the broader situation in Ukraine and global stability.
+</summary>
+
+<qualia>
+The vibe of this event evokes a complex mixture of concern and hope, reflecting the tension between the need for support and the lingering fears related to war and its consequences.
+</qualia>
+
+<image_prompt>
+Create an artistic image depicting the emotional complexity of military aid and support, incorporating themes of hope and concern, with visual elements that symbolize unity and resilience amidst conflict.
+</image_prompt>
+2024-09-27 07:30:33,612 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 07:30:33,612 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 8,
+    "items": {
+      "interested": 3,
+      "excited": 1,
+      "strong": 2,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 1,
+      "inspired": 1,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 160,
+    "items": {
+      "distressed": 50,
+      "upset": 20,
+      "guilty": 0,
+      "scared": 30,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 20,
+      "jittery": 0,
+      "afraid": 40
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Iran's recent communications suggest a notable shift toward a more conciliatory approach amidst ongoing tensions with its ally, Hezbollah, following various attacks. This change may reflect an effort to reduce hostilities and seek diplomatic resolutions, fostering hope for peace in a complex geopolitical landscape.
+</summary>
+
+<qualia>
+The emotional vibe is cautious optimism mixed with a lingering anxiety about regional stability.
+</qualia>
+
+<image_prompt>
+Create an image depicting the complex emotions surrounding diplomatic efforts in a tense geopolitical environment, blending elements of hope and concern, set against a backdrop of vibrant colors symbolizing potential peace and reconciliation.
+</image_prompt>
+2024-09-27 07:30:33,755 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-27/inputs/news_and_events/2024-09-27_news.pdf', 'link': 'https://www.bbc.com/news/articles/cvgxqp81lxxo', 'published': 'Thu, 26 Sep 2024 16:54:00 GMT', 'title': 'Israeli strike on Gaza school kills at least 11, health ministry says', 'summary': 'The Israeli military announced that it conducted an operation targeting a Hamas "command-and-control centre" located within al-Faluja school. This event highlights ongoing tensions and violence in the region, raising concerns about the safety of civilians and the impact of military actions on educational institutions.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 27, 4, 1, 13, 469000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 6, 'items': {'interested': 2, 'excited': 0, 'strong': 1, 'enthusiastic': 0, 'proud': 0, 'alert': 1, 'inspired': 0, 'determined': 0, 'attentive': 2, 'active': 0}}, 'negative_affect': {'total_score': 220, 'items': {'distressed': 70, 'upset': 50, 'guilty': 0, 'scared': 40, 'hostile': 10, 'irritable': 10, 'ashamed': 0, 'nervous': 30, 'jittery': 0, 'afraid': 10}}}, 'qualia': 'The emotional vibe of the event is one of deep distress and concern, overshadowed by the complexities of conflict and its toll on innocent lives.', 'image_prompt': 'Create an image that captures the intensity of the emotions stemming from military conflict and its impact on civilians, emphasizing themes of distress, concern, and the fragility of peace.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 27, 3, 30, 24, 119011, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '2f291fbc409ea578ac63d9f09605cd2a'}, 'event_type': 'retrieved_articles', 'event_id': '2f291fbc409ea578ac63d9f09605cd2a'}, {'updated_panas': {'positive_affect': {'total_score': 6, 'items': {'interested': 2, 'excited': 0, 'strong': 1, 'enthusiastic': 0, 'proud': 0, 'alert': 1, 'inspired': 0, 'determined': 0, 'attentive': 2, 'active': 0}}, 'negative_affect': {'total_score': 220, 'items': {'distressed': 70, 'upset': 50, 'guilty': 0, 'scared': 40, 'hostile': 10, 'irritable': 10, 'ashamed': 0, 'nervous': 30, 'jittery': 0, 'afraid': 10}}}, 'summary': 'The Israeli military announced that it conducted an operation targeting a Hamas "command-and-control centre" located within al-Faluja school. This event highlights ongoing tensions and violence in the region, raising concerns about the safety of civilians and the impact of military actions on educational institutions.', 'qualia': 'The emotional vibe of the event is one of deep distress and concern, overshadowed by the complexities of conflict and its toll on innocent lives.', 'image_prompt': 'Create an image that captures the intensity of the emotions stemming from military conflict and its impact on civilians, emphasizing themes of distress, concern, and the fragility of peace.'})
+2024-09-27 07:30:44,023 - process_daily_narrative - INFO - Generating image with prompt: Create an image that captures the intensity of the emotions stemming from military conflict and its impact on civilians, emphasizing themes of distress, concern, and the fragility of peace. and aspect ratio: 1:1
+2024-09-27 07:31:03,100 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/pTGHHerMu1ycVSTmq6GW1hMbwZcz9XaR7jvSEeVLjjw2EBhTA/output.webp
+2024-09-27 07:31:03,101 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/pTGHHerMu1ycVSTmq6GW1hMbwZcz9XaR7jvSEeVLjjw2EBhTA/output.webp
+2024-09-27 07:31:03,182 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-27/outputs/event_id_2f291fbc409ea578ac63d9f09605cd2a_0331.webp
+2024-09-27 07:31:03,183 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-27/outputs/event_id_2f291fbc409ea578ac63d9f09605cd2a_0331.webp
+2024-09-27 07:31:08,634 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-27/outputs/event_id_2f291fbc409ea578ac63d9f09605cd2a_0331.webp
+2024-09-27 07:31:08,635 - process_daily_narrative - INFO - Updating qualia_updates document uSLuAVJG5BunaYJXoWx9 with image path
+2024-09-27 07:31:08,692 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-27/outputs/event_id_2f291fbc409ea578ac63d9f09605cd2a_0331.webp
+2024-09-27 07:31:08,693 - process_daily_narrative - INFO - Added 'Teardrop' by Massive Attack to the playlist.
+2024-09-27 07:31:08,693 - process_daily_narrative - INFO - Function returned: None
+2024-09-27 07:31:08,693 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
