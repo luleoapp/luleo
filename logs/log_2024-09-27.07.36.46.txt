@@ -1,0 +1,37 @@
+2024-09-27 11:36:37,708 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-27 11:36:37,708 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-27 11:36:37,708 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-27 11:36:37,708 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-27 11:36:37,708 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-27 11:36:37,735 - process_daily_narrative - INFO - Received request
+2024-09-27 11:36:37,735 - process_daily_narrative - INFO - Request method: POST
+2024-09-27 11:36:37,735 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Accept: application/json, text/plain, */*
+Content-Type: application/json
+User-Agent: axios/1.6.7
+Content-Length: 84
+X-Cloud-Trace-Context: 305a5dcdab8e098a3631ae269cbe294a/18278274583944708456;o=1
+Traceparent: 00-305a5dcdab8e098a3631ae269cbe294a-fda979e443134168-01
+X-Forwarded-For: 2600:1900:0:2d04::2e01
+X-Forwarded-Proto: https
+Forwarded: for="[2600:1900:0:2d04::2e01]";proto=https
+Accept-Encoding: gzip, compress, deflate, br
+
+
+2024-09-27 11:36:37,736 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE":"PROCESS_USER_UPLOAD","PARAMS":{"upload_id":"EKOulqRiy9JAttiS1SeX"}}'
+2024-09-27 11:36:37,736 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': 'EKOulqRiy9JAttiS1SeX'}}
+2024-09-27 11:36:37,736 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-27 11:36:37,736 - process_daily_narrative - INFO - PARAMS: {'upload_id': 'EKOulqRiy9JAttiS1SeX'}
+2024-09-27 11:36:37,736 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-27 11:36:43,193 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and image (if provided) and categorize the entire input according to the following list:\n\n1. wisdom - Quotes, articles, or insightful thoughts.\n2. love - Expressions or stories of love and kindness.\n3. ai - Perspectives and information about AI and its role in humanity - NOT RELATED TO LULEO\n5. divine - Inputs related to prayers, worship and reflections on the spiritual or numinous.\n6. app - Submission of other apps, tools, or GitHub repositories - NOT RELATED TO LULEO.\n8. questions - Philosophical or existential inquiries.\n9. art - Artistic expressions that reflect love or unity.\n10. idea - Ideas to make the world a better place - NOT RELATED TO LULEO\n11. feedback - Luleo specific - Suggestions and positive or negative thoughts ABOUT LULEO.\n12. miscellaneous - Anything else that doesn\'t fit elsewhere.\n13. spam - Hateful comments or spam (ignored).\n\nHere is the text input:\n\n<user_input>\nThis is important\n</user_input>\n\nCarefully analyze the input(s) - both text and image. First, provide a summary of the total input. Then, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following JSON format:\n\n{\n  "input_summary": "[Summarize the input provided]",\n  "explanation": "[Provide your explanation here, detailing why you chose the specific category or categories]",\n  "categories": [\n    "[First category the input is classified into]",\n    "[Second category the input is classified into]",\n    "...additional categories if needed"\n  ]\n}\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen. Take note of which categories are related to Luleo, and which are not, and which can be either.\n\nDo not include any additional text outside of the JSON structure in your answer.'}]
+2024-09-27 11:36:45,872 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 11:36:45,873 - process_daily_narrative - INFO - {
+  "input_summary": "The user input states 'This is important.'",
+  "explanation": "The input is very brief and lacks any specific details or context that would clearly align it with any of the specific categories. It seems to express a sense of urgency or significance but does not elaborate on what is deemed important. Therefore, it does not qualify as wisdom, love, ai, divine, app, questions, art, idea, feedback, or spam since it does not provide enough content related to these themes.",
+  "categories": [
+    "miscellaneous"
+  ]
+}
+2024-09-27 11:36:46,013 - process_daily_narrative - INFO - Function returned: None
+2024-09-27 11:36:46,013 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: PROCESS_USER_UPLOAD
