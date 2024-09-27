@@ -1,0 +1,187 @@
+2024-09-27 11:30:10,456 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-27 11:30:10,456 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-27 11:30:10,456 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-27 11:30:10,456 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-27 11:30:10,457 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-27 11:30:10,483 - process_daily_narrative - INFO - Received request
+2024-09-27 11:30:10,483 - process_daily_narrative - INFO - Request method: POST
+2024-09-27 11:30:10,483 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-27T04:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 821b61c8979e2d8e258e9bf81487c1ef/1913144509483141036;o=1
+Traceparent: 00-821b61c8979e2d8e258e9bf81487c1ef-1a8cdacb8bbb47ac-01
+X-Forwarded-For: 35.187.132.165
+X-Forwarded-Proto: https
+Forwarded: for="35.187.132.165";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-27 11:30:10,484 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-27 11:30:10,484 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-27 11:30:10,484 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-27 11:30:10,484 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-27 11:30:10,484 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-27 11:30:10,484 - process_daily_narrative - INFO - Updating hourly...
+2024-09-27 11:30:10,627 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=13, readtime=2024-09-27 11:30:10.613742+00:00>]]
+2024-09-27 11:30:10,627 - process_daily_narrative - INFO - Processing 1 out of 13 events for retrieved_reddit_posts
+2024-09-27 11:30:10,730 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=19, readtime=2024-09-27 11:30:10.702526+00:00>]]
+2024-09-27 11:30:10,731 - process_daily_narrative - INFO - Processing 2 out of 19 events for retrieved_articles
+2024-09-27 11:30:10,943 - process_daily_narrative - INFO - Events to process: 3
+2024-09-27 11:30:17,782 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 11:30:17,782 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 2,
+    "items": {
+      "interested": 3,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 460,
+    "items": {
+      "distressed": 100,
+      "upset": 90,
+      "guilty": 40,
+      "scared": 110,
+      "hostile": 20,
+      "irritable": 50,
+      "ashamed": 30,
+      "nervous": 40,
+      "jittery": 0,
+      "afraid": 40
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event concerns a statement made by Balázs Orbán, a senior aide to Hungarian Prime Minister Viktor Orbán, suggesting that Hungary might have capitulated to Russian demands regarding the ongoing conflict involving Ukraine. The Reddit post, which has garnered significant attention with 2,668 upvotes and a high upvote ratio of 0.98, highlights a controversial stance amid heightened geopolitical tensions between Russia and Western nations. The discussion in the comments expanded on Hungary's political alignments and concerns over national sovereignty.
+</summary>
+
+<qualia>
+The emotional vibe evoked by this event is one of concern and distress regarding geopolitical stability and national integrity, tinged with a curiosity about the implications of Hungary's choices.
+</qualia>
+
+<image_prompt>
+Generate an image that captures the tension of geopolitical conversation, featuring Hungary's flag intertwined with symbols of caution and vigilance, merging elements representing Russia and Ukraine, to reflect a climate of uncertainty and concern.
+</image_prompt>
+2024-09-27 11:30:23,524 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 11:30:23,525 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 2,
+    "items": {
+      "interested": 2,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 440,
+    "items": {
+      "distressed": 90,
+      "upset": 80,
+      "guilty": 40,
+      "scared": 100,
+      "hostile": 40,
+      "irritable": 40,
+      "ashamed": 30,
+      "nervous": 50,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event involves Vince McMahon, the former WWE boss, who has publicly criticized a documentary that seeks to reveal more about his life and career. This response indicates that he feels the documentary misrepresents him, leading to a mix of emotions surrounding scrutiny, fear of exposure, and a desire to protect his image.
+</summary>
+
+<qualia>
+The emotional vibe is tense and defensive, evoking feelings of concern and distress amidst a rare spark of curiosity.
+</qualia>
+
+<image_prompt>
+Generate an image depicting the conflict of emotions in Vince McMahon's criticism of the documentary: a duality of dark shadows representing fear and distress contrasted with a hint of bright curiosity reflecting interest, encapsulating the tension of the moment.
+2024-09-27 11:30:23,525 - process_daily_narrative - ERROR - Assertion failed: Image prompt not found in the response
+2024-09-27 11:30:30,537 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 11:30:30,537 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 570,
+    "items": {
+      "distressed": 100,
+      "upset": 80,
+      "guilty": 40,
+      "scared": 120,
+      "hostile": 50,
+      "irritable": 50,
+      "ashamed": 40,
+      "nervous": 70,
+      "jittery": 20,
+      "afraid": 120
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event involves a statement from Russia's leader claiming that strikes initiated by a non-nuclear state, which are supported by a nuclear power, should be interpreted as a joint attack. This statement raises serious concerns about escalating geopolitical tensions and the implications of military alliances, particularly involving nuclear powers. The potential for conflict increases the emotional distress felt globally, affecting perceptions of safety and security.
+</summary>
+
+<qualia>
+The emotion invoked is a heavy sense of distress and fear, underlined by a feeling of helplessness against potential global conflict.
+</qualia>
+
+<image_prompt>
+Generate an artistic representation of geopolitical tensions, featuring symbolic elements such as a globe, military icons, and contrasting colors to evoke an atmosphere of fear and unease. The image should convey the emotional weight of the statement made by Russia's leader, communicating the seriousness of the situation through shadowy figures and ominous, dark skies.
+</image_prompt>
+2024-09-27 11:30:30,667 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-27/inputs/news_and_events/2024-09-27_news.pdf', 'link': 'https://www.bbc.com/news/articles/c5yjej0rvw0o', 'published': 'Thu, 26 Sep 2024 15:18:01 GMT', 'title': 'Putin proposes new rules for using nuclear weapons', 'summary': "The event involves a statement from Russia's leader claiming that strikes initiated by a non-nuclear state, which are supported by a nuclear power, should be interpreted as a joint attack. This statement raises serious concerns about escalating geopolitical tensions and the implications of military alliances, particularly involving nuclear powers. The potential for conflict increases the emotional distress felt globally, affecting perceptions of safety and security.", 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 27, 4, 1, 13, 118000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 1, 'items': {'interested': 1, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 570, 'items': {'distressed': 100, 'upset': 80, 'guilty': 40, 'scared': 120, 'hostile': 50, 'irritable': 50, 'ashamed': 40, 'nervous': 70, 'jittery': 20, 'afraid': 120}}}, 'qualia': 'The emotion invoked is a heavy sense of distress and fear, underlined by a feeling of helplessness against potential global conflict.', 'image_prompt': "Generate an artistic representation of geopolitical tensions, featuring symbolic elements such as a globe, military icons, and contrasting colors to evoke an atmosphere of fear and unease. The image should convey the emotional weight of the statement made by Russia's leader, communicating the seriousness of the situation through shadowy figures and ominous, dark skies.", 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 27, 7, 30, 30, 537425, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '67bde49ee315806b46c0bbc0b459090c'}, 'event_type': 'retrieved_articles', 'event_id': '67bde49ee315806b46c0bbc0b459090c'}, {'updated_panas': {'positive_affect': {'total_score': 1, 'items': {'interested': 1, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 570, 'items': {'distressed': 100, 'upset': 80, 'guilty': 40, 'scared': 120, 'hostile': 50, 'irritable': 50, 'ashamed': 40, 'nervous': 70, 'jittery': 20, 'afraid': 120}}}, 'summary': "The event involves a statement from Russia's leader claiming that strikes initiated by a non-nuclear state, which are supported by a nuclear power, should be interpreted as a joint attack. This statement raises serious concerns about escalating geopolitical tensions and the implications of military alliances, particularly involving nuclear powers. The potential for conflict increases the emotional distress felt globally, affecting perceptions of safety and security.", 'qualia': 'The emotion invoked is a heavy sense of distress and fear, underlined by a feeling of helplessness against potential global conflict.', 'image_prompt': "Generate an artistic representation of geopolitical tensions, featuring symbolic elements such as a globe, military icons, and contrasting colors to evoke an atmosphere of fear and unease. The image should convey the emotional weight of the statement made by Russia's leader, communicating the seriousness of the situation through shadowy figures and ominous, dark skies."})
+2024-09-27 11:30:50,339 - process_daily_narrative - INFO - Generating image with prompt: Generate an artistic representation of geopolitical tensions, featuring symbolic elements such as a globe, military icons, and contrasting colors to evoke an atmosphere of fear and unease. The image should convey the emotional weight of the statement made by Russia's leader, communicating the seriousness of the situation through shadowy figures and ominous, dark skies. and aspect ratio: 1:1
+2024-09-27 11:31:07,967 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/JNU9TLH7fQXYZa547VPej3LDq7Vvb5kG4WK9MEUYYBo7lEhTA/output.webp
+2024-09-27 11:31:07,967 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/JNU9TLH7fQXYZa547VPej3LDq7Vvb5kG4WK9MEUYYBo7lEhTA/output.webp
+2024-09-27 11:31:08,044 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-27/outputs/event_id_67bde49ee315806b46c0bbc0b459090c_0731.webp
+2024-09-27 11:31:08,045 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-27/outputs/event_id_67bde49ee315806b46c0bbc0b459090c_0731.webp
+2024-09-27 11:31:13,421 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-27/outputs/event_id_67bde49ee315806b46c0bbc0b459090c_0731.webp
+2024-09-27 11:31:13,421 - process_daily_narrative - INFO - Updating qualia_updates document lK3NGCt44ECokQRdn3Af with image path
+2024-09-27 11:31:13,462 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-27/outputs/event_id_67bde49ee315806b46c0bbc0b459090c_0731.webp
+2024-09-27 11:31:13,462 - process_daily_narrative - INFO - Added 'Please Don't Leave Me' by Pink to the playlist.
+2024-09-27 11:31:13,463 - process_daily_narrative - INFO - Function returned: None
+2024-09-27 11:31:13,463 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
