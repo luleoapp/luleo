@@ -1,0 +1,234 @@
+2024-09-27 12:30:09,879 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-27 12:30:09,879 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-27 12:30:09,879 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-27 12:30:09,879 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-27 12:30:09,880 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-27 12:30:09,903 - process_daily_narrative - INFO - Received request
+2024-09-27 12:30:09,903 - process_daily_narrative - INFO - Request method: POST
+2024-09-27 12:30:09,903 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-27T05:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: aedadd7f1c3ee442e8f45b8095159c77/15560000391447235562;o=1
+Traceparent: 00-aedadd7f1c3ee442e8f45b8095159c77-d7f039ea6526cbea-01
+X-Forwarded-For: 35.187.132.194
+X-Forwarded-Proto: https
+Forwarded: for="35.187.132.194";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-27 12:30:09,904 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-27 12:30:09,904 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-27 12:30:09,904 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-27 12:30:09,904 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-27 12:30:09,904 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-27 12:30:09,904 - process_daily_narrative - INFO - Updating hourly...
+2024-09-27 12:30:10,041 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=12, readtime=2024-09-27 12:30:10.025937+00:00>]]
+2024-09-27 12:30:10,041 - process_daily_narrative - INFO - Processing 1 out of 12 events for retrieved_reddit_posts
+2024-09-27 12:30:10,149 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=18, readtime=2024-09-27 12:30:10.131119+00:00>]]
+2024-09-27 12:30:10,149 - process_daily_narrative - INFO - Processing 2 out of 18 events for retrieved_articles
+2024-09-27 12:30:10,347 - process_daily_narrative - INFO - Events to process: 4
+2024-09-27 12:30:15,698 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 12:30:15,699 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 570,
+    "items": {
+      "distressed": 100,
+      "upset": 80,
+      "guilty": 40,
+      "scared": 120,
+      "hostile": 50,
+      "irritable": 50,
+      "ashamed": 40,
+      "nervous": 70,
+      "jittery": 20,
+      "afraid": 120
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Vince McMahon, the former CEO of WWE, has publicly criticized a documentary that aims to reveal personal details about him, which he claims misrepresents his character. This criticism reflects potential distress and conflicting emotions associated with personal scrutiny in the public eye.
+</summary>
+
+<qualia>
+The emotional vibe sparked by this event is one of tension and conflict, underscored by curiosity about the truth behind the documentary's portrayal.
+</qualia>
+
+<image_prompt>
+Create an image that artistically represents the tension and conflict of Vince McMahon's criticism of the documentary, portraying themes of scrutiny, public perception, and curiosity. Use dramatic contrasts and bold colors to reflect the emotional depth of the event.
+2024-09-27 12:30:15,699 - process_daily_narrative - ERROR - Assertion failed: Image prompt not found in the response
+2024-09-27 12:30:20,811 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 12:30:20,811 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 2,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 740,
+    "items": {
+      "distressed": 100,
+      "upset": 90,
+      "guilty": 70,
+      "scared": 140,
+      "hostile": 100,
+      "irritable": 70,
+      "ashamed": 90,
+      "nervous": 80,
+      "jittery": 20,
+      "afraid": 70
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Eric Adams, the mayor of New York City, has been accused of illegally accepting foreign campaign donations as well as luxurious travel benefits worth $100,000 from Turkish nationals. This serious allegation raises concerns about corruption and foreign influence on political campaigns, leading to public distress and heightened scrutiny of political ethics.
+</summary>
+
+<qualia>
+The emotional vibe invoked by this event is one of alarm and disillusionment, as it stirs feelings of betrayal, insecurity, and outrage regarding political integrity.
+</qualia>
+
+<image_prompt>
+Generate an image depicting the turmoil surrounding political corruption, incorporating elements of legal documents, fearful citizens, and an ominous skyline representing the gravity of the situation. Use dark tones and intense contrasts to reflect the emotions of alarm and disillusionment.
+</image_prompt>
+2024-09-27 12:30:25,665 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 12:30:25,665 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 2,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 600,
+    "items": {
+      "distressed": 100,
+      "upset": 80,
+      "guilty": 50,
+      "scared": 130,
+      "hostile": 50,
+      "irritable": 60,
+      "ashamed": 50,
+      "nervous": 80,
+      "jittery": 20,
+      "afraid": 30
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A Reddit post titled "China Covered Up Sinking Of Newest Submarine: US Official," has garnered significant attention with 7,195 upvotes and 355 comments. The post discusses allegations made by a US official regarding China's alleged concealment of information surrounding the sinking of its latest submarine. The upvote ratio is notably high at 97%, reflecting strong community engagement and concern regarding the implications of this event.
+</summary>
+
+<qualia>
+The emotional vibe of this event is one of anxiety and concern, combined with a hint of curiosity about the geopolitical ramifications.
+</qualia>
+
+<image_prompt>
+Generate an image that artistically represents the tension and concern surrounding the alleged concealment of significant military events. The image should illustrate themes of secrecy, fear of potential conflict, and curiosity about truth, with a somber and reflective aesthetic.
+2024-09-27 12:30:25,665 - process_daily_narrative - ERROR - Assertion failed: Image prompt not found in the response
+2024-09-27 12:30:30,364 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 12:30:30,364 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 660,
+    "items": {
+      "distressed": 100,
+      "upset": 100,
+      "guilty": 50,
+      "scared": 120,
+      "hostile": 80,
+      "irritable": 60,
+      "ashamed": 60,
+      "nervous": 80,
+      "jittery": 30,
+      "afraid": 50
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Eric Adams, the mayor of New York City, has come under scrutiny after being accused of illegally accepting foreign campaign donations. In addition to the alleged donations, he faces accusations of receiving $100,000 in luxury travel benefits from Turkish nationals. This situation raises significant ethical concerns and could potentially undermine public trust in leadership.
+</summary>
+
+<qualia>
+The emotional vibe is one of anxiety and disturbance, reflecting deep concern about integrity and trust in public figures.
+</qualia>
+
+<image_prompt>
+Create an image depicting the tension surrounding political integrity, illustrated by symbols of ethical concerns and public scrutiny, conveying a sense of distress and unease about leadership in society.
+</image_prompt>
+2024-09-27 12:30:30,495 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-27/inputs/news_and_events/2024-09-27_news.pdf', 'link': 'https://www.bbc.com/news/articles/cgeyg2vgdz0o', 'published': 'Fri, 27 Sep 2024 02:22:34 GMT', 'title': 'NYC mayor charged with taking bribes and illegal campaign funds', 'summary': 'Eric Adams, the mayor of New York City, has been accused of illegally accepting foreign campaign donations as well as luxurious travel benefits worth $100,000 from Turkish nationals. This serious allegation raises concerns about corruption and foreign influence on political campaigns, leading to public distress and heightened scrutiny of political ethics.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 27, 4, 1, 12, 585000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 1, 'items': {'interested': 2, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 740, 'items': {'distressed': 100, 'upset': 90, 'guilty': 70, 'scared': 140, 'hostile': 100, 'irritable': 70, 'ashamed': 90, 'nervous': 80, 'jittery': 20, 'afraid': 70}}}, 'qualia': 'The emotional vibe invoked by this event is one of alarm and disillusionment, as it stirs feelings of betrayal, insecurity, and outrage regarding political integrity.', 'image_prompt': 'Generate an image depicting the turmoil surrounding political corruption, incorporating elements of legal documents, fearful citizens, and an ominous skyline representing the gravity of the situation. Use dark tones and intense contrasts to reflect the emotions of alarm and disillusionment.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 27, 8, 30, 20, 811896, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '6d13bb165e763837d818861e43406dec'}, 'event_type': 'retrieved_articles', 'event_id': '6d13bb165e763837d818861e43406dec'}, {'updated_panas': {'positive_affect': {'total_score': 1, 'items': {'interested': 2, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 740, 'items': {'distressed': 100, 'upset': 90, 'guilty': 70, 'scared': 140, 'hostile': 100, 'irritable': 70, 'ashamed': 90, 'nervous': 80, 'jittery': 20, 'afraid': 70}}}, 'summary': 'Eric Adams, the mayor of New York City, has been accused of illegally accepting foreign campaign donations as well as luxurious travel benefits worth $100,000 from Turkish nationals. This serious allegation raises concerns about corruption and foreign influence on political campaigns, leading to public distress and heightened scrutiny of political ethics.', 'qualia': 'The emotional vibe invoked by this event is one of alarm and disillusionment, as it stirs feelings of betrayal, insecurity, and outrage regarding political integrity.', 'image_prompt': 'Generate an image depicting the turmoil surrounding political corruption, incorporating elements of legal documents, fearful citizens, and an ominous skyline representing the gravity of the situation. Use dark tones and intense contrasts to reflect the emotions of alarm and disillusionment.'})
+2024-09-27 12:30:58,549 - process_daily_narrative - INFO - Generating image with prompt: Generate an image depicting the turmoil surrounding political corruption, incorporating elements of legal documents, fearful citizens, and an ominous skyline representing the gravity of the situation. Use dark tones and intense contrasts to reflect the emotions of alarm and disillusionment. and aspect ratio: 1:1
+2024-09-27 12:31:17,834 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/k6t2q1ff4fLjmpVPQxmgdKEkXY8DE4rBUS4EcKvbe0mV5VEOB/output.webp
+2024-09-27 12:31:17,834 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/k6t2q1ff4fLjmpVPQxmgdKEkXY8DE4rBUS4EcKvbe0mV5VEOB/output.webp
+2024-09-27 12:31:17,932 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-27/outputs/event_id_6d13bb165e763837d818861e43406dec_0831.webp
+2024-09-27 12:31:17,933 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-27/outputs/event_id_6d13bb165e763837d818861e43406dec_0831.webp
+2024-09-27 12:31:23,393 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-27/outputs/event_id_6d13bb165e763837d818861e43406dec_0831.webp
+2024-09-27 12:31:23,394 - process_daily_narrative - INFO - Updating qualia_updates document 4jRN7pzmPaQquLT86gWX with image path
+2024-09-27 12:31:23,450 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-27/outputs/event_id_6d13bb165e763837d818861e43406dec_0831.webp
+2024-09-27 12:31:23,450 - process_daily_narrative - INFO - Added 'I Will Survive' by Gloria Gaynor to the playlist.
+2024-09-27 12:31:23,451 - process_daily_narrative - INFO - Function returned: None
+2024-09-27 12:31:23,451 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
