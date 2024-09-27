@@ -1,0 +1,140 @@
+2024-09-27 19:30:11,881 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-27 19:30:11,881 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-27 19:30:11,881 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-27 19:30:11,881 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-27 19:30:11,881 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-27 19:30:11,984 - process_daily_narrative - INFO - Received request
+2024-09-27 19:30:11,984 - process_daily_narrative - INFO - Request method: POST
+2024-09-27 19:30:11,984 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-27T12:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 27b50cd3e136c01792c6a456c410d481/13883113371187096607;o=1
+Traceparent: 00-27b50cd3e136c01792c6a456c410d481-c0aaba0e22152c1f-01
+X-Forwarded-For: 35.187.132.166
+X-Forwarded-Proto: https
+Forwarded: for="35.187.132.166";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-27 19:30:11,984 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-27 19:30:11,984 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-27 19:30:11,985 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-27 19:30:11,985 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-27 19:30:11,985 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-27 19:30:11,985 - process_daily_narrative - INFO - Updating hourly...
+2024-09-27 19:30:12,138 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=6, readtime=2024-09-27 19:30:12.125311+00:00>]]
+2024-09-27 19:30:12,138 - process_daily_narrative - INFO - Processing 1 out of 6 events for retrieved_reddit_posts
+2024-09-27 19:30:12,276 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=9, readtime=2024-09-27 19:30:12.265305+00:00>]]
+2024-09-27 19:30:12,276 - process_daily_narrative - INFO - Processing 1 out of 9 events for retrieved_articles
+2024-09-27 19:30:12,589 - process_daily_narrative - INFO - Events to process: 2
+2024-09-27 19:30:18,108 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 19:30:18,108 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 10,
+    "items": {
+      "interested": 3,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 2,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 2,
+      "active": 3
+    }
+  },
+  "negative_affect": {
+    "total_score": 830,
+    "items": {
+      "distressed": 200,
+      "upset": 100,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 0,
+      "irritable": 50,
+      "ashamed": 80,
+      "nervous": 300,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event discusses the sharp increase in Argentina's poverty rate, which has surged to 53% within the first six months of President Milei's economic reforms, often referred to as "shock therapy." The post, shared on Reddit, points out the severe impact of these policies on the Argentine population, highlighting the growing distress and challenges faced by many individuals during this economic crisis. The high engagement of the post, with over 4,400 upvotes and 543 comments, suggests that this topic resonates deeply with readers.
+</summary>
+
+<qualia>
+The emotional vibe is predominantly one of distress and anxiety, catalyzed by concern for the affected population and the broader implications of economic policies that lead to suffering.
+</qualia>
+
+<image_prompt>
+Create an illustration capturing the essence of Argentina's economic struggle, depicting the stark contrast between wealth and poverty, infused with a sense of urgency and compassion for those affected.
+</image_prompt>
+2024-09-27 19:30:22,794 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 19:30:22,795 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 8,
+    "items": {
+      "interested": 3,
+      "excited": 1,
+      "strong": 0,
+      "enthusiastic": 1,
+      "proud": 0,
+      "alert": 2,
+      "inspired": 1,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 640,
+    "items": {
+      "distressed": 150,
+      "upset": 60,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 0,
+      "irritable": 30,
+      "ashamed": 0,
+      "nervous": 80,
+      "jittery": 0,
+      "afraid": 320
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Editors from a now-defunct news site have published articles that discuss the city's recent crackdown on national security. This event reveals troubling revelations regarding governance and civil liberties, raising concerns about the implications for public safety and individual rights in the community. The nature of the articles stirs significant emotional responses among the public and raises awareness of civil issues.
+</summary>
+
+<qualia>
+The emotional vibe is a mix of concern and curiosity, invoking a sense of urgency regarding civil liberties coupled with an interest in uncovering the truth.
+</qualia>
+
+<image_prompt>
+Create an artistic representation of the tension between security and freedom, incorporating elements of urban life and symbols of civil rights, reflecting the deep concerns and interests stirred by the articles about the national security crackdown.
+</image_prompt>
+2024-09-27 19:30:22,938 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-27/inputs/news_and_events/2024-09-27_news.pdf', 'link': 'https://www.bbc.com/news/articles/cr5482yygp4o', 'published': 'Thu, 26 Sep 2024 11:35:13 GMT', 'title': 'Hong Kong jails two journalists for sedition', 'summary': "Editors from a now-defunct news site have published articles that discuss the city's recent crackdown on national security. This event reveals troubling revelations regarding governance and civil liberties, raising concerns about the implications for public safety and individual rights in the community. The nature of the articles stirs significant emotional responses among the public and raises awareness of civil issues.", 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 27, 4, 1, 13, 332000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 8, 'items': {'interested': 3, 'excited': 1, 'strong': 0, 'enthusiastic': 1, 'proud': 0, 'alert': 2, 'inspired': 1, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 640, 'items': {'distressed': 150, 'upset': 60, 'guilty': 0, 'scared': 0, 'hostile': 0, 'irritable': 30, 'ashamed': 0, 'nervous': 80, 'jittery': 0, 'afraid': 320}}}, 'qualia': 'The emotional vibe is a mix of concern and curiosity, invoking a sense of urgency regarding civil liberties coupled with an interest in uncovering the truth.', 'image_prompt': 'Create an artistic representation of the tension between security and freedom, incorporating elements of urban life and symbols of civil rights, reflecting the deep concerns and interests stirred by the articles about the national security crackdown.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 27, 15, 30, 22, 795381, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': 'd3f0fa6b6fd89d5aa11bd87392f654ce'}, 'event_type': 'retrieved_articles', 'event_id': 'd3f0fa6b6fd89d5aa11bd87392f654ce'}, {'updated_panas': {'positive_affect': {'total_score': 8, 'items': {'interested': 3, 'excited': 1, 'strong': 0, 'enthusiastic': 1, 'proud': 0, 'alert': 2, 'inspired': 1, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 640, 'items': {'distressed': 150, 'upset': 60, 'guilty': 0, 'scared': 0, 'hostile': 0, 'irritable': 30, 'ashamed': 0, 'nervous': 80, 'jittery': 0, 'afraid': 320}}}, 'summary': "Editors from a now-defunct news site have published articles that discuss the city's recent crackdown on national security. This event reveals troubling revelations regarding governance and civil liberties, raising concerns about the implications for public safety and individual rights in the community. The nature of the articles stirs significant emotional responses among the public and raises awareness of civil issues.", 'qualia': 'The emotional vibe is a mix of concern and curiosity, invoking a sense of urgency regarding civil liberties coupled with an interest in uncovering the truth.', 'image_prompt': 'Create an artistic representation of the tension between security and freedom, incorporating elements of urban life and symbols of civil rights, reflecting the deep concerns and interests stirred by the articles about the national security crackdown.'})
+2024-09-27 19:30:29,099 - process_daily_narrative - INFO - Generating image with prompt: Create an artistic representation of the tension between security and freedom, incorporating elements of urban life and symbols of civil rights, reflecting the deep concerns and interests stirred by the articles about the national security crackdown. and aspect ratio: 1:1
+2024-09-27 19:30:53,387 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/HVP346yMubKUOh62XU8wHXpH5kM83iNa7VKwC7dfYbm2zlwJA/output.webp
+2024-09-27 19:30:53,387 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/HVP346yMubKUOh62XU8wHXpH5kM83iNa7VKwC7dfYbm2zlwJA/output.webp
+2024-09-27 19:30:53,483 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-27/outputs/event_id_d3f0fa6b6fd89d5aa11bd87392f654ce_1530.webp
+2024-09-27 19:30:53,484 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-27/outputs/event_id_d3f0fa6b6fd89d5aa11bd87392f654ce_1530.webp
+2024-09-27 19:30:58,893 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-27/outputs/event_id_d3f0fa6b6fd89d5aa11bd87392f654ce_1530.webp
+2024-09-27 19:30:58,893 - process_daily_narrative - INFO - Updating qualia_updates document GBr79BMvSCk7igLF2FG0 with image path
+2024-09-27 19:30:58,961 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-27/outputs/event_id_d3f0fa6b6fd89d5aa11bd87392f654ce_1530.webp
+2024-09-27 19:30:58,961 - process_daily_narrative - INFO - Added 'Lost in the Echo' by Linkin Park to the playlist.
+2024-09-27 19:30:58,961 - process_daily_narrative - INFO - Function returned: None
+2024-09-27 19:30:58,961 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
