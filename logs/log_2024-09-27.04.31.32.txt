@@ -1,0 +1,187 @@
+2024-09-27 08:30:18,297 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-27 08:30:18,297 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-27 08:30:18,297 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-27 08:30:18,297 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-27 08:30:18,297 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-27 08:30:18,306 - process_daily_narrative - INFO - Received request
+2024-09-27 08:30:18,307 - process_daily_narrative - INFO - Request method: POST
+2024-09-27 08:30:18,307 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-27T01:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 51486190b112155decc07260462dfb90/1553675015408566020;o=1
+Traceparent: 00-51486190b112155decc07260462dfb90-158fc331ddd3bf04-01
+X-Forwarded-For: 34.98.143.6
+X-Forwarded-Proto: https
+Forwarded: for="34.98.143.6";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-27 08:30:18,307 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-27 08:30:18,307 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-27 08:30:18,307 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-27 08:30:18,307 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-27 08:30:18,307 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-27 08:30:18,307 - process_daily_narrative - INFO - Updating hourly...
+2024-09-27 08:30:18,545 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=16, readtime=2024-09-27 08:30:18.531835+00:00>]]
+2024-09-27 08:30:18,545 - process_daily_narrative - INFO - Processing 1 out of 16 events for retrieved_reddit_posts
+2024-09-27 08:30:18,651 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=23, readtime=2024-09-27 08:30:18.639104+00:00>]]
+2024-09-27 08:30:18,651 - process_daily_narrative - INFO - Processing 2 out of 23 events for retrieved_articles
+2024-09-27 08:30:18,911 - process_daily_narrative - INFO - Events to process: 3
+2024-09-27 08:30:26,431 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 08:30:26,431 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 5,
+    "items": {
+      "interested": 3,
+      "excited": 1,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 2,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 250,
+    "items": {
+      "distressed": 80,
+      "upset": 60,
+      "guilty": 0,
+      "scared": 60,
+      "hostile": 30,
+      "irritable": 10,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event describes an increase in military patrols by the US and allied nations in response to China's territorial claims over a strait. This situation may escalate tensions in the region, impacting global politics and security.
+</summary>
+
+<qualia>
+The emotional vibe is one of heightened concern and vigilance, mixed with a fleeting curiosity about the geopolitical implications.
+</qualia>
+
+<image_prompt>
+Generate an image that artistically represents rising military tensions over a strait, featuring patrol boats and symbols of global alliances, capturing an atmosphere of both caution and curiosity.
+</image_prompt>
+2024-09-27 08:30:35,489 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 08:30:35,489 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 2,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 330,
+    "items": {
+      "distressed": 80,
+      "upset": 60,
+      "guilty": 0,
+      "scared": 80,
+      "hostile": 20,
+      "irritable": 20,
+      "ashamed": 0,
+      "nervous": 50,
+      "jittery": 0,
+      "afraid": 20
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Residents are reporting significant concerns as a category four storm approaches, describing the streets as experiencing "whitewater rapids." This impending natural disaster is escalating feelings of distress, fear, and anxiety among the community, leading to a heightened sense of urgency and vulnerability.
+</summary>
+
+<qualia>
+The vibe of the emotion is one of heightened anxiety and fear, mixed with a glimmer of curiosity about the unfolding events.
+</qualia>
+
+<image_prompt>
+Generate an image depicting a tense and dramatic scene of an approaching storm with tumultuous waters flooding the streets, reflecting the emotions of anxiety and urgency prevailing in the community.
+</image_prompt>
+2024-09-27 08:30:43,800 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 08:30:43,800 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 9,
+    "items": {
+      "interested": 3,
+      "excited": 1,
+      "strong": 1,
+      "enthusiastic": 1,
+      "proud": 0,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 2,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 210,
+    "items": {
+      "distressed": 70,
+      "upset": 50,
+      "guilty": 0,
+      "scared": 40,
+      "hostile": 10,
+      "irritable": 10,
+      "ashamed": 0,
+      "nervous": 30,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+An Oxford University study revealed that playing the video game Powerwash Simulator positively influenced the mood of over 70% of participants. The game allows players to virtually power wash various surfaces, offering a therapeutic experience in cleaning, which in turn can improve mental well-being. The post discussing the study has received a positive reception on Reddit, garnering 1174 upvotes and a 0.95 upvote ratio, along with 57 comments.
+</summary>
+
+<qualia>
+The emotional vibe of this event is uplifting and refreshing, reflecting a sense of hope and light-heartedness that can emerge through engaging activities.
+</qualia>
+
+<image_prompt>
+Create an artistic representation of a person joyfully power washing, surrounded by vibrant colors and gleaming surfaces, capturing the transformative and uplifting essence of the moment.
+</image_prompt>
+2024-09-27 08:30:43,979 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-27/inputs/news_and_events/2024-09-27_news.pdf', 'link': 'https://www.bbc.com/news/articles/crm2k04m2gxo', 'published': 'Fri, 27 Sep 2024 03:00:53 GMT', 'title': "'I hope we have a home to go back to'. Floridians hunker down for Hurricane Helene", 'summary': 'Residents are reporting significant concerns as a category four storm approaches, describing the streets as experiencing "whitewater rapids." This impending natural disaster is escalating feelings of distress, fear, and anxiety among the community, leading to a heightened sense of urgency and vulnerability.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 27, 4, 1, 14, 824000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 2, 'items': {'interested': 1, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 1, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 330, 'items': {'distressed': 80, 'upset': 60, 'guilty': 0, 'scared': 80, 'hostile': 20, 'irritable': 20, 'ashamed': 0, 'nervous': 50, 'jittery': 0, 'afraid': 20}}}, 'qualia': 'The vibe of the emotion is one of heightened anxiety and fear, mixed with a glimmer of curiosity about the unfolding events.', 'image_prompt': 'Generate an image depicting a tense and dramatic scene of an approaching storm with tumultuous waters flooding the streets, reflecting the emotions of anxiety and urgency prevailing in the community.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 27, 4, 30, 35, 490172, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '3e900382e72ff8fc01040295d4cd231b'}, 'event_type': 'retrieved_articles', 'event_id': '3e900382e72ff8fc01040295d4cd231b'}, {'updated_panas': {'positive_affect': {'total_score': 2, 'items': {'interested': 1, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 1, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 330, 'items': {'distressed': 80, 'upset': 60, 'guilty': 0, 'scared': 80, 'hostile': 20, 'irritable': 20, 'ashamed': 0, 'nervous': 50, 'jittery': 0, 'afraid': 20}}}, 'summary': 'Residents are reporting significant concerns as a category four storm approaches, describing the streets as experiencing "whitewater rapids." This impending natural disaster is escalating feelings of distress, fear, and anxiety among the community, leading to a heightened sense of urgency and vulnerability.', 'qualia': 'The vibe of the emotion is one of heightened anxiety and fear, mixed with a glimmer of curiosity about the unfolding events.', 'image_prompt': 'Generate an image depicting a tense and dramatic scene of an approaching storm with tumultuous waters flooding the streets, reflecting the emotions of anxiety and urgency prevailing in the community.'})
+2024-09-27 08:31:03,395 - process_daily_narrative - INFO - Generating image with prompt: Generate an image depicting a tense and dramatic scene of an approaching storm with tumultuous waters flooding the streets, reflecting the emotions of anxiety and urgency prevailing in the community. and aspect ratio: 1:1
+2024-09-27 08:31:26,894 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/Ow2G8rPfy53ZcqcDi06RetkFW2V3BZk9D9AoDieJfmb41HEOB/output.webp
+2024-09-27 08:31:26,894 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/Ow2G8rPfy53ZcqcDi06RetkFW2V3BZk9D9AoDieJfmb41HEOB/output.webp
+2024-09-27 08:31:26,969 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-27/outputs/event_id_3e900382e72ff8fc01040295d4cd231b_0431.webp
+2024-09-27 08:31:26,971 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-27/outputs/event_id_3e900382e72ff8fc01040295d4cd231b_0431.webp
+2024-09-27 08:31:32,310 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-27/outputs/event_id_3e900382e72ff8fc01040295d4cd231b_0431.webp
+2024-09-27 08:31:32,310 - process_daily_narrative - INFO - Updating qualia_updates document Rg16v0VP6wTTpZE9onDD with image path
+2024-09-27 08:31:32,367 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-27/outputs/event_id_3e900382e72ff8fc01040295d4cd231b_0431.webp
+2024-09-27 08:31:32,367 - process_daily_narrative - INFO - Added 'The Gardener' by The Tallest Man on Earth to the playlist.
+2024-09-27 08:31:32,367 - process_daily_narrative - INFO - Function returned: None
+2024-09-27 08:31:32,368 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
