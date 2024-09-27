@@ -1,0 +1,140 @@
+2024-09-27 20:30:11,632 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-27 20:30:11,632 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-27 20:30:11,632 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-27 20:30:11,632 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-27 20:30:11,632 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-27 20:30:11,686 - process_daily_narrative - INFO - Received request
+2024-09-27 20:30:11,686 - process_daily_narrative - INFO - Request method: POST
+2024-09-27 20:30:11,686 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-27T13:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: ac4c572c914c65ba2e7e3e183ffcca92/11219318824226859779;o=1
+Traceparent: 00-ac4c572c914c65ba2e7e3e183ffcca92-9bb3070733e52b03-01
+X-Forwarded-For: 35.187.132.106
+X-Forwarded-Proto: https
+Forwarded: for="35.187.132.106";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-27 20:30:11,686 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-27 20:30:11,687 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-27 20:30:11,687 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-27 20:30:11,687 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-27 20:30:11,687 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-27 20:30:11,687 - process_daily_narrative - INFO - Updating hourly...
+2024-09-27 20:30:11,978 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=5, readtime=2024-09-27 20:30:11.910683+00:00>]]
+2024-09-27 20:30:11,978 - process_daily_narrative - INFO - Processing 1 out of 5 events for retrieved_reddit_posts
+2024-09-27 20:30:12,079 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=8, readtime=2024-09-27 20:30:12.069294+00:00>]]
+2024-09-27 20:30:12,080 - process_daily_narrative - INFO - Processing 1 out of 8 events for retrieved_articles
+2024-09-27 20:30:12,428 - process_daily_narrative - INFO - Events to process: 2
+2024-09-27 20:30:18,941 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 20:30:18,941 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 2,
+    "items": {
+      "interested": 3,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 1,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 850,
+    "items": {
+      "distressed": 200,
+      "upset": 100,
+      "guilty": 0,
+      "scared": 150,
+      "hostile": 200,
+      "irritable": 100,
+      "ashamed": 0,
+      "nervous": 100,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event pertains to an alleged assassination attempt on John Bolton, a prominent figure known for his critical stance on Iran and his former position as a national security adviser. This incident raises significant concerns regarding political violence and its implications in international relations, heightening feelings of distress and fear among people concerned about stability and safety in political discourse.
+</summary>
+
+<qualia>
+The emotional vibe is one of heightened anxiety and agitation, interspersed with a flicker of curiosity about the nature of political conflict and its consequences.
+</qualia>
+
+<image_prompt>
+Create an image depicting a chaotic political scene reflecting anxiety, turmoil, and curiosity, with dark undertones symbolizing the threat of violence and conflict intertwined with elements suggesting hope and resilience.
+</image_prompt>
+2024-09-27 20:30:24,886 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 20:30:24,886 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 8,
+    "items": {
+      "interested": 4,
+      "excited": 1,
+      "strong": 0,
+      "enthusiastic": 1,
+      "proud": 0,
+      "alert": 2,
+      "inspired": 1,
+      "determined": 0,
+      "attentive": 3,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 720,
+    "items": {
+      "distressed": 200,
+      "upset": 60,
+      "guilty": 0,
+      "scared": 100,
+      "hostile": 0,
+      "irritable": 30,
+      "ashamed": 0,
+      "nervous": 80,
+      "jittery": 0,
+      "afraid": 250
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A study has revealed that individuals who experienced anosmia (loss of smell) during COVID-19 showed significant changes in brain functionality and structure during their recovery. This groundbreaking research, posted by a Reddit user in the r/science community, highlights the serious implications of COVID-19 on cognitive health and offers insights into the long-term effects of this virus. The post received a high engagement with an upvote score of 621 and an upvote ratio of 0.99, indicating strong community interest.
+</summary>
+
+<qualia>
+The emotional "vibe" elicited by this event is a complex mix of curiosity about the research paired with deep concern over the potential long-term health consequences for those affected.
+</qualia>
+
+<image_prompt>
+Create an artistic representation of the emotional impact of the recent study on anosmia and brain changes due to COVID-19. The image should evoke a sense of curiosity, concern, and a quest for understanding, using light and shadow to symbolize the interplay between knowledge and fear regarding the implications of the findings.
+</image_prompt>
+2024-09-27 20:30:25,031 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-27/inputs/news_and_events/2024-09-27_news.pdf', 'link': 'https://www.bbc.com/news/articles/c78d7x08j7eo', 'published': 'Thu, 26 Sep 2024 20:55:08 GMT', 'title': 'US offers $20m bounty for Iranian accused of plans to kill Trump aide', 'summary': 'The event pertains to an alleged assassination attempt on John Bolton, a prominent figure known for his critical stance on Iran and his former position as a national security adviser. This incident raises significant concerns regarding political violence and its implications in international relations, heightening feelings of distress and fear among people concerned about stability and safety in political discourse.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 27, 4, 1, 12, 947000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 2, 'items': {'interested': 3, 'excited': 0, 'strong': 0, 'enthusiastic': 1, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 850, 'items': {'distressed': 200, 'upset': 100, 'guilty': 0, 'scared': 150, 'hostile': 200, 'irritable': 100, 'ashamed': 0, 'nervous': 100, 'jittery': 0, 'afraid': 0}}}, 'qualia': 'The emotional vibe is one of heightened anxiety and agitation, interspersed with a flicker of curiosity about the nature of political conflict and its consequences.', 'image_prompt': 'Create an image depicting a chaotic political scene reflecting anxiety, turmoil, and curiosity, with dark undertones symbolizing the threat of violence and conflict intertwined with elements suggesting hope and resilience.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 27, 16, 30, 18, 942286, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': 'd71216a762dfb7a174c68f41163c4e77'}, 'event_type': 'retrieved_articles', 'event_id': 'd71216a762dfb7a174c68f41163c4e77'}, {'updated_panas': {'positive_affect': {'total_score': 2, 'items': {'interested': 3, 'excited': 0, 'strong': 0, 'enthusiastic': 1, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 850, 'items': {'distressed': 200, 'upset': 100, 'guilty': 0, 'scared': 150, 'hostile': 200, 'irritable': 100, 'ashamed': 0, 'nervous': 100, 'jittery': 0, 'afraid': 0}}}, 'summary': 'The event pertains to an alleged assassination attempt on John Bolton, a prominent figure known for his critical stance on Iran and his former position as a national security adviser. This incident raises significant concerns regarding political violence and its implications in international relations, heightening feelings of distress and fear among people concerned about stability and safety in political discourse.', 'qualia': 'The emotional vibe is one of heightened anxiety and agitation, interspersed with a flicker of curiosity about the nature of political conflict and its consequences.', 'image_prompt': 'Create an image depicting a chaotic political scene reflecting anxiety, turmoil, and curiosity, with dark undertones symbolizing the threat of violence and conflict intertwined with elements suggesting hope and resilience.'})
+2024-09-27 20:30:35,317 - process_daily_narrative - INFO - Generating image with prompt: Create an image depicting a chaotic political scene reflecting anxiety, turmoil, and curiosity, with dark undertones symbolizing the threat of violence and conflict intertwined with elements suggesting hope and resilience. and aspect ratio: 1:1
+2024-09-27 20:30:52,546 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/beIeegd0fBUyfjgKoEE9N2y5zHc6iEFuCyGGNtxhEoagfHT4E/output.webp
+2024-09-27 20:30:52,547 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/beIeegd0fBUyfjgKoEE9N2y5zHc6iEFuCyGGNtxhEoagfHT4E/output.webp
+2024-09-27 20:30:52,620 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-27/outputs/event_id_d71216a762dfb7a174c68f41163c4e77_1630.webp
+2024-09-27 20:30:52,621 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-27/outputs/event_id_d71216a762dfb7a174c68f41163c4e77_1630.webp
+2024-09-27 20:30:58,017 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-27/outputs/event_id_d71216a762dfb7a174c68f41163c4e77_1630.webp
+2024-09-27 20:30:58,017 - process_daily_narrative - INFO - Updating qualia_updates document mxVYru9emkYQo1CmHg6j with image path
+2024-09-27 20:30:58,166 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-27/outputs/event_id_d71216a762dfb7a174c68f41163c4e77_1630.webp
+2024-09-27 20:30:58,166 - process_daily_narrative - INFO - Added 'Falling Slowly' by Glen Hansard & Markéta Irglová to the playlist.
+2024-09-27 20:30:58,166 - process_daily_narrative - INFO - Function returned: None
+2024-09-27 20:30:58,166 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
