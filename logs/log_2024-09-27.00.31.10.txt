@@ -1,0 +1,187 @@
+2024-09-27 04:30:17,658 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-27 04:30:17,658 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-27 04:30:17,658 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-27 04:30:17,658 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-27 04:30:17,658 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-27 04:30:17,739 - process_daily_narrative - INFO - Received request
+2024-09-27 04:30:17,739 - process_daily_narrative - INFO - Request method: POST
+2024-09-27 04:30:17,739 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-26T21:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: be128374853a88487b3cf503dd7e6eca/11714294030638093583;o=1
+Traceparent: 00-be128374853a88487b3cf503dd7e6eca-a291885b1aa9950f-01
+X-Forwarded-For: 107.178.194.6
+X-Forwarded-Proto: https
+Forwarded: for="107.178.194.6";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-27 04:30:17,740 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-27 04:30:17,740 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-27 04:30:17,740 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-27 04:30:17,740 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-27 04:30:17,740 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-27 04:30:17,740 - process_daily_narrative - INFO - Updating hourly...
+2024-09-27 04:30:17,918 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=20, readtime=2024-09-27 04:30:17.904156+00:00>]]
+2024-09-27 04:30:17,919 - process_daily_narrative - INFO - Processing 1 out of 20 events for retrieved_reddit_posts
+2024-09-27 04:30:18,035 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=31, readtime=2024-09-27 04:30:18.023963+00:00>]]
+2024-09-27 04:30:18,036 - process_daily_narrative - INFO - Processing 2 out of 31 events for retrieved_articles
+2024-09-27 04:30:18,249 - process_daily_narrative - INFO - Events to process: 3
+2024-09-27 04:30:22,356 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 04:30:22,357 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 2,
+    "items": {
+      "interested": 2,
+      "excited": 1,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 2,
+      "inspired": 0,
+      "determined": 1,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 375,
+    "items": {
+      "distressed": 90,
+      "upset": 70,
+      "guilty": 0,
+      "scared": 80,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 40,
+      "jittery": 0,
+      "afraid": 95
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Recent military operations have led to the largest offensive by the army to regain control of a city that has faced turmoil for the past several months. This situation has prompted significant feelings of distress and anxiety for the people involved, while also invoking curiosity about the outcome of these events.
+</summary>
+
+<qualia>
+The emotional vibe is a heavy mix of anxiety and curiosity, underscored by a sense of urgency and concern for the unfolding situation.
+</qualia>
+
+<image_prompt>
+Create an artistic representation of a city in turmoil under military offensive, reflecting deep emotions of anxiety, uncertainty, and a glimmer of curiosity for change and resolution.
+</image_prompt>
+2024-09-27 04:30:27,322 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 04:30:27,322 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 15,
+    "items": {
+      "interested": 5,
+      "excited": 4,
+      "strong": 0,
+      "enthusiastic": 3,
+      "proud": 0,
+      "alert": 2,
+      "inspired": 1,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 250,
+    "items": {
+      "distressed": 80,
+      "upset": 70,
+      "guilty": 0,
+      "scared": 60,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 40,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A study reported on in a post within the r/science subreddit discusses the effectiveness of ‘weekend warrior’ workouts, suggesting that the total amount of physical activity may be more important than frequency. The post received significant attention, with over 3,800 upvotes and a high upvote ratio of 0.97, along with 189 comments. This research could provide encouragement for those who struggle to maintain a daily exercise routine, highlighting that even sporadic activity can be beneficial.
+</summary>
+
+<qualia>
+The emotion invoked by this event is a blend of curiosity and hope, with a sense of excitement about a more flexible and achievable approach to fitness.
+</qualia>
+
+<image_prompt>
+Create an image illustrating the concept of "weekend warrior" workouts, capturing the essence of enthusiasm and empowerment associated with flexible exercise routines. Incorporate vibrant colors and dynamic figures engaging in various physical activities over the weekend, symbolizing joy and resilience in fitness.
+</image_prompt>
+2024-09-27 04:30:33,202 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 04:30:33,202 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 360,
+    "items": {
+      "distressed": 100,
+      "upset": 90,
+      "guilty": 0,
+      "scared": 70,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 50,
+      "jittery": 0,
+      "afraid": 50
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Since Monday, over 600 people have lost their lives due to Israeli airstrikes in Lebanon, according to health officials. This devastating news contributes to a growing feeling of distress and fear surrounding the ongoing violence, highlighting the urgency for collective compassion and action in response to such tragedies.
+</summary>
+
+<qualia>
+The emotional vibe invoked by this event is one of deep sorrow and anxiety, mixed with a flicker of awareness and concern for the plight of others.
+</qualia>
+
+<image_prompt>
+Create an artistic representation of the impact of the airstrikes in Lebanon, focusing on themes of sorrow, loss, and collective compassion, blending dark and muted colors with subtle hints of hopeful elements to reflect empathy and resilience.
+</image_prompt>
+2024-09-27 04:30:33,308 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-27/inputs/news_and_events/2024-09-27_news.pdf', 'link': 'https://www.bbc.com/news/articles/cgeyg2g288wo', 'published': 'Thu, 26 Sep 2024 16:16:57 GMT', 'title': 'Sudan army launches major attack on capital Khartoum', 'summary': 'Recent military operations have led to the largest offensive by the army to regain control of a city that has faced turmoil for the past several months. This situation has prompted significant feelings of distress and anxiety for the people involved, while also invoking curiosity about the outcome of these events.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 27, 4, 1, 12, 856000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 2, 'items': {'interested': 2, 'excited': 1, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 2, 'inspired': 0, 'determined': 1, 'attentive': 1, 'active': 0}}, 'negative_affect': {'total_score': 375, 'items': {'distressed': 90, 'upset': 70, 'guilty': 0, 'scared': 80, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 40, 'jittery': 0, 'afraid': 95}}}, 'qualia': 'The emotional vibe is a heavy mix of anxiety and curiosity, underscored by a sense of urgency and concern for the unfolding situation.', 'image_prompt': 'Create an artistic representation of a city in turmoil under military offensive, reflecting deep emotions of anxiety, uncertainty, and a glimmer of curiosity for change and resolution.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 27, 0, 30, 22, 357782, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '088255afe96cf308eb3aec84efc35e7e'}, 'event_type': 'retrieved_articles', 'event_id': '088255afe96cf308eb3aec84efc35e7e'}, {'updated_panas': {'positive_affect': {'total_score': 2, 'items': {'interested': 2, 'excited': 1, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 2, 'inspired': 0, 'determined': 1, 'attentive': 1, 'active': 0}}, 'negative_affect': {'total_score': 375, 'items': {'distressed': 90, 'upset': 70, 'guilty': 0, 'scared': 80, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 40, 'jittery': 0, 'afraid': 95}}}, 'summary': 'Recent military operations have led to the largest offensive by the army to regain control of a city that has faced turmoil for the past several months. This situation has prompted significant feelings of distress and anxiety for the people involved, while also invoking curiosity about the outcome of these events.', 'qualia': 'The emotional vibe is a heavy mix of anxiety and curiosity, underscored by a sense of urgency and concern for the unfolding situation.', 'image_prompt': 'Create an artistic representation of a city in turmoil under military offensive, reflecting deep emotions of anxiety, uncertainty, and a glimmer of curiosity for change and resolution.'})
+2024-09-27 04:30:43,837 - process_daily_narrative - INFO - Generating image with prompt: Create an artistic representation of a city in turmoil under military offensive, reflecting deep emotions of anxiety, uncertainty, and a glimmer of curiosity for change and resolution. and aspect ratio: 1:1
+2024-09-27 04:31:05,121 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/KbVPB5iB9e3EIirnhLRKeksaf5yUaLSCNp6UjN3KhW3Q48BnA/output.webp
+2024-09-27 04:31:05,122 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/KbVPB5iB9e3EIirnhLRKeksaf5yUaLSCNp6UjN3KhW3Q48BnA/output.webp
+2024-09-27 04:31:05,186 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-27/outputs/event_id_088255afe96cf308eb3aec84efc35e7e_0031.webp
+2024-09-27 04:31:05,187 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-27/outputs/event_id_088255afe96cf308eb3aec84efc35e7e_0031.webp
+2024-09-27 04:31:10,591 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-27/outputs/event_id_088255afe96cf308eb3aec84efc35e7e_0031.webp
+2024-09-27 04:31:10,591 - process_daily_narrative - INFO - Updating qualia_updates document ngwLmDscAneJYV0xuk6A with image path
+2024-09-27 04:31:10,650 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-27/outputs/event_id_088255afe96cf308eb3aec84efc35e7e_0031.webp
+2024-09-27 04:31:10,650 - process_daily_narrative - INFO - Added 'The Book of Love' by The Magnetic Fields to the playlist.
+2024-09-27 04:31:10,651 - process_daily_narrative - INFO - Function returned: None
+2024-09-27 04:31:10,651 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
