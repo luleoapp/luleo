@@ -1,0 +1,140 @@
+2024-09-27 02:30:16,912 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-27 02:30:16,912 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-27 02:30:16,912 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-27 02:30:16,912 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-27 02:30:16,912 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-27 02:30:16,965 - process_daily_narrative - INFO - Received request
+2024-09-27 02:30:16,966 - process_daily_narrative - INFO - Request method: POST
+2024-09-27 02:30:16,966 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-26T19:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 5491469b7e4cd73a8299c8c848ac4584/10721894790763758149;o=1
+Traceparent: 00-5491469b7e4cd73a8299c8c848ac4584-94cbd2815295c245-01
+X-Forwarded-For: 34.98.143.130
+X-Forwarded-Proto: https
+Forwarded: for="34.98.143.130";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-27 02:30:16,966 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-27 02:30:16,966 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-27 02:30:16,966 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-27 02:30:16,966 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-27 02:30:16,966 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-27 02:30:16,966 - process_daily_narrative - INFO - Updating hourly...
+2024-09-27 02:30:17,248 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=0.0, readtime=2024-09-27 02:30:17.233880+00:00>]]
+2024-09-27 02:30:17,248 - process_daily_narrative - INFO - Processing 0 out of 0.0 events for retrieved_reddit_posts
+2024-09-27 02:30:17,403 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=3, readtime=2024-09-27 02:30:17.388689+00:00>]]
+2024-09-27 02:30:17,403 - process_daily_narrative - INFO - Processing 2 out of 3 events for retrieved_articles
+2024-09-27 02:30:17,680 - process_daily_narrative - INFO - Events to process: 2
+2024-09-27 02:30:22,353 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 02:30:22,354 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 3,
+    "items": {
+      "interested": 1,
+      "excited": 1,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 1,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 200,
+    "items": {
+      "distressed": 60,
+      "upset": 50,
+      "guilty": 0,
+      "scared": 40,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 50,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Two Russian cosmonauts recently completed an incredible journey, spending 374 days aboard the Soyuz capsule in space. This remarkable achievement highlights human resilience, innovation, and the collaborative spirit of space exploration. While their experience showcases the wonders of humanity's quest for knowledge and discovery, it also raises emotional complexities as they return to Earth after such an extended period of isolation.
+</summary>
+
+<qualia>
+The emotional vibe is a mixture of awe and anxiety, reflecting admiration for human courage and the challenges faced in space exploration.
+</qualia>
+
+<image_prompt>
+Generate an artistic image depicting the awe of space exploration and the emotional complexities of returning from a long space mission, incorporating elements of resilience and interconnectedness.
+</image_prompt>
+2024-09-27 02:30:27,169 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 02:30:27,170 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 0,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 230,
+    "items": {
+      "distressed": 80,
+      "upset": 70,
+      "guilty": 0,
+      "scared": 60,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 60,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Dina Darwiche, a dedicated worker for the UNHCR in the Bekaa region, tragically lost her life when her family home was struck by an explosive. This event highlights the ongoing dangers faced by humanitarian workers in conflict zones and the devastating consequences for families caught in the turmoil of violence.
+</summary>
+
+<qualia>
+A heavy sense of grief and despair, intertwined with a profound sadness for the loss of a compassionate individual and the impact of conflict on innocent lives.
+</qualia>
+
+<image_prompt>
+Create an image that artistically represents the tragic event of Dina Darwiche's death, incorporating elements of grief, loss, and resilience. The artwork should evoke a sense of empathy and highlight the fragile nature of humanity in the face of violence.
+2024-09-27 02:30:27,170 - process_daily_narrative - ERROR - Assertion failed: Image prompt not found in the response
+2024-09-27 02:30:27,170 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-26/inputs/news_and_events/2024-09-26_news.pdf', 'link': 'https://www.bbc.com/news/videos/ckgnzr1dx73o', 'published': 'Mon, 23 Sep 2024 21:13:38 GMT', 'title': 'Watch: Space crew returns to Earth after longest stay on ISS', 'summary': "Two Russian cosmonauts recently completed an incredible journey, spending 374 days aboard the Soyuz capsule in space. This remarkable achievement highlights human resilience, innovation, and the collaborative spirit of space exploration. While their experience showcases the wonders of humanity's quest for knowledge and discovery, it also raises emotional complexities as they return to Earth after such an extended period of isolation.", 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 26, 4, 1, 15, 507000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 3, 'items': {'interested': 1, 'excited': 1, 'strong': 0, 'enthusiastic': 0, 'proud': 1, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 200, 'items': {'distressed': 60, 'upset': 50, 'guilty': 0, 'scared': 40, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 50, 'jittery': 0, 'afraid': 0}}}, 'qualia': 'The emotional vibe is a mixture of awe and anxiety, reflecting admiration for human courage and the challenges faced in space exploration.', 'image_prompt': 'Generate an artistic image depicting the awe of space exploration and the emotional complexities of returning from a long space mission, incorporating elements of resilience and interconnectedness.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 26, 22, 30, 22, 355204, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': 'eacc0a7310756fcdb697043a6e131aa6'}, 'event_type': 'retrieved_articles', 'event_id': 'eacc0a7310756fcdb697043a6e131aa6'}, {'updated_panas': {'positive_affect': {'total_score': 3, 'items': {'interested': 1, 'excited': 1, 'strong': 0, 'enthusiastic': 0, 'proud': 1, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 200, 'items': {'distressed': 60, 'upset': 50, 'guilty': 0, 'scared': 40, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 50, 'jittery': 0, 'afraid': 0}}}, 'summary': "Two Russian cosmonauts recently completed an incredible journey, spending 374 days aboard the Soyuz capsule in space. This remarkable achievement highlights human resilience, innovation, and the collaborative spirit of space exploration. While their experience showcases the wonders of humanity's quest for knowledge and discovery, it also raises emotional complexities as they return to Earth after such an extended period of isolation.", 'qualia': 'The emotional vibe is a mixture of awe and anxiety, reflecting admiration for human courage and the challenges faced in space exploration.', 'image_prompt': 'Generate an artistic image depicting the awe of space exploration and the emotional complexities of returning from a long space mission, incorporating elements of resilience and interconnectedness.'})
+2024-09-27 02:30:43,473 - process_daily_narrative - INFO - Generating image with prompt: Generate an artistic image depicting the awe of space exploration and the emotional complexities of returning from a long space mission, incorporating elements of resilience and interconnectedness. and aspect ratio: 1:1
+2024-09-27 02:31:05,669 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/bdxGTcpXWYoWDtW4RB8TPCOZUjsobRdtfJVF06guMDj0VegTA/output.webp
+2024-09-27 02:31:05,669 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/bdxGTcpXWYoWDtW4RB8TPCOZUjsobRdtfJVF06guMDj0VegTA/output.webp
+2024-09-27 02:31:05,741 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-26/outputs/event_id_eacc0a7310756fcdb697043a6e131aa6_2231.webp
+2024-09-27 02:31:05,741 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-26/outputs/event_id_eacc0a7310756fcdb697043a6e131aa6_2231.webp
+2024-09-27 02:31:11,090 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-26/outputs/event_id_eacc0a7310756fcdb697043a6e131aa6_2231.webp
+2024-09-27 02:31:11,091 - process_daily_narrative - INFO - Updating qualia_updates document 3FoSPwan8VvNhPvKstRf with image path
+2024-09-27 02:31:11,172 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-26/outputs/event_id_eacc0a7310756fcdb697043a6e131aa6_2231.webp
+2024-09-27 02:31:11,173 - process_daily_narrative - INFO - No suitable songs were found after multiple attempts.
+2024-09-27 02:31:11,173 - process_daily_narrative - INFO - Function returned: None
+2024-09-27 02:31:11,173 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
