@@ -1,0 +1,140 @@
+2024-09-27 00:30:18,033 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-27 00:30:18,033 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-27 00:30:18,033 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-27 00:30:18,033 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-27 00:30:18,033 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-27 00:30:18,124 - process_daily_narrative - INFO - Received request
+2024-09-27 00:30:18,125 - process_daily_narrative - INFO - Request method: POST
+2024-09-27 00:30:18,125 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-26T17:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: dd505cf5d6c32e40897e4c28b3ef9057/14747040772294582829;o=1
+Traceparent: 00-dd505cf5d6c32e40897e4c28b3ef9057-cca8037300d2222d-01
+X-Forwarded-For: 34.98.143.162
+X-Forwarded-Proto: https
+Forwarded: for="34.98.143.162";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-27 00:30:18,125 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-27 00:30:18,125 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-27 00:30:18,126 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-27 00:30:18,126 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-27 00:30:18,126 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-27 00:30:18,126 - process_daily_narrative - INFO - Updating hourly...
+2024-09-27 00:30:18,275 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=0.0, readtime=2024-09-27 00:30:18.262516+00:00>]]
+2024-09-27 00:30:18,275 - process_daily_narrative - INFO - Processing 0 out of 0.0 events for retrieved_reddit_posts
+2024-09-27 00:30:18,424 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=6, readtime=2024-09-27 00:30:18.412344+00:00>]]
+2024-09-27 00:30:18,424 - process_daily_narrative - INFO - Processing 2 out of 6 events for retrieved_articles
+2024-09-27 00:30:18,628 - process_daily_narrative - INFO - Events to process: 2
+2024-09-27 00:30:24,358 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 00:30:24,359 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 180,
+    "items": {
+      "distressed": 50,
+      "upset": 50,
+      "guilty": 0,
+      "scared": 40,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 40,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+In a political landscape where stability is constantly challenged, the prime minister faced a significant moment as a vote to topple his government failed. This outcome, although momentarily a relief for him, indicates a looming series of challenges ahead. It highlights the instability and stress governing bodies undergo in times of crisis and can evoke a mix of emotions in the public and the governing party alike, ultimately signaling potential unrest and uncertainty in the political arena.
+</summary>
+
+<qualia>
+The emotional vibe is one of anxiety and uncertainty mixed with a faint glimmer of intrigue; a reflection of unease about the future yet a small sense of engagement with the political landscape.
+</qualia>
+
+<image_prompt>
+Create an image capturing the tension and anticipation in a political arena, reflecting the emotions of anxiety and uncertainty with hues of gray and hints of curiosity. The scene should depict a divided crowd with expressions of concern and intrigue as the backdrop of a governmental building looms above.
+</image_prompt>
+2024-09-27 00:30:29,338 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 00:30:29,338 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 205,
+    "items": {
+      "distressed": 70,
+      "upset": 45,
+      "guilty": 0,
+      "scared": 50,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 25,
+      "jittery": 0,
+      "afraid": 15
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+In a recent speech at the UN, the US president urged for restraint regarding ongoing violence and conflict, specifically addressing tensions in the region. However, in stark contrast, Israel's leader reaffirmed his commitment to continue military actions against Hezbollah. This divergence in calls for peace reflects a heightened sense of urgency and distress over the ongoing conflict, impacting emotional responses globally.
+</summary>
+
+<qualia>
+The emotional "vibe" invoked by this event is one of heightened distress and concern, underscored by a waning sense of hope and a lack of enthusiasm.
+</qualia>
+
+<image_prompt>
+Create an artistic representation of a tense global situation, incorporating elements of conflict juxtaposed with symbols of peace. The artwork should evoke feelings of distress and urgency, while also including subtle hints of interest in resolution efforts.
+2024-09-27 00:30:29,338 - process_daily_narrative - ERROR - Assertion failed: Image prompt not found in the response
+2024-09-27 00:30:29,338 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-26/inputs/news_and_events/2024-09-26_news.pdf', 'link': 'https://www.bbc.com/news/articles/c93pg0gnkvxo', 'published': 'Wed, 25 Sep 2024 20:50:11 GMT', 'title': "Canada's Trudeau survives no-confidence vote in parliament", 'summary': 'In a political landscape where stability is constantly challenged, the prime minister faced a significant moment as a vote to topple his government failed. This outcome, although momentarily a relief for him, indicates a looming series of challenges ahead. It highlights the instability and stress governing bodies undergo in times of crisis and can evoke a mix of emotions in the public and the governing party alike, ultimately signaling potential unrest and uncertainty in the political arena.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 26, 4, 1, 14, 249000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 1, 'items': {'interested': 1, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 180, 'items': {'distressed': 50, 'upset': 50, 'guilty': 0, 'scared': 40, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 40, 'jittery': 0, 'afraid': 0}}}, 'qualia': 'The emotional vibe is one of anxiety and uncertainty mixed with a faint glimmer of intrigue; a reflection of unease about the future yet a small sense of engagement with the political landscape.', 'image_prompt': 'Create an image capturing the tension and anticipation in a political arena, reflecting the emotions of anxiety and uncertainty with hues of gray and hints of curiosity. The scene should depict a divided crowd with expressions of concern and intrigue as the backdrop of a governmental building looms above.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 26, 20, 30, 24, 359932, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': 'c38fbbf13f00af8dae0d96fd6f19ada0'}, 'event_type': 'retrieved_articles', 'event_id': 'c38fbbf13f00af8dae0d96fd6f19ada0'}, {'updated_panas': {'positive_affect': {'total_score': 1, 'items': {'interested': 1, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 180, 'items': {'distressed': 50, 'upset': 50, 'guilty': 0, 'scared': 40, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 40, 'jittery': 0, 'afraid': 0}}}, 'summary': 'In a political landscape where stability is constantly challenged, the prime minister faced a significant moment as a vote to topple his government failed. This outcome, although momentarily a relief for him, indicates a looming series of challenges ahead. It highlights the instability and stress governing bodies undergo in times of crisis and can evoke a mix of emotions in the public and the governing party alike, ultimately signaling potential unrest and uncertainty in the political arena.', 'qualia': 'The emotional vibe is one of anxiety and uncertainty mixed with a faint glimmer of intrigue; a reflection of unease about the future yet a small sense of engagement with the political landscape.', 'image_prompt': 'Create an image capturing the tension and anticipation in a political arena, reflecting the emotions of anxiety and uncertainty with hues of gray and hints of curiosity. The scene should depict a divided crowd with expressions of concern and intrigue as the backdrop of a governmental building looms above.'})
+2024-09-27 00:30:40,469 - process_daily_narrative - INFO - Generating image with prompt: Create an image capturing the tension and anticipation in a political arena, reflecting the emotions of anxiety and uncertainty with hues of gray and hints of curiosity. The scene should depict a divided crowd with expressions of concern and intrigue as the backdrop of a governmental building looms above. and aspect ratio: 1:1
+2024-09-27 00:30:58,194 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/iwdVvzf1tq1of0k3cEgnOqt1hNYFOxiWxtEEfdqsd4CD21BnA/output.webp
+2024-09-27 00:30:58,194 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/iwdVvzf1tq1of0k3cEgnOqt1hNYFOxiWxtEEfdqsd4CD21BnA/output.webp
+2024-09-27 00:30:58,372 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-26/outputs/event_id_c38fbbf13f00af8dae0d96fd6f19ada0_2030.webp
+2024-09-27 00:30:58,372 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-26/outputs/event_id_c38fbbf13f00af8dae0d96fd6f19ada0_2030.webp
+2024-09-27 00:31:03,818 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-26/outputs/event_id_c38fbbf13f00af8dae0d96fd6f19ada0_2030.webp
+2024-09-27 00:31:03,818 - process_daily_narrative - INFO - Updating qualia_updates document Hqkj1SFcRwfv8yfhOVF0 with image path
+2024-09-27 00:31:03,875 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-26/outputs/event_id_c38fbbf13f00af8dae0d96fd6f19ada0_2030.webp
+2024-09-27 00:31:03,875 - process_daily_narrative - INFO - Added 'The One That Got Away' by Katy Perry to the playlist.
+2024-09-27 00:31:03,875 - process_daily_narrative - INFO - Function returned: None
+2024-09-27 00:31:03,875 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
