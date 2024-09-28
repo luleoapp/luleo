@@ -1,0 +1,187 @@
+2024-09-28 04:30:08,856 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-28 04:30:08,856 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-28 04:30:08,857 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-28 04:30:08,857 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-28 04:30:08,857 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-28 04:30:08,880 - process_daily_narrative - INFO - Received request
+2024-09-28 04:30:08,880 - process_daily_narrative - INFO - Request method: POST
+2024-09-28 04:30:08,880 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-27T21:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: c190658a8689accd1514c586f26ba7d8/7932183524727288180;o=1
+Traceparent: 00-c190658a8689accd1514c586f26ba7d8-6e14c6e3a4937174-01
+X-Forwarded-For: 34.98.143.226
+X-Forwarded-Proto: https
+Forwarded: for="34.98.143.226";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-28 04:30:08,881 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-28 04:30:08,881 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-28 04:30:08,881 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-28 04:30:08,881 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-28 04:30:08,881 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-28 04:30:08,881 - process_daily_narrative - INFO - Updating hourly...
+2024-09-28 04:30:09,143 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=20, readtime=2024-09-28 04:30:09.131543+00:00>]]
+2024-09-28 04:30:09,143 - process_daily_narrative - INFO - Processing 1 out of 20 events for retrieved_reddit_posts
+2024-09-28 04:30:09,251 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=26, readtime=2024-09-28 04:30:09.241796+00:00>]]
+2024-09-28 04:30:09,251 - process_daily_narrative - INFO - Processing 2 out of 26 events for retrieved_articles
+2024-09-28 04:30:09,512 - process_daily_narrative - INFO - Events to process: 3
+2024-09-28 04:30:13,810 - process_daily_narrative - INFO - Raw API Response:
+2024-09-28 04:30:13,810 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 0,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 1295,
+    "items": {
+      "distressed": 510,
+      "upset": 300,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 385,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 0,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The BBC has reported distressing accounts from women caught in a conflict between the army and the RSF, detailing horrific experiences of rape. This situation highlights the severe and ongoing human rights abuses occurring within the context of the conflict, bringing light to the suffering of vulnerable populations amidst violence.
+</summary>
+
+<qualia>
+A somber and heavy emotional weight, reflecting deep sadness and outrage over the suffering of others.
+</qualia>
+
+<image_prompt>
+Create an image that artistically represents the tragic stories of vulnerability and suffering faced by women in conflict, capturing the somber tone of distress and the urgency for empathy and action in response to this human tragedy. 
+</image_prompt>
+2024-09-28 04:30:20,911 - process_daily_narrative - INFO - Raw API Response:
+2024-09-28 04:30:20,911 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 1155,
+    "items": {
+      "distressed": 510,
+      "upset": 300,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 305,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 0,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A recent Reddit post discussed research indicating that pregnant women who sleep less than seven hours a night might have children facing developmental delays in various skills, including social, emotional, behavioral, motor, cognitive, and speech. The post highlighted that boys may be at a higher risk. It received considerable attention with a score of 5,886 upvotes and 172 comments, demonstrating significant public concern regarding maternal health and child development.
+</summary>
+
+<qualia>
+The emotional "vibe" invoked by this event is a mixture of concern and urgency, highlighting the importance of maternal well-being and its impact on children's futures.
+</qualia>
+
+<image_prompt>
+Create an artistic representation reflecting the theme of maternal health and child development, incorporating elements of concern and urgency, illustrating the importance of sleep for pregnant women and its impact on their children’s future development.
+</image_prompt>
+2024-09-28 04:30:25,583 - process_daily_narrative - INFO - Raw API Response:
+2024-09-28 04:30:25,583 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 5,
+    "items": {
+      "interested": 3,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 1,
+      "proud": 1,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 525,
+    "items": {
+      "distressed": 510,
+      "upset": 5,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 10,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 0,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+As elections are held in Kashmir after a decade of silence, the populace expresses their longing to be heard. This moment signifies a crucial turning point, triggering feelings of distress due to past hardships, yet also instilling a sense of hope and interest in the potential for change and representation.
+</summary>
+
+<qualia>
+The emotional vibe is a mix of cautious hope and deep distress, embodying a tension between anticipation for a brighter future and the heavy weight of past grievances.
+</qualia>
+
+<image_prompt>
+Create an artistic representation of the people of Kashmir awaiting their opportunity to vote, blending elements of hope and distress in the atmosphere, reflecting the emotional complexity of their journey towards representation.
+</image_prompt>
+2024-09-28 04:30:25,691 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-28/inputs/news_and_events/2024-09-28_news.pdf', 'link': 'https://www.bbc.com/news/articles/cx20rr57g16o', 'published': 'Fri, 27 Sep 2024 23:40:38 GMT', 'title': 'Kashmir hopes for a voice after first election in 10 years', 'summary': 'As elections are held in Kashmir after a decade of silence, the populace expresses their longing to be heard. This moment signifies a crucial turning point, triggering feelings of distress due to past hardships, yet also instilling a sense of hope and interest in the potential for change and representation.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 28, 4, 1, 14, 113000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 5, 'items': {'interested': 3, 'excited': 0, 'strong': 0, 'enthusiastic': 1, 'proud': 1, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 525, 'items': {'distressed': 510, 'upset': 5, 'guilty': 0, 'scared': 0, 'hostile': 10, 'irritable': 0, 'ashamed': 0, 'nervous': 0, 'jittery': 0, 'afraid': 0}}}, 'qualia': 'The emotional vibe is a mix of cautious hope and deep distress, embodying a tension between anticipation for a brighter future and the heavy weight of past grievances.', 'image_prompt': 'Create an artistic representation of the people of Kashmir awaiting their opportunity to vote, blending elements of hope and distress in the atmosphere, reflecting the emotional complexity of their journey towards representation.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 28, 0, 30, 25, 583794, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '10de661857adfb24b1d1b24b376218aa'}, 'event_type': 'retrieved_articles', 'event_id': '10de661857adfb24b1d1b24b376218aa'}, {'updated_panas': {'positive_affect': {'total_score': 5, 'items': {'interested': 3, 'excited': 0, 'strong': 0, 'enthusiastic': 1, 'proud': 1, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 525, 'items': {'distressed': 510, 'upset': 5, 'guilty': 0, 'scared': 0, 'hostile': 10, 'irritable': 0, 'ashamed': 0, 'nervous': 0, 'jittery': 0, 'afraid': 0}}}, 'summary': 'As elections are held in Kashmir after a decade of silence, the populace expresses their longing to be heard. This moment signifies a crucial turning point, triggering feelings of distress due to past hardships, yet also instilling a sense of hope and interest in the potential for change and representation.', 'qualia': 'The emotional vibe is a mix of cautious hope and deep distress, embodying a tension between anticipation for a brighter future and the heavy weight of past grievances.', 'image_prompt': 'Create an artistic representation of the people of Kashmir awaiting their opportunity to vote, blending elements of hope and distress in the atmosphere, reflecting the emotional complexity of their journey towards representation.'})
+2024-09-28 04:30:28,676 - process_daily_narrative - INFO - Generating image with prompt: Create an artistic representation of the people of Kashmir awaiting their opportunity to vote, blending elements of hope and distress in the atmosphere, reflecting the emotional complexity of their journey towards representation. and aspect ratio: 1:1
+2024-09-28 04:31:10,501 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/pL0avwcesL2BTCKPF1Mf52BkfLhWXMzhoeWNACoGWP67IOFOB/output.webp
+2024-09-28 04:31:10,502 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/pL0avwcesL2BTCKPF1Mf52BkfLhWXMzhoeWNACoGWP67IOFOB/output.webp
+2024-09-28 04:31:10,603 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-28/outputs/event_id_10de661857adfb24b1d1b24b376218aa_0031.webp
+2024-09-28 04:31:10,603 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-28/outputs/event_id_10de661857adfb24b1d1b24b376218aa_0031.webp
+2024-09-28 04:31:15,995 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-28/outputs/event_id_10de661857adfb24b1d1b24b376218aa_0031.webp
+2024-09-28 04:31:15,996 - process_daily_narrative - INFO - Updating qualia_updates document QgwDa4l0hCFEafYjlYc1 with image path
+2024-09-28 04:31:16,058 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-28/outputs/event_id_10de661857adfb24b1d1b24b376218aa_0031.webp
+2024-09-28 04:31:16,058 - process_daily_narrative - INFO - Added 'Don't Let the Sun Go Down on Me' by George Michael to the playlist.
+2024-09-28 04:31:16,058 - process_daily_narrative - INFO - Function returned: None
+2024-09-28 04:31:16,059 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
