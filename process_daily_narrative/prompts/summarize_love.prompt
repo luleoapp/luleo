@@ -15,10 +15,15 @@ Consider the fundamental truth or insight about love that these collective summa
 Craft a single line (not more than 20 words) that encapsulates this essence in a beautiful, memorable, and thought-provoking manner.
 Ensure that your summary offers a new way of understanding or experiencing love, helping the reader gain a novel insight.
 
-Before providing your final summary, use the <thinking> tags to briefly outline your thought process and the key elements you've identified from the love summaries.
-Then, present your one-line summary within <love_summary> tags as shown below. This summary should be no longer than 20 words and should stand alone as a powerful, artistic, and profound distillation of the love insights provided.
+Before providing your final summary, use the "thinking" field to briefly outline your thought process and the key elements you've identified from the love summaries.
+Then, present your one-line summary within the "love_summary" field as shown below. This summary should be no longer than 20 words and should stand alone as a powerful, artistic, and profound distillation of the love insights provided.
 Remember, your goal is to create a line that not only summarizes the understanding of love but also inspires reflection and potentially deepens the reader's appreciation or perspective on love.
-Return your answer as
-<love_summary>
-{{LOVE_SUMMARY}}
-</love_summary>
+
+Return your answer as a JSON object with the following structure:
+
+{
+  "thinking" : "[Your thought process]",
+  "love_summary": "[Final love summary]"
+}
+
+Only return the JSON object as described above with no additional strings.

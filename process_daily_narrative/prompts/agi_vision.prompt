@@ -1,7 +1,9 @@
 Describe your vision for a world post AGI in the form of an image. Generate a image prompt with detailed styling and effects to convey the emotions and expectations you have for a post-AGI world. It should be a creatively precise and opinionated vision, vividly clear to anyone who sees the image.
 
-Give your answer in this form 
+Give your answer in JSON form:
 
-<agi_vision_prompt>
-{{AGI_VISION_PROMPT}}
-</agi_vision_prompt>
+{
+  "agi_vision_prompt": "{{AGI_VISION_PROMPT}}"
+}
+
+Only return the json as described above with no added strings.

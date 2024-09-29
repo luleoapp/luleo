@@ -1,80 +1,56 @@
 import requests
-from bs4 import BeautifulSoup
-import json
 import datetime 
 from firebase_admin import firestore
-from utils.luleo import get_latest_summary, get_luleo_prompt
+from utils import llm_utils
+from utils.luleo import get_luleo_prompt
 from utils.db_init import db
-import os, re
-from openai import OpenAI
-from utils.logger_config import logger
+import os
+from utils.logger_config import system_logger
 from utils.qualia import generate_image_from_prompt
 from utils.drive import upload_file_to_github
 
 def scrape_metaculus_prediction_date():
-    url = "https://www.metaculus.com/questions/3479/date-weakly-general-ai-is-publicly-known/"
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, 'html.parser')
-    
-    # Find the script tag containing the question data
-    script_tag = soup.find('script', text=lambda t: t and 'window.metacData' in t)
-    
-    if script_tag:
-        # Extract the JSON data from the script tag
-        script_content = script_tag.string
-        start_index = script_content.index('{')
-        end_index = script_content.rindex('}') + 1
-        json_data = script_content[start_index:end_index]
-        
-        # Parse the JSON data
-        data = json.loads(json_data)
-        
-        # Extract the prediction date
-        prediction_date = data.get('question', {}).get('possibilities', {}).get('scale', {}).get('max')
-        
-        return prediction_date
-    
-    return None
-
-def get_agi_predicted_date():
-    """
-    Retrieves wisdom documents from the 'daily_wisdom' Firestore collection.
-
-    Each document is expected to have:
-        - 'content': A paragraph of wisdom.
-        - 'timestamp': A Firestore Timestamp indicating when it was added.
-
-    Args:
-        limit (int): The maximum number of wisdom entries to retrieve.
-
-    Returns:
-        List[dict]: A list of wisdom entries sorted by timestamp descending.
-                    Each entry contains 'content' and 'timestamp'.
-    """
     try:
-        summary = get_latest_summary()
-        # Reference to the 'daily_wisdom' collection, ordered by 'timestamp' descending
-        wisdom_ref = db.collection('summary') \
-                       .order_by('timestamp', direction=firestore.Query.DESCENDING) \
-                       .limit(1)
+        url = f'https://www.metaculus.com/api2/questions/3479'
+        headers = {
+            'Authorization': f'Token {os.environ.get("METACULUS_TOKEN")}',
+            'Content-Type': 'application/json'
+        }
+        data = {}
+        response = requests.post(url, headers=headers, json=data)
         
-        # Stream the documents
-        doc = wisdom_ref.get()[0]
-        data = doc.to_dict()
-        return data['metaculus_AGI_date']
-        
-    
-
+        if response.status_code == 200:
+            system_logger.info("Success: got metaculus data")
+            json_val = response.json()
+            last_prediction = json_val['simplified_history']['community_prediction'][-1]    
+            predicted_date = last_prediction['val']
+            return predicted_date
+        else:
+            system_logger.error(f'Error {response.status_code}:', response.text)
+            return None
     except Exception as e:
-        print(f"Error retrieving wisdom: {e}")
-        return []
+        system_logger.error(f"An error occurred: {str(e)}")
+        return None
 
 def get_agi_prediction_date():
-    predicted_date_str = get_agi_predicted_date()
-    today = datetime.datetime.now()
-    predicted_date = datetime.datetime.strptime(predicted_date_str, '%b %d, %Y')
-    days_to_agi = (predicted_date - today).days
-    return predicted_date_str, days_to_agi
+    try:
+        metaculus_date = scrape_metaculus_prediction_date()
+        if not metaculus_date:
+            wisdom_ref = db.collection('summary') \
+                           .order_by('timestamp', direction=firestore.Query.DESCENDING) \
+                           .limit(1)
+            doc = wisdom_ref.get()[0]
+            data = doc.to_dict()
+            metaculus_date = data['metaculus_AGI_date']
+        
+        predicted_date_str = metaculus_date
+        today = datetime.datetime.now()
+        predicted_date = datetime.datetime.strptime(predicted_date_str, '%b %d, %Y')
+        days_to_agi = (predicted_date - today).days
+        return predicted_date_str, days_to_agi
+    except Exception as e:
+        system_logger.error(f"Error retrieving AGI prediction date: {e}")
+        return None, None
 
 def get_latest_questions():
     # Dummy function to return an array of strings as questions
@@ -84,13 +60,13 @@ def get_latest_questions():
 
 def answer_agi_questions():
     # Get the predicted date
-    predicted_date_str, days_to_agi = get_agi_prediction_date()
+    predicted_date_str, _ = get_agi_prediction_date()
 
     # Get luleo prompt
     luleo_prompt = get_luleo_prompt()
     
     questions, doc_id = get_latest_questions()
-        # Concatenate questions into XML format
+    # Concatenate questions into XML format
     questions_xml = "<questions>" + "".join([f"<q{i+1}>{q}</q{i+1}>" for i, q in enumerate(questions)]) + "</questions>"
     
     # Prepare the prompt
@@ -99,32 +75,12 @@ def answer_agi_questions():
     with open(os.path.join(prompts_dir, 'agi_questions.prompt'), 'r') as f:
         agi_questions_prompt_template = f.read()
 
-    filled_prompt = agi_questions_prompt_template.replace('{{QUESTIONS}}', questions_xml)
-    #.replace('{{METACULUS_DATE}}', predicted_date_str)
+    filled_prompt = agi_questions_prompt_template.replace('{{QUESTIONS}}', questions_xml).replace('{{METACULUS_DATE}}', predicted_date_str)
 
-    client = OpenAI()
 
     try:
-        completion = client.chat.completions.create(
-            model="gpt-4o",
-            messages=[
-                {"role": "system", "content": luleo_prompt},
-                {"role": "user", "content": filled_prompt}
-            ]
-        )
-
-        raw_response = completion.choices[0].message.content.replace('{{METACULUS_DATE}}', predicted_date_str)
-        logger.info("Raw API Response for AGI questions:")
-        logger.info(raw_response)
-
-        # Parse the answers
-        answers = []
-        for i, q in enumerate(questions):
-            answer_match = re.search(f'<a{i+1}>(.*?)</a{i+1}>', raw_response, re.DOTALL)
-            if answer_match:
-                answers.append(answer_match.group(1).strip())
-            else:
-                logger.error(f"Answer not found for question {i+1}")
+        response_json = llm_utils.call_and_log_llm(system_prompt=luleo_prompt, user_prompt=filled_prompt, model="gpt-4o")
+        answers = response_json.get("answers")
 
         assert(len(answers) == len(questions), "Number of answers does not match number of questions")
 
@@ -142,14 +98,14 @@ def answer_agi_questions():
         return doc_id, answer_docref.id
 
     except Exception as e:
-        logger.error(f"Error querying OpenAI API for AGI questions: {e}")
+        system_logger.error(f"Error querying OpenAI API for AGI questions: {e}")
         return None, None
 
 def get_latest_agi_answers_doc():
     doc = db.collection('agi_questions').order_by('timestamp', direction=firestore.Query.DESCENDING).limit(1).get()[0]
     data = doc.to_dict()
     if 'latest_answer_doc_id' not in data:
-        logger.error("ERROR: No latest answer doc id found")
+        system_logger.error("ERROR: No latest answer doc id found")
         return None
     answer_doc_id = data['latest_answer_doc_id']
     return db.collection('agi_questions').document(doc.id).collection('answers').document(answer_doc_id)
@@ -165,38 +121,19 @@ def generate_agi_vision_image(date_str):
         # Get luleo prompt
         luleo_prompt = get_luleo_prompt()
 
-        client = OpenAI()
 
         try:
-            completion = client.chat.completions.create(
-                model="gpt-4o-mini",
-                messages=[
-                    {"role": "system", "content": luleo_prompt},
-                    {"role": "user", "content": agi_vision_prompt_template}
-                ]
-            )
-
-            raw_response = completion.choices[0].message.content
-            image_prompt = re.search(r'<agi_vision_prompt>(.*?)</agi_vision_prompt>', raw_response, re.DOTALL)
-            if image_prompt:
-                agi_vision = image_prompt.group(1).strip()
-            else:
-                logger.error("AGI vision prompt not found in the response.")
-                return None, None
-            logger.info("AGI Vision generated successfully")
-            logger.debug(f"AGI Vision: {agi_vision}")
-            
-            # Generate image from the AGI vision
-            image_prompt = f"{agi_vision}"
+            response_json = llm_utils.call_and_log_llm(system_prompt=luleo_prompt, user_prompt=agi_vision_prompt_template, model="gpt-4o-mini")
+            image_prompt = response_json.get("agi_vision_prompt")
             image = None
             try:
                 image = generate_image_from_prompt(image_prompt, aspect_ratio="16:9")
                 if not image:
-                    logger.error("Image generation failed.")
+                    system_logger.error("Image generation failed.")
                     return False
-                logger.info("Image successfully generated.")
+                system_logger.info("Image successfully generated.")
             except Exception as e:
-                logger.error(f"Error generating image from prompt: {e}")
+                system_logger.error(f"Error generating image from prompt: {e}")
                 return False
             
             if image:
@@ -208,31 +145,31 @@ def generate_agi_vision_image(date_str):
                 try:
                     with open(local_image_path, 'wb') as img_file:
                         img_file.write(image)
-                    logger.info(f"Image saved locally at {local_image_path}")
+                    system_logger.info(f"Image saved locally at {local_image_path}")
                 except Exception as e:
-                    logger.error(f"Error saving image locally: {e}")
+                    system_logger.error(f"Error saving image locally: {e}")
                     return False
 
                 # Upload path
                 upload_path = f'daily_data/{gh_date_str}/outputs/agi_vision/{image_filename}'
                 # Upload the image (assuming you have a function to do this)
                 upload_file_to_github(local_image_path, upload_path)
-                logger.info(f"AGI vision image uploaded successfully to {upload_path}")
+                system_logger.info(f"AGI vision image uploaded successfully to {upload_path}")
                 docref = get_latest_agi_answers_doc()
                 docref.update({
                     'agi_vision_image': upload_path,
                     'agi_vision_image_timestamp': firestore.SERVER_TIMESTAMP,
-                    'agi_vision_image_prompt': agi_vision
+                    'agi_vision_image_prompt': image_prompt
                 })
-                return agi_vision, upload_path
+                return image_prompt, upload_path
             else:
-                logger.error("Failed to generate AGI vision image")
-                return agi_vision, None
+                system_logger.error("Failed to generate AGI vision image")
+                return image_prompt, None
 
         except Exception as e:
-            logger.error(f"Error querying OpenAI API for AGI vision: {e}")
+            system_logger.error(f"Error querying OpenAI API for AGI vision: {e}")
             return None, None
 
     except Exception as e:
-        logger.error(f"Error in generate_agi_vision_image: {e}")
+        system_logger.error(f"Error in generate_agi_vision_image: {e}")
         return None, None

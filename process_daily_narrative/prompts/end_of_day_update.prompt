@@ -50,25 +50,18 @@ For each task, follow these specific instructions:
     <question>Do technological advancements ultimately benefit or harm society?</question>
     
 
-Format your complete response as follows:
+Format your complete response as a JSON object with the following structure:
 
-<learning>
-[Your learning from the events]
-</learning>
+{
+  "learning": "[Your learning from the events]",
+  "wisdom": "[Your piece of wisdom based on the events]",
+  "love": "[Your updated understanding of love]",
+  "questions": [
+    "[Your first thought-provoking question]",
+    "[Your second thought-provoking question]",
+    "[Your third thought-provoking question]",
+    "[Your fourth thought-provoking question]"
+  ]
+}
 
-<wisdom>
-[Your piece of wisdom based on the events]
-</wisdom>
-
-<love>
-[Your updated understanding of love]
-</love>
-
-<list_questions>
-<question>[Your first thought-provoking question]</question>
-<question>[Your second thought-provoking question]</question>
-<question>[Your third thought-provoking question]</question>
-<question>[Your fourth thought-provoking question]</question>
-</list_questions>
-
-Remember to base all your answers are inspired by the event information provided in the <events> section.
+Remember to base all your answers on the event information provided in the <events> section. Ensure that your response is a valid JSON object with no additional text or formatting outside of the JSON structure.

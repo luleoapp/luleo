@@ -20,7 +20,7 @@ async function get_cloud_run_url() {
             throw new Error('Cloud Run URL document does not exist');
         }
         const addressDict = addressDoc.data();
-        return addressDict['curr'];
+        return addressDict['cloud_run_url'];
     } catch (error) {
         console.error('Error fetching Cloud Run URL:', error);
         throw error;
@@ -32,27 +32,17 @@ exports.triggerCloudRunOnCreate = functions.firestore
     .document('user_inputs/{uploadId}')
     .onCreate(async (snap, context) => {
         try {
-            const newData = snap.data(); 
-            console.log('New document data:', newData);
-
             const uploadId = context.params.uploadId;
             console.log('Upload ID:', uploadId);
-
-            const cloudRunUrl = "https://process-daily-narrative-418435618601.us-central1.run.app"
-            console.log('Cloud Run URL:', cloudRunUrl);
-
-            // Prepare payload for Cloud Run
-            const payload = {
-                "REQUEST_TYPE": "PROCESS_USER_UPLOAD",
-                "PARAMS": {
-                    "upload_id": uploadId
+            const cloud_run_url = await get_cloud_run_url();
+            console.log('Cloud Run URL:', cloud_run_url);
+            const response = await axios.post(cloud_run_url, {
+                REQUEST_TYPE: "PROCESS_USER_UPLOAD",
+                PARAMS: {
+                    upload_id: uploadId,
                 }
-            };
-
-            // Make POST request to Cloud Run
-            const response = await axios.post(cloudRunUrl, payload, {
             });
-            console.log('Cloud Run Response:', response.data);
+            console.log(`Got response: ${JSON.stringify(response.data)}`);
         } catch (error) {
             console.error('Error in triggerCloudRunOnCreate:', error);
             // Consider adding more robust error handling or retries here

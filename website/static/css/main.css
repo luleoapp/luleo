@@ -1604,6 +1604,129 @@ input[type=radio] + label:before {
   padding: 0;
 }
 
+.app-box {
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  min-height: 120px;
+  position: relative;
+}
+@media screen and (max-width: 1680px) {
+  .app-box {
+    flex-direction: column;
+    height: 120px;
+  }
+}
+
+.app-image-container {
+  width: 35%;
+  min-width: 100px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 1680px) {
+  .app-image-container {
+    width: 100%;
+    height: calc(100% - 30px);
+    padding: 5px;
+  }
+}
+
+.app-image {
+  width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 8px;
+}
+@media screen and (max-width: 1680px) {
+  .app-image {
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+    border-radius: 4px;
+  }
+}
+
+.app-content {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media screen and (max-width: 1680px) {
+  .app-content {
+    display: none;
+  }
+}
+
+.app-headline {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  color: #333333;
+}
+
+.app-description {
+  font-size: 14px;
+  color: #666666;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.app-logo {
+  width: 64px;
+  height: 64px;
+  margin-right: 15px;
+}
+
+.app-info {
+  flex-grow: 1;
+}
+
+.app-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+  color: #333333;
+}
+
+.app-small-screen-title {
+  display: none;
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 14px;
+  color: #333333;
+  padding: 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media screen and (max-width: 1680px) {
+  .app-small-screen-title {
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+  }
+}
+
 /* Icon */
 .icon {
   text-decoration: none;
@@ -2504,13 +2627,13 @@ button:disabled,
 }
 .image-container .image-overlay {
   position: absolute;
-  bottom: 0;
+  bottom: -100%;
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
   overflow: hidden;
   width: 100%;
-  height: 0;
+  height: 50%;
   transition: 0.5s ease;
   display: flex;
   align-items: flex-start;
@@ -2523,7 +2646,9 @@ button:disabled,
   text-align: left;
   margin: 0;
   line-height: 1.6;
-  display: none;
+}
+.image-container.show-overlay .image-overlay {
+  bottom: 0;
 }
 @media screen and (max-width: 736px) {
   .image-container .image-overlay {
@@ -2569,6 +2694,10 @@ button:disabled,
 @media screen and (max-width: 736px) {
   .image-description-container {
     display: none !important;
+  }
+  .image-container {
+    margin: 2em;
+    width: calc(100% - 4em);
   }
 }
 .image-description {
@@ -2667,6 +2796,29 @@ button:disabled,
   font-size: 0.9em;
   color: #333;
   word-break: break-all;
+}
+
+.dict-container {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.dict-item {
+  margin-bottom: 10px;
+}
+
+.dict-key {
+  font-weight: bold;
+  color: #333;
+}
+
+.dict-value {
+  margin-left: 20px;
+}
+
+.nested {
+  border-left: 2px solid #ccc;
+  padding-left: 10px;
 }
 
 /* Wrapper */
@@ -3073,6 +3225,11 @@ button:disabled,
 }
 
 /* Menu */
+#menu {
+  /* Initially hide all nested <ul> elements */
+  /* Show the nested <ul> when the parent <li> has the 'active' class */
+  /* Optional: Styling for the active link */
+}
 #menu ul {
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -3153,4 +3310,14 @@ button:disabled,
   border-top: 0;
   margin-top: 0;
   padding-top: 0;
+}
+#menu li > ul {
+  display: none;
+}
+#menu .active > ul {
+  display: block;
+}
+#menu .active > a {
+  font-weight: bold;
+  /* Add more styles as needed */
 }/*# sourceMappingURL=main.css.map */

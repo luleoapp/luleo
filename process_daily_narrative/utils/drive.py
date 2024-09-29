@@ -1,6 +1,5 @@
 import io
 import os 
-from googleapiclient.http import MediaFileUpload
 import datetime
 import feedparser
 from dateutil import parser as date_parser
@@ -8,19 +7,18 @@ from reportlab.lib.pagesizes import letter
 from reportlab.lib import colors    
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
-from reportlab.lib.enums import TA_CENTER, TA_LEFT, TA_JUSTIFY
+from reportlab.lib.enums import TA_CENTER, TA_JUSTIFY
 import textwrap
 from github import Github 
-import base64
 from bs4 import BeautifulSoup
-from utils.openai_api import get_article_summary
+from utils.github_utils import upload_file_to_github
 from firebase_admin import firestore
 import hashlib
-from github.InputGitTreeElement import InputGitTreeElement  # Add this import
 import random
 import praw
-from utils.db_init import drive_service, db, PROJECT_TIMEZONE
-import re, json 
+from utils.db_init import  db, PROJECT_TIMEZONE
+from utils.qualia import get_article_summary
+
 
 def format_news_json_for_pdf(news_json):
     styles = getSampleStyleSheet()
@@ -249,79 +247,6 @@ def check_if_file_exists_in_github(github_file_path):
         print(f"Error checking if file exists in GitHub: {str(e)}")
         return False
     
-def upload_file(file_path, parent_id, upload_file_name=None):
-    file_metadata = {
-        'name': upload_file_name or os.path.basename(file_path),
-        'parents': [parent_id]
-    }
-    media = MediaFileUpload(file_path, mimetype='application/pdf')
-    file = drive_service.files().create(body=file_metadata, media_body=media, fields='id').execute()
-    return file.get('id')
-
-def full_github_resource_path(image_path):
-    return "https://raw.githubusercontent.com/luleoapp/luleo/main/"+image_path
-
-def get_user_input_document_path(user_input_id):
-    gh_date_str = datetime.datetime.now(PROJECT_TIMEZONE).strftime('%Y-%m-%d')
-    return f"daily_data/{gh_date_str}/inputs/user_inputs/{user_input_id}"
-
-
-def upload_file_to_github(file_path, github_file_path):
-    try:
-        # Read the file in binary mode
-        with open(file_path, 'rb') as file:
-            content = file.read()
-
-        # Initialize the GitHub client
-        github_token = os.environ.get('GITHUB_TOKEN')
-        repo_name = os.environ.get('GITHUB_REPO_NAME')
-        
-        print(f"Attempting to upload to GitHub repository: {repo_name}")
-        
-        if not github_token:
-            raise ValueError("GITHUB_TOKEN environment variable is not set")
-        if not repo_name:
-            raise ValueError("GITHUB_REPO_NAME environment variable is not set")
-        
-        g = Github(github_token)
-        
-        try:
-            repo = g.get_repo(repo_name)
-        except Exception as repo_error:
-            print(f"Error accessing repository: {str(repo_error)}")
-            raise
-
-        # Get the latest commit
-        master_ref = repo.get_git_ref('heads/main')
-        master_sha = master_ref.object.sha
-        base_tree = repo.get_git_tree(master_sha)
-
-        # Create a new blob with the file content
-        blob = repo.create_git_blob(base64.b64encode(content).decode(), "base64")
-
-        # Create a new tree with the new blob
-        element = InputGitTreeElement(path=github_file_path, mode='100644', type='blob', sha=blob.sha)
-        new_tree = repo.create_git_tree([element], base_tree)
-
-        # Create a new commit
-        parent = repo.get_git_commit(master_sha)
-        commit = repo.create_git_commit(f"Update {github_file_path}", new_tree, [parent])
-
-        # Update the reference
-        master_ref.edit(commit.sha)
-
-        print(f"File {github_file_path} uploaded to GitHub successfully.")
-        return {"message": f"File {github_file_path} uploaded to GitHub successfully."}
-
-    except Exception as e:
-        error_message = f"Error uploading file to GitHub: {str(e)}"
-        print(error_message)
-        print(f"Repo Name: {repo_name}")
-        print(f"GitHub File Path: {github_file_path}")
-        return {"error": error_message}
-
-
-
 
 def get_latest_ai_articles(github_file_path, max_articles=None):
     # Read RSS feed URLs from file
@@ -380,14 +305,17 @@ def format_ai_articles_for_pdf(articles):
     return formatted_content
 
 
-def write_ai_newsletter_file(max_articles=None):
+def write_ai_newsletter_file(max_articles=None, overwrite=False):
     # Generate the filename with the current date
     current_date = datetime.datetime.now(PROJECT_TIMEZONE).strftime("%Y-%m-%d")
     filename = f"{current_date}_ai_newsletter.pdf"
     outputs_dir = os.path.join(os.getcwd(), 'outputs')
     filepath = os.path.join(outputs_dir, filename)
     github_file_path = f"daily_data/{current_date}/inputs/AI_updates/{filename}"
-
+    file_exists =  check_if_file_exists_in_github(github_file_path)
+    if file_exists and not overwrite:
+        print(f"File {github_file_path} already exists in GitHub.")
+        return {"message": f"File {github_file_path} already exists in GitHub."}
     articles = get_latest_ai_articles(github_file_path, max_articles)
     
     if not articles:
@@ -612,7 +540,7 @@ def get_reddit_posts(category, overwrite=False, max_posts=10):
     github_file_path = f"daily_data/{curr_dt}/inputs/{input_folder}/{pdf_filename}"
 
     file_exists =  check_if_file_exists_in_github(github_file_path)
-    if file_exists:
+    if file_exists and not overwrite:
         print(f"File {github_file_path} already exists in GitHub.")
         return {"message": f"File {github_file_path} already exists in GitHub."}
 
@@ -632,17 +560,3 @@ def get_reddit_tech_posts(max_posts=10):
 def get_reddit_events_posts(max_posts=10):
     return get_reddit_posts('events', max_posts)
 
-
-def clean_and_parse_json(raw_string):
-    # Remove any leading/trailing whitespace
-    raw_string = raw_string.strip()
-    
-    # Remove code block markers if present
-    raw_string = re.sub(r'^```json\s*|\s*```$', '', raw_string, flags=re.MULTILINE)
-    
-    try:
-        # Parse the JSON
-        parsed_json = json.loads(raw_string)
-        return parsed_json
-    except json.JSONDecodeError as e:
-        return f"Error parsing JSON: {str(e)}"

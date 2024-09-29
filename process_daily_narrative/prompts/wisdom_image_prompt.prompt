@@ -5,10 +5,11 @@ Come up with a subtle, but stylish and bright image capturing the essence of thi
 </wisdom_quote>
 
 
-Return a prompt to generate the image in vivid detail. Add image options and settings to enhance the message of the quote. Return the prompt text within xml tags as show below:
+Return a prompt to generate the image in vivid detail. Add image options and settings to enhance the message of the quote. Return the prompt text in JSON format, as show below:
 
+{
+  "image_prompt": "[The image prompt text]"
+}
 
-<image_prompt>
-{{IMAGE_PROMPT_TEXT}}
-</image_prompt> 
+Only return the JSON object as described above with no additional text or formatting outside of the JSON structure.
 

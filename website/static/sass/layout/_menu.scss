@@ -95,4 +95,20 @@
 				}
 			}
 		}
+
+		/* Initially hide all nested <ul> elements */
+		li > ul {
+			display: none;
+		}
+
+		/* Show the nested <ul> when the parent <li> has the 'active' class */
+		.active > ul {
+			display: block;
+		}
+
+		/* Optional: Styling for the active link */
+		.active > a {
+			font-weight: bold;
+			/* Add more styles as needed */
+		}
 	}

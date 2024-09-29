@@ -1,21 +1,48 @@
+import base64
 import json
 import os
 from openai import OpenAI
 import re, math
 from datetime import datetime, time
+from utils.llm_utils import call_and_log_llm
 from utils.db_init import db, PROJECT_TIMEZONE
 from google.cloud.firestore_v1 import aggregation
 from google.cloud.firestore_v1.base_query import FieldFilter
 from random import shuffle
 from utils.spotify import add_to_spotify_playlist
 from google.cloud import firestore
-from utils.logger_config import logger
+from utils.logger_config import system_logger
 from utils.drive import upload_file_to_github
 import io
 from replicate.client import Client
 import requests
 import tempfile
 import os
+
+from utils.luleo import get_luleo_prompt
+
+
+
+def encode_image(image_content):
+    return base64.b64encode(image_content).decode('utf-8')
+
+
+
+def get_prompt(prompt_name, directory="prompts"):
+    prompt_file = directory +"/"+ f"{prompt_name}.prompt"
+    
+    with open(prompt_file, 'r') as file:
+        return file.read()
+
+def get_article_summary(content):
+
+    prompt = get_prompt("article_summary")
+    prompt = prompt.replace("{{ARTICLE_CONTENT}}", content)
+    luleo_prompt = get_luleo_prompt()
+    
+    response = call_and_log_llm(system_prompt=luleo_prompt, user_prompt=prompt, model="gpt-4o-mini")
+    return response.get("summary")
+
 
 def get_default_panas():
     return {
@@ -67,63 +94,22 @@ def get_emotional_response(event_type, event_details, current_panas=None):
     
     filled_prompt = get_qualia_prompt.replace('{{CURRENT_PANAS}}', current_panas_str).replace('{{EVENT_TYPE}}', event_type).replace('{{EVENT_DETAILS}}', event_details)
     
-    client = OpenAI()
+
+    response_json = call_and_log_llm(luleo_prompt, filled_prompt, "gpt-4o-mini")
     
-    try:
-        completion = client.chat.completions.create(
-            model="gpt-4o-mini",
-            messages=[
-                {"role": "system", "content": luleo_prompt},
-                {"role": "user", "content": filled_prompt}
-            ]
-        )
-        
-        raw_response = completion.choices[0].message.content
-        logger.info("Raw API Response:")
-        logger.info(raw_response)
-        
-        panas_match = re.search(r'<updated_panas>(.*?)</updated_panas>', raw_response, re.DOTALL)
-        summary_match = re.search(r'<summary>(.*?)</summary>', raw_response, re.DOTALL)
-        qualia_match = re.search(r'<qualia>(.*?)</qualia>', raw_response, re.DOTALL)
-        image_prompt_match = re.search(r'<image_prompt>(.*?)</image_prompt>', raw_response, re.DOTALL)
-        
-        # Add assertions to ensure all required fields are present
-        assert panas_match, "Updated PANAS not found in the response"
-        assert summary_match, "Summary not found in the response"
-        assert qualia_match, "Qualia not found in the response"
-        assert image_prompt_match, "Image prompt not found in the response"
-        
-        panas_json_str = panas_match.group(1).strip()
-        summary = summary_match.group(1).strip()
-        qualia = qualia_match.group(1).strip()
-        image_prompt = image_prompt_match.group(1).strip()
-        
-        # Add assertions to ensure fields are not empty
-        assert summary, "Summary is empty"
-        assert qualia, "Qualia is empty"
-        assert image_prompt, "Image prompt is empty"
-        
-        try:
-            updated_panas = json.loads(panas_json_str)
-            #logger.info("Processed Updated PANAS:")
-            #logger.info(json.dumps(updated_panas, indent=2))
-            
-            return {
-                "updated_panas": updated_panas,
-                "summary": summary,
-                "qualia": qualia,
-                "image_prompt": image_prompt
-            }
-        except json.JSONDecodeError as e:
-            logger.error(f"Error decoding PANAS JSON: {e}")
-            return None
-    
-    except AssertionError as e:
-        logger.error(f"Assertion failed: {str(e)}")
-        return None
-    except Exception as e:
-        logger.error(f"Error querying OpenAI API: {e}")
-        return None
+    panas_json = response_json['updated_panas']    
+    summary = response_json['summary']
+    qualia = response_json['qualia']
+    image_prompt = response_json['image_prompt']
+
+    return {
+        "updated_panas": panas_json,
+        "summary": summary,
+        "qualia": qualia,
+        "image_prompt": image_prompt
+    }
+
+ 
 
 
 
@@ -163,13 +149,13 @@ def get_events_to_process():
             aggregate_query.count(alias="unprocessed_count")
             results = list(aggregate_query.get())
             if results:
-                logger.info(results)
+                system_logger.info(results)
                 number_of_unprocessed_events = results[0][0].value
                 number_of_events_to_process = math.ceil(number_of_unprocessed_events / hours_left)
                 query = query.limit(number_of_events_to_process)
-                logger.info(f"Processing {number_of_events_to_process} out of {number_of_unprocessed_events} events for {event_type}")
+                system_logger.info(f"Processing {number_of_events_to_process} out of {number_of_unprocessed_events} events for {event_type}")
             else:
-                logger.info(f"No unprocessed events found for {event_type}")
+                system_logger.info(f"No unprocessed events found for {event_type}")
                 continue
 
         docs = query.get()
@@ -222,7 +208,7 @@ def generate_image_from_prompt(image_prompt, aspect_ratio=None):
     try:
         replicate = Client(api_token=os.environ['REPLICATE_API_TOKEN'])
 
-        logger.info(f"Generating image with prompt: {image_prompt} and aspect ratio: {aspect_ratio if aspect_ratio is not None else '1:1'}")
+        system_logger.info(f"Generating image with prompt: {image_prompt} and aspect ratio: {aspect_ratio if aspect_ratio is not None else '1:1'}")
         input_dict = {"prompt": image_prompt}
         if aspect_ratio is not None:
             input_dict["aspect_ratio"] = aspect_ratio
@@ -232,24 +218,24 @@ def generate_image_from_prompt(image_prompt, aspect_ratio=None):
         )
         
         if not output:
-            logger.error("Failed to generate image: Empty output from Replicate API")
+            system_logger.error("Failed to generate image: Empty output from Replicate API")
             return None
 
         image_url = output
-        logger.info(f"Image generated successfully. URL: {image_url}")
+        system_logger.info(f"Image generated successfully. URL: {image_url}")
 
-        logger.info(f"Downloading image from URL: {image_url}")
+        system_logger.info(f"Downloading image from URL: {image_url}")
         response = requests.get(image_url)
         if response.status_code != 200:
-            logger.error(f"Failed to download image: HTTP status code {response.status_code}")
+            system_logger.error(f"Failed to download image: HTTP status code {response.status_code}")
             return None
 
         return response.content
 
     except requests.exceptions.RequestException as e:
-        logger.error(f"Network error while downloading image: {str(e)}")
+        system_logger.error(f"Network error while downloading image: {str(e)}")
     except Exception as e:
-        logger.error(f"Unexpected error generating image: {str(e)}")
+        system_logger.error(f"Unexpected error generating image: {str(e)}")
     
     return None
 
@@ -264,7 +250,7 @@ def process_and_upload_image(image_prompt, event_id, qualia_doc_id):
     current_time = datetime.now(PROJECT_TIMEZONE).strftime("%H%M")
     filename = f"event_id_{event_id}_{current_time}.webp"
     file_path = f"daily_data/{curr_dt}/outputs/{filename}"
-    logger.info(f"Generated file path: {file_path}")
+    system_logger.info(f"Generated file path: {file_path}")
 
     # Create a temporary file
     with tempfile.NamedTemporaryFile(delete=False, suffix='.webp') as temp_file:
@@ -273,22 +259,22 @@ def process_and_upload_image(image_prompt, event_id, qualia_doc_id):
 
     try:
         # Upload to GitHub using the function from drive.py
-        logger.info(f"Uploading image to GitHub: {file_path}")
+        system_logger.info(f"Uploading image to GitHub: {file_path}")
         upload_result = upload_file_to_github(temp_file_path, file_path)
 
         if 'message' in upload_result:
             github_url = file_path  # or construct the full GitHub URL if needed
-            logger.info(f"Image uploaded successfully. URL: {github_url}")
+            system_logger.info(f"Image uploaded successfully. URL: {github_url}")
 
             # Update the qualia_updates document with the image path
-            logger.info(f"Updating qualia_updates document {qualia_doc_id} with image path")
+            system_logger.info(f"Updating qualia_updates document {qualia_doc_id} with image path")
             db.collection('qualia_updates').document(qualia_doc_id).update({
                 'image_path': github_url
             })
 
             return github_url
         else:
-            logger.error(f"Failed to upload image to GitHub for event {event_id}: {upload_result.get('error', 'Unknown error')}")
+            system_logger.error(f"Failed to upload image to GitHub for event {event_id}: {upload_result.get('error', 'Unknown error')}")
             return None
     finally:
         # Clean up the temporary file
@@ -301,7 +287,7 @@ def update_qualia():
     current_emotional_state = get_current_emotional_state()
     max_significance_event = None
     max_significance = -1
-    logger.info(f"Events to process: {len(events_to_process)}")
+    system_logger.info(f"Events to process: {len(events_to_process)}")
     num_events_considered_by_type = {}
 
     # Calculate initial positive-negative score
@@ -332,10 +318,10 @@ def update_qualia():
                 max_significance_event = (event, d_ret)
 
     if max_significance_event is None:
-        logger.error(f"ERROR : No significant event found at {datetime.now(PROJECT_TIMEZONE)}")
+        system_logger.error(f"ERROR : No significant event found at {datetime.now(PROJECT_TIMEZONE)}")
         return 
     else:
-        logger.info(f"Max significance event: {max_significance_event}")
+        system_logger.info(f"Max significance event: {max_significance_event}")
         result, track_id, track_name, artist_name = add_to_spotify_playlist(max_significance_event[1]['updated_panas'])
 
         # Add the document to Firestore and get the document ID
@@ -361,11 +347,11 @@ def update_qualia():
         image_path = process_and_upload_image(max_significance_event[1]['image_prompt'], max_significance_event[0]['event_id'], qualia_doc_id)
         
         if image_path:
-            logger.info(f"Image generated and uploaded successfully: {image_path}")
+            system_logger.info(f"Image generated and uploaded successfully: {image_path}")
         else:
-            logger.warning("Failed to generate or upload image")
+            system_logger.warning("Failed to generate or upload image")
 
-        logger.info(result)
+        system_logger.info(result)
 
 
 

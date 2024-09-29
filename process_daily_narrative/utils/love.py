@@ -1,7 +1,8 @@
 import os 
+from utils.llm_utils import call_and_log_llm
 from utils.db_init import db
 from openai import OpenAI
-from utils.logger_config import logger
+from utils.logger_config import system_logger
 from firebase_admin import firestore
 import re
 
@@ -31,26 +32,11 @@ def compute_love_summary(limit=10):
 
 
     try:
-        logger.info("Generating love summary")
-        logger.info(f"\n\nFilled prompt: {filled_prompt}\n\n")
 
-        # Generate the summary using OpenAI
-        completion = client.chat.completions.create(
-            model="gpt-4o",
-            messages=[
-                {"role": "system", "content": luleo_prompt},
-                {"role": "user", "content": filled_prompt}
-            ]
-        )
-        # Extract the summary from the response
-        raw_response = completion.choices[0].message.content
-        logger.info("Raw GPT Response for Image Prompt:")
-        logger.info(raw_response)
-
-        # Extract the image prompt from the GPT response
-        love_summary_match = re.search(r'<love_summary>(.*?)</love_summary>', raw_response, re.DOTALL)
-
-        return { "summary": love_summary_match.group(1).strip() }
+        response_json = call_and_log_llm(system_prompt=luleo_prompt, user_prompt=filled_prompt, model="gpt-4o")
+        love_summary = response_json.get("love_summary")
+        assert love_summary, "Love summary not found in the response"
+        return { "summary": love_summary }
 
     except Exception as e:
         print(f"Error generating love summary: {e}")

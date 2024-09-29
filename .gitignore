@@ -1,5 +1,6 @@
 # Ignore the daily_data folder
 daily_data/
+logs/
 .*/
 
 # -----------------------------------
@@ -86,3 +87,8 @@ Desktop.ini
 # -----------------------------------
 **/.replit
 **/.replit.nix
+# -----------------------------------
+# Tests
+# -----------------------------------
+# Ignore all 'test' directories
+**/test/

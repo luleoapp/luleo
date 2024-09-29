@@ -22,8 +22,10 @@ Then, present your one-line summary within <wisdom_summary> tags as shown below.
 
 Remember, your goal is to create a line that not only summarizes the wisdom but also inspires reflection and potentially changes the reader's perspective on life or a particular aspect of it.
 
-Return your answer as 
+Return your answer as a JSON object with the following structure:
 
-<wisdom_summary>
-{{WISDOM_SUMMARY}}
-</wisdom_summary>
+{
+  "wisdom_summary": "[Wisdom summary]"
+}
+
+Do not include any additional text or formatting outside of this JSON structure in your response.

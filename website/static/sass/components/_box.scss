@@ -24,3 +24,119 @@
 			padding: 0;
 		}
 	}
+	.app-box {
+		width: 100%;
+		max-width: 400px;
+		border: 1px solid #e0e0e0;
+		border-radius: 8px;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+		display: flex;
+		background-color: #ffffff;
+		font-family: Arial, sans-serif;
+		overflow: hidden; // Ensure the rounded corners of inner elements are visible
+		min-height: 120px; // Ensure a minimum height for the box
+		position: relative;
+
+		@include breakpoint('<=xlarge') {
+			flex-direction: column;
+			height: 120px;
+		}
+	}
+
+	.app-image-container {
+		width: 35%;
+		min-width: 100px;
+		padding: 10px;
+		box-sizing: border-box;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@include breakpoint('<=xlarge') {
+			width: 100%;
+			height: calc(100% - 30px); // Reduce height to make room for title
+			padding: 5px; // Reduce padding
+		}
+	}
+
+	.app-image {
+		width: 100%;
+		height: auto;
+		object-fit: contain;
+		border-radius: 8px; // This will now work
+
+		@include breakpoint('<=xlarge') {
+			max-width: 90%; // Reduce max-width
+			max-height: 90%; // Reduce max-height
+			width: auto;
+			height: auto;
+			border-radius: 4px;
+		}
+	}
+
+	.app-content {
+		flex-grow: 1;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		@include breakpoint('<=xlarge') {
+			display: none;
+		}
+	}
+
+	.app-headline {
+		font-size: 18px;
+		font-weight: bold;
+		margin: 0 0 10px 0;
+		color: #333333;
+	}
+
+	.app-description {
+		font-size: 14px;
+		color: #666666;
+		margin: 0;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+
+	.app-logo {
+		width: 64px;
+		height: 64px;
+		margin-right: 15px;
+	}
+
+	.app-info {
+		flex-grow: 1;
+	}
+
+	.app-name {
+		font-size: 18px;
+		font-weight: bold;
+		margin: 0 0 5px 0;
+		color: #333333;
+	}
+
+	.app-small-screen-title {
+		display: none;
+		position: absolute;
+		bottom: 5px;
+		left: 0;
+		right: 0;
+		text-align: center;
+		font-size: 14px; // Default size for larger screens
+		color: #333333;
+		padding: 0 10px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+
+		@include breakpoint('<=xlarge') {
+			display: block;
+			height: 20px;
+			line-height: 20px;
+			font-size: 12px; // Smaller font size for small screens
+		}
+	}

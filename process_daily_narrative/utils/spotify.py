@@ -6,6 +6,8 @@ from google.cloud import firestore
 from datetime import datetime, timedelta
 import re
 
+from utils.llm_utils import call_and_log_llm
+
 # Initialize Firestore client
 db = firestore.Client()
 
@@ -111,38 +113,8 @@ def add_song_to_playlist(mood, access_token, playlist_id, repeat_song_time=timed
         creativity_patch = f"\n\nPlease be creative in your choices and ignore the following songs:\n{', '.join(list_seen_songs)}\n"
         prompt += creativity_patch
 
-    # Query OpenAI API
-    client = OpenAI()
-    completion = client.chat.completions.create(
-        model="gpt-4o-mini",  # Updated to a valid model name
-        messages=[
-            {"role": "system", "content": luleo_prompt},
-            {"role": "user", "content": prompt}
-        ]
-    )
-
-    # Get the response content
-    response_content = completion.choices[0].message.content.strip()
-    print("Raw response from OpenAI:")
-    print(response_content)
-
-    # Remove <answer> tags and clean the text
-    cleaned_content = re.search(r'<answer>(.*?)</answer>', response_content, re.DOTALL)
-    if cleaned_content:
-        cleaned_content = cleaned_content.group(1).strip()
-    else:
-        cleaned_content = response_content.replace("```json", "").replace("```", "").strip()
-
-    print("\nCleaned content:")
-    print(cleaned_content)
-
-    # Parse the suggestions
-    try:
-        suggestions_dict = json.loads(cleaned_content)
-        suggestions = suggestions_dict.get("song_recommendation_list", [])
-    except json.JSONDecodeError as e:
-        print(f"\nJSON parsing error: {str(e)}")
-        return f"Error: Unable to parse suggestions as JSON. Error: {str(e)}", None, None, None
+    response_json = call_and_log_llm(luleo_prompt, prompt, "gpt-4o-mini")
+    suggestions = response_json['song_recommendation_list']
 
     print("\nParsed suggestions:")
     print(json.dumps(suggestions, indent=2))

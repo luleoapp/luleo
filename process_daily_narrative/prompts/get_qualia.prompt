@@ -20,7 +20,6 @@ Update your PANAS scores accordingly. Each item should be scored on a scale from
 
 Provide your updated PANAS state in the following JSON format:
 
-<output_format>
 {
   "positive_affect": {
     "total_score": 0,
@@ -52,15 +51,20 @@ Provide your updated PANAS state in the following JSON format:
       "afraid": 0
     }
   }
+}  
+
+After updating the PANAS state, provide a brief summary of the event details in "summary" field.
+
+Then, describe the "vibe" of the emotion invoked by the event in a very direct and succinct manner. Place this description in the "qualia" field.
+
+Finally, provide a prompt to generate an image which is accurately reflects your emotions about the event.
+
+Present your response as a JSON with the following fields:
+{
+  "updated_panas" : [PANAS JSON as described above],
+  "summary" : [brief summary of the event details which clearly provides context and explanation so any person can understand it clearly],
+  "qualia" : [Succinct description of the emotional "vibe"],
+  "image_prompt" : [A prompt to generate an image describing the event and artistically styled to precisely reflect your emotions about it]
 }
-</output_format>
 
-After updating the PANAS state, provide a brief summary of the event details in <summary> tags.
-
-Then, describe the "vibe" of the emotion invoked by the event in a very direct and succinct manner. Place this description in <qualia> tags.
-
-Present your response in the following order:
-1. Updated PANAS state in JSON format (enclosed in <updated_panas> tags)
-2. Brief summary of the event details which clearly provides context and explanation so any person can understand it clearly (enclosed in <summary> tags)
-3. Succinct description of the emotional "vibe" (enclosed in <qualia> tags)
-4. A prompt to generate an image describing the event and artistically styled to precisely reflect your emotions about it (enclosed in <image_prompt> tags)
+Only return the JSON object as described above with no additional text or formatting outside of the JSON structure.
