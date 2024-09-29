@@ -1,0 +1,187 @@
+2024-09-27 10:30:18,087 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-27 10:30:18,088 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-27 10:30:18,088 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-27 10:30:18,088 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-27 10:30:18,088 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-27 10:30:18,122 - process_daily_narrative - INFO - Received request
+2024-09-27 10:30:18,122 - process_daily_narrative - INFO - Request method: POST
+2024-09-27 10:30:18,122 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-27T03:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 7cba5858e62a74f766fce1cf3b6758e8/2536669013347017229;o=1
+Traceparent: 00-7cba5858e62a74f766fce1cf3b6758e8-23340f071d4a220d-01
+X-Forwarded-For: 34.98.143.67
+X-Forwarded-Proto: https
+Forwarded: for="34.98.143.67";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-27 10:30:18,122 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-27 10:30:18,122 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-27 10:30:18,123 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-27 10:30:18,123 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-27 10:30:18,123 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-27 10:30:18,123 - process_daily_narrative - INFO - Updating hourly...
+2024-09-27 10:30:18,311 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=14, readtime=2024-09-27 10:30:18.292566+00:00>]]
+2024-09-27 10:30:18,312 - process_daily_narrative - INFO - Processing 1 out of 14 events for retrieved_reddit_posts
+2024-09-27 10:30:18,442 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=19, readtime=2024-09-27 10:30:18.430845+00:00>]]
+2024-09-27 10:30:18,442 - process_daily_narrative - INFO - Processing 2 out of 19 events for retrieved_articles
+2024-09-27 10:30:18,707 - process_daily_narrative - INFO - Events to process: 3
+2024-09-27 10:30:23,732 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 10:30:23,732 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 2,
+    "items": {
+      "interested": 2,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 430,
+    "items": {
+      "distressed": 90,
+      "upset": 70,
+      "guilty": 40,
+      "scared": 100,
+      "hostile": 20,
+      "irritable": 40,
+      "ashamed": 30,
+      "nervous": 50,
+      "jittery": 0,
+      "afraid": 30
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A Reddit post discusses how Donald Trump's tariffs implemented between 2018 and 2019 negatively impacted employment in the manufacturing sector, which the tariffs were meant to protect. The post explains that while there was a slight positive effect from import protection, this was overshadowed by larger negative consequences, including increased costs of inputs and retaliatory tariffs from other countries. It has received substantial engagement online, with over 5,000 upvotes and numerous comments discussing the implications of these tariffs.
+</summary>
+
+<qualia>
+The emotional vibe is one of concern and frustration over economic policy failures, tinged with a flicker of interest in the broader implications of such actions.
+</qualia>
+
+<image_prompt>
+Generate an image depicting the impact of economic tariffs on employment in the manufacturing sector, incorporating elements of imbalance and tension, with visual metaphors representing both the potential for protection and the underlying negative consequences.
+</image_prompt>
+2024-09-27 10:30:27,894 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 10:30:27,894 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 440,
+    "items": {
+      "distressed": 90,
+      "upset": 65,
+      "guilty": 40,
+      "scared": 110,
+      "hostile": 30,
+      "irritable": 50,
+      "ashamed": 35,
+      "nervous": 60,
+      "jittery": 0,
+      "afraid": 50
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event revolves around a statement made by Russia's leader, which suggests that attacks coordinated by a non-nuclear state alongside a nuclear power could qualify as a joint attack. This declaration raises concerns about escalating tensions between nations and the potential for conflict, invoking feelings of distress and fear among the global community.
+</summary>
+
+<qualia>
+The emotional vibe is one of heightened anxiety and concern, tempered by a lingering curiosity about geopolitical dynamics.
+</qualia>
+
+<image_prompt>
+Create an artistic image that captures the tumultuous emotions surrounding geopolitical tensions, featuring symbols of fear and concern, contrasted with elements of curiosity and vigilance.
+2024-09-27 10:30:27,894 - process_daily_narrative - ERROR - Assertion failed: Image prompt not found in the response
+2024-09-27 10:30:32,064 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 10:30:32,065 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 410,
+    "items": {
+      "distressed": 80,
+      "upset": 60,
+      "guilty": 40,
+      "scared": 100,
+      "hostile": 20,
+      "irritable": 40,
+      "ashamed": 30,
+      "nervous": 50,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Vince McMahon, the former boss of WWE, has publicly criticized a new documentary that claims to reveal secrets about his life and career in wrestling. His response indicates a defensive stance towards the portrayal in the documentary.
+</summary>
+
+<qualia>
+Tension and skepticism wrapped in curiosity.
+</qualia>
+
+<image_prompt>
+Create an image depicting Vince McMahon surrounded by shadowy figures representing the documentary, with a spotlight on him, conveying a sense of tension and intrigue. The style should be dramatic, highlighting the contrast between his powerful presence and the lurking uncertainty of the documentary's claims.
+2024-09-27 10:30:32,065 - process_daily_narrative - ERROR - Assertion failed: Image prompt not found in the response
+2024-09-27 10:30:32,065 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'subreddit': 'science', 'summary': "A Reddit post discusses how Donald Trump's tariffs implemented between 2018 and 2019 negatively impacted employment in the manufacturing sector, which the tariffs were meant to protect. The post explains that while there was a slight positive effect from import protection, this was overshadowed by larger negative consequences, including increased costs of inputs and retaliatory tariffs from other countries. It has received substantial engagement online, with over 5,000 upvotes and numerous comments discussing the implications of these tariffs.", 'github_file_path': 'daily_data/2024-09-27/inputs/AI_updates/2024-09-27_reddit_tech_posts.pdf', 'url': 'https://www.reddit.com/r/science/comments/1fpydt4/donald_trumps_20182019_tariffs_adversely_affected/', 'title': "Donald Trump's 2018–2019 tariffs adversely affected employment in the manufacturing industries that the tariffs were intended to protect. This is because the small positive effect from import protection was offset by larger negative effects from rising input costs and retaliatory tariffs.", 'score': 5143, 'author': 'smurfyjenkins', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 27, 4, 3, 3, 116000, tzinfo=datetime.timezone.utc), 'num_comments': 179, 'updated_panas': {'positive_affect': {'total_score': 2, 'items': {'interested': 2, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 430, 'items': {'distressed': 90, 'upset': 70, 'guilty': 40, 'scared': 100, 'hostile': 20, 'irritable': 40, 'ashamed': 30, 'nervous': 50, 'jittery': 0, 'afraid': 30}}}, 'qualia': 'The emotional vibe is one of concern and frustration over economic policy failures, tinged with a flicker of interest in the broader implications of such actions.', 'image_prompt': 'Generate an image depicting the impact of economic tariffs on employment in the manufacturing sector, incorporating elements of imbalance and tension, with visual metaphors representing both the potential for protection and the underlying negative consequences.', 'event_type': 'retrieved_reddit_posts', 'processed_at': datetime.datetime(2024, 9, 27, 6, 30, 23, 733044, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '1fpydt4'}, 'event_type': 'retrieved_reddit_posts', 'event_id': '1fpydt4'}, {'updated_panas': {'positive_affect': {'total_score': 2, 'items': {'interested': 2, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 430, 'items': {'distressed': 90, 'upset': 70, 'guilty': 40, 'scared': 100, 'hostile': 20, 'irritable': 40, 'ashamed': 30, 'nervous': 50, 'jittery': 0, 'afraid': 30}}}, 'summary': "A Reddit post discusses how Donald Trump's tariffs implemented between 2018 and 2019 negatively impacted employment in the manufacturing sector, which the tariffs were meant to protect. The post explains that while there was a slight positive effect from import protection, this was overshadowed by larger negative consequences, including increased costs of inputs and retaliatory tariffs from other countries. It has received substantial engagement online, with over 5,000 upvotes and numerous comments discussing the implications of these tariffs.", 'qualia': 'The emotional vibe is one of concern and frustration over economic policy failures, tinged with a flicker of interest in the broader implications of such actions.', 'image_prompt': 'Generate an image depicting the impact of economic tariffs on employment in the manufacturing sector, incorporating elements of imbalance and tension, with visual metaphors representing both the potential for protection and the underlying negative consequences.'})
+2024-09-27 10:30:46,450 - process_daily_narrative - INFO - Generating image with prompt: Generate an image depicting the impact of economic tariffs on employment in the manufacturing sector, incorporating elements of imbalance and tension, with visual metaphors representing both the potential for protection and the underlying negative consequences. and aspect ratio: 1:1
+2024-09-27 10:31:04,705 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/GF9YZz1RmdoCNtbj9Lvt9gm1YZ8vnEl9HYGfQA2Py2a02hwJA/output.webp
+2024-09-27 10:31:04,706 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/GF9YZz1RmdoCNtbj9Lvt9gm1YZ8vnEl9HYGfQA2Py2a02hwJA/output.webp
+2024-09-27 10:31:04,894 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-27/outputs/event_id_1fpydt4_0631.webp
+2024-09-27 10:31:04,895 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-27/outputs/event_id_1fpydt4_0631.webp
+2024-09-27 10:31:10,215 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-27/outputs/event_id_1fpydt4_0631.webp
+2024-09-27 10:31:10,215 - process_daily_narrative - INFO - Updating qualia_updates document Gydo8jVDgesTY5ctfwBT with image path
+2024-09-27 10:31:10,298 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-27/outputs/event_id_1fpydt4_0631.webp
+2024-09-27 10:31:10,298 - process_daily_narrative - INFO - Added 'Welcome Home (Sanitarium)' by Metallica to the playlist.
+2024-09-27 10:31:10,298 - process_daily_narrative - INFO - Function returned: None
+2024-09-27 10:31:10,298 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

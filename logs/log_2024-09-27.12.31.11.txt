@@ -1,0 +1,187 @@
+2024-09-27 16:30:11,414 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-27 16:30:11,414 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-27 16:30:11,414 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-27 16:30:11,415 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-27 16:30:11,415 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-27 16:30:11,422 - process_daily_narrative - INFO - Received request
+2024-09-27 16:30:11,423 - process_daily_narrative - INFO - Request method: POST
+2024-09-27 16:30:11,423 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-27T09:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 9a7d68c4e1d310d8df7c43c081654711/2577990756066135722;o=1
+Traceparent: 00-9a7d68c4e1d310d8df7c43c081654711-23c6dcef11900eaa-01
+X-Forwarded-For: 107.178.194.77
+X-Forwarded-Proto: https
+Forwarded: for="107.178.194.77";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-27 16:30:11,423 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-27 16:30:11,423 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-27 16:30:11,423 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-27 16:30:11,423 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-27 16:30:11,423 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-27 16:30:11,424 - process_daily_narrative - INFO - Updating hourly...
+2024-09-27 16:30:11,607 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=9, readtime=2024-09-27 16:30:11.594770+00:00>]]
+2024-09-27 16:30:11,607 - process_daily_narrative - INFO - Processing 1 out of 9 events for retrieved_reddit_posts
+2024-09-27 16:30:11,889 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=13, readtime=2024-09-27 16:30:11.881048+00:00>]]
+2024-09-27 16:30:11,890 - process_daily_narrative - INFO - Processing 2 out of 13 events for retrieved_articles
+2024-09-27 16:30:12,120 - process_daily_narrative - INFO - Events to process: 3
+2024-09-27 16:30:19,613 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 16:30:19,613 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 3,
+    "items": {
+      "interested": 2,
+      "excited": 2,
+      "strong": 0,
+      "enthusiastic": 1,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 2,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 920,
+    "items": {
+      "distressed": 200,
+      "upset": 150,
+      "guilty": 70,
+      "scared": 160,
+      "hostile": 100,
+      "irritable": 80,
+      "ashamed": 90,
+      "nervous": 80,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Will Ferrell and Harper Steel embark on an engaging journey across the United States to explore different cultures, experiences, and insights in a new documentary. This light-hearted adventure fosters curiosity, excitement, and inspiration among viewers, highlighting the importance of discovery and connection in our shared human experience.
+</summary>
+
+<qualia>
+The emotional vibe invoked by the event is one of uplifting curiosity and excitement, colored by a touch of nostalgia and warmth from the prospect of shared experiences.
+</qualia>
+
+<image_prompt>
+Create an artistic representation of Will Ferrell and Harper Steel on their documentary journey across the US, filled with vibrant colors and lively scenery that reflects curiosity, excitement, and connection among people as they explore various cultures.
+2024-09-27 16:30:19,614 - process_daily_narrative - ERROR - Assertion failed: Image prompt not found in the response
+2024-09-27 16:30:26,175 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 16:30:26,175 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 2,
+    "items": {
+      "interested": 2,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 1120,
+    "items": {
+      "distressed": 300,
+      "upset": 200,
+      "guilty": 70,
+      "scared": 200,
+      "hostile": 100,
+      "irritable": 90,
+      "ashamed": 90,
+      "nervous": 80,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Correspondent Orla Guerin reports on intense airstrikes and crucial evacuations taking place in the southern city of Tyre. The coverage highlights the dire circumstances faced by civilians in the region, evoking both concern and distress about the violence and the urgent need for humanitarian assistance.
+</summary>
+
+<qualia>
+Heavy sadness mixed with a sense of urgency and concern for those affected by the conflict.
+</qualia>
+
+<image_prompt>
+Create an image depicting the devastation of airstrikes in Tyre, emphasizing the emotions of sadness and urgency, with shades of dark clouds and the silhouettes of evacuated civilians. Include elements that convey resilience amidst chaos, styled in a somber yet hopeful manner.
+</image_prompt>
+2024-09-27 16:30:32,235 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 16:30:32,235 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 3,
+    "items": {
+      "interested": 1,
+      "excited": 1,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 1,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 970,
+    "items": {
+      "distressed": 250,
+      "upset": 180,
+      "guilty": 70,
+      "scared": 160,
+      "hostile": 100,
+      "irritable": 80,
+      "ashamed": 90,
+      "nervous": 80,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A UN report has indicated that Iran and Hezbollah have played a significant role in the rise of the Houthis in Yemen. This revelation was shared in a Reddit post by user u/parski841, which garnered considerable attention, receiving 1,312 upvotes and generating 83 comments. The post has an upvote ratio of 0.94, suggesting a strong agreement among readers regarding the content shared.
+</summary>
+
+<qualia>
+The emotional vibe evoked by this event reflects a mixture of concern and awareness regarding geopolitical tensions, underscored by distress and apprehension about the implications of these affiliations.
+</qualia>
+
+<image_prompt>
+Generate an image depicting a geopolitical map of the Middle East featuring the countries involved (Iran, Lebanon, Yemen) with symbols representing conflict and alliances, artistically reflecting the tension and complexity described in the event.
+</image_prompt>
+2024-09-27 16:30:32,358 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-27/inputs/news_and_events/2024-09-27_news.pdf', 'link': 'https://www.bbc.com/news/videos/cx2m8z52y5zo', 'published': 'Wed, 25 Sep 2024 11:00:42 GMT', 'title': 'BBC finds Lebanese seaside city deserted after Israeli attacks', 'summary': 'Correspondent Orla Guerin reports on intense airstrikes and crucial evacuations taking place in the southern city of Tyre. The coverage highlights the dire circumstances faced by civilians in the region, evoking both concern and distress about the violence and the urgent need for humanitarian assistance.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 27, 4, 1, 14, 474000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 2, 'items': {'interested': 2, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 1120, 'items': {'distressed': 300, 'upset': 200, 'guilty': 70, 'scared': 200, 'hostile': 100, 'irritable': 90, 'ashamed': 90, 'nervous': 80, 'jittery': 0, 'afraid': 0}}}, 'qualia': 'Heavy sadness mixed with a sense of urgency and concern for those affected by the conflict.', 'image_prompt': 'Create an image depicting the devastation of airstrikes in Tyre, emphasizing the emotions of sadness and urgency, with shades of dark clouds and the silhouettes of evacuated civilians. Include elements that convey resilience amidst chaos, styled in a somber yet hopeful manner.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 27, 12, 30, 26, 175758, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '9a8d3d602a98d76fc7ebd893a7a27e58'}, 'event_type': 'retrieved_articles', 'event_id': '9a8d3d602a98d76fc7ebd893a7a27e58'}, {'updated_panas': {'positive_affect': {'total_score': 2, 'items': {'interested': 2, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 1120, 'items': {'distressed': 300, 'upset': 200, 'guilty': 70, 'scared': 200, 'hostile': 100, 'irritable': 90, 'ashamed': 90, 'nervous': 80, 'jittery': 0, 'afraid': 0}}}, 'summary': 'Correspondent Orla Guerin reports on intense airstrikes and crucial evacuations taking place in the southern city of Tyre. The coverage highlights the dire circumstances faced by civilians in the region, evoking both concern and distress about the violence and the urgent need for humanitarian assistance.', 'qualia': 'Heavy sadness mixed with a sense of urgency and concern for those affected by the conflict.', 'image_prompt': 'Create an image depicting the devastation of airstrikes in Tyre, emphasizing the emotions of sadness and urgency, with shades of dark clouds and the silhouettes of evacuated civilians. Include elements that convey resilience amidst chaos, styled in a somber yet hopeful manner.'})
+2024-09-27 16:30:42,990 - process_daily_narrative - INFO - Generating image with prompt: Create an image depicting the devastation of airstrikes in Tyre, emphasizing the emotions of sadness and urgency, with shades of dark clouds and the silhouettes of evacuated civilians. Include elements that convey resilience amidst chaos, styled in a somber yet hopeful manner. and aspect ratio: 1:1
+2024-09-27 16:31:05,530 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/ANhqKHkuV968CZ7ZeNwgh2NF0ZjgzKMKigaxW1okLGLkfIhTA/output.webp
+2024-09-27 16:31:05,531 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/ANhqKHkuV968CZ7ZeNwgh2NF0ZjgzKMKigaxW1okLGLkfIhTA/output.webp
+2024-09-27 16:31:05,637 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-27/outputs/event_id_9a8d3d602a98d76fc7ebd893a7a27e58_1231.webp
+2024-09-27 16:31:05,638 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-27/outputs/event_id_9a8d3d602a98d76fc7ebd893a7a27e58_1231.webp
+2024-09-27 16:31:11,057 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-27/outputs/event_id_9a8d3d602a98d76fc7ebd893a7a27e58_1231.webp
+2024-09-27 16:31:11,057 - process_daily_narrative - INFO - Updating qualia_updates document MwXq8AI6TViuSkY7VewS with image path
+2024-09-27 16:31:11,113 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-27/outputs/event_id_9a8d3d602a98d76fc7ebd893a7a27e58_1231.webp
+2024-09-27 16:31:11,113 - process_daily_narrative - INFO - Added 'Everybody Wants to Rule the World' by Tears for Fears to the playlist.
+2024-09-27 16:31:11,113 - process_daily_narrative - INFO - Function returned: None
+2024-09-27 16:31:11,113 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

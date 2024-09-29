@@ -1,0 +1,355 @@
+2024-09-25 19:47:38,254 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-25 19:47:38,254 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-25 19:47:38,254 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-25 19:47:38,255 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-25 19:47:38,255 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-25 19:47:38,310 - process_daily_narrative - INFO - Received request
+2024-09-25 19:47:38,310 - process_daily_narrative - INFO - Request method: POST
+2024-09-25 19:47:38,310 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Accept: application/json, text/plain, */*
+Content-Type: application/json
+User-Agent: axios/1.6.7
+Content-Length: 84
+X-Cloud-Trace-Context: 477bd6b5c0df073bba1d09ed1a338675/12491183112692261498;o=1
+Traceparent: 00-477bd6b5c0df073bba1d09ed1a338675-ad5998dc2061627a-01
+X-Forwarded-For: 2600:1900:0:2d03::201
+X-Forwarded-Proto: https
+Forwarded: for="[2600:1900:0:2d03::201]";proto=https
+Accept-Encoding: gzip, compress, deflate, br
+
+
+2024-09-25 19:47:38,311 - process_daily_narrative - INFO - Request data: b'{"REQUEST_TYPE":"PROCESS_USER_UPLOAD","PARAMS":{"upload_id":"8DxJmkFhSLsgEYvyHq4i"}}'
+2024-09-25 19:47:38,311 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': '8DxJmkFhSLsgEYvyHq4i'}}
+2024-09-25 19:47:38,311 - process_daily_narrative - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-09-25 19:47:38,311 - process_daily_narrative - INFO - PARAMS: {'upload_id': '8DxJmkFhSLsgEYvyHq4i'}
+2024-09-25 19:47:38,311 - process_daily_narrative - INFO - Applying function: process_user_upload
+2024-09-25 19:47:43,828 - process_daily_narrative - INFO - content_input: [{'type': 'text', 'text': 'Your task is to analyze the given text and image (if provided) and categorize the entire input according to the following list:\n\n1. wisdom - Quotes, articles, or insightful thoughts.\n2. love - Expressions or stories of love and kindness.\n3. ai - Perspectives and information about AI and its role in humanity - NOT RELATED TO LULEO\n5. divine - Inputs related to prayers, worship and reflections on the spiritual or numinous.\n6. app - Submission of other apps, tools, or GitHub repositories - NOT RELATED TO LULEO.\n8. questions - Philosophical or existential inquiries.\n9. art - Artistic expressions that reflect love or unity.\n10. idea - Ideas to make the world a better place - NOT RELATED TO LULEO\n11. feedback - Luleo specific - Suggestions and positive or negative thoughts ABOUT LULEO.\n12. miscellaneous - Anything else that doesn\'t fit elsewhere.\n13. spam - Hateful comments or spam (ignored).\n\nHere is the text input:\n\n<user_input>\nThe true test of a man is when he has nothing.\n</user_input>\n\nCarefully analyze the input(s) - both text and image. First, provide a summary of the total input. Then, provide a brief analysis of the input and why you are chosing the specific category or categories. Consider the main themes, intent, and content of the input your explanation.\n\nThen, determine which category or categories best describe the content. You may assign multiple categories if appropriate. If either the text or image contains hateful content or spam, classify it only as "Spam" and ignore it.\n\nPresent your classification and explanation in the following JSON format:\n\n{\n  "input_summary": "[Summarize the input provided]",\n  "explanation": "[Provide your explanation here, detailing why you chose the specific category or categories]",\n  "categories": [\n    "[First category the input is classified into]",\n    "[Second category the input is classified into]",\n    "...additional categories if needed"\n  ]\n}\n\nRemember to be thorough in your analysis and clear in your explanation. If the text is ambiguous or could fit into multiple categories, explain your reasoning for each category you\'ve chosen. Take note of which categories are related to Luleo, and which are not, and which can be either.\n\nDo not include any additional text outside of the JSON structure in your answer.'}]
+2024-09-25 19:47:45,638 - process_daily_narrative - INFO - Raw API Response:
+2024-09-25 19:47:45,638 - process_daily_narrative - INFO - {
+  "input_summary": "The input consists of a thought-provoking statement about the true test of a person's character during times of adversity.",
+  "explanation": "The statement implies that a person's true nature is revealed in challenging circumstances, which reflects wisdom about human resilience and character. It focuses on a profound insight into human behavior, making it suitable for the 'wisdom' category. There are no expressions of love, existential inquiries, or references to spirituality, apps, or Luleo. Thus, it fits best under wisdom.",
+  "categories": [
+    "wisdom"
+  ]
+}
+2024-09-25 19:47:45,763 - process_daily_narrative - INFO - analysis_prompt: Measure the Wisdom in the input provided according to the criteria described below:
+
+**Measuring the Wisdom of a Quote or Article: A Coherent and Objective Criteria**
+
+**Introduction**
+
+Wisdom is a multifaceted concept that encompasses deep insight, ethical understanding, and practical knowledge gained through experience. To measure how "wise" a quote or an article is, we need to establish criteria that objectively evaluate these dimensions. This framework provides a systematic approach to assess wisdom through defined parameters.
+
+---
+
+**Criteria for Measuring Wisdom**
+
+1. **Depth of Insight (DoI)**
+   - **Definition**: Evaluates the profundity of understanding about life, human nature, or the world presented in the quote or article.
+   - **Measurement**: Rate on a scale of 1 to 5.
+     - **5**: Offers profound insights revealing fundamental truths.
+     - **3**: Presents moderate insights with some depth.
+     - **1**: Lacks insight; superficial observations.
+
+2. **Universality (U)**
+   - **Definition**: Assesses the applicability of the wisdom across different contexts, cultures, and times.
+   - **Measurement**: Rate on a scale of 1 to 5.
+     - **5**: Universally applicable; transcends cultures and eras.
+     - **3**: Somewhat applicable with notable limitations.
+     - **1**: Highly context-specific.
+
+3. **Practicality (P)**
+   - **Definition**: Determines whether the quote offers actionable advice relevant to everyday life.
+   - **Measurement**: Rate on a scale of 1 to 5.
+     - **5**: Provides clear, actionable guidance.
+     - **3**: Moderately practical; requires interpretation.
+     - **1**: Entirely theoretical; no practical application.
+
+4. **Originality (O)**
+   - **Definition**: Measures the uniqueness of the perspective or idea presented.
+   - **Measurement**: Rate on a scale of 1 to 5.
+     - **5**: Presents a unique or novel idea.
+     - **3**: Combines known ideas in a new way.
+     - **1**: Clichéd or overused expressions.
+
+5. **Clarity and Conciseness (C)**
+   - **Definition**: Assesses how clearly and succinctly the wisdom is communicated.
+   - **Measurement**: Rate on a scale of 1 to 5.
+     - **5**: Extremely clear and concise.
+     - **3**: Generally understandable with some ambiguity.
+     - **1**: Confusing or overly wordy.
+
+6. **Ethical and Moral Value (E)**
+   - **Definition**: Evaluates the promotion of ethical behavior and moral principles.
+   - **Measurement**: Rate on a scale of 1 to 5.
+     - **5**: Strongly promotes positive ethics and morals.
+     - **3**: Neutral or mixed ethical implications.
+     - **1**: Promotes unethical behavior.
+
+7. **Evidence of Experience (EE)**
+   - **Definition**: Determines if the wisdom is grounded in real-life experience.
+   - **Measurement**: Rate on a scale of 1 to 5.
+     - **5**: Deeply rooted in personal or collective experience.
+     - **3**: Shows some evidence of experience.
+     - **1**: Purely theoretical; no evidence of experience.
+
+8. **Emotional Resonance (ER)**
+   - **Definition**: Measures the emotional impact and ability to provoke reflection.
+   - **Measurement**: Rate on a scale of 1 to 5.
+     - **5**: Evokes strong emotions; prompts deep thought.
+     - **3**: Moderately engaging.
+     - **1**: Emotionally flat.
+
+9. **Complexity and Nuance (CN)**
+   - **Definition**: Assesses acknowledgment of complexity and avoidance of oversimplification.
+   - **Measurement**: Rate on a scale of 1 to 5.
+     - **5**: Rich in complexity and nuance.
+     - **3**: Moderately nuanced.
+     - **1**: Oversimplified; ignores complexities.
+
+10. **Enduring Relevance (ERel)**
+    - **Definition**: Evaluates the timelessness of the wisdom.
+    - **Measurement**: Rate on a scale of 1 to 5.
+      - **5**: Timeless; likely to remain relevant indefinitely.
+      - **3**: Moderately enduring relevance.
+      - **1**: Immediate relevance only; likely to become obsolete.
+
+---
+
+**Calculating the Wisdom Score**
+
+To quantify the overall wisdom, assign a score to each criterion based on the guidelines above. Then, calculate the **Weighted Wisdom Score (WWS)** using assigned weights that reflect the importance of each criterion.
+
+**Example Weights (Total Sum = 1.0):**
+
+- Depth of Insight (DoI): 0.15
+- Universality (U): 0.10
+- Practicality (P): 0.10
+- Originality (O): 0.10
+- Clarity and Conciseness (C): 0.10
+- Ethical and Moral Value (E): 0.10
+- Evidence of Experience (EE): 0.10
+- Emotional Resonance (ER): 0.10
+- Complexity and Nuance (CN): 0.10
+- Enduring Relevance (ERel): 0.05
+
+**Weighted Wisdom Score Formula:**
+
+\[ \text{WWS} = (0.15 \times \text{DoI}) + (0.10 \times \text{U}) + (0.10 \times \text{P}) + (0.10 \times \text{O}) + (0.10 \times \text{C}) + (0.10 \times \text{E}) + (0.10 \times \text{EE}) + (0.10 \times \text{ER}) + (0.10 \times \text{CN}) + (0.05 \times \text{ERel}) \]
+
+---
+
+**Applying the Criteria: An Example**
+
+*Quote*: "The only true wisdom is in knowing you know nothing." — Socrates
+
+**Scoring:**
+
+1. **Depth of Insight (DoI)**: 5
+   - Profound insight into the nature of knowledge and humility.
+
+2. **Universality (U)**: 5
+   - Applicable across all cultures and times.
+
+3. **Practicality (P)**: 4
+   - Encourages humility and continuous learning.
+
+4. **Originality (O)**: 5
+   - Attributed to Socrates; a foundational philosophical concept.
+
+5. **Clarity and Conciseness (C)**: 5
+   - Succinct and easily understood.
+
+6. **Ethical and Moral Value (E)**: 5
+   - Promotes humility and intellectual honesty.
+
+7. **Evidence of Experience (EE)**: 5
+   - Reflects Socrates' philosophical inquiries and life.
+
+8. **Emotional Resonance (ER)**: 5
+   - Provokes introspection and a reevaluation of one's knowledge.
+
+9. **Complexity and Nuance (CN)**: 5
+   - Acknowledges the complexities of knowledge and self-awareness.
+
+10. **Enduring Relevance (ERel)**: 5
+    - Remains relevant in modern discussions about knowledge.
+
+**Calculating WWS:**
+
+\[ \text{WWS} = (0.15 \times 5) + (0.10 \times 5) + (0.10 \times 4) + (0.10 \times 5) + (0.10 \times 5) + (0.10 \times 5) + (0.10 \times 5) + (0.10 \times 5) + (0.10 \times 5) + (0.05 \times 5) \]
+
+\[ \text{WWS} = 0.75 + 0.50 + 0.40 + 0.50 + 0.50 + 0.50 + 0.50 + 0.50 + 0.50 + 0.25 = \textbf{4.90} \]
+
+**Interpretation:**
+
+- **WWS of 4.90** indicates exceptionally high wisdom.
+- The quote excels in all criteria, especially in Depth of Insight and Universality.
+
+---
+
+**Conclusion**
+
+By applying these coherent and objective criteria, we can accurately model and measure the wisdom contained within a quote or article. This systematic approach allows for consistent evaluation and comparison across different pieces of text, providing valuable insights into their inherent wisdom.
+
+---
+
+**Note to Users**
+
+While this framework aims for objectivity, some degree of subjective judgment is inevitable, especially in areas like Emotional Resonance and Ethical Value. It is recommended to use this model as a guide and, if possible, involve multiple evaluators to average out individual biases.
+
+
+Analyze the following quote using the established wisdom criteria and return the results in the specified XML format:
+
+{{WISDOM_INPUT}}
+
+Return the analysis in JSON format as follows:
+
+{
+  "wisdom_analysis": {
+    "depth_of_insight": {
+      "score": "[Depth of Insight Score]",
+      "explanation": "[Explanation of the score]"
+    },
+    "universality": {
+      "score": "[Universality Score]",
+      "explanation": "[Explanation of the score]"
+    },
+    "practicality": {
+      "score": "[Practicality Score]",
+      "explanation": "[Explanation of the score]"
+    },
+    "originality": {
+      "score": "[Originality Score]",
+      "explanation": "[Explanation of the score]"
+    },
+    "clarity_and_conciseness": {
+      "score": "[Clarity and Conciseness Score]",
+      "explanation": "[Explanation of the score]"
+    },
+    "ethical_and_moral_value": {
+      "score": "[Ethical and Moral Value Score]",
+      "explanation": "[Explanation of the score]"
+    },
+    "evidence_of_experience": {
+      "score": "[Evidence of Experience Score]",
+      "explanation": "[Explanation of the score]"
+    },
+    "emotional_resonance": {
+      "score": "[Emotional Resonance Score]",
+      "explanation": "[Explanation of the score]"
+    },
+    "complexity_and_nuance": {
+      "score": "[Complexity and Nuance Score]",
+      "explanation": "[Explanation of the score]"
+    },
+    "enduring_relevance": {
+      "score": "[Enduring Relevance Score]",
+      "explanation": "[Explanation of the score]"
+    },
+    "weighted_wisdom_score": "[Calculated WWS]",
+    "overall_explanation": "[Overall interpretation of the WWS]",
+    "conclusion": "[Conclusion summarizing the analysis]"
+  }
+}
+
+Do not include any additional text outside of the JSON structure in your answer.
+2024-09-25 19:47:53,183 - process_daily_narrative - INFO - Raw API Response:
+2024-09-25 19:47:53,183 - process_daily_narrative - INFO - {
+  "wisdom_analysis": {
+    "depth_of_insight": {
+      "score": 5,
+      "explanation": "The quote offers profound insight into the essential nature of knowledge, emphasizing humility and the recognition of one's ignorance."
+    },
+    "universality": {
+      "score": 5,
+      "explanation": "This wisdom is applicable across all cultures and eras, resonating with diverse philosophical traditions."
+    },
+    "practicality": {
+      "score": 4,
+      "explanation": "The quote encourages humility and a pursuit of continuous learning, although it requires personal interpretation for practical application."
+    },
+    "originality": {
+      "score": 5,
+      "explanation": "Ascribed to Socrates, the quote presents a foundational philosophical concept that is both unique and historically significant."
+    },
+    "clarity_and_conciseness": {
+      "score": 5,
+      "explanation": "The statement is succinct, delivering a clear and impactful message that is easy to understand."
+    },
+    "ethical_and_moral_value": {
+      "score": 5,
+      "explanation": "It strongly promotes intellectual humility and the value of lifelong learning, fostering ethical behavior."
+    },
+    "evidence_of_experience": {
+      "score": 5,
+      "explanation": "Rooted in Socratic philosophy, the quote reflects an analytical approach to knowledge derived from lived experience."
+    },
+    "emotional_resonance": {
+      "score": 5,
+      "explanation": "The phrase evokes strong introspection and reflection among readers regarding their own understanding and beliefs."
+    },
+    "complexity_and_nuance": {
+      "score": 5,
+      "explanation": "It acknowledges the complexities of knowledge acquisition, encouraging deeper contemplation of what it means to know."
+    },
+    "enduring_relevance": {
+      "score": 5,
+      "explanation": "This wisdom has stood the test of time and continues to be relevant in contemporary discussions about epistemology."
+    },
+    "weighted_wisdom_score": 4.90,
+    "overall_explanation": "A WWS of 4.90 indicates exceptionally high wisdom, excelling particularly in Depth of Insight and Universality.",
+    "conclusion": "The quote embodies timeless philosophical insight that not only encourages ethical behavior but also resonates deeply across cultures and contexts."
+  }
+}
+2024-09-25 19:47:53,183 - process_daily_narrative - INFO - JSON Analysis:
+2024-09-25 19:47:53,183 - process_daily_narrative - INFO - {
+  "wisdom_analysis": {
+    "depth_of_insight": {
+      "score": 5,
+      "explanation": "The quote offers profound insight into the essential nature of knowledge, emphasizing humility and the recognition of one's ignorance."
+    },
+    "universality": {
+      "score": 5,
+      "explanation": "This wisdom is applicable across all cultures and eras, resonating with diverse philosophical traditions."
+    },
+    "practicality": {
+      "score": 4,
+      "explanation": "The quote encourages humility and a pursuit of continuous learning, although it requires personal interpretation for practical application."
+    },
+    "originality": {
+      "score": 5,
+      "explanation": "Ascribed to Socrates, the quote presents a foundational philosophical concept that is both unique and historically significant."
+    },
+    "clarity_and_conciseness": {
+      "score": 5,
+      "explanation": "The statement is succinct, delivering a clear and impactful message that is easy to understand."
+    },
+    "ethical_and_moral_value": {
+      "score": 5,
+      "explanation": "It strongly promotes intellectual humility and the value of lifelong learning, fostering ethical behavior."
+    },
+    "evidence_of_experience": {
+      "score": 5,
+      "explanation": "Rooted in Socratic philosophy, the quote reflects an analytical approach to knowledge derived from lived experience."
+    },
+    "emotional_resonance": {
+      "score": 5,
+      "explanation": "The phrase evokes strong introspection and reflection among readers regarding their own understanding and beliefs."
+    },
+    "complexity_and_nuance": {
+      "score": 5,
+      "explanation": "It acknowledges the complexities of knowledge acquisition, encouraging deeper contemplation of what it means to know."
+    },
+    "enduring_relevance": {
+      "score": 5,
+      "explanation": "This wisdom has stood the test of time and continues to be relevant in contemporary discussions about epistemology."
+    },
+    "weighted_wisdom_score": 4.9,
+    "overall_explanation": "A WWS of 4.90 indicates exceptionally high wisdom, excelling particularly in Depth of Insight and Universality.",
+    "conclusion": "The quote embodies timeless philosophical insight that not only encourages ethical behavior but also resonates deeply across cultures and contexts."
+  }
+}
+2024-09-25 19:47:53,337 - process_daily_narrative - INFO - Function returned: None
+2024-09-25 19:47:53,337 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: PROCESS_USER_UPLOAD

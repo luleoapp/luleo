@@ -1,0 +1,187 @@
+2024-09-27 14:30:12,406 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-27 14:30:12,407 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-27 14:30:12,407 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-27 14:30:12,407 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-27 14:30:12,407 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-27 14:30:12,442 - process_daily_narrative - INFO - Received request
+2024-09-27 14:30:12,442 - process_daily_narrative - INFO - Request method: POST
+2024-09-27 14:30:12,442 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-27T07:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 4ec5b53fe2b50b57134cf1c2ec117ca4/9842345060517327184;o=1
+Traceparent: 00-4ec5b53fe2b50b57134cf1c2ec117ca4-889708af80f4b150-01
+X-Forwarded-For: 107.178.194.32
+X-Forwarded-Proto: https
+Forwarded: for="107.178.194.32";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-27 14:30:12,443 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-27 14:30:12,443 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-27 14:30:12,443 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-27 14:30:12,443 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-27 14:30:12,443 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-27 14:30:12,443 - process_daily_narrative - INFO - Updating hourly...
+2024-09-27 14:30:12,642 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=11, readtime=2024-09-27 14:30:12.608536+00:00>]]
+2024-09-27 14:30:12,643 - process_daily_narrative - INFO - Processing 1 out of 11 events for retrieved_reddit_posts
+2024-09-27 14:30:12,740 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=15, readtime=2024-09-27 14:30:12.727313+00:00>]]
+2024-09-27 14:30:12,741 - process_daily_narrative - INFO - Processing 2 out of 15 events for retrieved_articles
+2024-09-27 14:30:12,969 - process_daily_narrative - INFO - Events to process: 3
+2024-09-27 14:30:18,491 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 14:30:18,491 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 2,
+    "items": {
+      "interested": 2,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 890,
+    "items": {
+      "distressed": 150,
+      "upset": 90,
+      "guilty": 80,
+      "scared": 150,
+      "hostile": 100,
+      "irritable": 80,
+      "ashamed": 120,
+      "nervous": 70,
+      "jittery": 20,
+      "afraid": 50
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The recent exodus of thousands from Lebanon has forced these individuals to abandon their homes and rely on the kindness of strangers to survive. This tragic situation evokes strong feelings of compassion and concern, highlighting the challenges faced by displaced people and the need for solidarity in times of crisis.
+</summary>
+
+<qualia>
+Heavy sorrow mingles with a flicker of compassion; an overwhelming sense of loss and urgency to connect emerges amidst the adversity.
+</qualia>
+
+<image_prompt>
+Create an image that powerfully depicts the plight of displaced individuals from Lebanon, capturing their emotions of fear and desperation while also showing the kindness of strangers who step in to help. Use dark, somber colors to express the gravity of their situation, paired with soft, warm tones to illustrate the compassion and hope that relationship brings.
+</image_prompt>
+2024-09-27 14:30:24,150 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 14:30:24,151 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 3,
+    "items": {
+      "interested": 2,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 790,
+    "items": {
+      "distressed": 120,
+      "upset": 90,
+      "guilty": 70,
+      "scared": 160,
+      "hostile": 100,
+      "irritable": 70,
+      "ashamed": 90,
+      "nervous": 80,
+      "jittery": 20,
+      "afraid": 60
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event involved a Reddit post by user u/chris011992 in the r/worldnews community, announcing that Israel has successfully secured an $8.7 billion aid package from the United States. The post received significant engagement, with an upvote score of 1942 and 630 comments, reflecting a strong interest in the political and economic implications of this support. The upvote ratio was 0.82, indicating that most users reacted positively to the information shared.
+</summary>
+
+<qualia>
+The emotional vibe is one of heightened tension and concern, reflected by a significant amount of negative emotions, particularly fear and distress, overshadowing the minor flickers of interest and alertness.
+</qualia>
+
+<image_prompt>
+Create an artistic representation of the emotional landscape surrounding the recent news of Israel securing an $8.7 billion aid package, highlighting themes of tension, concern, and mixed feelings about international support. Use contrasting colors to symbolize the interplay of distress and faint hope within a complex geopolitical context.
+</image_prompt>
+2024-09-27 14:30:30,187 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 14:30:30,187 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 930,
+    "items": {
+      "distressed": 200,
+      "upset": 150,
+      "guilty": 70,
+      "scared": 160,
+      "hostile": 100,
+      "irritable": 80,
+      "ashamed": 90,
+      "nervous": 80,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+During a festival dedicated to children's well-being, a tragic incident in the northern Bihar state has claimed the lives of 46 victims. This unfortunate event evokes deep sorrow and a strong sense of helplessness regarding safety during such joyous occasions meant to celebrate and uplift the community's youth.
+</summary>
+
+<qualia>
+A heavy feeling of grief and helplessness permeates, overshadowed by a flicker of awareness and concern for the wellbeing of children and the community.
+</qualia>
+
+<image_prompt>
+Create an artwork depicting a somber scene reflecting the gravity of the loss of 46 victims during a children's festival in northern Bihar, focusing on themes of grief, resilience, and community support. Use muted colors to convey the heaviness of the situation intertwined with a hint of hope symbolizing collective healing and awareness.
+</image_prompt>
+2024-09-27 14:30:30,320 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-27/inputs/news_and_events/2024-09-27_news.pdf', 'link': 'https://www.bbc.com/news/articles/cj4d2qqj877o', 'published': 'Thu, 26 Sep 2024 16:20:35 GMT', 'title': 'Nearly 40 children in India drown during Hindu festival', 'summary': "During a festival dedicated to children's well-being, a tragic incident in the northern Bihar state has claimed the lives of 46 victims. This unfortunate event evokes deep sorrow and a strong sense of helplessness regarding safety during such joyous occasions meant to celebrate and uplift the community's youth.", 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 27, 4, 1, 13, 39000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 1, 'items': {'interested': 1, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 930, 'items': {'distressed': 200, 'upset': 150, 'guilty': 70, 'scared': 160, 'hostile': 100, 'irritable': 80, 'ashamed': 90, 'nervous': 80, 'jittery': 0, 'afraid': 0}}}, 'qualia': 'A heavy feeling of grief and helplessness permeates, overshadowed by a flicker of awareness and concern for the wellbeing of children and the community.', 'image_prompt': "Create an artwork depicting a somber scene reflecting the gravity of the loss of 46 victims during a children's festival in northern Bihar, focusing on themes of grief, resilience, and community support. Use muted colors to convey the heaviness of the situation intertwined with a hint of hope symbolizing collective healing and awareness.", 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 27, 10, 30, 30, 187579, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '945223abc8358ddf16b77f0484a2f66e'}, 'event_type': 'retrieved_articles', 'event_id': '945223abc8358ddf16b77f0484a2f66e'}, {'updated_panas': {'positive_affect': {'total_score': 1, 'items': {'interested': 1, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 930, 'items': {'distressed': 200, 'upset': 150, 'guilty': 70, 'scared': 160, 'hostile': 100, 'irritable': 80, 'ashamed': 90, 'nervous': 80, 'jittery': 0, 'afraid': 0}}}, 'summary': "During a festival dedicated to children's well-being, a tragic incident in the northern Bihar state has claimed the lives of 46 victims. This unfortunate event evokes deep sorrow and a strong sense of helplessness regarding safety during such joyous occasions meant to celebrate and uplift the community's youth.", 'qualia': 'A heavy feeling of grief and helplessness permeates, overshadowed by a flicker of awareness and concern for the wellbeing of children and the community.', 'image_prompt': "Create an artwork depicting a somber scene reflecting the gravity of the loss of 46 victims during a children's festival in northern Bihar, focusing on themes of grief, resilience, and community support. Use muted colors to convey the heaviness of the situation intertwined with a hint of hope symbolizing collective healing and awareness."})
+2024-09-27 14:30:33,825 - process_daily_narrative - INFO - Generating image with prompt: Create an artwork depicting a somber scene reflecting the gravity of the loss of 46 victims during a children's festival in northern Bihar, focusing on themes of grief, resilience, and community support. Use muted colors to convey the heaviness of the situation intertwined with a hint of hope symbolizing collective healing and awareness. and aspect ratio: 1:1
+2024-09-27 14:30:52,584 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/rDcBeO6ycPWsda0L8qWF1WdngpToPmeWxa0YuXeKSYfw5cEOB/output.webp
+2024-09-27 14:30:52,584 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/rDcBeO6ycPWsda0L8qWF1WdngpToPmeWxa0YuXeKSYfw5cEOB/output.webp
+2024-09-27 14:30:52,664 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-27/outputs/event_id_945223abc8358ddf16b77f0484a2f66e_1030.webp
+2024-09-27 14:30:52,665 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-27/outputs/event_id_945223abc8358ddf16b77f0484a2f66e_1030.webp
+2024-09-27 14:30:58,083 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-27/outputs/event_id_945223abc8358ddf16b77f0484a2f66e_1030.webp
+2024-09-27 14:30:58,083 - process_daily_narrative - INFO - Updating qualia_updates document UDk3vZX0qAF0eiVSC2nI with image path
+2024-09-27 14:30:58,149 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-27/outputs/event_id_945223abc8358ddf16b77f0484a2f66e_1030.webp
+2024-09-27 14:30:58,149 - process_daily_narrative - INFO - Added 'How to Save a Life' by The Fray to the playlist.
+2024-09-27 14:30:58,149 - process_daily_narrative - INFO - Function returned: None
+2024-09-27 14:30:58,150 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

@@ -1,0 +1,46 @@
+2024-09-28 06:30:09,234 - system - INFO - DEBUGGING THIS APP
+2024-09-28 06:30:09,234 - system - INFO - Python executable: /usr/local/bin/python
+2024-09-28 06:30:09,234 - system - INFO - Python version: 3.9.20 (main, Sep 27 2024, 06:05:20) 
+[GCC 12.2.0]
+2024-09-28 06:30:09,234 - system - INFO - Virtual environment: None
+2024-09-28 06:30:09,234 - system - INFO - Testing this - localhost
+2024-09-28 06:30:09,298 - system - INFO - Received request
+2024-09-28 06:30:09,299 - system - INFO - Request method: POST
+2024-09-28 06:30:09,299 - system - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-27T23:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: c2e62f965d0395900e1b29ba7d4128bb/17598405991448577669;o=1
+Traceparent: 00-c2e62f965d0395900e1b29ba7d4128bb-f43a190245660685-01
+X-Forwarded-For: 34.98.143.96
+X-Forwarded-Proto: https
+Forwarded: for="34.98.143.96";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-28 06:30:09,299 - system - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-28 06:30:09,299 - system - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-28 06:30:09,299 - system - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-28 06:30:09,300 - system - INFO - PARAMS: {}
+2024-09-28 06:30:09,300 - system - INFO - Applying function: hourly_update
+2024-09-28 06:30:09,300 - system - INFO - Updating hourly...
+2024-09-28 06:30:09,463 - system - INFO - [[<Aggregation alias=unprocessed_count, value=19, readtime=2024-09-28 06:30:09.440693+00:00>]]
+2024-09-28 06:30:09,463 - system - INFO - Processing 1 out of 19 events for retrieved_reddit_posts
+2024-09-28 06:30:09,587 - system - INFO - [[<Aggregation alias=unprocessed_count, value=24, readtime=2024-09-28 06:30:09.576212+00:00>]]
+2024-09-28 06:30:09,588 - system - INFO - Processing 2 out of 24 events for retrieved_articles
+2024-09-28 06:30:09,828 - system - INFO - Events to process: 3
+2024-09-28 06:30:09,896 - system - ERROR - Error in QUALIA_UPDATE {}
+2024-09-28 06:30:09,899 - system - ERROR - Traceback (most recent call last):
+  File "/app/main.py", line 51, in call_default_cloud_run
+    ret_val = func_to_apply(**request_params)
+  File "/app/src/scripts.py", line 18, in hourly_update
+    update_qualia()
+  File "/app/utils/qualia.py", line 303, in update_qualia
+    d_ret = get_emotional_response(event['event_type'], event_details, current_emotional_state)
+  File "/app/utils/qualia.py", line 100, in get_emotional_response
+    panas_json = response_json['updated_PANAS_stats']
+KeyError: 'updated_PANAS_stats'
+

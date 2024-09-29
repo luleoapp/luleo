@@ -1,0 +1,187 @@
+2024-09-26 19:30:18,356 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-26 19:30:18,356 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-26 19:30:18,356 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-26 19:30:18,356 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-26 19:30:18,356 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-26 19:30:18,394 - process_daily_narrative - INFO - Received request
+2024-09-26 19:30:18,394 - process_daily_narrative - INFO - Request method: POST
+2024-09-26 19:30:18,395 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-26T12:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 0f040a29b62669bba77b600afb289a4d/15776198496792643297;o=1
+Traceparent: 00-0f040a29b62669bba77b600afb289a4d-daf050f26b6086e1-01
+X-Forwarded-For: 34.98.143.192
+X-Forwarded-Proto: https
+Forwarded: for="34.98.143.192";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-26 19:30:18,395 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-26 19:30:18,395 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-26 19:30:18,395 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-26 19:30:18,395 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-26 19:30:18,395 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-26 19:30:18,395 - process_daily_narrative - INFO - Updating hourly...
+2024-09-26 19:30:18,584 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=5, readtime=2024-09-26 19:30:18.569864+00:00>]]
+2024-09-26 19:30:18,584 - process_daily_narrative - INFO - Processing 1 out of 5 events for retrieved_reddit_posts
+2024-09-26 19:30:18,802 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=15, readtime=2024-09-26 19:30:18.788754+00:00>]]
+2024-09-26 19:30:18,803 - process_daily_narrative - INFO - Processing 2 out of 15 events for retrieved_articles
+2024-09-26 19:30:19,021 - process_daily_narrative - INFO - Events to process: 3
+2024-09-26 19:30:25,691 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 19:30:25,692 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 3,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 101,
+    "items": {
+      "distressed": 40,
+      "upset": 15,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 30,
+      "jittery": 0,
+      "afraid": 16
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event highlights a significant and distressing development in the ongoing conflict between Russia and Ukraine, where Ukrainian President Zelenskyy has reported that all thermal power plants in Ukraine have been destroyed by Russian forces. This destructive action threatens to exacerbate the already critical energy crisis in Ukraine, with implications for civilian safety and daily life. The post has garnered substantial attention online, indicated by its high upvote score and numerous comments, reflecting widespread concern over this humanitarian and geopolitical crisis.
+</summary>
+
+<qualia>
+The emotional vibe is heavy with distress and anxiety, coupled with a slight sense of curiosity about the unfolding situation.
+</qualia>
+
+<image_prompt>
+Create an image that visually conveys the devastation and urgency of the destruction of Ukraine's thermal power plants, incorporating elements of turmoil, resilience, and a hopeful horizon amidst despair.
+</image_prompt>
+2024-09-26 19:30:31,959 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 19:30:31,959 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 3,
+    "items": {
+      "interested": 2,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 1,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 104,
+    "items": {
+      "distressed": 30,
+      "upset": 25,
+      "guilty": 15,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 10,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 4
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Dick Caine, a former educator, was recently found guilty of sexually assaulting six female students during the 1970s and 1980s. This case has opened discussions about accountability, justice for survivors, and the importance of addressing historical abuse in educational institutions, prompting a mix of emotions within the community.
+</summary>
+
+<qualia>
+The emotional vibe invoked by this event is one of deep sorrow and distress over past injustices, coupled with a sense of cautious hope as justice is served and conversations about accountability emerge.
+</qualia>
+
+<image_prompt>
+Generate an image that artistically captures the emotional weight of the recent court ruling against Dick Caine, reflecting themes of sorrow, courage, and emerging justice, with visuals that symbolize both the pain of the victims and the strength of societal progress towards healing.
+</image_prompt>
+2024-09-26 19:30:41,011 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 19:30:41,012 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 6,
+    "items": {
+      "interested": 4,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 1,
+      "proud": 0,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 110,
+    "items": {
+      "distressed": 25,
+      "upset": 30,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 25,
+      "jittery": 0,
+      "afraid": 30
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Beijing described a recent military test as "routine." In contrast, several neighboring countries raised significant concerns about the implications of this event, highlighting fears over regional stability and potential escalation of tensions. This dichotomy in perspectives indicates a divide in perceptions of safety and security within the region.
+</summary>
+
+<qualia>
+Tension mixed with curiosity—an intriguing but concerning situation that prompts vigilance and reflection on possible repercussions.
+</qualia>
+
+<image_prompt>
+Generate an image depicting a symbolic representation of contrasting feelings: a calm, routine scene in the foreground, juxtaposed with dark, looming clouds and turbulent waves in the background, symbolizing tension and uncertainty in the region following military actions.
+</image_prompt>
+2024-09-26 19:30:41,199 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-26/inputs/news_and_events/2024-09-26_news.pdf', 'link': 'https://www.bbc.com/news/articles/c4gl843l90zo', 'published': 'Wed, 25 Sep 2024 17:28:29 GMT', 'title': 'China test-fires intercontinental ballistic missile for first time in decades', 'summary': 'Beijing described a recent military test as "routine." In contrast, several neighboring countries raised significant concerns about the implications of this event, highlighting fears over regional stability and potential escalation of tensions. This dichotomy in perspectives indicates a divide in perceptions of safety and security within the region.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 26, 4, 1, 13, 487000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 6, 'items': {'interested': 4, 'excited': 0, 'strong': 0, 'enthusiastic': 1, 'proud': 0, 'alert': 1, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 110, 'items': {'distressed': 25, 'upset': 30, 'guilty': 0, 'scared': 0, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 25, 'jittery': 0, 'afraid': 30}}}, 'qualia': 'Tension mixed with curiosity—an intriguing but concerning situation that prompts vigilance and reflection on possible repercussions.', 'image_prompt': 'Generate an image depicting a symbolic representation of contrasting feelings: a calm, routine scene in the foreground, juxtaposed with dark, looming clouds and turbulent waves in the background, symbolizing tension and uncertainty in the region following military actions.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 26, 15, 30, 41, 12358, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '9192e45e11e6e7c666e4210390ff8f32'}, 'event_type': 'retrieved_articles', 'event_id': '9192e45e11e6e7c666e4210390ff8f32'}, {'updated_panas': {'positive_affect': {'total_score': 6, 'items': {'interested': 4, 'excited': 0, 'strong': 0, 'enthusiastic': 1, 'proud': 0, 'alert': 1, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 110, 'items': {'distressed': 25, 'upset': 30, 'guilty': 0, 'scared': 0, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 25, 'jittery': 0, 'afraid': 30}}}, 'summary': 'Beijing described a recent military test as "routine." In contrast, several neighboring countries raised significant concerns about the implications of this event, highlighting fears over regional stability and potential escalation of tensions. This dichotomy in perspectives indicates a divide in perceptions of safety and security within the region.', 'qualia': 'Tension mixed with curiosity—an intriguing but concerning situation that prompts vigilance and reflection on possible repercussions.', 'image_prompt': 'Generate an image depicting a symbolic representation of contrasting feelings: a calm, routine scene in the foreground, juxtaposed with dark, looming clouds and turbulent waves in the background, symbolizing tension and uncertainty in the region following military actions.'})
+2024-09-26 19:31:00,713 - process_daily_narrative - INFO - Generating image with prompt: Generate an image depicting a symbolic representation of contrasting feelings: a calm, routine scene in the foreground, juxtaposed with dark, looming clouds and turbulent waves in the background, symbolizing tension and uncertainty in the region following military actions. and aspect ratio: 1:1
+2024-09-26 19:31:18,713 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/9ImDMy77TeTVQqK9tVUxu4CocEvgPmyUbKdyACV2BZCDRbwJA/output.webp
+2024-09-26 19:31:18,714 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/9ImDMy77TeTVQqK9tVUxu4CocEvgPmyUbKdyACV2BZCDRbwJA/output.webp
+2024-09-26 19:31:18,787 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-26/outputs/event_id_9192e45e11e6e7c666e4210390ff8f32_1531.webp
+2024-09-26 19:31:18,788 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-26/outputs/event_id_9192e45e11e6e7c666e4210390ff8f32_1531.webp
+2024-09-26 19:31:24,128 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-26/outputs/event_id_9192e45e11e6e7c666e4210390ff8f32_1531.webp
+2024-09-26 19:31:24,131 - process_daily_narrative - INFO - Updating qualia_updates document vbAaJ1uUz7UuNcRrQuVf with image path
+2024-09-26 19:31:24,203 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-26/outputs/event_id_9192e45e11e6e7c666e4210390ff8f32_1531.webp
+2024-09-26 19:31:24,203 - process_daily_narrative - INFO - Added 'Ain't No Man' by The Avett Brothers to the playlist.
+2024-09-26 19:31:24,203 - process_daily_narrative - INFO - Function returned: None
+2024-09-26 19:31:24,203 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

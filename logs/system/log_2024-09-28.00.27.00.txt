@@ -1,0 +1,43 @@
+2024-09-28 00:26:10,799 - system - INFO - DEBUGGING THIS APP
+2024-09-28 00:26:10,799 - system - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-28 00:26:10,799 - system - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-28 00:26:10,800 - system - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-28 00:26:10,800 - system - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-28 00:26:12,351 - system - INFO - Received request
+2024-09-28 00:26:12,352 - system - INFO - Request method: GET
+2024-09-28 00:26:12,352 - system - INFO - Request headers: Host: 127.0.0.1:8080
+Connection: keep-alive
+Sec-Ch-Ua: "Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "macOS"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: session=.eJyrVopPy0kszkgtVrKKrlZSKAFSSsWlycmpxcVKOkqR-aVFCrlAdmJ6qkJGYrFCUmpqnkJxal6JAlRRWmlOTqWiUmytDkW6Y2sB9Fkwkg.ZvaZ6Q.v2_xzOjMKZds6xDXe7x34xh9uvw
+
+
+2024-09-28 00:26:12,352 - system - INFO - Request data: b''
+2024-09-28 00:26:12,352 - system - ERROR - Error parsing JSON: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2024-09-28 00:27:00,051 - system - INFO - Received request
+2024-09-28 00:27:00,052 - system - INFO - Request method: POST
+2024-09-28 00:27:00,052 - system - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 61
+Content-Type: application/json
+
+
+2024-09-28 00:27:00,053 - system - INFO - Request data: b'{"REQUEST_TYPE": "WRITE_DAILY_NEWS_FILE", "PARAMS": {"": ""}}'
+2024-09-28 00:27:00,053 - system - INFO - Request JSON: {'REQUEST_TYPE': 'WRITE_DAILY_NEWS_FILE', 'PARAMS': {'': ''}}
+2024-09-28 00:27:00,053 - system - INFO - REQUEST_TYPE: WRITE_DAILY_NEWS_FILE
+2024-09-28 00:27:00,053 - system - INFO - PARAMS: {'': ''}
+2024-09-28 00:27:00,053 - system - WARNING - Unknown REQUEST_TYPE: WRITE_DAILY_NEWS_FILE

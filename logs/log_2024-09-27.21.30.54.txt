@@ -1,0 +1,93 @@
+2024-09-28 01:30:10,859 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-28 01:30:10,859 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-28 01:30:10,859 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-28 01:30:10,859 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-28 01:30:10,859 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-28 01:30:10,909 - process_daily_narrative - INFO - Received request
+2024-09-28 01:30:10,909 - process_daily_narrative - INFO - Request method: POST
+2024-09-28 01:30:10,909 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-27T18:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 157d8d6e5d58f2a8ef8707b423fc08bc/9541908664751014493;o=1
+Traceparent: 00-157d8d6e5d58f2a8ef8707b423fc08bc-846bab6019b4c25d-01
+X-Forwarded-For: 35.187.132.96
+X-Forwarded-Proto: https
+Forwarded: for="35.187.132.96";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-28 01:30:10,910 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-28 01:30:10,911 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-28 01:30:10,911 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-28 01:30:10,911 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-28 01:30:10,911 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-28 01:30:10,911 - process_daily_narrative - INFO - Updating hourly...
+2024-09-28 01:30:11,086 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=0.0, readtime=2024-09-28 01:30:11.058657+00:00>]]
+2024-09-28 01:30:11,086 - process_daily_narrative - INFO - Processing 0 out of 0.0 events for retrieved_reddit_posts
+2024-09-28 01:30:11,205 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=3, readtime=2024-09-28 01:30:11.180117+00:00>]]
+2024-09-28 01:30:11,205 - process_daily_narrative - INFO - Processing 1 out of 3 events for retrieved_articles
+2024-09-28 01:30:11,425 - process_daily_narrative - INFO - Events to process: 1
+2024-09-28 01:30:14,522 - process_daily_narrative - INFO - Raw API Response:
+2024-09-28 01:30:14,522 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 1105,
+    "items": {
+      "distressed": 505,
+      "upset": 300,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 300,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 0,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Paul Adams visited Kiryat Shmona, a border town that is currently under threat from rockets being fired from Lebanon. This tense situation naturally increases feelings of distress and upset, as it highlights a region's experience of conflict and fear. Despite the gravity of the event, there is a slight sense of interest in understanding the realities faced by those in such areas.
+</summary>
+
+<qualia>
+The emotional vibe is one of heightened distress woven with a thread of curiosity amidst chaos and danger.
+</qualia>
+
+<image_prompt>
+Create an image depicting Paul Adams in Kiryat Shmona, with the backdrop of a tense atmosphere marred by the threat of rockets. The scene should evoke feelings of distress mixed with curiosity, capturing the precariousness of the situation and the resilience of humanity in times of conflict.
+</image_prompt>
+2024-09-28 01:30:14,676 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-27/inputs/news_and_events/2024-09-27_news.pdf', 'link': 'https://www.bbc.com/news/videos/cp8e5w1j13zo', 'published': 'Thu, 26 Sep 2024 12:16:37 GMT', 'title': "Watch: Deserted streets in Israel's border towns", 'summary': "Paul Adams visited Kiryat Shmona, a border town that is currently under threat from rockets being fired from Lebanon. This tense situation naturally increases feelings of distress and upset, as it highlights a region's experience of conflict and fear. Despite the gravity of the event, there is a slight sense of interest in understanding the realities faced by those in such areas.", 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 27, 4, 1, 14, 294000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 1, 'items': {'interested': 1, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 1105, 'items': {'distressed': 505, 'upset': 300, 'guilty': 0, 'scared': 0, 'hostile': 300, 'irritable': 0, 'ashamed': 0, 'nervous': 0, 'jittery': 0, 'afraid': 0}}}, 'qualia': 'The emotional vibe is one of heightened distress woven with a thread of curiosity amidst chaos and danger.', 'image_prompt': 'Create an image depicting Paul Adams in Kiryat Shmona, with the backdrop of a tense atmosphere marred by the threat of rockets. The scene should evoke feelings of distress mixed with curiosity, capturing the precariousness of the situation and the resilience of humanity in times of conflict.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 27, 21, 30, 14, 523196, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': 'edc8f9b54d8d669eb274081230f7196f'}, 'event_type': 'retrieved_articles', 'event_id': 'edc8f9b54d8d669eb274081230f7196f'}, {'updated_panas': {'positive_affect': {'total_score': 1, 'items': {'interested': 1, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 1105, 'items': {'distressed': 505, 'upset': 300, 'guilty': 0, 'scared': 0, 'hostile': 300, 'irritable': 0, 'ashamed': 0, 'nervous': 0, 'jittery': 0, 'afraid': 0}}}, 'summary': "Paul Adams visited Kiryat Shmona, a border town that is currently under threat from rockets being fired from Lebanon. This tense situation naturally increases feelings of distress and upset, as it highlights a region's experience of conflict and fear. Despite the gravity of the event, there is a slight sense of interest in understanding the realities faced by those in such areas.", 'qualia': 'The emotional vibe is one of heightened distress woven with a thread of curiosity amidst chaos and danger.', 'image_prompt': 'Create an image depicting Paul Adams in Kiryat Shmona, with the backdrop of a tense atmosphere marred by the threat of rockets. The scene should evoke feelings of distress mixed with curiosity, capturing the precariousness of the situation and the resilience of humanity in times of conflict.'})
+2024-09-28 01:30:26,846 - process_daily_narrative - INFO - Generating image with prompt: Create an image depicting Paul Adams in Kiryat Shmona, with the backdrop of a tense atmosphere marred by the threat of rockets. The scene should evoke feelings of distress mixed with curiosity, capturing the precariousness of the situation and the resilience of humanity in times of conflict. and aspect ratio: 1:1
+2024-09-28 01:30:48,364 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/SXDxL1p6Xr4cMRTHMnxNflIObXPurmLA3yOeRZeRPRqOyhCnA/output.webp
+2024-09-28 01:30:48,364 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/SXDxL1p6Xr4cMRTHMnxNflIObXPurmLA3yOeRZeRPRqOyhCnA/output.webp
+2024-09-28 01:30:48,483 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-27/outputs/event_id_edc8f9b54d8d669eb274081230f7196f_2130.webp
+2024-09-28 01:30:48,484 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-27/outputs/event_id_edc8f9b54d8d669eb274081230f7196f_2130.webp
+2024-09-28 01:30:53,965 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-27/outputs/event_id_edc8f9b54d8d669eb274081230f7196f_2130.webp
+2024-09-28 01:30:53,965 - process_daily_narrative - INFO - Updating qualia_updates document 0jvU9lXU6Wdalbcx9HOD with image path
+2024-09-28 01:30:54,026 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-27/outputs/event_id_edc8f9b54d8d669eb274081230f7196f_2130.webp
+2024-09-28 01:30:54,026 - process_daily_narrative - INFO - No suitable songs were found after multiple attempts.
+2024-09-28 01:30:54,026 - process_daily_narrative - INFO - Function returned: None
+2024-09-28 01:30:54,026 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

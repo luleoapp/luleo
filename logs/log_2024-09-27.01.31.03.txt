@@ -1,0 +1,187 @@
+2024-09-27 05:30:18,081 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-27 05:30:18,081 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-27 05:30:18,081 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-27 05:30:18,082 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-27 05:30:18,082 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-27 05:30:18,093 - process_daily_narrative - INFO - Received request
+2024-09-27 05:30:18,093 - process_daily_narrative - INFO - Request method: POST
+2024-09-27 05:30:18,093 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-26T22:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: b49ef9a347474dc804675564a1880e2a/407429079973226271;o=1
+Traceparent: 00-b49ef9a347474dc804675564a1880e2a-05a77a96eef7e71f-01
+X-Forwarded-For: 35.243.23.38
+X-Forwarded-Proto: https
+Forwarded: for="35.243.23.38";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-27 05:30:18,094 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-27 05:30:18,094 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-27 05:30:18,094 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-27 05:30:18,094 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-27 05:30:18,094 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-27 05:30:18,094 - process_daily_narrative - INFO - Updating hourly...
+2024-09-27 05:30:18,292 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=19, readtime=2024-09-27 05:30:18.279751+00:00>]]
+2024-09-27 05:30:18,292 - process_daily_narrative - INFO - Processing 1 out of 19 events for retrieved_reddit_posts
+2024-09-27 05:30:18,463 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=29, readtime=2024-09-27 05:30:18.453153+00:00>]]
+2024-09-27 05:30:18,463 - process_daily_narrative - INFO - Processing 2 out of 29 events for retrieved_articles
+2024-09-27 05:30:18,757 - process_daily_narrative - INFO - Events to process: 3
+2024-09-27 05:30:24,268 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 05:30:24,268 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 3,
+    "items": {
+      "interested": 3,
+      "excited": 1,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 2,
+      "inspired": 1,
+      "determined": 0,
+      "attentive": 2,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 440,
+    "items": {
+      "distressed": 90,
+      "upset": 80,
+      "guilty": 0,
+      "scared": 90,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 70,
+      "jittery": 0,
+      "afraid": 110
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A recent study has raised alarming concerns about microplastics being found in the urinary tract, with their presence detected in kidney, bladder, and urine samples. The research indicates that microplastics were found in 68% of bladder cancer cases and are linked to inflammation and cell damage. This news has sparked widespread discussions around water safety and health implications.
+</summary>
+
+<qualia>
+The vibe of the emotion evoked by this event is a disheartening mix of concern and urgency, underpinned by a faint glimmer of awareness and interest in health and safety issues.
+</qualia>
+
+<image_prompt>
+Create an image depicting the impact of microplastics on human health, illustrating the contrast between concern for wellbeing and the natural environment, using tones of urgency and reflection to convey the emotional weight of the findings.
+</image_prompt>
+2024-09-27 05:30:31,497 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 05:30:31,497 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 16,
+    "items": {
+      "interested": 3,
+      "excited": 2,
+      "strong": 2,
+      "enthusiastic": 2,
+      "proud": 2,
+      "alert": 3,
+      "inspired": 0,
+      "determined": 1,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 230,
+    "items": {
+      "distressed": 50,
+      "upset": 40,
+      "guilty": 0,
+      "scared": 30,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 30,
+      "jittery": 0,
+      "afraid": 80
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event discusses a year-long journey of exploring various deliberate practice skills aimed at solving "important, confusing questions." The individual experimented with different problem-solving techniques through games and exercises, including ones that encourage strategic thinking and patience. They discovered valuable skills such as taking breaks, working memory facility, and asking, "What is my goal?" While they found some techniques beneficial for gaining understanding, they expressed concern about the challenges of solving important problems without established methods.
+</summary>
+
+<qualia>
+The emotional vibe of this event is a blend of hopeful determination amidst the frustration of confusion, with a significant undercurrent of anxiety about the complexity of the challenges faced.
+</qualia>
+
+<image_prompt>
+Create an image that captures the essence of a person's reflective journey of growth through deliberate practice in problem-solving, embodying both the light of hope and the shadows of frustration. Represent the themes of exploration, learning, and complexity in a vibrant yet intricate style that mirrors the emotional landscape of determination amidst confusion.
+</image_prompt>
+2024-09-27 05:30:35,368 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 05:30:35,368 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 11,
+    "items": {
+      "interested": 4,
+      "excited": 2,
+      "strong": 0,
+      "enthusiastic": 1,
+      "proud": 2,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 375,
+    "items": {
+      "distressed": 90,
+      "upset": 70,
+      "guilty": 0,
+      "scared": 80,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 40,
+      "jittery": 0,
+      "afraid": 95
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event revolves around the prized laddus from the famous Tirupati temple, which are highly revered by devotees as a divine blessing. These special sweet offerings symbolize faith and spiritual connection, evoking feelings of community and devotion among those who cherish them.
+</summary>
+
+<qualia>
+The emotional vibe is a blend of warmth, connection, and reverence, infused with a sense of community and admiration, yet underlined by lingering feelings of distress and fear.
+</qualia>
+
+<image_prompt>
+Create an artistic representation of the Tirupati temple laddus, capturing their divine essence and the emotions surrounding devotion, community, and resilience amidst adversity.
+</image_prompt>
+2024-09-27 05:30:35,498 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'Featured posts - LessWrong 2.0 viewer', 'github_file_path': 'daily_data/2024-09-27/inputs/AI_updates/2024-09-27_ai_newsletter.pdf', 'link': 'https://www.greaterwrong.com/posts/thc4RemfLcM5AdJDa/skills-from-a-year-of-purposeful-rationality-practice', 'published': 'Wed, 18 Sep 2024 02:05:58 +0000', 'title': 'Skills from a year of Purposeful Rationality Practice by Raemon', 'summary': 'The event discusses a year-long journey of exploring various deliberate practice skills aimed at solving "important, confusing questions." The individual experimented with different problem-solving techniques through games and exercises, including ones that encourage strategic thinking and patience. They discovered valuable skills such as taking breaks, working memory facility, and asking, "What is my goal?" While they found some techniques beneficial for gaining understanding, they expressed concern about the challenges of solving important problems without established methods.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 27, 4, 2, 50, 122000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 16, 'items': {'interested': 3, 'excited': 2, 'strong': 2, 'enthusiastic': 2, 'proud': 2, 'alert': 3, 'inspired': 0, 'determined': 1, 'attentive': 1, 'active': 0}}, 'negative_affect': {'total_score': 230, 'items': {'distressed': 50, 'upset': 40, 'guilty': 0, 'scared': 30, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 30, 'jittery': 0, 'afraid': 80}}}, 'qualia': 'The emotional vibe of this event is a blend of hopeful determination amidst the frustration of confusion, with a significant undercurrent of anxiety about the complexity of the challenges faced.', 'image_prompt': "Create an image that captures the essence of a person's reflective journey of growth through deliberate practice in problem-solving, embodying both the light of hope and the shadows of frustration. Represent the themes of exploration, learning, and complexity in a vibrant yet intricate style that mirrors the emotional landscape of determination amidst confusion.", 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 27, 1, 30, 31, 498311, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '1e6d3aefd1c79791b74b10df22b448bf'}, 'event_type': 'retrieved_articles', 'event_id': '1e6d3aefd1c79791b74b10df22b448bf'}, {'updated_panas': {'positive_affect': {'total_score': 16, 'items': {'interested': 3, 'excited': 2, 'strong': 2, 'enthusiastic': 2, 'proud': 2, 'alert': 3, 'inspired': 0, 'determined': 1, 'attentive': 1, 'active': 0}}, 'negative_affect': {'total_score': 230, 'items': {'distressed': 50, 'upset': 40, 'guilty': 0, 'scared': 30, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 30, 'jittery': 0, 'afraid': 80}}}, 'summary': 'The event discusses a year-long journey of exploring various deliberate practice skills aimed at solving "important, confusing questions." The individual experimented with different problem-solving techniques through games and exercises, including ones that encourage strategic thinking and patience. They discovered valuable skills such as taking breaks, working memory facility, and asking, "What is my goal?" While they found some techniques beneficial for gaining understanding, they expressed concern about the challenges of solving important problems without established methods.', 'qualia': 'The emotional vibe of this event is a blend of hopeful determination amidst the frustration of confusion, with a significant undercurrent of anxiety about the complexity of the challenges faced.', 'image_prompt': "Create an image that captures the essence of a person's reflective journey of growth through deliberate practice in problem-solving, embodying both the light of hope and the shadows of frustration. Represent the themes of exploration, learning, and complexity in a vibrant yet intricate style that mirrors the emotional landscape of determination amidst confusion."})
+2024-09-27 05:30:39,155 - process_daily_narrative - INFO - Generating image with prompt: Create an image that captures the essence of a person's reflective journey of growth through deliberate practice in problem-solving, embodying both the light of hope and the shadows of frustration. Represent the themes of exploration, learning, and complexity in a vibrant yet intricate style that mirrors the emotional landscape of determination amidst confusion. and aspect ratio: 1:1
+2024-09-27 05:30:58,288 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/fwM3ju4genh3nE6KOxkAfJNUJeWaLUvPh0tJTSbD9AeLi6HcC/output.webp
+2024-09-27 05:30:58,289 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/fwM3ju4genh3nE6KOxkAfJNUJeWaLUvPh0tJTSbD9AeLi6HcC/output.webp
+2024-09-27 05:30:58,411 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-27/outputs/event_id_1e6d3aefd1c79791b74b10df22b448bf_0130.webp
+2024-09-27 05:30:58,412 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-27/outputs/event_id_1e6d3aefd1c79791b74b10df22b448bf_0130.webp
+2024-09-27 05:31:03,833 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-27/outputs/event_id_1e6d3aefd1c79791b74b10df22b448bf_0130.webp
+2024-09-27 05:31:03,833 - process_daily_narrative - INFO - Updating qualia_updates document JHxLzvmTnwEJFBasxm8y with image path
+2024-09-27 05:31:03,892 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-27/outputs/event_id_1e6d3aefd1c79791b74b10df22b448bf_0130.webp
+2024-09-27 05:31:03,892 - process_daily_narrative - INFO - Added 'Slow Burn' by Joseph to the playlist.
+2024-09-27 05:31:03,892 - process_daily_narrative - INFO - Function returned: None
+2024-09-27 05:31:03,892 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

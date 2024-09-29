@@ -1,0 +1,93 @@
+2024-09-25 16:30:18,520 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-25 16:30:18,520 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-25 16:30:18,520 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-25 16:30:18,520 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-25 16:30:18,520 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-25 16:30:18,613 - process_daily_narrative - INFO - Received request
+2024-09-25 16:30:18,613 - process_daily_narrative - INFO - Request method: POST
+2024-09-25 16:30:18,614 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-25T09:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 902d44d96874c934e4d0338b769b2f1f/6424527644446239986;o=1
+Traceparent: 00-902d44d96874c934e4d0338b769b2f1f-592881daa0e52cf2-01
+X-Forwarded-For: 34.98.143.200
+X-Forwarded-Proto: https
+Forwarded: for="34.98.143.200";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-25 16:30:18,614 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-25 16:30:18,614 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-25 16:30:18,614 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-25 16:30:18,614 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-25 16:30:18,614 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-25 16:30:18,614 - process_daily_narrative - INFO - Updating hourly...
+2024-09-25 16:30:18,768 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=0.0, readtime=2024-09-25 16:30:18.754564+00:00>]]
+2024-09-25 16:30:18,769 - process_daily_narrative - INFO - Processing 0 out of 0.0 events for retrieved_reddit_posts
+2024-09-25 16:30:18,994 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=1, readtime=2024-09-25 16:30:18.982543+00:00>]]
+2024-09-25 16:30:18,994 - process_daily_narrative - INFO - Processing 1 out of 1 events for retrieved_articles
+2024-09-25 16:30:19,356 - process_daily_narrative - INFO - Events to process: 1
+2024-09-25 16:30:24,715 - process_daily_narrative - INFO - Raw API Response:
+2024-09-25 16:30:24,715 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 24,
+    "items": {
+      "interested": 4,
+      "excited": 3,
+      "strong": 2,
+      "enthusiastic": 3,
+      "proud": 3,
+      "alert": 3,
+      "inspired": 3,
+      "determined": 2,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 64,
+    "items": {
+      "distressed": 7,
+      "upset": 3,
+      "guilty": 0,
+      "scared": 6,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 5,
+      "jittery": 0,
+      "afraid": 3
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+In response to CEO Pavel Durov's statement regarding changes to Telegram aimed at discouraging criminal activity and improving the platform's image, emotions shifted. While there is hope and interest surrounding the positive impact of these changes, there remains a sense of distress and nervousness about the existing challenges and potential consequences.
+</summary>
+
+<qualia>
+The emotional vibe is one of cautious optimism mixed with anxiety; a desire for improvement tempered by the fear of ongoing risks.
+</qualia>
+
+<image_prompt>
+Create an artistic illustration that reflects the theme of transformation and resilience in the face of challenges, capturing both the hope for a better future and the underlying tension of uncertainty.
+</image_prompt>
+2024-09-25 16:30:24,857 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-24/inputs/news_and_events/2024-09-24_news.pdf', 'link': 'https://www.bbc.com/news/articles/cvglp0xny3eo', 'published': 'Mon, 23 Sep 2024 22:32:24 GMT', 'title': 'Telegram will now provide some user data to authorities', 'summary': "In response to CEO Pavel Durov's statement regarding changes to Telegram aimed at discouraging criminal activity and improving the platform's image, emotions shifted. While there is hope and interest surrounding the positive impact of these changes, there remains a sense of distress and nervousness about the existing challenges and potential consequences.", 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 24, 4, 1, 12, 888000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 24, 'items': {'interested': 4, 'excited': 3, 'strong': 2, 'enthusiastic': 3, 'proud': 3, 'alert': 3, 'inspired': 3, 'determined': 2, 'attentive': 1, 'active': 0}}, 'negative_affect': {'total_score': 64, 'items': {'distressed': 7, 'upset': 3, 'guilty': 0, 'scared': 6, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 5, 'jittery': 0, 'afraid': 3}}}, 'qualia': 'The emotional vibe is one of cautious optimism mixed with anxiety; a desire for improvement tempered by the fear of ongoing risks.', 'image_prompt': 'Create an artistic illustration that reflects the theme of transformation and resilience in the face of challenges, capturing both the hope for a better future and the underlying tension of uncertainty.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 25, 12, 30, 24, 716722, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': 'ffbc2fdaed23a115c95622879434157e'}, 'event_type': 'retrieved_articles', 'event_id': 'ffbc2fdaed23a115c95622879434157e'}, {'updated_panas': {'positive_affect': {'total_score': 24, 'items': {'interested': 4, 'excited': 3, 'strong': 2, 'enthusiastic': 3, 'proud': 3, 'alert': 3, 'inspired': 3, 'determined': 2, 'attentive': 1, 'active': 0}}, 'negative_affect': {'total_score': 64, 'items': {'distressed': 7, 'upset': 3, 'guilty': 0, 'scared': 6, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 5, 'jittery': 0, 'afraid': 3}}}, 'summary': "In response to CEO Pavel Durov's statement regarding changes to Telegram aimed at discouraging criminal activity and improving the platform's image, emotions shifted. While there is hope and interest surrounding the positive impact of these changes, there remains a sense of distress and nervousness about the existing challenges and potential consequences.", 'qualia': 'The emotional vibe is one of cautious optimism mixed with anxiety; a desire for improvement tempered by the fear of ongoing risks.', 'image_prompt': 'Create an artistic illustration that reflects the theme of transformation and resilience in the face of challenges, capturing both the hope for a better future and the underlying tension of uncertainty.'})
+2024-09-25 16:30:29,852 - process_daily_narrative - INFO - Generating image with prompt: Create an artistic illustration that reflects the theme of transformation and resilience in the face of challenges, capturing both the hope for a better future and the underlying tension of uncertainty. and aspect ratio: 1:1
+2024-09-25 16:30:50,987 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/NyXKQYeCpVxuJycbKc3vuevgC92mHgH6vPlAWoHfL9u1l9AnA/output.webp
+2024-09-25 16:30:50,987 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/NyXKQYeCpVxuJycbKc3vuevgC92mHgH6vPlAWoHfL9u1l9AnA/output.webp
+2024-09-25 16:30:51,065 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-25/outputs/event_id_ffbc2fdaed23a115c95622879434157e_1230.webp
+2024-09-25 16:30:51,066 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-25/outputs/event_id_ffbc2fdaed23a115c95622879434157e_1230.webp
+2024-09-25 16:30:56,673 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-25/outputs/event_id_ffbc2fdaed23a115c95622879434157e_1230.webp
+2024-09-25 16:30:56,673 - process_daily_narrative - INFO - Updating qualia_updates document H4mQyP6bDhk75pLcnJyO with image path
+2024-09-25 16:30:56,735 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-25/outputs/event_id_ffbc2fdaed23a115c95622879434157e_1230.webp
+2024-09-25 16:30:56,735 - process_daily_narrative - INFO - Added 'Somebody to Somebody' by Ruth B to the playlist.
+2024-09-25 16:30:56,735 - process_daily_narrative - INFO - Function returned: None
+2024-09-25 16:30:56,736 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

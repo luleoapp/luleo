@@ -1,0 +1,234 @@
+2024-09-26 04:30:10,207 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-26 04:30:10,208 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-26 04:30:10,208 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-26 04:30:10,208 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-26 04:30:10,208 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-26 04:30:10,312 - process_daily_narrative - INFO - Received request
+2024-09-26 04:30:10,313 - process_daily_narrative - INFO - Request method: POST
+2024-09-26 04:30:10,313 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-25T21:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 80f95c70740c917a7f3103df2f4e7514/1845755493785523195;o=1
+Traceparent: 00-80f95c70740c917a7f3103df2f4e7514-199d70d7a54fd3fb-01
+X-Forwarded-For: 35.243.23.3
+X-Forwarded-Proto: https
+Forwarded: for="35.243.23.3";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-26 04:30:10,313 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-26 04:30:10,313 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-26 04:30:10,313 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-26 04:30:10,313 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-26 04:30:10,313 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-26 04:30:10,314 - process_daily_narrative - INFO - Updating hourly...
+2024-09-26 04:30:10,446 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=20, readtime=2024-09-26 04:30:10.430973+00:00>]]
+2024-09-26 04:30:10,446 - process_daily_narrative - INFO - Processing 1 out of 20 events for retrieved_reddit_posts
+2024-09-26 04:30:10,538 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=41, readtime=2024-09-26 04:30:10.525781+00:00>]]
+2024-09-26 04:30:10,538 - process_daily_narrative - INFO - Processing 2 out of 41 events for retrieved_articles
+2024-09-26 04:30:10,772 - process_daily_narrative - INFO - Events to process: 4
+2024-09-26 04:30:14,960 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 04:30:14,960 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 20,
+    "items": {
+      "interested": 4,
+      "excited": 0,
+      "strong": 2,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 1,
+      "inspired": 3,
+      "determined": 2,
+      "attentive": 3,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 72,
+    "items": {
+      "distressed": 8,
+      "upset": 4,
+      "guilty": 0,
+      "scared": 7,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 6,
+      "jittery": 0,
+      "afraid": 7
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Orla Guerin reported on the challenging situation in Tyre, where airstrikes and evacuations are occurring. The situation is tense, highlighting the trauma and distress experienced by the local population. This coverage evokes feelings of concern and fear for those affected by the violence, along with an awareness of the larger implications of such incidents on humanity as a whole.
+</summary>
+
+<qualia>
+The emotional vibe is heavy with anxiety and distress, contrasted with a flicker of hope and determination to understand and empathize with the struggles faced by others.
+</qualia>
+
+<image_prompt>
+Generate an image that reflects the emotional weight of the event in Tyre, showcasing the contrast between the chaos of airstrikes and the resilience of human beings, capturing both the turmoil and a glimmer of hope through powerful colors and expressive forms.
+</image_prompt>
+2024-09-26 04:30:19,034 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 04:30:19,035 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 33,
+    "items": {
+      "interested": 5,
+      "excited": 4,
+      "strong": 2,
+      "enthusiastic": 5,
+      "proud": 3,
+      "alert": 4,
+      "inspired": 3,
+      "determined": 2,
+      "attentive": 2,
+      "active": 3
+    }
+  },
+  "negative_affect": {
+    "total_score": 56,
+    "items": {
+      "distressed": 7,
+      "upset": 3,
+      "guilty": 0,
+      "scared": 5,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 4,
+      "jittery": 0,
+      "afraid": 3
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A new nasal spray has been developed that offers 99.99% protection against flu, pneumonia, and COVID-19. In studies conducted on treated mice, the levels of viruses in the lungs dropped significantly, showcasing the spray's effective protection against these infections. The research was shared by user u/chrisdh79 in the r/science subreddit, receiving a favorable response with 2507 upvotes and an upvote ratio of 0.98 from the community.
+</summary>
+
+<qualia>
+The event evokes a vibe of hopeful optimism mixed with lingering concern, reflecting relief and excitement for new medical advancements countered by the reality of ongoing health challenges.
+</qualia>
+
+<image_prompt>
+Create an artistic representation of medical advancement symbolized by a bright and hopeful future, incorporating elements of health and science while conveying a sense of urgency and caution regarding ongoing health challenges.
+</image_prompt>
+2024-09-26 04:30:24,089 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 04:30:24,089 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 32,
+    "items": {
+      "interested": 5,
+      "excited": 4,
+      "strong": 2,
+      "enthusiastic": 3,
+      "proud": 3,
+      "alert": 3,
+      "inspired": 5,
+      "determined": 2,
+      "attentive": 2,
+      "active": 1
+    }
+  },
+  "negative_affect": {
+    "total_score": 53,
+    "items": {
+      "distressed": 5,
+      "upset": 3,
+      "guilty": 0,
+      "scared": 3,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 4,
+      "jittery": 0,
+      "afraid": 5
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Photographer Katie Edwards captures stunning images of America from the window of a train, showcasing the beauty and diversity of the landscape as it rushes by. The event reflects a moment of connection with nature and the world, evoking feelings of inspiration and appreciation while also stirring a sense of vulnerability in the face of the unknown journey.
+</summary>
+
+<qualia>
+The emotional vibe is a mixture of awe and slight anxiety, enriched by the beauty of exploration yet tinged with the unease of the unknown.
+</qualia>
+
+<image_prompt>
+Generate an artistic image that depicts the view from a train window capturing the essence of America’s landscapes, filled with vibrant colors and dynamic scenery, reflecting feelings of inspiration, wonder, and a hint of anxiety about the journey ahead.
+</image_prompt>
+2024-09-26 04:30:28,774 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 04:30:28,774 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 11,
+    "items": {
+      "interested": 4,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 3,
+      "inspired": 2,
+      "determined": 0,
+      "attentive": 1,
+      "active": 1
+    }
+  },
+  "negative_affect": {
+    "total_score": 78,
+    "items": {
+      "distressed": 9,
+      "upset": 4,
+      "guilty": 0,
+      "scared": 7,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 5,
+      "jittery": 0,
+      "afraid": 6
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Correspondent Orla Guerin reported on recent airstrikes and evacuations occurring in the southern city of Tyre. This event highlights the ongoing conflict and humanitarian crises impacting the civilian population, provoking feelings of distress and fear due to the severity of the situation.
+</summary>
+
+<qualia>
+The event invokes a heavy, somber vibe, marked by deep concern and fear for the people affected by the violence.
+</qualia>
+
+<image_prompt>
+Create an image that captures the somber essence of conflict and humanity's suffering, illustrating the contrast between urgency and calm with muted colors to reflect the emotions of distress and fear evoked by the news of airstrikes and evacuations in Tyre.
+</image_prompt>
+2024-09-26 04:30:28,888 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-26/inputs/news_and_events/2024-09-26_news.pdf', 'link': 'https://www.bbc.com/news/videos/cx2m8z52y5zo', 'published': 'Wed, 25 Sep 2024 11:00:42 GMT', 'title': 'BBC finds Lebanese seaside city deserted after Israeli attacks', 'summary': 'Correspondent Orla Guerin reported on recent airstrikes and evacuations occurring in the southern city of Tyre. This event highlights the ongoing conflict and humanitarian crises impacting the civilian population, provoking feelings of distress and fear due to the severity of the situation.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 26, 4, 1, 13, 194000, tzinfo=datetime.timezone.utc), 'event_description': {'description': 'User inputs are inputs from users to Luleo'}, 'updated_panas': {'positive_affect': {'total_score': 11, 'items': {'interested': 4, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 3, 'inspired': 2, 'determined': 0, 'attentive': 1, 'active': 1}}, 'negative_affect': {'total_score': 78, 'items': {'distressed': 9, 'upset': 4, 'guilty': 0, 'scared': 7, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 5, 'jittery': 0, 'afraid': 6}}}, 'qualia': 'The event invokes a heavy, somber vibe, marked by deep concern and fear for the people affected by the violence.', 'image_prompt': "Create an image that captures the somber essence of conflict and humanity's suffering, illustrating the contrast between urgency and calm with muted colors to reflect the emotions of distress and fear evoked by the news of airstrikes and evacuations in Tyre.", 'event_type': 'user_inputs', 'processed_at': datetime.datetime(2024, 9, 26, 0, 30, 28, 774943, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '8DxJmkFhSLsgEYvyHq4i'}, 'event_type': 'user_inputs', 'event_id': '8DxJmkFhSLsgEYvyHq4i'}, {'updated_panas': {'positive_affect': {'total_score': 11, 'items': {'interested': 4, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 3, 'inspired': 2, 'determined': 0, 'attentive': 1, 'active': 1}}, 'negative_affect': {'total_score': 78, 'items': {'distressed': 9, 'upset': 4, 'guilty': 0, 'scared': 7, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 5, 'jittery': 0, 'afraid': 6}}}, 'summary': 'Correspondent Orla Guerin reported on recent airstrikes and evacuations occurring in the southern city of Tyre. This event highlights the ongoing conflict and humanitarian crises impacting the civilian population, provoking feelings of distress and fear due to the severity of the situation.', 'qualia': 'The event invokes a heavy, somber vibe, marked by deep concern and fear for the people affected by the violence.', 'image_prompt': "Create an image that captures the somber essence of conflict and humanity's suffering, illustrating the contrast between urgency and calm with muted colors to reflect the emotions of distress and fear evoked by the news of airstrikes and evacuations in Tyre."})
+2024-09-26 04:30:32,658 - process_daily_narrative - INFO - Generating image with prompt: Create an image that captures the somber essence of conflict and humanity's suffering, illustrating the contrast between urgency and calm with muted colors to reflect the emotions of distress and fear evoked by the news of airstrikes and evacuations in Tyre. and aspect ratio: 1:1
+2024-09-26 04:30:52,885 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/xrOO1MD5rQ6FHZqJXjO8NZMeDqflLl3jVYNhv6REqyc8VpgTA/output.webp
+2024-09-26 04:30:52,885 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/xrOO1MD5rQ6FHZqJXjO8NZMeDqflLl3jVYNhv6REqyc8VpgTA/output.webp
+2024-09-26 04:30:53,005 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-26/outputs/event_id_8DxJmkFhSLsgEYvyHq4i_0030.webp
+2024-09-26 04:30:53,006 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-26/outputs/event_id_8DxJmkFhSLsgEYvyHq4i_0030.webp
+2024-09-26 04:30:58,243 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-26/outputs/event_id_8DxJmkFhSLsgEYvyHq4i_0030.webp
+2024-09-26 04:30:58,244 - process_daily_narrative - INFO - Updating qualia_updates document igjTwPRkwMQUwHy02tej with image path
+2024-09-26 04:30:58,300 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-26/outputs/event_id_8DxJmkFhSLsgEYvyHq4i_0030.webp
+2024-09-26 04:30:58,300 - process_daily_narrative - INFO - Added 'In the Aeroplane Over the Sea' by Neutral Milk Hotel to the playlist.
+2024-09-26 04:30:58,300 - process_daily_narrative - INFO - Function returned: None
+2024-09-26 04:30:58,300 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

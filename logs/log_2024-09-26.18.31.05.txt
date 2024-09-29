@@ -1,0 +1,187 @@
+2024-09-26 22:30:18,367 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-26 22:30:18,367 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-26 22:30:18,367 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-26 22:30:18,367 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-26 22:30:18,367 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-26 22:30:18,434 - process_daily_narrative - INFO - Received request
+2024-09-26 22:30:18,435 - process_daily_narrative - INFO - Request method: POST
+2024-09-26 22:30:18,435 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-26T15:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 228137dde5b02a12f437a90570665bae/217490180606143568;o=1
+Traceparent: 00-228137dde5b02a12f437a90570665bae-0304ae2abd2a2c50-01
+X-Forwarded-For: 35.187.132.8
+X-Forwarded-Proto: https
+Forwarded: for="35.187.132.8";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-26 22:30:18,435 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-26 22:30:18,436 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-26 22:30:18,436 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-26 22:30:18,436 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-26 22:30:18,436 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-26 22:30:18,436 - process_daily_narrative - INFO - Updating hourly...
+2024-09-26 22:30:18,583 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=2, readtime=2024-09-26 22:30:18.568751+00:00>]]
+2024-09-26 22:30:18,583 - process_daily_narrative - INFO - Processing 1 out of 2 events for retrieved_reddit_posts
+2024-09-26 22:30:18,715 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=10, readtime=2024-09-26 22:30:18.701674+00:00>]]
+2024-09-26 22:30:18,715 - process_daily_narrative - INFO - Processing 2 out of 10 events for retrieved_articles
+2024-09-26 22:30:18,916 - process_daily_narrative - INFO - Events to process: 3
+2024-09-26 22:30:24,240 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 22:30:24,241 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 2,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 145,
+    "items": {
+      "distressed": 50,
+      "upset": 40,
+      "guilty": 0,
+      "scared": 35,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 20,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A former soldier has publicly accused senior military officers of serious misconduct, including rape and harassment, in a video shared on TikTok. This event highlights critical issues of accountability and justice within the military, stirring strong emotions and reactions from various communities and raising awareness about the challenges faced by survivors of such acts.
+</summary>
+
+<qualia>
+The emotional vibe is one of deep distress and concern, mixed with a tentative interest in the unfolding narrative of justice and accountability.
+</qualia>
+
+<image_prompt>
+Generate an image depicting the haunting atmosphere of injustice and resilience, reflecting deep sorrow and the fragile hope for change in the wake of the accusations made by the former soldier.
+</image_prompt>
+2024-09-26 22:30:29,903 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 22:30:29,904 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 3,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 2,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 125,
+    "items": {
+      "distressed": 45,
+      "upset": 35,
+      "guilty": 5,
+      "scared": 40,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 0,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Adams, the current mayor, has become the first in the city's history to face criminal charges during his time in office. This unprecedented event raises concerns about governance, integrity, and the implications it may have on community trust and political stability.
+</summary>
+
+<qualia>
+The emotional vibe is one of anxious concern and curiosity, reflecting a mix of distress over the serious implications of the charges while also sparking interest in the unfolding political situation.
+</qualia>
+
+<image_prompt>
+Create an artwork that visually conveys the tension and gravity surrounding a historical political event, highlighting themes of justice, governance, and community impact. Use colors and imagery that evoke a sense of worry combined with a spark of hope for integrity and positive change.
+</image_prompt>
+2024-09-26 22:30:34,971 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 22:30:34,971 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 3,
+    "items": {
+      "interested": 3,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 125,
+    "items": {
+      "distressed": 40,
+      "upset": 30,
+      "guilty": 0,
+      "scared": 35,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 15,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A Reddit post titled "Women whose periods stop early at higher risk of autoimmune conditions, study shows" discusses a study revealing that women with premature ovarian insufficiency are more susceptible to developing autoimmune diseases like diabetes and lupus. The post has received 175 upvotes and a 94% upvote ratio, but only 6 comments, indicating interest and concern about women's health issues. 
+</summary>
+
+<qualia>
+Concern and intrigue mixed with an underlying sense of distress regarding women's health vulnerabilities.
+</qualia>
+
+<image_prompt>
+Generate an image depicting a somber yet hopeful representation of women's health, featuring symbols of resilience and awareness, intertwined with elements of nature to reflect healing and community support. The color palette should invoke a sense of both concern and hope. 
+</image_prompt>
+2024-09-26 22:30:35,102 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-26/inputs/news_and_events/2024-09-26_news.pdf', 'link': 'https://www.bbc.com/news/articles/cwyl0zl1vlwo', 'published': 'Wed, 25 Sep 2024 11:25:49 GMT', 'title': 'Nigerian soldier dismissed after alleging rape hits out', 'summary': 'A former soldier has publicly accused senior military officers of serious misconduct, including rape and harassment, in a video shared on TikTok. This event highlights critical issues of accountability and justice within the military, stirring strong emotions and reactions from various communities and raising awareness about the challenges faced by survivors of such acts.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 26, 4, 1, 14, 695000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 1, 'items': {'interested': 2, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 1, 'active': 0}}, 'negative_affect': {'total_score': 145, 'items': {'distressed': 50, 'upset': 40, 'guilty': 0, 'scared': 35, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 20, 'jittery': 0, 'afraid': 0}}}, 'qualia': 'The emotional vibe is one of deep distress and concern, mixed with a tentative interest in the unfolding narrative of justice and accountability.', 'image_prompt': 'Generate an image depicting the haunting atmosphere of injustice and resilience, reflecting deep sorrow and the fragile hope for change in the wake of the accusations made by the former soldier.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 26, 18, 30, 24, 241838, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': 'a7a4cf0633d1c89f56ce56b7c1ef0f63'}, 'event_type': 'retrieved_articles', 'event_id': 'a7a4cf0633d1c89f56ce56b7c1ef0f63'}, {'updated_panas': {'positive_affect': {'total_score': 1, 'items': {'interested': 2, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 1, 'active': 0}}, 'negative_affect': {'total_score': 145, 'items': {'distressed': 50, 'upset': 40, 'guilty': 0, 'scared': 35, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 20, 'jittery': 0, 'afraid': 0}}}, 'summary': 'A former soldier has publicly accused senior military officers of serious misconduct, including rape and harassment, in a video shared on TikTok. This event highlights critical issues of accountability and justice within the military, stirring strong emotions and reactions from various communities and raising awareness about the challenges faced by survivors of such acts.', 'qualia': 'The emotional vibe is one of deep distress and concern, mixed with a tentative interest in the unfolding narrative of justice and accountability.', 'image_prompt': 'Generate an image depicting the haunting atmosphere of injustice and resilience, reflecting deep sorrow and the fragile hope for change in the wake of the accusations made by the former soldier.'})
+2024-09-26 22:30:41,538 - process_daily_narrative - INFO - Generating image with prompt: Generate an image depicting the haunting atmosphere of injustice and resilience, reflecting deep sorrow and the fragile hope for change in the wake of the accusations made by the former soldier. and aspect ratio: 1:1
+2024-09-26 22:30:59,975 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/Qn6LoS92L6ZeSyefMHwiteeIdavNjdYPqFyB6l28wTNeoSO4E/output.webp
+2024-09-26 22:30:59,976 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/Qn6LoS92L6ZeSyefMHwiteeIdavNjdYPqFyB6l28wTNeoSO4E/output.webp
+2024-09-26 22:31:00,061 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-26/outputs/event_id_a7a4cf0633d1c89f56ce56b7c1ef0f63_1831.webp
+2024-09-26 22:31:00,062 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-26/outputs/event_id_a7a4cf0633d1c89f56ce56b7c1ef0f63_1831.webp
+2024-09-26 22:31:05,428 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-26/outputs/event_id_a7a4cf0633d1c89f56ce56b7c1ef0f63_1831.webp
+2024-09-26 22:31:05,428 - process_daily_narrative - INFO - Updating qualia_updates document 4fgjbwOfNCK1xjEIo8Zh with image path
+2024-09-26 22:31:05,483 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-26/outputs/event_id_a7a4cf0633d1c89f56ce56b7c1ef0f63_1831.webp
+2024-09-26 22:31:05,483 - process_daily_narrative - INFO - Added 'Way Down We Go' by Kaleo to the playlist.
+2024-09-26 22:31:05,483 - process_daily_narrative - INFO - Function returned: None
+2024-09-26 22:31:05,483 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

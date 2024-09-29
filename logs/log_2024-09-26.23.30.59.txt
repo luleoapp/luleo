@@ -1,0 +1,140 @@
+2024-09-27 03:30:17,472 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-27 03:30:17,472 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-27 03:30:17,472 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-27 03:30:17,472 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-27 03:30:17,472 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-27 03:30:17,570 - process_daily_narrative - INFO - Received request
+2024-09-27 03:30:17,570 - process_daily_narrative - INFO - Request method: POST
+2024-09-27 03:30:17,570 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-26T20:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: fdf503b9b24ad85c4748b93230164d77/14901340177478694426;o=1
+Traceparent: 00-fdf503b9b24ad85c4748b93230164d77-cecc31f0d3dfb61a-01
+X-Forwarded-For: 35.243.23.135
+X-Forwarded-Proto: https
+Forwarded: for="35.243.23.135";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-27 03:30:17,570 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-27 03:30:17,571 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-27 03:30:17,571 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-27 03:30:17,571 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-27 03:30:17,571 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-27 03:30:17,571 - process_daily_narrative - INFO - Updating hourly...
+2024-09-27 03:30:17,750 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=0.0, readtime=2024-09-27 03:30:17.738164+00:00>]]
+2024-09-27 03:30:17,751 - process_daily_narrative - INFO - Processing 0 out of 0.0 events for retrieved_reddit_posts
+2024-09-27 03:30:17,845 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=2, readtime=2024-09-27 03:30:17.834084+00:00>]]
+2024-09-27 03:30:17,845 - process_daily_narrative - INFO - Processing 2 out of 2 events for retrieved_articles
+2024-09-27 03:30:18,080 - process_daily_narrative - INFO - Events to process: 2
+2024-09-27 03:30:23,497 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 03:30:23,497 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 2,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 1,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 240,
+    "items": {
+      "distressed": 80,
+      "upset": 50,
+      "guilty": 0,
+      "scared": 60,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 50,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The recent retrieval of articles highlights the growing concerns surrounding the Lebanese armed group, which is stated to be more formidable than Hamas in Gaza. This situation exacerbates fears of escalating conflict in the region, particularly given the longstanding tensions between Israel and Lebanon. The event reflects the complexity of geopolitical dynamics and the potential for heightened instability, leading to significant emotional distress and anxiety.
+</summary>
+
+<qualia>
+Anxiety and tension pervade the atmosphere, underscored by a sense of urgency and unease regarding the unpredictable nature of conflict.
+</qualia>
+
+<image_prompt>
+Create a visually striking artwork that captures the emotional turmoil and tension surrounding the escalating conflict involving the Lebanese armed group and Israel. The image should evoke feelings of anxiety, uncertainty, and urgency, incorporating dark and heavy color tones to reflect the seriousness of the situation.
+</image_prompt>
+2024-09-27 03:30:33,102 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 03:30:33,102 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 0,
+    "items": {
+      "interested": 0,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 250,
+    "items": {
+      "distressed": 80,
+      "upset": 70,
+      "guilty": 0,
+      "scared": 60,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 40,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Dina Darwiche, a dedicated employee of the UNHCR, tragically lost her life due to a missile strike that hit her family home in the Bekaa region. This devastating event highlights the ongoing violence and instability faced by many in conflict zones, underlining the immense human cost of such tragedies and the profound impact on families and communities affected by war.
+</summary>
+
+<qualia>
+The emotion invoked is one of profound sorrow and distress, marked by a heavy sense of loss and helplessness in the face of violence.
+</qualia>
+
+<image_prompt>
+Create an artistic representation of the tragic event that conveys deep sorrow and the impact of loss due to violence, capturing both the fragility of life and the resilience of the human spirit amidst such tragedy.
+</image_prompt>
+2024-09-27 03:30:33,316 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-26/inputs/news_and_events/2024-09-26_news.pdf', 'link': 'https://www.bbc.com/news/articles/cjd5x1mnj2yo', 'published': 'Tue, 24 Sep 2024 21:33:50 GMT', 'title': 'UN refugee agency says staff among those killed in Israeli air strikes in Lebanon', 'summary': 'Dina Darwiche, a dedicated employee of the UNHCR, tragically lost her life due to a missile strike that hit her family home in the Bekaa region. This devastating event highlights the ongoing violence and instability faced by many in conflict zones, underlining the immense human cost of such tragedies and the profound impact on families and communities affected by war.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 26, 4, 1, 15, 125000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 0, 'items': {'interested': 0, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 250, 'items': {'distressed': 80, 'upset': 70, 'guilty': 0, 'scared': 60, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 40, 'jittery': 0, 'afraid': 0}}}, 'qualia': 'The emotion invoked is one of profound sorrow and distress, marked by a heavy sense of loss and helplessness in the face of violence.', 'image_prompt': 'Create an artistic representation of the tragic event that conveys deep sorrow and the impact of loss due to violence, capturing both the fragility of life and the resilience of the human spirit amidst such tragedy.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 26, 23, 30, 33, 102673, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': 'ef2dea61a43ba0bb98c1bcc44fac9733'}, 'event_type': 'retrieved_articles', 'event_id': 'ef2dea61a43ba0bb98c1bcc44fac9733'}, {'updated_panas': {'positive_affect': {'total_score': 0, 'items': {'interested': 0, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 250, 'items': {'distressed': 80, 'upset': 70, 'guilty': 0, 'scared': 60, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 40, 'jittery': 0, 'afraid': 0}}}, 'summary': 'Dina Darwiche, a dedicated employee of the UNHCR, tragically lost her life due to a missile strike that hit her family home in the Bekaa region. This devastating event highlights the ongoing violence and instability faced by many in conflict zones, underlining the immense human cost of such tragedies and the profound impact on families and communities affected by war.', 'qualia': 'The emotion invoked is one of profound sorrow and distress, marked by a heavy sense of loss and helplessness in the face of violence.', 'image_prompt': 'Create an artistic representation of the tragic event that conveys deep sorrow and the impact of loss due to violence, capturing both the fragility of life and the resilience of the human spirit amidst such tragedy.'})
+2024-09-27 03:30:36,866 - process_daily_narrative - INFO - Generating image with prompt: Create an artistic representation of the tragic event that conveys deep sorrow and the impact of loss due to violence, capturing both the fragility of life and the resilience of the human spirit amidst such tragedy. and aspect ratio: 1:1
+2024-09-27 03:30:53,904 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/IpAswUBnTSqoP5x4RoyuvtGcYCgzL2veyUpG4b8zTVx2xegTA/output.webp
+2024-09-27 03:30:53,904 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/IpAswUBnTSqoP5x4RoyuvtGcYCgzL2veyUpG4b8zTVx2xegTA/output.webp
+2024-09-27 03:30:53,983 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-26/outputs/event_id_ef2dea61a43ba0bb98c1bcc44fac9733_2330.webp
+2024-09-27 03:30:53,984 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-26/outputs/event_id_ef2dea61a43ba0bb98c1bcc44fac9733_2330.webp
+2024-09-27 03:30:59,352 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-26/outputs/event_id_ef2dea61a43ba0bb98c1bcc44fac9733_2330.webp
+2024-09-27 03:30:59,352 - process_daily_narrative - INFO - Updating qualia_updates document 23z0uy1JWoFdttmKsqxc with image path
+2024-09-27 03:30:59,401 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-26/outputs/event_id_ef2dea61a43ba0bb98c1bcc44fac9733_2330.webp
+2024-09-27 03:30:59,402 - process_daily_narrative - INFO - Added 'Scarborough Fair' by Simon & Garfunkel to the playlist.
+2024-09-27 03:30:59,402 - process_daily_narrative - INFO - Function returned: None
+2024-09-27 03:30:59,402 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

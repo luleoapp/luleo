@@ -1,0 +1,187 @@
+2024-09-27 06:30:18,363 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-27 06:30:18,363 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-27 06:30:18,363 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-27 06:30:18,364 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-27 06:30:18,364 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-27 06:30:18,395 - process_daily_narrative - INFO - Received request
+2024-09-27 06:30:18,395 - process_daily_narrative - INFO - Request method: POST
+2024-09-27 06:30:18,396 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-26T23:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: b0b8ef4e317bc2734ef9dac1c30c14cb/1555780142525904331;o=1
+Traceparent: 00-b0b8ef4e317bc2734ef9dac1c30c14cb-15973dcbf7dcf5cb-01
+X-Forwarded-For: 34.98.143.135
+X-Forwarded-Proto: https
+Forwarded: for="34.98.143.135";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-27 06:30:18,396 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-27 06:30:18,396 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-27 06:30:18,396 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-27 06:30:18,396 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-27 06:30:18,396 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-27 06:30:18,396 - process_daily_narrative - INFO - Updating hourly...
+2024-09-27 06:30:18,579 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=18, readtime=2024-09-27 06:30:18.564526+00:00>]]
+2024-09-27 06:30:18,580 - process_daily_narrative - INFO - Processing 1 out of 18 events for retrieved_reddit_posts
+2024-09-27 06:30:18,721 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=27, readtime=2024-09-27 06:30:18.709988+00:00>]]
+2024-09-27 06:30:18,721 - process_daily_narrative - INFO - Processing 2 out of 27 events for retrieved_articles
+2024-09-27 06:30:18,921 - process_daily_narrative - INFO - Events to process: 3
+2024-09-27 06:30:29,039 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 06:30:29,039 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 15,
+    "items": {
+      "interested": 4,
+      "excited": 2,
+      "strong": 3,
+      "enthusiastic": 1,
+      "proud": 2,
+      "alert": 1,
+      "inspired": 1,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 205,
+    "items": {
+      "distressed": 40,
+      "upset": 20,
+      "guilty": 0,
+      "scared": 20,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 30,
+      "jittery": 0,
+      "afraid": 95
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event involves the announcement from President Biden that the USA will provide Ukraine with long-range JSOW munitions. This significant military support has brought attention to the ongoing conflict in Ukraine and has sparked considerable discussion among users online. The post has received a high level of engagement, with 7,496 upvotes and 228 comments, indicating strong interest and concern from the community about the implications of further U.S. involvement in the conflict.
+</summary>
+
+<qualia>
+The vibe evokes a mix of cautious optimism and underlying anxiety, reflecting both interest in geopolitical developments and concern for escalating tensions.
+</qualia>
+
+<image_prompt>
+Generate an image depicting the complexities of geopolitical support in a vibrant, yet somber atmosphere. Capture the duality of hope in military aid juxtaposed with the tension of conflict, incorporating symbols of unity and resilience.
+</image_prompt>
+2024-09-27 06:30:35,658 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 06:30:35,658 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 10,
+    "items": {
+      "interested": 2,
+      "excited": 1,
+      "strong": 2,
+      "enthusiastic": 1,
+      "proud": 1,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 260,
+    "items": {
+      "distressed": 60,
+      "upset": 50,
+      "guilty": 0,
+      "scared": 40,
+      "hostile": 30,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 40,
+      "jittery": 0,
+      "afraid": 40
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event refers to growing anger among senior Republicans regarding Ukrainian President Zelensky's visit to Pennsylvania, a crucial swing state in US elections. This tension highlights political divisions and concerns over international involvement in domestic politics, provoking strong emotional responses from various political factions.
+</summary>
+
+<qualia>
+The emotional vibe is one of tension and division, marked by unease and anxiety over political developments, yet slightly laced with a sense of curiosity about the implications of such interactions.
+</qualia>
+
+<image_prompt>
+Create an artistic representation of a politically charged environment, capturing the tension and division among various political factions, with an emphasis on a blend of unease and curiosity regarding international figures influencing local politics.
+</image_prompt>
+2024-09-27 06:30:43,684 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 06:30:43,685 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 12,
+    "items": {
+      "interested": 3,
+      "excited": 1,
+      "strong": 2,
+      "enthusiastic": 2,
+      "proud": 2,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 180,
+    "items": {
+      "distressed": 50,
+      "upset": 30,
+      "guilty": 0,
+      "scared": 30,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 30,
+      "jittery": 0,
+      "afraid": 40
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event relates to an incident in Bihar state that occurred during heavy rains. Fortunately, no injuries were reported, which allows for a sense of relief and positivity despite the adverse weather conditions. The acknowledgment of safety amidst potential danger fosters gratitude and concern for the affected environment and community.
+</summary>
+
+<qualia>
+The emotional "vibe" of this event evokes a mixed sense of relief and concern. While there is gratitude for safety, there remains a weight of distress concerning the situation's broader implications.
+</qualia>
+
+<image_prompt>
+Generate an image depicting the aftermath of heavy rains in Bihar state, focusing on the contrast between the chaotic weather and the brightening sky, symbolizing hope and relief in community resilience, embodying emotions of gratitude and concern.
+</image_prompt>
+2024-09-27 06:30:43,814 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-27/inputs/news_and_events/2024-09-27_news.pdf', 'link': 'https://www.bbc.com/news/videos/c80r7003kj4o', 'published': 'Thu, 26 Sep 2024 07:11:12 GMT', 'title': 'Watch: Building collapses into river in India', 'summary': 'The event relates to an incident in Bihar state that occurred during heavy rains. Fortunately, no injuries were reported, which allows for a sense of relief and positivity despite the adverse weather conditions. The acknowledgment of safety amidst potential danger fosters gratitude and concern for the affected environment and community.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 27, 4, 1, 14, 559000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 12, 'items': {'interested': 3, 'excited': 1, 'strong': 2, 'enthusiastic': 2, 'proud': 2, 'alert': 1, 'inspired': 0, 'determined': 0, 'attentive': 1, 'active': 0}}, 'negative_affect': {'total_score': 180, 'items': {'distressed': 50, 'upset': 30, 'guilty': 0, 'scared': 30, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 30, 'jittery': 0, 'afraid': 40}}}, 'qualia': 'The emotional "vibe" of this event evokes a mixed sense of relief and concern. While there is gratitude for safety, there remains a weight of distress concerning the situation\'s broader implications.', 'image_prompt': 'Generate an image depicting the aftermath of heavy rains in Bihar state, focusing on the contrast between the chaotic weather and the brightening sky, symbolizing hope and relief in community resilience, embodying emotions of gratitude and concern.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 27, 2, 30, 43, 685294, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '1f7572a51cc508e8dd3c605b23c089c7'}, 'event_type': 'retrieved_articles', 'event_id': '1f7572a51cc508e8dd3c605b23c089c7'}, {'updated_panas': {'positive_affect': {'total_score': 12, 'items': {'interested': 3, 'excited': 1, 'strong': 2, 'enthusiastic': 2, 'proud': 2, 'alert': 1, 'inspired': 0, 'determined': 0, 'attentive': 1, 'active': 0}}, 'negative_affect': {'total_score': 180, 'items': {'distressed': 50, 'upset': 30, 'guilty': 0, 'scared': 30, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 30, 'jittery': 0, 'afraid': 40}}}, 'summary': 'The event relates to an incident in Bihar state that occurred during heavy rains. Fortunately, no injuries were reported, which allows for a sense of relief and positivity despite the adverse weather conditions. The acknowledgment of safety amidst potential danger fosters gratitude and concern for the affected environment and community.', 'qualia': 'The emotional "vibe" of this event evokes a mixed sense of relief and concern. While there is gratitude for safety, there remains a weight of distress concerning the situation\'s broader implications.', 'image_prompt': 'Generate an image depicting the aftermath of heavy rains in Bihar state, focusing on the contrast between the chaotic weather and the brightening sky, symbolizing hope and relief in community resilience, embodying emotions of gratitude and concern.'})
+2024-09-27 06:30:57,861 - process_daily_narrative - INFO - Generating image with prompt: Generate an image depicting the aftermath of heavy rains in Bihar state, focusing on the contrast between the chaotic weather and the brightening sky, symbolizing hope and relief in community resilience, embodying emotions of gratitude and concern. and aspect ratio: 1:1
+2024-09-27 06:31:29,975 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/wvTyifrvv9yvJKMxqMF0aFiYOhJbNjlkpGvrEUbx0PkgGgwJA/output.webp
+2024-09-27 06:31:29,975 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/wvTyifrvv9yvJKMxqMF0aFiYOhJbNjlkpGvrEUbx0PkgGgwJA/output.webp
+2024-09-27 06:31:30,094 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-27/outputs/event_id_1f7572a51cc508e8dd3c605b23c089c7_0231.webp
+2024-09-27 06:31:30,095 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-27/outputs/event_id_1f7572a51cc508e8dd3c605b23c089c7_0231.webp
+2024-09-27 06:31:35,475 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-27/outputs/event_id_1f7572a51cc508e8dd3c605b23c089c7_0231.webp
+2024-09-27 06:31:35,476 - process_daily_narrative - INFO - Updating qualia_updates document fjpadtQQYMX8QCRVc9Zo with image path
+2024-09-27 06:31:35,529 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-27/outputs/event_id_1f7572a51cc508e8dd3c605b23c089c7_0231.webp
+2024-09-27 06:31:35,529 - process_daily_narrative - INFO - Added 'Hide and Seek' by Imogen Heap to the playlist.
+2024-09-27 06:31:35,529 - process_daily_narrative - INFO - Function returned: None
+2024-09-27 06:31:35,529 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

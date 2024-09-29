@@ -1,0 +1,187 @@
+2024-09-26 08:30:18,273 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-26 08:30:18,273 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-26 08:30:18,273 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-26 08:30:18,273 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-26 08:30:18,273 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-26 08:30:18,367 - process_daily_narrative - INFO - Received request
+2024-09-26 08:30:18,367 - process_daily_narrative - INFO - Request method: POST
+2024-09-26 08:30:18,368 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-26T01:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: a546559f5317e1c34c34c7cb8b667828/2034123545405683011;o=1
+Traceparent: 00-a546559f5317e1c34c34c7cb8b667828-1c3aa8965929f543-01
+X-Forwarded-For: 34.98.143.136
+X-Forwarded-Proto: https
+Forwarded: for="34.98.143.136";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-26 08:30:18,368 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-26 08:30:18,368 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-26 08:30:18,368 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-26 08:30:18,368 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-26 08:30:18,368 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-26 08:30:18,368 - process_daily_narrative - INFO - Updating hourly...
+2024-09-26 08:30:18,519 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=16, readtime=2024-09-26 08:30:18.504851+00:00>]]
+2024-09-26 08:30:18,519 - process_daily_narrative - INFO - Processing 1 out of 16 events for retrieved_reddit_posts
+2024-09-26 08:30:18,653 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=34, readtime=2024-09-26 08:30:18.640515+00:00>]]
+2024-09-26 08:30:18,654 - process_daily_narrative - INFO - Processing 2 out of 34 events for retrieved_articles
+2024-09-26 08:30:18,991 - process_daily_narrative - INFO - Events to process: 3
+2024-09-26 08:30:25,558 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 08:30:25,558 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 3,
+    "items": {
+      "interested": 2,
+      "excited": 0,
+      "strong": 1,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 3,
+      "inspired": 1,
+      "determined": 1,
+      "attentive": 2,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 90,
+    "items": {
+      "distressed": 8,
+      "upset": 6,
+      "guilty": 0,
+      "scared": 8,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A new study reveals that record-breaking rainfall events are more likely and intense due to climate change. This finding highlights the urgent need for awareness and action regarding climate issues, as increased rainfall can lead to severe flooding and other consequences for the environment and communities. The study underlines the connection between human activities and extreme weather events, prompting a necessary dialogue about sustainability and responsibility.
+</summary>
+
+<qualia>
+The emotional vibe invoked by the event is one of heightened anxiety mixed with a spark of awareness and a determination to address climate change proactively. This blend highlights both the dread of impending consequences and a glimmer of hope for change.
+</qualia>
+
+<image_prompt>
+Generate an image depicting the impact of climate change on weather patterns, particularly focusing on heavy rainfall and flooding. The image should artistically convey a mix of urgency and hope, illustrating nature's power and humanity's responsibility towards safeguarding the planet. Use vibrant, contrasting colors to evoke both the intensity of rain and the resilience of life.
+</image_prompt>
+2024-09-26 08:30:31,580 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 08:30:31,580 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 2,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 90,
+    "items": {
+      "distressed": 10,
+      "upset": 5,
+      "guilty": 0,
+      "scared": 10,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 5
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A new BBC documentary sheds light on the tragic events of the Hamas attack during the Nova music festival in Israel, where hundreds of innocent lives were taken. The documentary aims to provide a deeper understanding of the human toll and lasting impact of such violence on individuals and communities.
+</summary>
+
+<qualia>
+The emotional vibe invoked by this event is one of deep sorrow and profound empathy, tinged with awareness and a call to action.
+</qualia>
+
+<image_prompt>
+An artistic representation capturing the solemnity and tragedy of the Nova music festival attack, illustrating the themes of violence and loss, while weaving in elements of resilience and human solidarity.
+</image_prompt>
+2024-09-26 08:30:37,361 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 08:30:37,362 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 2,
+    "items": {
+      "interested": 3,
+      "excited": 1,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 2,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 2,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 84,
+    "items": {
+      "distressed": 8,
+      "upset": 5,
+      "guilty": 0,
+      "scared": 8,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 8
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event revolves around a statement made by the Kremlin, asserting that it is impossible to force Russia into peace. This was shared on a Reddit post by user u/CatUsaUk in the r/worldnews subreddit. The post has garnered significant attention, receiving 6357 upvotes and 867 comments, with an impressive upvote ratio of 0.96. The discussion underscores the ongoing tensions in geopolitical relationships and raises concerns about the consequences of continuing conflicts.
+</summary>
+
+<qualia>
+The emotional vibe is one of anxious curiosity, marked by a sense of distress over the implications of unresolved conflict while being drawn to the unfolding political narrative.
+</qualia>
+
+<image_prompt>
+Generate an image depicting a conflicted landscape, symbolizing the tension between nations. The artwork should incorporate elements of politics and communication, reflecting a mixture of worry and intrigue that accompanies such complex global events.
+</image_prompt>
+2024-09-26 08:30:37,473 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-26/inputs/news_and_events/2024-09-26_news.pdf', 'link': 'https://www.bbc.com/news/videos/c0qznj3l5ypo', 'published': 'Wed, 25 Sep 2024 21:04:54 GMT', 'title': 'We danced with joy then hid among the dead – Nova survivors recall Hamas massacre', 'summary': 'A new BBC documentary sheds light on the tragic events of the Hamas attack during the Nova music festival in Israel, where hundreds of innocent lives were taken. The documentary aims to provide a deeper understanding of the human toll and lasting impact of such violence on individuals and communities.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 26, 4, 1, 15, 228000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 1, 'items': {'interested': 1, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 1, 'inspired': 0, 'determined': 0, 'attentive': 2, 'active': 0}}, 'negative_affect': {'total_score': 90, 'items': {'distressed': 10, 'upset': 5, 'guilty': 0, 'scared': 10, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 10, 'jittery': 0, 'afraid': 5}}}, 'qualia': 'The emotional vibe invoked by this event is one of deep sorrow and profound empathy, tinged with awareness and a call to action.', 'image_prompt': 'An artistic representation capturing the solemnity and tragedy of the Nova music festival attack, illustrating the themes of violence and loss, while weaving in elements of resilience and human solidarity.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 26, 4, 30, 31, 580403, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '372c327710ceafd4619f13e41fe273a5'}, 'event_type': 'retrieved_articles', 'event_id': '372c327710ceafd4619f13e41fe273a5'}, {'updated_panas': {'positive_affect': {'total_score': 1, 'items': {'interested': 1, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 1, 'inspired': 0, 'determined': 0, 'attentive': 2, 'active': 0}}, 'negative_affect': {'total_score': 90, 'items': {'distressed': 10, 'upset': 5, 'guilty': 0, 'scared': 10, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 10, 'jittery': 0, 'afraid': 5}}}, 'summary': 'A new BBC documentary sheds light on the tragic events of the Hamas attack during the Nova music festival in Israel, where hundreds of innocent lives were taken. The documentary aims to provide a deeper understanding of the human toll and lasting impact of such violence on individuals and communities.', 'qualia': 'The emotional vibe invoked by this event is one of deep sorrow and profound empathy, tinged with awareness and a call to action.', 'image_prompt': 'An artistic representation capturing the solemnity and tragedy of the Nova music festival attack, illustrating the themes of violence and loss, while weaving in elements of resilience and human solidarity.'})
+2024-09-26 08:30:47,007 - process_daily_narrative - INFO - Generating image with prompt: An artistic representation capturing the solemnity and tragedy of the Nova music festival attack, illustrating the themes of violence and loss, while weaving in elements of resilience and human solidarity. and aspect ratio: 1:1
+2024-09-26 08:31:05,641 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/LhgWs14s0Hq5BtnaX9vzNeWikq81bwtmOPqiTYW3GR6kbWwJA/output.webp
+2024-09-26 08:31:05,641 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/LhgWs14s0Hq5BtnaX9vzNeWikq81bwtmOPqiTYW3GR6kbWwJA/output.webp
+2024-09-26 08:31:05,755 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-26/outputs/event_id_372c327710ceafd4619f13e41fe273a5_0431.webp
+2024-09-26 08:31:05,756 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-26/outputs/event_id_372c327710ceafd4619f13e41fe273a5_0431.webp
+2024-09-26 08:31:11,432 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-26/outputs/event_id_372c327710ceafd4619f13e41fe273a5_0431.webp
+2024-09-26 08:31:11,432 - process_daily_narrative - INFO - Updating qualia_updates document f2BBFPLaMwoWvC7NYoQa with image path
+2024-09-26 08:31:11,493 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-26/outputs/event_id_372c327710ceafd4619f13e41fe273a5_0431.webp
+2024-09-26 08:31:11,494 - process_daily_narrative - INFO - Added 'Bridge Over Troubled Water' by Simon & Garfunkel to the playlist.
+2024-09-26 08:31:11,494 - process_daily_narrative - INFO - Function returned: None
+2024-09-26 08:31:11,494 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

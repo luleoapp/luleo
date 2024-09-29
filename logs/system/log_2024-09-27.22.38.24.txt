@@ -1,0 +1,28 @@
+2024-09-27 22:30:55,389 - system - INFO - DEBUGGING THIS APP
+2024-09-27 22:30:55,390 - system - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-09-27 22:30:55,390 - system - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-09-27 22:30:55,390 - system - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-09-27 22:30:55,390 - system - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-09-27 22:38:24,826 - system - INFO - Received request
+2024-09-27 22:38:24,827 - system - INFO - Request method: POST
+2024-09-27 22:38:24,827 - system - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 50
+Content-Type: application/json
+
+
+2024-09-27 22:38:24,827 - system - INFO - Request data: b'{"REQUEST_TYPE": "CALL_LLM_AND_LOG", "PARAMS": {}}'
+2024-09-27 22:38:24,827 - system - INFO - Request JSON: {'REQUEST_TYPE': 'CALL_LLM_AND_LOG', 'PARAMS': {}}
+2024-09-27 22:38:24,827 - system - INFO - REQUEST_TYPE: CALL_LLM_AND_LOG
+2024-09-27 22:38:24,827 - system - INFO - PARAMS: {}
+2024-09-27 22:38:24,828 - system - INFO - Applying function: call_and_log_llm
+2024-09-27 22:38:24,828 - system - ERROR - Error in CALL_LLM_AND_LOG {}
+2024-09-27 22:38:24,828 - system - ERROR - Traceback (most recent call last):
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/main.py", line 51, in call_default_cloud_run
+    ret_val = func_to_apply(**request_params)
+TypeError: call_and_log_llm() missing 3 required positional arguments: 'system_prompt', 'user_prompt', and 'model'
+

@@ -1,0 +1,140 @@
+2024-09-27 18:30:11,612 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-27 18:30:11,612 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-27 18:30:11,612 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-27 18:30:11,612 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-27 18:30:11,612 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-27 18:30:11,638 - process_daily_narrative - INFO - Received request
+2024-09-27 18:30:11,638 - process_daily_narrative - INFO - Request method: POST
+2024-09-27 18:30:11,639 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-27T11:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: e1ef0ff36779a4a7107a257caabb3b36/18187835597823171759;o=1
+Traceparent: 00-e1ef0ff36779a4a7107a257caabb3b36-fc682c1ce9745caf-01
+X-Forwarded-For: 34.98.143.168
+X-Forwarded-Proto: https
+Forwarded: for="34.98.143.168";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-27 18:30:11,639 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-27 18:30:11,639 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-27 18:30:11,639 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-27 18:30:11,639 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-27 18:30:11,639 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-27 18:30:11,639 - process_daily_narrative - INFO - Updating hourly...
+2024-09-27 18:30:11,795 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=7, readtime=2024-09-27 18:30:11.783279+00:00>]]
+2024-09-27 18:30:11,796 - process_daily_narrative - INFO - Processing 1 out of 7 events for retrieved_reddit_posts
+2024-09-27 18:30:11,942 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=10, readtime=2024-09-27 18:30:11.919987+00:00>]]
+2024-09-27 18:30:11,942 - process_daily_narrative - INFO - Processing 1 out of 10 events for retrieved_articles
+2024-09-27 18:30:12,184 - process_daily_narrative - INFO - Events to process: 2
+2024-09-27 18:30:17,036 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 18:30:17,037 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 12,
+    "items": {
+      "active": 1,
+      "inspired": 3,
+      "strong": 1,
+      "interested": 4,
+      "excited": 2,
+      "attentive": 1,
+      "determined": 0,
+      "alert": 0,
+      "enthusiastic": 0,
+      "proud": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 1050,
+    "items": {
+      "upset": 110,
+      "afraid": 220,
+      "distressed": 230,
+      "jittery": 0,
+      "guilty": 80,
+      "irritable": 100,
+      "nervous": 100,
+      "ashamed": 100,
+      "scared": 220,
+      "hostile": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event discusses a study highlighting that LGBTQ+ individuals face a 15 percent higher risk of late-life depression, dementia, and stroke compared to cisgender and straight individuals. This increased risk is primarily attributed to the heightened stress LGBTQ+ people endure. The post generated significant attention on Reddit, receiving 444 upvotes and 101 comments, indicating a strong interest in the topic and its implications for mental health in the LGBTQ+ community.
+</summary>
+
+<qualia>
+A mix of concern and empathy, underscoring the challenges faced by marginalized individuals while stirring awareness and reflection on their mental health needs.
+</qualia>
+
+<image_prompt>
+Create an artistic representation of the emotional landscape around the challenges faced by the LGBTQ+ community regarding mental health, highlighting themes of resilience, awareness, and community support.
+</image_prompt>
+2024-09-27 18:30:21,210 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 18:30:21,211 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 15,
+    "items": {
+      "interested": 3,
+      "excited": 4,
+      "strong": 0,
+      "enthusiastic": 2,
+      "proud": 2,
+      "alert": 1,
+      "inspired": 2,
+      "determined": 0,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 750,
+    "items": {
+      "distressed": 200,
+      "upset": 70,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 0,
+      "irritable": 30,
+      "ashamed": 50,
+      "nervous": 80,
+      "jittery": 0,
+      "afraid": 320
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Iwao Hakamada, who spent nearly 50 years on death row, has been acquitted of murder at the age of 88. This landmark decision highlights the failures and injustices within the judicial system, evoking a mix of emotions around the themes of justice, resilience, and the deep scars left by wrongful convictions.
+</summary>
+
+<qualia>
+The emotional vibe is a mixture of cautious hope amidst sorrow, reflecting the complexities of justice and the weight of lost time.
+</qualia>
+
+<image_prompt>
+Create an artistic image that reflects both the relief and sorrow surrounding Iwao Hakamada's acquittal, showcasing the themes of justice, resilience, and the bittersweet nature of newfound freedom after decades of injustice.
+</image_prompt>
+2024-09-27 18:30:21,343 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-27/inputs/news_and_events/2024-09-27_news.pdf', 'link': 'https://www.bbc.com/news/articles/c5y9x6zrkrro', 'published': 'Thu, 26 Sep 2024 11:48:06 GMT', 'title': "World's longest-serving death row inmate acquitted in Japan", 'summary': 'Iwao Hakamada, who spent nearly 50 years on death row, has been acquitted of murder at the age of 88. This landmark decision highlights the failures and injustices within the judicial system, evoking a mix of emotions around the themes of justice, resilience, and the deep scars left by wrongful convictions.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 27, 4, 1, 13, 205000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 15, 'items': {'interested': 3, 'excited': 4, 'strong': 0, 'enthusiastic': 2, 'proud': 2, 'alert': 1, 'inspired': 2, 'determined': 0, 'attentive': 1, 'active': 0}}, 'negative_affect': {'total_score': 750, 'items': {'distressed': 200, 'upset': 70, 'guilty': 0, 'scared': 0, 'hostile': 0, 'irritable': 30, 'ashamed': 50, 'nervous': 80, 'jittery': 0, 'afraid': 320}}}, 'qualia': 'The emotional vibe is a mixture of cautious hope amidst sorrow, reflecting the complexities of justice and the weight of lost time.', 'image_prompt': "Create an artistic image that reflects both the relief and sorrow surrounding Iwao Hakamada's acquittal, showcasing the themes of justice, resilience, and the bittersweet nature of newfound freedom after decades of injustice.", 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 27, 14, 30, 21, 211405, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': 'c75738f8a89aac51d0c565081decc06a'}, 'event_type': 'retrieved_articles', 'event_id': 'c75738f8a89aac51d0c565081decc06a'}, {'updated_panas': {'positive_affect': {'total_score': 15, 'items': {'interested': 3, 'excited': 4, 'strong': 0, 'enthusiastic': 2, 'proud': 2, 'alert': 1, 'inspired': 2, 'determined': 0, 'attentive': 1, 'active': 0}}, 'negative_affect': {'total_score': 750, 'items': {'distressed': 200, 'upset': 70, 'guilty': 0, 'scared': 0, 'hostile': 0, 'irritable': 30, 'ashamed': 50, 'nervous': 80, 'jittery': 0, 'afraid': 320}}}, 'summary': 'Iwao Hakamada, who spent nearly 50 years on death row, has been acquitted of murder at the age of 88. This landmark decision highlights the failures and injustices within the judicial system, evoking a mix of emotions around the themes of justice, resilience, and the deep scars left by wrongful convictions.', 'qualia': 'The emotional vibe is a mixture of cautious hope amidst sorrow, reflecting the complexities of justice and the weight of lost time.', 'image_prompt': "Create an artistic image that reflects both the relief and sorrow surrounding Iwao Hakamada's acquittal, showcasing the themes of justice, resilience, and the bittersweet nature of newfound freedom after decades of injustice."})
+2024-09-27 18:30:30,945 - process_daily_narrative - INFO - Generating image with prompt: Create an artistic image that reflects both the relief and sorrow surrounding Iwao Hakamada's acquittal, showcasing the themes of justice, resilience, and the bittersweet nature of newfound freedom after decades of injustice. and aspect ratio: 1:1
+2024-09-27 18:30:55,242 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/LaAhAp9SuMquL11ytphm4wOLP0SeFTqr6ahiHjcOBVxvXlwJA/output.webp
+2024-09-27 18:30:55,242 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/LaAhAp9SuMquL11ytphm4wOLP0SeFTqr6ahiHjcOBVxvXlwJA/output.webp
+2024-09-27 18:30:55,312 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-27/outputs/event_id_c75738f8a89aac51d0c565081decc06a_1430.webp
+2024-09-27 18:30:55,313 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-27/outputs/event_id_c75738f8a89aac51d0c565081decc06a_1430.webp
+2024-09-27 18:31:00,886 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-27/outputs/event_id_c75738f8a89aac51d0c565081decc06a_1430.webp
+2024-09-27 18:31:00,886 - process_daily_narrative - INFO - Updating qualia_updates document mMH9HgcJHWyiXabGyYfB with image path
+2024-09-27 18:31:00,946 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-27/outputs/event_id_c75738f8a89aac51d0c565081decc06a_1430.webp
+2024-09-27 18:31:00,946 - process_daily_narrative - INFO - Added 'Fight the Power' by Public Enemy to the playlist.
+2024-09-27 18:31:00,946 - process_daily_narrative - INFO - Function returned: None
+2024-09-27 18:31:00,946 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

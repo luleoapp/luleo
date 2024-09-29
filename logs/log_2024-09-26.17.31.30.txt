@@ -1,0 +1,187 @@
+2024-09-26 21:30:18,475 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-26 21:30:18,475 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-26 21:30:18,475 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-26 21:30:18,475 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-26 21:30:18,475 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-26 21:30:18,512 - process_daily_narrative - INFO - Received request
+2024-09-26 21:30:18,512 - process_daily_narrative - INFO - Request method: POST
+2024-09-26 21:30:18,513 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-26T14:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 210291abe4bb440f409c288ff5e60cff/5346897813139181382;o=1
+Traceparent: 00-210291abe4bb440f409c288ff5e60cff-4a33ff3b62794f46-01
+X-Forwarded-For: 35.243.23.66
+X-Forwarded-Proto: https
+Forwarded: for="35.243.23.66";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-26 21:30:18,513 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-26 21:30:18,513 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-26 21:30:18,513 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-26 21:30:18,513 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-26 21:30:18,513 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-26 21:30:18,513 - process_daily_narrative - INFO - Updating hourly...
+2024-09-26 21:30:18,733 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=3, readtime=2024-09-26 21:30:18.715619+00:00>]]
+2024-09-26 21:30:18,734 - process_daily_narrative - INFO - Processing 1 out of 3 events for retrieved_reddit_posts
+2024-09-26 21:30:18,857 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=12, readtime=2024-09-26 21:30:18.835453+00:00>]]
+2024-09-26 21:30:18,858 - process_daily_narrative - INFO - Processing 2 out of 12 events for retrieved_articles
+2024-09-26 21:30:19,039 - process_daily_narrative - INFO - Events to process: 3
+2024-09-26 21:30:30,678 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 21:30:30,678 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 5,
+    "items": {
+      "interested": 4,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 1,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 150,
+    "items": {
+      "distressed": 40,
+      "upset": 30,
+      "guilty": 0,
+      "scared": 45,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 25,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Adam Meyers, a senior vice president of an IT company involved in a significant outage, was subjected to intense questioning by US lawmakers. This event highlights the accountability and scrutiny faced by corporate leaders during crises, reflecting public concerns about transparency and responsibility in the tech industry.
+</summary>
+
+<qualia>
+The emotion invoked by this event is a mix of anxious distress and heightened curiosity, as scrutiny underscores both fear of negligence and the desire for accountability.
+</qualia>
+
+<image_prompt>
+Create an illustration capturing the tension of a congressional hearing, featuring a concerned Adam Meyers facing lawmakers, embodying themes of accountability, distress, and the quest for integrity in the tech industry. Use a somber color palette with sharp contrasts to represent the seriousness of the situation and the emotional weight of the scrutiny involved.
+</image_prompt>
+2024-09-26 21:30:38,167 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 21:30:38,168 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 5,
+    "items": {
+      "interested": 4,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 1,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 120,
+    "items": {
+      "distressed": 40,
+      "upset": 30,
+      "guilty": 0,
+      "scared": 35,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 15,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event highlights the challenging and demanding conditions under which women work to cultivate flowers destined for sale across Europe. Their long, arduous hours depict the harsh realities many face for the sake of providing beauty and sustenance, raising awareness about labor rights and social justice issues.
+</summary>
+
+<qualia>
+The emotional vibe is one of deep concern and empathy, tempered with a glimmer of appreciation for the resilience and dedication of these women.
+</qualia>
+
+<image_prompt>
+Create an image that captures the essence of hardworking women cultivating flowers under the sun, showcasing both the beauty of the flowers and the struggle involved in their labor. The artwork should evoke emotions of empathy, resilience, and awareness of social justice. Utilize warm and inviting colors to highlight the flowers while using more muted tones to convey the gravity of their hard work.
+</image_prompt>
+2024-09-26 21:30:49,699 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 21:30:49,699 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 5,
+    "items": {
+      "interested": 4,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 1,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 155,
+    "items": {
+      "distressed": 40,
+      "upset": 30,
+      "guilty": 0,
+      "scared": 40,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 25,
+      "jittery": 0,
+      "afraid": 20
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The Biden administration has announced an additional $375 million in security assistance for Ukraine, which will be the first to include American Joint Standoff Weapon (JSOW) glide bombs. This decision, posted by user u/NewSlinger in the r/worldnews subreddit, is drawing significant attention, with an upvote score of 2398 and a high upvote ratio of 0.97. The post received 152 comments, indicating a strong engagement from the community regarding the complexities of military aid amidst ongoing conflicts.
+</summary>
+
+<qualia>
+The emotional vibe invoked by this event is a mix of concern and cautious interest; while the announcement may be seen as a strategic support, it also raises anxiety about the implications of escalating military involvement.
+</qualia>
+
+<image_prompt>
+Create an image that artistically represents the recent announcement of military aid for Ukraine. Capture the themes of support and strength, juxtaposed with a feeling of concern and the weight of global conflict. Use colors that reflect urgency and hope, integrating elements of military symbolism and humanitarian compassion.
+</image_prompt>
+2024-09-26 21:30:49,844 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-26/inputs/news_and_events/2024-09-26_news.pdf', 'link': 'https://www.bbc.com/news/articles/c4glydv8qlgo', 'published': 'Thu, 26 Sep 2024 00:51:03 GMT', 'title': 'Toiling on a Kenyan flower farm to send fresh roses to Europe', 'summary': 'The event highlights the challenging and demanding conditions under which women work to cultivate flowers destined for sale across Europe. Their long, arduous hours depict the harsh realities many face for the sake of providing beauty and sustenance, raising awareness about labor rights and social justice issues.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 26, 4, 1, 16, 91000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 5, 'items': {'interested': 4, 'excited': 0, 'strong': 0, 'enthusiastic': 1, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 120, 'items': {'distressed': 40, 'upset': 30, 'guilty': 0, 'scared': 35, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 15, 'jittery': 0, 'afraid': 0}}}, 'qualia': 'The emotional vibe is one of deep concern and empathy, tempered with a glimmer of appreciation for the resilience and dedication of these women.', 'image_prompt': 'Create an image that captures the essence of hardworking women cultivating flowers under the sun, showcasing both the beauty of the flowers and the struggle involved in their labor. The artwork should evoke emotions of empathy, resilience, and awareness of social justice. Utilize warm and inviting colors to highlight the flowers while using more muted tones to convey the gravity of their hard work.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 26, 17, 30, 38, 168271, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '97fbff3177deae79ce52b997a3e4134d'}, 'event_type': 'retrieved_articles', 'event_id': '97fbff3177deae79ce52b997a3e4134d'}, {'updated_panas': {'positive_affect': {'total_score': 5, 'items': {'interested': 4, 'excited': 0, 'strong': 0, 'enthusiastic': 1, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 120, 'items': {'distressed': 40, 'upset': 30, 'guilty': 0, 'scared': 35, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 15, 'jittery': 0, 'afraid': 0}}}, 'summary': 'The event highlights the challenging and demanding conditions under which women work to cultivate flowers destined for sale across Europe. Their long, arduous hours depict the harsh realities many face for the sake of providing beauty and sustenance, raising awareness about labor rights and social justice issues.', 'qualia': 'The emotional vibe is one of deep concern and empathy, tempered with a glimmer of appreciation for the resilience and dedication of these women.', 'image_prompt': 'Create an image that captures the essence of hardworking women cultivating flowers under the sun, showcasing both the beauty of the flowers and the struggle involved in their labor. The artwork should evoke emotions of empathy, resilience, and awareness of social justice. Utilize warm and inviting colors to highlight the flowers while using more muted tones to convey the gravity of their hard work.'})
+2024-09-26 21:30:56,944 - process_daily_narrative - INFO - Generating image with prompt: Create an image that captures the essence of hardworking women cultivating flowers under the sun, showcasing both the beauty of the flowers and the struggle involved in their labor. The artwork should evoke emotions of empathy, resilience, and awareness of social justice. Utilize warm and inviting colors to highlight the flowers while using more muted tones to convey the gravity of their hard work. and aspect ratio: 1:1
+2024-09-26 21:31:25,098 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/BXS4lenWArw5AibU3uf9jYPg2burhqew8UQhYnKzi51ZlwBnA/output.webp
+2024-09-26 21:31:25,098 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/BXS4lenWArw5AibU3uf9jYPg2burhqew8UQhYnKzi51ZlwBnA/output.webp
+2024-09-26 21:31:25,178 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-26/outputs/event_id_97fbff3177deae79ce52b997a3e4134d_1731.webp
+2024-09-26 21:31:25,179 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-26/outputs/event_id_97fbff3177deae79ce52b997a3e4134d_1731.webp
+2024-09-26 21:31:30,527 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-26/outputs/event_id_97fbff3177deae79ce52b997a3e4134d_1731.webp
+2024-09-26 21:31:30,527 - process_daily_narrative - INFO - Updating qualia_updates document UWOMmO2LnE9lRH7TNmkh with image path
+2024-09-26 21:31:30,584 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-26/outputs/event_id_97fbff3177deae79ce52b997a3e4134d_1731.webp
+2024-09-26 21:31:30,584 - process_daily_narrative - INFO - Error: Unable to parse suggestions as JSON. Error: Expecting ',' delimiter: line 6 column 43 (char 288)
+2024-09-26 21:31:30,585 - process_daily_narrative - INFO - Function returned: None
+2024-09-26 21:31:30,585 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

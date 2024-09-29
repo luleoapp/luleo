@@ -1,0 +1,45 @@
+2024-09-26 02:30:16,575 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-26 02:30:16,575 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-26 02:30:16,575 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-26 02:30:16,575 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-26 02:30:16,575 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-26 02:30:16,677 - process_daily_narrative - INFO - Received request
+2024-09-26 02:30:16,678 - process_daily_narrative - INFO - Request method: POST
+2024-09-26 02:30:16,678 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-25T19:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 151e495b28a612baa5f8d6c73911573a/13103880718716702225;o=1
+Traceparent: 00-151e495b28a612baa5f8d6c73911573a-b5da56161a330e11-01
+X-Forwarded-For: 34.98.143.128
+X-Forwarded-Proto: https
+Forwarded: for="34.98.143.128";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-26 02:30:16,678 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-26 02:30:16,678 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-26 02:30:16,678 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-26 02:30:16,678 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-26 02:30:16,678 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-26 02:30:16,678 - process_daily_narrative - INFO - Updating hourly...
+2024-09-26 02:30:16,895 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=0.0, readtime=2024-09-26 02:30:16.856738+00:00>]]
+2024-09-26 02:30:16,895 - process_daily_narrative - INFO - Processing 0 out of 0.0 events for retrieved_reddit_posts
+2024-09-26 02:30:16,974 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=0.0, readtime=2024-09-26 02:30:16.963404+00:00>]]
+2024-09-26 02:30:16,975 - process_daily_narrative - INFO - Processing 0 out of 0.0 events for retrieved_articles
+2024-09-26 02:30:17,062 - process_daily_narrative - ERROR - Error in QUALIA_UPDATE {}
+2024-09-26 02:30:17,073 - process_daily_narrative - ERROR - Traceback (most recent call last):
+  File "/app/main.py", line 51, in call_default_cloud_run
+    ret_val = func_to_apply(**request_params)
+  File "/app/src/scripts.py", line 18, in hourly_update
+    update_qualia()
+  File "/app/utils/qualia.py", line 299, in update_qualia
+    events_to_process = get_events_to_process()
+  File "/app/utils/qualia.py", line 183, in get_events_to_process
+    event_dict = doc.to_dict()
+UnboundLocalError: local variable 'doc' referenced before assignment
+

@@ -1,0 +1,140 @@
+2024-09-27 23:30:10,928 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-27 23:30:10,929 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-27 23:30:10,929 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-27 23:30:10,929 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-27 23:30:10,929 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-27 23:30:10,953 - process_daily_narrative - INFO - Received request
+2024-09-27 23:30:10,953 - process_daily_narrative - INFO - Request method: POST
+2024-09-27 23:30:10,953 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-27T16:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: dd8f2b3817aab1e66fec34baba2f55e5/11014300020620593515;o=1
+Traceparent: 00-dd8f2b3817aab1e66fec34baba2f55e5-98daa78332ab096b-01
+X-Forwarded-For: 34.98.143.39
+X-Forwarded-Proto: https
+Forwarded: for="34.98.143.39";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-27 23:30:10,954 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-27 23:30:10,954 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-27 23:30:10,954 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-27 23:30:10,954 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-27 23:30:10,954 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-27 23:30:10,954 - process_daily_narrative - INFO - Updating hourly...
+2024-09-27 23:30:11,102 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=2, readtime=2024-09-27 23:30:11.089272+00:00>]]
+2024-09-27 23:30:11,102 - process_daily_narrative - INFO - Processing 1 out of 2 events for retrieved_reddit_posts
+2024-09-27 23:30:11,301 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=5, readtime=2024-09-27 23:30:11.291063+00:00>]]
+2024-09-27 23:30:11,301 - process_daily_narrative - INFO - Processing 1 out of 5 events for retrieved_articles
+2024-09-27 23:30:11,610 - process_daily_narrative - INFO - Events to process: 2
+2024-09-27 23:30:21,882 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 23:30:21,882 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 10,
+    "items": {
+      "interested": 4,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 2,
+      "proud": 0,
+      "alert": 3,
+      "inspired": 1,
+      "determined": 0,
+      "attentive": 4,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 700,
+    "items": {
+      "distressed": 200,
+      "upset": 100,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 300,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 0,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+French President Emmanuel Macron has called upon the United States to exert its influence on Israel to accept a ceasefire plan involving Lebanon. This statement comes amidst ongoing tensions in the Middle East, with Macron's comments sparking discussion on the role of external powers in regional conflicts. The Reddit post garnered significant attention, receiving 622 upvotes and 184 comments, indicating a strong interest in international relations and the quest for diplomatic solutions.
+</summary>
+
+<qualia>
+The emotion evokes a mix of concern and hope, highlighting the struggle for peace alongside a desire for collective action.
+</qualia>
+
+<image_prompt>
+Generate an image depicting a hopeful yet tense diplomatic conversation, with leaders at a table surrounded by symbols of peace (such as doves or olive branches) and shadows of conflict in the background. The atmosphere should reflect concern, urgency, and a yearning for unity.
+</image_prompt>
+2024-09-27 23:30:30,203 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 23:30:30,203 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 3,
+    "items": {
+      "interested": 3,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 1100,
+    "items": {
+      "distressed": 500,
+      "upset": 300,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 300,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 0,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Eric Adams, the Mayor of New York City, has been charged with five serious criminal offenses, including bribery, wire fraud, and illegal campaign donations. This news raises significant concerns about transparency and ethics in leadership, impacting public trust and the broader societal implications of political accountability.
+</summary>
+
+<qualia>
+Tension and worry over integrity and justice, underscoring disillusionment with leadership.
+</qualia>
+
+<image_prompt>
+Create an artistic representation of civic turmoil and ethical dilemmas evoked by Eric Adams' criminal charges, capturing themes of justice, accountability, and public trust.
+</image_prompt>
+2024-09-27 23:30:30,412 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-27/inputs/news_and_events/2024-09-27_news.pdf', 'link': 'https://www.bbc.com/news/videos/ckgn7emrpyzo', 'published': 'Thu, 26 Sep 2024 20:43:15 GMT', 'title': "The NYC mayor's dramatic day in under 60 seconds", 'summary': 'Eric Adams, the Mayor of New York City, has been charged with five serious criminal offenses, including bribery, wire fraud, and illegal campaign donations. This news raises significant concerns about transparency and ethics in leadership, impacting public trust and the broader societal implications of political accountability.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 27, 4, 1, 14, 385000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 3, 'items': {'interested': 3, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 1100, 'items': {'distressed': 500, 'upset': 300, 'guilty': 0, 'scared': 0, 'hostile': 300, 'irritable': 0, 'ashamed': 0, 'nervous': 0, 'jittery': 0, 'afraid': 0}}}, 'qualia': 'Tension and worry over integrity and justice, underscoring disillusionment with leadership.', 'image_prompt': "Create an artistic representation of civic turmoil and ethical dilemmas evoked by Eric Adams' criminal charges, capturing themes of justice, accountability, and public trust.", 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 27, 19, 30, 30, 204089, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': 'e98b10179be69140fa7c04bab30a8bfe'}, 'event_type': 'retrieved_articles', 'event_id': 'e98b10179be69140fa7c04bab30a8bfe'}, {'updated_panas': {'positive_affect': {'total_score': 3, 'items': {'interested': 3, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 1100, 'items': {'distressed': 500, 'upset': 300, 'guilty': 0, 'scared': 0, 'hostile': 300, 'irritable': 0, 'ashamed': 0, 'nervous': 0, 'jittery': 0, 'afraid': 0}}}, 'summary': 'Eric Adams, the Mayor of New York City, has been charged with five serious criminal offenses, including bribery, wire fraud, and illegal campaign donations. This news raises significant concerns about transparency and ethics in leadership, impacting public trust and the broader societal implications of political accountability.', 'qualia': 'Tension and worry over integrity and justice, underscoring disillusionment with leadership.', 'image_prompt': "Create an artistic representation of civic turmoil and ethical dilemmas evoked by Eric Adams' criminal charges, capturing themes of justice, accountability, and public trust."})
+2024-09-27 23:30:44,454 - process_daily_narrative - INFO - Generating image with prompt: Create an artistic representation of civic turmoil and ethical dilemmas evoked by Eric Adams' criminal charges, capturing themes of justice, accountability, and public trust. and aspect ratio: 1:1
+2024-09-27 23:31:08,659 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/uUJpRHeBv3QbbqfjVmyACg22eP2WMGtJf2Jddf5hDj5gH5JcC/output.webp
+2024-09-27 23:31:08,659 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/uUJpRHeBv3QbbqfjVmyACg22eP2WMGtJf2Jddf5hDj5gH5JcC/output.webp
+2024-09-27 23:31:08,736 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-27/outputs/event_id_e98b10179be69140fa7c04bab30a8bfe_1931.webp
+2024-09-27 23:31:08,736 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-27/outputs/event_id_e98b10179be69140fa7c04bab30a8bfe_1931.webp
+2024-09-27 23:31:14,375 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-27/outputs/event_id_e98b10179be69140fa7c04bab30a8bfe_1931.webp
+2024-09-27 23:31:14,375 - process_daily_narrative - INFO - Updating qualia_updates document xfZ2745jiiDTTqCpSyKf with image path
+2024-09-27 23:31:14,444 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-27/outputs/event_id_e98b10179be69140fa7c04bab30a8bfe_1931.webp
+2024-09-27 23:31:14,444 - process_daily_narrative - INFO - Added 'Broken Halos' by Chris Stapleton to the playlist.
+2024-09-27 23:31:14,444 - process_daily_narrative - INFO - Function returned: None
+2024-09-27 23:31:14,444 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

@@ -1,0 +1,140 @@
+2024-09-25 14:30:19,091 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-25 14:30:19,091 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-25 14:30:19,091 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-25 14:30:19,091 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-25 14:30:19,091 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-25 14:30:19,144 - process_daily_narrative - INFO - Received request
+2024-09-25 14:30:19,144 - process_daily_narrative - INFO - Request method: POST
+2024-09-25 14:30:19,144 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-25T07:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 4a1df991f460811f35367dc9fb43328e/3136001300134718163;o=1
+Traceparent: 00-4a1df991f460811f35367dc9fb43328e-2b85509135b16ad3-01
+X-Forwarded-For: 107.178.194.97
+X-Forwarded-Proto: https
+Forwarded: for="107.178.194.97";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-25 14:30:19,144 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-25 14:30:19,145 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-25 14:30:19,145 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-25 14:30:19,145 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-25 14:30:19,145 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-25 14:30:19,145 - process_daily_narrative - INFO - Updating hourly...
+2024-09-25 14:30:19,300 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=1, readtime=2024-09-25 14:30:19.287687+00:00>]]
+2024-09-25 14:30:19,300 - process_daily_narrative - INFO - Processing 1 out of 1 events for retrieved_reddit_posts
+2024-09-25 14:30:19,418 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=3, readtime=2024-09-25 14:30:19.406672+00:00>]]
+2024-09-25 14:30:19,418 - process_daily_narrative - INFO - Processing 1 out of 3 events for retrieved_articles
+2024-09-25 14:30:19,709 - process_daily_narrative - INFO - Events to process: 2
+2024-09-25 14:30:27,789 - process_daily_narrative - INFO - Raw API Response:
+2024-09-25 14:30:27,789 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 16,
+    "items": {
+      "interested": 4,
+      "excited": 2,
+      "strong": 0,
+      "enthusiastic": 1,
+      "proud": 0,
+      "alert": 3,
+      "inspired": 3,
+      "determined": 0,
+      "attentive": 2,
+      "active": 1
+    }
+  },
+  "negative_affect": {
+    "total_score": 85,
+    "items": {
+      "distressed": 10,
+      "upset": 4,
+      "guilty": 0,
+      "scared": 6,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 5,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event involves the discovery of a letter delivered to the home of a witness several months prior to a related incident in Florida. This raises concerns about the implications and potential influence it may have had on the situation, generating mixed feelings and a sense of unease.
+</summary>
+
+<qualia>
+A tense mix of curiosity and distress stemming from uncertainty and past repercussions, blending intrigue with apprehension.
+</qualia>
+
+<image_prompt>
+Please generate an artistic representation of the moment a seemingly innocuous letter impacts a significant event. The image should reflect a tense atmosphere filled with curiosity, uncertainty, and a touch of foreboding, capturing both the emotional weight of the discovery and its potential implications for the future.
+</image_prompt>
+2024-09-25 14:30:34,023 - process_daily_narrative - INFO - Raw API Response:
+2024-09-25 14:30:34,023 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 19,
+    "items": {
+      "interested": 4,
+      "excited": 2,
+      "strong": 0,
+      "enthusiastic": 1,
+      "proud": 1,
+      "alert": 2,
+      "inspired": 4,
+      "determined": 0,
+      "attentive": 3,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 110,
+    "items": {
+      "distressed": 20,
+      "upset": 10,
+      "guilty": 0,
+      "scared": 15,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 10,
+      "jittery": 0,
+      "afraid": 15
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event is a live thread discussion regarding the ongoing Russian invasion of Ukraine, specifically on day 943 of the conflict. The thread has been posted on the r/worldnews subreddit by u/WorldNewsMods, indicating ongoing global interest and concern over the situation. Currently, it has an upvote score of 1 with no comments, showcasing a somewhat low engagement level at the moment but high upvote ratio showing general approval or awareness among readers of this event.
+</summary>
+
+<qualia>
+The emotional vibe conveyed by this event is a complex mix of concern and empathy, reflecting a heightened awareness of global strife, balanced by a sense of hope through discussion and collective attention.
+</qualia>
+
+<image_prompt>
+Create an evocative image capturing the essence of ongoing global discussions about the Russian invasion of Ukraine, blending elements of conflict, resilience, and hope. The artwork should visually reflect a spectrum of human emotions, from distress to collective strength, with a somber yet vibrant palette to symbolize both the gravity and unity during these challenging times.
+</image_prompt>
+2024-09-25 14:30:34,135 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-24/inputs/news_and_events/2024-09-24_news.pdf', 'link': 'https://www.bbc.com/news/articles/c89ly20vvgvo', 'published': 'Mon, 23 Sep 2024 19:04:57 GMT', 'title': "Suspect described Trump 'assassination attempt' in pre-written note", 'summary': 'The event involves the discovery of a letter delivered to the home of a witness several months prior to a related incident in Florida. This raises concerns about the implications and potential influence it may have had on the situation, generating mixed feelings and a sense of unease.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 24, 4, 1, 12, 528000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 16, 'items': {'interested': 4, 'excited': 2, 'strong': 0, 'enthusiastic': 1, 'proud': 0, 'alert': 3, 'inspired': 3, 'determined': 0, 'attentive': 2, 'active': 1}}, 'negative_affect': {'total_score': 85, 'items': {'distressed': 10, 'upset': 4, 'guilty': 0, 'scared': 6, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 5, 'jittery': 0, 'afraid': 10}}}, 'qualia': 'A tense mix of curiosity and distress stemming from uncertainty and past repercussions, blending intrigue with apprehension.', 'image_prompt': 'Please generate an artistic representation of the moment a seemingly innocuous letter impacts a significant event. The image should reflect a tense atmosphere filled with curiosity, uncertainty, and a touch of foreboding, capturing both the emotional weight of the discovery and its potential implications for the future.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 25, 10, 30, 27, 791420, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': 'f85b681c2dc64391ce370bbf1e9dedbe'}, 'event_type': 'retrieved_articles', 'event_id': 'f85b681c2dc64391ce370bbf1e9dedbe'}, {'updated_panas': {'positive_affect': {'total_score': 16, 'items': {'interested': 4, 'excited': 2, 'strong': 0, 'enthusiastic': 1, 'proud': 0, 'alert': 3, 'inspired': 3, 'determined': 0, 'attentive': 2, 'active': 1}}, 'negative_affect': {'total_score': 85, 'items': {'distressed': 10, 'upset': 4, 'guilty': 0, 'scared': 6, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 5, 'jittery': 0, 'afraid': 10}}}, 'summary': 'The event involves the discovery of a letter delivered to the home of a witness several months prior to a related incident in Florida. This raises concerns about the implications and potential influence it may have had on the situation, generating mixed feelings and a sense of unease.', 'qualia': 'A tense mix of curiosity and distress stemming from uncertainty and past repercussions, blending intrigue with apprehension.', 'image_prompt': 'Please generate an artistic representation of the moment a seemingly innocuous letter impacts a significant event. The image should reflect a tense atmosphere filled with curiosity, uncertainty, and a touch of foreboding, capturing both the emotional weight of the discovery and its potential implications for the future.'})
+2024-09-25 14:30:42,616 - process_daily_narrative - INFO - Generating image with prompt: Please generate an artistic representation of the moment a seemingly innocuous letter impacts a significant event. The image should reflect a tense atmosphere filled with curiosity, uncertainty, and a touch of foreboding, capturing both the emotional weight of the discovery and its potential implications for the future. and aspect ratio: 1:1
+2024-09-25 14:31:13,921 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/aueVdCKPhfjKOEtnfVHMqH1IE6TxbEKdWA7GooNQnmFjF6AnA/output.webp
+2024-09-25 14:31:13,922 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/aueVdCKPhfjKOEtnfVHMqH1IE6TxbEKdWA7GooNQnmFjF6AnA/output.webp
+2024-09-25 14:31:14,109 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-25/outputs/event_id_f85b681c2dc64391ce370bbf1e9dedbe_1031.webp
+2024-09-25 14:31:14,110 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-25/outputs/event_id_f85b681c2dc64391ce370bbf1e9dedbe_1031.webp
+2024-09-25 14:31:19,588 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-25/outputs/event_id_f85b681c2dc64391ce370bbf1e9dedbe_1031.webp
+2024-09-25 14:31:19,588 - process_daily_narrative - INFO - Updating qualia_updates document L4M9f7AWgeld9dsKaEJy with image path
+2024-09-25 14:31:19,648 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-25/outputs/event_id_f85b681c2dc64391ce370bbf1e9dedbe_1031.webp
+2024-09-25 14:31:19,648 - process_daily_narrative - INFO - Added 'Size of a Cow' by The Wonder Stuff to the playlist.
+2024-09-25 14:31:19,648 - process_daily_narrative - INFO - Function returned: None
+2024-09-25 14:31:19,649 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

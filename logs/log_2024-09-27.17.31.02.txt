@@ -1,0 +1,140 @@
+2024-09-27 21:30:11,075 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-27 21:30:11,075 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-27 21:30:11,075 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-27 21:30:11,075 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-27 21:30:11,075 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-27 21:30:11,091 - process_daily_narrative - INFO - Received request
+2024-09-27 21:30:11,092 - process_daily_narrative - INFO - Request method: POST
+2024-09-27 21:30:11,092 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-27T14:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: de0b5e233c4a75dc4cdb853018896b4c/13235847146194680527;o=1
+Traceparent: 00-de0b5e233c4a75dc4cdb853018896b4c-b7af2cda5a4d3acf-01
+X-Forwarded-For: 35.243.23.171
+X-Forwarded-Proto: https
+Forwarded: for="35.243.23.171";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-27 21:30:11,092 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-27 21:30:11,092 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-27 21:30:11,093 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-27 21:30:11,093 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-27 21:30:11,093 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-27 21:30:11,093 - process_daily_narrative - INFO - Updating hourly...
+2024-09-27 21:30:11,280 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=4, readtime=2024-09-27 21:30:11.267014+00:00>]]
+2024-09-27 21:30:11,280 - process_daily_narrative - INFO - Processing 1 out of 4 events for retrieved_reddit_posts
+2024-09-27 21:30:11,396 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=7, readtime=2024-09-27 21:30:11.386658+00:00>]]
+2024-09-27 21:30:11,396 - process_daily_narrative - INFO - Processing 1 out of 7 events for retrieved_articles
+2024-09-27 21:30:11,647 - process_daily_narrative - INFO - Events to process: 2
+2024-09-27 21:30:16,111 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 21:30:16,111 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 15,
+    "items": {
+      "interested": 3,
+      "excited": 2,
+      "strong": 0,
+      "enthusiastic": 5,
+      "proud": 3,
+      "alert": 0,
+      "inspired": 1,
+      "determined": 0,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 600,
+    "items": {
+      "distressed": 200,
+      "upset": 100,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 200,
+      "irritable": 100,
+      "ashamed": 0,
+      "nervous": 0,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+This event highlights a powerful community response in Springfield, Ohio, where residents chose to show solidarity by supporting Haitian-owned restaurants in light of unfounded claims made by Trump. The article emphasizes the uplifting nature of this collective action, showcasing how community members came together to stand against hate and promote unity. The event has garnered significant attention, resulting in thousands of upvotes and numerous supportive comments on Reddit.
+</summary>
+
+<qualia>
+The emotional "vibe" of this event is one of joy and resilience, illustrating the power of community and collective love triumphing over negativity.
+</qualia>
+
+<image_prompt>
+Create an image depicting a vibrant and bustling Haitian-owned restaurant filled with diverse community members, all sharing laughter, food, and joy. The scene should radiate warmth and inclusion, with colorful decorations and a festive atmosphere, encapsulating the theme of love and solidarity against adversity.
+</image_prompt>
+2024-09-27 21:30:20,973 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 21:30:20,973 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 0,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 1000,
+    "items": {
+      "distressed": 300,
+      "upset": 300,
+      "guilty": 0,
+      "scared": 200,
+      "hostile": 0,
+      "irritable": 100,
+      "ashamed": 0,
+      "nervous": 100,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The BBC reported on disturbing and horrific accounts of sexual violence against women who are trapped in the ongoing conflict between the army and the RSF (Rapid Support Forces). These accounts describe the immense suffering and trauma experienced by these vulnerable individuals, highlighting a dire humanitarian issue in the midst of conflict.
+</summary>
+
+<qualia>
+The emotional vibe is one of deep sorrow and distress, a heavy weight of empathy and outrage at human suffering in the face of conflict.
+</qualia>
+
+<image_prompt>
+Generate an image depicting the profound sorrow and resilience of women affected by conflict, incorporating elements of compassion and unity to reflect the emotions of distress and empathy felt regarding their suffering.
+</image_prompt>
+2024-09-27 21:30:21,092 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'subreddit': 'UpliftingNews', 'summary': 'This event highlights a powerful community response in Springfield, Ohio, where residents chose to show solidarity by supporting Haitian-owned restaurants in light of unfounded claims made by Trump. The article emphasizes the uplifting nature of this collective action, showcasing how community members came together to stand against hate and promote unity. The event has garnered significant attention, resulting in thousands of upvotes and numerous supportive comments on Reddit.', 'github_file_path': 'daily_data/2024-09-27/inputs/news_and_events/2024-09-27_reddit_events_posts.pdf', 'url': 'https://www.reddit.com/r/UpliftingNews/comments/1fq7mso/solidarity_overcomes_hate_as_residents_flock_to/', 'title': "Solidarity Overcomes Hate as Residents Flock to Haitian-Owned Restaurants in Springfield Ohio Amidst Trump's Baseless Claims", 'score': 7138, 'author': 'butumm_', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 27, 4, 3, 11, 45000, tzinfo=datetime.timezone.utc), 'num_comments': 116, 'updated_panas': {'positive_affect': {'total_score': 15, 'items': {'interested': 3, 'excited': 2, 'strong': 0, 'enthusiastic': 5, 'proud': 3, 'alert': 0, 'inspired': 1, 'determined': 0, 'attentive': 1, 'active': 0}}, 'negative_affect': {'total_score': 600, 'items': {'distressed': 200, 'upset': 100, 'guilty': 0, 'scared': 0, 'hostile': 200, 'irritable': 100, 'ashamed': 0, 'nervous': 0, 'jittery': 0, 'afraid': 0}}}, 'qualia': 'The emotional "vibe" of this event is one of joy and resilience, illustrating the power of community and collective love triumphing over negativity.', 'image_prompt': 'Create an image depicting a vibrant and bustling Haitian-owned restaurant filled with diverse community members, all sharing laughter, food, and joy. The scene should radiate warmth and inclusion, with colorful decorations and a festive atmosphere, encapsulating the theme of love and solidarity against adversity.', 'event_type': 'retrieved_reddit_posts', 'processed_at': datetime.datetime(2024, 9, 27, 17, 30, 16, 112201, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '1fq7mso'}, 'event_type': 'retrieved_reddit_posts', 'event_id': '1fq7mso'}, {'updated_panas': {'positive_affect': {'total_score': 15, 'items': {'interested': 3, 'excited': 2, 'strong': 0, 'enthusiastic': 5, 'proud': 3, 'alert': 0, 'inspired': 1, 'determined': 0, 'attentive': 1, 'active': 0}}, 'negative_affect': {'total_score': 600, 'items': {'distressed': 200, 'upset': 100, 'guilty': 0, 'scared': 0, 'hostile': 200, 'irritable': 100, 'ashamed': 0, 'nervous': 0, 'jittery': 0, 'afraid': 0}}}, 'summary': 'This event highlights a powerful community response in Springfield, Ohio, where residents chose to show solidarity by supporting Haitian-owned restaurants in light of unfounded claims made by Trump. The article emphasizes the uplifting nature of this collective action, showcasing how community members came together to stand against hate and promote unity. The event has garnered significant attention, resulting in thousands of upvotes and numerous supportive comments on Reddit.', 'qualia': 'The emotional "vibe" of this event is one of joy and resilience, illustrating the power of community and collective love triumphing over negativity.', 'image_prompt': 'Create an image depicting a vibrant and bustling Haitian-owned restaurant filled with diverse community members, all sharing laughter, food, and joy. The scene should radiate warmth and inclusion, with colorful decorations and a festive atmosphere, encapsulating the theme of love and solidarity against adversity.'})
+2024-09-27 21:30:36,559 - process_daily_narrative - INFO - Generating image with prompt: Create an image depicting a vibrant and bustling Haitian-owned restaurant filled with diverse community members, all sharing laughter, food, and joy. The scene should radiate warmth and inclusion, with colorful decorations and a festive atmosphere, encapsulating the theme of love and solidarity against adversity. and aspect ratio: 1:1
+2024-09-27 21:30:56,902 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/lF2p7JFWm3qQNJIWySPT3f1WOHtpGdvzCPpnGNPFZwSIsmwJA/output.webp
+2024-09-27 21:30:56,902 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/lF2p7JFWm3qQNJIWySPT3f1WOHtpGdvzCPpnGNPFZwSIsmwJA/output.webp
+2024-09-27 21:30:57,027 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-27/outputs/event_id_1fq7mso_1730.webp
+2024-09-27 21:30:57,027 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-27/outputs/event_id_1fq7mso_1730.webp
+2024-09-27 21:31:02,386 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-27/outputs/event_id_1fq7mso_1730.webp
+2024-09-27 21:31:02,386 - process_daily_narrative - INFO - Updating qualia_updates document iamDi9WlHCKRXSW9TiWy with image path
+2024-09-27 21:31:02,440 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-27/outputs/event_id_1fq7mso_1730.webp
+2024-09-27 21:31:02,440 - process_daily_narrative - INFO - No suitable songs were found after multiple attempts.
+2024-09-27 21:31:02,440 - process_daily_narrative - INFO - Function returned: None
+2024-09-27 21:31:02,440 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

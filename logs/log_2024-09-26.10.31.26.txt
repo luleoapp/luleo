@@ -1,0 +1,187 @@
+2024-09-26 14:30:18,770 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-26 14:30:18,770 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-26 14:30:18,770 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-26 14:30:18,771 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-26 14:30:18,771 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-26 14:30:18,787 - process_daily_narrative - INFO - Received request
+2024-09-26 14:30:18,788 - process_daily_narrative - INFO - Request method: POST
+2024-09-26 14:30:18,788 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-26T07:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 3675b618bec08149af35dcda183a0622/12985589198107607702;o=1
+Traceparent: 00-3675b618bec08149af35dcda183a0622-b4361493385a8296-01
+X-Forwarded-For: 107.178.194.3
+X-Forwarded-Proto: https
+Forwarded: for="107.178.194.3";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-26 14:30:18,788 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-26 14:30:18,788 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-26 14:30:18,788 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-26 14:30:18,788 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-26 14:30:18,789 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-26 14:30:18,789 - process_daily_narrative - INFO - Updating hourly...
+2024-09-26 14:30:19,185 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=10, readtime=2024-09-26 14:30:19.164501+00:00>]]
+2024-09-26 14:30:19,185 - process_daily_narrative - INFO - Processing 1 out of 10 events for retrieved_reddit_posts
+2024-09-26 14:30:19,281 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=22, readtime=2024-09-26 14:30:19.269075+00:00>]]
+2024-09-26 14:30:19,282 - process_daily_narrative - INFO - Processing 2 out of 22 events for retrieved_articles
+2024-09-26 14:30:19,571 - process_daily_narrative - INFO - Events to process: 3
+2024-09-26 14:30:25,673 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 14:30:25,673 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 1,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 117,
+    "items": {
+      "distressed": 20,
+      "upset": 15,
+      "guilty": 0,
+      "scared": 15,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 25,
+      "jittery": 0,
+      "afraid": 15
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+Russia's leader has claimed that strikes conducted by a non-nuclear state, when aided by a nuclear power, can constitute a joint attack. This statement raises significant concerns about international relations and the potential for escalation in conflict, as it implies a serious accusation that could lead to heightened tensions between nations.
+</summary>
+
+<qualia>
+The emotional vibe invoked by the event is one of heightened anxiety and concern, coupled with a slight sense of curiosity about the implications of such statements in the global arena.
+</qualia>
+
+<image_prompt>
+Generate an image that artistically reflects the tensions of international conflict, with dark clouds symbolizing anxiety, and a faint light representing hope and curiosity about resolution amidst turmoil.
+2024-09-26 14:30:25,674 - process_daily_narrative - ERROR - Assertion failed: Image prompt not found in the response
+2024-09-26 14:30:30,518 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 14:30:30,518 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 0,
+    "items": {
+      "interested": 1,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 106,
+    "items": {
+      "distressed": 20,
+      "upset": 15,
+      "guilty": 0,
+      "scared": 12,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 20,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+On September 24, 2024, significant military conflict escalated between Israel and Hezbollah, with Israel conducting extensive airstrikes in southern Lebanon resulting in nearly 500 casualties and massive displacement of civilians. This event marks one of the deadliest days in the region in decades, prompting Lebanese authorities to set up temporary shelters for the thousands fleeing from the bombardments. The continued cross-border aggressions indicate rising tensions and humanitarian crises in the area.
+</summary>
+
+<qualia>
+The emotional "vibe" invoked by this event is one of deep distress and fear, overshadowed by a stark sense of helplessness in the face of ongoing violence and tragedy.
+</qualia>
+
+<image_prompt>
+Create an image that captures the devastation and despair felt in the aftermath of the recent conflicts in the Middle East. Focus on scenes of destruction, chaos, and the emotional impact on displaced families, using somber colors to reflect the gravity of the situation.
+</image_prompt>
+2024-09-26 14:30:36,726 - process_daily_narrative - INFO - Raw API Response:
+2024-09-26 14:30:36,726 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 4,
+    "items": {
+      "interested": 2,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 1,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 94,
+    "items": {
+      "distressed": 15,
+      "upset": 10,
+      "guilty": 0,
+      "scared": 5,
+      "hostile": 0,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 15,
+      "jittery": 0,
+      "afraid": 10
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A recent study published in JAMA Network Open indicates that patients using Ozempic, a medication commonly used for diabetes management, face a significantly lower risk of opioid overdose—between 42% to 68%. This information was shared on Reddit by user u/ravrore in the r/science community, garnering considerable attention with 1,722 upvotes and 231 comments, reflecting high interest and value in this finding among the online audience.
+</summary>
+
+<qualia>
+The emotion invoked by this event is a mix of cautious optimism and concern, highlighting hope for reduced overdose risks while recognizing the underlying severity of the opioid crisis.
+</qualia>
+
+<image_prompt>
+Generate an image that captures the duality of hope and concern regarding health, featuring symbols of medical research, compassion, and the struggle against the opioid crisis, artistically styled to reflect resilience and community support.
+</image_prompt>
+2024-09-26 14:30:36,865 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'subreddit': 'science', 'summary': 'A recent study published in JAMA Network Open indicates that patients using Ozempic, a medication commonly used for diabetes management, face a significantly lower risk of opioid overdose—between 42% to 68%. This information was shared on Reddit by user u/ravrore in the r/science community, garnering considerable attention with 1,722 upvotes and 231 comments, reflecting high interest and value in this finding among the online audience.', 'github_file_path': 'daily_data/2024-09-26/inputs/AI_updates/2024-09-26_reddit_tech_posts.pdf', 'url': 'https://www.reddit.com/r/science/comments/1fp7gjb/new_study_finds_ozempic_patients_have_a_4268/', 'title': 'New study finds Ozempic patients have a 42%-68% lower risk of opioid overdose', 'score': 1722, 'author': 'ravrore', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 26, 4, 4, 0, 758000, tzinfo=datetime.timezone.utc), 'num_comments': 231, 'updated_panas': {'positive_affect': {'total_score': 4, 'items': {'interested': 2, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 1, 'inspired': 0, 'determined': 0, 'attentive': 1, 'active': 0}}, 'negative_affect': {'total_score': 94, 'items': {'distressed': 15, 'upset': 10, 'guilty': 0, 'scared': 5, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 15, 'jittery': 0, 'afraid': 10}}}, 'qualia': 'The emotion invoked by this event is a mix of cautious optimism and concern, highlighting hope for reduced overdose risks while recognizing the underlying severity of the opioid crisis.', 'image_prompt': 'Generate an image that captures the duality of hope and concern regarding health, featuring symbols of medical research, compassion, and the struggle against the opioid crisis, artistically styled to reflect resilience and community support.', 'event_type': 'retrieved_reddit_posts', 'processed_at': datetime.datetime(2024, 9, 26, 10, 30, 36, 726595, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': '1fp7gjb'}, 'event_type': 'retrieved_reddit_posts', 'event_id': '1fp7gjb'}, {'updated_panas': {'positive_affect': {'total_score': 4, 'items': {'interested': 2, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 1, 'inspired': 0, 'determined': 0, 'attentive': 1, 'active': 0}}, 'negative_affect': {'total_score': 94, 'items': {'distressed': 15, 'upset': 10, 'guilty': 0, 'scared': 5, 'hostile': 0, 'irritable': 0, 'ashamed': 0, 'nervous': 15, 'jittery': 0, 'afraid': 10}}}, 'summary': 'A recent study published in JAMA Network Open indicates that patients using Ozempic, a medication commonly used for diabetes management, face a significantly lower risk of opioid overdose—between 42% to 68%. This information was shared on Reddit by user u/ravrore in the r/science community, garnering considerable attention with 1,722 upvotes and 231 comments, reflecting high interest and value in this finding among the online audience.', 'qualia': 'The emotion invoked by this event is a mix of cautious optimism and concern, highlighting hope for reduced overdose risks while recognizing the underlying severity of the opioid crisis.', 'image_prompt': 'Generate an image that captures the duality of hope and concern regarding health, featuring symbols of medical research, compassion, and the struggle against the opioid crisis, artistically styled to reflect resilience and community support.'})
+2024-09-26 14:30:57,309 - process_daily_narrative - INFO - Generating image with prompt: Generate an image that captures the duality of hope and concern regarding health, featuring symbols of medical research, compassion, and the struggle against the opioid crisis, artistically styled to reflect resilience and community support. and aspect ratio: 1:1
+2024-09-26 14:31:21,092 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/SwQlTOGPFLJJIVu63taHBUFLiF5fB7eDHUDP9ZDuU6o4IygTA/output.webp
+2024-09-26 14:31:21,092 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/SwQlTOGPFLJJIVu63taHBUFLiF5fB7eDHUDP9ZDuU6o4IygTA/output.webp
+2024-09-26 14:31:21,180 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-26/outputs/event_id_1fp7gjb_1031.webp
+2024-09-26 14:31:21,181 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-26/outputs/event_id_1fp7gjb_1031.webp
+2024-09-26 14:31:26,717 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-26/outputs/event_id_1fp7gjb_1031.webp
+2024-09-26 14:31:26,718 - process_daily_narrative - INFO - Updating qualia_updates document ADrJR7FMsnrmN8ZNjngQ with image path
+2024-09-26 14:31:26,773 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-26/outputs/event_id_1fp7gjb_1031.webp
+2024-09-26 14:31:26,773 - process_daily_narrative - INFO - Added 'Boulevard of Broken Dreams' by Green Day to the playlist.
+2024-09-26 14:31:26,773 - process_daily_narrative - INFO - Function returned: None
+2024-09-26 14:31:26,773 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

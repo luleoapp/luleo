@@ -1,0 +1,140 @@
+2024-09-27 22:30:11,845 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-27 22:30:11,846 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-27 22:30:11,846 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-27 22:30:11,846 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-27 22:30:11,846 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-27 22:30:11,880 - process_daily_narrative - INFO - Received request
+2024-09-27 22:30:11,881 - process_daily_narrative - INFO - Request method: POST
+2024-09-27 22:30:11,881 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-27T15:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: cb9ca9811f55a15f39e6571f06454325/14421308854758907111;o=1
+Traceparent: 00-cb9ca9811f55a15f39e6571f06454325-c822c7fefc199ce7-01
+X-Forwarded-For: 35.243.23.8
+X-Forwarded-Proto: https
+Forwarded: for="35.243.23.8";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-27 22:30:11,881 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-27 22:30:11,881 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-27 22:30:11,882 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-27 22:30:11,882 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-27 22:30:11,882 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-27 22:30:11,882 - process_daily_narrative - INFO - Updating hourly...
+2024-09-27 22:30:12,038 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=3, readtime=2024-09-27 22:30:12.024647+00:00>]]
+2024-09-27 22:30:12,039 - process_daily_narrative - INFO - Processing 1 out of 3 events for retrieved_reddit_posts
+2024-09-27 22:30:12,276 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=6, readtime=2024-09-27 22:30:12.264589+00:00>]]
+2024-09-27 22:30:12,276 - process_daily_narrative - INFO - Processing 1 out of 6 events for retrieved_articles
+2024-09-27 22:30:12,502 - process_daily_narrative - INFO - Events to process: 2
+2024-09-27 22:30:17,617 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 22:30:17,617 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 16,
+    "items": {
+      "interested": 4,
+      "excited": 2,
+      "strong": 0,
+      "enthusiastic": 6,
+      "proud": 2,
+      "alert": 0,
+      "inspired": 1,
+      "determined": 0,
+      "attentive": 1,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 600,
+    "items": {
+      "distressed": 200,
+      "upset": 100,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 200,
+      "irritable": 100,
+      "ashamed": 0,
+      "nervous": 0,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+A recent study highlighted in a Reddit post suggests that eating fish may help protect against cognitive decline, dementia, and Alzheimer’s disease. The findings indicate that those who consume around 150 grams of fish daily have an 18% lower risk of cognitive impairment. The post, which garnered significant interaction with 389 upvotes and 36 comments, was shared in the r/science subreddit by user u/mvea. 
+</summary>
+
+<qualia>
+A sense of hopeful optimism mixed with a tinge of concern over cognitive health, reflecting both the potential benefits of dietary choices and the weight of neurological challenges.
+</qualia>
+
+<image_prompt>
+Generate an image that artistically conveys the juxtaposition of hope and concern regarding cognitive health, incorporating elements like fish, brains, and symbols of knowledge. The style should be uplifting yet contemplative, capturing the essence of resilience and healing through nutrition. 
+</image_prompt>
+2024-09-27 22:30:22,340 - process_daily_narrative - INFO - Raw API Response:
+2024-09-27 22:30:22,340 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 10,
+    "items": {
+      "interested": 2,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 3,
+      "active": 2
+    }
+  },
+  "negative_affect": {
+    "total_score": 750,
+    "items": {
+      "distressed": 300,
+      "upset": 150,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 300,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 0,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event involves the release of a Moroccan suspect who had served five years in detention for the rape of a student. This event is significant as it raises concerns about justice and the safety of individuals, particularly in relation to such serious allegations and their implications for victims and society at large.
+</summary>
+
+<qualia>
+The emotional vibe is one of deep distress and anger, accompanied by a muted sense of interest in the systemic issues surrounding justice and safety.
+</qualia>
+
+<image_prompt>
+Create an artistic depiction that illustrates the juxtaposition of justice and injustice, capturing the emotional turmoil and societal concerns arising from the release of a convicted rapist after a lengthy detention. Use dark tones to represent distress and anger, alongside light elements that symbolize hope for change and justice.
+</image_prompt>
+2024-09-27 22:30:22,451 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'BBC News', 'github_file_path': 'daily_data/2024-09-27/inputs/news_and_events/2024-09-27_news.pdf', 'link': 'https://www.bbc.com/news/articles/cly650vk317o', 'published': 'Wed, 25 Sep 2024 12:25:59 GMT', 'title': 'Murder of Paris student fuels anger at failed deportation', 'summary': 'The event involves the release of a Moroccan suspect who had served five years in detention for the rape of a student. This event is significant as it raises concerns about justice and the safety of individuals, particularly in relation to such serious allegations and their implications for victims and society at large.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 27, 4, 1, 14, 103000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 10, 'items': {'interested': 2, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 3, 'active': 2}}, 'negative_affect': {'total_score': 750, 'items': {'distressed': 300, 'upset': 150, 'guilty': 0, 'scared': 0, 'hostile': 300, 'irritable': 0, 'ashamed': 0, 'nervous': 0, 'jittery': 0, 'afraid': 0}}}, 'qualia': 'The emotional vibe is one of deep distress and anger, accompanied by a muted sense of interest in the systemic issues surrounding justice and safety.', 'image_prompt': 'Create an artistic depiction that illustrates the juxtaposition of justice and injustice, capturing the emotional turmoil and societal concerns arising from the release of a convicted rapist after a lengthy detention. Use dark tones to represent distress and anger, alongside light elements that symbolize hope for change and justice.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 27, 18, 30, 22, 340729, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': 'e31bf803aa4d68edf56f4dfb57a51678'}, 'event_type': 'retrieved_articles', 'event_id': 'e31bf803aa4d68edf56f4dfb57a51678'}, {'updated_panas': {'positive_affect': {'total_score': 10, 'items': {'interested': 2, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 3, 'active': 2}}, 'negative_affect': {'total_score': 750, 'items': {'distressed': 300, 'upset': 150, 'guilty': 0, 'scared': 0, 'hostile': 300, 'irritable': 0, 'ashamed': 0, 'nervous': 0, 'jittery': 0, 'afraid': 0}}}, 'summary': 'The event involves the release of a Moroccan suspect who had served five years in detention for the rape of a student. This event is significant as it raises concerns about justice and the safety of individuals, particularly in relation to such serious allegations and their implications for victims and society at large.', 'qualia': 'The emotional vibe is one of deep distress and anger, accompanied by a muted sense of interest in the systemic issues surrounding justice and safety.', 'image_prompt': 'Create an artistic depiction that illustrates the juxtaposition of justice and injustice, capturing the emotional turmoil and societal concerns arising from the release of a convicted rapist after a lengthy detention. Use dark tones to represent distress and anger, alongside light elements that symbolize hope for change and justice.'})
+2024-09-27 22:30:28,029 - process_daily_narrative - INFO - Generating image with prompt: Create an artistic depiction that illustrates the juxtaposition of justice and injustice, capturing the emotional turmoil and societal concerns arising from the release of a convicted rapist after a lengthy detention. Use dark tones to represent distress and anger, alongside light elements that symbolize hope for change and justice. and aspect ratio: 1:1
+2024-09-27 22:30:47,945 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/jFI2ueSawWW6Z6tllDVvhRSeH5wXmblIYmdZaYdewWOugcCnA/output.webp
+2024-09-27 22:30:47,945 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/jFI2ueSawWW6Z6tllDVvhRSeH5wXmblIYmdZaYdewWOugcCnA/output.webp
+2024-09-27 22:30:48,026 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-27/outputs/event_id_e31bf803aa4d68edf56f4dfb57a51678_1830.webp
+2024-09-27 22:30:48,026 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-27/outputs/event_id_e31bf803aa4d68edf56f4dfb57a51678_1830.webp
+2024-09-27 22:30:53,339 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-27/outputs/event_id_e31bf803aa4d68edf56f4dfb57a51678_1830.webp
+2024-09-27 22:30:53,339 - process_daily_narrative - INFO - Updating qualia_updates document I6VE1Fb7HNhZqual409T with image path
+2024-09-27 22:30:53,391 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-27/outputs/event_id_e31bf803aa4d68edf56f4dfb57a51678_1830.webp
+2024-09-27 22:30:53,391 - process_daily_narrative - INFO - Added 'A Change Is Gonna Come' by Sam Cooke to the playlist.
+2024-09-27 22:30:53,392 - process_daily_narrative - INFO - Function returned: None
+2024-09-27 22:30:53,392 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE

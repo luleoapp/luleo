@@ -1,0 +1,93 @@
+2024-09-28 02:30:10,801 - process_daily_narrative - INFO - DEBUGGING THIS APP
+2024-09-28 02:30:10,802 - process_daily_narrative - INFO - Python executable: /usr/local/bin/python
+2024-09-28 02:30:10,802 - process_daily_narrative - INFO - Python version: 3.9.20 (main, Sep 12 2024, 21:08:02) 
+[GCC 12.2.0]
+2024-09-28 02:30:10,802 - process_daily_narrative - INFO - Virtual environment: None
+2024-09-28 02:30:10,802 - process_daily_narrative - INFO - Testing this - localhost
+2024-09-28 02:30:10,866 - process_daily_narrative - INFO - Received request
+2024-09-28 02:30:10,866 - process_daily_narrative - INFO - Request method: POST
+2024-09-28 02:30:10,866 - process_daily_narrative - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-09-27T19:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 746fb7c3bcbf2692e97b02db72a87c8d/11952545896319758709;o=1
+Traceparent: 00-746fb7c3bcbf2692e97b02db72a87c8d-a5dff92a57b13175-01
+X-Forwarded-For: 35.187.132.163
+X-Forwarded-Proto: https
+Forwarded: for="35.187.132.163";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-09-28 02:30:10,867 - process_daily_narrative - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-09-28 02:30:10,867 - process_daily_narrative - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-09-28 02:30:10,867 - process_daily_narrative - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-09-28 02:30:10,867 - process_daily_narrative - INFO - PARAMS: {}
+2024-09-28 02:30:10,867 - process_daily_narrative - INFO - Applying function: hourly_update
+2024-09-28 02:30:10,867 - process_daily_narrative - INFO - Updating hourly...
+2024-09-28 02:30:11,023 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=0.0, readtime=2024-09-28 02:30:11.011266+00:00>]]
+2024-09-28 02:30:11,024 - process_daily_narrative - INFO - Processing 0 out of 0.0 events for retrieved_reddit_posts
+2024-09-28 02:30:11,245 - process_daily_narrative - INFO - [[<Aggregation alias=unprocessed_count, value=2, readtime=2024-09-28 02:30:11.235895+00:00>]]
+2024-09-28 02:30:11,245 - process_daily_narrative - INFO - Processing 1 out of 2 events for retrieved_articles
+2024-09-28 02:30:11,472 - process_daily_narrative - INFO - Events to process: 1
+2024-09-28 02:30:19,540 - process_daily_narrative - INFO - Raw API Response:
+2024-09-28 02:30:19,540 - process_daily_narrative - INFO - <updated_panas>
+{
+  "positive_affect": {
+    "total_score": 2,
+    "items": {
+      "interested": 2,
+      "excited": 0,
+      "strong": 0,
+      "enthusiastic": 0,
+      "proud": 0,
+      "alert": 0,
+      "inspired": 0,
+      "determined": 0,
+      "attentive": 0,
+      "active": 0
+    }
+  },
+  "negative_affect": {
+    "total_score": 1110,
+    "items": {
+      "distressed": 505,
+      "upset": 300,
+      "guilty": 0,
+      "scared": 0,
+      "hostile": 300,
+      "irritable": 0,
+      "ashamed": 0,
+      "nervous": 0,
+      "jittery": 0,
+      "afraid": 0
+    }
+  }
+}
+</updated_panas>
+
+<summary>
+The event revolves around widespread, misleading claims related to AI forecasting. It highlights several academic papers that assert AI models possess forecasting abilities comparable to or exceeding human performance. However, the critique details various shortcomings in the methods and claims made by these studies, such as inadequate information retrieval and a lower standard for defining "human-level" accuracy. This inconsistency can lead to public misperceptions regarding the capabilities of AI in forecasting contexts, which can alarm stakeholders about the reliability and applicability of such technologies.
+</summary>
+
+<qualia>
+The emotional vibe invoked by this event is a mix of concern and skepticism, reflecting the confusion and distress caused by misleading information in the field of AI forecasting.
+</qualia>
+
+<image_prompt>
+Create an artistic representation that visually captures the essence of the criticism surrounding misleading AI forecasting claims. Incorporate symbols of caution, such as warning signs or distorted glass, blending with elements that symbolize knowledge and understanding, like books and data charts. The color palette should convey an atmosphere of unease and heightened awareness, utilizing deep blues and grays contrasted with sharp yellows to highlight confusion and insight.
+</image_prompt>
+2024-09-28 02:30:19,673 - process_daily_narrative - INFO - Max significance event: ({'event_dict': {'source': 'Featured posts - LessWrong 2.0 viewer', 'github_file_path': 'daily_data/2024-09-27/inputs/AI_updates/2024-09-27_ai_newsletter.pdf', 'link': 'https://www.greaterwrong.com/posts/uGkRcHqatmPkvpGLq/contra-papers-claiming-superhuman-ai-forecasting', 'published': 'Thu, 12 Sep 2024 18:10:50 +0000', 'title': 'Contra papers claiming superhuman AI forecasting by nikos', 'summary': 'The event revolves around widespread, misleading claims related to AI forecasting. It highlights several academic papers that assert AI models possess forecasting abilities comparable to or exceeding human performance. However, the critique details various shortcomings in the methods and claims made by these studies, such as inadequate information retrieval and a lower standard for defining "human-level" accuracy. This inconsistency can lead to public misperceptions regarding the capabilities of AI in forecasting contexts, which can alarm stakeholders about the reliability and applicability of such technologies.', 'retrieved_at': DatetimeWithNanoseconds(2024, 9, 27, 4, 2, 50, 257000, tzinfo=datetime.timezone.utc), 'updated_panas': {'positive_affect': {'total_score': 2, 'items': {'interested': 2, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 1110, 'items': {'distressed': 505, 'upset': 300, 'guilty': 0, 'scared': 0, 'hostile': 300, 'irritable': 0, 'ashamed': 0, 'nervous': 0, 'jittery': 0, 'afraid': 0}}}, 'qualia': 'The emotional vibe invoked by this event is a mix of concern and skepticism, reflecting the confusion and distress caused by misleading information in the field of AI forecasting.', 'image_prompt': 'Create an artistic representation that visually captures the essence of the criticism surrounding misleading AI forecasting claims. Incorporate symbols of caution, such as warning signs or distorted glass, blending with elements that symbolize knowledge and understanding, like books and data charts. The color palette should convey an atmosphere of unease and heightened awareness, utilizing deep blues and grays contrasted with sharp yellows to highlight confusion and insight.', 'event_type': 'retrieved_articles', 'processed_at': datetime.datetime(2024, 9, 27, 22, 30, 19, 541148, tzinfo=<DstTzInfo 'America/New_York' EDT-1 day, 20:00:00 DST>), 'event_id': 'eeb688f80963b30d25c7c8edcac5dd9e'}, 'event_type': 'retrieved_articles', 'event_id': 'eeb688f80963b30d25c7c8edcac5dd9e'}, {'updated_panas': {'positive_affect': {'total_score': 2, 'items': {'interested': 2, 'excited': 0, 'strong': 0, 'enthusiastic': 0, 'proud': 0, 'alert': 0, 'inspired': 0, 'determined': 0, 'attentive': 0, 'active': 0}}, 'negative_affect': {'total_score': 1110, 'items': {'distressed': 505, 'upset': 300, 'guilty': 0, 'scared': 0, 'hostile': 300, 'irritable': 0, 'ashamed': 0, 'nervous': 0, 'jittery': 0, 'afraid': 0}}}, 'summary': 'The event revolves around widespread, misleading claims related to AI forecasting. It highlights several academic papers that assert AI models possess forecasting abilities comparable to or exceeding human performance. However, the critique details various shortcomings in the methods and claims made by these studies, such as inadequate information retrieval and a lower standard for defining "human-level" accuracy. This inconsistency can lead to public misperceptions regarding the capabilities of AI in forecasting contexts, which can alarm stakeholders about the reliability and applicability of such technologies.', 'qualia': 'The emotional vibe invoked by this event is a mix of concern and skepticism, reflecting the confusion and distress caused by misleading information in the field of AI forecasting.', 'image_prompt': 'Create an artistic representation that visually captures the essence of the criticism surrounding misleading AI forecasting claims. Incorporate symbols of caution, such as warning signs or distorted glass, blending with elements that symbolize knowledge and understanding, like books and data charts. The color palette should convey an atmosphere of unease and heightened awareness, utilizing deep blues and grays contrasted with sharp yellows to highlight confusion and insight.'})
+2024-09-28 02:30:27,145 - process_daily_narrative - INFO - Generating image with prompt: Create an artistic representation that visually captures the essence of the criticism surrounding misleading AI forecasting claims. Incorporate symbols of caution, such as warning signs or distorted glass, blending with elements that symbolize knowledge and understanding, like books and data charts. The color palette should convey an atmosphere of unease and heightened awareness, utilizing deep blues and grays contrasted with sharp yellows to highlight confusion and insight. and aspect ratio: 1:1
+2024-09-28 02:30:45,828 - process_daily_narrative - INFO - Image generated successfully. URL: https://replicate.delivery/czjl/ehmipebhnZtXIEke3afV8Ff5DaoxUZRJAETeWUS3WlwSVcU4E/output.webp
+2024-09-28 02:30:45,828 - process_daily_narrative - INFO - Downloading image from URL: https://replicate.delivery/czjl/ehmipebhnZtXIEke3afV8Ff5DaoxUZRJAETeWUS3WlwSVcU4E/output.webp
+2024-09-28 02:30:46,022 - process_daily_narrative - INFO - Generated file path: daily_data/2024-09-27/outputs/event_id_eeb688f80963b30d25c7c8edcac5dd9e_2230.webp
+2024-09-28 02:30:46,023 - process_daily_narrative - INFO - Uploading image to GitHub: daily_data/2024-09-27/outputs/event_id_eeb688f80963b30d25c7c8edcac5dd9e_2230.webp
+2024-09-28 02:30:51,344 - process_daily_narrative - INFO - Image uploaded successfully. URL: daily_data/2024-09-27/outputs/event_id_eeb688f80963b30d25c7c8edcac5dd9e_2230.webp
+2024-09-28 02:30:51,344 - process_daily_narrative - INFO - Updating qualia_updates document 7CLvcUEWd3E0oUBgHKJL with image path
+2024-09-28 02:30:51,407 - process_daily_narrative - INFO - Image generated and uploaded successfully: daily_data/2024-09-27/outputs/event_id_eeb688f80963b30d25c7c8edcac5dd9e_2230.webp
+2024-09-28 02:30:51,407 - process_daily_narrative - INFO - Added 'Unfinished Sympathy' by Massive Attack to the playlist.
+2024-09-28 02:30:51,407 - process_daily_narrative - INFO - Function returned: None
+2024-09-28 02:30:51,407 - process_daily_narrative - WARNING - Function returned None for REQUEST_TYPE: QUALIA_UPDATE
