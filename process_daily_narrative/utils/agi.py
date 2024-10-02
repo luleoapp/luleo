@@ -84,9 +84,13 @@ def answer_agi_questions():
 
         assert(len(answers) == len(questions), "Number of answers does not match number of questions")
 
+        l_answers = []
+        for i in range(1,len(answers)+1):
+            l_answers.append(answers[i-1]["a{0}".format(str(i))])
+
         answer_docref = db.collection('agi_questions').document(doc_id).collection('answers').document()
         answer_docref.set({
-            'answers': answers,
+            'answers': l_answers,
             'timestamp': firestore.SERVER_TIMESTAMP
         })
 

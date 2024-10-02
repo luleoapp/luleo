@@ -153,7 +153,24 @@ def classify_user_input(upload_id, user_identity_str, user_input_text=None, user
         all_analysis_json["processed_for_qualia"] = False
         db.collection("user_inputs").document(upload_id).update(all_analysis_json)
     
-    #return d_update
+def analyze_input_for_category(upload_id):
+    #standalone function to analyze the input for all categories
+    doc = db.collection("user_inputs").document(upload_id).get()
+    if not doc.exists:
+        system_logger.error(f"ERROR : User input document {upload_id} does not exist")
+        return None
+    d_input = doc.to_dict()
+    all_analysis_json = {}
+    for category in d_input["categories"]:
+        analysis_json = get_analysis_from_category(category, d_input)
+        if analysis_json:
+            all_analysis_json[f'{category}_analysis'] = analysis_json
+    
+    if all_analysis_json:
+        if "processed_for_qualia" not in d_input:
+            d_input["processed_for_qualia"] = False
+        db.collection("user_inputs").document(upload_id).update(all_analysis_json)
+
 
 def get_analysis_from_category(category,d_input):
     # get the analysis for the category
@@ -162,12 +179,14 @@ def get_analysis_from_category(category,d_input):
     luleo_prompt = get_luleo_prompt()
     prompts_dir = os.path.join(os.path.dirname(__file__), '..', 'prompts')
     analysis_prompt_file = os.path.join(prompts_dir, 'input_analyses', f'{category}.prompt')
+    
     if not os.path.exists(analysis_prompt_file):
-        return 
+        system_logger.error(f"Analysis prompt file {analysis_prompt_file} does not exist")
+        return None
     else:        
         with open(analysis_prompt_file, 'r') as f:
             analysis_prompt = f.read()
-        input_str = f"{category}_INPUT"
+        input_str = f"{category.upper()}_INPUT"
         analysis_prompt = analysis_prompt.replace("{{"+input_str+"}}", d_input["input_summary"])
         system_logger.info(f"analysis_prompt: {analysis_prompt}")
     

@@ -24,6 +24,12 @@
 			font-size: 1.125em;
 		}
 
+		.logo-text {
+			@include breakpoint('<=small') {
+				display: none;
+			}
+		}
+
 		.icons {
 			text-align: right;
 		}

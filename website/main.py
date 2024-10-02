@@ -36,9 +36,6 @@ app.register_blueprint(harmony_blueprint)
 app.register_blueprint(questions_blueprint)
 app.register_blueprint(wisdom_blueprint)
 
-
-
-
 @app.route("/")
 def index():
     image_url, summary, qualia = get_latest_event()

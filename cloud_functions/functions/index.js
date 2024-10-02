@@ -36,6 +36,13 @@ exports.triggerCloudRunOnCreate = functions.firestore
             console.log('Upload ID:', uploadId);
             const cloud_run_url = await get_cloud_run_url();
             console.log('Cloud Run URL:', cloud_run_url);
+            
+            console.log('Request Body:', {
+                REQUEST_TYPE: "PROCESS_USER_UPLOAD",
+                PARAMS: {
+                    upload_id: uploadId,
+                }
+            });
             const response = await axios.post(cloud_run_url, {
                 REQUEST_TYPE: "PROCESS_USER_UPLOAD",
                 PARAMS: {

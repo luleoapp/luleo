@@ -3113,6 +3113,11 @@ button:disabled,
   font-family: "Roboto Slab", serif;
   font-size: 1.125em;
 }
+@media screen and (max-width: 736px) {
+  #header .logo-text {
+    display: none;
+  }
+}
 #header .icons {
   text-align: right;
 }
