@@ -1,0 +1,12 @@
+
+<section id="love">
+    <header>
+    <h1>Love</h1>
+    </header>
+    <h2>{{ love_headline }}</h2>
+    {% for l_input in love_inputs %}
+    <div class="col-6 col-12-small">
+        <p>{{ l_input.content }}</p>
+    </div>
+    {% endfor %}
+</section>

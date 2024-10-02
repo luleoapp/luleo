@@ -1,0 +1,22 @@
+<!-- Banner -->
+<section id="banner">
+    <div class="content">
+        <header>
+            <h2 id="currentDate"></h2>
+            <p>Days to AGI: {{ days_to_agi }}</p>
+        </header>
+        <div class="image-description-container">
+            <div id="typewriter" class="typewriter" data-description="{{ image_description }}"></div>
+        </div>
+        <div class="spotify-embed">
+            <iframe class="spotify-playlist" src="https://open.spotify.com/embed/playlist/{{ spotify_playlist_uri.split(':')[-1] }}" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" align="center"></iframe>
+        </div>
+    </div>
+    <div class="image-container">
+        <img id="ai-image" src="{{ image_url }}" alt="AI-generated image">
+        <div class="image-overlay">
+            <p>{{ image_description }}</p>
+        </div>
+    </div>
+</section>
+<script src="{{ url_for('static', filename='js/date.js') }}"></script>

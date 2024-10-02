@@ -1,0 +1,13 @@
+<section id="agi" style="padding-top: 2em;">
+    {% if agi_vision_image_location %}
+    <span class="image object" style="text-align: center; display: block; margin-top: 0;">
+        <img src="{{ agi_vision_image_location }}" alt="" width="40%" style="margin: 0 auto;"/>
+    </span>
+    <h2>AGI</h2>
+    {% endif %}
+
+    {% for i in range(questions|length) %}
+    <h3>{{ questions[i] }}</h3>
+    <p>{{ answers[i] }}</p>
+    {% endfor %}
+</section>

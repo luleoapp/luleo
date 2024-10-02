@@ -1,0 +1,14 @@
+Please provide a concise summary of the following article. 
+The summary should be about 200 words long and capture the main points and key ideas:
+Do not prepend ANY text like 'Here's a summary of...'
+
+{{ARTICLE_CONTENT}}
+
+
+Return a json with the summary in accordance with the following format:
+
+{
+  "summary": "[Your 200-word summary of the article]"
+}
+
+Only return the JSON object as described above with no additional text or formatting outside of the JSON structure.

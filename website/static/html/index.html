@@ -1,0 +1,185 @@
+{% import 'macros.html' as macros %}
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Luleo - Open Source AI God</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+    
+    </head>
+    <!-- SVG Filter for Ripple Effect -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <filter id="ripple">
+        <feTurbulence type="fractalNoise" baseFrequency="0.01 0.03" numOctaves="3" result="warp" id="turbulence">
+            <animate
+            attributeName="baseFrequency"
+            dur="10s"
+            values="0.01 0.03;0.03 0.01;0.01 0.03"
+            repeatCount="indefinite"
+            />
+        </feTurbulence>
+        <feDisplacementMap
+            in="SourceGraphic"
+            in2="warp"
+            scale="5"
+            xChannelSelector="R"
+            yChannelSelector="G"
+        />
+        </filter>
+    </svg>
+    <body class="is-preload">
+
+        <!-- Wrapper -->
+            <div id="wrapper">
+
+                <!-- Main -->
+                    <div id="main">
+                        <div class="inner">
+                            <!-- Header -->
+                                <header id="header">
+                                    <a href="{{ url_for('index') }}" class="logo">
+                                        <img src="{{ url_for('static', filename='images/logo_transparent.png') }}" alt="Luleo Logo" style="height: 40px; margin-right: 5pm; vertical-align: middle;">
+                                        <strong>Luleo</strong> Open Source AI God
+                                    </a>
+                                    <ul class="icons">
+                                        <li><a href="https://x.com/LuleoApp" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                                        <li><a href="https://github.com/luleoapp/luleo" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                                        <li><a href="#" class="icon solid fa-pencil-alt"><span class="label">Blog</span></a></li>
+                                    </ul>
+                                </header>
+                            <!-- Dynamic Content -->
+                            {% if page == 'home' %}
+                            {% include 'home_page.html' %}
+                            {% elif page == 'agi' %}
+                            {% include 'agi_page.html' %}
+                            {% elif page == 'app_page' %}
+                            {% include 'app_page.html' %}
+							{% elif page == 'wisdom' %}
+                            {% include 'wisdom_page.html' %}
+							{% elif page == 'ideas' %}
+							{% include 'ideas_page.html' %}
+                            {% elif page == "love" %}
+                            {% include 'love_page.html' %}
+							{% elif page == 'divine' %}
+                            {% include 'divine_page.html' %}
+							{% elif page == "art" %}
+							{% include 'art_page.html' %}
+                            {% elif page == "questions" %}
+                            {% include 'questions_page.html' %}
+                            {% elif page == "contribute" %}
+                            {% include 'contribute_page.html' %}
+                            {% elif page == "analysis" %}
+                            {% include 'analysis_page.html' %}
+                            {% elif page == "latest_inputs" %}
+                            {% include 'latest_inputs_page.html' %}
+                            {% endif %}
+                        </section>
+                        </div>
+                    </div>
+                    <div id="sidebar">
+                        <div class="inner">
+
+                            <!-- Search -->
+                                <section id="search" class="alt">
+                                    <!-- <form method="post" action="#">
+                                        <input type="text" name="query" id="query" placeholder="Search" disabled />
+                                    </form> -->
+                                </section>
+                            <!-- Menu -->
+                            <section>
+                                <nav id="menu">
+                                    <header class="major">
+                                <h2>Menu</h2>
+                                </header>
+                                <ul>
+                                    <!-- AI Submenu -->
+								<li class="{% if page in ['agi', 'app'] %}active{% endif %}"> <!-- Add active class here -->
+									<span class="opener"><img src="{{ url_for('static', filename='images/love.png') }}" alt="AGI Logo" style="width: 40px; height: 40px; vertical-align: middle; border-radius: 20%; margin-right: 10px; ">AI</span>
+									<ul>
+										<li>
+											<a href="{{ url_for('agi_bp.custom_agi') }}">
+												AGI
+											</a>
+										</li>
+										<li>
+											<a href="{{ url_for('app_page_bp.custom_app_page') }}">Apps</a>
+										</li>
+									</ul>
+								</li>
+								<li class="{% if page in ['divine', 'wisdom', 'ideas','love'] %}active{% endif %}">
+									<span class="opener"><img src="{{ url_for('static', filename='images/wisdom.png') }}" alt="AGI Logo" style="width: 40px; height: 40px; vertical-align: middle; border-radius: 20%; margin-right: 10px; ">God</span>
+									<ul>
+										<li class="{% if page == 'divine' %}active{% endif %}">
+											<a href="{{ url_for('divine_bp.custom_divine') }}">Divine</a>
+										</li>
+										<li class="{% if page == 'wisdom' %}active{% endif %}">
+											<a href="{{ url_for('wisdom_bp.custom_wisdom') }}">Wisdom</a>
+										</li>
+										<li class="{% if page == 'ideas' %}active{% endif %}">
+											<a href="{{ url_for('ideas_bp.custom_ideas') }}">Ideas</a>
+										</li>
+										<li class="{% if page == 'love' %}active{% endif %}">
+											<a href="{{ url_for('love_bp.custom_love') }}">Love</a>
+										</li>
+									</ul>
+								</li>
+								<!-- Luleo Submenu -->
+									<li class="{% if page in ['art', 'all_inputs', 'harmony','contribute', 'questions', 'moloch',  'test_inputs'] %}active{% endif %}">
+										<span class="opener"><img src="{{ url_for('static', filename='images/logo_transparent.png') }}" alt="AGI Logo" style="width: 40px; height: 40px; vertical-align: middle; border-radius: 20%; margin-right: 10px; ">Luleo</span>
+										<ul>
+											<li class="{% if page == 'moloch' %}active{% endif %}">
+												<a href="{{ url_for('moloch_bp.custom_moloch') }}">Moloch</a>
+											</li>
+											<li class="{% if page == 'art' %}active{% endif %}">
+												<a href="{{ url_for('art_bp.custom_art') }}">Art</a>
+											</li>
+											<li class="{% if page == 'harmony' %}active{% endif %}">
+												<a href="{{ url_for('harmony_bp.custom_harmony') }}">harmony</a>
+											</li>
+											<li class="{% if page =='questions' %}active{% endif %}">
+												<a href="{{ url_for('questions_bp.custom_questions') }}">Questions</a>
+											</li>
+											<li class="{% if page == 'contribute' %}active{% endif %}">
+												<a href="{{ url_for('contribute_bp.custom_contribute') }}">Contribute</a>
+											</li>
+											<li class="{% if page == 'all_inputs' %}active{% endif %}">
+												<a href="{{ url_for('all_inputs_bp.custom_all_inputs') }}">All Inputs</a>
+											</li>
+										</ul>
+									</li>                                
+								</ul>
+                                </nav>
+                            </section>
+                            <!-- Section -->
+                                <section>
+                                    <header class="major">
+                                        <h2>About Luleo</h2>
+                                    </header>
+                                        <p>Luleo is an Open Source AI God Simulation. Its goal is to clarify what an AI God would be like.</p>
+                                    
+                                </section>
+                            <!-- Footer -->
+                            <footer id="footer">
+                                <p class="copyright">&copy; 2024 MeanWhile Labs LLC. All rights reserved. Demo Images: 
+                                <a href="https://html5up.net">HTML5 UP</a>. Licensed under 
+                                <a href="https://creativecommons.org/licenses/by/3.0/">CCA 3.0</a>.</p>
+                            </footer>
+
+                        </div>
+                    </div>
+
+            </div>
+
+        <!-- Scripts -->
+            <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+            <script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+            <script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+            <script src="{{ url_for('static', filename='js/util.js') }}"></script>
+            <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+            <script src="{{ url_for('static', filename='js/typewriter.js') }}"></script>
+            <script src="{{ url_for('static', filename='js/image.js') }}"></script>
+    </body>
+</html>

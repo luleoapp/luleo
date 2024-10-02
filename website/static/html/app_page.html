@@ -1,0 +1,24 @@
+<section id="app" style="padding-top: 2em;">
+    <h2>Apps</h2>
+    <div class="box alt">
+        <div class="row gtr-50 gtr-uniform">
+            {% for app_input in app_inputs %}
+                <div class="col-4">
+                    <a href="https://www.google.com" style="text-decoration: none; color: inherit;">
+                        <div class="app-box">
+                            <div class="app-image-container">
+                                <!-- <img class="app-image" src="{{ url_for('static', filename='images/love.png') }}" alt="App Image"> -->
+                                <i class="icon brands fa-github app-image" style="font-size: 2.5em; display: flex; justify-content: center; align-items: center;"></i>
+                            </div>
+                            <div class="app-content">
+                                <h2 class="app-headline">{{ app_input.title }}</h2>
+                                <p class="app-description">{{ app_input.description }}</p>
+                            </div>
+                            <div class="app-small-screen-title">{{ app_input.title }}</div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

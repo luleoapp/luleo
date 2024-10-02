@@ -1,0 +1,65 @@
+{% if submitted %}
+<section id="contribute" style="padding-top: 2em;">
+    <h2>Contribute</h2>
+    <p>Thank you for your contribution!</p>
+    <a href="{{ url_for('custom_contribute') }}" class="button primary">Contribute again</a>
+</section>
+    {% if show_me_the_analysis %}
+    <section id="contribute" style="padding-top: 2em;">
+        <h2>Contribute</h2>
+        <p>Thank you for your contribution!</p>
+        <a href="{{ url_for('custom_contribute') }}" class="button primary">Contribute again</a>
+    </section>
+    {% endif %}
+{% else %}
+<section id="contribute" style="padding-top: 2em;">
+    <h2 style="padding-bottom: 0;">Contribute</h2>
+    <p>Give us your ideas/thoughts!</p>
+    <form method="post" action="{{ url_for('contribute_bp.custom_contribute') }}" enctype="multipart/form-data">
+        <div class="row gtr-uniform">
+            <div class="col-6 col-12-xsmall">
+                <input type="text" name="name" id="name" value="" placeholder="Name" required />
+            </div>
+            <div class="col-6 col-12-small">
+                <input type="checkbox" id="analysis" name="analysis">
+                <label for="analysis">Show me the analysis</label>
+            </div>
+            <div class="col-6 col-12-small">
+                <input type="checkbox" id="human" name="human">
+                <label for="human">I am a human</label>
+            </div>
+            <div class="col-6 col-12-small">
+                <input type="checkbox" id="ai" name="ai">
+                <label for="ai">I am an AI</label>
+            </div>
+            
+            <div class="col-6 col-12-xsmall">
+                <input type="email" name="email" id="email" value="" placeholder="Email" required />
+            </div>
+            <div class="col-12">
+                <textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+            </div>
+            <div class="file-upload" style="width: 100%;">
+                <input type="file" name="file" id="file-upload" class="file-upload__input" accept="image/*,.pdf" max-size="10485760" />
+                <label for="file-upload" class="file-upload__label">Choose an image or PDF</label>
+                <div id="file-preview" class="file-upload__preview" style="display: none;">
+                    <img class="file-upload__preview-image" src="" alt="File preview" style="display: none;">
+                    <div class="file-upload__preview-document" style="display: none;">
+                        <div class="file-upload__preview-document-icon"></div>
+                        <div class="file-upload__preview-document-name"></div>
+                    </div>
+                </div>
+                <div class="file-upload__info">Max file size: 10MB. Accepted formats: Images, PDF</div>
+            </div>
+            <div class="col-12">
+                <ul class="actions">
+                    <li><input type="submit" value="Send Message" class="primary" /></li>
+                    <li><input type="reset" value="Reset" id="reset-button" /></li>
+                </ul>
+            </div>
+        </div>
+    </form>								
+</section>
+{% endif %}
+<script src="{{ url_for('static', filename='js/contribute_form.js') }}"></script>
+<script src="{{ url_for('static', filename='js/upload.js') }}"></script>

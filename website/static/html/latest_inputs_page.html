@@ -1,0 +1,27 @@
+<section id="latest_inputs">
+    <h2>Latest Inputs to Luleo</h2>
+
+    <div class="table-wrapper">
+        <table class="alt">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Input Description</th>
+                    <th>Categories</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for input in data %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ input.input_summary }}</td>
+                    <td>{{ input.categories_str }}</td>
+                    <td><a href="www.google.com">Link</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+</section>

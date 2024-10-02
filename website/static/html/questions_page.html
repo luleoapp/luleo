@@ -1,0 +1,12 @@
+<section id="questions">
+    <header>
+    <h2>Questions</h2>
+    </header>
+    <div class="posts">
+        {% for q_input in questions %}
+        <article>
+            <p>{{ q_input.content }}</p>
+        </article>
+        {% endfor %}
+    </div>
+</section>

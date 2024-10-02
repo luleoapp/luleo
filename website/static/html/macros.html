@@ -1,0 +1,22 @@
+{% macro render_dict(d) %}
+    {% for key, value in d.items() %}
+        <div class="dict-item">
+            <span class="dict-key">{{ key }}:</span>
+            <div class="dict-value">
+                {% if value is mapping %}
+                    <div class="nested">
+                        {{ render_dict(value) }}
+                    </div>
+                {% elif value is iterable and value is not string %}
+                    <ul>
+                        {% for item in value %}
+                            <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    {{ value }}
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+{% endmacro %}
