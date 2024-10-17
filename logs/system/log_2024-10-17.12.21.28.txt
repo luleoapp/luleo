@@ -1,0 +1,26 @@
+2024-10-17 12:21:24,267 - system - INFO - DEBUGGING THIS APP
+2024-10-17 12:21:24,267 - system - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-10-17 12:21:24,267 - system - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-10-17 12:21:24,268 - system - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-10-17 12:21:24,268 - system - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-10-17 12:21:28,322 - system - INFO - Received request
+2024-10-17 12:21:28,322 - system - INFO - Request method: POST
+2024-10-17 12:21:28,322 - system - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 66
+Content-Type: application/json
+
+
+2024-10-17 12:21:28,323 - system - INFO - Request data: b'{"REQUEST_TYPE": "SCRAPE_METACULUS_PREDICTION_DATE", "PARAMS": {}}'
+2024-10-17 12:21:28,325 - system - INFO - Request JSON: {'REQUEST_TYPE': 'SCRAPE_METACULUS_PREDICTION_DATE', 'PARAMS': {}}
+2024-10-17 12:21:28,325 - system - INFO - REQUEST_TYPE: SCRAPE_METACULUS_PREDICTION_DATE
+2024-10-17 12:21:28,325 - system - INFO - PARAMS: {}
+2024-10-17 12:21:28,326 - system - INFO - Applying function: scrape_metaculus_prediction_date
+2024-10-17 12:21:28,593 - system - INFO - Success: got metaculus data
+2024-10-17 12:21:28,614 - system - ERROR - An error occurred: name 'json_data' is not defined
+2024-10-17 12:21:28,615 - system - INFO - Function returned: None
+2024-10-17 12:21:28,615 - system - WARNING - Function returned None for REQUEST_TYPE: SCRAPE_METACULUS_PREDICTION_DATE
