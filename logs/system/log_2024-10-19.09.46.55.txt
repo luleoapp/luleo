@@ -1,0 +1,34 @@
+2024-10-19 13:46:55,754 - system - INFO - DEBUGGING THIS APP
+2024-10-19 13:46:55,754 - system - INFO - Python executable: /usr/local/bin/python
+2024-10-19 13:46:55,754 - system - INFO - Python version: 3.9.20 (main, Oct 17 2024, 01:17:35) 
+[GCC 12.2.0]
+2024-10-19 13:46:55,754 - system - INFO - Virtual environment: None
+2024-10-19 13:46:55,754 - system - INFO - Testing this - localhost
+2024-10-19 13:46:55,792 - system - INFO - Received request
+2024-10-19 13:46:55,792 - system - INFO - Request method: POST
+2024-10-19 13:46:55,792 - system - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Accept: application/json, text/plain, */*
+Content-Type: application/json
+User-Agent: axios/1.6.7
+Content-Length: 84
+X-Cloud-Trace-Context: 3325d82d2c31b2eee96e8f668862e45f/434730374964314469;o=1
+Traceparent: 00-3325d82d2c31b2eee96e8f668862e45f-060878f904d20165-01
+X-Forwarded-For: 2600:1900:0:2d06::200
+X-Forwarded-Proto: https
+Forwarded: for="[2600:1900:0:2d06::200]";proto=https
+Accept-Encoding: gzip, compress, deflate, br
+
+
+2024-10-19 13:46:55,792 - system - INFO - Request data: b'{"REQUEST_TYPE":"PROCESS_USER_UPLOAD","PARAMS":{"upload_id":"r9YqIu4gsAqRREgUbBXf"}}'
+2024-10-19 13:46:55,792 - system - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': 'r9YqIu4gsAqRREgUbBXf'}}
+2024-10-19 13:46:55,792 - system - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-10-19 13:46:55,792 - system - INFO - PARAMS: {'upload_id': 'r9YqIu4gsAqRREgUbBXf'}
+2024-10-19 13:46:55,792 - system - INFO - Applying function: process_user_upload
+2024-10-19 13:46:55,901 - system - ERROR - Error in PROCESS_USER_UPLOAD {'upload_id': 'r9YqIu4gsAqRREgUbBXf'}
+2024-10-19 13:46:55,902 - system - ERROR - Traceback (most recent call last):
+  File "/app/main.py", line 51, in call_default_cloud_run
+    ret_val = func_to_apply(**request_params)
+  File "/app/utils/luleo.py", line 47, in process_user_upload
+    text = process_text_pdf(user_file_url)
+TypeError: process_text_pdf() missing 1 required positional argument: 'file_name'
+
