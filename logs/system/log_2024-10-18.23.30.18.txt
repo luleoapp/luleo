@@ -1,0 +1,45 @@
+2024-10-19 03:30:18,107 - system - INFO - DEBUGGING THIS APP
+2024-10-19 03:30:18,107 - system - INFO - Python executable: /usr/local/bin/python
+2024-10-19 03:30:18,107 - system - INFO - Python version: 3.9.20 (main, Oct 17 2024, 01:17:35) 
+[GCC 12.2.0]
+2024-10-19 03:30:18,107 - system - INFO - Virtual environment: None
+2024-10-19 03:30:18,107 - system - INFO - Testing this - localhost
+2024-10-19 03:30:18,148 - system - INFO - Received request
+2024-10-19 03:30:18,148 - system - INFO - Request method: POST
+2024-10-19 03:30:18,148 - system - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-10-18T20:30:00-07:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 8a1dd2f1f95cf9319f5e5ca93d0908ab/8432024728078460806;o=1
+Traceparent: 00-8a1dd2f1f95cf9319f5e5ca93d0908ab-750491d0be6d2786-01
+X-Forwarded-For: 35.187.132.45
+X-Forwarded-Proto: https
+Forwarded: for="35.187.132.45";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-10-19 03:30:18,148 - system - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-10-19 03:30:18,148 - system - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-10-19 03:30:18,148 - system - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-10-19 03:30:18,148 - system - INFO - PARAMS: {}
+2024-10-19 03:30:18,148 - system - INFO - Applying function: hourly_update
+2024-10-19 03:30:18,148 - system - INFO - Updating hourly...
+2024-10-19 03:30:18,289 - system - INFO - [[<Aggregation alias=unprocessed_count, value=0.0, readtime=2024-10-19 03:30:18.279650+00:00>]]
+2024-10-19 03:30:18,290 - system - INFO - Processing 0 out of 0.0 events for retrieved_reddit_posts
+2024-10-19 03:30:18,415 - system - INFO - [[<Aggregation alias=unprocessed_count, value=0.0, readtime=2024-10-19 03:30:18.367957+00:00>]]
+2024-10-19 03:30:18,415 - system - INFO - Processing 0 out of 0.0 events for retrieved_articles
+2024-10-19 03:30:18,506 - system - ERROR - Error in QUALIA_UPDATE {}
+2024-10-19 03:30:18,511 - system - ERROR - Traceback (most recent call last):
+  File "/app/main.py", line 51, in call_default_cloud_run
+    ret_val = func_to_apply(**request_params)
+  File "/app/src/scripts.py", line 18, in hourly_update
+    update_qualia()
+  File "/app/utils/qualia.py", line 304, in update_qualia
+    events_to_process = get_events_to_process()
+  File "/app/utils/qualia.py", line 170, in get_events_to_process
+    event_dict = doc.to_dict()
+UnboundLocalError: local variable 'doc' referenced before assignment
+
