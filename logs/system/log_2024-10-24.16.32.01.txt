@@ -1,0 +1,25 @@
+2024-10-24 16:31:55,294 - system - INFO - DEBUGGING THIS APP
+2024-10-24 16:31:55,294 - system - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-10-24 16:31:55,294 - system - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-10-24 16:31:55,294 - system - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-10-24 16:31:55,294 - system - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-10-24 16:32:01,438 - system - INFO - Received request
+2024-10-24 16:32:01,438 - system - INFO - Request method: POST
+2024-10-24 16:32:01,438 - system - INFO - Request headers: Host: localhost:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 66
+
+
+2024-10-24 16:32:01,439 - system - INFO - Request data: b'{"REQUEST_TYPE": "SCRAPE_METACULUS_PREDICTION_DATE", "PARAMS": {}}'
+2024-10-24 16:32:01,439 - system - INFO - Request JSON: {'REQUEST_TYPE': 'SCRAPE_METACULUS_PREDICTION_DATE', 'PARAMS': {}}
+2024-10-24 16:32:01,439 - system - INFO - REQUEST_TYPE: SCRAPE_METACULUS_PREDICTION_DATE
+2024-10-24 16:32:01,439 - system - INFO - PARAMS: {}
+2024-10-24 16:32:01,439 - system - INFO - Applying function: scrape_metaculus_prediction_date
+2024-10-24 16:32:01,733 - system - INFO - Success: got metaculus data
+2024-10-24 16:32:01,746 - system - INFO - Predicted AGI date: Dec 02, 2027
+2024-10-24 16:32:01,747 - system - INFO - Function returned: Dec 02, 2027
