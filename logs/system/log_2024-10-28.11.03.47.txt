@@ -1,0 +1,30 @@
+2024-10-28 10:59:31,047 - system - INFO - DEBUGGING THIS APP
+2024-10-28 10:59:31,047 - system - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-10-28 10:59:31,047 - system - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-10-28 10:59:31,047 - system - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-10-28 10:59:31,047 - system - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-10-28 11:03:46,925 - system - INFO - Received request
+2024-10-28 11:03:46,926 - system - INFO - Request method: POST
+2024-10-28 11:03:46,926 - system - INFO - Request headers: Host: localhost:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 110
+
+
+2024-10-28 11:03:46,927 - system - INFO - Request data: b'{"REQUEST_TYPE": "CONTRIBUTE_TEXT", "PARAMS": {"name": "Jack", "message": "I hope Kamala wins the election!"}}'
+2024-10-28 11:03:46,927 - system - INFO - Request JSON: {'REQUEST_TYPE': 'CONTRIBUTE_TEXT', 'PARAMS': {'name': 'Jack', 'message': 'I hope Kamala wins the election!'}}
+2024-10-28 11:03:46,927 - system - INFO - REQUEST_TYPE: CONTRIBUTE_TEXT
+2024-10-28 11:03:46,927 - system - INFO - PARAMS: {'name': 'Jack', 'message': 'I hope Kamala wins the election!'}
+2024-10-28 11:03:46,927 - system - INFO - Applying function: contribute_text
+2024-10-28 11:03:47,058 - system - ERROR - Error in CONTRIBUTE_TEXT {'name': 'Jack', 'message': 'I hope Kamala wins the election!'}
+2024-10-28 11:03:47,062 - system - ERROR - Traceback (most recent call last):
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/main.py", line 51, in call_default_cloud_run
+    ret_val = func_to_apply(**request_params)
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/utils/luleo.py", line 199, in contribute_text
+    bucket = storage.Client().bucket("your_bucket_name")  # Initialize storage bucket
+AttributeError: module 'firebase_admin.storage' has no attribute 'Client'
+
