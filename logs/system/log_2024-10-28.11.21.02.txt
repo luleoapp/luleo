@@ -1,0 +1,54 @@
+2024-10-28 15:18:40,488 - system - INFO - DEBUGGING THIS APP
+2024-10-28 15:18:40,488 - system - INFO - Python executable: /usr/local/bin/python
+2024-10-28 15:18:40,488 - system - INFO - Python version: 3.9.20 (main, Oct 19 2024, 01:00:38) 
+[GCC 12.2.0]
+2024-10-28 15:18:40,488 - system - INFO - Virtual environment: None
+2024-10-28 15:18:40,488 - system - INFO - Testing this - localhost
+2024-10-28 15:18:40,537 - system - INFO - Received request
+2024-10-28 15:18:40,537 - system - INFO - Request method: POST
+2024-10-28 15:18:40,537 - system - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Accept: application/json, text/plain, */*
+Content-Type: application/json
+User-Agent: axios/1.6.7
+Content-Length: 84
+X-Cloud-Trace-Context: e566fef1a9cfc9c0691eab64d2b4f22f/2165496369992539226;o=1
+Traceparent: 00-e566fef1a9cfc9c0691eab64d2b4f22f-1e0d6379a7cd9c5a-01
+X-Forwarded-For: 2600:1900:0:2d06::201
+X-Forwarded-Proto: https
+Forwarded: for="[2600:1900:0:2d06::201]";proto=https
+Accept-Encoding: gzip, compress, deflate, br
+
+
+2024-10-28 15:18:40,538 - system - INFO - Request data: b'{"REQUEST_TYPE":"PROCESS_USER_UPLOAD","PARAMS":{"upload_id":"0IjLFLiK2ElVildcttBc"}}'
+2024-10-28 15:18:40,539 - system - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': '0IjLFLiK2ElVildcttBc'}}
+2024-10-28 15:18:40,539 - system - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-10-28 15:18:40,540 - system - INFO - PARAMS: {'upload_id': '0IjLFLiK2ElVildcttBc'}
+2024-10-28 15:18:40,540 - system - INFO - Applying function: process_user_upload
+2024-10-28 15:18:40,734 - system - INFO - ERROR : User input 0IjLFLiK2ElVildcttBc is not human, skipping classification
+2024-10-28 15:18:40,734 - system - INFO - Function returned: None
+2024-10-28 15:18:40,734 - system - WARNING - Function returned None for REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-10-28 15:18:46,148 - system - INFO - Log file uploaded to GitHub: logs/system/log_2024-10-28.11.18.40.txt
+2024-10-28 15:18:51,383 - system - INFO - Log file uploaded to GitHub: logs/llm/log_2024-10-28.11.18.46.txt
+2024-10-28 15:21:02,559 - system - INFO - Received request
+2024-10-28 15:21:02,559 - system - INFO - Request method: POST
+2024-10-28 15:21:02,559 - system - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Accept: application/json, text/plain, */*
+Content-Type: application/json
+User-Agent: axios/1.6.7
+Content-Length: 84
+X-Cloud-Trace-Context: 27f14448f030dcb3325d8e89263b5806/12122692563518339555;o=1
+Traceparent: 00-27f14448f030dcb3325d8e89263b5806-a83c74a861c7b9e3-01
+X-Forwarded-For: 2600:1900:0:2d06::201
+X-Forwarded-Proto: https
+Forwarded: for="[2600:1900:0:2d06::201]";proto=https
+Accept-Encoding: gzip, compress, deflate, br
+
+
+2024-10-28 15:21:02,560 - system - INFO - Request data: b'{"REQUEST_TYPE":"PROCESS_USER_UPLOAD","PARAMS":{"upload_id":"RQ5Vt3ZeJenSdiRWIbhu"}}'
+2024-10-28 15:21:02,560 - system - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': 'RQ5Vt3ZeJenSdiRWIbhu'}}
+2024-10-28 15:21:02,560 - system - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-10-28 15:21:02,560 - system - INFO - PARAMS: {'upload_id': 'RQ5Vt3ZeJenSdiRWIbhu'}
+2024-10-28 15:21:02,560 - system - INFO - Applying function: process_user_upload
+2024-10-28 15:21:02,609 - system - INFO - ERROR : User input RQ5Vt3ZeJenSdiRWIbhu is not human, skipping classification
+2024-10-28 15:21:02,609 - system - INFO - Function returned: None
+2024-10-28 15:21:02,609 - system - WARNING - Function returned None for REQUEST_TYPE: PROCESS_USER_UPLOAD
