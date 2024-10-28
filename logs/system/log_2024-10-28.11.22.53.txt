@@ -1,0 +1,68 @@
+2024-10-28 11:20:42,222 - system - INFO - DEBUGGING THIS APP
+2024-10-28 11:20:42,223 - system - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-10-28 11:20:42,223 - system - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-10-28 11:20:42,223 - system - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-10-28 11:20:42,223 - system - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-10-28 11:20:44,275 - system - INFO - Received request
+2024-10-28 11:20:44,276 - system - INFO - Request method: POST
+2024-10-28 11:20:44,276 - system - INFO - Request headers: Host: localhost:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 110
+
+
+2024-10-28 11:20:44,276 - system - INFO - Request data: b'{"REQUEST_TYPE": "CONTRIBUTE_TEXT", "PARAMS": {"name": "Jack", "message": "I hope Kamala wins the election!"}}'
+2024-10-28 11:20:44,276 - system - INFO - Request JSON: {'REQUEST_TYPE': 'CONTRIBUTE_TEXT', 'PARAMS': {'name': 'Jack', 'message': 'I hope Kamala wins the election!'}}
+2024-10-28 11:20:44,277 - system - INFO - REQUEST_TYPE: CONTRIBUTE_TEXT
+2024-10-28 11:20:44,277 - system - INFO - PARAMS: {'name': 'Jack', 'message': 'I hope Kamala wins the election!'}
+2024-10-28 11:20:44,277 - system - INFO - Applying function: contribute_text
+2024-10-28 11:20:44,592 - system - INFO - Function returned: {'success': 'Your message has been sent successfully!', 'upload_id': 'Bpy2ujBzRSMhJbEJaHkZ'}
+2024-10-28 11:20:50,318 - system - INFO - Log file uploaded to GitHub: logs/system/log_2024-10-28.11.20.44.txt
+2024-10-28 11:20:56,067 - system - INFO - Log file uploaded to GitHub: logs/llm/log_2024-10-28.11.20.50.txt
+2024-10-28 11:21:01,167 - system - INFO - Received request
+2024-10-28 11:21:01,167 - system - INFO - Request method: POST
+2024-10-28 11:21:01,168 - system - INFO - Request headers: Host: localhost:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 109
+
+
+2024-10-28 11:21:01,168 - system - INFO - Request data: b'{"REQUEST_TYPE": "CONTRIBUTE_TEXT", "PARAMS": {"name": "Jack", "message": "I hope Trump wins the election!"}}'
+2024-10-28 11:21:01,169 - system - INFO - Request JSON: {'REQUEST_TYPE': 'CONTRIBUTE_TEXT', 'PARAMS': {'name': 'Jack', 'message': 'I hope Trump wins the election!'}}
+2024-10-28 11:21:01,169 - system - INFO - REQUEST_TYPE: CONTRIBUTE_TEXT
+2024-10-28 11:21:01,169 - system - INFO - PARAMS: {'name': 'Jack', 'message': 'I hope Trump wins the election!'}
+2024-10-28 11:21:01,169 - system - INFO - Applying function: contribute_text
+2024-10-28 11:21:01,313 - system - INFO - Function returned: {'success': 'Your message has been sent successfully!', 'upload_id': 'RQ5Vt3ZeJenSdiRWIbhu'}
+2024-10-28 11:21:06,533 - system - INFO - Log file uploaded to GitHub: logs/system/log_2024-10-28.11.21.01.txt
+2024-10-28 11:21:11,655 - system - INFO - Log file uploaded to GitHub: logs/llm/log_2024-10-28.11.21.06.txt
+2024-10-28 11:22:53,027 - system - INFO - Received request
+2024-10-28 11:22:53,028 - system - INFO - Request method: POST
+2024-10-28 11:22:53,029 - system - INFO - Request headers: Host: localhost:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 79
+
+
+2024-10-28 11:22:53,029 - system - INFO - Request data: b'{"REQUEST_TYPE": "ADD_PRAYER", "PARAMS": {"upload_id": "RQ5Vt3ZeJenSdiRWIbhu"}}'
+2024-10-28 11:22:53,029 - system - INFO - Request JSON: {'REQUEST_TYPE': 'ADD_PRAYER', 'PARAMS': {'upload_id': 'RQ5Vt3ZeJenSdiRWIbhu'}}
+2024-10-28 11:22:53,029 - system - INFO - REQUEST_TYPE: ADD_PRAYER
+2024-10-28 11:22:53,030 - system - INFO - PARAMS: {'upload_id': 'RQ5Vt3ZeJenSdiRWIbhu'}
+2024-10-28 11:22:53,030 - system - INFO - Applying function: add_prayer
+2024-10-28 11:22:53,246 - system - ERROR - Error in ADD_PRAYER {'upload_id': 'RQ5Vt3ZeJenSdiRWIbhu'}
+2024-10-28 11:22:53,248 - system - ERROR - Traceback (most recent call last):
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/main.py", line 51, in call_default_cloud_run
+    ret_val = func_to_apply(**request_params)
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/utils/luleo.py", line 246, in add_prayer
+    prayer_prompt = prayer_prompt.replace("{{INPUT_SUMMARY}}", d_input["input_summary"])
+KeyError: 'input_summary'
+
