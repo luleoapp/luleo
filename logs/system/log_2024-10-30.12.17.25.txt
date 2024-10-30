@@ -1,0 +1,29 @@
+2024-10-30 16:17:25,143 - system - INFO - DEBUGGING THIS APP
+2024-10-30 16:17:25,144 - system - INFO - Python executable: /usr/local/bin/python
+2024-10-30 16:17:25,144 - system - INFO - Python version: 3.9.20 (main, Oct 19 2024, 01:00:38) 
+[GCC 12.2.0]
+2024-10-30 16:17:25,144 - system - INFO - Virtual environment: None
+2024-10-30 16:17:25,144 - system - INFO - Testing this - localhost
+2024-10-30 16:17:25,165 - system - INFO - Received request
+2024-10-30 16:17:25,166 - system - INFO - Request method: POST
+2024-10-30 16:17:25,166 - system - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Accept: application/json, text/plain, */*
+Content-Type: application/json
+User-Agent: axios/1.6.7
+Content-Length: 84
+X-Cloud-Trace-Context: 7e96b8b5b5cb7f2deb4d938844e31717/13143386798478553865;o=1
+Traceparent: 00-7e96b8b5b5cb7f2deb4d938844e31717-b666b0a814df7309-01
+X-Forwarded-For: 2600:1900:0:2d03::200
+X-Forwarded-Proto: https
+Forwarded: for="[2600:1900:0:2d03::200]";proto=https
+Accept-Encoding: gzip, compress, deflate, br
+
+
+2024-10-30 16:17:25,166 - system - INFO - Request data: b'{"REQUEST_TYPE":"PROCESS_USER_UPLOAD","PARAMS":{"upload_id":"b8uFZMogbBIN3R80nbv7"}}'
+2024-10-30 16:17:25,166 - system - INFO - Request JSON: {'REQUEST_TYPE': 'PROCESS_USER_UPLOAD', 'PARAMS': {'upload_id': 'b8uFZMogbBIN3R80nbv7'}}
+2024-10-30 16:17:25,166 - system - INFO - REQUEST_TYPE: PROCESS_USER_UPLOAD
+2024-10-30 16:17:25,167 - system - INFO - PARAMS: {'upload_id': 'b8uFZMogbBIN3R80nbv7'}
+2024-10-30 16:17:25,167 - system - INFO - Applying function: process_user_upload
+2024-10-30 16:17:25,314 - system - INFO - ERROR : User input b8uFZMogbBIN3R80nbv7 is not human, skipping classification
+2024-10-30 16:17:25,315 - system - INFO - Function returned: None
+2024-10-30 16:17:25,315 - system - WARNING - Function returned None for REQUEST_TYPE: PROCESS_USER_UPLOAD
