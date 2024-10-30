@@ -1,0 +1,23 @@
+2024-10-30 11:10:14,546 - system - INFO - DEBUGGING THIS APP
+2024-10-30 11:10:14,546 - system - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-10-30 11:10:14,546 - system - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-10-30 11:10:14,546 - system - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-10-30 11:10:14,546 - system - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-10-30 11:12:37,113 - system - INFO - Received request
+2024-10-30 11:12:37,114 - system - INFO - Request method: POST
+2024-10-30 11:12:37,114 - system - INFO - Request headers: Host: localhost:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 111
+
+
+2024-10-30 11:12:37,115 - system - INFO - Request data: b'{"REQUEST_TYPE": "CONTRIBUTE_TEXT", "PARAMS": {"name": "Roger", "message": "I hope Kamala wins the election!"}}'
+2024-10-30 11:12:37,116 - system - INFO - Request JSON: {'REQUEST_TYPE': 'CONTRIBUTE_TEXT', 'PARAMS': {'name': 'Roger', 'message': 'I hope Kamala wins the election!'}}
+2024-10-30 11:12:37,116 - system - INFO - REQUEST_TYPE: CONTRIBUTE_TEXT
+2024-10-30 11:12:37,116 - system - INFO - PARAMS: {'name': 'Roger', 'message': 'I hope Kamala wins the election!'}
+2024-10-30 11:12:37,116 - system - INFO - Applying function: contribute_text
+2024-10-30 11:12:37,922 - system - INFO - Function returned: {'success': 'Your message has been sent successfully!', 'upload_id': 'GFi2iW7M13bL1sXAHDHj'}
