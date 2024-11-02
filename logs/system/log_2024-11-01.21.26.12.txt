@@ -1,0 +1,28 @@
+2024-11-01 21:25:56,001 - system - INFO - DEBUGGING THIS APP
+2024-11-01 21:25:56,002 - system - INFO - Python executable: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv/bin/python
+2024-11-01 21:25:56,002 - system - INFO - Python version: 3.9.19 (main, May  6 2024, 14:46:57) 
+[Clang 14.0.6 ]
+2024-11-01 21:25:56,002 - system - INFO - Virtual environment: /Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/.venv
+2024-11-01 21:25:56,002 - system - INFO - Testing this - Raghuvars-MBP.fios-router.home
+2024-11-01 21:26:12,078 - system - INFO - Received request
+2024-11-01 21:26:12,078 - system - INFO - Request method: POST
+2024-11-01 21:26:12,079 - system - INFO - Request headers: Host: 127.0.0.1:8080
+User-Agent: python-requests/2.32.3
+Accept-Encoding: gzip, deflate, br, zstd
+Accept: */*
+Connection: keep-alive
+Content-Length: 93
+Content-Type: application/json
+
+
+2024-11-01 21:26:12,079 - system - INFO - Request data: b'{"REQUEST_TYPE": "GET_ANSWER_TO_QUESTION", "PARAMS": {"question_id": "2AruyQvLsYK5slzwBG89"}}'
+2024-11-01 21:26:12,079 - system - INFO - Request JSON: {'REQUEST_TYPE': 'GET_ANSWER_TO_QUESTION', 'PARAMS': {'question_id': '2AruyQvLsYK5slzwBG89'}}
+2024-11-01 21:26:12,079 - system - INFO - REQUEST_TYPE: GET_ANSWER_TO_QUESTION
+2024-11-01 21:26:12,080 - system - INFO - PARAMS: {'question_id': '2AruyQvLsYK5slzwBG89'}
+2024-11-01 21:26:12,080 - system - INFO - Applying function: get_answers_to_question
+2024-11-01 21:26:12,080 - system - ERROR - Error in GET_ANSWER_TO_QUESTION {'question_id': '2AruyQvLsYK5slzwBG89'}
+2024-11-01 21:26:12,080 - system - ERROR - Traceback (most recent call last):
+  File "/Users/raghuvar/Code/GoodSide-organized/code/luleo/process_daily_narrative/main.py", line 51, in call_default_cloud_run
+    ret_val = func_to_apply(**request_params)
+TypeError: get_answers_to_question() missing 1 required positional argument: 'model_name'
+
