@@ -1,0 +1,41 @@
+2024-11-07 04:30:04,536 - system - INFO - DEBUGGING THIS APP
+2024-11-07 04:30:04,536 - system - INFO - Python executable: /usr/local/bin/python
+2024-11-07 04:30:04,536 - system - INFO - Python version: 3.9.20 (main, Oct 19 2024, 01:00:38) 
+[GCC 12.2.0]
+2024-11-07 04:30:04,536 - system - INFO - Virtual environment: None
+2024-11-07 04:30:04,536 - system - INFO - Testing this - localhost
+2024-11-07 04:30:04,636 - system - INFO - Received request
+2024-11-07 04:30:04,637 - system - INFO - Request method: POST
+2024-11-07 04:30:04,637 - system - INFO - Request headers: Host: process-daily-narrative-418435618601.us-central1.run.app
+Content-Type: application/json
+X-Cloudscheduler: true
+X-Cloudscheduler-Scheduletime: 2024-11-06T20:30:00-08:00
+X-Cloudscheduler-Jobname: hourly_qualia_update
+Content-Length: 53
+User-Agent: Google-Cloud-Scheduler
+X-Cloud-Trace-Context: 74db4e5d3c0cc97cf43e895d064ad539/14636244980651762259;o=1
+Traceparent: 00-74db4e5d3c0cc97cf43e895d064ad539-cb1e63438557a253-01
+X-Forwarded-For: 35.187.132.166
+X-Forwarded-Proto: https
+Forwarded: for="35.187.132.166";proto=https
+Accept-Encoding: gzip, deflate, br
+
+
+2024-11-07 04:30:04,637 - system - INFO - Request data: b'{\n  "REQUEST_TYPE": "QUALIA_UPDATE",\n  "PARAMS": {}\n}'
+2024-11-07 04:30:04,637 - system - INFO - Request JSON: {'REQUEST_TYPE': 'QUALIA_UPDATE', 'PARAMS': {}}
+2024-11-07 04:30:04,637 - system - INFO - REQUEST_TYPE: QUALIA_UPDATE
+2024-11-07 04:30:04,637 - system - INFO - PARAMS: {}
+2024-11-07 04:30:04,637 - system - INFO - Applying function: hourly_update
+2024-11-07 04:30:04,637 - system - INFO - Updating hourly...
+2024-11-07 04:30:04,868 - system - ERROR - Error in QUALIA_UPDATE {}
+2024-11-07 04:30:04,878 - system - ERROR - Traceback (most recent call last):
+  File "/app/main.py", line 51, in call_default_cloud_run
+    ret_val = func_to_apply(**request_params)
+  File "/app/src/scripts.py", line 18, in hourly_update
+    update_qualia()
+  File "/app/utils/qualia.py", line 304, in update_qualia
+    events_to_process = get_events_to_process()
+  File "/app/utils/qualia.py", line 170, in get_events_to_process
+    event_dict = doc.to_dict()
+UnboundLocalError: local variable 'doc' referenced before assignment
+
