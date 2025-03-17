@@ -1,0 +1,1687 @@
+trade_markings/event.hpp:
+
+#pragma once
+
+#include <cstdint>
+#include <memory>
+#include <string>
+
+// Forward declarations for event types from original system
+struct OrderAdd;
+struct OrderReplace;
+struct OrderDelete;
+struct Fill;
+
+namespace bam {
+
+/**
+ * Base class for all market events
+ */
+class Event {
+public:
+    virtual ~Event() = default;
+    
+    int64_t timestamp;
+    int64_t securityId;
+    
+    // Common enum for event type identification
+    enum class Type {
+        OrderAdd,
+        OrderReplace,
+        OrderDelete,
+        Trade,
+        Generic
+    };
+    
+    virtual Type getType() const { return Type::Generic; }
+};
+
+/**
+ * Wrapper class for OrderAdd events
+ */
+class OrderAddEvent : public Event {
+public:
+    explicit OrderAddEvent(const OrderAdd& orderAdd);
+    
+    Type getType() const override { return Type::OrderAdd; }
+    
+    // OrderAdd-specific data
+    int64_t orderId;
+    int64_t price;
+    int64_t quantity;
+    char side; // 'B' for bid, 'A' for ask
+};
+
+/**
+ * Wrapper class for OrderReplace events
+ */
+class OrderReplaceEvent : public Event {
+public:
+    explicit OrderReplaceEvent(const OrderReplace& orderReplace);
+    
+    Type getType() const override { return Type::OrderReplace; }
+    
+    // OrderReplace-specific data
+    int64_t orderId;
+    int64_t oldPrice;
+    int64_t newPrice;
+    int64_t oldQuantity;
+    int64_t newQuantity;
+    char side; // 'B' for bid, 'A' for ask
+};
+
+/**
+ * Wrapper class for OrderDelete events
+ */
+class OrderDeleteEvent : public Event {
+public:
+    explicit OrderDeleteEvent(const OrderDelete& orderDelete);
+    
+    Type getType() const override { return Type::OrderDelete; }
+    
+    // OrderDelete-specific data
+    int64_t orderId;
+    int64_t price;
+    int64_t quantity;
+    char side; // 'B' for bid, 'A' for ask
+};
+
+/**
+ * Wrapper class for Trade events
+ */
+class TradeEvent : public Event {
+public:
+    explicit TradeEvent(const Fill& fill);
+    
+    Type getType() const override { return Type::Trade; }
+    
+    // Trade-specific data
+    int64_t orderId;
+    int64_t price;
+    int64_t quantity;
+    char side; // 'B' for buy, 'A' for sell
+    bool isOrderExecution;
+};
+
+// Factory functions to create event wrappers
+std::shared_ptr<OrderAddEvent> createOrderAddEvent(const OrderAdd& orderAdd);
+std::shared_ptr<OrderReplaceEvent> createOrderReplaceEvent(const OrderReplace& orderReplace);
+std::shared_ptr<OrderDeleteEvent> createOrderDeleteEvent(const OrderDelete& orderDelete);
+std::shared_ptr<TradeEvent> createTradeEvent(const Fill& fill);
+
+} // namespace bam
+
+trade_markings/context.hpp:
+
+#pragma once
+
+#include "event.hpp"
+#include <deque>
+#include <unordered_map>
+#include <vector>
+#include <algorithm>
+
+// Forward declaration for SimpleOrderBook
+class SimpleOrderBook;
+
+namespace bam {
+
+/**
+ * Context provides access to order book state and event history
+ * for trade marking analysis.
+ */
+class Context {
+public:
+    // Reference to order books (owned by EventHandler)
+    std::unordered_map<int64_t, SimpleOrderBook>* books;
+    
+    // Historical events storage
+    std::deque<std::shared_ptr<Event>> eventHistory;
+    
+    // Index mapping for security-specific lookup
+    std::unordered_map<int64_t, std::vector<size_t>> securityEventIndices;
+    
+    /**
+     * Get all events for a specific security within a time range
+     * 
+     * @param securityId The security ID to filter by
+     * @param startTime The start of the time range (inclusive)
+     * @param endTime The end of the time range (inclusive)
+     * @return Vector of events within the specified range
+     */
+    std::vector<std::shared_ptr<Event>> getEventsForSecurity(
+        int64_t securityId, 
+        int64_t startTime, 
+        int64_t endTime
+    ) const;
+    
+    /**
+     * Get all events within a time range (any security)
+     * 
+     * @param startTime The start of the time range (inclusive)
+     * @param endTime The end of the time range (inclusive)
+     * @return Vector of events within the specified range
+     */
+    std::vector<std::shared_ptr<Event>> getEventsInTimeRange(
+        int64_t startTime, 
+        int64_t endTime
+    ) const;
+    
+    /**
+     * Get events of a specific type within a time range for a security
+     * 
+     * @param securityId The security ID to filter by
+     * @param startTime The start of the time range (inclusive)
+     * @param endTime The end of the time range (inclusive)
+     * @return Vector of typed events within the specified range
+     */
+    template<typename T>
+    std::vector<std::shared_ptr<T>> getEventsOfType(
+        int64_t securityId, 
+        int64_t startTime, 
+        int64_t endTime
+    ) const {
+        std::vector<std::shared_ptr<T>> result;
+        auto events = getEventsForSecurity(securityId, startTime, endTime);
+        
+        for (const auto& event : events) {
+            if (auto typedEvent = std::dynamic_pointer_cast<T>(event)) {
+                result.push_back(typedEvent);
+            }
+        }
+        
+        return result;
+    }
+};
+
+} // namespace bam
+
+trade_markings/trade_marking.hpp:
+
+#pragma once
+
+#include "event.hpp"
+#include "context.hpp"
+#include <string>
+#include <functional>
+#include <vector>
+#include <memory>
+
+namespace bam {
+
+/**
+ * TradeMarking defines an analysis that can be applied to trades
+ * based on market state within specified time windows.
+ */
+class TradeMarking {
+public:
+    /**
+     * Constructor with lambda-based analysis function
+     * 
+     * @param name The name of this marking
+     * @param windowStartOffset Time offset from trade (negative = before trade)
+     * @param windowEndOffset Time offset from trade (negative = before, positive = after)
+     * @param analyzeFunc Function that computes the marking value
+     */
+    TradeMarking(
+        std::string name,
+        int64_t windowStartOffset,
+        int64_t windowEndOffset,
+        std::function<std::string(const std::vector<std::shared_ptr<TradeEvent>>&, const Context&)> analyzeFunc
+    );
+    
+    /**
+     * Get the name of this marking
+     * 
+     * @return Marking name
+     */
+    std::string getName() const;
+    
+    /**
+     * Get the window start offset from trade time
+     * 
+     * @return Window start offset in nanoseconds
+     */
+    int64_t getWindowStartOffset() const;
+    
+    /**
+     * Get the window end offset from trade time
+     * 
+     * @return Window end offset in nanoseconds
+     */
+    int64_t getWindowEndOffset() const;
+    
+    /**
+     * Analyze the trades and generate a marking value
+     * 
+     * @param conflatedTrades The trades to analyze (at least one)
+     * @param context The context providing access to market data
+     * @return The marking value as a string
+     */
+    std::string analyze(
+        const std::vector<std::shared_ptr<TradeEvent>>& conflatedTrades, 
+        const Context& context
+    ) const;
+    
+private:
+    std::string _name;
+    int64_t _windowStartOffset;  // Time offset from trade (negative = before)
+    int64_t _windowEndOffset;    // Time offset from trade (negative = before, positive = after)
+    std::function<std::string(const std::vector<std::shared_ptr<TradeEvent>>&, const Context&)> _analyzeFunc;
+};
+
+} // namespace bam
+
+trade_markings/marked_trade.hpp:
+
+#pragma once
+
+#include <cstdint>
+#include <string>
+#include <unordered_map>
+
+namespace bam {
+
+/**
+ * Structure to hold a trade with its computed markings
+ */
+struct MarkedTrade {
+    int64_t securityId;
+    int64_t timestamp;
+    double price;         // Volume-weighted average price for conflated trades
+    int totalQuantity;    // Sum of all trade quantities
+    int tradeCount;       // Number of individual trades in this conflated trade
+    char side;            // 'B' for buy, 'A' for sell
+    std::unordered_map<std::string, std::string> markings;
+};
+
+} // namespace bam
+
+trade_markings/trade_marking_manager.hpp:
+
+#pragma once
+
+#include "event.hpp"
+#include "context.hpp"
+#include "trade_marking.hpp"
+#include "marked_trade.hpp"
+
+#include <deque>
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
+namespace bam {
+
+/**
+ * TradeMarkingManager coordinates the collection of events, 
+ * management of pending trades, and calculation of trade markings.
+ */
+class TradeMarkingManager {
+public:
+    /**
+     * Constructor
+     * 
+     * @param books Pointer to the map of order books indexed by security ID
+     */
+    TradeMarkingManager(std::unordered_map<int64_t, SimpleOrderBook>* books);
+    
+    /**
+     * Add a new marking definition
+     * 
+     * @param marking Unique pointer to the marking to add
+     */
+    void addMarking(std::unique_ptr<TradeMarking> marking);
+    
+    /**
+     * Set trade conflation window
+     * 
+     * @param nanoseconds The conflation window in nanoseconds (default: 1 microsecond)
+     */
+    void setTradeConflationWindow(int64_t nanoseconds = 1'000);
+    
+    /**
+     * Process an incoming event
+     * 
+     * @param event The event to process
+     */
+    void processEvent(std::shared_ptr<Event> event);
+    
+    /**
+     * Retrieve completed trade markings
+     * 
+     * @return Reference to the vector of completed marked trades
+     */
+    const std::vector<MarkedTrade>& getCompletedTrades() const;
+    
+private:
+    /**
+     * Process a trade event specifically
+     * 
+     * @param trade The trade event to process
+     */
+    void processTrade(std::shared_ptr<TradeEvent> trade);
+    
+    /**
+     * Conflate trade data into existing pending trade
+     * 
+     * @param existing The existing pending trade to update
+     * @param newTrade The new trade to conflate
+     */
+    void conflateTradeData(PendingTrade& existing, const std::shared_ptr<TradeEvent>& newTrade);
+    
+    /**
+     * Check for completed trade markings based on current time
+     * 
+     * @param currentTime The current timestamp
+     */
+    void checkCompletedTrades(int64_t currentTime);
+    
+    /**
+     * Clean up old events beyond maximum lookback
+     * 
+     * @param currentTime The current timestamp
+     */
+    void cleanupOldEvents(int64_t currentTime);
+    
+    /**
+     * Log completed trade with its markings
+     * 
+     * @param trade The pending trade that is now complete
+     */
+    void logTradeResults(const PendingTrade& trade);
+    
+    /**
+     * Calculate maximum lookback and lookahead across all markings
+     */
+    void updateMaxTimeOffsets();
+    
+    // Context with event history and order books
+    Context _context;
+    
+    // Collection of trade markings
+    std::vector<std::unique_ptr<TradeMarking>> _markings;
+    
+    // Max time offsets for buffering and completion
+    int64_t _maxLookbackOffset = 0;   // Most negative window start (how far back to keep events)
+    int64_t _maxLookaheadOffset = 0;  // Most positive window end (how far forward to wait)
+    
+    // Trade conflation window
+    int64_t _conflationWindow = 1'000; // Default: 1 microsecond
+    
+    // Structure to track pending trades
+    struct PendingTrade {
+        int64_t securityId;
+        int64_t baseTimestamp;    // Timestamp used for window calculations
+        int64_t completionTime;
+        std::vector<std::shared_ptr<TradeEvent>> conflatedTrades;
+        std::unordered_map<std::string, std::string> results;
+    };
+    
+    // Queue of trades awaiting marking completion
+    std::deque<PendingTrade> _pendingTrades;
+    
+    // Collection of completed marked trades
+    std::vector<MarkedTrade> _completedTrades;
+};
+
+} // namespace bam
+
+trade_markings/event.cpp:
+
+#include "../../../include/bam/trade_markings/event.hpp"
+#include "../../../examples/order_book_events/event_handler.hpp"
+
+#include <memory>
+
+namespace bam {
+
+// OrderAddEvent constructor
+OrderAddEvent::OrderAddEvent(const OrderAdd& orderAdd) {
+    timestamp = orderAdd.timestamp;
+    securityId = orderAdd.book_id;
+    orderId = orderAdd.order_id;
+    price = orderAdd.price;
+    quantity = orderAdd.size;
+    side = orderAdd.is_bid ? 'B' : 'A';
+}
+
+// OrderReplaceEvent constructor
+OrderReplaceEvent::OrderReplaceEvent(const OrderReplace& orderReplace) {
+    timestamp = orderReplace.timestamp;
+    securityId = orderReplace.book_id;
+    orderId = orderReplace.order_id;
+    newPrice = orderReplace.new_price;
+    newQuantity = orderReplace.new_size;
+    side = orderReplace.is_bid ? 'B' : 'A';
+    
+    // Note: oldPrice and oldQuantity need to be set separately
+    // since they're not available in the OrderReplace message
+}
+
+// OrderDeleteEvent constructor
+OrderDeleteEvent::OrderDeleteEvent(const OrderDelete& orderDelete) {
+    timestamp = orderDelete.timestamp;
+    securityId = orderDelete.book_id;
+    orderId = orderDelete.order_id;
+    side = orderDelete.is_bid ? 'B' : 'A';
+    
+    // Note: price and quantity need to be set separately
+    // since they're not available in the OrderDelete message
+}
+
+// TradeEvent constructor
+TradeEvent::TradeEvent(const Fill& fill) {
+    timestamp = fill.timestamp;
+    securityId = fill.book_id;
+    price = fill.price;
+    quantity = fill.size;
+    side = fill.side > 0 ? 'B' : 'A';  // 1 = buy, -1 = sell
+    orderId = 0;  // Fill doesn't have order ID
+    isOrderExecution = false;
+}
+
+// Factory function to create an OrderAddEvent
+std::shared_ptr<OrderAddEvent> createOrderAddEvent(const OrderAdd& orderAdd) {
+    return std::make_shared<OrderAddEvent>(orderAdd);
+}
+
+// Factory function to create an OrderReplaceEvent
+std::shared_ptr<OrderReplaceEvent> createOrderReplaceEvent(const OrderReplace& orderReplace) {
+    auto event = std::make_shared<OrderReplaceEvent>(orderReplace);
+    // Note: oldPrice and oldQuantity need to be set by the caller
+    return event;
+}
+
+// Factory function to create an OrderDeleteEvent
+std::shared_ptr<OrderDeleteEvent> createOrderDeleteEvent(const OrderDelete& orderDelete) {
+    auto event = std::make_shared<OrderDeleteEvent>(orderDelete);
+    // Note: price and quantity need to be set by the caller
+    return event;
+}
+
+// Factory function to create a TradeEvent from Fill
+std::shared_ptr<TradeEvent> createTradeEvent(const Fill& fill) {
+    return std::make_shared<TradeEvent>(fill);
+}
+
+} // namespace bam
+
+trade_markings/context.cpp:
+
+#include "../../../include/bam/trade_markings/context.hpp"
+
+#include <algorithm>
+
+namespace bam {
+
+std::vector<std::shared_ptr<Event>> Context::getEventsForSecurity(
+    int64_t securityId, 
+    int64_t startTime, 
+    int64_t endTime) const {
+    
+    std::vector<std::shared_ptr<Event>> result;
+    
+    // Look up the security's event indices
+    auto it = securityEventIndices.find(securityId);
+    if (it == securityEventIndices.end()) {
+        return result; // No events for this security
+    }
+    
+    // Get all events for this security
+    for (size_t idx : it->second) {
+        if (idx < eventHistory.size()) {
+            const auto& event = eventHistory[idx];
+            
+            // Check time range
+            if (event->timestamp >= startTime && event->timestamp <= endTime) {
+                result.push_back(event);
+            }
+        }
+    }
+    
+    // Sort by timestamp
+    std::sort(result.begin(), result.end(),
+              [](const auto& a, const auto& b) { return a->timestamp < b->timestamp; });
+    
+    return result;
+}
+
+std::vector<std::shared_ptr<Event>> Context::getEventsInTimeRange(
+    int64_t startTime, 
+    int64_t endTime) const {
+    
+    std::vector<std::shared_ptr<Event>> result;
+    
+    // Filter all events in the given time range
+    for (const auto& event : eventHistory) {
+        if (event->timestamp >= startTime && event->timestamp <= endTime) {
+            result.push_back(event);
+        }
+    }
+    
+    // Sort by timestamp
+    std::sort(result.begin(), result.end(),
+              [](const auto& a, const auto& b) { return a->timestamp < b->timestamp; });
+    
+    return result;
+}
+
+} // namespace bam
+
+trade_markings/context.cpp:
+
+#include "../../../include/bam/trade_markings/context.hpp"
+
+#include <algorithm>
+
+namespace bam {
+
+std::vector<std::shared_ptr<Event>> Context::getEventsForSecurity(
+    int64_t securityId, 
+    int64_t startTime, 
+    int64_t endTime) const {
+    
+    std::vector<std::shared_ptr<Event>> result;
+    
+    // Look up the security's event indices
+    auto it = securityEventIndices.find(securityId);
+    if (it == securityEventIndices.end()) {
+        return result; // No events for this security
+    }
+    
+    // Get all events for this security
+    for (size_t idx : it->second) {
+        if (idx < eventHistory.size()) {
+            const auto& event = eventHistory[idx];
+            
+            // Check time range
+            if (event->timestamp >= startTime && event->timestamp <= endTime) {
+                result.push_back(event);
+            }
+        }
+    }
+    
+    // Sort by timestamp
+    std::sort(result.begin(), result.end(),
+              [](const auto& a, const auto& b) { return a->timestamp < b->timestamp; });
+    
+    return result;
+}
+
+std::vector<std::shared_ptr<Event>> Context::getEventsInTimeRange(
+    int64_t startTime, 
+    int64_t endTime) const {
+    
+    std::vector<std::shared_ptr<Event>> result;
+    
+    // Filter all events in the given time range
+    for (const auto& event : eventHistory) {
+        if (event->timestamp >= startTime && event->timestamp <= endTime) {
+            result.push_back(event);
+        }
+    }
+    
+    // Sort by timestamp
+    std::sort(result.begin(), result.end(),
+              [](const auto& a, const auto& b) { return a->timestamp < b->timestamp; });
+    
+    return result;
+}
+
+} // namespace bam
+
+trade_markings/trade_marking_manager.cpp:
+
+#include "../../../include/bam/trade_markings/trade_marking_manager.hpp"
+
+#include <algorithm>
+#include <iostream>
+#include <limits>
+#include <sstream>
+#include <iomanip>
+
+namespace bam {
+
+TradeMarkingManager::TradeMarkingManager(std::unordered_map<int64_t, SimpleOrderBook>* books)
+    : _maxLookbackOffset(0), 
+      _maxLookaheadOffset(0),
+      _conflationWindow(1'000) {
+    
+    // Initialize context with order books
+    _context.books = books;
+}
+
+void TradeMarkingManager::addMarking(std::unique_ptr<TradeMarking> marking) {
+    // Update max time offsets
+    _maxLookbackOffset = std::min(_maxLookbackOffset, marking->getWindowStartOffset());
+    _maxLookaheadOffset = std::max(_maxLookaheadOffset, marking->getWindowEndOffset());
+    
+    // Add the marking
+    _markings.push_back(std::move(marking));
+}
+
+void TradeMarkingManager::setTradeConflationWindow(int64_t nanoseconds) {
+    if (nanoseconds < 0) {
+        throw std::invalid_argument("Conflation window must be non-negative");
+    }
+    
+    _conflationWindow = nanoseconds;
+}
+
+void TradeMarkingManager::processEvent(std::shared_ptr<Event> event) {
+    // Store the event in context
+    _context.eventHistory.push_back(event);
+    
+    // Update security-specific indices for faster lookup
+    auto& indices = _context.securityEventIndices[event->securityId];
+    indices.push_back(_context.eventHistory.size() - 1);
+    
+    // If this is a trade event, process it further
+    auto tradeEvent = std::dynamic_pointer_cast<TradeEvent>(event);
+    if (tradeEvent) {
+        processTrade(tradeEvent);
+    }
+    
+    // Check for completed trades
+    checkCompletedTrades(event->timestamp);
+    
+    // Clean up old events
+    cleanupOldEvents(event->timestamp);
+}
+
+void TradeMarkingManager::processTrade(std::shared_ptr<TradeEvent> trade) {
+    // If conflation is enabled, check if this trade can be conflated with an existing one
+    if (_conflationWindow > 0) {
+        // Look for a pending trade for the same security within the conflation window
+        for (auto& pendingTrade : _pendingTrades) {
+            if (pendingTrade.securityId == trade->securityId &&
+                std::abs(pendingTrade.baseTimestamp - trade->timestamp) <= _conflationWindow) {
+                
+                // Add this trade to the conflated set
+                pendingTrade.conflatedTrades.push_back(trade);
+                
+                // Update the pending trade's data
+                conflateTradeData(pendingTrade, trade);
+                
+                // Trade has been conflated, no need to create a new pending trade
+                return;
+            }
+        }
+    }
+    
+    // Create a new pending trade with completion time based on max lookahead window
+    PendingTrade pendingTrade;
+    pendingTrade.securityId = trade->securityId;
+    pendingTrade.baseTimestamp = trade->timestamp;
+    pendingTrade.completionTime = trade->timestamp + _maxLookaheadOffset;
+    pendingTrade.conflatedTrades.push_back(trade);
+    
+    // For trades that don't need lookahead (no post-trade window), compute markings immediately
+    if (_maxLookaheadOffset == 0) {
+        for (const auto& marking : _markings) {
+            std::string result = marking->analyze(pendingTrade.conflatedTrades, _context);
+            pendingTrade.results[marking->getName()] = result;
+        }
+        logTradeResults(pendingTrade);
+    } else {
+        // Otherwise, queue it for later marking computation
+        _pendingTrades.push_back(std::move(pendingTrade));
+    }
+}
+
+void TradeMarkingManager::conflateTradeData(PendingTrade& existing, const std::shared_ptr<TradeEvent>& newTrade) {
+    // Calculate total volume so far
+    int64_t totalVolume = 0;
+    int64_t totalValue = 0; // price * quantity
+    
+    for (const auto& trade : existing.conflatedTrades) {
+        totalVolume += trade->quantity;
+        totalValue += trade->price * trade->quantity;
+    }
+    
+    // Update the base timestamp to the earliest timestamp
+    if (newTrade->timestamp < existing.baseTimestamp) {
+        existing.baseTimestamp = newTrade->timestamp;
+        // Update completion time as well
+        existing.completionTime = existing.baseTimestamp + _maxLookaheadOffset;
+    }
+}
+
+void TradeMarkingManager::checkCompletedTrades(int64_t currentTime) {
+    // Find trades that are ready to be marked
+    auto it = _pendingTrades.begin();
+    while (it != _pendingTrades.end()) {
+        if (currentTime >= it->completionTime) {
+            // Compute markings for each registered trade marking
+            for (const auto& marking : _markings) {
+                std::string result = marking->analyze(it->conflatedTrades, _context);
+                it->results[marking->getName()] = result;
+            }
+            
+            // Log the results and add to completed trades
+            logTradeResults(*it);
+            
+            // Remove from pending list
+            it = _pendingTrades.erase(it);
+        } else {
+            ++it;
+        }
+    }
+}
+
+void TradeMarkingManager::cleanupOldEvents(int64_t currentTime) {
+    // Skip if no events or maxLookbackOffset is zero
+    if (_context.eventHistory.empty() || _maxLookbackOffset == 0) {
+        return;
+    }
+    
+    // Calculate the cutoff time - max needed is current time + maxLookbackOffset
+    // (maxLookbackOffset is negative, so this is actually a subtraction)
+    int64_t cutoffTime = currentTime + _maxLookbackOffset;
+    
+    // Find the first event after the cutoff time
+    auto it = std::find_if(_context.eventHistory.begin(), _context.eventHistory.end(),
+                          [cutoffTime](const auto& event) {
+                              return event->timestamp >= cutoffTime;
+                          });
+    
+    if (it != _context.eventHistory.begin()) {
+        // Calculate how many events to remove
+        size_t removeCount = std::distance(_context.eventHistory.begin(), it);
+        
+        // Update security indices
+        for (auto& [securityId, indices] : _context.securityEventIndices) {
+            // Remove indices for deleted events
+            indices.erase(
+                std::remove_if(indices.begin(), indices.end(),
+                              [removeCount](size_t idx) { return idx < removeCount; }),
+                indices.end()
+            );
+            
+            // Adjust remaining indices
+            for (auto& idx : indices) {
+                idx -= removeCount;
+            }
+        }
+        
+        // Remove old events
+        _context.eventHistory.erase(_context.eventHistory.begin(), it);
+    }
+}
+
+void TradeMarkingManager::logTradeResults(const PendingTrade& pendingTrade) {
+    // Create a MarkedTrade and add it to completed trades
+    MarkedTrade markedTrade;
+    markedTrade.securityId = pendingTrade.securityId;
+    markedTrade.timestamp = pendingTrade.baseTimestamp;
+    markedTrade.tradeCount = pendingTrade.conflatedTrades.size();
+    
+    // Calculate volume-weighted average price and total quantity
+    int64_t totalQuantity = 0;
+    int64_t priceQuantitySum = 0;
+    
+    for (const auto& trade : pendingTrade.conflatedTrades) {
+        totalQuantity += trade->quantity;
+        priceQuantitySum += trade->price * trade->quantity;
+    }
+    
+    markedTrade.totalQuantity = totalQuantity;
+    
+    // Set VWAP if we have quantity, otherwise use first trade's price
+    if (totalQuantity > 0) {
+        markedTrade.price = static_cast<double>(priceQuantitySum) / totalQuantity;
+    } else if (!pendingTrade.conflatedTrades.empty()) {
+        markedTrade.price = pendingTrade.conflatedTrades.front()->price;
+    }
+    
+    // Use side from first trade
+    if (!pendingTrade.conflatedTrades.empty()) {
+        markedTrade.side = pendingTrade.conflatedTrades.front()->side;
+    } else {
+        markedTrade.side = '?';
+    }
+    
+    // Copy all markings
+    markedTrade.markings = pendingTrade.results;
+    
+    // Add to completed trades
+    _completedTrades.push_back(markedTrade);
+    
+    // Optionally log to console or file
+    // Commented out to avoid polluting the terminal
+    /*
+    std::stringstream ss;
+    ss << "Trade marked: Security=" << markedTrade.securityId
+       << " Time=" << markedTrade.timestamp
+       << " Price=" << std::fixed << std::setprecision(2) << (markedTrade.price / 10000.0)
+       << " Qty=" << markedTrade.totalQuantity
+       << " Count=" << markedTrade.tradeCount;
+    
+    for (const auto& [name, value] : markedTrade.markings) {
+        ss << " " << name << "=" << value;
+    }
+    
+    std::cout << ss.str() << std::endl;
+    */
+}
+
+void TradeMarkingManager::updateMaxTimeOffsets() {
+    _maxLookbackOffset = 0;
+    _maxLookaheadOffset = 0;
+    
+    for (const auto& marking : _markings) {
+        _maxLookbackOffset = std::min(_maxLookbackOffset, marking->getWindowStartOffset());
+        _maxLookaheadOffset = std::max(_maxLookaheadOffset, marking->getWindowEndOffset());
+    }
+}
+
+const std::vector<MarkedTrade>& TradeMarkingManager::getCompletedTrades() const {
+    return _completedTrades;
+}
+
+} // namespace bam
+
+trade_markings/trade_marking.cpp:
+
+#include "../../../include/bam/trade_markings/trade_marking.hpp"
+
+#include <stdexcept>
+
+namespace bam {
+
+TradeMarking::TradeMarking(
+    std::string name,
+    int64_t windowStartOffset,
+    int64_t windowEndOffset,
+    std::function<std::string(const std::vector<std::shared_ptr<TradeEvent>>&, const Context&)> analyzeFunc)
+    : _name(std::move(name)),
+      _windowStartOffset(windowStartOffset),
+      _windowEndOffset(windowEndOffset),
+      _analyzeFunc(std::move(analyzeFunc)) {
+    
+    // Validate input
+    if (_analyzeFunc == nullptr) {
+        throw std::invalid_argument("Analyze function cannot be null");
+    }
+    
+    // Window start must be <= window end
+    if (_windowStartOffset > _windowEndOffset) {
+        throw std::invalid_argument("Window start offset must be <= window end offset");
+    }
+}
+
+std::string TradeMarking::getName() const {
+    return _name;
+}
+
+int64_t TradeMarking::getWindowStartOffset() const {
+    return _windowStartOffset;
+}
+
+int64_t TradeMarking::getWindowEndOffset() const {
+    return _windowEndOffset;
+}
+
+std::string TradeMarking::analyze(
+    const std::vector<std::shared_ptr<TradeEvent>>& conflatedTrades, 
+    const Context& context) const {
+    
+    // Validate that we have at least one trade
+    if (conflatedTrades.empty()) {
+        throw std::invalid_argument("Cannot analyze empty trade collection");
+    }
+    
+    // Call the analyze function with the trades and context
+    return _analyzeFunc(conflatedTrades, context);
+}
+
+} // namespace bam
+
+trade_markings/trade_marking_manager.cpp:
+
+#include "../../../include/bam/trade_markings/trade_marking_manager.hpp"
+
+#include <algorithm>
+#include <iostream>
+#include <limits>
+#include <sstream>
+#include <iomanip>
+
+namespace bam {
+
+TradeMarkingManager::TradeMarkingManager(std::unordered_map<int64_t, SimpleOrderBook>* books)
+    : _maxLookbackOffset(0), 
+      _maxLookaheadOffset(0),
+      _conflationWindow(1'000) {
+    
+    // Initialize context with order books
+    _context.books = books;
+}
+
+void TradeMarkingManager::addMarking(std::unique_ptr<TradeMarking> marking) {
+    // Update max time offsets
+    _maxLookbackOffset = std::min(_maxLookbackOffset, marking->getWindowStartOffset());
+    _maxLookaheadOffset = std::max(_maxLookaheadOffset, marking->getWindowEndOffset());
+    
+    // Add the marking
+    _markings.push_back(std::move(marking));
+}
+
+void TradeMarkingManager::setTradeConflationWindow(int64_t nanoseconds) {
+    if (nanoseconds < 0) {
+        throw std::invalid_argument("Conflation window must be non-negative");
+    }
+    
+    _conflationWindow = nanoseconds;
+}
+
+void TradeMarkingManager::processEvent(std::shared_ptr<Event> event) {
+    // Store the event in context
+    _context.eventHistory.push_back(event);
+    
+    // Update security-specific indices for faster lookup
+    auto& indices = _context.securityEventIndices[event->securityId];
+    indices.push_back(_context.eventHistory.size() - 1);
+    
+    // If this is a trade event, process it further
+    auto tradeEvent = std::dynamic_pointer_cast<TradeEvent>(event);
+    if (tradeEvent) {
+        processTrade(tradeEvent);
+    }
+    
+    // Check for completed trades
+    checkCompletedTrades(event->timestamp);
+    
+    // Clean up old events
+    cleanupOldEvents(event->timestamp);
+}
+
+void TradeMarkingManager::processTrade(std::shared_ptr<TradeEvent> trade) {
+    // If conflation is enabled, check if this trade can be conflated with an existing one
+    if (_conflationWindow > 0) {
+        // Look for a pending trade for the same security within the conflation window
+        for (auto& pendingTrade : _pendingTrades) {
+            if (pendingTrade.securityId == trade->securityId &&
+                std::abs(pendingTrade.baseTimestamp - trade->timestamp) <= _conflationWindow) {
+                
+                // Add this trade to the conflated set
+                pendingTrade.conflatedTrades.push_back(trade);
+                
+                // Update the pending trade's data
+                conflateTradeData(pendingTrade, trade);
+                
+                // Trade has been conflated, no need to create a new pending trade
+                return;
+            }
+        }
+    }
+    
+    // Create a new pending trade with completion time based on max lookahead window
+    PendingTrade pendingTrade;
+    pendingTrade.securityId = trade->securityId;
+    pendingTrade.baseTimestamp = trade->timestamp;
+    pendingTrade.completionTime = trade->timestamp + _maxLookaheadOffset;
+    pendingTrade.conflatedTrades.push_back(trade);
+    
+    // For trades that don't need lookahead (no post-trade window), compute markings immediately
+    if (_maxLookaheadOffset == 0) {
+        for (const auto& marking : _markings) {
+            std::string result = marking->analyze(pendingTrade.conflatedTrades, _context);
+            pendingTrade.results[marking->getName()] = result;
+        }
+        logTradeResults(pendingTrade);
+    } else {
+        // Otherwise, queue it for later marking computation
+        _pendingTrades.push_back(std::move(pendingTrade));
+    }
+}
+
+void TradeMarkingManager::conflateTradeData(PendingTrade& existing, const std::shared_ptr<TradeEvent>& newTrade) {
+    // Calculate total volume so far
+    int64_t totalVolume = 0;
+    int64_t totalValue = 0; // price * quantity
+    
+    for (const auto& trade : existing.conflatedTrades) {
+        totalVolume += trade->quantity;
+        totalValue += trade->price * trade->quantity;
+    }
+    
+    // Update the base timestamp to the earliest timestamp
+    if (newTrade->timestamp < existing.baseTimestamp) {
+        existing.baseTimestamp = newTrade->timestamp;
+        // Update completion time as well
+        existing.completionTime = existing.baseTimestamp + _maxLookaheadOffset;
+    }
+}
+
+void TradeMarkingManager::checkCompletedTrades(int64_t currentTime) {
+    // Find trades that are ready to be marked
+    auto it = _pendingTrades.begin();
+    while (it != _pendingTrades.end()) {
+        if (currentTime >= it->completionTime) {
+            // Compute markings for each registered trade marking
+            for (const auto& marking : _markings) {
+                std::string result = marking->analyze(it->conflatedTrades, _context);
+                it->results[marking->getName()] = result;
+            }
+            
+            // Log the results and add to completed trades
+            logTradeResults(*it);
+            
+            // Remove from pending list
+            it = _pendingTrades.erase(it);
+        } else {
+            ++it;
+        }
+    }
+}
+
+void TradeMarkingManager::cleanupOldEvents(int64_t currentTime) {
+    // Skip if no events or maxLookbackOffset is zero
+    if (_context.eventHistory.empty() || _maxLookbackOffset == 0) {
+        return;
+    }
+    
+    // Calculate the cutoff time - max needed is current time + maxLookbackOffset
+    // (maxLookbackOffset is negative, so this is actually a subtraction)
+    int64_t cutoffTime = currentTime + _maxLookbackOffset;
+    
+    // Find the first event after the cutoff time
+    auto it = std::find_if(_context.eventHistory.begin(), _context.eventHistory.end(),
+                          [cutoffTime](const auto& event) {
+                              return event->timestamp >= cutoffTime;
+                          });
+    
+    if (it != _context.eventHistory.begin()) {
+        // Calculate how many events to remove
+        size_t removeCount = std::distance(_context.eventHistory.begin(), it);
+        
+        // Update security indices
+        for (auto& [securityId, indices] : _context.securityEventIndices) {
+            // Remove indices for deleted events
+            indices.erase(
+                std::remove_if(indices.begin(), indices.end(),
+                              [removeCount](size_t idx) { return idx < removeCount; }),
+                indices.end()
+            );
+            
+            // Adjust remaining indices
+            for (auto& idx : indices) {
+                idx -= removeCount;
+            }
+        }
+        
+        // Remove old events
+        _context.eventHistory.erase(_context.eventHistory.begin(), it);
+    }
+}
+
+void TradeMarkingManager::logTradeResults(const PendingTrade& pendingTrade) {
+    // Create a MarkedTrade and add it to completed trades
+    MarkedTrade markedTrade;
+    markedTrade.securityId = pendingTrade.securityId;
+    markedTrade.timestamp = pendingTrade.baseTimestamp;
+    markedTrade.tradeCount = pendingTrade.conflatedTrades.size();
+    
+    // Calculate volume-weighted average price and total quantity
+    int64_t totalQuantity = 0;
+    int64_t priceQuantitySum = 0;
+    
+    for (const auto& trade : pendingTrade.conflatedTrades) {
+        totalQuantity += trade->quantity;
+        priceQuantitySum += trade->price * trade->quantity;
+    }
+    
+    markedTrade.totalQuantity = totalQuantity;
+    
+    // Set VWAP if we have quantity, otherwise use first trade's price
+    if (totalQuantity > 0) {
+        markedTrade.price = static_cast<double>(priceQuantitySum) / totalQuantity;
+    } else if (!pendingTrade.conflatedTrades.empty()) {
+        markedTrade.price = pendingTrade.conflatedTrades.front()->price;
+    }
+    
+    // Use side from first trade
+    if (!pendingTrade.conflatedTrades.empty()) {
+        markedTrade.side = pendingTrade.conflatedTrades.front()->side;
+    } else {
+        markedTrade.side = '?';
+    }
+    
+    // Copy all markings
+    markedTrade.markings = pendingTrade.results;
+    
+    // Add to completed trades
+    _completedTrades.push_back(markedTrade);
+    
+    // Optionally log to console or file
+    // Commented out to avoid polluting the terminal
+    /*
+    std::stringstream ss;
+    ss << "Trade marked: Security=" << markedTrade.securityId
+       << " Time=" << markedTrade.timestamp
+       << " Price=" << std::fixed << std::setprecision(2) << (markedTrade.price / 10000.0)
+       << " Qty=" << markedTrade.totalQuantity
+       << " Count=" << markedTrade.tradeCount;
+    
+    for (const auto& [name, value] : markedTrade.markings) {
+        ss << " " << name << "=" << value;
+    }
+    
+    std::cout << ss.str() << std::endl;
+    */
+}
+
+void TradeMarkingManager::updateMaxTimeOffsets() {
+    _maxLookbackOffset = 0;
+    _maxLookaheadOffset = 0;
+    
+    for (const auto& marking : _markings) {
+        _maxLookbackOffset = std::min(_maxLookbackOffset, marking->getWindowStartOffset());
+        _maxLookaheadOffset = std::max(_maxLookaheadOffset, marking->getWindowEndOffset());
+    }
+}
+
+const std::vector<MarkedTrade>& TradeMarkingManager::getCompletedTrades() const {
+    return _completedTrades;
+}
+
+} // namespace bam
+
+trade_markings/trade_marking_event_handler.cpp:
+
+#include "../../../include/bam/trade_markings/trade_marking_event_handler.hpp"
+#include "../../../include/bam/trade_markings/event.hpp"
+
+namespace bam {
+
+TradeMarkingEventHandler::TradeMarkingEventHandler(bool track_order_events, bool calculate_mid_price)
+    : EventHandler(track_order_events, calculate_mid_price),
+      _markingManager(&_books) {
+}
+
+void TradeMarkingEventHandler::handle(const OrderAdd& msg) {
+    // First let the base handler process the event
+    EventHandler::handle(msg);
+    
+    // Then create a wrapped event and forward to the marking manager
+    auto event = createOrderAddEvent(msg);
+    _markingManager.processEvent(event);
+}
+
+void TradeMarkingEventHandler::handle(const OrderReplace& msg) {
+    // Let the base handler process the event
+    EventHandler::handle(msg);
+    
+    // Create a wrapped event and forward to the marking manager
+    auto event = createOrderReplaceEvent(msg);
+    
+    // Note: We don't have a good way to get the old price and quantity
+    // without modifying the base EventHandler class
+    
+    _markingManager.processEvent(event);
+}
+
+void TradeMarkingEventHandler::handle(const OrderDelete& msg) {
+    // Let the base handler process the event
+    EventHandler::handle(msg);
+    
+    // Create a wrapped event and forward to the marking manager
+    auto event = createOrderDeleteEvent(msg);
+    
+    // Note: We don't have a good way to get the price and quantity
+    // without modifying the base EventHandler class
+    
+    _markingManager.processEvent(event);
+}
+
+void TradeMarkingEventHandler::handle(const OrderExecute& msg) {
+    // Let the base handler process the event
+    EventHandler::handle(msg);
+    
+    // Create a trade event directly for OrderExecute
+    auto tradeEvent = std::make_shared<TradeEvent>();
+    tradeEvent->timestamp = msg.timestamp;
+    tradeEvent->securityId = msg.book_id;
+    tradeEvent->price = msg.price;
+    tradeEvent->quantity = msg.size;
+    tradeEvent->side = msg.is_bid ? 'B' : 'A';
+    tradeEvent->orderId = msg.order_id;
+    tradeEvent->isOrderExecution = true;
+    
+    _markingManager.processEvent(tradeEvent);
+}
+
+void TradeMarkingEventHandler::handle(const Fill& msg) {
+    // Let the base handler process the event
+    EventHandler::handle(msg);
+    
+    // Create a wrapped trade event and forward to the marking manager
+    auto event = createTradeEvent(msg);
+    _markingManager.processEvent(event);
+}
+
+void TradeMarkingEventHandler::handle(const SecDefMsg& msg) {
+    // Let the base handler process the event
+    EventHandler::handle(msg);
+    
+    // No need to forward to marking manager as it doesn't need security definitions
+}
+
+void TradeMarkingEventHandler::addTradeMarking(std::unique_ptr<TradeMarking> marking) {
+    _markingManager.addMarking(std::move(marking));
+}
+
+void TradeMarkingEventHandler::setTradeConflationWindow(int64_t nanoseconds) {
+    _markingManager.setTradeConflationWindow(nanoseconds);
+}
+
+const std::vector<MarkedTrade>& TradeMarkingEventHandler::getCompletedTrades() const {
+    return _markingManager.getCompletedTrades();
+}
+
+} // namespace bam
+
+order_book_events/revised_trade_marking_example.cpp:
+
+#include "../../include/bam/trade_markings/trade_marking_event_handler.hpp"
+#include <iostream>
+#include <vector>
+#include <chrono>
+#include <thread>
+#include <iomanip>
+
+using namespace bam;
+
+// Helper function to generate timestamp
+int64_t GetCurrentTimestamp() {
+    auto now = std::chrono::high_resolution_clock::now();
+    return std::chrono::duration_cast<std::chrono::nanoseconds>(now.time_since_epoch()).count();
+}
+
+int main() {
+    // Create an instance of the TradeMarkingEventHandler
+    TradeMarkingEventHandler handler(true, true);
+    
+    std::cout << "\n===== Revised Trade Marking System Example =====\n" << std::endl;
+    
+    // Configure a microsecond-level trade conflation window (default)
+    // handler.setTradeConflationWindow(1'000); // 1 microsecond in nanoseconds - this is the default
+    
+    // Create sample markings
+    
+    // Example 1: Mark the best bid size at trade time
+    auto bestBidSizeMarking = std::make_unique<TradeMarking>(
+        "BestBidSize",
+        0,  // at trade time
+        0,  // at trade time
+        [](const std::vector<std::shared_ptr<TradeEvent>>& trades, const Context& ctx) -> std::string {
+            // Always use the first trade to determine the security
+            const auto& primaryTrade = trades[0];
+            const auto& book = ctx.books->at(primaryTrade->securityId);
+            
+            auto bbo = book.GetBBO();
+            
+            if (bbo.first) {
+                return std::to_string(bbo.first.size);
+            }
+            
+            return "0";
+        }
+    );
+    handler.addTradeMarking(std::move(bestBidSizeMarking));
+    
+    // Example 2: Calculate canceled quantity in a window from 10ms to 1ms before trade
+    auto canceledQtyMarking = std::make_unique<TradeMarking>(
+        "CanceledQty_10ms_to_1ms_pre",
+        -10'000'000,  // 10ms before (window start)
+        -1'000'000,   // 1ms before (window end)
+        [](const std::vector<std::shared_ptr<TradeEvent>>& trades, const Context& ctx) -> std::string {
+            int64_t totalCanceledQty = 0;
+            
+            // Use primary trade for window calculation
+            const auto& primaryTrade = trades[0];
+            
+            // Calculate absolute timestamps for the window
+            int64_t windowStart = primaryTrade->timestamp - 10'000'000;
+            int64_t windowEnd = primaryTrade->timestamp - 1'000'000;
+            
+            // Get events for this security in the window
+            auto events = ctx.getEventsForSecurity(primaryTrade->securityId, windowStart, windowEnd);
+            
+            // Sum canceled quantity from OrderDeleteEvents
+            for (const auto& event : events) {
+                if (auto cancelEvent = std::dynamic_pointer_cast<OrderDeleteEvent>(event)) {
+                    // Note: we don't have quantity for cancel events without modifying EventHandler
+                    // This is just for demonstration
+                    totalCanceledQty += 100; // Placeholder value
+                }
+            }
+            
+            return std::to_string(totalCanceledQty);
+        }
+    );
+    handler.addTradeMarking(std::move(canceledQtyMarking));
+    
+    // Example 3: Trade count in conflated group
+    auto tradeCountMarking = std::make_unique<TradeMarking>(
+        "TradeCount",
+        0,  // at trade time
+        0,  // at trade time
+        [](const std::vector<std::shared_ptr<TradeEvent>>& trades, const Context& ctx) -> std::string {
+            return std::to_string(trades.size());
+        }
+    );
+    handler.addTradeMarking(std::move(tradeCountMarking));
+    
+    // Create book IDs and tickers for demonstration
+    std::vector<std::pair<int64_t, std::string>> symbols = {
+        {1001, "AAPL"}
+    };
+    
+    // Initialize the books
+    for (const auto& sym : symbols) {
+        SecDefMsg sec_def;
+        sec_def.book_id = sym.first;
+        sec_def.ticker = sym.second;
+        
+        handler.handle(sec_def);
+    }
+    
+    std::cout << "\nSimulating market events...\n" << std::endl;
+    
+    // Helper for timestamps
+    int64_t base_timestamp = GetCurrentTimestamp();
+    const int64_t book_id = symbols[0].first;
+    
+    // Add initial orders to create a book
+    OrderAdd bid1;
+    bid1.book_id = book_id;
+    bid1.order_id = 1001;
+    bid1.price = 10000000; // $1000.00
+    bid1.size = 100;
+    bid1.is_bid = true;
+    bid1.timestamp = base_timestamp;
+    handler.handle(bid1);
+    
+    OrderAdd bid2;
+    bid2.book_id = book_id;
+    bid2.order_id = 1002;
+    bid2.price = 9990000; // $999.00
+    bid2.size = 200;
+    bid2.is_bid = true;
+    bid2.timestamp = base_timestamp + 1000000;
+    handler.handle(bid2);
+    
+    OrderAdd ask1;
+    ask1.book_id = book_id;
+    ask1.order_id = 1003;
+    ask1.price = 10010000; // $1001.00
+    ask1.size = 150;
+    ask1.is_bid = false;
+    ask1.timestamp = base_timestamp + 2000000;
+    handler.handle(ask1);
+    
+    OrderAdd ask2;
+    ask2.book_id = book_id;
+    ask2.order_id = 1004;
+    ask2.price = 10020000; // $1002.00
+    ask2.size = 250;
+    ask2.is_bid = false;
+    ask2.timestamp = base_timestamp + 3000000;
+    handler.handle(ask2);
+    
+    // Generate some activity and a trade
+    base_timestamp += 10000000; // 10ms later
+    
+    // Add another bid
+    OrderAdd bid3;
+    bid3.book_id = book_id;
+    bid3.order_id = 1005;
+    bid3.price = 10000000; // $1000.00
+    bid3.size = 150;
+    bid3.is_bid = true;
+    bid3.timestamp = base_timestamp;
+    handler.handle(bid3);
+    
+    // Cancel an order within the 10ms pre-trade window but outside the 1ms window
+    base_timestamp += 5000000; // 5ms later, which is 5ms before the trade
+    
+    OrderDelete cancel;
+    cancel.book_id = book_id;
+    cancel.order_id = 1002; // Cancel the $999.00 bid
+    cancel.is_bid = true;
+    cancel.timestamp = base_timestamp;
+    handler.handle(cancel);
+    
+    // Execute a trade - aggressive buy hitting the ask
+    base_timestamp += 4000000; // 4ms later, which is 1ms before trade (outside the cancellation window)
+    
+    OrderExecute trade1;
+    trade1.book_id = book_id;
+    trade1.order_id = 1003; // Execute against the ask
+    trade1.price = 10010000; // $1001.00
+    trade1.size = 50;
+    trade1.is_bid = false; // Order was an ask, but this is a buy hitting the ask
+    trade1.timestamp = base_timestamp;
+    handler.handle(trade1);
+    
+    // Generate two closely spaced trades (within microsecond window)
+    base_timestamp += 500; // 500 nanoseconds later
+    
+    Fill trade2;
+    trade2.book_id = book_id;
+    trade2.price = 10010000; // $1001.00
+    trade2.size = 30;
+    trade2.side = 1; // Buy
+    trade2.timestamp = base_timestamp;
+    handler.handle(trade2);
+    
+    base_timestamp += 200; // 200 nanoseconds later (still within 1μs conflation window)
+    
+    Fill trade3;
+    trade3.book_id = book_id;
+    trade3.price = 10010000; // $1001.00
+    trade3.size = 40;
+    trade3.side = 1; // Buy
+    trade3.timestamp = base_timestamp;
+    handler.handle(trade3);
+    
+    // Generate a trade that won't be conflated (outside microsecond window)
+    base_timestamp += 2000; // 2000 nanoseconds later (outside 1μs conflation window)
+    
+    Fill trade4;
+    trade4.book_id = book_id;
+    trade4.price = 10015000; // $1001.50
+    trade4.size = 75;
+    trade4.side = 1; // Buy
+    trade4.timestamp = base_timestamp;
+    handler.handle(trade4);
+    
+    // Wait a moment to ensure all processing is complete
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    
+    // Display completed trades with their markings
+    std::cout << "\nCompleted Trades with Markings:" << std::endl;
+    std::cout << "===============================" << std::endl;
+    
+    const auto& completedTrades = handler.getCompletedTrades();
+    for (const auto& trade : completedTrades) {
+        std::cout << std::fixed << std::setprecision(2);
+        std::cout << "Trade: " << symbols[0].second 
+                  << " | Price: $" << (trade.price / 10000.0)
+                  << " | Qty: " << trade.totalQuantity
+                  << " | TradeCount: " << trade.tradeCount
+                  << " | Side: " << (trade.side == 'B' ? "Buy" : "Sell")
+                  << " | Time: " << trade.timestamp << std::endl;
+        
+        std::cout << "  Markings:" << std::endl;
+        for (const auto& [name, value] : trade.markings) {
+            std::cout << "    " << name << ": " << value << std::endl;
+        }
+        std::cout << std::endl;
+    }
+    
+    std::cout << "Example complete!" << std::endl;
+    
+    return 0;
+}
+
+order_book_events/REVISED_TRADE_MARKINGS.md:
+
+# Revised Trade Markings System
+
+This module provides a flexible framework for analyzing and annotating trades with contextual information derived from order book events and market state. It implements the revised design with improved trade conflation and window handling.
+
+## Overview
+
+The Trade Markings system attaches parameterized "markings" to trades based on order book state and event patterns occurring within specified time windows relative to each trade. The system provides microsecond-level trade conflation by default and always works with conflated trades for consistency.
+
+## Core Components
+
+1. **Event**: Base class for all market events with type-specific derivatives
+2. **Context**: Provides access to order book state and event history
+3. **TradeMarking**: Defines an analysis to be applied to trades within specified windows
+4. **TradeMarkingManager**: Coordinates event processing, conflation, and marking calculation
+5. **MarkedTrade**: Structure to hold trade data with computed markings
+6. **TradeMarkingEventHandler**: Extends the base EventHandler with marking capabilities
+
+## Features
+
+- **Flexible Time Windows**: Define windows using start and end offsets relative to trade time
+- **Default Microsecond Conflation**: Automatically conflates trades within 1μs by default
+- **Volume-Weighted Prices**: Calculates VWAP for conflated trades
+- **Lambda-Based Markings**: Define markings with concise lambda functions
+- **Memory Management**: Automatic pruning of old events based on maximum lookback window
+
+## Example Usage
+
+```cpp
+// Create a marking for canceled quantity in a window from 10ms to
+// 1ms before each trade
+auto canceledQtyMarking = std::make_unique<bam::TradeMarking>(
+    "CanceledQty_10ms_to_1ms_pre",
+    -10'000'000,  // 10ms before (window start)
+    -1'000'000,   // 1ms before (window end)
+    [](const std::vector<std::shared_ptr<bam::TradeEvent>>& trades, 
+       const bam::Context& ctx) -> std::string {
+        
+        // Use primary trade for window calculation
+        const auto& primaryTrade = trades[0];
+        
+        // Calculate absolute timestamps for the window
+        int64_t windowStart = primaryTrade->timestamp - 10'000'000;
+        int64_t windowEnd = primaryTrade->timestamp - 1'000'000;
+        
+        // Analyze events within the window
+        // ...
+        
+        return result;
+    }
+);
+handler.addTradeMarking(std::move(canceledQtyMarking));
+```
+
+## Conflation Behavior
+
+Trades are conflated when:
+1. They are for the same security
+2. Their timestamps are within the configured conflation window (default: 1μs)
+
+For conflated trades:
+1. Price is calculated as volume-weighted average (VWAP)
+2. Quantities are summed
+3. The earliest timestamp is used for window calculations
+4. Trade count is tracked
+
+## Window Definition
+
+Windows are defined relative to trade time using two parameters:
+- **windowStartOffset**: When the window begins (negative = before trade)
+- **windowEndOffset**: When the window ends (positive = after trade)
+
+Example window configurations:
+- From 10ms before to 1ms before: `(-10'000'000, -1'000'000)`
+- From trade time to 5ms after: `(0, 5'000'000)`
+- From 5ms before to 5ms after: `(-5'000'000, 5'000'000)`
+
+## Building and Running the Example
+
+```bash
+# Build the revised trade marking example
+cd examples/order_book_events
+make revised_trade_marking_example
+
+# Run the example
+./revised_trade_marking_example
+```
+
+## Implementation Details
+
+- Using the "bam" namespace to isolate all components
+- Event classes use polymorphism for type-safety
+- Context provides efficient event retrieval by time and security
+- TradeMarkingManager handles different window types automatically
+- Each class is in its own file for better organization
+- Default microsecond-level conflation aligns with typical HFT patterns
+
+order_book_events/CMakeLists.txt:
+
+cmake_minimum_required(VERSION 3.15)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Example for basic EventHandler
+add_executable(event_handler_example event_handler_example.cpp)
+
+# Example for TradeMarkings (original implementation)
+add_executable(trade_marking_example 
+    trade_marking_example.cpp
+    ../../src/trade_markings/trade_marking.cpp
+    ../../src/trade_markings/events.cpp
+    ../../src/trade_markings/trade_marking_manager.cpp
+    ../../src/trade_markings/trade_marking_event_handler.cpp
+)
+
+# Example for Revised TradeMarkings (new implementation)
+add_executable(revised_trade_marking_example 
+    revised_trade_marking_example.cpp
+    ../../src/bam/trade_markings/event.cpp
+    ../../src/bam/trade_markings/context.cpp
+    ../../src/bam/trade_markings/trade_marking.cpp
+    ../../src/bam/trade_markings/trade_marking_manager.cpp
+    ../../src/bam/trade_markings/trade_marking_event_handler.cpp
+)
+
+# Add include directories
+target_include_directories(trade_marking_example PRIVATE 
+    ../../include
+    ../../examples
+)
+
+target_include_directories(revised_trade_marking_example PRIVATE 
+    ../../include
+    ../../examples
+)
+
+# Convenience targets
+add_custom_target(run-example
+    COMMAND event_handler_example
+    DEPENDS event_handler_example
+    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+)
+
+add_custom_target(run-trade-marking-example
+    COMMAND trade_marking_example
+    DEPENDS trade_marking_example
+    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+)
+
+add_custom_target(run-revised-trade-marking-example
+    COMMAND revised_trade_marking_example
+    DEPENDS revised_trade_marking_example
+    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+)
+
