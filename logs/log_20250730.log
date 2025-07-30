@@ -1,0 +1,304 @@
+Thanks, that’s extremely helpful. I’ll now put together a detailed one-month Go Live plan tailored to your current alpha generation stack — including project coordination, infra readiness, pipeline ownership, alpha onboarding, and performance validation.
+
+I’ll organize the plan by week and by workstream, with responsibilities, milestones, and suggested coordination mechanisms. I’ll also include suggestions on GitHub/package structure, testing, and integration with Airflow.
+
+I’ll let you know as soon as it’s ready for review.
+
+
+# Go-Live Plan for Alpha Generation Pipeline
+
+## Overview and Goals
+
+We are targeting a **go-live date of September 4, 2025** for our alpha-generation pipeline. This plan outlines the steps and timelines needed to transition our chaotic research environment into a stable production pipeline. The pipeline covers **tick data ingestion, feature generation, cloud processing, machine learning model integration, and performance monitoring**. Key goals include: finalizing which alphas will be deployed, optimizing the feature generation process, defining on-prem vs cloud processing responsibilities, and establishing robust performance tracking (via VISTA) in production. By following this plan, we aim to ensure the solution meets our business needs and works as expected on day one.
+
+## Objectives
+
+* **Finalize Alphas for Deployment:** Confirm which trading signals (“alphas”) will go live. We currently have one ready; two more are aspirational. We will plan for a **minimum viable launch** with the stable alpha and include additional ones only if fully tested by late August.
+* **Define Processing Architecture (Server vs Cloud):** Decide which parts of the pipeline run on the on-prem server (UAT/production machines) vs. on the cloud (Datastore and related AWS processing). This involves evaluating data volume, latency, and scalability trade-offs and ensuring the chosen design is efficient and maintainable.
+* **Optimize Feature Generation Performance:** Improve the C++ feature engine’s throughput so it can handle Level-3 tick data in real-time. This includes implementing the memory-mapped journal file approach (Vadim’s idea) to allow parallel processing instances, and performing stress tests to ensure we meet performance requirements under peak loads.
+* **Implement Continuous Performance Measurement:** Integrate the **VISTA** performance measurement package (v1 expected this week) into the live pipeline. We need to automatically track each alpha’s performance (returns, Sharpe, drawdowns, etc.), with visualizations and alerts for any degradation. This will enable ongoing monitoring and quick feedback loops after go-live.
+* **Establish Robust Monitoring & Support:** Set up logging, alerting, and failover procedures for the production system. Ensure we have a plan for monitoring the pipeline in production and a clear process for troubleshooting issues. This includes training the team (and any support staff or IT) on operational procedures prior to launch.
+
+## Team and Responsibilities
+
+Having clear ownership will reduce chaos. Below is the breakdown of responsibilities for key components of the project:
+
+* **Feature Generation (C++ Engine & Data Ingestion):** *Owner:* Jackie (C++ specialist), with Vadim advising on performance optimizations. They will focus on reading historical Level-3 tick data (Nasdaq, SIP) from parquet files, implementing the memory-mapped feed replay for parallel processing, and integrating reference data from Datastore during feature calc.
+* **Alpha Research & ML Modeling:** *Owner:* Ophir (quant/ML researcher) with support from Gabi (recently joined). Ophir will finalize the research on new alphas (both ML-based like XGBoost/deep learning and non-ML signals), train models offline, and ensure the inference code is ready for integration. Gabi will assist in setting up the ML pipeline and validating model performance on backtests.
+* **Performance Tracking (VISTA development):** *Owner:* Grigory. He is developing the VISTA Python package to measure alpha performance. Grigory will deliver VISTA v1 by end of this week, and subsequently work with the team to integrate it into the pipeline (for example, connecting it to the output of our alphas to compute metrics daily and generating reports/alerts).
+* **Infrastructure & Deployment:** *Owner:* Colin. He will set up and configure the UAT and production environments (the production machine is expected by Aug 4). Colin will also handle Airflow scheduling setup, environment variables, and any cloud connectivity (ensuring the on-prem server can read/write to the Datastore in AWS). He’ll work closely with others to deploy code (C++ binaries, Python packages) on both UAT and prod machines.
+* **Project Coordination:** *Owner:* (Yourself) as team lead. You will coordinate across all areas, track progress against the timeline, resolve blockers, and ensure all pieces come together. This includes running regular check-ins, managing the release cycle on GitHub, and aligning with any stakeholders (e.g., portfolio managers or operations) on expectations.
+
+*Note:* We currently have no dedicated QA or DevOps team assigned, so all members must contribute to testing and documentation. Clear responsibility assignments mean each owner is accountable for delivering their component ready for production and assisting in end-to-end testing.
+
+## Timeline & Milestones
+
+We have roughly five weeks to go-live. Below is a week-by-week plan with key milestones and deliverables:
+
+* **Week of July 29 – Aug 2:** **Project Kickoff and Planning**
+
+  * Finalize this go-live plan and get buy-in from the team on objectives and roles.
+  * Align on solution scope (which alphas and features are in scope for go-live) and get stakeholder agreement (e.g., confirm with portfolio manager which alpha signals they are comfortable starting with).
+  * Set up project tracking (e.g., Jira board or task list) for all tasks until go-live, assign owners and tentative due dates.
+  * *Deliverable:* Go-Live Plan (this document) finalized and circulated. Team understands the timeline and their responsibilities.
+
+* **Week of Aug 5 – Aug 9:** **Infrastructure Setup & Feature Engine Optimization**
+
+  * **Production Environment Live (Aug 4):** Ensure the new production server is delivered and accessible. Colin to install required libraries, C++ runtime, Python environment, and Airflow on this machine. Verify that the configuration (CPU cores, memory, storage) matches or exceeds UAT so tests are meaningful.
+  * **Datastore Connectivity:** Test reading from and writing to the internal Datastore (AWS) from both UAT and the new prod machine. No throughput issues are expected, but we should verify data access is working with no permission or latency problems.
+  * **C++ Engine Parallelization:** Jackie (with Vadim) to start implementing the memory-mapped journal file mechanism for parallel feature generation. The concept is to record the incoming tick feed to a shared memory-mapped file (journal), and allow multiple C++ processes to replay the feed in parallel for feature calculation. This will significantly speed up processing and also aid in recovery if a process fails.
+  * **Initial Performance Testing:** Run ad-hoc stress tests on the UAT machine with sample data to gauge the performance of the new parallel feature generation approach. The C++/data team has already done some feasibility tests with sample features; now expand those tests. For example, process one full day of Nasdaq Level-3 data through the feature engine (single-thread vs. multi-instance) and measure throughput and resource usage. Set a performance baseline (e.g., can we process a full trading day’s tick data within X hours or in real-time).
+  * **Alpha Development Continues:** Ophir to narrow down the list of potential alphas. By end of this week, identify the two most promising new alphas (in addition to the one already ready) and assess their viability. If any alpha relies on complex ML, ensure data needed for training is available in Datastore and begin model training runs on cloud or a powerful dev machine.
+
+* **Week of Aug 12 – Aug 16:** **Pipeline Integration and Midpoint Review**
+
+  * **Feature Pipeline End-to-End Integration:** By mid-August, have a first end-to-end run of the pipeline on the UAT machine for a past date. This includes: reading raw tick data (parquet) → C++ feature extraction → aggregating to minutely buckets → uploading features to Datastore → any post-processing or ML inference to generate final signals → storing final outputs (e.g., signals or PnL) in Datastore or appropriate location. Use one stable alpha’s logic for this test.
+  * **Cloud vs On-Prem Processing Decision:** Based on tests and design discussions, finalize what processing happens where. For example, decide if the ML model inference will run on the on-prem server (likely yes for live latency), and if any heavy aggregation or analytics can be offloaded to cloud after market hours. Ensure the architecture is agreed upon and documented.
+  * **Airflow DAG Setup:** Colin to create an Airflow DAG that represents the pipeline flow. Likely tasks: (1) daily start-of-day job to pull reference data from Datastore (if needed) and initialize processes, (2) trigger the C++ feature extraction jobs (possibly one per exchange or partition for parallelism), (3) task to aggregate features into 1-min buckets and upload to Datastore, (4) run any machine learning inference or additional feature calcs on the cloud data (if part of pipeline), (5) end-of-day job to run VISTA performance calculations and send out a report. Set up this DAG in the UAT Airflow for testing, using dummy runs if needed.
+  * **VISTA Integration Planning:** Grigory to integrate VISTA v1 into the pipeline on UAT. Define how it will ingest the alpha signals or PnL: for example, we might output daily PnL or returns of each alpha into a file or database table which VISTA can read. Decide if VISTA will run as part of Airflow (automated nightly job) or as a separate service. Ensure VISTA can compute key metrics (Sharpe, drawdown, volatility, turnover, etc.) and possibly produce visualizations.
+  * **Midpoint Review Meeting:** End of this week, hold a review of progress:
+
+    * Demo the pipeline processing a sample day end-to-end in UAT.
+    * Check which alphas are on track. If the two new alphas are lagging, make the call to possibly go live with only the ready ones. It’s better to deploy one solid alpha than three unstable ones.
+    * Review performance metrics from the stress tests. If the pipeline is not yet hitting required speed, assign additional optimizations (e.g., profiling the C++ code, optimizing I/O, adding more hardware if needed).
+    * Ensure any open questions (like cloud vs on-prem tasks) are answered and the team is aligned moving forward.
+
+* **Week of Aug 19 – Aug 23:** **Testing, Validation, and Final Dev**
+
+  * **User Acceptance Testing (UAT) & Data Validation:** Use this week for rigorous testing in the UAT environment, which should closely approximate production. For UAT:
+
+    * Run the pipeline for multiple consecutive days of historical data. Verify that the features generated and final signals match our research backtests for those days (this will serve as our “golden output” validation). Any discrepancies should be investigated and resolved now.
+    * Test edge cases: e.g., half trading days, days with extreme market activity (to stress test the system), and recovery from a restart (simulate a failure in the C++ process, ensure the journal file replay can catch it up).
+    * Perform integration testing of all components together – ensure the C++ engine’s output is correctly consumed by the Python processing, the data is written to Datastore with correct schema, and VISTA can read the results.
+  * **Performance Tuning:** Finish any needed optimizations to meet production performance criteria. For example, if processing a full day of tick data is still too slow, consider additional parallel processes or splitting data by symbol. We should also test how the system behaves under peak volumes (e.g., Fed announcement spikes). The goal is to **reliably handle expected production load with headroom** (e.g., CPU usage under 70% and memory under safe limits).
+  * **Finalize Alpha Models:** By this week, Ophir (and Gabi) should finalize the ML models for any ML-based alphas. Complete training on historical data, then do a **forward test** on recent data (e.g., simulate how the model would have performed in July/August data not seen in training). Only models that show stable performance in forward testing will be deployed. Freeze the model parameters and save the model artifacts (e.g., XGBoost model file) for deployment.
+  * **Package and Code Freeze Prep:** Ensure our code repositories (GitHub) are well-structured for release. This means:
+
+    * All pipeline code (C++ engine, Python processing scripts, VISTA, etc.) should be in version control with a clear structure (perhaps multiple repos or a monorepo with sub-packages like `feature_engine`, `alpha_models`, `vista` etc.).
+    * Write or update **README/documentation** for each component to help others understand usage and for on-boarding new team members.
+    * Implement any remaining unit tests for critical functions (especially for data processing correctness and model inference logic). Aim for good test coverage so we can catch regressions quickly.
+    * By end of this week, create a **release branch** (e.g., `release-v1`) in GitHub that will be used for the production deployment. Begin a **code freeze** process where only bug fixes go into this branch after this point, while any new experimental development stays on a separate branch.
+  * **Airflow Dry Run:** Test the Airflow DAG end-to-end in UAT mode. For example, trigger it to process a past date or run through a simulated live day. Ensure task dependencies work, and set appropriate scheduling (e.g., if we plan to run daily after market close or continuously). Iron out any issues such as task timing or failure retries in Airflow.
+
+* **Week of Aug 26 – Sept 1:** **Final Preparations and Cutover**
+
+  * **Production Deployment:** Around Aug 26, deploy the pipeline to the production machine. This involves:
+
+    * Installing the final versions of the C++ engine (compiled binaries) and Python packages (e.g., via pip or from source) on the prod server. Use the release branch code.
+    * Point the production pipeline to live data sources (for Sept 4, we will be processing live streaming data or the latest daily files). Make sure any connections (to real-time feeds or to Datastore) are using production credentials/paths.
+    * Configure Airflow on prod with the DAG, and *disable* actual trading outputs (if any) during dry run. We might do a “shadow run” this week: the pipeline runs on the production machine with live (or recent) data but does not feed the results to actual trading systems, just logs them. This acts as a final rehearsal.
+  * **Go/No-Go Meeting:** Schedule a meeting for late in this week (around Aug 29 or Sept 1) with all stakeholders (team members, possibly the PM or CIO). Review a final **Go-Live Checklist** covering all aspects:
+
+    * All features and alphas included in scope are tested and signed off by relevant parties.
+    * All test cycles (unit, integration, performance, user acceptance) are complete with no blocking issues.
+    * Monitoring and alerting is set up (check that we can receive alerts for failures, and VISTA is ready to report performance).
+    * Back-out Plan: While we hope not to use it, define what we will do if something goes seriously wrong on go-live (e.g., disable the new alphas and revert to paper trading signals until fixed).
+    * Stakeholder sign-off: Get explicit agreement from the stakeholders (e.g., the PM or head of quant) that we are ready to go live.
+  * **Team Training & Documentation:** In final days, do a walkthrough of the **runbook** – i.e., how to start/stop the system, how to deploy new models, and how to respond to common issues. Make sure Colin and any support personnel know the troubleshooting procedures. Each owner should briefly train at least one backup person on their component (for instance, Jackie explains the C++ engine to another developer, Ophir explains model update process, etc.), to reduce single points of failure.
+  * **Final Performance Tweak/Validation:** If the shadow run uncovered any last performance issues or bugs, fix them in the release branch and redeploy. Do not merge any experimental changes at this stage. Double-check that the **data quality** is good (no mismatched timestamps, all expected symbols present, etc.) and that writing to Datastore is stable. Validate one more time that VISTA can generate the daily report without errors.
+
+* **Go-Live Week (Sept 2 – Sept 6):** **Launch and Monitoring**
+
+  * **Sept 2-3 (Tue-Wed):** If possible, do a “soft launch” – run the pipeline on live data without executing trades. This could involve generating signals and having the trading system receive them but not act on them (paper trading mode). This final safety check can catch anything missed (e.g., data format mismatches with live feed).
+  * **Sept 4 (Thu) – **Go-Live****: On the go-live date, turn the system fully on. The pipeline will process live Nasdaq and SIP data, generate features, aggregate to minutely intervals, run the ML models to produce alpha signals, and these signals will feed into the trading execution (assuming that hand-off is ready). Grigory’s VISTA should automatically calculate **Day 1 performance metrics** after market close. Coordinate with the trading/operations team to confirm they see the signals and everything is operating normally.
+  * **Intense Monitoring (All week):** During the first few days of live operation, have an **on-call rotation** or “war room”. For at least the first 2-3 trading days, all team members should be readily available (and alert) to respond to any issues. Monitor logs in real-time for any errors (e.g., if a C++ process crashes or lags, if data from Datastore isn’t accessible, etc.). Also monitor the timeliness of data: ensure minimal lag in feature generation (if real-time) or that end-of-day jobs finish on schedule.
+  * **Post-Mortem and Daily Check-ins:** At the end of each day of the first week, do a quick team huddle to discuss what went well and any problems. For any incidents, analyze root cause and fix immediately if critical (or plan a patch if not urgent). Also review the alpha performance from VISTA – if an alpha is behaving unexpectedly in live trading (e.g., huge deviation from backtest expectations), be prepared to disable it quickly and investigate.
+  * **Gradual Ramp-Up:** If applicable, coordinate with risk management to possibly trade at lower capital or in a shadow mode initially. For example, day 1 could trade small size to ensure the strategy behaves as expected. Once confidence is gained (after a few days or weeks), scale up to full intended exposure. This mitigates risk while the system is new.
+
+## Infrastructure Setup & Testing
+
+**UAT vs Production Environment:** Our UAT machine is currently available and closely mimics production; the production server arriving by Aug 4 will have a similar configuration (which is ideal for meaningful testing). Colin will verify that the OS, libraries, and hardware specs are consistent. We will use the UAT environment for iterative testing and only switch to the prod environment once we have stable pipeline runs. By having both, we ensure we can test in an environment that approximates production as much as possible before the actual go-live.
+
+**Installation and Configuration:** As soon as the prod machine is ready, we’ll install required components:
+
+* C++ engine: compile the latest code with optimizations, and set up the memory-mapped file system needed for parallel processing.
+* Python environment: set up a virtual environment with all needed packages (pandas, XGBoost, deep learning libraries if any, AWS SDK for Datastore access, etc.). Also install the internal Python packages we develop (including VISTA) using `pip install -e .` or similar from our GitHub repos.
+* Airflow: ensure Airflow is configured to run the DAGs. Since this is likely a single-machine deployment of Airflow, confirm the scheduler and webserver are running and we have access to logs. We might use a SequentialExecutor or LocalExecutor given one machine, which should be fine for our needs (but confirm it can handle parallel tasks if we design the DAG that way).
+* Data access: mount or connect to the location of historical parquet files for backfilling or testing. Also verify network access from this machine to the Datastore in AWS (test a sample data download and upload). No strict SLA on Datastore throughput was noted, but we’ll be cautious to not overload it—our writes of minute-level features should be reasonably sized.
+
+**Stress and Failover Testing:** Part of infrastructure readiness is testing how the system handles heavy load and failures:
+
+* **Peak Load Simulation:** As mentioned, we will simulate a high-volume scenario (e.g., a day like an FOMC announcement or a volatile trading day) on UAT. The C++ engine should handle the peak tick rates without falling behind. We will measure CPU, memory, and I/O usage during these tests to ensure the production machine (with similar specs) can cope. This is crucial because performance issues not caught before go-live can be expensive to fix later.
+* **Multiple Instance Coordination:** Once the memory-mapped journal approach is implemented, test running, say, 2-4 parallel instances of the feature generator on the same data to ensure they can run without conflict and indeed speed up processing. We’ll need to ensure thread-safety or that each instance handles a different subset of symbols or time partitions to avoid overlap.
+* **Failure Recovery:** Intentionally kill or stop one of the C++ processes during a test run to verify that the system can recover. The expectation is that because the data feed is logged to a journal, a restarted process can replay from where it left off. We need to implement logic for checkpointing or marking progress so that recovery is seamless. Document the procedure for recovery for the ops runbook (e.g., “if a process dies, restart it with these parameters and it will catch up using the journal file”).
+* **Monitoring Setup:** Ensure the production machine has monitoring tools in place. This might include setting up basic system monitoring (CPU, memory, disk alerts), as well as custom application logging. For example, the C++ engine could log progress (like how many ticks processed) periodically; if it lags or stops, an alert should fire. We can use simple scripts or existing monitoring (like CloudWatch if the machine reports metrics, or an internal tool) to alert the team on anomalies.
+
+By completing these infrastructure and stress tests by mid-August, we will have confidence that the environment is production-ready. It also gives us time to address any capacity issues (for instance, if we find the production machine insufficient, we could request an upgrade or scale back the data processed per machine, though that’s a last resort). The goal is to **verify in a test environment everything that will be used in production, under conditions as close as possible to real usage**.
+
+## Data Pipeline & Feature Generation
+
+This component is the backbone of our alpha platform. We outline how we’ll implement and harden the pipeline from raw data to features:
+
+* **Historical Tick Data Ingestion:** We have Level-3 tick data (order book events) stored as daily parquet files per exchange (Nasdaq, SIP, etc.). For go-live, we will also have a live feed of this data (likely via a feed handler or similar, though it’s not explicitly described, it’s implied by going live). Initially, for testing and backfilling, we use the historical files. The plan is to **reuse the same ingestion logic for both historical replay and live feed** to the extent possible (for consistency and easier testing). Jackie will ensure the C++ engine can read from parquet files quickly. If needed, we might do a one-time conversion or sorting of these files to optimize sequential access.
+
+* **Feature Generation Engine (C++):** Jackie is developing features from the raw order book data via a C++ engine for performance reasons. We will finalize the set of features required by the alphas going live (e.g., order book imbalance, spread, liquidity metrics, short-term price change signals, etc.). Each feature’s computation needs to be clearly defined and tested. For complex features, validate them on a small sample to ensure correctness. We should use this period to also sanitize and cross-verify the features with known calculations from our research environment (for example, if Ophir has a Python prototype of a feature, compare it to the C++ output on the same data).
+
+* **Parallel Processing via Journal File:** A critical task is implementing the idea proposed by Vadim: writing incoming ticks to a **memory-mapped journal file** that multiple processes can read. This design serves two purposes: it allows horizontal scaling (multiple processes picking up different portions of the work) and simplifies fault tolerance (the data is logged, so a restarted process can replay). We plan to segment processing by ticker or by time chunks. For instance, we could assign groups of symbols to different processes, all reading the same stream but each filtering to its own symbols. Alternatively, one process could handle the live feed while others use the journal for catch-up or parallel backfill. Jackie will prototype this by early August and test for race conditions or bottlenecks (like disk I/O of the memory-mapped file itself).
+
+* **Aggregation to Minutely Buckets:** Once tick-level features are generated, we have a step to aggregate or bucket them to 1-minute intervals (as mentioned). This could involve computing statistics like mean, max, min of certain features within each minute, or summing up event counts, etc., depending on the alpha needs. This step will likely be done in Python on the server or cloud. We must clarify **where** this occurs:
+
+  * If done on the server: the C++ engine might output intermediate results which a Python script (scheduled by Airflow) reads and aggregates, then uploads to Datastore.
+  * If done on the cloud: the raw feature stream could be written to Datastore, and an AWS Lambda or EMR job might do aggregation. However, doing it on the server might be simpler and then just store the already aggregated minute data to Datastore.
+
+  We will decide this in the “server vs cloud” decision milestone (mid-August). The guiding principle is efficiency and simplicity: since we already have to push data to Datastore, pushing the minute-level data (which is much smaller than tick-level) might be best. So likely the plan is: **aggregate on the server, then push minute features to cloud**.
+
+* **Datastore Upload:** Ensure that the code to write to Datastore (AWS) is robust. We may use batch API calls or streaming writes depending on the interface. The data schema in Datastore should be predefined (e.g., a table or S3 path for each alpha’s features). We will include error handling – e.g., if a network glitch happens, we retry the upload. Since no strict SLA limits are noted, we assume Datastore can handle our writes, but we should avoid extremely large batch uploads during trading hours if possible (perhaps accumulate and write at minute or 5-minute intervals). This will be tested during the UAT runs.
+
+* **Post-Processing / Alpha Signal Generation:** After the minute-level features are in Datastore, some alphas might require additional processing or ML model inference:
+
+  * For a simple alpha (non-ML), the signal might be directly computed from the features (e.g., a weighted combination or threshold rule). That logic can be implemented either in the C++ engine or as a Python step right after aggregation.
+  * For ML-based alphas, we will have a trained model (e.g., XGBoost). We need to apply the model to the latest features to generate a prediction or score. We plan to do this on the server in real-time (loading the model with XGBoost library in Python and applying to each minute’s features as they come) to generate signals. This avoids latency of pulling data back from cloud during trading. The model files can be loaded into memory and updated out-of-band when retrained.
+  * If any heavy computation is needed that isn’t time-sensitive (for example, recalculating certain risk metrics), we could delegate that to a cloud batch job after hours.
+
+* **Output of Signals:** Finally, the pipeline will output trading signals or recommendations. These could be in the form of a file or message that another system (perhaps the execution system) picks up. For go-live, we need to define this interface: e.g., a CSV in a shared location, or maybe a database table of signals (with timestamp, symbol, signal value) that the trading engine reads. This might be handled by Colin or the trading integration team, but we must ensure our pipeline delivers the output in the expected format. We will test this in UAT by writing a dummy output and having a mock consumer read it.
+
+Throughout the implementation of the data pipeline, **accuracy and latency are key metrics**. We will create small test cases (like known input -> expected feature output) to verify accuracy. And for latency, we will measure how quickly a tick propagates through to a signal. If near real-time signals are required, ensure the pipeline introduces minimal delay (a few seconds at most per minute of data). If it’s a batch end-of-minute signal, ensure it’s ready very shortly after the minute closes. These will be refined as we test.
+
+By go-live, the data pipeline should be a well-oiled machine: able to handle continuous data flow, robust to failures, producing correct features, and feeding the models to generate timely signals. This aligns with the general MLOps steps of data collection, processing, feature engineering, and model deployment – all automated and tested.
+
+## Machine Learning Model Training & Integration
+
+Machine learning-based alphas add extra requirements to our go-live checklist. We need to ensure models are properly trained, validated, and integrated for real-time use:
+
+* **Model Training (Offline):** Ophir will conduct training of models for any ML alphas using historical data (which we have in Datastore). For example, if using XGBoost, he’ll use a separate environment (perhaps a beefy cloud instance or our research machines) to train on the features extracted from a large historical sample. This should happen in early-to-mid August so that we have time for validation. We must also **version control the datasets and models**: the training code and parameters should be captured (maybe in the GitHub repo or at least documented), and the resulting model file should be stored safely (Datastore or S3, tagged with version and date). This way, we know exactly what model is running in production.
+
+* **Validation & Backtest of Models:** After training, each model needs to be tested on a validation set and recent unseen data. We will simulate these model outputs in a backtest environment (possibly using our research backtester or even a simple replay through the pipeline in UAT) to ensure they would have performed as expected. Only if an ML model shows stable performance metrics (Sharpe, profit, low drawdown, etc.) out-of-sample will we include it. If any model is borderline or increases risk, we may decide to exclude it from the initial go-live and continue researching it.
+
+* **Model Deployment in Pipeline:** For the models we do deploy (likely the one proven alpha and possibly one more):
+
+  * Save the model artifact (e.g., `model.xgb` or a serialized PyTorch model) in a location accessible by the production pipeline (could be packaged with the code or stored in Datastore and loaded at start-up).
+  * In the pipeline code, include a step to load the model. This could be at the beginning of day (to memory) for fast access. Ensure the environment has the necessary libraries (e.g., XGBoost library version is the same as used in training to avoid any inconsistency).
+  * Implement the inference step: as the new minute’s features are computed, the pipeline should vectorize those features into the model’s input format and call the model to get a prediction or score. The result might be something like a probability or expected return which then needs to be transformed into a trading action (e.g., buy if score > threshold). That logic should be clearly coded and tested.
+  * **Speed considerations:** Model inference for something like XGBoost is typically fast (milliseconds), but if we use deep learning, we need to ensure it’s still within acceptable time. If not, consider using a simplified model or doing inference on GPU (though our current infra likely doesn’t include GPUs). Given go-live timeframe, we will likely stick to models that run quickly on CPU.
+
+* **Periodic Retraining Plan:** While not immediately needed by Sept 4, it’s worth planning how we will update models going forward. Perhaps we plan a monthly retrain or whenever performance drops. This is part of **MLOps** best practices to maintain performance. For now, note it as a post-go-live task: set up a process in VISTA or elsewhere to signal when an alpha’s performance degrades enough to warrant retraining or re-calibration.
+
+* **Integration Testing with Models:** Before go-live, we will do a full test of the pipeline including model inference. For example, run the pipeline on a known historical day where we also compute the model outputs in an offline script, and compare that the real-time pipeline’s model inference yields the same results. This ensures that no data misalignment or preprocessing differences exist between training and inference. We should also test behavior if the model encounters an unexpected input (e.g., a NaN feature or an extreme value) – the pipeline should handle it (maybe clamp values or have defaults) rather than crash.
+
+By addressing these items, we ensure the ML components are not a black box but a reliable part of the system. We recognize that in quant trading, a lot of effort is in the infrastructure around the model, so we are dedicating time to get that right. The models will be **treated as versioned, tested software artifacts** rather than research experiments by the time we deploy.
+
+## VISTA Performance Monitoring Integration
+
+VISTA is our internal Python package for measuring alpha performance, and it will be vital for ongoing evaluation once we are live. We need to incorporate it smoothly:
+
+* **VISTA v1 Delivery:** Grigory is set to deliver version 1 by end of this week (July 30 – Aug 2). This first version likely provides core functionality such as calculating return streams for an alpha, Sharpe ratio, volatility, drawdowns, and perhaps plotting equity curves. Once delivered, the team should review its capabilities. We might request any tweaks needed to suit our pipeline (for example, the ability to ingest our trading signals or PnL easily).
+
+* **Integration Plan:** We plan to integrate VISTA into the Airflow pipeline as a scheduled job, probably an end-of-day task. The idea is that after market close (or after the trading signals for the day are finalized), VISTA will run to evaluate the performance of each alpha up to that day. Key integration points:
+
+  * Ensure that the alpha signals or trade PnL data is saved in a location VISTA can access. This might be a database table of daily returns or a CSV file updated each day. We need to implement the logging of daily performance (likely PnL attribution for each alpha).
+  * Decide the output of VISTA: perhaps a daily performance report (could be an HTML or PDF, or simply logs and alerts). If VISTA has a visualization component, we might have it save charts to a shared drive or send via email. For now, a simple summary email or log output of key stats might suffice.
+  * If VISTA supports alerts (e.g., if Sharpe falls below a threshold or if there’s a big drawdown), configure those. This ensures we get early warning of any alpha misbehaving.
+
+* **Testing VISTA:** Before go-live, use historical data to simulate VISTA’s calculations. For example, take the backtest or paper trading results of our alpha for the past month and run them through VISTA to see if the metrics align with what we expect. This will validate that VISTA is correctly implemented and that we are feeding it the right data. It’s easier to fix any issues now (with Grigory available to adjust code) than after we rely on it in production.
+
+* **Dashboard/Visualization:** If time permits, we might set up a simple dashboard (could be as straightforward as an Excel sheet or a small web app) that the team and stakeholders can check daily. This could be populated by VISTA outputs. Given the tight timeline, this might be a stretch goal; at minimum, have the raw numbers available daily. Grigory can plan this as a subsequent version if not by v1.
+
+* **Integration with Airflow:** Colin will help incorporate VISTA into the Airflow DAG. Likely, the DAG’s final task will be something like `run_vista` which depends on the completion of the day’s data processing. We’ll ensure Airflow captures any failure of this task (so if VISTA crashes or the metrics look off, we notice immediately). If Airflow emailing is set up, we could have it send the VISTA report or at least a success/failure notification to the team.
+
+By having VISTA running from day one, we create a feedback loop: every day’s performance is measured and can inform our research. This also acts as a **guardrail** – if something goes wrong (say an alpha starts losing money quickly), we’ll see it quantitatively and can react (possibly disable that alpha, investigate the cause, etc.). Integrating performance monitoring is part of being production-ready, not just from a tech standpoint but from a trading effectiveness standpoint.
+
+## Testing and Quality Assurance
+
+Testing is woven throughout the timeline, but here we summarize our testing strategy and plan:
+
+* **Unit Testing:** Each component should have basic unit tests. For instance:
+
+  * C++ feature calculations: For a given small set of input ticks, we know expected feature outputs (computed by an analytical solution or a Python reference implementation). Jackie will build a mode to run the C++ engine on a small input (perhaps from a test file) and produce output that we can check automatically.
+  * Python processing steps: Functions that aggregate data, apply models, etc., will have unit tests using fake data inputs to ensure they behave as expected (including edge cases like empty inputs, zero values, etc.).
+  * Ophir/Gabi should also test the model prediction function offline (e.g., given a sample feature vector, does the model produce the expected result).
+    These tests will be automated via our GitHub pipeline (if we have CI) or at least run manually before each release.
+
+* **Integration Testing:** The most critical tests are end-to-end integration tests in UAT:
+
+  * We will simulate a full day’s run in UAT environment as a test case, likely multiple times. This includes starting from market open to close processing. We might speed it up by replaying data faster than real-time if possible (to iterate quicker).
+  * Check data integrity at each stage: Does the number of records written to Datastore for each minute match expectations? Are there any gaps or duplicates?
+  * Integration with external systems: If the trading execution system or any other consumer expects data, ensure we test that interface. Perhaps coordinate with the execution team to run a test where we send them a day’s signals and they confirm they can ingest them (maybe on a test symbol).
+  * Test **failure modes**: Unplug network (to simulate Datastore outage) and see if the pipeline queues data or crashes; if the latter, does it recover when network is back? Test what happens if Datastore is slow (maybe throttle writes artificially). Also test behavior if an unexpected input is encountered (e.g., a corrupt tick in the data). The system should ideally log and skip, not hard crash.
+  * **Performance & Load Test:** As mentioned, push the system to handle a high-throughput scenario in UAT. This might involve using multiple days of data or a day with known high volume. The aim is to **complete performance testing and get sign-off from stakeholders that the system can handle production load**. If stakeholders (like the head of quant or CTO) have criteria (e.g., “the system must process data with at most 1 minute end-to-end lag”), we verify those are met now.
+
+* **User Acceptance Testing (UAT) from Stakeholder Perspective:** Although our “users” are mostly internal (quant researchers, portfolio managers), we treat them as stakeholders who need to accept the system. We will involve them by:
+
+  * Presenting the backtest vs live test comparisons to show that the pipeline replicates known results.
+  * Possibly running a small live demo: e.g., on UAT, run the pipeline for an hour on live market data (prior to go-live, if we have a feed) and show the signals that come out, letting the PM review if they look reasonable.
+  * Getting a formal sign-off or at least an email confirmation from the PM or team lead (yourself, representing the business side) that the solution is acceptable to launch. This sign-off indicates confidence that the solution supports the business processes (in this case, generating alpha signals and tracking performance) and meets expectations.
+
+* **Regression Testing after Changes:** Any bug fixes or last-minute changes in late August will be minimal (due to code freeze), but if something must change, we will re-run necessary tests. E.g., if we tweak a feature calc, re-run the feature validation tests; if we adjust model threshold, re-run a backtest on recent data to ensure it still behaves. No change goes in without some level of re-testing.
+
+* **Checklist Before Cutover:** We will maintain a checklist (possibly derived from a standard go-live checklist) of all testing items completed: unit tests passed, integration tests done, UAT sign-off received, performance test passed, monitoring setup verified, etc. This checklist will be reviewed in the go/no-go meeting.
+
+By thoroughly testing, we reduce the risk of surprises on go-live day. As the Microsoft go-live guidelines note, the expected outcome is that all testing is completed successfully and stakeholders have signed off. The risk of skipping this is operational issues or even project failure, which we obviously want to avoid. Therefore, we won’t consider the system production-ready until all these QA steps are done and documented.
+
+## Deployment, Release Cycle, and Version Control
+
+To manage the complexity of going live, we will employ a disciplined release process:
+
+* **GitHub Repository Structure:** We have an internal GitHub (or equivalent) where our code resides. We will organize it as follows for clarity:
+
+  * Perhaps use a monorepo with folders like `cpp_engine/`, `alphas/` (for Python code related to signal generation and ML), `vista/` (if not in its own repo), and `airflow/` (for DAG definitions). Alternatively, separate repos for each might be used if that’s how it is now. In any case, ensure **clear naming and structure** so anyone can find the relevant code quickly.
+  * We will tag a release (e.g., `v1.0`) once we have the final code for go-live. This tag corresponds to what’s deployed in production on Sept 4. It’s important for posterity, so we know exactly what code was running if we need to debug or compare later changes.
+
+* **Branching and Merging:** As mentioned, we’ll maintain a **release branch** during the stabilization phase in late August. Development of new features or alphas that are not going into this go-live will continue on a `develop` or feature-specific branches. Only bug fixes or critical adjustments get merged into the release branch (with code review). This reduces the chance of a new, untested feature sneaking in and causing issues at launch. After go-live, we can merge back changes and consider a normal development flow for the next iteration.
+
+* **Code Reviews:** Even under time pressure, we will enforce code reviews for all significant changes. At least one other team member should review each PR. For example, Ophir can review Jackie’s C++ changes (looking for correctness in calculations), and Jackie can review Ophir’s Python/ML code (focusing on integration, performance). Code reviews will help maintain quality and shared knowledge of the codebase.
+
+* **Continuous Integration (CI):** If available, we’ll use a CI pipeline (maybe GitHub Actions or Jenkins) to run our test suite on each commit to the main/release branch. This way, we catch any unit tests failing early. If CI is not set up yet, we will at least manually run tests before deploying any update.
+
+* **Package Management:** We have an internal Python package (VISTA) and possibly others (maybe a common library for data access, etc.). Make sure these are versioned and released properly:
+
+  * VISTA v1 should be packaged (with a version number) so we can install it on prod knowing the exact version. If Grigory updates it, he should bump the version and document changes.
+  * Similarly, if we create an internal package for, say, alpha signal code, we should do the same. Alternatively, we just keep them in source form on the server. But a cleaner way is to use pip install from our Git (or a private PyPI) so that deployment is simpler.
+  * The C++ engine deployment could be as simple as copying the binary to the server. We should script this or have a Makefile to avoid manual errors. Possibly include it in a Docker image if our environment uses containers, but given no mention of Docker, we likely deploy directly on the machine.
+
+* **Airflow Deployment:** The Airflow DAGs (Python files) need to be placed in the Airflow `dags/` directory on the production machine. Colin will handle that, ensuring the latest DAG is there and picked up by the scheduler. We should also document how to update the DAG if needed and how versioning of DAG is handled (naming conventions, etc., to avoid confusion on deploy).
+
+* **Scheduling & Cron Considerations:** Airflow will handle scheduling, but we should double-check timing (especially if we have jobs that run at specific times, e.g., end of day jobs should not start before 4:00 PM or after data is complete). We might set some Airflow variables like trading calendar, etc. Since we target Sept 4 which is a Thursday, ensure the schedule aligns (and note Sept 7 is Labor Day, a market holiday, if relevant for turning off jobs).
+
+* **Release Candidate and Dry-Run:** As noted in timeline, treat the end-of-August version as a release candidate (RC). Deploy it to UAT and maybe even to prod (in shadow mode) a few days early to burn-in. This is effectively a dry-run of the release. We expect to catch last-minute issues here. Only after this will we declare it the final release for go-live.
+
+* **Approval to Release:** Our team might need to get an approval from a higher-up or a change management board since this is a production deployment in a financial firm. As part of the go/no-go, ensure all necessary approvals are obtained. Document the deployment plan (we can have a simple one-pager: what will be deployed, when, by whom, and how to roll back if needed). This is analogous to a cutover plan in big projects, and while our team is small, treating it formally adds safety.
+
+By having a structured release cycle and proper version control, we minimize the chaos and ensure that by the time we hit go-live, we are deploying a well-tested, versioned system. This discipline will pay off especially if we continue to iterate on the platform post-launch; it’ll be easier to manage new releases without disrupting the live trading.
+
+## Risk Mitigation and Contingency Plans
+
+Despite our best efforts, things can go wrong. We identify key risks and our contingency plans:
+
+* **Risk 1: One or more alphas not ready in time.** As you noted, having two additional alphas by go-live is aspirational. If by mid-August it’s clear they won’t be stable, we will **cut scope** and go live with only the proven alpha(s). It’s better to have a smaller scope that is reliable. The plan accounts for this by emphasizing early decision on alpha inclusion. Post go-live, we can always deploy additional alphas in subsequent releases once they are ready.
+
+* **Risk 2: Feature generation pipeline lags or fails under load.** If our performance tests indicate we cannot keep up with live data (e.g., maybe even with parallelization, Nasdaq TotalView is too heavy), then:
+
+  * *Mitigation:* Prioritize optimizations (e.g., further parallelization, optimizing code paths, possibly filtering to a subset of symbols if absolutely necessary as a stopgap).
+  * *Contingency:* As a fallback, we could run on a reduced universe or with slightly delayed data (trading slower frequencies) until we fix it. We should communicate any such limitation to stakeholders if it arises.
+  * We will only go live if the pipeline can handle the expected load in tests; otherwise, we delay go-live or adjust scope (perhaps switch to a less data-intensive approach for initial deployment).
+
+* **Risk 3: Data issues (missing data, corrupt data from source).** If our data feed or historical data has gaps or errors:
+
+  * *Mitigation:* Implement basic validation checks (e.g., if a parquet file is missing a day's data, alert that and have a process to fill it from backup). For live, if SIP feed drops a packet, the journal might note a sequence gap – we need logic to handle that (maybe fetch missing data later or at least not crash).
+  * *Contingency:* If a critical data source fails on go-live day (e.g., Datastore outage or feed outage), we might pause trading signals (failsafe to not trade on partial info). We can have a rule that if data coverage falls below X%, the system notifies us and possibly shuts off signals to avoid bad trades.
+
+* **Risk 4: Model prediction issues (ML alpha behaves unpredictably).** Models in production might encounter regimes not seen in training.
+
+  * *Mitigation:* Use VISTA monitoring to catch performance outliers. Also implement sanity checks in the signal generation (e.g., if a model output is extreme or suggests an out-of-bound position, maybe cap it or double-check it).
+  * *Contingency:* If an ML alpha starts losing money quickly or throwing errors, we can disable its signals. Our system should be designed such that we can turn off one alpha’s output easily (e.g., a config flag or remove its DAG task) without affecting others. We should test this mechanism (turning off an alpha) ahead of time.
+
+* **Risk 5: Integration with trading/execution.** While our team handles signal generation, if those signals don’t reach the trading system properly or the orders don’t execute, the alpha won’t actually make money.
+
+  * *Mitigation:* Coordinate with the trading platform team in advance. Ensure message formats or file formats are agreed. Possibly do a small connectivity test (send a test signal and see if it triggers a dummy order).
+  * *Contingency:* If on go-live something breaks in the linkage, be ready to manually intervene. For example, if signals can be manually uploaded or trades manually executed, have that as a backup for the first day so opportunities aren’t totally lost (only if feasible and safe).
+
+* **Risk 6: Team bandwidth and coordination.** With no formal project manager or QA, the burden is on the team. There’s a risk of things falling through cracks.
+
+  * *Mitigation:* Regular check-ins (perhaps brief daily stand-ups and a weekly deep-dive meeting as we have in plan). The team lead (you) will actively track tasks. Use a shared task list or board visible to everyone.
+  * *Contingency:* If we slip on certain tasks, be ready to bring in extra help (maybe borrow an engineer from another team short-term, or drop lower-priority tasks). For instance, if VISTA integration is behind, focus on core trading functionality first; performance monitoring can catch up a week later if absolutely needed (not ideal, but trading comes first).
+
+* **Risk 7: Regulatory/Compliance (unlikely, but mention if relevant).** If our hedge fund has any compliance checks (like not trading certain stocks, or limits), ensure our system can accommodate those from day one.
+
+  * *Mitigation:* Check with compliance if any watchlists need integration. Possibly out of scope for this pipeline, but worth a quick confirmation.
+
+Each risk will be tracked, and for each we assign an owner to monitor it. The above mitigations will be part of our preparation. Importantly, we will have a **support plan for launch** – essentially, everyone is on deck, with clear lines of communication (a Slack channel or bridge open during market hours of go-live, etc.). If something goes wrong, we’ll convene quickly to decide if we continue, fix on the fly, or pull back. As the go-live checklist advises: have operational support and maintenance plans ready. We will be ready to execute those plans if needed, ensuring issues are addressed with minimal downtime.
+
+## Conclusion
+
+This one-month go-live plan is designed to bring order to the chaos and ensure a smooth transition of our alpha generation pipeline into production. By **clarifying responsibilities**, setting a **strict timeline with milestones**, and focusing on **testing & performance**, we significantly increase our chances of a successful launch. We have incorporated best practices from software deployment (CI/CD, code freeze, monitoring) and tailored them to our quantitative trading context (data validation, backtest comparisons, model performance tracking).
+
+With this plan, the team will work in sync towards the September 4 deadline. Regular updates and a disciplined approach will replace ad-hoc development, giving stakeholders confidence in the process. Crucially, by launch day we will have a pipeline that is **fast, reliable, and monitored**, capable of generating alphas that we trust to trade real capital. And the work doesn’t stop at go-live – the plan establishes a foundation for continuous monitoring (via VISTA) and iterative improvement. This way, we not only go live successfully, but also set ourselves up for long-term, scalable alpha generation going forward.
