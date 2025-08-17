@@ -1,0 +1,110 @@
+import numpy as np
+import pandas as pd
+from typing import Sequence, Union
+
+def compute_intraday_composition_features(
+    df: pd.DataFrame,
+    time_col: str = "time",
+    u_cols: Sequence[str] = ("u1", "u2", "u3"),   # renamed from "demeaned_z*"
+    cutoff: Union[str, pd.Timestamp, pd.Timedelta] = "15:50",
+    first_n: int = 10,
+    last_n: int = 10,
+) -> pd.Series:
+    """
+    Compute daily features from minute-level, seasonality-removed composition balances u1,u2,u3.
+
+    Expected input (one stock, one day):
+      - df[time_col]: minute-of-day times (str 'HH:MM' or datetime-like)
+      - df[u_cols]:   seasonality-removed ilr/balance features per minute (e.g., u1,u2,u3)
+
+    Features returned (flat, interpretable):
+      - mu_*           : minute-average (level) of u's
+      - beta_*         : OLS slope of u vs minute index (trend across the day)
+      - var_*          : variance across minutes (per component)
+      - var_trace      : sum of variances across minutes (overall dispersion)
+      - energy         : sum of squared minute-to-minute changes ||Δu||^2 (roughness)
+      - deltaOC_*      : (mean of last_n minutes) - (mean of first_n minutes) per component
+      - M_used         : number of minutes used up to cutoff
+
+    Notes:
+      - Rows with NaNs in u_cols are dropped.
+      - If fewer than 3 rows remain, returns NaNs for all numeric features.
+      - Cutoff is inclusive (<= cutoff).
+    """
+    out = {}
+
+    if df.empty:
+        return pd.Series({k: np.nan for k in [
+            "mu_u1","mu_u2","mu_u3","beta_u1","beta_u2","beta_u3",
+            "var_u1","var_u2","var_u3","var_trace","energy",
+            "deltaOC_u1","deltaOC_u2","deltaOC_u3","M_used"
+        ]})
+
+    # unify time to datetime.time for filtering/sorting
+    t = df[time_col]
+    if np.issubdtype(t.dtype, np.datetime64):
+        times = pd.to_datetime(t).dt.time
+    else:
+        # accept 'HH:MM' strings or datetime.time
+        times = pd.to_datetime(t.astype(str)).dt.time
+
+    # parse cutoff similarly
+    cutoff_time = pd.to_datetime(str(cutoff)).time()
+
+    # filter to <= cutoff and sort by time
+    mask = pd.Series([ti <= cutoff_time for ti in times], index=df.index)
+    d = df.loc[mask].copy()
+    d["_t_"] = times[mask]
+    d = d.sort_values("_t_")
+
+    # drop rows with NaNs in the features
+    d = d.dropna(subset=list(u_cols))
+    M = len(d)
+    out["M_used"] = M
+
+    # not enough data -> NaNs
+    if M < 3:
+        return pd.Series({**{f"mu_{c}": np.nan for c in u_cols},
+                          **{f"beta_{c}": np.nan for c in u_cols},
+                          **{f"var_{c}": np.nan for c in u_cols},
+                          "var_trace": np.nan, "energy": np.nan,
+                          **{f"deltaOC_{c}": np.nan for c in u_cols},
+                          "M_used": M})
+
+    U = d.loc[:, u_cols].to_numpy()          # shape (M, 3)
+    idx = np.arange(M).astype(float)         # 0..M-1
+
+    # ---- Level (mu)
+    mu = U.mean(axis=0)
+    for j, c in enumerate(u_cols):
+        out[f"mu_{c}"] = mu[j]
+
+    # ---- Trend (OLS slope per component): slope = Cov(idx, U[:,j]) / Var(idx)
+    idx_centered = idx - idx.mean()
+    denom = (idx_centered @ idx_centered)
+    slopes = (idx_centered[:, None] * U).sum(axis=0) / denom
+    for j, c in enumerate(u_cols):
+        out[f"beta_{c}"] = slopes[j]
+
+    # ---- Dispersion across minutes (per-component variance; trace)
+    # sample variance (ddof=1), rowvar=False → columns are variables
+    cov_mat = np.cov(U, rowvar=False, ddof=1)
+    var_diag = np.diag(cov_mat)
+    for j, c in enumerate(u_cols):
+        out[f"var_{c}"] = var_diag[j]
+    out["var_trace"] = var_diag.sum()
+
+    # ---- Roughness / surprise energy (sum of squared minute-to-minute jumps)
+    dU = np.diff(U, axis=0)            # shape (M-1, 3)
+    out["energy"] = float((dU**2).sum())
+
+    # ---- Open→Close shift (last_n minus first_n minute means)
+    n_first = min(first_n, M)
+    n_last  = min(last_n,  M)
+    first_mean = U[:n_first].mean(axis=0)
+    last_mean  = U[-n_last:].mean(axis=0)
+    delta_oc = last_mean - first_mean
+    for j, c in enumerate(u_cols):
+        out[f"deltaOC_{c}"] = delta_oc[j]
+
+    return pd.Series(out)
