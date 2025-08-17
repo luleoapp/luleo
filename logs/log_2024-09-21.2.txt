@@ -1,0 +1,144 @@
+import numpy as np
+import pandas as pd
+
+# --- Feature function from earlier (unchanged). Paste yours here if you already have it imported.
+def compute_intraday_composition_features(
+    df: pd.DataFrame,
+    time_col: str = "time",
+    u_cols=("u1","u2","u3"),
+    cutoff="15:50",
+    first_n=10,
+    last_n=10,
+) -> pd.Series:
+    out = {}
+    if df.empty:
+        return pd.Series({k: np.nan for k in [
+            "mu_u1","mu_u2","mu_u3","beta_u1","beta_u2","beta_u3",
+            "var_u1","var_u2","var_u3","var_trace","energy",
+            "deltaOC_u1","deltaOC_u2","deltaOC_u3","M_used"
+        ]})
+    t = df[time_col]
+    if np.issubdtype(t.dtype, np.datetime64):
+        times = pd.to_datetime(t).dt.time
+    else:
+        times = pd.to_datetime(t.astype(str)).dt.time
+    cutoff_time = pd.to_datetime(str(cutoff)).time()
+    mask = pd.Series([ti <= cutoff_time for ti in times], index=df.index)
+    d = df.loc[mask].copy()
+    d["_t_"] = times[mask]
+    d = d.sort_values("_t_")
+    d = d.dropna(subset=list(u_cols))
+    M = len(d); out["M_used"] = M
+    if M < 3:
+        return pd.Series({**{f"mu_{c}": np.nan for c in u_cols},
+                          **{f"beta_{c}": np.nan for c in u_cols},
+                          **{f"var_{c}": np.nan for c in u_cols},
+                          "var_trace": np.nan, "energy": np.nan,
+                          **{f"deltaOC_{c}": np.nan for c in u_cols},
+                          "M_used": M})
+    U = d.loc[:, u_cols].to_numpy()
+    idx = np.arange(M, dtype=float)
+    mu = U.mean(axis=0)
+    for j, c in enumerate(u_cols): out[f"mu_{c}"] = mu[j]
+    idx_c = idx - idx.mean()
+    denom = (idx_c @ idx_c)
+    slopes = (idx_c[:, None] * U).sum(axis=0) / denom
+    for j, c in enumerate(u_cols): out[f"beta_{c}"] = slopes[j]
+    cov_mat = np.cov(U, rowvar=False, ddof=1)
+    var_diag = np.diag(cov_mat)
+    for j, c in enumerate(u_cols): out[f"var_{c}"] = var_diag[j]
+    out["var_trace"] = var_diag.sum()
+    dU = np.diff(U, axis=0)
+    out["energy"] = float((dU**2).sum())
+    n_first = min(first_n, M); n_last = min(last_n, M)
+    delta = U[-n_last:].mean(axis=0) - U[:n_first].mean(axis=0)
+    for j, c in enumerate(u_cols): out[f"deltaOC_{c}"] = delta[j]
+    return pd.Series(out)
+
+# --- Test helper: builds linear dummy data and checks closed-form expectations.
+def test_compute_features_linear(
+    cutoff="15:50",
+    first_n=10,
+    last_n=10,
+    a=(0.10, -0.20, 0.05),   # intercepts for u1,u2,u3
+    b=(0.0010, 0.0020, -0.0005),  # per-minute slopes for u1,u2,u3
+    start="09:30",
+    end="15:59",
+    atol=1e-10, rtol=1e-10
+):
+    # Minute grid
+    times = pd.date_range(f"2000-01-01 {start}", f"2000-01-01 {end}", freq="T")
+    M_full = len(times)
+
+    # Linear data: u_j = a_j + b_j * idx
+    idx_full = np.arange(M_full, dtype=float)
+    U = np.vstack([a[j] + b[j] * idx_full for j in range(3)]).T
+    df = pd.DataFrame({"time": times, "u1": U[:,0], "u2": U[:,1], "u3": U[:,2]})
+
+    # Compute features up to cutoff
+    feat = compute_intraday_composition_features(
+        df, time_col="time", u_cols=("u1","u2","u3"),
+        cutoff=cutoff, first_n=first_n, last_n=last_n
+    )
+    M = int(feat["M_used"])
+
+    # Reconstruct the effective index after cutoff
+    # (because function sorts & trims to <= cutoff)
+    times_eff = times[times <= pd.to_datetime(f"2000-01-01 {cutoff}")]
+    assert len(times_eff) == M
+    idx = np.arange(M, dtype=float)
+
+    # Closed-form expectations:
+
+    # 1) Slopes (beta) should equal the true per-minute slopes b
+    beta_exp = np.array(b, dtype=float)
+    beta_hat = np.array([feat["beta_u1"], feat["beta_u2"], feat["beta_u3"]], dtype=float)
+    np.testing.assert_allclose(beta_hat, beta_exp, atol=atol, rtol=rtol)
+
+    # 2) Means: mu_j = a_j + b_j * mean(idx)
+    mean_idx = idx.mean()  # (M-1)/2
+    mu_exp = np.array(a) + np.array(b) * mean_idx
+    mu_hat = np.array([feat["mu_u1"], feat["mu_u2"], feat["mu_u3"]], dtype=float)
+    np.testing.assert_allclose(mu_hat, mu_exp, atol=atol, rtol=rtol)
+
+    # 3) Variance per component: var_j = b_j^2 * denom / (M-1)
+    # where denom = sum (i - mean(i))^2 = M*(M^2-1)/12
+    denom = M * (M**2 - 1) / 12.0
+    var_exp = (np.array(b) ** 2) * (denom / (M - 1))
+    var_hat = np.array([feat["var_u1"], feat["var_u2"], feat["var_u3"]], dtype=float)
+    np.testing.assert_allclose(var_hat, var_exp, atol=1e-12, rtol=1e-12)
+
+    # 4) var_trace = sum of component variances
+    np.testing.assert_allclose(float(feat["var_trace"]), var_exp.sum(), atol=1e-12, rtol=1e-12)
+
+    # 5) Energy: sum over minutes of ||Δu||^2.
+    # For linear u, per-minute change Δu_j = b_j, constant; there are (M-1) jumps.
+    energy_exp = (M - 1) * float(np.sum(np.array(b) ** 2))
+    np.testing.assert_allclose(float(feat["energy"]), energy_exp, atol=1e-12, rtol=1e-12)
+
+    # 6) Open→Close delta: mean(last_n) - mean(first_n)
+    # For linear u_j, this equals b_j * (mean_idx_last - mean_idx_first)
+    n_first = min(first_n, M)
+    n_last = min(last_n, M)
+    mean_first = (np.arange(n_first).mean() if n_first > 0 else 0.0)
+    mean_last = (np.arange(M - n_last, M).mean() if n_last > 0 else 0.0)
+    delta_exp = np.array(b) * (mean_last - mean_first)
+    delta_hat = np.array([feat["deltaOC_u1"], feat["deltaOC_u2"], feat["deltaOC_u3"]], dtype=float)
+    np.testing.assert_allclose(delta_hat, delta_exp, atol=1e-12, rtol=1e-12)
+
+    return {
+        "features": feat,
+        "expected": {
+            "beta": beta_exp,
+            "mu": mu_exp,
+            "var": var_exp,
+            "var_trace": var_exp.sum(),
+            "energy": energy_exp,
+            "deltaOC": delta_exp,
+            "M_used": M
+        }
+    }
+
+# --- Example usage:
+# results = test_compute_features_linear(cutoff="15:50", first_n=10, last_n=10)
+# print(results["features"])
